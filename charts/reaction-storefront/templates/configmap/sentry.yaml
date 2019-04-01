@@ -1,0 +1,15 @@
+{{- if .Values.sentry.enabled -}}
+{{- $fullName := include "reaction-storefront.fullname" . -}}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ $fullName }}-sentry
+  labels:
+    app.kubernetes.io/name: {{ $fullName }}
+    app.kubernetes.io/component: frontend
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+    helm.sh/chart: {{ $fullName }}
+data:
+  SENTRY_DSN: {{ required "sentry.dsn not defined" .Values.sentry.dsn }}
+{{- end -}}

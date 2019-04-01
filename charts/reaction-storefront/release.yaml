@@ -1,0 +1,26 @@
+apiVersion: flux.weave.works/v1beta1
+kind: HelmRelease
+metadata:
+  name: reaction-storefront
+  namespace: development
+spec:
+  releaseName: reaction-storefront
+  chart:
+    respository: foo
+    name: reaction-storefront
+    version: 0.1.0
+    imageTag: xxxx
+  values:
+    contentstack:
+      enabled: false
+    horizontalPodAutoscaler:
+      enabled: true
+      min: 3
+      max: 10
+    search:
+      enable: true
+      elasticsearchUrl:
+    storefront:
+      name: bobs
+      baseUrl: https://development.bobs-test.io
+      imageUrl:

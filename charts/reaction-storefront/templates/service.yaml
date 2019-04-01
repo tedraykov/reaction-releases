@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "reaction-storefront.fullname" . }}
+  labels:
+    app.kubernetes.io/name: {{ include "reaction-storefront.name" . }}
+    app.kubernetes.io/component: frontend
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+    helm.sh/chart: {{ include "reaction-storefront.chart" . }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ required "Service port not defined." .Values.service.port }}
+      targetPort: http
+      protocol: TCP
+      name: http
+    - port: {{ required "Admin port not defined." .Values.service.adminPort }}
+      targetPort: admin
+      protocol: TCP
+      targetPort: admin
+      name: admin
+  selector:
+    app.kubernetes.io/name: {{ include "reaction-storefront.name" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
