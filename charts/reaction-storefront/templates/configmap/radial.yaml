@@ -1,0 +1,15 @@
+{{- $fullName := include "reaction-storefront.fullname" . -}}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ $fullName }}-radial
+  labels:
+    app.kubernetes.io/name: {{ $fullName }}
+    app.kubernetes.io/component: frontend
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+    helm.sh/chart: {{ $fullName }}
+data:
+  RADIAL_CLIENTID: {{ required "radial.clientId not defined." .Values.radial.clientId }}
+  RADIAL_MODE: {{ required "radial.mode not defined." .Values.radial.mode }}
+  RADIAL_RDF_URL: {{ required "radial.rdfUrl not defined." .Values.radial.rdfUrl }}

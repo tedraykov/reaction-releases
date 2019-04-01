@@ -1,0 +1,19 @@
+{{- $fullName := include "reaction-storefront.fullname" . -}}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ $fullName }}-oauth2
+  labels:
+    app.kubernetes.io/name: {{ $fullName }}
+    app.kubernetes.io/component: frontend
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+    helm.sh/chart: {{ $fullName }}
+data:
+  OAUTH2_ADMIN_PORT: {{ .Values.oauth2.adminPort | default 4445 }}
+  OAUTH2_AUTH_URL: {{ required "oauth2.url not defined." .Values.oauth2.url }}
+  OAUTH2_CLIENT_ID: {{ required "oauth2.clientId not defined." .Values.oauth2.clientId }}
+  OAUTH2_HOST: {{ required "oauth2.host not defined." .Values.oauth2.host }}
+  OAUTH2_IDP_HOST_URL: {{ required "oauth2.idpHostUrl not defined." .Values.oauth2.idpHostUrl }}
+  OAUTH2_REDIRECT_URL: {{ required "oauth2.redirectUrl not defined." .Values.oauth2.redirectUrl }}
+  OAUTH2_TOKEN_URL: {{ required "ouath2.tokenUrl not defined." .Values.oauth2.tokenUrl }}

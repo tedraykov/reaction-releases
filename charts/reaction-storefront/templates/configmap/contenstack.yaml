@@ -1,0 +1,17 @@
+{{- if .Values.contentstack.enabled -}}
+{{- $fullName := include "reaction-storefront.fullname" . -}}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ $fullName }}-contentstack
+  labels:
+    app.kubernetes.io/name: {{ $fullName }}
+    app.kubernetes.io/component: frontend
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+    helm.sh/chart: {{ $fullName }}
+data:
+  CONTENTSTACK_ACCESS_TOKEN: {{ required "contentstack.accessToken is not defined." .Values.contentstack.accessToken }}
+  CONTENTSTACK_API_KEY: {{ required "contentstack.apiKey is not defined." .Values.contentstack.apiKey }}
+  CONTENTSTACK_ENVIRONMENT_NAME: {{ required "contenstack.environment is not defined." .Values.contentstack.environment }}
+{{- end -}}

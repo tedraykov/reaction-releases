@@ -1,0 +1,16 @@
+{{- if .Values.segmentAnalytics.enabled -}}
+{{- $fullName := include "reaction-storefront.fullname" . -}}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ $fullName }}-segmentanalytics
+  labels:
+    app.kubernetes.io/name: {{ $fullName }}
+    app.kubernetes.io/component: frontend
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+    helm.sh/chart: {{ $fullName }}
+data:
+  SEGMENT_ANALYTICS_SKIP_MINIMIZE: {{ required "segmentAnalytics.skipMinimze not defined." .Values.segmentAnalytics.skipMinimze }}
+  SEGMENT_ANALYTICS_WRITE_KEY: {{ required "segmentAnalytics.writeKey not defined." .Values.segmentAnalytics.writeKey }}
+{{- end -}}
