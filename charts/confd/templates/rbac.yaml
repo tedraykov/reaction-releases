@@ -1,0 +1,46 @@
+{{- if .Values.rbac.enabled }}
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: {{ template "confd.fullname" . }}
+  namespace: {{ .Release.Namespace }}
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: {{ template "confd.fullname" . }}
+  namespace: {{ .Release.Namespace }}
+rules:
+  - apiGroups:
+      - ""
+    resources:
+      - secrets
+    verbs:
+      - create
+      - get
+      - list
+      - patch
+      - update
+      - watch
+  - apiGroups:
+      - ""
+    resources:
+      - pods
+    verbs:
+      - list
+      - get
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: {{ template "confd.fullname" . }}
+  namespace: {{ .Release.Namespace }}
+subjects:
+  - name: {{ template "confd.fullname" . }}
+    namespace: {{ .Release.Namespace }}
+    kind: ServiceAccount
+roleRef:
+  name: {{ template "confd.fullname" . }}
+  kind: ClusterRole
+{{- end }}
