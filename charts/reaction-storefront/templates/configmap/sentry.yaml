@@ -11,5 +11,5 @@ metadata:
     app.kubernetes.io/managed-by: {{ .Release.Service }}
     helm.sh/chart: {{ $fullName }}
 data:
-  SENTRY_DSN: {{ required "sentry.dsn not defined" .Values.sentry.dsn }}
+  SENTRY_DSN: {{ required "sentry.dsn not defined" .Values.sentry.dsn | quote }}
 {{- end -}}

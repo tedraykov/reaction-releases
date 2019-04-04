@@ -11,7 +11,7 @@ metadata:
     app.kubernetes.io/managed-by: {{ .Release.Service }}
     helm.sh/chart: {{ $fullName }}
 data:
-  CONTENTSTACK_ACCESS_TOKEN: {{ required "contentstack.accessToken is not defined." .Values.contentstack.accessToken }}
-  CONTENTSTACK_API_KEY: {{ required "contentstack.apiKey is not defined." .Values.contentstack.apiKey }}
-  CONTENTSTACK_ENVIRONMENT_NAME: {{ required "contenstack.environment is not defined." .Values.contentstack.environment }}
+  CONTENTSTACK_ACCESS_TOKEN: {{ required "contentstack.accessToken is not defined." .Values.contentstack.accessToken | quote }}
+  CONTENTSTACK_API_KEY: {{ required "contentstack.apiKey is not defined." .Values.contentstack.apiKey | quote }}
+  CONTENTSTACK_ENVIRONMENT_NAME: {{ required "contenstack.environment is not defined." .Values.contentstack.environment | quote }}
 {{- end -}}
