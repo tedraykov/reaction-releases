@@ -21,11 +21,5 @@ spec:
     name: {{ $fullName }}
   minReplicas: {{ .Values.horizontalPodAutoscaler.min | default 1 }}
   maxReplicas: {{ .Values.horizontalPodAutoscaler.min | default 3 }}
-  metrics:
-    - type: Resource
-      resource:
-        name: cpu
-        target:
-          type: Utilization
-          averageUtilization: {{ .Values.horizontalPodAutoscaler.averageUtilization | default 50 }}
+  targetCPUUtilizationPercentage: {{ .Values.horizontalPodAutoscaler.averageUtilization | default 50 }}
 {{- end }}
