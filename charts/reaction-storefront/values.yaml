@@ -12,6 +12,8 @@ image: {}
 nameOverride: ""
 fullnameOverride: ""
 
+annotations: {}
+
 service:
   type: ClusterIP
   port: 8080
