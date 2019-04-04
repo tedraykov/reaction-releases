@@ -1,0 +1,56 @@
+apiVersion: flux.weave.works/v1beta1
+kind: HelmRelease
+metadata:
+  name: reaction-storefront
+  namespace: development
+spec:
+  releaseName: reaction-storefront
+  chart:
+    git: git@github.com:sportsdirect/sdi-releases.git
+    path: charts/reaction-storefront
+    ref: develop
+  values:
+    contentstack:
+      enabled: false
+    horizontalPodAutoscaler:
+      enabled: true
+      averageUtilization: 70
+      min: 3
+      max: 10
+    image:
+      repository: 225761155017.dkr.ecr.us-east-1.amazonaws.com/reaction-storefront
+      tag: dff07ba7a615504901737bb9b9fe60c3da527459
+    ingress:
+      hosts:
+        - host: development.bobs-test.io
+          paths: ['/']
+    storefront:
+      name: bobs
+      baseUrl: https://development.bobs-test.io
+      imageUrl: https://development.bobs-test.io
+      defaultShippingMethodId: SPbMh5gdz24Wr4J94
+      defaultShippingMethodRate: "2.99"
+      elasticsearchUrl: elasticsearch:9200
+      sessionMaxAge: "2592000000"
+      stacktraceEnabled: true
+    graphql:
+      introspection: false
+      url: http://reaction-core.development.bobs-test.io
+    radial:
+      clientId: BOBSUS
+      mode: sandbox
+      rdfUrl: https://tst-rdf.radial.com/rdf/service/scripts?clientIdentifier=BOBSUS
+    oauth2:
+      clientId: bobs-storefront-development
+      url: https://auth-development.bobs-test.io/oauth2/auth
+      host: hydra-hydra-admin-service
+      idpHostUrl: https://api-development.bobs-test.io
+      redirectUrl: https://development.bobs-test.io/callback
+      tokenUrl: https://auth-development.bobs-test.io/oauth2/token
+    resources: {}
+#      requests:
+#        memory: 200Mi
+#        cpu: 200m
+#      limits:
+#        memory: 2Gi
+#        cpu: "2"
