@@ -20,7 +20,7 @@ spec:
           type: Socket
           readOnly: true
     indexTemplateLoad:
-      - vpc-production-logs-h5thmymtp327yrdyej2mi2cm4a.us-east-1.es.amazonaws.com:443
+      - https://vpc-production-logs-h5thmymtp327yrdyej2mi2cm4a.us-east-1.es.amazonaws.com:443
     config:
       processors:
         - add_cloud_metadata: {}
