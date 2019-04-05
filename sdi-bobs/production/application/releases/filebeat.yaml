@@ -1,0 +1,35 @@
+apiVersion: flux.weave.works/v1beta1
+kind: HelmRelease
+metadata:
+  name: filebeat
+  namespace: logging
+spec:
+  releaseName: filebeat
+  chart:
+    repository: https://kubernetes-charts.storage.googleapis.com
+    name: filebeat
+    version: 1.4.4
+  values:
+    extraVolumeMounts:
+      - mountPath: /var/run/docker.sock
+        name: var-run-docker-sock
+    extraVolumes:
+      - name: var-run-docker-sock
+        hostPath:
+          path: /var/run/docker.sock
+          type: Socket
+          readOnly: true
+    indexTemplateLoad:
+      - vpc-production-logs-h5thmymtp327yrdyej2mi2cm4a.us-east-1.es.amazonaws.com:443
+    config:
+      processors:
+        - add_cloud_metadata: {}
+        - add_docker_metadata: {}
+        - add_kubernetes_metadata: {}
+      output:
+        elasticsearch:
+          protocol: https
+          hosts:
+            - vpc-production-logs-h5thmymtp327yrdyej2mi2cm4a.us-east-1.es.amazonaws.com:443
+        file:
+          enabled: false
