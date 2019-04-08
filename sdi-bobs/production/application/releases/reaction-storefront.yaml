@@ -10,8 +10,6 @@ spec:
     path: charts/reaction-storefront
     ref: develop
   values:
-    contentstack:
-      enabled: false
     horizontalPodAutoscaler:
       enabled: true
       averageUtilization: 70
@@ -57,9 +55,9 @@ spec:
       enabled: true
       dsn: https://0d6525f016ba482eba2b17fa3266dda9@sentry.io/1397837
     resources: {}
-#      requests:
-#        memory: 200Mi
-#        cpu: 200m
-#      limits:
-#        memory: 2Gi
-#        cpu: "2"
+      requests:
+        memory: 500Mi
+        cpu: 500m
+      limits:
+        memory: 2Gi
+        cpu: "2"
