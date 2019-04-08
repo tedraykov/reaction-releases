@@ -16,8 +16,8 @@ spec:
       min: 3
       max: 10
     image:
-      repository: 225761155017.dkr.ecr.us-east-1.amazonaws.com/reaction-storefront
-      tag: dff07ba7a615504901737bb9b9fe60c3da527459
+      repository: 490759768946.dkr.ecr.us-east-1.amazonaws.com/reaction-storefront
+      tag: ed74766c53db3fe33f2a5b436700efe987e6aff1
     ingress:
       hosts:
         - host: storefront-production.bobs-test.io
