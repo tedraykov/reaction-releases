@@ -9,9 +9,9 @@ spec:
     git: git@github.com:sportsdirect/sdi-releases.git
     ref: develop
     path: charts/confd
-  image:
-    repository: 490759768946.dkr.ecr.us-east-1.amazonaws.com/confd
-    tag: a3e77c0
   values:
     rbac:
       create: true
+    image:
+      repository: 490759768946.dkr.ecr.us-east-1.amazonaws.com/confd
+      tag: a3e77c0
