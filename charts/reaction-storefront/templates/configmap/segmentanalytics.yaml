@@ -11,6 +11,5 @@ metadata:
     app.kubernetes.io/managed-by: {{ .Release.Service }}
     helm.sh/chart: {{ $fullName }}
 data:
-  SEGMENT_ANALYTICS_SKIP_MINIMIZE: {{ required "segmentAnalytics.skipMinimze not defined." .Values.segmentAnalytics.skipMinimze | quote }}
-  SEGMENT_ANALYTICS_WRITE_KEY: {{ required "segmentAnalytics.writeKey not defined." .Values.segmentAnalytics.writeKey | quote }}
+  SEGMENT_ANALYTICS_SKIP_MINIMIZE: {{ required "segmentAnalytics.skipMinimize not defined." .Values.segmentAnalytics.skipMinimize | quote }}
 {{- end -}}

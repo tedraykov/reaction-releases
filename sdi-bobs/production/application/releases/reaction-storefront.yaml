@@ -1,0 +1,63 @@
+apiVersion: flux.weave.works/v1beta1
+kind: HelmRelease
+metadata:
+  name: reaction-storefront
+  namespace: bobs
+spec:
+  releaseName: reaction-storefront
+  chart:
+    git: git@github.com:sportsdirect/sdi-releases.git
+    path: charts/reaction-storefront
+    ref: develop
+  values:
+    horizontalPodAutoscaler:
+      enabled: true
+      averageUtilization: 70
+      min: 3
+      max: 10
+    image:
+      repository: 490759768946.dkr.ecr.us-east-1.amazonaws.com/reaction-storefront
+      tag: ed74766c53db3fe33f2a5b436700efe987e6aff1
+    ingress:
+      hosts:
+        - host: storefront-production.bobs-test.io
+          paths: ['/']
+    storefront:
+      name: bobs
+      baseUrl: https://storefront-production.bobs-test.io
+      imageUrl: https://storefront-production.bobs-test.io
+      defaultShippingMethodId: SPbMh5gdz24Wr4J94
+      defaultShippingMethodRate: "2.99"
+      elasticsearchUrl: elasticsearch:9200
+      sessionMaxAge: "2592000000"
+      stacktraceEnabled: true
+    graphql:
+      introspection: true
+      url: http://reaction-core-web.bobs.svc.cluster.local/graphql-alpha
+    radial:
+      clientId: BOBSUS
+      mode: sandbox
+      rdfUrl: https://tst-rdf.radial.com/rdf/service/scripts?clientIdentifier=BOBSUS
+    oauth2:
+      clientId: bobs-production-storefront
+      url: https://auth-production.bobs-test.io/oauth2/auth
+      host: hydra-hydra-admin-service
+      idpHostUrl: https://api-production.bobs-test.io
+      redirectUrl: https://storefront-production.bobs-test.io/callback
+      tokenUrl: http://hydra-hydra-main-service:4444/oauth2/token
+    contentstack:
+      enabled: true
+      environment: staging
+    segmentAnalytics:
+      enabled: true
+      skipMinimize: true
+    sentry:
+      enabled: true
+      dsn: https://0d6525f016ba482eba2b17fa3266dda9@sentry.io/1397837
+    resources:
+      requests:
+        memory: 500Mi
+        cpu: 500m
+      limits:
+        memory: 2Gi
+        cpu: "2"
