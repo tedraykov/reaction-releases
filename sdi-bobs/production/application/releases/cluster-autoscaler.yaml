@@ -11,7 +11,7 @@ spec:
     version: 0.12.1
   values:
     autoDiscovery:
-      clusterName: playground.k8s.bobs-test.io
+      clusterName: production.k8s.bobs-test.io
     awsRegion: us-east-1
     cloudProvider: aws
     nodeSelector:
