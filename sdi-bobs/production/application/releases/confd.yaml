@@ -10,8 +10,7 @@ spec:
     ref: develop
     path: charts/confd
   values:
-    rbac:
-      create: true
+    awsRegion: us-east-1
     image:
       repository: 490759768946.dkr.ecr.us-east-1.amazonaws.com/confd
       tag: a3e77c0
