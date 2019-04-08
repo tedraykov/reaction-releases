@@ -28,7 +28,7 @@ spec:
       imageUrl: https://storefront-production.bobs-test.io
       defaultShippingMethodId: SPbMh5gdz24Wr4J94
       defaultShippingMethodRate: "2.99"
-      elasticsearchUrl: elasticsearch:9200
+      elasticsearchUrl: http://elasticsearch:9200
       sessionMaxAge: "2592000000"
       stacktraceEnabled: true
     graphql:
