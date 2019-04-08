@@ -39,7 +39,7 @@ spec:
             - configMapRef:
                 name: {{ printf "%s-%s" $fullName "radial" }}
             - secretRef:
-                name: storefront
+                name: reaction-storefront
 {{- if .Values.contentstack.enabled }}
             - configMapRef:
                 name: {{ printf "%s-%s" $fullName "contentstack" }}
