@@ -38,13 +38,19 @@ spec:
                 name: {{ printf "%s-%s" $fullName "oauth2" }}
             - configMapRef:
                 name: {{ printf "%s-%s" $fullName "radial" }}
+            - secretRef:
+                name: storefront
 {{- if .Values.contentstack.enabled }}
             - configMapRef:
                 name: {{ printf "%s-%s" $fullName "contentstack" }}
+            - secretRef:
+                name: contentstack
 {{- end }}
 {{- if .Values.segmentAnalytics.enabled }}
             - configMapRef:
                 name: {{ printf "%s-%s" $fullName "segmentanalytics" }}
+            - secretRef:
+                name: segmentanalytics
 {{- end }}
 {{- if .Values.sentry.enabled }}
             - configMapRef:
