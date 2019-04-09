@@ -1,0 +1,83 @@
+apiVersion: flux.weave.works/v1beta1
+kind: HelmRelease
+metadata:
+  name: reaction-core-worker
+  namespace: bobs
+spec:
+  releaseName: reaction-core-worker
+  chart:
+    git: git@github.com:sportsdirect/sdi-releases.git
+    path: charts/reaction-core
+    ref: develop
+  values:
+    horizontalPodAutoscaler:
+      enabled: true
+      averageUtilization: 70
+      min: 3
+      max: 10
+    image:
+      repository: 490759768946.dkr.ecr.us-east-1.amazonaws.com/reaction-core
+      tag: 9c29107babe9b0fb6d5758b9bed8cdbac371f50e
+    ingress:
+      hosts:
+        - host: api-production.bobs-test.io
+          paths: ['/']
+    core:
+      siteCode: BOBS
+      serverType: WORKER
+      startingNewCustomerNumber: 1100151420184
+      skipFixtures: 1
+      rootUrl: https://api-production.bobs-test.io
+      cartReferenceIdPrefix: 44
+      etcdUrl: http://etcd-application.internal.production.k8s.bobs-test.io:2379
+      jaegerEndpoint: https://jaeger-collector-production.bobs-test.io/api/traces
+      defaultShippingMethodId: SPbMh5gdz24Wr4J94
+      defaultShippingMethodRate: "2.99"
+      logFormat: json
+      logLevel: info
+      graphqlIntrospection: true
+      graphqlPlayground: true
+      user: "Reaction Admin"
+    hydra:
+      adminUrl: http://hydra-hydra-admin-service:4445
+      oauth2IntrospectUrl: http://hydra-hydra-admin-service:4445/oauth2/introspect
+    kafka:
+      bootstrapServers: broker0.kafka-production.k8s.bobs-test.io:9092,broker1.kafka-production.k8s.bobs-test.io:9093,broker2.kafka-production.k8s.bobs-test.io:9094
+      cluster: broker0.kafka-production.k8s.bobs-test.io:9092,broker1.kafka-production.k8s.bobs-test.io:9093,broker2.kafka-production.k8s.bobs-test.io:9094
+      schemaRegistryUrl: http://schema-registry.kafka-production.k8s.bobs-test.io:8081
+      partitionsLoyalty: 3
+      partitionsEtlShippableInventoryStatus: 1
+      topicCatalogImportErrors: etl.product-import.errors.json-gen1
+      topicCatalogSyncProducts: etl.catalog-sync.products.json-gen1
+      topicEtlShippableInventoryStatus: etl.shippable-inventory.inventory-status.json-gen1
+      topicEtlShippableInventoryStream: etl.shippable-inventory.inventory-data.json-gen1
+      topicImportOrderStatusOrders: etl.import-order-status.status.json-gen1
+      topicImportTaxCodesTaxcodes: etl.import-tax-codes.tax-codes.json-gen1
+      topicLoyaltyPluginDbUpdates: bobs.etl.loyalty-db-updates.json-gen1
+      topicLoyaltyPluginDbUpdatesStatus: bobs.etl.loyalty-db-updates-status.json-gen1
+      topicPricebooks: reaction.pricing.pricebook-aggregates.avro-gen1
+      topicPricesById: reaction.pricing.prices-by-id-aggregates.avro-gen1
+      topicProductImportErrors: etl.product-import.errors.json-gen1
+      topicProductImportProducts: event.product-import.products.stream.json-gen1
+      topicProductImportProductsPartitions: 3
+    radial:
+      storeId: BOBSUS
+      mode: sandbox
+    orderExport:
+      radialUrl: https://tst02-epapi-na.gsipartners.com/v1.0/OOMF/stores
+    pricing:
+      consumerEnabled: true
+      graphqlUrl: http://reaction-pricing-engine.bobs:8888/graphql
+    inventory:
+      pluginBatchConsumeSize: 1000
+    loyalty:
+      pluginBatchConsumeSize: 10000
+    productPublisher:
+      autoPublish: false
+    resources:
+      requests:
+        memory: 500Mi
+        cpu: 500m
+      limits:
+        memory: 2Gi
+        cpu: "2"
