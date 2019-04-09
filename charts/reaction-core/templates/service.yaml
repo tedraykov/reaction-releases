@@ -1,9 +1,10 @@
+{{- $fullName := include "reaction-core.fullname" . -}}
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ .Release.Name }}
+  name: {{ $fullName }}
   labels:
-    app.kubernetes.io/name: .Release.Name }}
+    app.kubernetes.io/name: {{ include "reaction-core.name" . }}
     app.kubernetes.io/component: core
     app.kubernetes.io/instance: {{ .Release.Name }}
     app.kubernetes.io/managed-by: {{ .Release.Service }}
@@ -21,5 +22,5 @@ spec:
       targetPort: admin
       name: admin
   selector:
-    app.kubernetes.io/name: {{ .Release.Name }}
+    app.kubernetes.io/name: {{ include "reaction-core.name" . }}
     app.kubernetes.io/instance: {{ .Release.Name }}

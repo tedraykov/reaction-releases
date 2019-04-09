@@ -4,6 +4,7 @@ apiVersion: policy/v1beta1
 kind: PodDisruptionBudget
 metadata:
   name: {{ $fullName }}
+  labels:
     app.kubernetes.io/name: {{ $fullName }}
     app.kubernetes.io/component: frontend
     app.kubernetes.io/instance: {{ .Release.Name }}

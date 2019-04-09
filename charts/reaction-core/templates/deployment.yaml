@@ -1,9 +1,10 @@
+{{- $fullName := include "reaction-core.fullname" . -}}
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Release.Name }}
+  name: {{ $fullName }}
   labels:
-    app.kubernetes.io/name: {{ .Release.Name }}
+    app.kubernetes.io/name: {{ include "reaction-core.name" . }}
     app.kubernetes.io/component: core
     app.kubernetes.io/instance: {{ .Release.Name }}
     app.kubernetes.io/managed-by: {{ .Release.Service }}
@@ -12,7 +13,7 @@ spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      app.kubernetes.io/name: {{ .Release.Name }}
+      app.kubernetes.io/name: {{ include "reaction-core.name" . }} 
       app.kubernetes.io/instance: {{ .Release.Name }}
   template:
     metadata:
@@ -23,7 +24,7 @@ spec:
         {{- end }}
 {{- end }}
       labels:
-        app.kubernetes.io/name: {{ .Release.Name }}
+        app.kubernetes.io/name: {{ include "reaction-core.name" . }}
         app.kubernetes.io/instance: {{ .Release.Name }}
     spec:
       containers:
@@ -32,23 +33,23 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           envFrom:
             - configMapRef:
-                name: {{ printf "%s-%s" .Release.Name "config" }}
+                name: {{ printf "%s-%s" $fullName "config" }}
             - configMapRef:
-                name: {{ printf "%s-%s" .Release.Name "hydra" }}
+                name: {{ printf "%s-%s" $fullName "hydra" }}
             - configMapRef:
-                name: {{ printf "%s-%s" .Release.Name "inventory" }}
+                name: {{ printf "%s-%s" $fullName "inventory" }}
             - configMapRef:
-                name: {{ printf "%s-%s" .Release.Name "kafka" }}
+                name: {{ printf "%s-%s" $fullName "kafka" }}
             - configMapRef:
-                name: {{ printf "%s-%s" .Release.Name "loyalty" }}
+                name: {{ printf "%s-%s" $fullName "loyalty" }}
             - configMapRef:
-                name: {{ printf "%s-%s" .Release.Name "orderexport" }}
+                name: {{ printf "%s-%s" $fullName "orderexport" }}
             - configMapRef:
-                name: {{ printf "%s-%s" .Release.Name "pricing" }}
+                name: {{ printf "%s-%s" $fullName "pricing" }}
             - configMapRef:
-                name: {{ printf "%s-%s" .Release.Name "productpublisher" }}
+                name: {{ printf "%s-%s" $fullName "productpublisher" }}
             - configMapRef:
-                name: {{ printf "%s-%s" .Release.Name "radial" }}
+                name: {{ printf "%s-%s" $fullName "radial" }}
             - secretRef:
                 name: reaction-core
           ports:
