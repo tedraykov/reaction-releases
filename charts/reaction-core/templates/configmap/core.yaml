@@ -12,7 +12,7 @@ metadata:
 data:
   SITE_CODE: {{ required "core.siteCode not defined." .Values.core.siteCode | quote }}
   SERVER_TYPE: {{ required "core.serverType not defined." .Values.core.serverType | quote }}
-  INITIAL_IMPORT: {{ required "core.initialImport not defined." .Values.core.intialImport | quote }}
+  INITIAL_IMPORT: {{ required "core.initialImport not defined." .Values.core.initialImport | quote }}
   STARTING_NEW_CUSTOMER_NUMBER: {{ required "core.startingNewCustomerNumber not defined." .Values.core.startingNewCustomerNumber | quote }}
   SKIP_FIXTURES: {{ required "core.skipFixtures not defined." .Values.core.skipFixtures | quote }}
   ROOT_URL: {{ required "core.rootUrl not defined." .Values.core.rootUrl | quote }}
