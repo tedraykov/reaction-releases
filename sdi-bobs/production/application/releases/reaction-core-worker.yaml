@@ -17,7 +17,7 @@ spec:
       max: 10
     image:
       repository: 490759768946.dkr.ecr.us-east-1.amazonaws.com/reaction-core
-      tag: "develop"
+      tag: "55be3e2ea550b41400b4df1b4c6273b66dd33af1"
     ingress:
       enabled: false
     core:
@@ -77,7 +77,7 @@ spec:
       consumerEnabled: false
     product:
       consumerEnabled: false
-      publishedAutoPublish: false
+      publisherAutoPublish: false
     resources:
       requests:
         memory: 500Mi
