@@ -17,7 +17,7 @@ spec:
       max: 10
     image:
       repository: 490759768946.dkr.ecr.us-east-1.amazonaws.com/reaction-core
-      tag: develop
+      tag: "develop"
     ingress:
       hosts:
         - host: api-production.bobs-test.io
