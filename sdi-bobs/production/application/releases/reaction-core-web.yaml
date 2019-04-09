@@ -27,6 +27,7 @@ spec:
       serverType: WEB
       startingNewCustomerNumber: 1100151420184
       skipFixtures: 1
+      initialImport: true
       rootUrl: https://api-production.bobs-test.io
       cartReferenceIdPrefix: 44
       etcdUrl: http://etcd-application.internal.production.k8s.bobs-test.io:2379
@@ -59,21 +60,26 @@ spec:
       topicPricesById: reaction.pricing.prices-by-id-aggregates.avro-gen1
       topicProductImportErrors: etl.product-import.errors.json-gen1
       topicProductImportProducts: event.product-import.products.stream.json-gen1
-      topicProductImportProductsPartitions: 3
+      topicProductImportProductsPartitions: 1
     radial:
       storeId: BOBSUS
       mode: sandbox
     orderExport:
       radialUrl: https://tst02-epapi-na.gsipartners.com/v1.0/OOMF/stores
     pricing:
-      consumerEnabled: true
+      consumerEnabled: false
       graphqlUrl: http://reaction-pricing-engine.bobs:8888/graphql
     inventory:
+      shippableInventoryConsumerEnabled: false
       pluginBatchConsumeSize: 1000
     loyalty:
+      consumerEnabled: false
       pluginBatchConsumeSize: 10000
-    productPublisher:
-      autoPublish: false
+    taxes:
+      consumerEnabled: false
+    product:
+      consumerEnabled: false
+      publishedAutoPublish: false
     resources:
       requests:
         memory: 500Mi

@@ -47,7 +47,9 @@ spec:
             - configMapRef:
                 name: {{ printf "%s-%s" $fullName "pricing" }}
             - configMapRef:
-                name: {{ printf "%s-%s" $fullName "productpublisher" }}
+                name: {{ printf "%s-%s" $fullName "product" }}
+            - configMapRef:
+                name: {{ printf "%s-%s" $fullName "taxes" }}
             - configMapRef:
                 name: {{ printf "%s-%s" $fullName "radial" }}
             - secretRef:

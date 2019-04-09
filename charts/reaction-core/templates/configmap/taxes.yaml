@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: {{ $fullName }}-loyalty
+  name: {{ $fullName }}-taxes
   labels:
     app.kubernetes.io/name: {{ include "reaction-core.name" . }}
     app.kubernetes.io/component: core
@@ -10,5 +10,4 @@ metadata:
     app.kubernetes.io/managed-by: {{ .Release.Service }}
     helm.sh/chart: {{ include "reaction-core.chart" . }}
 data:
-  LOYALTY_PLUGIN_BATCH_CONSUME_SIZE: {{ required "loyalty.pluginBatchConsumeSize is not defined." .Values.loyalty.pluginBatchConsumeSize | quote }}
-  LOYALTY_CONSUMER_ENABLED: {{ required "loyalty.consumerEnabled is not defined." .Values.loyalty.consumerEnabled | quote }}
+  TAXES_CONSUMER_ENABLED: {{ required "taxes.consumerEnabled is not defined." .Values.taxes.consumerEnabled | quote }}

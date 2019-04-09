@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: {{ $fullName }}-productpublisher
+  name: {{ $fullName }}-product
   labels:
     app.kubernetes.io/name: {{ include "reaction-core.name" . }}
     app.kubernetes.io/component: core
@@ -10,4 +10,5 @@ metadata:
     app.kubernetes.io/managed-by: {{ .Release.Service }}
     helm.sh/chart: {{ include "reaction-core.chart" . }}
 data:
-  PRODUCT_PUBLISHER_AUTO_PUBLISH: {{ required "productPublisher.autoPublish is not defined." .Values.productPublisher.autoPublish | quote }}
+  PRODUCT_CONSUMER_ENABLED: {{ required "product.consumerEnabled is not defined." .Values.product.consumerEnabled | quote }}
+  PRODUCT_PUBLISHER_AUTO_PUBLISH: {{ required "product.productPublisherAutoPublish is not defined." .Values.product.productPublisherAutoPublish | quote }}
