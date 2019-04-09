@@ -11,3 +11,4 @@ metadata:
     helm.sh/chart: {{ include "reaction-core.chart" . }}
 data:
   INVENTORY_PLUGIN_BATCH_CONSUME_SIZE: {{ required "inventory.pluginBatchConsumeSize is not defined." .Values.inventory.pluginBatchConsumeSize | quote }}
+  SHIPPABLE_INVENTORY_CONSUMER_ENABLED: {{ required "inventory.shippableInventoryConsumerEnabled is not defined." .Values.inventory.shippableInventoryConsumerEnabled | quote }}
