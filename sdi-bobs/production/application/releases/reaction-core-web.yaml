@@ -1,10 +1,10 @@
 apiVersion: flux.weave.works/v1beta1
 kind: HelmRelease
 metadata:
-  name: reaction-core
+  name: reaction-core-web
   namespace: bobs
 spec:
-  releaseName: reaction-core
+  releaseName: reaction-core-web
   chart:
     git: git@github.com:sportsdirect/sdi-releases.git
     path: charts/reaction-core
@@ -24,7 +24,7 @@ spec:
           paths: ['/']
     core:
       siteCode: BOBS
-      serverType: WORKER
+      serverType: WEB
       startingNewCustomerNumber: 1100151420184
       skipFixtures: 1
       rootUrl: https://api-production.bobs-test.io
