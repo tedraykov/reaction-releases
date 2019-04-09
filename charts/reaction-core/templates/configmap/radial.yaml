@@ -1,14 +1,13 @@
-{{- $fullName := include "reaction-storefront.fullname" . -}}
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: {{ $fullName }}-radial
+  name: {{ .Release.Name }}-radial
   labels:
-    app.kubernetes.io/name: {{ $fullName }}
+    app.kubernetes.io/name: {{ .Release.Name }}
     app.kubernetes.io/component: frontend
     app.kubernetes.io/instance: {{ .Release.Name }}
     app.kubernetes.io/managed-by: {{ .Release.Service }}
-    helm.sh/chart: {{ $fullName }}
+    helm.sh/chart: {{ include "reaction-core.chart" . }}
 data:
   RADIAL_STORE_ID: {{ required "radial.storeId not defined." .Values.radial.storeId | quote }}
   RADIAL_MODE: {{ required "radial.mode not defined." .Values.radial.mode | quote }}

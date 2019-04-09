@@ -1,14 +1,13 @@
-{{- $fullName := include "reaction-core.fullname" . -}}
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: {{ $fullName }}-config
+  name: {{ .Release.Name }}-config
   labels:
-    app.kubernetes.io/name: {{ $fullName }}
+    app.kubernetes.io/name: {{ .Release.Name }}
     app.kubernetes.io/component: frontend
     app.kubernetes.io/instance: {{ .Release.Name }}
     app.kubernetes.io/managed-by: {{ .Release.Service }}
-    helm.sh/chart: {{ $fullName }}
+    helm.sh/chart: {{ include "reaction-core.chart" . }}
 data:
   SITE_CODE: {{ required "core.siteCode not defined." .Values.core.siteCode | quote }}
   SERVER_TYPE: {{ required "core.serverType not defined." .Values.core.serverType | quote }}
