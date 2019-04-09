@@ -9,5 +9,5 @@ metadata:
     app.kubernetes.io/managed-by: {{ .Release.Service }}
     helm.sh/chart: {{ include "reaction-core.chart" . }}
 data:
-  HYDRA_ADMIN_URL: {{ required "hydra.adminUrl not defined." .Values.hydra.adminUr | quote }}
+  HYDRA_ADMIN_URL: {{ required "hydra.adminUrl not defined." .Values.hydra.adminUrl | quote }}
   HYDRA_OAUTH2_INTROSPECT_URL: {{ required "hydra.oauth2IntrospectUrl not defined." .Values.hydra.oauth2IntrospectUrl | quote }}
