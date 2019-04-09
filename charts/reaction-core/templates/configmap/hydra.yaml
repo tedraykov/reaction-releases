@@ -1,9 +1,10 @@
+{{- $fullName := include "reaction-core.fullname" . -}}
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: {{ .Release.Name }}-hydra
+  name: {{ $fullName }}-hydra
   labels:
-    app.kubernetes.io/name: {{ .Release.Name }}
+    app.kubernetes.io/name: {{ include "reaction-core.name" . }}
     app.kubernetes.io/component: core
     app.kubernetes.io/instance: {{ .Release.Name }}
     app.kubernetes.io/managed-by: {{ .Release.Service }}

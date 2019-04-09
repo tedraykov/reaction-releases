@@ -1,10 +1,11 @@
 {{- if .Values.ingress.enabled -}}
+{{- $fullName := include "reaction-core.fullname" . -}}
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: {{ .Release.Name }}
+  name: {{ $fullName }}
   labels:
-    app.kubernetes.io/name: {{ .Release.Name }}
+    app.kubernetes.io/name: {{ include "reaction-core.name" . }}
     app.kubernetes.io/component: core
     app.kubernetes.io/instance: {{ .Release.Name }}
     app.kubernetes.io/managed-by: {{ .Release.Service }}
@@ -32,7 +33,7 @@ spec:
         {{- range .paths }}
           - path: {{ . | default '/' }}
             backend:
-              serviceName: {{ .Release.Name }}
+              serviceName: {{ $fullName }}
               servicePort: http
         {{- end }}
   {{- end }}
