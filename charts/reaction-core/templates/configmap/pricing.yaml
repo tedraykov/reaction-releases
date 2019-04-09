@@ -1,0 +1,16 @@
+{{- if .Values.contentstack.enabled -}}
+{{- $fullName := include "reaction-core.fullname" . -}}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ $fullName }}-pricing
+  labels:
+    app.kubernetes.io/name: {{ $fullName }}
+    app.kubernetes.io/component: frontend
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+    helm.sh/chart: {{ $fullName }}
+data:
+  PRICING_CONSUMER_ENABLED: {{ required "pricing.consumerEnabled is not defined." .Values.pricing.consumerEnabled | quote }}
+  PRICING_GRAPHQL_URL: {{ required "pricing.graphqlUrl is not defined." .Values.pricing.graphqlUrl | quote }}
+{{- end -}}
