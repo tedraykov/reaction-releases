@@ -1,0 +1,30 @@
+{{- $fullName := include "reaction-kafka.fullname" . -}}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ $fullName }}-kafka
+  labels:
+    app.kubernetes.io/name: {{ $fullName }}
+    app.kubernetes.io/component: frontend
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+    helm.sh/chart: {{ $fullName }}
+data:
+  KAFKA_BOOTSTRAP_SERVERS: {{ required "kafka.bootstrapServers not defined." .Values.kafka.bootstrapServers | quote }}
+  KAFKA_CLUSTER: {{ required "kafka.cluster not defined." .Values.kafka.cluster | quote }}
+  SCHEMA_REGISTRY_URL: {{ required "kafka.schemaRegistryUrl not defined." .Values.kafka.schemaRegistryUrl | quote }}
+  KAFKA_PARTITIONS_LOYALTY: {{ required "kafka.partitionsLoyalty not defined." .Values.kafka.partitionsLoyalty | quote }}
+  KAFKA_PARTITION_ETL_SHIPPABLE_INVENTORY_STATUS: {{ required "kafka.partitionsEtlShippableInventoryStatus not defined." .Values.kafka.partitionsEtlShippableInventoryStatus | quote }}
+  KAFKA_TOPIC_CATALOG_IMPORT_ERRORS: {{ required "kafka.topicCatalogImportErrors not defined." .Values.kafka.topicCatalogImportErrors | quote }}
+  KAFKA_TOPIC_CATALOG_SYNC_PRODUCTS: {{ required "kafka.topicCatalogSyncProducts not defined." .Values.kafka.topicCatalogSyncProducts | quote }}
+  KAFKA_TOPIC_ETL_SHIPPABLE_INVENTORY_STATUS: {{ required "kafka.topicEtlShippableInventoryStatus not defined." .Values.kafka.topicEtlShippableInventoryStatus | quote }}
+  KAFKA_TOPIC_ETL_SHIPPABLE_INVENTORY_STREAM: {{ required "kafka.topicEtlShippableInventoryStream not defined." .Values.kafka.topicEtlShippableInventoryStream | quote }}
+  KAFKA_TOPIC_IMPORT_ORDER_STATUS_ORDERS: {{ required "kafka.topicImportOrderStatusOrders not defined." .Values.kafka.topicImportOrderStatusOrders | quote }}
+  KAFKA_TOPIC_IMPORT_TAX_CODES_TAXCODES: {{ required "kafka.topicImportTaxCodesTaxcodes not defined." .Values.kafka.topicImportTaxCodesTaxcodes | quote }}
+  KAFKA_TOPIC_LOYALTY_PLUGIN_DB_UPDATES: {{ required "kafka.topicLoyaltyPluginDbUpdates not defined." .Values.kafka.topicLoyaltyPluginDbUpdates | quote }}
+  KAFKA_TOPIC_LOYALTY_PLUGIN_DB_UPDATES_STATUS: {{ required "kafka.topicLoyaltyPluginDbUpdatesStatus not defined." .Values.kafka.topicLoyaltyPluginDbUpdatesStatus | quote }}
+  KAFKA_TOPIC_PRICEBOOKS: {{ required "kafka.topicPricebooks not defined." .Values.kafka.topicPricebooks | quote }}
+  KAFKA_TOPIC_PRICES_BY_ID: {{ required "kafka.topicPricesById not defined." .Values.kafka.topicPricesById | quote }}
+  KAFKA_TOPIC_PRODUCT_IMPORT_ERRORS: {{ required "kafka.topicProductImportErrors not defined." .Values.kafka.topicProductImportErrors | quote }}
+  KAFKA_TOPIC_PRODUCT_IMPORT_PRODUCTS: {{ required "kafka.topicProductImportProducts not defined." .Values.kafka.topicProductImportProducts | quote }}
+  KAFKA_TOPIC_PRODUCT_IMPORT_PRODUCTS_PARTITIONS: {{ required "kafka.topicProductImportProductsPartitions not defined." .Values.kafka.topicProductImportProductsPartitions | quote }}

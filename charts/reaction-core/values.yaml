@@ -1,0 +1,65 @@
+# Default values for reaction-core.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 1
+
+image: {}
+#  repository: XXX
+#  tag: latest
+#  pullPolicy: IfNotPresent
+
+nameOverride: ""
+fullnameOverride: ""
+
+annotations: {}
+
+service:
+  type: ClusterIP
+  port: 8080
+  adminPort: 8081
+
+ingress:
+  enabled: true
+  annotations: {}
+    # kubernetes.io/ingress.class: nginx
+    # kubernetes.io/tls-acme: "true"
+    #
+# hosts:
+#   - host: www.example.com
+#     paths: ['/']
+
+resources: {}
+  # We usually recommend not to specify default resources and to leave this as a conscious
+  # choice for the user. This also increases chances charts run on environments with little
+  # resources, such as Minikube. If you do want to specify resources, uncomment the following
+  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+  # limits:
+  #   cpu: 100m
+  #   memory: 128Mi
+  # requests:
+  #   cpu: 100m
+  #   memory: 128Mi
+
+#maxUnavailable: 1
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
+
+core: {}
+#  name: example
+#  baseUrl: https://www.example.com/
+#  elasticsearchUrl: http://elasticsearch:9200
+#  imageUrl: https://www.example.com/
+#  defaultShippingMethodRate: 2.99
+#  printErrors: false
+#  sessionMaxAge: 2592000000
+
+horizontalPodAutoscaler:
+  enabled: false
+  #  averageUtilization: 50
+  #  min: 1
+  #  max: 3
