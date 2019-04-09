@@ -1,15 +1,14 @@
 {{- if .Values.horizontalPodAutoscaler.enabled -}}
-{{- $fullName := include "reaction-core.fullname" . -}}
 apiVersion: autoscaling/v2beta1
 kind: HorizontalPodAutoscaler
 metadata:
-  name: {{ $fullName }}
+  name: {{ .Release.Name }}
   labels:
-    app.kubernetes.io/name: {{ include "reaction-core.name" . }}
+    app.kubernetes.io/name: {{ .Release.Name }}
     app.kubernetes.io/component: frontend
     app.kubernetes.io/instance: {{ .Release.Name }}
     app.kubernetes.io/managed-by: {{ .Release.Service }}
-    helm.sh/chart: {{ include "reaction-core.chart" . }}
+    helm.sh/chart: {{ .Release.Name }}
   {{- with .Values.ingress.annotations }}
   annotations:
     {{- toYaml . | nindent 4 }}
@@ -18,7 +17,7 @@ spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: {{ $fullName }}
+    name: {{ .Release.Name }}
   minReplicas: {{ .Values.horizontalPodAutoscaler.min | default 1 }}
   maxReplicas: {{ .Values.horizontalPodAutoscaler.min | default 3 }}
   targetCPUUtilizationPercentage: {{ .Values.horizontalPodAutoscaler.averageUtilization | default 50 }}
