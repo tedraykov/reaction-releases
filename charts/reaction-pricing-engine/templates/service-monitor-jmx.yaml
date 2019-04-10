@@ -1,0 +1,18 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: {{ include "reaction-pricing-engine.fullname" . }}-jmx
+  labels:
+    app.kubernetes.io/name: {{ include "reaction-pricing-engine.name" . }}-jmx
+    app.kubernetes.io/component: pricing-engine
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+    helm.sh/chart: {{ include "reaction-pricing-engine.chart" . }}
+    monitoring: "{{ .Values.service.serviceMonitorLabel }}"
+spec:
+  endpoints:
+  - interval: 30s
+    port: jmx
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: {{ include "reaction-pricing-engine.name" . }}-jmx

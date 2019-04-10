@@ -1,0 +1,80 @@
+#horizontalPodAutoscaler:
+#  enabled: true
+#  averageUtilization: 70
+#  min: 1
+#  max: 10
+#persistence:
+#    enabled: true
+#    accessMode: ReadWriteOnce
+#    size: 10Gi
+#mountPath: /data
+#service:
+#  type: ClusterIP
+#  apiPort: 8888
+#  healthcheckPort: 3000
+#  jmxPort: 9010
+#  serviceMonitorLabel: application
+#  healthcheckPath: /_healthcheck
+#  healthcheckPath: /_healthcheck
+#  livenessProbe:
+#    initialDelaySeconds: 90
+#    periodSeconds: 20
+#    timeoutSeconds: 30
+#    successThreshold: 1
+#    failureThreshold: 2
+#  readinessProbe:
+#    initialDelaySeconds: 30
+#    periodSeconds: 20
+#    timeoutSeconds: 30
+#    successThreshold: 1
+#    failureThreshold: 2
+#image:
+#  repository: 490759768946.dkr.ecr.us-east-1.amazonaws.com/reaction-pricing-engine
+#  tag: "37ba7200d665041f8dab836b4072f797e7ba4284"
+#ingress:
+#  hosts:
+#    - host: pe-production.bobs-test.io
+#      paths: ['/']
+#jmx:
+#  image: reactioncommerce/jmx-prometheus-exporter
+#  imageTag: configurable-via-env
+#  port: 5556
+#  service:
+#    type: ClusterIP
+#  envVars:
+#  -   key: JMX_HOST_PORT
+#      value: localhost:9010
+#config:
+#  jvmOpts: "-d64 -Xms2560m -Xmx2560m"
+#  kafkaStreamsApplicationServer: "reaction-pricing-engine:3000"
+#  kafkaStreamsStateDir: "/data/kafka-streams"
+#  bootstrapServers: "broker0.kafka-production.k8s.bobs-test.io:9092,broker1.kafka-production.k8s.bobs-test.io:9093,broker2.kafka-production.k8s.bobs-test.io:9094"
+#  schemaRegistryUrl: "http://schema-registry.kafka-production.k8s.bobs-test.io:8081"
+#  zookeeperConnect: "zookeeper.kafka-production.k8s.bobs-test.io:2181"
+#  keySerializer: "org.apache.kafka.common.serialization.StringSerializer"
+#  valueSerializer: "io.confluent.kafka.streams.serdes.avro.GenericAvroSerializer"
+#  keySubjectNameStrategy: "io.confluent.kafka.serializers.subject.RecordNameStrategy"
+#  valueSubjectNameStrategy: "io.confluent.kafka.serializers.subject.RecordNameStrategy"
+#  kafkaStreamsApplicationId: "reaction.pricing.v1"
+#  autoOffsetReset: "earliest"
+#  bufferedRecordsPerPartition: "0"
+#  cacheMaxBytesBuffering: "0"
+#  keySerde: "org.apache.kafka.common.serialization.Serdes$StringSerde"
+#  valueSerde: "io.confluent.kafka.streams.serdes.avro.GenericAvroSerde"
+#  producerInterceptorClasses: "io.confluent.monitoring.clients.interceptor.MonitoringProducerInterceptor"
+#  consumerInterceptorClasses: "io.confluent.monitoring.clients.interceptor.MonitoringConsumerInterceptor"
+#  pricebookEventsTopic: "reaction.pricing.pricebook-events.avro-gen1"
+#  pricebookAggregatesTopic: "reaction.pricing.pricebook-aggregates.avro-gen1"
+#  pricebookAggregatesStateStoreName: "reaction.pricing.pricebook-aggregates-store.avro-gen1"
+#  pricebookEntryEventsTopic: "reaction.pricing.pricebook-entry-events.avro-gen1"
+#  pricebookEntryAggregatesTopic: "reaction.pricing.pricebook-entry-aggregates.avro-gen1"
+#  pricebookEntryAggregatesStateStoreName: "reaction.pricing.pricebook-entry-aggregates-store.avro-gen1"
+#  pricesByIdAggregatesTopic: "reaction.pricing.prices-by-id-aggregates.avro-gen1"
+#  pricesByIdStateStoreName: "reaction.pricing.prices-by-id-aggregates-store.avro-gen1"
+#resources:
+#    requests:
+#        memory: 3Gi
+#        cpu: 500m
+#    limits:
+#        memory: 4Gi
+#        cpu: 1000m
