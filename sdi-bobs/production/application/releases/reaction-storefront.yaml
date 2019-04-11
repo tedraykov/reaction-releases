@@ -20,12 +20,12 @@ spec:
       tag: "9c29107babe9b0fb6d5758b9bed8cdbac371f50e"
     ingress:
       hosts:
-        - host: storefront-production.bobs-test.io
+        - host: jasper.bobstores.com
           paths: ['/']
     storefront:
       name: bobs
-      baseUrl: https://storefront-production.bobs-test.io
-      imageUrl: https://storefront-production.bobs-test.io
+      baseUrl: https://jasper.bobstores.com
+      imageUrl: https://jasper.bobstores.com
       defaultShippingMethodId: SPbMh5gdz24Wr4J94
       defaultShippingMethodRate: "2.99"
       elasticsearchUrl: http://elasticsearch:9200
@@ -40,10 +40,10 @@ spec:
       rdfUrl: https://tst-rdf.radial.com/rdf/service/scripts?clientIdentifier=BOBSUS
     oauth2:
       clientId: bobs-production-storefront
-      url: https://auth-production.bobs-test.io/oauth2/auth
+      url: https://auth.bobstores.com/oauth2/auth
       host: hydra-hydra-admin-service
-      idpHostUrl: https://api-production.bobs-test.io
-      redirectUrl: https://storefront-production.bobs-test.io/callback
+      idpHostUrl: https://api.bobstores.com
+      redirectUrl: https://jasper.bobstores.com/callback
       tokenUrl: http://hydra-hydra-main-service:4444/oauth2/token
     contentstack:
       enabled: true
