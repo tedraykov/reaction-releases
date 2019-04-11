@@ -56,7 +56,7 @@ spec:
             successThreshold: 1
             failureThreshold: 2
             httpGet:
-              path: {{ .Values.service.healthcheckPath }}
+              path: /_healthcheck
               port: {{ .Values.service.healthcheckPort }}
           readinessProbe:
             initialDelaySeconds: 30
@@ -65,7 +65,7 @@ spec:
             successThreshold: 1
             failureThreshold: 2
             httpGet:
-              path: {{ .Values.service.healthcheckPath }}
+              path: /_healthcheck
               port: {{ .Values.service.healthcheckPort }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}

@@ -15,8 +15,6 @@ service:
   healthcheckPort: 3000
   jmxPort: 9010
   serviceMonitorLabel: application
-  healthcheckPath: /_healthcheck
-  healthcheckPath: /_healthcheck
 ingress:
   enabled: false
   hosts:
