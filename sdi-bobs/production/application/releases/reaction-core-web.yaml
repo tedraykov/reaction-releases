@@ -38,6 +38,7 @@ spec:
       kafkaSchemaRegistryUrl: http://schema-registry.kafka-production.k8s.bobs-test.io:8081
       kafkaPartitionsLoyalty: 3
       kafkaPartitionsEtlShippableInventoryStatus: 1
+      kafkaTopicProductImportErrorsPartitions: 3
       kafkaTopicProductImportProductsPartitions: 1
       orderExportRadialUrl: https://tst02-epapi-na.gsipartners.com/v1.0/OOMF/stores
       pricingGraphqlUrl: http://reaction-pricing-engine.bobs:8888/graphql

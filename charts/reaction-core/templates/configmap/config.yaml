@@ -44,6 +44,7 @@ data:
   KAFKA_TOPIC_PRICEBOOKS: {{ required "config.kafkaTopicPricebooks not defined." .Values.config.kafkaTopicPricebooks | quote }}
   KAFKA_TOPIC_PRICES_BY_ID: {{ required "config.kafkaTopicPricesById not defined." .Values.config.kafkaTopicPricesById | quote }}
   KAFKA_TOPIC_PRODUCT_IMPORT_ERRORS: {{ required "config.kafkaTopicProductImportErrors not defined." .Values.config.kafkaTopicProductImportErrors | quote }}
+  KAFKA_TOPIC_PRODUCT_IMPORT_ERRORS_PARTITIONS: {{ required "config.kafkaTopicProductImportErrorsPartitions not defined." .Values.config.kafkaTopicProductImportErrorsPartitions | quote }}
   KAFKA_TOPIC_PRODUCT_IMPORT_PRODUCTS: {{ required "config.kafkaTopicProductImportProducts not defined." .Values.config.kafkaTopicProductImportProducts | quote }}
   KAFKA_TOPIC_PRODUCT_IMPORT_PRODUCTS_PARTITIONS: {{ required "config.kafkaTopicProductImportProductsPartitions not defined." .Values.config.kafkaTopicProductImportProductsPartitions | quote }}
   INVENTORY_PLUGIN_BATCH_CONSUME_SIZE: {{ required "config.inventoryPluginBatchConsumeSize is not defined." .Values.config.inventoryPluginBatchConsumeSize | quote }}
