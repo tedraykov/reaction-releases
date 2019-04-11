@@ -100,3 +100,4 @@ segmentAnalytics: {}
 sentry: {}
 #  enabled: true
 #  dsn: https://XXX@sentry.io/XXX
+#  env: production
