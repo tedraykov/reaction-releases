@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: {{ $fullName }}-config
+  name: {{ $fullName }}
   labels:
     app.kubernetes.io/name: {{ include "reaction-core.name" . }}
     app.kubernetes.io/component: core
@@ -26,7 +26,7 @@ data:
   REACTION_USER: {{ required "config.user not defined." .Values.config.user | quote }}
   GRAPHQL_INTROSPECTION_ENABLED: {{ required "config.graphqlIntrospection not defined." .Values.config.graphqlIntrospection | quote }}
   GRAPHQL_PLAYGROUND_ENABLED: {{ required "config.graphqlPlayground not defined." .Values.config.graphqlPlayground | quote }}
-  HYDRA_ADMIN_URL: {{ required "config.hydraAdminUrl not defined." .Values.config.hydraAdminUrll | quote }}
+  HYDRA_ADMIN_URL: {{ required "config.hydraAdminUrl not defined." .Values.config.hydraAdminUrl | quote }}
   HYDRA_OAUTH2_INTROSPECT_URL: {{ required "config.hydraOauth2IntrospectUrl not defined." .Values.config.hydraOauth2IntrospectUrl | quote }}
   KAFKA_BOOTSTRAP_SERVERS: {{ required "config.kafkaBootstrapServers not defined." .Values.config.kafkaBootstrapServers | quote }}
   KAFKA_CLUSTER: {{ required "config.kafkaCluster not defined." .Values.config.kafkaCluster | quote }}

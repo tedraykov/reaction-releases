@@ -33,7 +33,7 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           envFrom:
             - configMapRef:
-                name: {{ printf "%s-%s" $fullName "config" }}
+                name: {{ $fullName }}
             - configMapRef:
                 name: {{ printf "%s-%s" $fullName "radial" }}
             - secretRef:
