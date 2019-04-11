@@ -35,22 +35,6 @@ spec:
             - configMapRef:
                 name: {{ printf "%s-%s" $fullName "config" }}
             - configMapRef:
-                name: {{ printf "%s-%s" $fullName "hydra" }}
-            - configMapRef:
-                name: {{ printf "%s-%s" $fullName "inventory" }}
-            - configMapRef:
-                name: {{ printf "%s-%s" $fullName "kafka" }}
-            - configMapRef:
-                name: {{ printf "%s-%s" $fullName "loyalty" }}
-            - configMapRef:
-                name: {{ printf "%s-%s" $fullName "orderexport" }}
-            - configMapRef:
-                name: {{ printf "%s-%s" $fullName "pricing" }}
-            - configMapRef:
-                name: {{ printf "%s-%s" $fullName "product" }}
-            - configMapRef:
-                name: {{ printf "%s-%s" $fullName "taxes" }}
-            - configMapRef:
                 name: {{ printf "%s-%s" $fullName "radial" }}
             - secretRef:
                 name: reaction-core
