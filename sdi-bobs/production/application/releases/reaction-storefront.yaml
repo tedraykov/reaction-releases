@@ -54,7 +54,7 @@ spec:
     sentry:
       enabled: true
       dsn: https://0d6525f016ba482eba2b17fa3266dda9@sentry.io/1397837
-      env: production
+      environment: production
     resources:
       requests:
         memory: 500Mi
