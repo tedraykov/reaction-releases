@@ -12,7 +12,7 @@ spec:
   type: {{ .Values.service.type }}
   ports:
   - name: http
-    port: {{ .Values.service.apiPort | int }}
+    port: {{ .Values.service.httpPort | int }}
     targetPort: {{ .Values.service.apiPort | int }}
     protocol: TCP
   - name: healthcheck

@@ -10,52 +10,17 @@ spec:
     path: charts/reaction-pricing-engine
     ref: develop
   values:
-    horizontalPodAutoscaler:
-      enabled: true
-      averageUtilization: 70
-      min: 1
-      max: 10
-    persistence:
-        enabled: true
-        accessMode: ReadWriteOnce
-        size: 10Gi
-    mountPath: /data
-    service:
-      type: ClusterIP
-      apiPort: 8888
-      healthcheckPort: 3000
-      jmxPort: 9010
-      serviceMonitorLabel: application
-      healthcheckPath: /_healthcheck
-      healthcheckPath: /_healthcheck
-      livenessProbe:
-        initialDelaySeconds: 90
-        periodSeconds: 20
-        timeoutSeconds: 30
-        successThreshold: 1
-        failureThreshold: 2
-      readinessProbe:
-        initialDelaySeconds: 30
-        periodSeconds: 20
-        timeoutSeconds: 30
-        successThreshold: 1
-        failureThreshold: 2
     image:
       repository: 490759768946.dkr.ecr.us-east-1.amazonaws.com/reaction-pricing-engine
       tag: "37ba7200d665041f8dab836b4072f797e7ba4284"
     ingress:
+      enabled: true
       hosts:
         - host: pe-production.bobs-test.io
           paths: ['/']
     jmx:
       image: reactioncommerce/jmx-prometheus-exporter
       imageTag: configurable-via-env
-      port: 5556
-      service:
-        type: ClusterIP
-      envVars:
-      -   key: JMX_HOST_PORT
-          value: localhost:9010
     config:
       jvmOpts: "-d64 -Xms2560m -Xmx2560m"
       kafkaStreamsApplicationServer: "reaction-pricing-engine:3000"
