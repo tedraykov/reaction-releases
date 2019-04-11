@@ -12,4 +12,5 @@ metadata:
     helm.sh/chart: {{ $fullName }}
 data:
   SENTRY_DSN: {{ required "sentry.dsn not defined" .Values.sentry.dsn | quote }}
+  SENTRY_ENV: {{ required "sentry.env not defined" .Values.sentry.env | quote }}
 {{- end -}}
