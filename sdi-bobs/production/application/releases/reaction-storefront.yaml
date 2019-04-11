@@ -47,13 +47,14 @@ spec:
       tokenUrl: http://hydra-hydra-main-service:4444/oauth2/token
     contentstack:
       enabled: true
-      environment: staging
+      environment: production
     segmentAnalytics:
       enabled: true
       skipMinimize: true
     sentry:
       enabled: true
       dsn: https://0d6525f016ba482eba2b17fa3266dda9@sentry.io/1397837
+      env: production
     resources:
       requests:
         memory: 500Mi
