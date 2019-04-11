@@ -17,18 +17,6 @@ service:
   serviceMonitorLabel: application
   healthcheckPath: /_healthcheck
   healthcheckPath: /_healthcheck
-  livenessProbe:
-    initialDelaySeconds: 90
-    periodSeconds: 20
-    timeoutSeconds: 30
-    successThreshold: 1
-    failureThreshold: 2
-  readinessProbe:
-    initialDelaySeconds: 30
-    periodSeconds: 20
-    timeoutSeconds: 30
-    successThreshold: 1
-    failureThreshold: 2
 ingress:
   enabled: false
   hosts:

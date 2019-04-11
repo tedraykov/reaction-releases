@@ -50,20 +50,20 @@ spec:
             - name: healthcheck
               containerPort: {{ .Values.service.healthcheckPort }}
           livenessProbe:
-            initialDelaySeconds: {{ .Values.service.livenessProbe.initialDelaySeconds }}
-            periodSeconds: {{ .Values.service.livenessProbe.periodSeconds }}
-            timeoutSeconds: {{ .Values.service.livenessProbe.timeoutSeconds }}
-            successThreshold: {{ .Values.service.livenessProbe.successThreshold }}
-            failureThreshold: {{ .Values.service.livenessProbe.failureThreshold }}
+            initialDelaySeconds: 90
+            periodSeconds: 20
+            timeoutSeconds: 30
+            successThreshold: 1
+            failureThreshold: 2
             httpGet:
               path: {{ .Values.service.healthcheckPath }}
               port: {{ .Values.service.healthcheckPort }}
           readinessProbe:
-            initialDelaySeconds: {{ .Values.service.readinessProbe.initialDelaySeconds }}
-            periodSeconds: {{ .Values.service.readinessProbe.periodSeconds }}
-            timeoutSeconds: {{ .Values.service.readinessProbe.timeoutSeconds }}
-            successThreshold: {{ .Values.service.readinessProbe.successThreshold }}
-            failureThreshold: {{ .Values.service.readinessProbe.failureThreshold }}
+            initialDelaySeconds: 30
+            periodSeconds: 20
+            timeoutSeconds: 30
+            successThreshold: 1
+            failureThreshold: 2
             httpGet:
               path: {{ .Values.service.healthcheckPath }}
               port: {{ .Values.service.healthcheckPort }}

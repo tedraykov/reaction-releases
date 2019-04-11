@@ -13,11 +13,11 @@ spec:
   ports:
   - name: http
     port: {{ .Values.service.httpPort | int }}
-    targetPort: {{ .Values.service.apiPort | int }}
+    targetPort: api
     protocol: TCP
   - name: healthcheck
     port: {{ .Values.service.healthcheckPort | int }}
-    targetPort: {{ .Values.service.healthcheckPort | int }}
+    targetPort: healthcheck
     protocol: TCP
   selector:
     app.kubernetes.io/name: {{ include "reaction-pricing-engine.name" . }}
