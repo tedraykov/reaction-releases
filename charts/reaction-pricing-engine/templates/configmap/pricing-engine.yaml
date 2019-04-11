@@ -1,0 +1,38 @@
+{{- $fullName := include "reaction-pricing-engine.fullname" . -}}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ $fullName }}-config
+  labels:
+    app.kubernetes.io/name: {{ $fullName }}
+    app.kubernetes.io/component: pricing-engine
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+    helm.sh/chart: {{ include "reaction-pricing-engine.chart" . }}
+data:
+  JVM_OPTS: {{ required "config.jvmOpts not defined." .Values.config.jvmOpts | quote }}
+  PRICING_KAFKA_STREAMS_APPLICATION_SERVER: {{ required "config.kafkaStreamsApplicationServer not defined." .Values.config.kafkaStreamsApplicationServer | quote }}
+  PRICING_KAFKA_STREAMS_STATE_DIR: {{ required "config.kafkaStreamsStateDir not defined." .Values.config.kafkaStreamsStateDir | quote }}
+  PRICING_BOOTSTRAP_SERVERS: {{ required "config.bootstrapServers not defined." .Values.config.bootstrapServers | quote }}
+  PRICING_SCHEMA_REGISTRY_URL: {{ required "config.schemaRegistryUrl not defined." .Values.config.schemaRegistryUrl | quote }}
+  PRICING_ZOOKEEPER_CONNECT: {{ required "config.zookeeperConnect not defined." .Values.config.zookeeperConnect | quote }}
+  PRICING_KEY_SERIALIZER: {{ required "config.keySerializer not defined." .Values.config.keySerializer | quote }}
+  PRICING_VALUE_SERIALIZER: {{ required "config.valueSerializer not defined." .Values.config.valueSerializer | quote }}
+  PRICING_KEY_SUBJECT_NAME_STRATEGY: {{ required "config.keySubjectNameStrategy not defined." .Values.config.keySubjectNameStrategy | quote }}
+  PRICING_VALUE_SUBJECT_NAME_STRATEGY: {{ required "config.valueSubjectNameStrategy not defined." .Values.config.valueSubjectNameStrategy | quote }}
+  PRICING_KAFKA_STREAMS_APPLICATION_ID: {{ required "config.kafkaStreamsApplicationId not defined." .Values.config.kafkaStreamsApplicationId | quote }}
+  PRICING_AUTO_OFFSET_RESET: {{ required "config.autoOffsetReset not defined." .Values.config.autoOffsetReset | quote }}
+  PRICING_BUFFERED_RECORDS_PER_PARTITION: {{ required "config.bufferedRecordsPerPartition not defined." .Values.config.bufferedRecordsPerPartition | quote }}
+  PRICING_CACHE_MAX_BYTES_BUFFERING: {{ required "config.cacheMaxBytesBuffering not defined." .Values.config.cacheMaxBytesBuffering | quote }}
+  PRICING_KEY_SERDE: {{ required "config.keySerde not defined." .Values.config.keySerde | quote }}
+  PRICING_VALUE_SERDE: {{ required "config.valueSerde not defined." .Values.config.valueSerde | quote }}
+  PRICING_PRODUCER_INTERCEPTOR_CLASSES: {{ required "config.producerInterceptorClasses not defined." .Values.config.producerInterceptorClasses | quote }}
+  PRICING_CONSUMER_INTERCEPTOR_CLASSES: {{ required "config.consumerInterceptorClasses not defined." .Values.config.consumerInterceptorClasses | quote }}
+  PRICING_PRICEBOOK_EVENTS_TOPIC: {{ required "config.pricebookEventsTopic not defined." .Values.config.pricebookEventsTopic | quote }}
+  PRICING_PRICEBOOK_AGGREGATES_TOPIC: {{ required "config.pricebookAggregatesTopic not defined." .Values.config.pricebookAggregatesTopic | quote }}
+  PRICING_PRICEBOOK_AGGREGATES_STATE_STORE_NAME: {{ required "config.pricebookAggregatesStateStoreName not defined." .Values.config.pricebookAggregatesStateStoreName | quote }}
+  PRICING_PRICEBOOK_ENTRY_EVENTS_TOPIC: {{ required "config.pricebookEntryEventsTopic not defined." .Values.config.pricebookEntryEventsTopic | quote }}
+  PRICING_PRICEBOOK_ENTRY_AGGREGATES_TOPIC: {{ required "config.pricebookEntryAggregatesTopic not defined." .Values.config.pricebookEntryAggregatesTopic | quote }}
+  PRICING_PRICEBOOK_ENTRY_AGGREGATES_STATE_STORE_NAME: {{ required "config.pricebookEntryAggregatesStateStoreName not defined." .Values.config.pricebookEntryAggregatesStateStoreName | quote }}
+  PRICING_PRICES_BY_ID_AGGREGATES_TOPIC: {{ required "config.pricesByIdAggregatesTopic not defined." .Values.config.pricesByIdAggregatesTopic | quote }}
+  PRICING_PRICES_BY_ID_STATE_STORE_NAME: {{ required "config.pricesByIdStateStoreName not defined." .Values.config.pricesByIdStateStoreName | quote }}

@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "reaction-pricing-engine.fullname" . }}-jmx
+  labels:
+    app.kubernetes.io/name: {{ include "reaction-pricing-engine.name" . }}-jmx
+    app.kubernetes.io/component: pricing-engine
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+    helm.sh/chart: {{ include "reaction-pricing-engine.chart" . }}
+spec:
+  type: {{ .Values.jmx.service.type }}
+  ports:
+  - name: jmx
+    port: {{ .Values.jmx.port | int }}
+    targetPort: {{ .Values.jmx.port | int }}
+    protocol: TCP
+  selector:
+    app.kubernetes.io/name: {{ include "reaction-pricing-engine.name" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
