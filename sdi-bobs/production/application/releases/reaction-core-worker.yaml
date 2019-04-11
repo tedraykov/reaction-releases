@@ -22,10 +22,10 @@ spec:
       siteCode: BOBS
       serverType: WORKER
       startingNewCustomerNumber: 1100151420184
-      rootUrl: https://api-production.bobs-test.io
+      rootUrl: https://api.bobstores.com
       cartReferenceIdPrefix: 44
-      etcdUrl: http://etcd-application.internal.production.k8s.bobs-test.io:2379
-      jaegerEndpoint: https://jaeger-collector-production.bobs-test.io/api/traces
+      etcdUrl: http://etcd-application.internal.production.k8s.bobstores.com:2379
+      jaegerEndpoint: https://jaeger-collector.bobstores.com/api/traces
       hydraAdminUrl: http://hydra-hydra-admin-service:4445
       hydraOauth2IntrospectUrl: http://hydra-hydra-admin-service:4445/oauth2/introspect
       kafkaBootstrapServers: broker0.kafka-production.k8s.bobs-test.io:9092,broker1.kafka-production.k8s.bobs-test.io:9093,broker2.kafka-production.k8s.bobs-test.io:9094

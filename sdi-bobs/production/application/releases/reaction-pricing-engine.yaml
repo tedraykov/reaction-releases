@@ -16,7 +16,7 @@ spec:
     ingress:
       enabled: true
       hosts:
-        - host: pe-production.bobs-test.io
+        - host: pe.bobstores.com
           paths: ['/']
     jmx:
       image: reactioncommerce/jmx-prometheus-exporter
