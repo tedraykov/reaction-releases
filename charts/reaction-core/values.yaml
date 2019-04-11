@@ -19,7 +19,7 @@ service:
   port: 80
 
 ingress:
-  enabled: true
+  enabled: false
   annotations: {}
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
@@ -27,6 +27,37 @@ ingress:
 # hosts:
 #   - host: www.example.com
 #     paths: ['/']
+
+config:
+  skipFixtures: 1
+  initialImport: true
+  defaultShippingMethodId: SPbMh5gdz24Wr4J94
+  defaultShippingMethodRate: "2.99"
+  logFormat: json
+  logLevel: info
+  graphqlIntrospection: true
+  graphqlPlayground: true
+  user: "Reaction Admin"
+  kafkaTopicCatalogImportErrors: etl.product-import.errors.json-gen1
+  kafkaTopicCatalogSyncProducts: etl.catalog-sync.products.json-gen1
+  kafkaTopicEtlShippableInventoryStatus: etl.shippable-inventory.inventory-status.json-gen1
+  kafkaTopicEtlShippableInventoryStream: etl.shippable-inventory.inventory-data.json-gen1
+  kafkaTopicImportOrderStatusOrders: etl.import-order-status.status.json-gen1
+  kafkaTopicImportTaxCodesTaxcodes: etl.import-tax-codes.tax-codes.json-gen1
+  kafkaTopicLoyaltyPluginDbUpdates: bobs.etl.loyalty-db-updates.json-gen1
+  kafkaTopicLoyaltyPluginDbUpdatesStatus: bobs.etl.loyalty-db-updates-status.json-gen1
+  kafkaTopicPricebooks: reaction.pricing.pricebook-aggregates.avro-gen1
+  kafkaTopicPricesById: reaction.pricing.prices-by-id-aggregates.avro-gen1
+  kafkaTopicProductImportErrors: etl.product-import.errors.json-gen1
+  kafkaTopicProductImportProducts: event.product-import.products.stream.json-gen1
+  pricingConsumerEnabled: false
+  inventoryShippableInventoryConsumerEnabled: false
+  loyaltyConsumerEnabled: false
+  taxesConsumerEnabled: false
+  productConsumerEnabled: false
+  productPublisherAutoPublish: false
+
+radial: {}
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
