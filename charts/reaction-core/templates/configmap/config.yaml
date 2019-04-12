@@ -11,7 +11,6 @@ metadata:
     helm.sh/chart: {{ include "reaction-core.chart" . }}
 data:
   SITE_CODE: {{ required "config.siteCode not defined." .Values.config.siteCode | quote }}
-  SERVER_TYPE: {{ required "config.serverType not defined." .Values.config.serverType | quote }}
   INITIAL_IMPORT: {{ required "config.initialImport not defined." .Values.config.initialImport | quote }}
   STARTING_NEW_CUSTOMER_NUMBER: {{ required "config.startingNewCustomerNumber not defined." .Values.config.startingNewCustomerNumber | quote }}
   SKIP_FIXTURES: {{ required "config.skipFixtures not defined." .Values.config.skipFixtures | quote }}

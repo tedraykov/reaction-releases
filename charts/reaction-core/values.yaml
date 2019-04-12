@@ -30,7 +30,6 @@ ingress:
 
 config:
   skipFixtures: 1
-  initialImport: true
   defaultShippingMethodId: SPbMh5gdz24Wr4J94
   defaultShippingMethodRate: "2.99"
   logFormat: json
@@ -50,12 +49,6 @@ config:
   kafkaTopicPricesById: reaction.pricing.prices-by-id-aggregates.avro-gen1
   kafkaTopicProductImportErrors: etl.product-import.errors.json-gen1
   kafkaTopicProductImportProducts: event.product-import.products.stream.json-gen1
-  pricingConsumerEnabled: false
-  inventoryShippableInventoryConsumerEnabled: false
-  loyaltyConsumerEnabled: false
-  taxesConsumerEnabled: false
-  productConsumerEnabled: false
-  productPublisherAutoPublish: false
 
 radial: {}
 
