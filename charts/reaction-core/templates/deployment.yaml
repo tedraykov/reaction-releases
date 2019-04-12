@@ -38,6 +38,8 @@ spec:
                 name: {{ printf "%s-%s" $fullName "radial" }}
             - secretRef:
                 name: reaction-core
+            - secretRef:
+                name: {{ $fullName }}
           ports:
             - name: http
               containerPort: 3000
