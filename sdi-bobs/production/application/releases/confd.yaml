@@ -10,7 +10,8 @@ spec:
     ref: develop
     path: charts/confd
   values:
-    awsRegion: us-east-1
+    config:
+      awsRegion: us-east-1
     image:
       repository: 490759768946.dkr.ecr.us-east-1.amazonaws.com/confd
       tag: "c115f0c"
