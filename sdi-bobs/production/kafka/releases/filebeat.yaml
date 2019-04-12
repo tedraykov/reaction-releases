@@ -25,7 +25,9 @@ spec:
       processors:
         - add_cloud_metadata: {}
         - add_docker_metadata: {}
-        - add_kubernetes_metadata: {}
+        - add_kubernetes_metadata:
+            labels.dedot: true
+            annotations.dedot: true
       output:
         elasticsearch:
           protocol: https
