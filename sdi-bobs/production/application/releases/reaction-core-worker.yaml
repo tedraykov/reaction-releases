@@ -1,10 +1,10 @@
 apiVersion: flux.weave.works/v1beta1
 kind: HelmRelease
 metadata:
-  name: reaction-core-web
+  name: reaction-core-worker
   namespace: bobs
 spec:
-  releaseName: reaction-core-web
+  releaseName: reaction-core-worker
   chart:
     git: git@github.com:sportsdirect/sdi-releases.git
     path: charts/reaction-core
@@ -13,23 +13,18 @@ spec:
     horizontalPodAutoscaler:
       enabled: true
       averageUtilization: 70
-      min: 3
-      max: 10
+      min: 1
+      max: 1
     image:
       repository: 490759768946.dkr.ecr.us-east-1.amazonaws.com/reaction-core
       tag: "df25b9f1aec65196feec5ebb84be87701253f48a"
-    ingress:
-      enabled: true
-      hosts:
-        - host: api.bobstores.com
-          paths: ['/']
     config:
       siteCode: BOBS
-      serverType: WEB
+      serverType: WORKER
       startingNewCustomerNumber: 1100151420184
       rootUrl: https://api.bobstores.com
       cartReferenceIdPrefix: 44
-      etcdUrl: http://etcd-application.internal.production.k8s.bobs-test.io:2379
+      etcdUrl: http://etcd-application.internal.production.k8s.bobstores.com:2379
       jaegerEndpoint: https://jaeger-collector.bobstores.com/api/traces
       hydraAdminUrl: http://hydra-hydra-admin-service:4445
       hydraOauth2IntrospectUrl: http://hydra-hydra-admin-service:4445/oauth2/introspect
