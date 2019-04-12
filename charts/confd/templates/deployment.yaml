@@ -32,7 +32,7 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           env:
             - name: AWS_REGION
-              value: {{ .Values.awsRegion }}
+              value: {{ required "config.awsRegion not defined." .Values.config.awsRegion }}
             - name: RESOURCE_NAMESPACE
               valueFrom:
                 fieldRef:

@@ -30,5 +30,8 @@ tolerations: []
 
 affinity: {}
 
+config: {}
+  #  awsRegion: "us-east-1"
+
 rbac:
   enabled: true
