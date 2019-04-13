@@ -17,7 +17,7 @@ spec:
       max: 10
     image:
       repository: 490759768946.dkr.ecr.us-east-1.amazonaws.com/reaction-core
-      tag: "df25b9f1aec65196feec5ebb84be87701253f48a"
+      tag: "226851f9ed526b4eb605288c8d37c1c5c83f45e6"
     ingress:
       enabled: true
       hosts:
@@ -25,8 +25,7 @@ spec:
           paths: ['/']
     config:
       siteCode: BOBS
-      serverType: WEB
-      startingNewCustomerNumber: 1100151420184
+      startingNewCustomerNumber: "1100151420184"
       rootUrl: https://api.bobstores.com
       cartReferenceIdPrefix: 44
       etcdUrl: http://etcd-application.internal.production.k8s.bobs-test.io:2379
@@ -44,6 +43,13 @@ spec:
       pricingGraphqlUrl: http://reaction-pricing-engine.bobs:8888/graphql
       inventoryPluginBatchConsumeSize: 1000
       loyaltyPluginBatchConsumeSize: 10000
+      initialImport: false
+      pricingConsumerEnabled: false
+      inventoryShippableInventoryConsumerEnabled: false
+      loyaltyConsumerEnabled: false
+      taxesConsumerEnabled: false
+      productConsumerEnabled: false
+      productPublisherAutoPublish: false
     radial:
       storeId: BOBSUS
       mode: sandbox
