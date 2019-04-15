@@ -17,7 +17,6 @@
 SHELL		:= bash
 MAKEFLAGS   += silent warn-undefined-variables no-print-directory
 CERTIFICATE := public.pem
-TEMPLATE	:= $(firstword $(dir $(MAKEFILES)))/secret.yaml
 #:
 #:encrypt-string
 #:--------------
@@ -72,10 +71,6 @@ encrypt-string:
 		--output json\
 		"sealedsecrets.bitnami.com/cluster-wide=true"\
 	|kubeseal --cert $(CERTIFICATE)|jq -r .spec.encryptedData.value
-
-.PHONY: foo
-foo:
-	echo $(TEMPLATE)
 
 #:README.md
 #:---------
