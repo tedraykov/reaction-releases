@@ -34,8 +34,8 @@ config:
   defaultShippingMethodRate: "2.99"
   logFormat: json
   logLevel: info
-  graphqlIntrospection: true
-  graphqlPlayground: true
+  graphqlIntrospectionEnabled: false
+  graphqlPlaygroundEnabled: false
   user: "Reaction Admin"
   kafkaTopicCatalogImportErrors: etl.product-import.errors.json-gen1
   kafkaTopicCatalogSyncProducts: etl.catalog-sync.products.json-gen1
