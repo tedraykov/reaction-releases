@@ -1,9 +1,9 @@
 apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
 metadata:
-  name: {{ include "reaction-storefront.fullname" . }}-jmx
+  name: {{ include "reaction-storefront.fullname" . }}
   labels:
-    app.kubernetes.io/name: {{ include "reaction-storefront.name" . }}-jmx
+    app.kubernetes.io/name: {{ include "reaction-storefront.name" . }}
     app.kubernetes.io/component: storefront
     app.kubernetes.io/instance: {{ .Release.Name }}
     app.kubernetes.io/managed-by: {{ .Release.Service }}
