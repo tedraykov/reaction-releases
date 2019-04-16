@@ -23,8 +23,8 @@ data:
   REACTION_LOG_FORMAT: {{ required "config.logFormat not defined." .Values.config.logFormat | quote }}
   REACTION_LOG_LEVEL: {{ required "config.logLevel not defined." .Values.config.logLevel | quote }}
   REACTION_USER: {{ required "config.user not defined." .Values.config.user | quote }}
-  GRAPHQL_INTROSPECTION_ENABLED: {{ required "config.graphqlIntrospection not defined." .Values.config.graphqlIntrospection | quote }}
-  GRAPHQL_PLAYGROUND_ENABLED: {{ required "config.graphqlPlayground not defined." .Values.config.graphqlPlayground | quote }}
+  GRAPHQL_INTROSPECTION_ENABLED: {{ required "config.graphqlIntrospectionEnabled not defined." .Values.config.graphqlIntrospectionEnabled | quote }}
+  GRAPHQL_PLAYGROUND_ENABLED: {{ required "config.graphqlPlaygroundEnabled not defined." .Values.config.graphqlPlaygroundEnabled | quote }}
   HYDRA_ADMIN_URL: {{ required "config.hydraAdminUrl not defined." .Values.config.hydraAdminUrl | quote }}
   HYDRA_OAUTH2_INTROSPECT_URL: {{ required "config.hydraOauth2IntrospectUrl not defined." .Values.config.hydraOauth2IntrospectUrl | quote }}
   KAFKA_BOOTSTRAP_SERVERS: {{ required "config.kafkaBootstrapServers not defined." .Values.config.kafkaBootstrapServers | quote }}
