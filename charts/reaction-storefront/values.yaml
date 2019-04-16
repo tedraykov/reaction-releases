@@ -18,6 +18,7 @@ service:
   type: ClusterIP
   port: 8080
   adminPort: 8081
+  serviceMonitorLabel: application
 
 ingress:
   enabled: true
