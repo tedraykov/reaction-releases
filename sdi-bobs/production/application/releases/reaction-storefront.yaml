@@ -45,6 +45,7 @@ spec:
       idpHostUrl: https://api.bobstores.com
       redirectUrl: https://jasper.bobstores.com/callback
       tokenUrl: http://hydra-hydra-main-service:4444/oauth2/token
+      hydraAdminUrl: http://hydra-hydra-admin-service:4445
     contentstack:
       enabled: true
       environment: production
