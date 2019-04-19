@@ -44,6 +44,7 @@ spec:
       inventoryPluginBatchConsumeSize: 1000
       loyaltyPluginBatchConsumeSize: 10000
       initialImport: false
+      masterPublishConsumerEnabled: false
       pricingConsumerEnabled: false
       inventoryShippableInventoryConsumerEnabled: false
       loyaltyConsumerEnabled: false

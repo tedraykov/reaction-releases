@@ -39,11 +39,12 @@ spec:
       inventoryPluginBatchConsumeSize: 1000
       loyaltyPluginBatchConsumeSize: 10000
       initialImport: true
-      pricingConsumerEnabled: false
-      inventoryShippableInventoryConsumerEnabled: false
+      masterPublishConsumerEnabled: true
+      pricingConsumerEnabled: true
+      inventoryShippableInventoryConsumerEnabled: true
       loyaltyConsumerEnabled: false
-      taxesConsumerEnabled: false
-      productConsumerEnabled: false
+      taxesConsumerEnabled: true
+      productConsumerEnabled: true
       productPublisherAutoPublish: false
       metricsEnabled: true
     radial:
