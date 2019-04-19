@@ -87,6 +87,7 @@ oauth2: {}
 #  idpHostUrl: https://api.example.com
 #  redirectUrl: https://www.example.com/callback
 #  tokenUrl: https://auth.example.com/oauth2/token
+#  hydraAdminUrl: https://auth.example.com/
 
 radial: {}
 #  clientId: XXX

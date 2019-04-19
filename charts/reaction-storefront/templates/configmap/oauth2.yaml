@@ -17,3 +17,4 @@ data:
   OAUTH2_IDP_HOST_URL: {{ required "oauth2.idpHostUrl not defined." .Values.oauth2.idpHostUrl | quote }}
   OAUTH2_REDIRECT_URL: {{ required "oauth2.redirectUrl not defined." .Values.oauth2.redirectUrl | quote }}
   OAUTH2_TOKEN_URL: {{ required "ouath2.tokenUrl not defined." .Values.oauth2.tokenUrl | quote }}
+  HYDRA_ADMIN_URL: {{ required "oauth2.hydraAdminUrl not defined." .Values.oauth2.hydraAdminUrl | quote }}
