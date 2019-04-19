@@ -44,6 +44,11 @@ spec:
             - name: http
               containerPort: 3000
               protocol: TCP
+{{- if .Values.config.metricsEnabled }}
+            - name: admin
+              containerPort: 3001
+              protocol: TCP
+{{- end }}
           livenessProbe:
             httpGet:
               path: /health

@@ -18,7 +18,6 @@ spec:
     - port: {{ required "Admin port not defined." .Values.service.adminPort }}
       targetPort: admin
       protocol: TCP
-      targetPort: admin
       name: admin
   selector:
     app.kubernetes.io/name: {{ include "reaction-storefront.name" . }}
