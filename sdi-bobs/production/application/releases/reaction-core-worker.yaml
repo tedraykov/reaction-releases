@@ -17,7 +17,7 @@ spec:
       max: 1
     image:
       repository: 490759768946.dkr.ecr.us-east-1.amazonaws.com/reaction-core
-      tag: "226851f9ed526b4eb605288c8d37c1c5c83f45e6"
+      tag: "0012f9294c2d8011ae75f0ea34f8b1b4160e7ef5"
     config:
       siteCode: BOBS
       startingNewCustomerNumber: "1100151420184"
