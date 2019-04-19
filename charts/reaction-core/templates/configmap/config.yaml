@@ -56,3 +56,7 @@ data:
   PRODUCT_CONSUMER_ENABLED: {{ required "config.productConsumerEnabled is not defined." .Values.config.productConsumerEnabled | quote }}
   PRODUCT_PUBLISHER_AUTO_PUBLISH: {{ required "config.productPublisherAutoPublish is not defined." .Values.config.productPublisherAutoPublish | quote }}
   TAXES_CONSUMER_ENABLED: {{ required "config.taxesConsumerEnabled is not defined." .Values.config.taxesConsumerEnabled  | quote }}
+  METRICS_ENABLED: {{ required "config.metricsEnabled is not defined." .Values.config.metricsEnabled  | quote }}
+  METRICS_HOST: {{ required "config.metricsHost is not defined." .Values.config.metricsHost  | quote }}
+  METRICS_PATH: {{ required "config.metricsPath is not defined." .Values.config.metricsPath  | quote }}
+  METRICS_PORT: {{ required "config.metricsPort is not defined." .Values.config.metricsPort  | quote }}

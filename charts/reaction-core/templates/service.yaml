@@ -16,6 +16,12 @@ spec:
       targetPort: http
       protocol: TCP
       name: http
+{{- if .Values.config.metricsEnabled }}
+    - port: {{ required "Admin port not defined." .Values.service.adminPort }}
+      targetPort: admin
+      protocol: TCP
+      name: admin
+{{- end }}
   selector:
     app.kubernetes.io/name: {{ include "reaction-core.name" . }}
     app.kubernetes.io/instance: {{ .Release.Name }}

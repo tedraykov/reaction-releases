@@ -45,6 +45,7 @@ spec:
       taxesConsumerEnabled: false
       productConsumerEnabled: false
       productPublisherAutoPublish: false
+      metricsEnabled: true
     radial:
       storeId: BOBSUS
       mode: sandbox

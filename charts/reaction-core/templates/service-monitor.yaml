@@ -1,0 +1,20 @@
+{{- if .Values.config.metricsEnabled -}}
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: {{ include "reaction-core.fullname" . }}
+  labels:
+    app.kubernetes.io/name: {{ include "reaction-core.name" . }}
+    app.kubernetes.io/component: core
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+    helm.sh/chart: {{ include "reaction-core.chart" . }}
+    monitoring: "{{ .Values.service.serviceMonitorLabel }}"
+spec:
+  endpoints:
+  - interval: 30s
+    port: admin
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: {{ include "reaction-core.name" . }}
+{{- end }}

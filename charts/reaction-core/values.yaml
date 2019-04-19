@@ -17,6 +17,8 @@ annotations: {}
 service:
   type: ClusterIP
   port: 80
+  adminPort: 3001
+  serviceMonitorLabel: application
 
 ingress:
   enabled: false
@@ -49,6 +51,10 @@ config:
   kafkaTopicPricesById: reaction.pricing.prices-by-id-aggregates.avro-gen1
   kafkaTopicProductImportErrors: etl.product-import.errors.json-gen1
   kafkaTopicProductImportProducts: event.product-import.products.stream.json-gen1
+  metricsEnabled: false
+  metricsHost: 0.0.0.0
+  metricsPath: /metrics
+  metricsPort: 3001
 
 radial: {}
 
