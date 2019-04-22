@@ -39,7 +39,7 @@ spec:
       mode: sandbox
       rdfUrl: https://tst-rdf.radial.com/rdf/service/scripts?clientIdentifier=BOBSUS
     oauth2:
-      clientId: bobs-production-storefront
+      clientId: bobs-storefront-production
       url: https://auth.bobstores.com/oauth2/auth
       host: hydra-hydra-admin-service
       idpHostUrl: https://api.bobstores.com
