@@ -1,7 +1,7 @@
 *.swp
 .DS_Store
+__pycache__
 cache
+reports/
 tmp
 values-all*.yaml
-.DS_Store
-__pycache__

@@ -11,14 +11,13 @@ jobs:
     steps:
       - checkout: {}
       - run: make deps
-      - run: make test
+      - run: make tests ARGS="--junitxml=reports/junit.xml"
+      - store_test_results:
+          path: reports
 
 workflows:
   version: 2
-  tests:
+  main:
     jobs:
       - tests:
           context: sdi-management
-          filters:
-            branches:
-              only: feature/tests
