@@ -17,7 +17,7 @@ spec:
       max: 10
     image:
       repository: 490759768946.dkr.ecr.us-east-1.amazonaws.com/reaction-storefront
-      tag: "de2b934acb37e50d75daa7f21765632b215d796b"
+      tag: "60891e5f0d7db3b4cf53a50bea8fe7b17d08eb12"
     ingress:
       hosts:
         - host: jasper.bobstores.com
@@ -36,8 +36,8 @@ spec:
       url: http://reaction-core-web.bobs.svc.cluster.local/graphql-alpha
     radial:
       clientId: BOBSUS
-      mode: sandbox
-      rdfUrl: https://tst-rdf.radial.com/rdf/service/scripts?clientIdentifier=BOBSUS
+      mode: production
+      rdfUrl: https://rdf.radial.com/rdf/service/scripts?clientIdentifier=BOBSUS
     oauth2:
       clientId: bobs-production-storefront
       url: https://auth.bobstores.com/oauth2/auth
