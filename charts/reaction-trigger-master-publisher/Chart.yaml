@@ -1,0 +1,12 @@
+apiVersion: v1
+description: trigger-master-publisher
+name: trigger-master-publisher
+version: 1.0.0
+keywords:
+- trigger-master-publisher
+home: https://github.com/reactioncommerce/reaction-kafka-tools
+sources:
+- https://github.com/reactioncommerce/reaction-kafka-tools
+maintainers:
+- name: Reaction Commerce
+  email: admin@reactioncommerce.com

@@ -1,0 +1,25 @@
+apiVersion: flux.weave.works/v1beta1
+kind: HelmRelease
+metadata:
+  name: reaction-trigger-master-publisher
+  namespace: jobs
+spec:
+  releaseName: reaction-trigger-master-publisher
+  chart:
+    git: git@github.com:sportsdirect/sdi-releases.git
+    path: charts/reaction-trigger-master-publisher
+    ref: develop
+  values:
+    image:
+      repository: reactioncommerce/reaction-kafka-tools
+      tag: "trigger-master-publisher"
+    config:
+      kafkaBootstrapServers: "broker0.kafka-production.k8s.bobs-test.io:9092,broker1.kafka-production.k8s.bobs-test.io:9093,broker2.kafka-production.k8s.bobs-test.io:9094"
+      kafkaTopic: users.grig.initial-import
+    resources:
+      requests:
+        memory: 500Mi
+        cpu: 500m
+      limits:
+        memory: 2Gi
+        cpu: "2"
