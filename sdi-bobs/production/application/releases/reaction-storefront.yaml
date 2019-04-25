@@ -17,7 +17,7 @@ spec:
       max: 10
     image:
       repository: 490759768946.dkr.ecr.us-east-1.amazonaws.com/reaction-storefront
-      tag: "573dc395305bdd186bb8e281375bd8892fa3f3b9"
+      tag: "9628177405fb552694c522ea26a5c4796a6f5abf"
     ingress:
       hosts:
         - host: jasper.bobstores.com
