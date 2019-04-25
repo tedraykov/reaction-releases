@@ -57,8 +57,8 @@ spec:
       mode: production
     resources:
       requests:
-        memory: 500Mi
-        cpu: 500m
+        memory: 3Gi
+        cpu: "1"
       limits:
         memory: 2Gi
         cpu: "2"
