@@ -8,7 +8,7 @@ spec:
   chart:
     repository: https://kubernetes-charts.storage.googleapis.com
     name: filebeat
-    version: 1.4.4
+    version: 1.7.0
   values:
     extraVolumeMounts:
       - mountPath: /var/run/docker.sock
