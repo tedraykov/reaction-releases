@@ -10,6 +10,7 @@ spec:
     path: charts/reaction-core
     ref: develop
   values:
+    maxUnavailable: 1
     horizontalPodAutoscaler:
       enabled: true
       averageUtilization: 70
