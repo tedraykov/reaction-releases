@@ -42,6 +42,8 @@ spec:
                 labels.dedot: true
                 in_cluster: true
           enabled: true
+      http.enabled: true
+      http.port: 5066
       logging:
         level: warning
       processors:
