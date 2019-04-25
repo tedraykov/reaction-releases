@@ -8,7 +8,7 @@ spec:
   chart:
     repository: https://kubernetes-charts.storage.googleapis.com
     name: filebeat
-    version: "1.4.4"
+    version: 1.4.4
   values:
     extraVolumeMounts:
       - mountPath: /var/run/docker.sock
@@ -22,6 +22,8 @@ spec:
     indexTemplateLoad:
       - https://vpc-production-logs-h5thmymtp327yrdyej2mi2cm4a.us-east-1.es.amazonaws.com:443
     config:
+      logging:
+        level: warning
       processors:
         - add_cloud_metadata: {}
         - add_docker_metadata:
