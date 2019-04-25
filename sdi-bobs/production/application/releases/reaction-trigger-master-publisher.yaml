@@ -11,7 +11,7 @@ spec:
     ref: develop
   values:
     image:
-      repository: reactioncommerce/reaction-kafka-tools
+      repository: reactioncommerce/reaction-cron-jobs
       tag: "trigger-master-publisher"
     config:
       kafkaBootstrapServers: "broker0.kafka-production.k8s.bobs-test.io:9092,broker1.kafka-production.k8s.bobs-test.io:9093,broker2.kafka-production.k8s.bobs-test.io:9094"
