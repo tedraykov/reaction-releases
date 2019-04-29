@@ -14,7 +14,6 @@ data:
   SFTP_ENDPOINT: {{ required "config.sftpEndpoint not defined." .Values.config.sftpEndpoint | quote }}
   SFTP_HOMEDIR: {{ required "config.sftpHomedir not defined." .Values.config.sftpHomedir | quote }}
   SFTP_USERNAME: {{ required "config.sftpUsername not defined." .Values.config.sftpUsername | quote }}
-  SFTP_PASSWORD: {{ required "config.sftpPassword not defined." .Values.config.sftpPassword | quote }}
   SFTP_SUBFOLDER_ADJUSTED: {{ required "config.sftpSubfolders.adjusted not defined." .Values.config.sftpSubfolders.adjusted | quote }}
   SFTP_SUBFOLDER_BACKORDERED: {{ required "config.sftpSubfolders.backordered not defined." .Values.config.sftpSubfolders.backordered | quote }}
   SFTP_SUBFOLDER_CANCELED: {{ required "config.sftpSubfolders.canceled not defined." .Values.config.sftpSubfolders.canceled | quote }}
