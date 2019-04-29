@@ -14,8 +14,18 @@ spec:
       repository: reactioncommerce/reaction-cron-jobs
       tag: "sftp-from-radial-63bfff3"
     config:
-      kafkaBootstrapServers: "broker0.kafka-production.k8s.bobs-test.io:9092,broker1.kafka-production.k8s.bobs-test.io:9093,broker2.kafka-production.k8s.bobs-test.io:9094"
-      kafkaTopic: users.grig.initial-import
+      s3BucketName: sdi-bobs-production-radial-sftp
+      sftpEndpoint: "sftp.remotetools.gsipartners.com"
+      sftpHomedir: "/home/bobsftp02"
+      sftpUsername: "bobsftp02"
+      sftpSubfolders:
+        adjusted: "outbound/order_status/BOBS/adjusted"
+        backordered: "outbound/order_status/BOBS/backordered"
+        canceled: "outbound/order_status/BOBS/canceled"
+        ispuStatus: "outbound/order_status/BOBS/ISPU_status"
+        opened: "outbound/order_status/BOBS/opened"
+        returned: "outbound/order_status/BOBS/returned"
+        shipped: "outbound/order_status/BOBS/shipped"
     resources:
       requests:
         memory: 500Mi

@@ -23,6 +23,8 @@ spec:
             envFrom:
               - configMapRef:
                   name: {{ $fullName }}
+              - secretRef:
+                  name: reaction-sftp-from-radial
             # resource requests/limits
             resources:
               requests:
