@@ -15,7 +15,7 @@ spec:
       tag: "trigger-master-publisher-63bfff3"
     config:
       kafkaBootstrapServers: "broker0.kafka-production.k8s.bobs-test.io:9092,broker1.kafka-production.k8s.bobs-test.io:9093,broker2.kafka-production.k8s.bobs-test.io:9094"
-      kafkaTopic: users.grig.initial-import
+      kafkaTopic: initial-import
     resources:
       requests:
         memory: 500Mi
