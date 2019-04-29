@@ -1,18 +1,18 @@
 apiVersion: flux.weave.works/v1beta1
 kind: HelmRelease
 metadata:
-  name: reaction-trigger-master-publisher
+  name: reaction-sftp-from-radial
   namespace: jobs
 spec:
-  releaseName: reaction-trigger-master-publisher
+  releaseName: reaction-sftp-from-radial
   chart:
     git: git@github.com:sportsdirect/sdi-releases.git
-    path: charts/reaction-trigger-master-publisher
+    path: charts/reaction-sftp-from-radial
     ref: develop
   values:
     image:
       repository: reactioncommerce/reaction-cron-jobs
-      tag: "trigger-master-publisher-63bfff3"
+      tag: "sftp-from-radial-63bfff3"
     config:
       kafkaBootstrapServers: "broker0.kafka-production.k8s.bobs-test.io:9092,broker1.kafka-production.k8s.bobs-test.io:9093,broker2.kafka-production.k8s.bobs-test.io:9094"
       kafkaTopic: users.grig.initial-import
