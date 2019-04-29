@@ -4,8 +4,8 @@ imagePullSecret: dockerhub-creds
 replicas: 1
 
 #config:
-#  kafkaBootstrapServers: localhost:9092
-#  kafkaTopic: some.topic
+#  s3BucketName: some-bucket
+#  sftpEndpoint: some-endpoint
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
