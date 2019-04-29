@@ -1,9 +1,9 @@
 apiVersion: v1
-description: trigger-master-publisher
-name: trigger-master-publisher
+description: sftp-from-radial
+name: sftp-from-radial
 version: 1.0.0
 keywords:
-- trigger-master-publisher
+- sftp-from-radial
 home: https://github.com/reactioncommerce/reaction-cron-jobs
 sources:
 - https://github.com/reactioncommerce/reaction-cron-jobs

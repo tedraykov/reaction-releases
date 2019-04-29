@@ -1,0 +1,37 @@
+{{- $fullName := include "reaction-sftp-from-radial.fullname" . -}}
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: {{ $fullName }}
+  labels:
+    app.kubernetes.io/name: {{ $fullName }}
+    app.kubernetes.io/component: cronjob
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+    helm.sh/chart: {{ $fullName }}
+spec:
+  schedule: "*/1 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          restartPolicy: Never
+          containers:
+          - name: {{ .Chart.Name }}
+            image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+            imagePullPolicy: {{ .Values.image.pullPolicy }}
+            envFrom:
+              - configMapRef:
+                  name: {{ $fullName }}
+            # resource requests/limits
+            resources:
+              requests:
+                memory: {{ .Values.resources.requests.memory }}
+                cpu: {{ .Values.resources.requests.cpu }}
+              limits:
+                memory: {{ .Values.resources.limits.memory }}
+                cpu: {{ .Values.resources.limits.cpu }}
+          {{- if .Values.imagePullSecret }}
+          imagePullSecrets:
+            - name: "{{ .Values.imagePullSecret }}"
+          {{- end }}
