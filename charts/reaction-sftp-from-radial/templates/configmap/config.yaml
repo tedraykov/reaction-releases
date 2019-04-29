@@ -1,0 +1,24 @@
+{{- $fullName := include "reaction-sftp-from-radial.fullname" . -}}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ $fullName }}
+  labels:
+    app.kubernetes.io/name: {{ include "reaction-sftp-from-radial.name" . }}
+    app.kubernetes.io/component: sftp-from-radial
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+    helm.sh/chart: {{ include "reaction-sftp-from-radial.chart" . }}
+data:
+  S3_BUCKET_NAME: {{ required "config.s3BucketName not defined." .Values.config.s3BucketName | quote }}
+  SFTP_ENDPOINT: {{ required "config.sftpEndpoint not defined." .Values.config.sftpEndpoint | quote }}
+  SFTP_HOMEDIR: {{ required "config.sftpHomedir not defined." .Values.config.sftpHomedir | quote }}
+  SFTP_USERNAME: {{ required "config.sftpUsername not defined." .Values.config.sftpUsername | quote }}
+  SFTP_PASSWORD: {{ required "config.sftpPassword not defined." .Values.config.sftpPassword | quote }}
+  SFTP_SUBFOLDER_ADJUSTED: {{ required "config.sftpSubfolders.adjusted not defined." .Values.config.sftpSubfolders.adjusted | quote }}
+  SFTP_SUBFOLDER_BACKORDERED: {{ required "config.sftpSubfolders.backordered not defined." .Values.config.sftpSubfolders.backordered | quote }}
+  SFTP_SUBFOLDER_CANCELED: {{ required "config.sftpSubfolders.canceled not defined." .Values.config.sftpSubfolders.canceled | quote }}
+  SFTP_SUBFOLDER_ISPU_STATUS: {{ required "config.sftpSubfolders.ispuStatus not defined." .Values.config.sftpSubfolders.ispuStatus | quote }}
+  SFTP_SUBFOLDER_OPENED: {{ required "config.sftpSubfolders.opened not defined." .Values.config.sftpSubfolders.opened | quote }}
+  SFTP_SUBFOLDER_RETURNED: {{ required "config.sftpSubfolders.returned not defined." .Values.config.sftpSubfolders.returned | quote }}
+  SFTP_SUBFOLDER_SHIPPED: {{ required "config.sftpSubfolders.shipped not defined." .Values.config.sftpSubfolders.shipped | quote }}
