@@ -13,20 +13,22 @@ spec:
     image:
       repository: reactioncommerce/reaction-etl-content-feed
       tag: "latest"
-    schedule: "0 4 * * *"
+    schedule: "*/2 * * * *"
+    #schedule: "0 4 * * *"
     config:
       batchSize: 1000
       cloudName: sportsdirect
-      cloudFolder: bobs/dev
-      s3ExternalExportBucketName: sdi-staging-feeds-outbound-content-bobs
-      s3InternalExportBucketName: sdi-staging-feeds-ocf-bobs
-      jaegerEndpoint: https://jaeger-collector.bobs-test.io/api/traces
+      cloudFolder: bobs/prod
+      s3ExternalExportBucketName: sdi-prod-feeds-outbound-content-bobs
+      s3InternalExportBucketName: sdi-prod-feeds-ocf-bobs
+      jaegerEndpoint: http://jaeger-collector.production.k8s.bobs-test.io:14268/api/traces
       kafkaBootstrapServers: broker0.kafka-production.k8s.bobs-test.io:9092,broker1.kafka-production.k8s.bobs-test.io:9093,broker2.kafka-production.k8s.bobs-test.io:9094
       kafkaTopicContentFeedStatus: bobs.etl.content-feed.json-gen1  
       kafkaTopicContentFeedErrors: bobs.etl.content-feed.errors.json-gen1
       kafkaPartitionContentFeedStatus: 3
       kafkaPartitionContentFeedErrors: 3
       mongoDbName: bobs-production
+      mongoDbHost: AgAG32SC7uZiezH3nyBOWOoiLEvdDb3Jiz5xZCUFxSH6ylsfNjoxz4+NkXWHpY7Lb1QWeVxBrSLUY6Y17BPy8G0h1oLGAbUSy1yL/wwmKCFBF4QlXKj7MqkVBtjZFDBEWeOhIeyTkWQD5LDabOOh5RzZj32eJS+fL19tEX3biH48rU2oR/YC4yheQENZHT/Ll0RBZJpDpGxp3Cad7vZUyiMoTcoFib8z4dwSmxaeV8axi8JMWBfeidvdYrbALVYTadks1gj29kwzyqcCX4W6gEC8Sn+CSdwCYOsT5coAt5+OZv/MYr0/wBA14vS819AA1SM1HdEVzoUpZyasdUQJ5BGwaDbqdmGqTula4orIHqpOOyVA7pZHa9pZvqcr9CGgTZP68NMwsVlhfNL08L7vWPlOYJpC57+V1keZaAgVbhXO9v6EJiWfnaMDVG268dOMWX+8Z2WDS2IHMwuQH8Hm8U0Od1++xASxC3rjxpFe+Ho/8UaRYHYMGNSARHEIDqr54JuGYlKYDqdZHGtMlcAXSlZ1MucOwKgLDx3GbOMLSoh+ETvaW8PM2tOz6m+3hKVB6iZg54B7zZQor4OOP/2d9pKPqYlLRgNowvDekJRFejiBITS1AZIwmpqUKDD4fuznP3FF4p4c2fQn9zZTcwp1QfbBZdcrThpExNbGWEeB0+VEhXobeRGS/Z1vu/uaiHmAbK7B0swad98VRzNX+MEQncAjlADf3e10Yh6O4JeY0Zp4ygeMsgtIQjuncbBqGTNDrZAU05ckyp2v35Ke3iTy3tpOHIaI1S/AGLxBjjhb2R2YqSCXp2us+Ks3jTCQWNtS1KVslsYCKKkz1Dvje7XUctfJWJMpe5644HmmUlt+2HRqUW35b6CnZhIduLAP9lm1xkssmEzyuMT8pySXt8in/LYOVSXPhxHvllzTja6nGiKveHm0sFZOmLH2DXDrKEgFBzwjBuYO2XefaHMe0jlagDVSCh/2Bq1V5Wpu0qBNBdoSbXDWSbh+oQ2wFE30gaoSh4j6FEb0BwnnS+kKDGm3cABCVfJ+3zZpn+oI8XDJ76ot29PGCud9uus=
       pricebookId: bobs-usd-retail-prices
       siteCode: BOBS
       storefrontBaseUrl: https://jasper.bobstores.com
