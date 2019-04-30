@@ -16,6 +16,7 @@ spec:
       template:
         spec:
           restartPolicy: Never
+          ttlSecondsAfterFinished: 86400
           containers:
           - name: {{ .Chart.Name }}
             image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
@@ -24,7 +25,7 @@ spec:
               - configMapRef:
                   name: {{ $fullName }}
               - secretRef:
-                  name: reaction-outbound-content-feed
+                  name: {{ $fullName }}
             # resource requests/limits
             resources:
               requests:
