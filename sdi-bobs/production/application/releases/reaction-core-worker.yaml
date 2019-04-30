@@ -17,8 +17,9 @@ spec:
       max: 1
     image:
       repository: 490759768946.dkr.ecr.us-east-1.amazonaws.com/reaction-core
-      tag: "fae717b7c6c2703eaf738c9769b01b4b7b4f6d79"
+      tag: "549c10f383d2efceb01970c775972d5846e0af29"
     config:
+      healthchecksEnabled: false
       siteCode: BOBS
       startingNewCustomerNumber: "1100151420184"
       rootUrl: https://api.bobstores.com

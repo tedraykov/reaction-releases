@@ -31,6 +31,7 @@ ingress:
 #     paths: ['/']
 
 config:
+  healthchecksEnabled: true
   skipFixtures: 1
   defaultShippingMethodId: SPbMh5gdz24Wr4J94
   defaultShippingMethodRate: "2.99"
