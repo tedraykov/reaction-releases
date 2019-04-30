@@ -1,0 +1,39 @@
+apiVersion: flux.weave.works/v1beta1
+kind: HelmRelease
+metadata:
+  name: reaction-outbound-content-feed
+  namespace: jobs
+spec:
+  releaseName: reaction-outbound-content-feed
+  chart:
+    git: git@github.com:sportsdirect/sdi-releases.git
+    path: charts/reaction-outbound-content-feed
+    ref: develop
+  values:
+    image:
+      repository: reactioncommerce/reaction-etl-content-feed
+      tag: "latest"
+    schedule: "0 4 * * *"
+    config:
+      batchSize: 1000
+      cloudName: sportsdirect
+      cloudFolder: bobs/dev
+      s3ExternalExportBucketName: sdi-staging-feeds-outbound-content-bobs
+      s3InternalExportBucketName: sdi-staging-feeds-ocf-bobs
+      jaegerEndpoint: https://jaeger-collector.bobs-test.io/api/traces
+      kafkaBootstrapServers: broker0.kafka-production.k8s.bobs-test.io:9092,broker1.kafka-production.k8s.bobs-test.io:9093,broker2.kafka-production.k8s.bobs-test.io:9094
+      kafkaTopicContentFeedStatus: bobs.etl.content-feed.json-gen1  
+      kafkaTopicContentFeedErrors: bobs.etl.content-feed.errors.json-gen1
+      kafkaPartitionContentFeedStatus: 3
+      kafkaPartitionContentFeedErrors: 3
+      mongoDbName: bobs-production
+      pricebookId: bobs-usd-retail-prices
+      siteCode: BOBS
+      storefrontBaseUrl: https://jasper.bobstores.com
+    resources:
+      requests:
+        memory: 3Gi
+        cpu: "1"
+      limits:
+        memory: 4Gi
+        cpu: "2"

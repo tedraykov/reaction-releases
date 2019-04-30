@@ -1,0 +1,12 @@
+apiVersion: v1
+description: outbound-content-feed
+name: outbound-content-feed
+version: 1.0.0
+keywords:
+- outbound-content-feed
+home: https://github.com/reactioncommerce/reaction-etl-content-feed
+sources:
+- https://github.com/reactioncommerce/reaction-etl-content-feed
+maintainers:
+- name: Reaction Commerce
+  email: admin@reactioncommerce.com
