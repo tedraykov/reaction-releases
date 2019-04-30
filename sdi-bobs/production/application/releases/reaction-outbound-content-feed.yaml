@@ -14,8 +14,8 @@ spec:
     image:
       repository: reactioncommerce/reaction-etl-content-feed
       tag: "latest"
-    schedule: "*/2 * * * *"
-    #schedule: "0 4 * * *"
+    #schedule: "*/2 * * * *"
+    schedule: "0 4 * * *"
     config:
       batchSize: 1000
       cloudName: sportsdirect
