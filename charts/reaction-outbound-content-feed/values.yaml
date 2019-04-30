@@ -1,0 +1,31 @@
+## How many replicas?
+replicas: 1
+
+#config:
+#  batchSize: 1000
+#  cloudName: sportsdirect
+#  cloudFolder: bobs/dev
+#  s3ExternalExportBucketName: sdi-staging-feeds-outbound-content-bobs
+#  s3InternalExportBucketName: sdi-staging-feeds-ocf-bobs
+#  jaegerEndpoint: https://jaeger-collector.bobs-test.io/api/traces
+#  kafkaBootstrapServers: kafka-broker-0.bobs-test.io:9092
+#  kafkaTopicContentFeedStatus: bobs.etl.content-feed.json-gen1  
+#  kafkaTopicContentFeedErrors: bobs.etl.content-feed.errors.json-gen1
+#  kafkaPartitionContentFeedStatus: 3
+#  kafkaPartitionContentFeedErrors: 3
+#  mongoDbName: sample-data-bobs-staging
+#  pricebookId: bobs-usd-retail-prices
+#  siteCode: BOBS
+#  storefrontBaseUrl: https://storefront.bobs-test.io
+
+resources: {}
+  # We usually recommend not to specify default resources and to leave this as a conscious
+  # choice for the user. This also increases chances charts run on environments with little
+  # resources, such as Minikube. If you do want to specify resources, uncomment the following
+  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+  # limits:
+  #   cpu: 100m
+  #   memory: 128Mi
+  # requests:
+  #   cpu: 100m
+  #   memory: 128Mi
