@@ -10,6 +10,7 @@ spec:
     path: charts/reaction-outbound-content-feed
     ref: develop
   values:
+    imagePullSecret: dockerhub-creds
     image:
       repository: reactioncommerce/reaction-etl-content-feed
       tag: "latest"
