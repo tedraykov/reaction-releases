@@ -32,6 +32,7 @@ ingress:
 
 config:
   healthchecksEnabled: true
+  profilingEnabled: false
   skipFixtures: 1
   defaultShippingMethodId: SPbMh5gdz24Wr4J94
   defaultShippingMethodRate: "2.99"
