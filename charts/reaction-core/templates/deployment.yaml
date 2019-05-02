@@ -31,6 +31,12 @@ spec:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+{{- if .Values.config.profilingEnabled }}
+          command:
+            - node
+            - --prof
+            - main.js
+{{- end }}
           envFrom:
             - configMapRef:
                 name: {{ $fullName }}
