@@ -49,6 +49,8 @@ spec:
       productConsumerEnabled: true
       productPublisherAutoPublish: false
       metricsEnabled: true
+      constantPublisherMode: true
+      constantPublisherPauseSeconds: 300
     radial:
       storeId: BOBSUS
       mode: production
