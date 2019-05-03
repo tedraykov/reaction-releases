@@ -61,3 +61,5 @@ data:
   METRICS_HOST: {{ required "config.metricsHost is not defined." .Values.config.metricsHost  | quote }}
   METRICS_PATH: {{ required "config.metricsPath is not defined." .Values.config.metricsPath  | quote }}
   METRICS_PORT: {{ required "config.metricsPort is not defined." .Values.config.metricsPort  | quote }}
+  CONSTANT_PUBLISHER_MODE: {{ required "config.constantPublisherMode is not defined." .Values.config.constantPublisherMode | quote }}
+  CONSTANT_PUBLISHER_PAUSE_SECONDS: {{ required "config.constantPublisherPauseSeconds is not defined." .Values.config.constantPublisherPauseSeconds | quote }}
