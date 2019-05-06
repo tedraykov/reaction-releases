@@ -28,7 +28,6 @@ spec:
       rsSynonymsPath: synonyms/synonyms-bobs-2019-01-16.solr.txt
       rsTopic: bobs.cdc.search.catalog.json-gen2
       rsZookeeper: zookeeper.kafka-production.k8s.bobs-test.io:2181
-      ttlSecondsAfterFinished: 86400000
     resources:
       requests:
         memory: 1Gi
@@ -36,3 +35,4 @@ spec:
       limits:
         memory: 2Gi
         cpu: "2"
+    ttlSecondsAfterFinished: 86400000

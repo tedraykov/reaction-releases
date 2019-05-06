@@ -13,8 +13,8 @@ spec:
   template:
     spec:
       restartPolicy: Never
-{{- if .Values.config.ttlSecondsAfterFinished }}
-      ttlSecondsAfterFinished: {{ .Values.config.ttlSecondsAfterFinished }}
+{{- if .Values.ttlSecondsAfterFinished }}
+      ttlSecondsAfterFinished: {{ .Values.ttlSecondsAfterFinished }}
 {{- end }}
       containers:
       - name: {{ .Chart.Name }}
