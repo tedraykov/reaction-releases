@@ -1,7 +1,8 @@
 ## How many replicas?
 replicas: 1
 
-#config:
+config:
+  rsIsLongRunning: false
 #  rsDb: value
 #  rsElasticUrl: value
 #  rsIndexVersion: value

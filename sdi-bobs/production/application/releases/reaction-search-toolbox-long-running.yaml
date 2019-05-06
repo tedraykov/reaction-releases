@@ -1,13 +1,13 @@
 apiVersion: flux.weave.works/v1beta1
 kind: HelmRelease
 metadata:
-  name: reaction-search-toolbox
+  name: reaction-search-toolbox-long-running
   namespace: bobs
 spec:
-  releaseName: reaction-search-toolbox
+  releaseName: reaction-search-toolbox-long-running
   chart:
     git: git@github.com:sportsdirect/sdi-releases.git
-    path: charts/reaction-search-toolbox
+    path: charts/reaction-search-toolbox-long-running
     ref: develop
   values:
     imagePullSecret: dockerhub-creds
@@ -18,7 +18,7 @@ spec:
       rsDb: bobs-production
       rsElasticUrl: http://elasticsearch-master.bobs:9200
       rsIndexVersion: 3
-      rsIsLongRunning: false
+      rsIsLongRunning: true
       rsKafkaServer: broker0.kafka-production.k8s.bobs-test.io:9092
       rsKafkaConnectUrl: http://reaction-kafka-connect.bobs:8082
       rsMinInSyncReplicas: 2
@@ -28,7 +28,6 @@ spec:
       rsSynonymsPath: synonyms/synonyms-bobs-2019-01-16.solr.txt
       rsTopic: bobs.cdc.search.catalog.json-gen2
       rsZookeeper: zookeeper.kafka-production.k8s.bobs-test.io:2181
-      ttlSecondsAfterFinished: 86400000
     resources:
       requests:
         memory: 1Gi

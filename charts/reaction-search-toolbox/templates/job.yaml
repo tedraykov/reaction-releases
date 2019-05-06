@@ -13,16 +13,24 @@ spec:
   template:
     spec:
       restartPolicy: Never
-      ttlSecondsAfterFinished: 86400
+{{- if .Values.config.ttlSecondsAfterFinished }}
+      ttlSecondsAfterFinished: {{ .Values.config.ttlSecondsAfterFinished }}
+{{- end }}
       containers:
       - name: {{ .Chart.Name }}
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         imagePullPolicy: {{ .Values.image.pullPolicy }}
+{{- if .Values.config.rsIsLongRunning }}
+        command:
+          - tail
+          - -f
+          - /dev/null
+{{- end }}
         envFrom:
           - configMapRef:
               name: {{ $fullName }}
           - secretRef:
-              name: {{ $fullName }}
+              name: reaction-search-toolbox
         # resource requests/limits
         resources:
           requests:
