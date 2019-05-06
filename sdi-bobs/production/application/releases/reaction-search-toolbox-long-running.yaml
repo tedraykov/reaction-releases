@@ -7,7 +7,7 @@ spec:
   releaseName: reaction-search-toolbox-long-running
   chart:
     git: git@github.com:sportsdirect/sdi-releases.git
-    path: charts/reaction-search-toolbox-long-running
+    path: charts/reaction-search-toolbox
     ref: develop
   values:
     imagePullSecret: dockerhub-creds
