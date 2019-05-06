@@ -1,0 +1,37 @@
+{{- $fullName := include "reaction-search-toolbox.fullname" . -}}
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: {{ $fullName }}
+  labels:
+    app.kubernetes.io/name: {{ $fullName }}
+    app.kubernetes.io/component: search
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+    helm.sh/chart: {{ $fullName }}
+spec:
+  template:
+    spec:
+      restartPolicy: Never
+      ttlSecondsAfterFinished: 86400
+      containers:
+      - name: {{ .Chart.Name }}
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        envFrom:
+          - configMapRef:
+              name: {{ $fullName }}
+          - secretRef:
+              name: {{ $fullName }}
+        # resource requests/limits
+        resources:
+          requests:
+            memory: {{ .Values.resources.requests.memory }}
+            cpu: {{ .Values.resources.requests.cpu }}
+          limits:
+            memory: {{ .Values.resources.limits.memory }}
+            cpu: {{ .Values.resources.limits.cpu }}
+      {{- if .Values.imagePullSecret }}
+      imagePullSecrets:
+        - name: "{{ .Values.imagePullSecret }}"
+      {{- end }}
