@@ -1,0 +1,12 @@
+apiVersion: v1
+description: search-toolbox
+name: search-toolbox
+version: 1.0.0
+keywords:
+- search-toolbox
+home: https://github.com/reactioncommerce/reaction-search
+sources:
+- https://github.com/reactioncommerce/reaction-search
+maintainers:
+- name: Reaction Commerce
+  email: admin@reactioncommerce.com
