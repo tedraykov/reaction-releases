@@ -30,8 +30,6 @@ spec:
       cartReferenceIdPrefix: 44
       etcdUrl: http://etcd-application.internal.production.k8s.bobs-test.io:2379
       jaegerEndpoint: https://jaeger-collector.bobstores.com/api/traces
-      hydraAdminUrl: http://hydra-hydra-admin-service:4445
-      hydraOauth2IntrospectUrl: http://hydra-hydra-admin-service:4445/oauth2/introspect
       initialImport: false
       inventoryPluginBatchConsumeSize: 1000
       inventoryShippableInventoryConsumerEnabled: false
