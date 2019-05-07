@@ -10,12 +10,13 @@ metadata:
     app.kubernetes.io/managed-by: {{ .Release.Service }}
     helm.sh/chart: {{ $fullName }}
 spec:
-  schedule: "* */4 * * *"
+  schedule: "{{ .Values.schedule }}"
   jobTemplate:
     spec:
       template:
         spec:
           restartPolicy: Never
+          ttlSecondsAfterFinished: 86400
           containers:
           - name: {{ .Chart.Name }}
             image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
