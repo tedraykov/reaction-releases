@@ -1,5 +1,3 @@
-imagePullSecret: dockerhub-creds
-
 ## How many replicas?
 replicas: 1
 
