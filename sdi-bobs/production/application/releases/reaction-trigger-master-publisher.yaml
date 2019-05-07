@@ -14,6 +14,7 @@ spec:
     image:
       repository: reactioncommerce/reaction-cron-jobs
       tag: "trigger-master-publisher-63bfff3"
+    schedule: "* */4 * * *"
     config:
       kafkaBootstrapServers: "broker0.kafka-production.k8s.bobs-test.io:9092,broker1.kafka-production.k8s.bobs-test.io:9093,broker2.kafka-production.k8s.bobs-test.io:9094"
       kafkaTopic: initial-import
