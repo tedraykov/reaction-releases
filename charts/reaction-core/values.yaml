@@ -31,6 +31,8 @@ ingress:
 #     paths: ['/']
 
 config:
+  constantPublisherMode: false
+  constantPublisherPauseSeconds: 300
   defaultShippingMethodId: SPbMh5gdz24Wr4J94
   defaultShippingMethodRate: "2.99"
   graphqlIntrospectionEnabled: false
