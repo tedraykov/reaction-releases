@@ -39,7 +39,7 @@ spec:
           limits:
             memory: {{ .Values.resources.limits.memory }}
             cpu: {{ .Values.resources.limits.cpu }}
-      {{- if .Values.imagePullSecret }}
+{{- if .Values.imagePullSecret }}
       imagePullSecrets:
         - name: "{{ .Values.imagePullSecret }}"
-      {{- end }}
+{{- end }}
