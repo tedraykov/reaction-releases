@@ -18,7 +18,7 @@ spec:
       max: 10
     image:
       repository: 490759768946.dkr.ecr.us-east-1.amazonaws.com/reaction-core
-      tag: "c823631cfd2f24665daa25e622276de61bd488ed"
+      tag: "a37fc101b1d9f07951587c8c0e0a537b59f00e57"
     ingress:
       enabled: true
       hosts:
