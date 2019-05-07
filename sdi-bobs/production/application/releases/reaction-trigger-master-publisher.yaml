@@ -2,7 +2,7 @@ apiVersion: flux.weave.works/v1beta1
 kind: HelmRelease
 metadata:
   name: reaction-trigger-master-publisher
-  namespace: jobs
+  namespace: bobs
 spec:
   releaseName: reaction-trigger-master-publisher
   chart:
