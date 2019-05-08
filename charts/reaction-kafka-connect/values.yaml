@@ -1,0 +1,71 @@
+# Default values for reaction-kafka-connect.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 1
+
+image: {}
+#  repository: XXX
+#  tag: latest
+#  pullPolicy: IfNotPresent
+
+nameOverride: ""
+fullnameOverride: ""
+
+annotations: {}
+
+service:
+  type: ClusterIP
+  port: 80
+
+persistence:
+  enabled: false
+  accessMode: ReadWriteOnce
+  size: 1Gi
+
+mountPath: "/etc/kafka-connect"
+
+config:
+  connectConfigStorageReplicationFactor: 1
+  connectConfigStorageTopic: reaction.default-connect-config
+  connectGroupId: reaction.default-connect
+  connectInternalKeyConverter: org.apache.kafka.connect.json.JsonConverter
+  connectInternalValueConverter: org.apache.kafka.connect.json.JsonConverter
+  connectKeyConverter: org.apache.kafka.connect.json.JsonConverter
+  connectLog4jLoggers: org.reflections=DEBUG
+  connectOffsetStorageReplicationFactor: 1
+  connectOffsetStorageTopic: reaction.default-connect-offsets
+  connectPluginPath: /usr/share/java
+  connectRestPort: 8082
+  connectStatusStorageReplicationFactor: 1
+  connectStatusStorageTopic: reaction.default-connect-status
+  connectValueConverter: org.apache.kafka.connect.json.JsonConverter
+  consumerInterceptorClasses: io.confluent.monitoring.clients.interceptor.MonitoringConsumerInterceptor
+  healthchecksEnabled: false
+  producerInterceptorClasses: io.confluent.monitoring.clients.interceptor.MonitoringProducerInterceptor
+
+resources: {}
+  # We usually recommend not to specify default resources and to leave this as a conscious
+  # choice for the user. This also increases chances charts run on environments with little
+  # resources, such as Minikube. If you do want to specify resources, uncomment the following
+  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+  # limits:
+  #   cpu: 100m
+  #   memory: 128Mi
+  # requests:
+  #   cpu: 100m
+  #   memory: 128Mi
+
+#maxUnavailable: 1
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
+
+horizontalPodAutoscaler:
+  enabled: false
+  #  averageUtilization: 50
+  #  min: 1
+  #  max: 3
