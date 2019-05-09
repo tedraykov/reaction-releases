@@ -54,6 +54,7 @@ config:
   kafkaTopicPricesById: reaction.pricing.prices-by-id-aggregates.avro-gen1
   kafkaTopicProductImportErrors: etl.product-import.errors.json-gen1
   kafkaTopicProductImportProducts: event.product-import.products.stream.json-gen1
+  kafkaTopicRadialItemExportStatus: etl.radial-item-export.status.json-gen1
   logFormat: json
   logLevel: info
   loyaltyConsumerEnabled: false
