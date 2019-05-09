@@ -22,6 +22,7 @@ spec:
     config:
       connectBootstrapServers: broker0.kafka-production.k8s.bobs-test.io:9092,broker1.kafka-production.k8s.bobs-test.io:9093,broker2.kafka-production.k8s.bobs-test.io:9094
       connectRestAdvertisedHostName: kafka-connect-production.bobs-test.io
+      connectKeyConverterSchemaRegistryUrl: http://schema-registry.kafka-production.k8s.bobs-test.io:8081
       connectValueConverterSchemaRegistryUrl: http://schema-registry.kafka-production.k8s.bobs-test.io:8081
     resources:
       requests:
