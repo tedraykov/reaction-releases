@@ -78,6 +78,7 @@ spec:
       siteCode: BOBS
       startingNewCustomerNumber: "1100151420184"
       taxesConsumerEnabled: false
+      radialItemExportConsumerEnabled: false
     resources:
       requests:
         memory: 3Gi
