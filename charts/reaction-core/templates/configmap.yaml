@@ -65,5 +65,6 @@ data:
   CONSTANT_PUBLISHER_PAUSE_SECONDS: {{ .Values.config.constantPublisherPauseSeconds | quote }}
   RADIAL_STORE_ID: {{ required "config.radialStoreId not defined." .Values.config.radialStoreId | quote }}
   RADIAL_MODE: {{ required "config.radialMode not defined." .Values.config.radialMode | quote }}
+  RADIAL_TAXES_API_URL: {{ required "config.radialTaxesApiUrl not defined." .Values.config.radialTaxesApiUrl | quote }}
   KAFKA_TOPIC_RADIAL_ITEM_EXPORT_STATUS: {{ required "config.kafkaTopicRadialItemExportStatus not defined." .Values.config.kafkaTopicRadialItemExportStatus | quote }}
   RADIAL_ITEM_EXPORT_CONSUMER_ENABLED: {{ required "config.radialItemExportConsumerEnabled not defined." .Values.config.radialItemExportConsumerEnabled | quote }}
