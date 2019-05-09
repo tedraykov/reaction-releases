@@ -1,0 +1,32 @@
+apiVersion: flux.weave.works/v1beta1
+kind: HelmRelease
+metadata:
+  name: reaction-kafka-connect
+  namespace: bobs
+spec:
+  releaseName: reaction-kafka-connect
+  chart:
+    git: git@github.com:sportsdirect/sdi-releases.git
+    path: charts/reaction-kafka-connect
+    ref: develop
+  values:
+    maxUnavailable: 1
+    horizontalPodAutoscaler:
+      enabled: true
+      averageUtilization: 70
+      min: 1
+      max: 5
+    image:
+      repository: 490759768946.dkr.ecr.us-east-1.amazonaws.com/reaction-kafka-connect
+      tag: "13985b30e691499150ff026255bb6fdf05e531a3"
+    config:
+      connectBootstrapServers: broker0.kafka-production.k8s.bobs-test.io:9092,broker1.kafka-production.k8s.bobs-test.io:9093,broker2.kafka-production.k8s.bobs-test.io:9094
+      connectRestAdvertisedHostName: kafka-connect-production.bobs-test.io
+      connectValueConverterSchemaRegistryUrl: http://schema-registry.kafka-production.k8s.bobs-test.io:8081
+    resources:
+      requests:
+        memory: 2Gi
+        cpu: "1"
+      limits:
+        memory: 3Gi
+        cpu: "2"
