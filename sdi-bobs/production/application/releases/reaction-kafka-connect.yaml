@@ -8,8 +8,7 @@ spec:
   chart:
     git: git@github.com:sportsdirect/sdi-releases.git
     path: charts/reaction-kafka-connect
-    ref: reaction-kafka-connect-chart
-    #ref: develop
+    ref: develop
   values:
     maxUnavailable: 1
     horizontalPodAutoscaler:
