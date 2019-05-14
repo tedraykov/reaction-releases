@@ -17,8 +17,10 @@ spec:
       min: 10
       max: 20
     image:
-      repository: 490759768946.dkr.ecr.us-east-1.amazonaws.com/reaction-core
-      tag: "8785f4c705cfdb5822a3f3cb46924568f74aa193"
+      repository: docker.io/sportsdirect/reaction
+      tag: ddbf1e5add7bc59ae46edf88df7c0af12eb810ea
+    imagePullSecrets:
+      - name: reaction-docker-hub
     ingress:
       enabled: true
       hosts:
