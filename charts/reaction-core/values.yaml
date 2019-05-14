@@ -8,6 +8,7 @@ image: {}
 #  repository: XXX
 #  tag: latest
 #  pullPolicy: IfNotPresent
+imagePullSecrets: []
 
 nameOverride: ""
 fullnameOverride: ""
