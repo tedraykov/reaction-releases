@@ -17,8 +17,9 @@ spec:
       min: 3
       max: 10
     image:
-      repository: 490759768946.dkr.ecr.us-east-1.amazonaws.com/reaction-storefront
-      tag: "6c16f620d795cb3f9da16d6e56f830afc0a65447"
+      #repository: 490759768946.dkr.ecr.us-east-1.amazonaws.com/reaction-storefront
+      repository: 893565362659.dkr.ecr.us-east-1.amazonaws.com/bobs
+      tag: 3d401b85d0abbbda1892c41094151039b0140797
     ingress:
       hosts:
         - host: jasper.bobstores.com
@@ -27,6 +28,7 @@ spec:
       name: bobs
       baseUrl: https://jasper.bobstores.com
       imageUrl: https://jasper.bobstores.com
+      cloudinaryFolder: bobs/prod
       defaultShippingMethodId: SPbMh5gdz24Wr4J94
       defaultShippingMethodRate: "2.99"
       elasticsearchUrl: http://elasticsearch:9200
