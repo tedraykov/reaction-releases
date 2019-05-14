@@ -11,6 +11,7 @@ metadata:
     helm.sh/chart: {{ $fullName }}
 data:
   CANONICAL_URL: {{ required "storefront.baseUrl not defined." .Values.storefront.baseUrl | quote }}
+  CLOUDINARY_FOLDER: {{ required "storefront.cloudinaryFolder not defined." .Values.storefront.cloudinaryFolder | quote }}
   DEFAULT_SHIPPING_METHOD_ID: {{ required "storefront.defaultShippingMethodId not defined." .Values.storefront.defaultShippingMethodId | quote }}
   DEFAULT_SHIPPING_METHOD_RATE: {{ required "storefront.defaultShippingMethodRate not defined." .Values.storefront.defaultShippingMethodRate | quote }}
   ELASTICSEARCH_URL: {{ required "storefront.elasticearchUrl not defined." .Values.storefront.elasticsearchUrl | quote }}

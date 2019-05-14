@@ -53,6 +53,7 @@ affinity: {}
 storefront: {}
 #  name: example
 #  baseUrl: https://www.example.com/
+#  cloudinaryFolder: project/environment
 #  elasticsearchUrl: http://elasticsearch:9200
 #  imageUrl: https://www.example.com/
 #  defaultShippingMethodRate: 2.99
