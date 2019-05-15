@@ -15,7 +15,8 @@ data:
   DEFAULT_SHIPPING_METHOD_ID: {{ required "storefront.defaultShippingMethodId not defined." .Values.storefront.defaultShippingMethodId | quote }}
   DEFAULT_SHIPPING_METHOD_RATE: {{ required "storefront.defaultShippingMethodRate not defined." .Values.storefront.defaultShippingMethodRate | quote }}
   ELASTICSEARCH_URL: {{ required "storefront.elasticearchUrl not defined." .Values.storefront.elasticsearchUrl | quote }}
-  GRAPHQL_INTROSPECTION: {{ required "graphql.introspection not defined." .Values.graphql.introspection | quote }}
+  GRAPHQL_INTROSPECTION_ENABLED: {{ required "graphql.introspectionEnabled not defined." .Values.graphql.introspectionEnabled | quote }}
+  GRAPHQL_PLAYGROUND_ENABLED: {{ required "graphql.playgroundEnabled not defined." .Values.graphql.playgroundEnabled | quote }}
   IMAGE_URL: {{ required "storefront.imageUrl not defined." .Values.storefront.imageUrl | quote }}
   INTERNAL_GRAPHQL_URL: {{ required "graphql.url not defined." .Values.graphql.url | quote }}
   PLACEHOLDER_IMAGE_URL_GALLERY: {{ .Values.storefrontPlaceholder.imageUrlGallery | default "/resources/placeholder.gif" | quote }}
