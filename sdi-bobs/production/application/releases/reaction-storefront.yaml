@@ -35,7 +35,8 @@ spec:
       sessionMaxAge: "2592000000"
       stacktraceEnabled: true
     graphql:
-      introspection: true
+      introspectionEnabled: true
+      playgroundEnabled: true
       url: http://reaction-core-web.bobs.svc.cluster.local/graphql-alpha
     radial:
       clientId: BOBSUS
