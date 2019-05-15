@@ -79,7 +79,6 @@ horizontalPodAutoscaler:
 graphql: {}
   introspectionEnabled: false
   playgroundEnabled: false
-
 #  internalUrl: http://reaction-core/graphql-alpha
 
 oauth2: {}
