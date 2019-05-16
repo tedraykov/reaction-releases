@@ -1,0 +1,70 @@
+{{- $fullName := include "hydra.fullname" . -}}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "hydra.fullname" . }}
+  labels:
+    app.kubernetes.io/name: {{ include "hydra.name" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+    helm.sh/chart: {{ include "hydra.chart" . }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: {{ include "hydra.name" . }}
+      app.kubernetes.io/instance: {{ .Release.Name }}
+  template:
+    metadata:
+      annotations:
+        checksum/config: {{ values .Values.config | sortAlpha | toString | sha256sum }}
+        checksum/secret: {{ values .Values.sealedSecrets | sortAlpha | toString | sha256sum }}
+      labels:
+        app.kubernetes.io/name: {{ include "hydra.name" . }}
+        app.kubernetes.io/instance: {{ .Release.Name }}
+    spec:
+{{- if .Values.initContainer }}
+      initContainers:
+        - name: db
+          image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+          imagePullPolicy: {{ .Values.imagePullPolicy | quote }}
+          args: [ 'migrate', 'sql', '-e', '--yes' ]
+          envFrom:
+          - secretRef:
+              name: {{ $fullName }}
+{{- end }}
+      containers:
+        - name: hydra
+          image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          args:
+          - serve
+          - all
+          - --config=/hydra/config.yaml
+          - --dangerous-force-http
+          - --sqa-opt-out
+          envFrom:
+          - secretRef:
+              name: {{ $fullName }}
+          livenessProbe:
+            httpGet:
+              path: /health/alive
+              port: 4444
+            initialDelaySeconds: 3
+            periodSeconds: 3
+          ports:
+            - name: admin
+              containerPort: 4445
+            - name: service
+              containerPort: 4444
+          volumeMounts:
+            - name: config
+              mountPath: /hydra
+{{- if .Values.resources }}
+          resources:
+{{ toYaml .Values.resources | indent 12 }}
+{{- end }}
+      volumes:
+        - name: config
+          configMap:
+            name: {{ $fullName }}

@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "hydra.fullname" . }}
+  labels:
+    app.kubernetes.io/name: {{ include "hydra.name" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+    helm.sh/chart: {{ include "hydra.chart" . }}
+spec:
+  type: {{ .Values.service.type }}
+  selector:
+    app.kubernetes.io/name: {{ include "hydra.name" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+  ports:
+    - name: admin
+      port: {{ required "service.adminPort not defined." .Values.service.adminPort }}
+      targetPort: admin
+      protocol: TCP
+    - name: public
+      port: {{ required "service.port not defined." .Values.service.port }}
+      targetPort: service
+      protocol: TCP
