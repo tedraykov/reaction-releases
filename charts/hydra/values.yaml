@@ -36,10 +36,11 @@ config:
   log:
     level: warn
     #format: json
-  httpsAllowTerminationFrom: 0.0.0.0/0
   oidc:
     subjectIdentifiers:
       enabled: ['public', 'pairwise']
+  tls:
+    allow_termination_from: ['0.0.0.0/0']
   ttl:
     accessToken: 1h
     idToken: 1h
