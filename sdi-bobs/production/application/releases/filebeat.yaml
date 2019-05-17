@@ -13,12 +13,12 @@ spec:
     extraVolumeMounts:
       - mountPath: /var/run/docker.sock
         name: var-run-docker-sock
+        readOnly: true
     extraVolumes:
       - name: var-run-docker-sock
         hostPath:
           path: /var/run/docker.sock
           type: Socket
-          readOnly: true
     indexTemplateLoad:
       - https://vpc-production-logs-h5thmymtp327yrdyej2mi2cm4a.us-east-1.es.amazonaws.com:443
     image:
