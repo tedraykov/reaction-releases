@@ -46,7 +46,7 @@ spec:
       clientId: bobs-production-storefront
       url: https://auth.bobstores.com/oauth2/auth
       host: hydra-hydra-admin-service
-      idpHostUrl: https://api.bobstores.com
+      idpHostUrl: https://api.bobstores.com/
       redirectUrl: https://jasper.bobstores.com/callback
       tokenUrl: http://hydra-hydra-main-service:4444/oauth2/token
       hydraAdminUrl: http://hydra-hydra-admin-service:4445
