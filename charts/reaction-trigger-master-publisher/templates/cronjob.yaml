@@ -16,7 +16,7 @@ spec:
       template:
         spec:
           restartPolicy: Never
-          ttlSecondsAfterFinished: 86400
+          #ttlSecondsAfterFinished: 86400
           containers:
           - name: {{ .Chart.Name }}
             image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
