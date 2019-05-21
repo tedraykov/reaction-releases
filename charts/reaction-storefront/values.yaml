@@ -76,7 +76,7 @@ horizontalPodAutoscaler:
   #  min: 1
   #  max: 3
 
-graphql: {}
+graphql:
   introspectionEnabled: false
   playgroundEnabled: false
 #  internalUrl: http://reaction-core/graphql-alpha
@@ -85,7 +85,7 @@ oauth2: {}
 #  adminPort: 4445
 #  url: https://www.example.com/ouath2/auth
 #  clientId: XXX
-#  host: XXX 
+#  host: XXX
 #  idpHostUrl: https://api.example.com
 #  redirectUrl: https://www.example.com/callback
 #  tokenUrl: https://auth.example.com/oauth2/token
