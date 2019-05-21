@@ -35,4 +35,4 @@ spec:
       limits:
         memory: 2Gi
         cpu: "2"
-    ttlSecondsAfterFinished: 86400000
+    #ttlSecondsAfterFinished: 86400000
