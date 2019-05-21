@@ -43,4 +43,5 @@ subjects:
 roleRef:
   name: {{ template "confd.fullname" . }}
   kind: ClusterRole
+  apiGroup: ""
 {{- end }}
