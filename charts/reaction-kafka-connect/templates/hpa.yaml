@@ -1,6 +1,6 @@
 {{- if .Values.horizontalPodAutoscaler.enabled -}}
 {{- $fullName := include "reaction-kafka-connect.fullname" . -}}
-apiVersion: autoscaling/v2beta1
+apiVersion: autoscaling/v1
 kind: HorizontalPodAutoscaler
 metadata:
   name: {{ $fullName }}
