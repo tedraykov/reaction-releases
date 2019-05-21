@@ -32,7 +32,7 @@ config:
   connectInternalKeyConverter: org.apache.kafka.connect.json.JsonConverter
   connectInternalValueConverter: org.apache.kafka.connect.json.JsonConverter
   connectKeyConverter: org.apache.kafka.connect.json.JsonConverter
-  connectLog4jLoggers: org.reflections=DEBUG
+  connectLog4jLoggers: org.reflections=ERROR
   connectMaxPartitionFetchBytes: 4194304
   connectMaxRequestSize: 4194304
   connectMessageMaxBytes: 4194304
