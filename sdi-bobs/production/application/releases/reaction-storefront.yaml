@@ -8,58 +8,54 @@ spec:
   chart:
     git: git@github.com:sportsdirect/sdi-releases.git
     path: charts/reaction-storefront
-    ref: develop
+    ref: refactor/reaction-storefront-chart
   values:
-    maxUnavailable: 1
+    config:
+      baseUrl: https://jasper.bobstores.com
+      cloudinaryFolder: bobs/prod
+      contentstack:
+        accessToken: !!null
+        apiKey: !!null
+        environment: production
+      elasticsearchUrl: http://elasticsearch:9200
+      graphql:
+        introspectionEnabled: true
+        playgroundEnabled: true
+        url: http://reaction-core-web.bobs.svc.cluster.local/graphql-alpha
+      hydraAdminUrl: http://hydra-hydra-admin-service:4445
+      oauth2:
+        authUrl: https://auth.bobstores.com/oauth2/auth
+        clientId: bobs-production-storefront
+        clientSecret: !!null
+        host: hydra-hydra-admin-service
+        idpHostUrl: https://api.bobstores.com/
+        redirectUrl: https://jasper.bobstores.com/callback
+        tokenUrl: http://hydra-hydra-main-service:4444/oauth2/token
+      radial:
+        clientId: BOBSUS
+        mode: production
+        rdfUrl: https://rdf.radial.com/rdf/service/scripts?clientIdentifier=BOBSUS
+      segmentAnalytics:
+        enabled: true
+        writeKey: !!null
+      sentry:
+        enabled: true
+        dsn: https://0d6525f016ba482eba2b17fa3266dda9@sentry.io/1397837
+        environment: production
+      sessionSecret: !!null
     horizontalPodAutoscaler:
       enabled: true
       averageUtilization: 70
       min: 3
       max: 10
     image:
-      #repository: 490759768946.dkr.ecr.us-east-1.amazonaws.com/reaction-storefront
       repository: 893565362659.dkr.ecr.us-east-1.amazonaws.com/bobs
       tag: c4daa9ca734cbba173e0af9c3eaff1060b8f2e8d
     ingress:
       hosts:
         - host: jasper.bobstores.com
           paths: ['/']
-    storefront:
-      name: bobs
-      baseUrl: https://jasper.bobstores.com
-      imageUrl: https://jasper.bobstores.com
-      cloudinaryFolder: bobs/prod
-      defaultShippingMethodId: SPbMh5gdz24Wr4J94
-      defaultShippingMethodRate: "2.99"
-      elasticsearchUrl: http://elasticsearch:9200
-      sessionMaxAge: "2592000000"
-      stacktraceEnabled: true
-    graphql:
-      introspectionEnabled: true
-      playgroundEnabled: true
-      url: http://reaction-core-web.bobs.svc.cluster.local/graphql-alpha
-    radial:
-      clientId: BOBSUS
-      mode: production
-      rdfUrl: https://rdf.radial.com/rdf/service/scripts?clientIdentifier=BOBSUS
-    oauth2:
-      clientId: bobs-production-storefront
-      url: https://auth.bobstores.com/oauth2/auth
-      host: hydra-hydra-admin-service
-      idpHostUrl: https://api.bobstores.com/
-      redirectUrl: https://jasper.bobstores.com/callback
-      tokenUrl: http://hydra-hydra-main-service:4444/oauth2/token
-      hydraAdminUrl: http://hydra-hydra-admin-service:4445
-    contentstack:
-      enabled: true
-      environment: production
-    segmentAnalytics:
-      enabled: true
-      skipMinimize: true
-    sentry:
-      enabled: true
-      dsn: https://0d6525f016ba482eba2b17fa3266dda9@sentry.io/1397837
-      environment: production
+    maxUnavailable: 1
     resources:
       requests:
         memory: 500Mi
