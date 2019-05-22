@@ -50,25 +50,46 @@ tolerations: []
 
 affinity: {}
 
-storefront: {}
-#  name: example
+config:
 #  baseUrl: https://www.example.com/
 #  cloudinaryFolder: project/environment
 #  elasticsearchUrl: http://elasticsearch:9200
-#  imageUrl: https://www.example.com/
-#  defaultShippingMethodRate: 2.99
-#  printErrors: false
-#  sessionMaxAge: 2592000000
-
-storefrontPlaceholder: {}
-#  imageUrlGallery: /resources/placeholder.gif
-#  imageUrlGrid: /resources/placeholder.gif
-
-contentstack: {}
-#  enabled: true
-#  accessToken: XXX
-#  apiKey: XXX
-#  environment: staging
+  contentstack:
+    enabled: true
+    # accessToken: XXX
+    # apiKey: XXX
+    # environment: staging
+  #cloudinaryFolder: example/dev
+  defaultCacheTTL: 3600
+  defaultShippingMethodId: SPbMh5gdz24Wr4J94
+  defaultShippingMethodRate: !!str 2.99
+  elasticsearchUrl: http://elasticsearch:9200
+  graphqlIntrospectionEnabled: false
+  graphqlPlaygroundEnabled: false
+  internalGraphqlUrl: http://reaction-core-web/graphql-alpha
+  oauth2:
+    adminPort: 4445
+    #  url: https://www.example.com/ouath2/auth
+    #  clientId: XXX
+    #  clientSecret: <encrypted-string>
+    #  host: XXX
+    #  idpHostUrl: https://api.example.com
+    #  redirectUrl: https://www.example.com/callback
+    #  tokenUrl: https://auth.example.com/oauth2/token
+  radial: {}
+    #  clientId: XXX
+    #  mode: sandbox
+    #  rdfUrl: https://tst-rdf.radial.com/rdf/service/scripts?clientIdentifier=XXX
+  sessionMaxAge: !!str 2592000000
+  #sessionSecret: <encrypted-string>
+  segmentAnalytics:
+    enabled: true
+    #  writeKey: XXX
+  stacktracecEnabled: false
+  sentry:
+    enabled: false
+    #  dsn: https://XXX@sentry.io/XXX
+    #  environment: staging
 
 horizontalPodAutoscaler:
   enabled: false
@@ -76,32 +97,6 @@ horizontalPodAutoscaler:
   #  min: 1
   #  max: 3
 
-graphql:
-  introspectionEnabled: false
-  playgroundEnabled: false
-#  internalUrl: http://reaction-core/graphql-alpha
-
-oauth2: {}
-#  adminPort: 4445
-#  url: https://www.example.com/ouath2/auth
-#  clientId: XXX
-#  host: XXX
-#  idpHostUrl: https://api.example.com
-#  redirectUrl: https://www.example.com/callback
-#  tokenUrl: https://auth.example.com/oauth2/token
-#  hydraAdminUrl: https://auth.example.com/
-
-radial: {}
-#  clientId: XXX
-#  mode: sandbox
-#  rdfUrl: https://tst-rdf.radial.com/rdf/service/scripts?clientIdentifier=XXX
-
-segmentAnalytics: {}
-#  enabled: true
-#  skipMinimize: true
-#  writeKey: XXX
-
-sentry: {}
-#  enabled: true
-#  dsn: https://XXX@sentry.io/XXX
-#  env: production
+monitoring:
+  enabled: true
+  interval: 30s
