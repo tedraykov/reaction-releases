@@ -73,7 +73,7 @@ config:
     #  clientId: XXX
     #  clientSecret: <encrypted-string>
     #  host: XXX
-    #  idpHostUrl: https://api.example.com
+    #  idpHostUrl: https://api.example.com/
     #  redirectUrl: https://www.example.com/callback
     #  tokenUrl: https://auth.example.com/oauth2/token
   radial: {}
