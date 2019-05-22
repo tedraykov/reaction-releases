@@ -8,58 +8,54 @@ spec:
   chart:
     git: git@github.com:sportsdirect/sdi-releases.git
     path: charts/reaction-storefront
-    ref: develop
+    ref: refactor/reaction-storefront-chart
   values:
-    maxUnavailable: 1
+    config:
+      baseUrl: https://jasper.bobstores.com
+      cloudinaryFolder: bobs/prod
+      contentstack:
+        accessToken: cs0bda4ea9bca9d324578a2b25
+        apiKey: blt1f2a37a50d4512f7
+        environment: production
+      elasticsearchUrl: http://elasticsearch:9200
+      graphql:
+        introspectionEnabled: true
+        playgroundEnabled: true
+        url: http://reaction-core-web.bobs.svc.cluster.local/graphql-alpha
+      hydraAdminUrl: http://hydra-hydra-admin-service:4445
+      oauth2:
+        authUrl: https://auth.bobstores.com/oauth2/auth
+        clientId: bobs-production-storefront
+        clientSecret: AgDJ6KJ5clKPJMZXoI9uLmQYCN2k44cUShx1azaaez6edVnjGGb0OVVI0xnMUN1DPQUb0d8K/Ro/l6cxpMkU+ickU15rfVsJo5aIyxOJXqzQa7SRqF56Rf5uzinx7kz35pnez0nFeOcDw/fnDt+IK7EdnNGsNTcwc0OzP4IZqpnfmQG9a0g1kNBhggrkHAlBflDLka7Abbzu2zEdMrTIzq1HfpX2ZE0+1aXgBOABs74OhbEyWWyHTf+ijwswcXoxFBCskJc1se87fGfFQrvdEqMPSMLDfCIilPo0IRyiFwol9wlmnYnKAuqkiGvFKNaa8orjbKWOtb79UStNbXQG8FOjGacncAuez2bmAYgJmh3eYtd7/ok82t/3qxeHgRHl5RcrH9lne4bEEu/4E090BSCx6Q2hZaphPTVY3c+rxSu7ecE56lzRjDYC0E91gDczYN83x4CGeFeIWAm1OUeTX1S1nKR2geIxr16BvGvqSAu5B6P1njLpbjMlNKs/hZjNyUtznwKDr/70cb6KBjPNwvOMmJBauL9+pzBAzPU5X0/QkZkwtmFspabbtCbyDtH9pxFDDamHei4YTUnNKziPcF6rITGXXitC+8ZRg19mXp1H70WtepBXOEUXtphLACDIpVWVkJUnzZCvYfe+c5DJxOr2iWhrDotq9XyAnTXMOjbxLFy16fLGq/GBSqxaMGeIbvbd7KojNbATee8uS79KEZMs8U+arbI=
+        host: hydra-hydra-admin-service
+        idpHostUrl: https://api.bobstores.com/
+        redirectUrl: https://jasper.bobstores.com/callback
+        tokenUrl: http://hydra-hydra-main-service:4444/oauth2/token
+      radial:
+        clientId: BOBSUS
+        mode: production
+        rdfUrl: https://rdf.radial.com/rdf/service/scripts?clientIdentifier=BOBSUS
+      segmentAnalytics:
+        enabled: true
+        writeKey: eUneJGrllfMElXRQnrIzBI8L96p81cfu
+      sentry:
+        enabled: true
+        dsn: https://0d6525f016ba482eba2b17fa3266dda9@sentry.io/1397837
+        environment: production
+      sessionSecret: AgBjpLp6G+belJSMxxhwqaq3boEUypQrcJe5+4GHtK6IJWvXSqRkLF/2Z+McJWPhPmwTx5H6L76c/eVKJX42y+KRK0xFXY17078pXv7DIuBgh5kzFh7mR7vwze2NgVUfhpdf6K9O3Y0Vg0DgxPkxKJdrUHYhJvfiZ+0q6om6mKmKk7tNE1IFJN2IGNzSS2KjXU2665I0tuHNOKpzI9cCk4nqaNYwd7HRFFIORkOCds2dvCG1ugAsBpSVTgJhLPYnmxpyN3C58X5cRV7+1gqsKvcPVHTsaIQb+raFRuE96AufoTrQeF9I65+MOiUGSGNhHrvLcn3qzA4MdD0KauIs1KN3MNBdNERwB2dxvImTwLgjG75fNxlHEeC6B6/HrqnWhTEJ+2Ve9fsP6THeAFYbZJfCv01RbYYSGgWW05U1wN87FcKwD74zKJLzyHC+yQkO7oBq9wqw+/Do28ylepSdEOBlrkk3DO/d8PaELoZwozQbhdfk0X+7dPpNMtc91u3kiRCPYYtfpwIZVl8iLJfQo4Le8M9g15dNFvo+Lc3JdXviMuBowCPG/K2zgvjPu1qfwlxk3UQwZkqwbugK96qhflO12MjI2ONzoCxSh1Gm3/CWHHh3Y/XECkHuFzxXmt3uk9ry4GNTV8Zvy0KA7KV6/sPCNch3qw/CUdX08F7vld4STK8YP44xyk/NW3ys5wDpGNJvcbsPaiLRLWjdbOzkVkcARZ/O2Un92wlCeH8=
     horizontalPodAutoscaler:
       enabled: true
       averageUtilization: 70
       min: 3
       max: 10
     image:
-      #repository: 490759768946.dkr.ecr.us-east-1.amazonaws.com/reaction-storefront
       repository: 893565362659.dkr.ecr.us-east-1.amazonaws.com/bobs
       tag: c4daa9ca734cbba173e0af9c3eaff1060b8f2e8d
     ingress:
       hosts:
         - host: jasper.bobstores.com
           paths: ['/']
-    storefront:
-      name: bobs
-      baseUrl: https://jasper.bobstores.com
-      imageUrl: https://jasper.bobstores.com
-      cloudinaryFolder: bobs/prod
-      defaultShippingMethodId: SPbMh5gdz24Wr4J94
-      defaultShippingMethodRate: "2.99"
-      elasticsearchUrl: http://elasticsearch:9200
-      sessionMaxAge: "2592000000"
-      stacktraceEnabled: true
-    graphql:
-      introspectionEnabled: true
-      playgroundEnabled: true
-      url: http://reaction-core-web.bobs.svc.cluster.local/graphql-alpha
-    radial:
-      clientId: BOBSUS
-      mode: production
-      rdfUrl: https://rdf.radial.com/rdf/service/scripts?clientIdentifier=BOBSUS
-    oauth2:
-      clientId: bobs-production-storefront
-      url: https://auth.bobstores.com/oauth2/auth
-      host: hydra-hydra-admin-service
-      idpHostUrl: https://api.bobstores.com/
-      redirectUrl: https://jasper.bobstores.com/callback
-      tokenUrl: http://hydra-hydra-main-service:4444/oauth2/token
-      hydraAdminUrl: http://hydra-hydra-admin-service:4445
-    contentstack:
-      enabled: true
-      environment: production
-    segmentAnalytics:
-      enabled: true
-      skipMinimize: true
-    sentry:
-      enabled: true
-      dsn: https://0d6525f016ba482eba2b17fa3266dda9@sentry.io/1397837
-      environment: production
+    maxUnavailable: 1
     resources:
       requests:
         memory: 500Mi
