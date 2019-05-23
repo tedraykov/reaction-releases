@@ -10,12 +10,13 @@ spec:
     name: elasticsearch-curator
     version: "1.2.1"
   values:
-    configMaps.config_yml: |-
-      ---
-      client:
-        hosts:
-          - vpc-production-logs-h5thmymtp327yrdyej2mi2cm4a.us-east-1.es.amazonaws.com
-        port: 443
-        use_ssl: True
-        logging:
-          loglevel: WARN
+    configMaps:
+      config_yml: |-
+        ---
+        client:
+          hosts:
+            - vpc-production-logs-h5thmymtp327yrdyej2mi2cm4a.us-east-1.es.amazonaws.com
+          port: 443
+          use_ssl: True
+          logging:
+            loglevel: WARN
