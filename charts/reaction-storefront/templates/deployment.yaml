@@ -13,18 +13,19 @@ spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      app.kubernetes.io/name: {{ include "reaction-storefront.name" . }}
+      app.kubernetes.io/name: {{ $fullName }}
       app.kubernetes.io/instance: {{ .Release.Name }}
   template:
     metadata:
-{{- if .Values.annotations }}
       annotations:
+        checksum/config: {{ values .Values.config | sortAlpha | toString | sha256sum }}
+{{- if .Values.annotations }}
         {{- with .Values.annotations }}
         {{- toYaml . | nindent 8 }}
         {{- end }}
 {{- end }}
       labels:
-        app.kubernetes.io/name: {{ include "reaction-storefront.name" . }}
+        app.kubernetes.io/name: {{ $fullName }}
         app.kubernetes.io/instance: {{ .Release.Name }}
     spec:
       containers:
@@ -33,29 +34,9 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           envFrom:
             - configMapRef:
-                name: {{ printf "%s-%s" $fullName "config" }}
-            - configMapRef:
-                name: {{ printf "%s-%s" $fullName "oauth2" }}
-            - configMapRef:
-                name: {{ printf "%s-%s" $fullName "radial" }}
+                name: {{ $fullName }}
             - secretRef:
-                name: reaction-storefront
-{{- if .Values.contentstack.enabled }}
-            - configMapRef:
-                name: {{ printf "%s-%s" $fullName "contentstack" }}
-            - secretRef:
-                name: contentstack
-{{- end }}
-{{- if .Values.segmentAnalytics.enabled }}
-            - configMapRef:
-                name: {{ printf "%s-%s" $fullName "segmentanalytics" }}
-            - secretRef:
-                name: segmentanalytics
-{{- end }}
-{{- if .Values.sentry.enabled }}
-            - configMapRef:
-                name: {{ printf "%s-%s" $fullName "sentry" }}
-{{- end }}
+                name: {{ $fullName }}
           ports:
             - name: http
               containerPort: 8080

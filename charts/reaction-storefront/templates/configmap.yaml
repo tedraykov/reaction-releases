@@ -1,0 +1,47 @@
+{{- $fullName := include "reaction-storefront.fullname" . -}}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ $fullName }}
+  labels:
+    app.kubernetes.io/name: {{ $fullName }}
+    app.kubernetes.io/component: frontend
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+    helm.sh/chart: {{ $fullName }}
+data:
+  CANONICAL_URL: {{ required "config.baseUrl not defined." .Values.config.baseUrl | quote }}
+{{- if .Values.config.contentstack.enabled }}
+  CONTENTSTACK_ACCESS_TOKEN: {{ required "config.contentstack.accessToken is not defined." .Values.config.contentstack.accessToken | quote }}
+  CONTENTSTACK_API_KEY: {{ required "config.contentstack.apiKey is not defined." .Values.config.contentstack.apiKey | quote }}
+  CONTENTSTACK_ENVIRONMENT_NAME: {{ required "config.contentstack.environment is not defined." .Values.config.contentstack.environment | quote }}
+{{- end }}
+  CLOUDINARY_FOLDER: {{ required "config.cloudinaryFolder not defined." .Values.config.cloudinaryFolder | quote }}
+  DEFAULT_CACHE_TTL: {{ required "config.defaultCacheTTL not defined." .Values.config.defaultCacheTTL | quote }}
+  DEFAULT_SHIPPING_METHOD_ID: {{ required "config.defaultShippingMethodId not defined." .Values.config.defaultShippingMethodId | quote }}
+  DEFAULT_SHIPPING_METHOD_RATE: {{ required "config.defaultShippingMethodRate not defined." .Values.config.defaultShippingMethodRate | quote }}
+  ELASTICSEARCH_URL: {{ required "config.elasticearchUrl not defined." .Values.config.elasticsearchUrl | quote }}
+  GRAPHQL_INTROSPECTION_ENABLED: {{ required "config.graphqlIntrospectionEnabled not defined." .Values.config.graphqlIntrospectionEnabled | quote }}
+  GRAPHQL_PLAYGROUND_ENABLED: {{ required "config.graphqlPlaygroundEnabled not defined." .Values.config.graphqlPlaygroundEnabled | quote }}
+  HYDRA_ADMIN_URL: {{ required "config.hydraAdminUrl not defined." .Values.config.hydraAdminUrl | quote }}
+  INTERNAL_GRAPHQL_URL: {{ required "config.internalGraphqlUrl not defined." .Values.config.internalGraphqlUrl | quote }}
+  OAUTH2_ADMIN_PORT: {{ required "config.ouath2.adminPort not defined." .Values.config.oauth2.adminPort | quote }}
+  OAUTH2_AUTH_URL: {{ required "config.oauth2.authUrl not defined." .Values.config.oauth2.authUrl | quote }}
+  OAUTH2_CLIENT_ID: {{ required "config.oauth2.clientId not defined." .Values.config.oauth2.clientId | quote }}
+  OAUTH2_HOST: {{ required "config.oauth2.host not defined." .Values.config.oauth2.host | quote }}
+  OAUTH2_IDP_HOST_URL: {{ required "config.oauth2.idpHostUrl not defined." .Values.config.oauth2.idpHostUrl | quote }}
+  OAUTH2_REDIRECT_URL: {{ required "config.oauth2.redirectUrl not defined." .Values.config.oauth2.redirectUrl | quote }}
+  OAUTH2_TOKEN_URL: {{ required "config.oauth2.tokenUrl not defined." .Values.config.oauth2.tokenUrl | quote }}
+  PRINT_ERRORS: {{ .Values.config.stacktraceEnabled | default false | quote }}
+  RADIAL_CLIENTID: {{ required "config.radial.clientId not defined." .Values.config.radial.clientId | quote }}
+  RADIAL_MODE: {{ required "config.radial.mode not defined." .Values.config.radial.mode | quote }}
+  RADIAL_RDF_URL: {{ required "config.radial.rdfUrl not defined." .Values.config.radial.rdfUrl | quote }}
+  SEARCH_ENABLED: "true"
+{{- if .Values.config.segmentAnalytics.enabled }}
+  SEGMENT_ANALYTICS_WRITE_KEY: {{ required "config.segmentAnalytics.writeKey not defined." .Values.config.segmentAnalytics.writeKey | quote }}
+{{- end }}
+{{- if .Values.config.sentry.enabled }}
+  SENTRY_DSN: {{ required "config.sentry.dsn not defined" .Values.config.sentry.dsn | quote }}
+  SENTRY_ENV: {{ required "config.sentry.environment not defined" .Values.config.sentry.environment | quote }}
+{{- end }}
+  SESSION_MAX_AGE_MS: {{ required "config.sessionMaxAge not defined." .Values.config.sessionMaxAge | quote }}
