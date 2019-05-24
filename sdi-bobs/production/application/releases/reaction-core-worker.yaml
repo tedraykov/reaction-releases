@@ -43,6 +43,7 @@ spec:
       kafkaSchemaRegistryUrl: http://schema-registry.kafka-production.k8s.bobs-test.io:8081
       kafkaTopicProductImportErrorsPartitions: 3
       kafkaTopicProductImportProductsPartitions: 1
+      logLevel: 'debug'
       loyaltyConsumerEnabled: false
       loyaltyPluginBatchConsumeSize: 10000
       masterPublishConsumerEnabled: true
