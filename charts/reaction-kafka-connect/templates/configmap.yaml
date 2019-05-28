@@ -16,17 +16,22 @@ data:
   CONNECT_GROUP_ID: {{ required "config.connectGroupId not defined." .Values.config.connectGroupId | quote }}
   CONNECT_INTERNAL_KEY_CONVERTER: {{ required "config.connectInternalKeyConverter not defined." .Values.config.connectInternalKeyConverter | quote }}
   CONNECT_INTERNAL_VALUE_CONVERTER: {{ required "config.connectInternalValueConverter not defined." .Values.config.connectInternalValueConverter | quote }}
-  CONNECT_KEY_CONVERTER: {{ required "config.connectKeyConverter not defined." .Values.config.connectKeyConverter | quote }}
   CONNECT_KEY_CONVERTER_SCHEMA_REGISTRY_URL: {{ required "config.connectKeyConverterSchemaRegistryUrl not defined." .Values.config.connectKeyConverterSchemaRegistryUrl | quote }}
+  CONNECT_KEY_CONVERTER: {{ required "config.connectKeyConverter not defined." .Values.config.connectKeyConverter | quote }}
   CONNECT_LOG4J_LOGGERS: {{ required "config.connectLog4jLoggers not defined." .Values.config.connectLog4jLoggers | quote }}
+  CONNECT_MAX_PARTITION_FETCH_BYTES: {{ required "config.connectMaxPartitionFetchBytes not defined." .Values.config.connectMaxPartitionFetchBytes | quote }}
+  CONNECT_MAX_REQUEST_SIZE: {{ required "config.connectMaxRequestSize not defined." .Values.config.connectMaxRequestSize | quote }}
+  CONNECT_MESSAGE_MAX_BYTES: {{ required "config.connectMessageMaxBytes not defined." .Values.config.connectMessageMaxBytes | quote }}
   CONNECT_OFFSET_STORAGE_REPLICATION_FACTOR: {{ required "config.connectOffsetStorageReplicationFactor not defined." .Values.config.connectOffsetStorageReplicationFactor | quote }}
   CONNECT_OFFSET_STORAGE_TOPIC: {{ required "config.connectOffsetStorageTopic not defined." .Values.config.connectOffsetStorageTopic | quote }}
   CONNECT_PLUGIN_PATH: {{ required "config.connectPluginPath not defined." .Values.config.connectPluginPath | quote }}
+  CONNECT_PRODUCER_MAX_REQUEST_SIZE: {{ required "config.connectProducerMaxRequestSize not defined." .Values.config.connectProducerMaxRequestSize | quote }}
+  CONNECT_REPLICA_FETCH_MAX_BYTES: {{ required "config.connectReplicaFetchMaxBytes not defined." .Values.config.connectReplicaFetchMaxBytes | quote }}
   CONNECT_REST_ADVERTISED_HOST_NAME: {{ required "config.connectRestAdvertisedHostName not defined." .Values.config.connectRestAdvertisedHostName | quote }}
   CONNECT_REST_PORT: {{ required "config.connectRestPort not defined." .Values.config.connectRestPort | quote }}
   CONNECT_STATUS_STORAGE_REPLICATION_FACTOR: {{ required "config.connectStatusStorageReplicationFactor not defined." .Values.config.connectStatusStorageReplicationFactor | quote }}
   CONNECT_STATUS_STORAGE_TOPIC: {{ required "config.connectStatusStorageTopic not defined." .Values.config.connectStatusStorageTopic | quote }}
-  CONNECT_VALUE_CONVERTER: {{ required "config.connectValueConverter not defined." .Values.config.connectValueConverter | quote }}
   CONNECT_VALUE_CONVERTER_SCHEMA_REGISTRY_URL: {{ required "config.connectValueConverterSchemaRegistryUrl not defined." .Values.config.connectValueConverterSchemaRegistryUrl| quote }}
+  CONNECT_VALUE_CONVERTER: {{ required "config.connectValueConverter not defined." .Values.config.connectValueConverter | quote }}
   CONSUMER_INTERCEPTOR_CLASSES: {{ required "config.consumerInterceptorClasses not defined." .Values.config.consumerInterceptorClasses | quote }}
   PRODUCER_INTERCEPTOR_CLASSES: {{ required "config.producerInterceptorClasses not defined." .Values.config.producerInterceptorClasses | quote }}
