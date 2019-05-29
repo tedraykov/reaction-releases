@@ -13,7 +13,7 @@ spec:
     imagePullSecret: dockerhub-creds
     image:
       repository: reactioncommerce/reaction-cron-jobs
-      tag: "sftp-from-radial-f4500ec"
+      tag: "sftp-from-radial-7d5040f"
     schedule: "*/2 * * * *"
     config:
       s3BucketName: sdi-prod-feeds-order-status-import-bobs
