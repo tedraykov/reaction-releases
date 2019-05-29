@@ -13,10 +13,10 @@ spec:
     imagePullSecret: dockerhub-creds
     image:
       repository: reactioncommerce/reaction-cron-jobs
-      tag: "sftp-from-radial-63bfff3"
-    schedule: "*/15 * * * *"
+      tag: "sftp-from-radial-d721ce5"
+    schedule: "*/2 * * * *"
     config:
-      s3BucketName: sdi-bobs-production-radial-sftp
+      s3BucketName: sdi-prod-feeds-order-status-import-bobs
       sftpEndpoint: sftp.remotetools.gsipartners.com
       sftpHomedir: /home/bobsftp02
       sftpPassword: >-
