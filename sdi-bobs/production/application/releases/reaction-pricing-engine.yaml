@@ -11,8 +11,11 @@ spec:
     ref: develop
   values:
     image:
-      repository: 490759768946.dkr.ecr.us-east-1.amazonaws.com/reaction-pricing-engine
-      tag: "37ba7200d665041f8dab836b4072f797e7ba4284"
+      #repository: 490759768946.dkr.ecr.us-east-1.amazonaws.com/reaction-pricing-engine
+      repository: docker.io/reactioncommerce/pricing-engine
+      tag: "59bafda3f020606d6fa79eb10896fcfa6eecb8e5"
+    imagePullSecrets:
+      - name: reaction-docker-hub
     ingress:
       enabled: true
       hosts:
