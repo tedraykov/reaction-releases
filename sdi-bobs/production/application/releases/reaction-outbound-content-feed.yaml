@@ -13,7 +13,7 @@ spec:
     imagePullSecret: dockerhub-creds
     image:
       repository: reactioncommerce/reaction-etl-content-feed
-      tag: "latest"
+      tag: "e29fde8"
     #schedule: "*/10 * * * *"
     schedule: "0 4 * * *"
     config:
