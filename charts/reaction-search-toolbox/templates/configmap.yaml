@@ -4,7 +4,7 @@ kind: ConfigMap
 metadata:
   name: {{ $fullName }}
   labels:
-    app.kubernetes.io/name: {{ include "reaction-search-toolbox.name" . }}
+    app.kubernetes.io/name: {{ $fullName }}
     app.kubernetes.io/component: search
     app.kubernetes.io/instance: {{ .Release.Name }}
     app.kubernetes.io/managed-by: {{ .Release.Service }}
