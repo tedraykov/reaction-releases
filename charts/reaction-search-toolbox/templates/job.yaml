@@ -2,13 +2,13 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: {{ $fullName }}
+  name: {{ $fullName }}-init-setup
   labels:
-    app.kubernetes.io/name: {{ $fullName }}
+    app.kubernetes.io/name: {{ $fullName }}-init-setup
     app.kubernetes.io/component: search
     app.kubernetes.io/instance: {{ .Release.Name }}
     app.kubernetes.io/managed-by: {{ .Release.Service }}
-    helm.sh/chart: {{ $fullName }}
+    helm.sh/chart: {{ include "reaction-search-toolbox.chart" . }}
 spec:
   template:
     spec:
@@ -20,17 +20,11 @@ spec:
       - name: {{ .Chart.Name }}
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         imagePullPolicy: {{ .Values.image.pullPolicy }}
-{{- if .Values.config.rsIsLongRunning }}
-        command:
-          - tail
-          - -f
-          - /dev/null
-{{- end }}
         envFrom:
           - configMapRef:
               name: {{ $fullName }}
           - secretRef:
-              name: reaction-search-toolbox
+              name: {{ $fullName }}
         # resource requests/limits
         resources:
           requests:

@@ -1,0 +1,44 @@
+{{- $fullName := include "reaction-search-toolbox.fullname" . -}}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ $fullName }}
+  labels:
+    app.kubernetes.io/name: {{ $fullName }}
+    app.kubernetes.io/component: search
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+    helm.sh/chart: {{ include "reaction-search-toolbox.chart" . }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  template:
+    metadata:
+{{- if .Values.annotations }}
+      annotations:
+        {{- with .Values.annotations }}
+        {{- toYaml . | nindent 8 }}
+        {{- end }}
+{{- end }}
+      labels:
+        app.kubernetes.io/name: {{ $fullName }}
+        app.kubernetes.io/instance: {{ .Release.Name }}
+    spec:
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          command:
+            - tail
+            - -f
+            - /dev/null
+          envFrom:
+            - configMapRef:
+                name: {{ $fullName }}
+            - secretRef:
+                name: {{ $fullName }}
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+{{- if .Values.imagePullSecret }}
+      imagePullSecrets:
+        - name: "{{ .Values.imagePullSecret }}"
+{{- end }}

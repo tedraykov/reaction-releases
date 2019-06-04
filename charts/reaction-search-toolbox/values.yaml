@@ -1,8 +1,7 @@
 ## How many replicas?
 replicas: 1
 
-config:
-  rsIsLongRunning: false
+config: {}
 #  rsDb: value
 #  rsElasticUrl: value
 #  rsIndexVersion: value
@@ -25,3 +24,4 @@ resources: {}
   # requests:
   #   cpu: 100m
   #   memory: 128Mi
+
