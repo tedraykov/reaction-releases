@@ -12,7 +12,8 @@ spec:
   values:
     config:
       baseUrl: https://staging.bobs-test.io
-      cloudinaryFolder: bobs/dev
+      cloudinary:
+        folder: bobs/dev
       contentstack:
         accessToken: cs7197fa31078b9f44382a5a77
         apiKey: blt1f2a37a50d4512f7
