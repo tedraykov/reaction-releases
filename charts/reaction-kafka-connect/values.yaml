@@ -34,14 +34,14 @@ config:
   connectInternalValueConverter: org.apache.kafka.connect.json.JsonConverter
   connectKeyConverter: org.apache.kafka.connect.json.JsonConverter
   connectLog4jLoggers: org.reflections=ERROR
-  connectMaxPartitionFetchBytes: 5000000
-  connectMaxRequestSize: 5000000
-  connectMessageMaxBytes: 5000000
+  connectMaxPartitionFetchBytes: '5000000'
+  connectMaxRequestSize: '5000000'
+  connectMessageMaxBytes: '5000000'
   connectOffsetStorageReplicationFactor: 1
   connectOffsetStorageTopic: reaction.default-connect-offsets
   connectPluginPath: /usr/share/java
-  connectProducerMaxRequestSize: 5000000
-  connectReplicaFetchMaxBytes: 5000000
+  connectProducerMaxRequestSize: '5000000'
+  connectReplicaFetchMaxBytes: '5000000'
   connectRestPort: 8082
   connectStatusStorageReplicationFactor: 1
   connectStatusStorageTopic: reaction.default-connect-status

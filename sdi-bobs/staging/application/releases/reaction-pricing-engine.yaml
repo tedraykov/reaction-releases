@@ -1,0 +1,40 @@
+apiVersion: flux.weave.works/v1beta1
+kind: HelmRelease
+metadata:
+  name: reaction-pricing-engine
+  namespace: staging
+spec:
+  releaseName: reaction-pricing-engine
+  chart:
+    git: git@github.com:sportsdirect/sdi-releases.git
+    path: charts/reaction-pricing-engine
+    ref: develop
+  values:
+    image:
+      repository: 225761155017.dkr.ecr.us-east-1.amazonaws.com/reaction-pricing-engine
+      tag: "37ba7200d665041f8dab836b4072f797e7ba4284"
+    ingress:
+      enabled: true
+      hosts:
+        - host: pe-staging.bobs-test.io
+          paths: ['/']
+    jmx:
+      image: reactioncommerce/jmx-prometheus-exporter
+      imageTag: configurable-via-env
+    config:
+      jvmOpts: "-d64 -Xms2560m -Xmx2560m"
+      bootstrapServers: "broker0.kafka-staging.k8s.bobs-test.io:9092,broker1.kafka-staging.k8s.bobs-test.io:9093,broker2.kafka-staging.k8s.bobs-test.io:9094"
+      schemaRegistryUrl: "http://schema-registry.kafka-staging.k8s.bobs-test.io:8081"
+      zookeeperConnect: "zookeeper.kafka-staging.k8s.bobs-test.io:2181"
+      autoOffsetReset: "earliest"
+      bufferedRecordsPerPartition: "0"
+      cacheMaxBytesBuffering: "0"
+    horizontalPodAutoscaler:
+      enabled: false
+    resources:
+        requests:
+            memory: 3Gi
+            cpu: 500m
+        limits:
+            memory: 4Gi
+            cpu: 1000m

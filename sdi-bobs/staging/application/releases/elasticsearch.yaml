@@ -1,0 +1,18 @@
+apiVersion: flux.weave.works/v1beta1
+kind: HelmRelease
+metadata:
+  name: elasticsearch
+  namespace: staging
+spec:
+  releaseName: elasticsearch
+  chart:
+    repository: https://kubernetes-charts.storage.googleapis.com
+    name: elasticsearch
+    version: 1.26.0
+  values:
+    cluster.name: search
+    image:
+      pullSecrets:
+        - reaction-docker-hub
+      repository: 893565362659.dkr.ecr.us-east-1.amazonaws.com/elasticsearch
+      tag: 76c6ceb0614a5588a465da99452eb22851185e88

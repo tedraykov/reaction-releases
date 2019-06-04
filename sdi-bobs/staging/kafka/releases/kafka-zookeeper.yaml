@@ -1,0 +1,15 @@
+apiVersion: flux.weave.works/v1beta1
+kind: HelmRelease
+metadata:
+  name: kafka-zookeeper
+  namespace: staging
+spec:
+  releaseName: kafka-zookeeper
+  chart:
+    git: git@github.com:sportsdirect/sdi-releases.git
+    path: charts/kafka/charts/cp-zookeeper
+    ref: feature/staging
+  values:
+    imageTag: 5.1.2
+    persistence:
+      dataDirSize: 25Gi

@@ -1,0 +1,15 @@
+apiVersion: flux.weave.works/v1beta1
+kind: HelmRelease
+metadata:
+  name: kafka-schema-registry
+  namespace: staging
+spec:
+  releaseName: kafka-schema-registry
+  chart:
+    git: git@github.com:sportsdirect/sdi-releases.git
+    path: charts/kafka/charts/cp-schema-registry
+    ref: feature/staging
+  values:
+    imageTag: 5.1.2
+    kafka:
+      bootstrapServers: "PLAINTEXT://kafka-broker-cp-kafka-headless:9092"

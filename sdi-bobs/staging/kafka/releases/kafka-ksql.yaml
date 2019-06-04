@@ -1,0 +1,17 @@
+apiVersion: flux.weave.works/v1beta1
+kind: HelmRelease
+metadata:
+  name: kafka-ksql
+  namespace: staging
+spec:
+  releaseName: kafka-ksql
+  chart:
+    git: git@github.com:sportsdirect/sdi-releases.git
+    path: charts/kafka/charts/cp-ksql-server
+    ref: feature/staging
+  values:
+    cp-schema-registry:
+      url: kafka-schema-registry-cp-schema-registry:8081
+    kafka:
+      bootstrapServers: "PLAINTEXT://kafka-broker-cp-kafka:9092"
+    imageTag: 5.1.2

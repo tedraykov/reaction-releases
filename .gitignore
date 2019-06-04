@@ -1,2 +1,6 @@
+*.swp
+.DS_Store
+cache
+tmp
 values-all*.yaml
 .DS_Store
