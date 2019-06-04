@@ -11,6 +11,60 @@ metadata:
     helm.sh/chart: {{ include "reaction-search-toolbox.chart" . }}
 spec:
   replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: {{ include "reaction-search-toolbox.name" . }} 
+      app.kubernetes.io/instance: {{ .Release.Name }}
+  template:
+    metadata:
+{{- if .Values.annotations }}
+      annotations:
+        {{- with .Values.annotations }}
+        {{- toYaml . | nindent 8 }}
+        {{- end }}
+{{- end }}
+      labels:
+        app.kubernetes.io/name: {{ include "reaction-core.name" . }}
+        app.kubernetes.io/instance: {{ .Release.Name }}
+    spec:
+{{- if .Values.imagePullSecrets }}
+      imagePullSecrets:
+{{ toYaml .Values.imagePullSecrets | indent 8 }}
+{{- end }}
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+{{- if .Values.config.profilingEnabled }}
+          command:
+            - node
+            - --prof
+            - main.js
+{{- end }}
+          envFrom:
+            - configMapRef:
+                name: {{ $fullName }}
+            - secretRef:
+                name: {{ $fullName }}
+          ports:
+            - name: http
+              containerPort: 3000
+              protocol: TCP
+{{- if .Values.config.metricsEnabled }}
+            - name: admin
+              containerPort: 3001
+              protocol: TCP
+{{- end }}
+{{- if .Values.config.healthchecksEnabled }}
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: http
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: http
+{{- end }}
   template:
     metadata:
 {{- if .Values.annotations }}
