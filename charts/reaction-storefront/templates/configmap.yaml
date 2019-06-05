@@ -16,7 +16,9 @@ data:
   CONTENTSTACK_API_KEY: {{ required "config.contentstack.apiKey is not defined." .Values.config.contentstack.apiKey | quote }}
   CONTENTSTACK_ENVIRONMENT_NAME: {{ required "config.contentstack.environment is not defined." .Values.config.contentstack.environment | quote }}
 {{- end }}
-  CLOUDINARY_FOLDER: {{ required "config.cloudinaryFolder not defined." .Values.config.cloudinaryFolder | quote }}
+  CLOUDINARY_FOLDER: {{ required "config.cloudinary.folder not defined." .Values.config.cloudinary.folder | quote }}
+  CLOUDINARY_NAME: {{ required "config.cloudinary.name not defined." .Values.config.cloudinary.name | quote }}
+  CLOUDINARY_DOMAIN: {{ required "config.cloudinary.domain not defined." .Values.config.cloudinary.domain | quote }}
   DEFAULT_CACHE_TTL: {{ required "config.defaultCacheTTL not defined." .Values.config.defaultCacheTTL | quote }}
   DEFAULT_SHIPPING_METHOD_ID: {{ required "config.defaultShippingMethodId not defined." .Values.config.defaultShippingMethodId | quote }}
   DEFAULT_SHIPPING_METHOD_RATE: {{ required "config.defaultShippingMethodRate not defined." .Values.config.defaultShippingMethodRate | quote }}
