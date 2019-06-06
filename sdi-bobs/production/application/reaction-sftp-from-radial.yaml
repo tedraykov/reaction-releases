@@ -14,7 +14,7 @@ spec:
     image:
       repository: sportsdirect/reaction-cron-jobs
       tag: sftp-from-radial-9c3d03b
-    schedule: "*/15 * * * *"
+    schedule: "*/5 * * * *"
     config:
       s3BucketName: sdi-prod-feeds-order-status-import-bobs
       sftpEndpoint: sftp.remotetools.gsipartners.com
