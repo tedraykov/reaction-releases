@@ -8,12 +8,13 @@ spec:
   chart:
     git: git@github.com:sportsdirect/sdi-releases.git
     path: charts/reaction-sftp-from-radial
-    ref: develop
+    ref: complete-sftp-from-radial-task
+    #ref: develop
   values:
     imagePullSecret: dockerhub-creds
     image:
       repository: reactioncommerce/reaction-cron-jobs
-      tag: "sftp-from-radial-43657bd"
+      tag: sftp-from-radial-a3ec9d4
     schedule: "*/2 * * * *"
     config:
       s3BucketName: sdi-prod-feeds-order-status-import-bobs
