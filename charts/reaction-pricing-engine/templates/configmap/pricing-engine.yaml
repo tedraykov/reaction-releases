@@ -36,3 +36,4 @@ data:
   PRICING_PRICEBOOK_ENTRY_AGGREGATES_STATE_STORE_NAME: {{ required "config.pricebookEntryAggregatesStateStoreName not defined." .Values.config.pricebookEntryAggregatesStateStoreName | quote }}
   PRICING_PRICES_BY_ID_AGGREGATES_TOPIC: {{ required "config.pricesByIdAggregatesTopic not defined." .Values.config.pricesByIdAggregatesTopic | quote }}
   PRICING_PRICES_BY_ID_STATE_STORE_NAME: {{ required "config.pricesByIdStateStoreName not defined." .Values.config.pricesByIdStateStoreName | quote }}
+  DEBUG_GRAPHQL_ERRORS: {{ required "config.debugGraphqlErrors is not defined." .Values.config.debugGraphqlErrors  | quote }}

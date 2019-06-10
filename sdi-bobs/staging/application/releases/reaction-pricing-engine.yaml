@@ -29,6 +29,7 @@ spec:
       autoOffsetReset: "earliest"
       bufferedRecordsPerPartition: "0"
       cacheMaxBytesBuffering: "0"
+      debugGraphqlErrors: "1"
     horizontalPodAutoscaler:
       enabled: false
     resources:
