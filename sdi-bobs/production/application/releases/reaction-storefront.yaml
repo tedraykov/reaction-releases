@@ -13,7 +13,8 @@ spec:
     config:
       baseUrl: https://jasper.bobstores.com
       cloudinary:
-        folder: bobs/prod
+        name: bobstores
+        domain: res.cloudinary.com
       contentstack:
         accessToken: cs0bda4ea9bca9d324578a2b25
         apiKey: blt1f2a37a50d4512f7
@@ -51,7 +52,7 @@ spec:
       max: 10
     image:
       repository: 893565362659.dkr.ecr.us-east-1.amazonaws.com/bobs
-      tag: b95640af64fe0cbe8c727fdda8afb2892dafcc82
+      tag: 7263388c4e56fe7b1c2cf69b142c7baca8583046
     ingress:
       hosts:
         - host: jasper.bobstores.com

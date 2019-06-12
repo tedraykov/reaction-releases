@@ -58,9 +58,6 @@ config:
     # accessToken: XXX
     # apiKey: XXX
     # environment: staging
-  cloudinary:
-    name: sportsdirect
-    domain: res.cloudinary.com
   defaultCacheTTL: 3600
   defaultShippingMethodId: SPbMh5gdz24Wr4J94
   defaultShippingMethodRate: !!str 2.99

@@ -13,7 +13,8 @@ spec:
     config:
       baseUrl: https://staging.bobs-test.io
       cloudinary:
-        folder: bobs/dev
+        name: bobstores-dev
+        domain: res.cloudinary.com
       contentstack:
         accessToken: cs7197fa31078b9f44382a5a77
         apiKey: blt1f2a37a50d4512f7
@@ -47,7 +48,7 @@ spec:
       max: 10
     image:
       repository: 893565362659.dkr.ecr.us-east-1.amazonaws.com/bobs
-      tag: f920d900e84107f246dff6be3b4988ed14afff38
+      tag: 7263388c4e56fe7b1c2cf69b142c7baca8583046
     ingress:
       hosts:
         - host: staging.bobs-test.io
