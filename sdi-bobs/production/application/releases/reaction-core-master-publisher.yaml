@@ -1,10 +1,10 @@
 apiVersion: flux.weave.works/v1beta1
 kind: HelmRelease
 metadata:
-  name: reaction-core-worker
+  name: reaction-core-master-publisher
   namespace: bobs
 spec:
-  releaseName: reaction-core-worker
+  releaseName: reaction-core-master-publisher
   chart:
     git: git@github.com:sportsdirect/sdi-releases.git
     path: charts/reaction-core
@@ -24,7 +24,7 @@ spec:
       brontoAccessToken: >-
         AgBsD7RGsnPXBiz0u22G8OW35qwXU7OM0GR97dA/yEO53acp+QiJzCIs+FSeF7WFA3oJtb7JKbdHCRLaM/ItQ42W/y+agRo8LUBvuQGJQeRw9SKpWxHbOU8mpMIjFjfJVq4pvHd/v+MFNKJtvVaePPI6UNL1XWK2fL2qCYUjcwM0cfHx/+w1ihuB1xhxzSOvYMZ5JSuMB2LteRGzvU/0HaecWlgwrLeNyyE5mewvuCN0dmNrj1lbUk+e/m03YNUkahdutoqVGjfPS7diS2JD4MNfC0+xcYjvaZGCicuzaFNbOuZ0Fbk/HK2FjSRd4fbFWvr3ssQVkuEYkc/+hvH27jAzK/BKZK8aEt3046gEc4k6nWvL5Cn8Ig78j5tTWwBAJXzboYrE59sMyIEBSmnTkb+HOeXN3KiEnK9QMSTnH8Q1Cbu1cU6Gjxdn/ITUsucTevtCxkVx+TtFpJb/Qn5Hstot8v17h82j5AhMQbXHJlenQwGiO91iOoRBjw5ZIy4SI1wZ5n8ANPijaG0qU4UhgcBNeSPIZv0HbfvCr1EH0i+J2teBGNAQn7xvdKPEb5iIxFdshc5B/JMh0yN4ZPh+Pk+R80FKVT523LSiK1XI/lJ86cOqAtFupxvGXvfYRqF/k/8HHrj6sssaM8HyxqAMUtnnhpK1gNpKMfc7MRWj4tGEUu/9Kmq5f+mKRDqt5QKy2jHvabG5yhjIv1ow2Gzs7nudzJPaoJu/nwS27xQFOgFFzFnt3n8=
       cartReferenceIdPrefix: 44
-      constantPublisherMode: false
+      constantPublisherMode: true
       constantPublisherPauseSeconds: 300
       etcdUrl: http://etcd-application.internal.production.k8s.bobs-test.io:2379
       jaegerEndpoint: https://jaeger-collector.bobstores.com/api/traces
