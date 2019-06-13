@@ -1,0 +1,39 @@
+apiVersion: flux.weave.works/v1beta1
+kind: HelmRelease
+metadata:
+  name: reaction-sftp-from-radial
+  namespace: bobs
+spec:
+  releaseName: reaction-sftp-from-radial
+  chart:
+    git: git@github.com:sportsdirect/sdi-releases.git
+    path: charts/reaction-sftp-from-radial
+    ref: develop
+  values:
+    imagePullSecret: dockerhub-creds
+    image:
+      repository: reactioncommerce/reaction-cron-jobs
+      tag: ftp-from-radial-ec91400
+    schedule: "*/5 * * * *"
+    config:
+      s3BucketName: sdi-bobs-staging-order-status-import
+      sftpEndpoint: ftp.gsipartners.com
+      sftpHomedir: /home/bobsftp01
+      sftpPassword: >-
+        AgA1kRN1bqPVMusY1aVoqOtR1h5LOuHu4ioXrrhdHgapdUFCmQK811M0iyyZSq3gvqA44jMJD7fOq44OH/sVdePff7L/cCfnWN6k+GLaS+fixK6hAC3ch8gkFuzXUiBipwU1A3tYndprvtKzXFpf1OZX6SqyhcVYDZe8iRE3wNuyiQw7701el1ffOmOJRBFvyZjjqbHxYC+aJa7UtBn1gFhpOQudNs4JT+CgbTjZLXSMwRHUrp1IW8a7cpFyUoiCwJnmPOtF4WMuEIV34HnPSj6VZNRs9ZQLTwXQGvDPLgGIJ11QEQb8V4T02o+OC3WqOzRyz+AlbhAb7G+LPveO3XHK2Qu8EL7khMLIRj4B4Oflz7/GGltZ6UiFExjCHbQiyC1ZO9q1+pbVxWdCUSza3R5WZVNJ6HhsV7kAV1xktEfoW1j4QPitjUH2CNQbIG16rdGAqLPbYpNb+CcPBsSPLeRIsIlryBSqaZiJjEvnEmM0Fojgyrgn14gQAcYfaxIxiE7xEIbUCA5/B0kptyYLBF/xWOmRUmQ5CfwZdSqfwmKYfw4mFCCvZfeE7MtGhkHG9l4j+pm3o0aSwEZGUdW0P4WzMf9tSZgzrCEDnoF9BXmktUt5uD4U3bq5lO4a/oGy3Y7rfSl1/4uqERa2dgkBFDq7prE403DZtsnlS2cKZwqvTHapRI+I1TJGU7Z3DoTAO74kTAuX/mko1txj
+      sftpUsername: bobsftp01
+      sftpSubfolders:
+        adjusted: outbound/order_status/BOBS/adjusted
+        backordered: outbound/order_status/BOBS/backordered
+        canceled: outbound/order_status/BOBS/canceled
+        ispuStatus: outbound/order_status/BOBS/ISPU_status
+        opened: outbound/order_status/BOBS/opened
+        returned: outbound/order_status/BOBS/returned
+        shipped: outbound/order_status/BOBS/shipped
+    resources:
+      requests:
+        memory: 1Gi
+        cpu: "1"
+      limits:
+        memory: 2Gi
+        cpu: "1"
