@@ -13,7 +13,7 @@ spec:
     imagePullSecret: reaction-docker-hub
     image:
       repository: reactioncommerce/reaction-cron-jobs
-      tag: ftp-from-radial-3f46865
+      tag: ftp-from-radial-67a967a
     schedule: "*/5 * * * *"
     config:
       s3BucketName: sdi-bobs-staging-order-status-import
