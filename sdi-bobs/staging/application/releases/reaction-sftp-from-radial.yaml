@@ -10,7 +10,7 @@ spec:
     path: charts/reaction-sftp-from-radial
     ref: develop
   values:
-    imagePullSecret: dockerhub-creds
+    imagePullSecret: reaction-docker-hub
     image:
       repository: reactioncommerce/reaction-cron-jobs
       tag: ftp-from-radial-ec91400
