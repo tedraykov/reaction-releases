@@ -1,10 +1,10 @@
 apiVersion: flux.weave.works/v1beta1
 kind: HelmRelease
 metadata:
-  name: reaction-core-worker
+  name: reaction-core-master-publisher
   namespace: staging
 spec:
-  releaseName: reaction-core-worker
+  releaseName: reaction-core-master-publisher
   chart:
     git: git@github.com:sportsdirect/sdi-releases.git
     path: charts/reaction-core
