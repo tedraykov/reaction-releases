@@ -36,7 +36,6 @@ spec:
       jaegerEndpoint: https://jaeger-collector.bobstores.com/api/traces
       initialImport: false
       inventoryPluginBatchConsumeSize: 1000
-      inventoryShippableInventoryConsumerEnabled: false
       kadiraAppId: >-
         AgCnvd9XU+ZCmvBoBB3dqr5ylLVukeo90LwjIV8QTakLuk8vBWI4RRc089+qwibnegfuSxKnMy7lj2awG/Ms8JQf5ugroMjDZ3zQjtHLfklEVs8AmlKTREGFL4PqQEt+zK3iG/GIzQJ1tQAM/OccxWFzDq27KMUR2olP+gq3SRtBR69nqxVBUIDSnuck1/1xjp0bzwdnh1e6SBzb795nOyU5ZjgcyJ1jCpfiw+6Irsy58GaUtgyqa/lEDDXkFia/sRfQsRnHw6kcVLODn7akYILtEF/7hN4Mr+q3Ga1qPhUHWyoEimF4BZflodqU9ZdpAGLYEYaXZLN4eB6OkLUeK8AYj0CW/nwUm1gN2//T1s/vsYxQ1XgVGpKPCEi3JjwiLUHmnr4j/qWslPEs4NIItzYNXgyqKXEakzH5Ja0IO3FF5fDqjv5Fu93rjTMLpSaYRUZbgGQUAc2/WRfGu1kF09JRg1qBvQo8asQpUVrCW1svSMu6wdrgRuxIHU9MXcXsM70nihmLCG48uzTtAWIKm/mu9ieU2WQWxWOkGLDvJ54nJmuqkimil9B9zKi+3KV2LT7xGQrhWL053HYDCBagyZFPEBUWmmY6GGI0UcJ38V5uJESNCtboTv6KGKTn1HLo+vd+vwVnKjyIjY2icQsFNCNd4/hsCn2pZpssjRf/mrPjo5ehZQPQqUjjkr9Ol3WF/YCrFJ+68ZvIBfCE1wC6g4xmIw==
       kadiraAppSecret: >-
@@ -48,9 +47,7 @@ spec:
       kafkaSchemaRegistryUrl: http://schema-registry.kafka-production.k8s.bobs-test.io:8081
       kafkaTopicProductImportErrorsPartitions: 3
       kafkaTopicProductImportProductsPartitions: 1
-      loyaltyConsumerEnabled: false
       loyaltyPluginBatchConsumeSize: 10000
-      masterPublishConsumerEnabled: false
       metricsEnabled: true
       mongoOplogUrl: >-
         AgA+OEQuSOVg2rBHiiZTIGYitozM6+gNe98gHEIRLN7yiFZ7NpWK58uCPR2a2paDJhSsuEHp9Nxax4xwPRWHudsrprjNEnpEnleN5t8BO5pBNsGVNCs3MPa1UVEb/aYyZJg6OsEdwxVZ67NYIJl58rB5YwHfnDW9BA2M2Y7ePph3X6z0a/vXKX3An109q1n/MAFqen2pqTjU6Lq+i4Lmiou9C+6o9c6NtpEyL+4a0ew4dYYQ7vmWCOzydFFWeP9ByCPb71FZNkNVzP3N6G7W02CnzQxFw4b0GquXgvlFg0TQekNNAnGqpsVJXBA33wDlqh/u6GAGTqmIPwifD4uloJEFlAZTy6LuaaA8jjkvfy4frDwfLMVOHZQ+BDO//Nr/dS/PE7gSVeh+bNreSiwsnioAwEgkUhyPLG23rZDp7oCKlDK+asdACsvP6hphjZG5L7nllxCAzI1kF8zsG9SpXcD09pYd+WucWWg+JCxp2XgmQ6o6Qu7TFLqMx8urHnmONx+UKN3TyDF02KPXHaPn49xVVuzqIj89T9QGKCzaX4hlt94Hm8EvB1piXZHKbv91lCvCI7xCnDvqB0Kw8eZkc87LlVonsCzjgwlUPVcutwg2NExg1ex/lTwFQHi+g2FZ+tvLi4g+3B/xxKhHEGRJWNGxCF86Rll36OWQSrqYPhnnyJ/hOzvkUDXEZZGDI5PVo0/BJTJEsr4pSBeGF9+ZV3HsPQeuFfqI8Wdnexi1Plk+TyJ+Gx7ym6X8A4q2XYOGg1hL2kyMOxLRtfIMX2Q+4tI/ekYlLWn5eW/306XdlsYG69YCasphgByQQCMbYBxXfOAkv6dLPX7yHDKiaBhomaBmlmb1fvbOfl4F/kOLZfmxaOFssAHMKJo3NKHoQ4m166/XRGpmE37QgkTS//rGD4eJipIVonfQhJmYWbCdUMwety9U5nYJt/8gNQ+m8mY+icJ/JmeR4Ronnv9/n4wlIoGIwv7PAIAf/08vpOuQLxe9B1E1RFk/0CX7nUWKQqpuHExw7+pBl7AOmY+NKbqlxktSLUqJpXL1ZuVHd2/vkw==
@@ -59,9 +56,7 @@ spec:
       orderExportRadialApiKey: >-
         AgBlZ9ToD2D1kOKwQ8oI0yG32S1r3YpN7ieC3mZQo2US+yNwG8H7uaM7BVv+Pngf6a1l8VE83Y8Sn+oMdWokqnvrbcFAgIX3UCJoUNDwKElC1MvJK+pgE8MbYGc9QrU2iwPLly6AjbjuFH674aKchtZ4lp5aVyy5LW1Fg/aT3zxY62gWknvtKI5bjmJMpNaGT9ew8JEr9Z0xMLggB8pp45pPF3Dd4LfyhRhDpjKLimuop2UyFBS9zsLgKcXg7bWGwnQY94j882lsWKQ531XxHcejgPNsVTiFewb1Fw8NiNZy+sQy9zxhea15bm1agtCzKXDmTZArEGX3yAlnl6DxqnsvcYS0rMhgpmp24gexWQT3HrqYFJ0uysk4KTMT2jpNSNsEd66mq5NFpZPjCoxHopfNf5VzprV+G6Rh+ACoB25ZoYsX6/eOv7s2SN0wNe+anylc+q+X0XyBVoOMf6MZR+/Ef2tqZmmIbQE+2gYsxeDZZQxDPZleurZDTYl0UWq8xGbJ75xTiW5oD+fplSAYALxQOFopZjlDBBZiu66atzleUnmg5/mjoirJNQu24BSzHN7SgadrXdrrTP3Spgj4wFgH8sfxRgQtTSv97EFUHfWypHEZAqUYaEr5YQUWDBadqkiUsxc58NaPcckSRCsMs8t4Oxna6ML2HBRI/wTtKn7puIQDKXZlOMu3N36600rRpbE8KfOYADa6T6+u0TWx2IkXNyxkC2hu4IumicWfj4wDmQ==
       orderExportRadialUrl: https://api-na.gsipartners.com/v1.0/OOMF/stores
-      pricingConsumerEnabled: false
       pricingGraphqlUrl: http://reaction-pricing-engine.bobs:8888/graphql
-      productConsumerEnabled: false
       productPublisherAutoPublish: false
       radialMode: production
       radialPassword: >-
@@ -81,8 +76,6 @@ spec:
       rootUrl: https://api.bobstores.com
       siteCode: BOBS
       startingNewCustomerNumber: "1100151420184"
-      taxesConsumerEnabled: false
-      radialItemExportConsumerEnabled: false
     resources:
       requests:
         memory: 3Gi
