@@ -18,7 +18,6 @@ spec:
       healthchecksEnabled: false
       hydraAdminUrl: http://hydra:4445
       hydraOauth2IntrospectUrl: http://hydra:4445/oauth2/introspect
-      initialImport: true
       inventoryPluginBatchConsumeSize: 1000
       inventoryShippableInventoryConsumerEnabled: true
       jaegerEndpoint: https://jaeger-collector.bobs-test.io/api/traces
