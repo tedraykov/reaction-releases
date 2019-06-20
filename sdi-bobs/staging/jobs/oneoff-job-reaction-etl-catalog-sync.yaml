@@ -15,6 +15,7 @@ spec:
     image: sportsdirect/reaction-etl-catalog-sync:3616fcf52d187c88b8ff1482ab660a3a98203e79
     command:
       - node
+      - --max-old-space-size=8000
       - /home/node/app/src/runMain.js
       - -b
       - sdi-staging-feeds-product-catalog-bobs
