@@ -19,7 +19,7 @@ spec:
       batchSize: 1000
       cloudFolder: bobs/staging
       cloudName: sportsdirect
-      jaegerEndpoint: http://jaeger-collector.staging.k8s.bobs-test.io:14268/api/traces
+      jaegerEndpoint: http://jaeger-collector.monitoring:14268/api/traces
       kafkaBootstrapServers: broker0.kafka-staging.k8s.bobs-test.io:9092,broker1.kafka-staging.k8s.bobs-test.io:9093,broker2.kafka-staging.k8s.bobs-test.io:9094
       kafkaPartitionContentFeedErrors: 3
       kafkaPartitionContentFeedStatus: 3
