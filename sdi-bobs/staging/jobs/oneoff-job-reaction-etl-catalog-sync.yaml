@@ -10,6 +10,7 @@ spec:
   containers:
   - name: runner
     image: sportsdirect/reaction-etl-catalog-sync:master
+    nodeName: ip-172-17-53-238.ec2.internal
     command:
       - node
       - /home/node/app/src/runMain.js
