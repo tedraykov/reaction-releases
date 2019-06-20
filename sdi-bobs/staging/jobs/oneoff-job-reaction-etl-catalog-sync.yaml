@@ -3,6 +3,8 @@ kind: Pod
 metadata:
   name: oneoff-job-reaction-etl-catalog-sync
   namespace: staging
+  labels:
+    app: oneoff-job-reaction-etl-catalog-sync
 spec:
   restartPolicy: Never
   imagePullSecrets:
