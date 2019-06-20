@@ -25,7 +25,7 @@ spec:
           name: oneoff-job-reaction-etl-catalog-sync
     env:
       - name: JAEGER_ENDPOINT
-        value: https://jaeger-collector.staging.k8s.bobs-test.io
+        value: http://jaeger-collector.staging.k8s.bobs-test.io:14268
       - name: INITIAL_IMPORT
         value: "false"
       - name: KAFKA_BOOTSTRAP_SERVERS
