@@ -11,6 +11,9 @@ spec:
   - name: runner
     image: reactioncommerce/oneoff-reaction-etl-import-tax-codes
     command: [ "make", "start" ]
+    envFrom:
+      - secretRef:
+          name: oneoffjobs
     env:
       - name: SITE_CODE
         value: "BOBS"
@@ -18,8 +21,7 @@ spec:
         value: "bobs-staging"
       - name: ACTION
         value: "not purge"
-      # TODO Grig/Slawek, please hook up the corresponding secrets:
-      # - name: MONGO_HOST
+      # - name: MONGO_HOST --> specified in oneoffjobs secret
       # - name: GRAFANA_AUTH_TOKEN
       # - name: CLOUDFLARE_CLIENT_ID
       # - name: CLOUDFLARE_CLIENT_SECRET
