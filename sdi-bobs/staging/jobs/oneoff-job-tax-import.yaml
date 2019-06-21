@@ -22,9 +22,9 @@ spec:
       - name: ACTION
         value: "not purge"
       # - name: MONGO_HOST --> specified in oneoffjobs secret
-      # - name: GRAFANA_AUTH_TOKEN
-      # - name: CLOUDFLARE_CLIENT_ID
-      # - name: CLOUDFLARE_CLIENT_SECRET
+      # - name: GRAFANA_AUTH_TOKEN --> specified in oneoffjobs secret
+      # - name: CLOUDFLARE_CLIENT_ID --> specified in oneoffjobs secret
+      # - name: CLOUDFLARE_CLIENT_SECRET --> specified in oneoffjobs secret
     imagePullPolicy: Always
     resources:
       limits:
