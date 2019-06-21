@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: oneoff-job-tag-import
-  namespace: bobs
+  namespace: staging
 spec:
   restartPolicy: Never
   imagePullSecrets:
@@ -11,16 +11,13 @@ spec:
   - name: runner
     image: reactioncommerce/oneoff-reaction-tags-import
     command: [ "make", "start" ]
+    # This provides: MONGO_HOST, MONGO_DB, GRAFANA_AUTH_TOKEN, CLOUDFLARE_CLIENT_ID, CLOUDFLARE_CLIENT_SECRET
+    envFrom:
+      - secretRef:
+          name: oneoffjobs
     env:
-      # TODO Grig/Slawek please wire these up as secrets
-      # - name: MONGO_HOST
-      # - name: GRAFANA_AUTH_TOKEN
-      # - name: CLOUDFLARE_CLIENT_ID
-      # - name: CLOUDFLARE_CLIENT_SECRET
       - name: SITE_CODE
         value: "BOBS"
-      - name: MONGO_DB
-        value: "bobs-staging"
       - name: ACTION
         value: "purge"
     imagePullPolicy: Always

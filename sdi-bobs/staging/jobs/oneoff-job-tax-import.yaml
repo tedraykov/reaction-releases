@@ -11,20 +11,15 @@ spec:
   - name: runner
     image: reactioncommerce/oneoff-reaction-etl-import-tax-codes
     command: [ "make", "start" ]
+    # This provides: MONGO_HOST, MONGO_DB, GRAFANA_AUTH_TOKEN, CLOUDFLARE_CLIENT_ID, CLOUDFLARE_CLIENT_SECRET
     envFrom:
       - secretRef:
           name: oneoffjobs
     env:
       - name: SITE_CODE
         value: "BOBS"
-      - name: MONGO_DB
-        value: "bobs-staging"
       - name: ACTION
         value: "not purge"
-      # - name: MONGO_HOST --> specified in oneoffjobs secret
-      # - name: GRAFANA_AUTH_TOKEN
-      # - name: CLOUDFLARE_CLIENT_ID
-      # - name: CLOUDFLARE_CLIENT_SECRET
     imagePullPolicy: Always
     resources:
       limits:
