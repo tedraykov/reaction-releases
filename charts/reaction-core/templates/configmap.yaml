@@ -52,6 +52,7 @@ data:
   LOYALTY_CONSUMER_ENABLED: {{ required "config.loyaltyConsumerEnabled is not defined." .Values.config.loyaltyConsumerEnabled  | quote }}
   ORDER_EXPORT_RADIAL_URL: {{ required "config.orderExportRadialUrl is not defined." .Values.config.orderExportRadialUrl | quote }}
   PRICING_CONSUMER_ENABLED: {{ required "config.pricingConsumerEnabled is not defined." .Values.config.pricingConsumerEnabled | quote }}
+  PRICING_PUBLISH_ENABLED: {{ required "config.pricingPublishEnabled is not defined." .Values.config.pricingPublishEnabled | quote }}
   PRICING_GRAPHQL_URL: {{ required "config.pricingGraphqlUrl is not defined." .Values.config.pricingGraphqlUrl | quote }}
   PRODUCT_CONSUMER_ENABLED: {{ required "config.productConsumerEnabled is not defined." .Values.config.productConsumerEnabled | quote }}
   PRODUCT_PUBLISHER_AUTO_PUBLISH: {{ required "config.productPublisherAutoPublish is not defined." .Values.config.productPublisherAutoPublish | quote }}
