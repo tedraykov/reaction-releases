@@ -1,0 +1,33 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: oneoff-job-tag-import
+  namespace: staging
+spec:
+  restartPolicy: Never
+  imagePullSecrets:
+    - name: dockerhub-creds
+  containers:
+  - name: runner
+    image: reactioncommerce/oneoff-reaction-etl-import-tax-codes
+    command: [ "make", "start" ]
+    env:
+      - name: SITE_CODE
+        value: "BOBS"
+      - name: MONGO_DB
+        value: "bobs-staging"
+      - name: ACTION
+        value: "not purge"
+      # TODO Grig/Slawek, please hook up the corresponding secrets:
+      # - name: MONGO_HOST
+      # - name: GRAFANA_AUTH_TOKEN
+      # - name: CLOUDFLARE_CLIENT_ID
+      # - name: CLOUDFLARE_CLIENT_SECRET
+    imagePullPolicy: Always
+    resources:
+      limits:
+        cpu: 1
+        memory: "1028M"
+      requests:
+        cpu: 1
+        memory: "1028M"
