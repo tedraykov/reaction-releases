@@ -32,7 +32,9 @@ spec:
       - name: REACTION_LOG_LEVEL
         value: INFO
       - name: LOCAL_TEST
-        value: "true"  
+        value: "true"
+      - name: SITE_CODE
+        value: "BOBS"  
     imagePullPolicy: Always
     resources:
       limits:
