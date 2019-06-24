@@ -35,8 +35,8 @@ spec:
       cacheMaxBytesBuffering: "0"
     resources:
         requests:
-            memory: 3Gi
-            cpu: 500m
+            memory: 4Gi
+            cpu: 1000m
         limits:
             memory: 4Gi
             cpu: 1000m
