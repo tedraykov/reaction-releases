@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: oneoff-job-tag-import
+  name: oneoff-job-tax-import
   namespace: staging
 spec:
   restartPolicy: Never
@@ -10,16 +10,29 @@ spec:
   containers:
   - name: runner
     image: reactioncommerce/oneoff-reaction-etl-import-tax-codes
-    command: [ "make", "start" ]
-    # This provides: MONGO_HOST, MONGO_DB, GRAFANA_AUTH_TOKEN, CLOUDFLARE_CLIENT_ID, CLOUDFLARE_CLIENT_SECRET
     envFrom:
       - secretRef:
           name: oneoffjobs
+    # This provides: MONGO_HOST, MONGO_DB, GRAFANA_AUTH_TOKEN, CLOUDFLARE_CLIENT_ID, CLOUDFLARE_CLIENT_SECRET
     env:
-      - name: SITE_CODE
-        value: "BOBS"
-      - name: ACTION
-        value: "not purge"
+      - name: JAEGER_ENDPOINT
+        value: http://jaeger-collector.monitoring:14268/api/traces
+      - name: KAFKA_BOOTSTRAP_SERVERS
+        value: "broker0.kafka-staging.k8s.bobs-test.io:9092,broker1.kafka-staging.k8s.bobs-test.io:9093,broker2.kafka-staging.k8s.bobs-test.io:9094"
+      - name: KAFKA_PARTITIONS
+        value: "3"
+      - name: KAFKA_TOPIC_IMPORT_TAX_CODES_TAXCODES
+        value: etl.import-tax-codes.tax-codes.json-gen1
+      - name: KAFKA_TOPIC_IMPORT_TAX_CODES_TAXCODES_PARTITIONS
+        value: "3"
+      - name: KAFKA_TOPIC_IMPORT_TAX_CODES_ERRORS
+        value: etl.import-tax-codes.errors.json-gen1
+      - name: KAFKA_TOPIC_IMPORT_TAX_CODES_ERRORS_PARTITIONS
+        value: "3"
+      - name: REACTION_LOG_LEVEL
+        value: INFO
+      - name: LOCAL_TEST
+        value: "true"  
     imagePullPolicy: Always
     resources:
       limits:
