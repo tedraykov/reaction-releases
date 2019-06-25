@@ -20,6 +20,6 @@ spec:
     kind: Deployment
     name: {{ $fullName }}
   minReplicas: {{ .Values.horizontalPodAutoscaler.min | default 1 }}
-  maxReplicas: {{ .Values.horizontalPodAutoscaler.min | default 3 }}
+  maxReplicas: {{ .Values.horizontalPodAutoscaler.max | default 3 }}
   targetCPUUtilizationPercentage: {{ .Values.horizontalPodAutoscaler.averageUtilization | default 50 }}
 {{- end }}
