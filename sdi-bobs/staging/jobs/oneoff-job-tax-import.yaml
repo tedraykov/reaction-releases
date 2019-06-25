@@ -6,7 +6,8 @@ metadata:
 spec:
   restartPolicy: Never
   imagePullSecrets:
-    - name: dockerhub-creds
+    - name: reaction-docker-hub
+  nodeName: ip-172-17-53-238.ec2.internal
   containers:
   - name: runner
     image: reactioncommerce/oneoff-reaction-etl-import-tax-codes
@@ -32,7 +33,9 @@ spec:
       - name: REACTION_LOG_LEVEL
         value: INFO
       - name: LOCAL_TEST
-        value: "true"  
+        value: "true"
+      - name: SITE_CODE
+        value: "BOBS"  
     imagePullPolicy: Always
     resources:
       limits:
