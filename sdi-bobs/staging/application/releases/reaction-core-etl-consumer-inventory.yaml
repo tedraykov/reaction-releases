@@ -19,7 +19,7 @@ spec:
       hydraAdminUrl: http://hydra:4445
       hydraOauth2IntrospectUrl: http://hydra:4445/oauth2/introspect
       inventoryPluginBatchConsumeSize: 1000
-      inventoryShippableInventoryConsumerEnabled: true
+      shippableInventoryConsumerEnabled: true
       initialImport: true
       jaegerEndpoint: https://jaeger-collector.bobs-test.io/api/traces
       kadiraAppId: >-
