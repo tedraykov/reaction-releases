@@ -7,10 +7,9 @@ spec:
   restartPolicy: Never
   imagePullSecrets:
     - name: reaction-docker-hub
-  nodeName: ip-172-17-53-238.ec2.internal
   containers:
   - name: runner
-    image: sportsdirect/reaction-etl-import-tax-codes:becfd9f050df4390ad34cb87563683589237a2f0
+    image: sportsdirect/reaction-etl-import-tax-codes:2f1540b4c34e16c933da8073a0e13461e7054ccf
     envFrom:
       - secretRef:
           name: oneoffjobs
