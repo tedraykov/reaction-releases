@@ -10,7 +10,7 @@ spec:
   nodeName: ip-172-17-53-238.ec2.internal
   containers:
   - name: runner
-    image: sportsdirect/reaction-etl-import-pricing:this-should-be-hash-of-the-correct-docker-image
+    image: sportsdirect/reaction-etl-import-pricing:f23d272839133158e8da9207988a2b9790f300f5
         command: [ "node", "--max-old-space-size=4096", "run.js", "sdi-bobs-staging2-playground", "bobs-usd-retail-prices_20190621.zip" ]
     envFrom:
       - secretRef:
