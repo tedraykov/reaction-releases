@@ -2,26 +2,28 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: oneoff-job-pricing-import
-  namespace: bobs
+  namespace: staging
 spec:
   restartPolicy: Never
   imagePullSecrets:
-    - name: dockerhub-creds
+    - name: reaction-docker-hub
+  nodeName: ip-172-17-53-238.ec2.internal
   containers:
   - name: runner
-    image: reactioncommerce/oneoff-job-pricing-import
-    command: [ "node", "--max-old-space-size=4096", "run.js", "sdi-staging-feeds-pricing-bobs", "BOBS_Web_PermPriceBook_2019-04-17_17-05-06.zip" ]
-    # This provides: MONGO_HOST, MONGO_DB, GRAFANA_AUTH_TOKEN, CLOUDFLARE_CLIENT_ID, CLOUDFLARE_CLIENT_SECRET
+    image: sportsdirect/reaction-etl-import-pricing:this-should-be
+        command: [ "node", "--max-old-space-size=4096", "run.js", "sdi-bobs-staging2-playground", "bobs-usd-retail-prices_20190621.zip" ]
     envFrom:
       - secretRef:
           name: oneoffjobs
+    # This provides: MONGO_HOST, MONGO_DB, GRAFANA_AUTH_TOKEN, CLOUDFLARE_CLIENT_ID, CLOUDFLARE_CLIENT_SECRET
     env:
-      # - name: AWS_ACCESS_KEY_ID
-      #- name: AWS_SECRET_ACCESS_KEY
       - name: PRICING_GRAPHQL_URL
         value: "http://reaction-pricing-engine/graphql"
       - name: GRAFANA_API
         value: "https://grafana-staging.bobs-test.io/api"
+      - name: REACTION_LOG_LEVEL
+        value: INFO
+    imagePullPolicy: Always
     resources:
       limits:
         cpu: 1
