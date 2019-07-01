@@ -9,7 +9,6 @@ spec:
   restartPolicy: Never
   imagePullSecrets:
     - name: reaction-docker-hub
-  nodeName: ip-172-17-53-238.ec2.internal
   containers:
   - name: runner
     image: sportsdirect/reaction-etl-catalog-sync:3616fcf52d187c88b8ff1482ab660a3a98203e79
