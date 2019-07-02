@@ -13,7 +13,7 @@ spec:
     imagePullSecret: reaction-docker-hub
     image:
       repository: reactioncommerce/reaction-search-toolbox
-      tag: "f508423a2a7c8d399ad51ab3138995b5478539da"
+      tag: "5e13b8ccbf2fdf7dcf78a6ffe64966c0c52b06ce"
     config:
       rsDb: sample-data-bobs-staging
       rsElasticUrl: http://elasticsearch-client:9200
