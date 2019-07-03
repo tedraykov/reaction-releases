@@ -23,7 +23,7 @@ spec:
       graphql:
         introspectionEnabled: true
         playgroundEnabled: true
-        url: http://reaction-core-web.bobs.svc.cluster.local/graphql-alpha
+        url: http://reaction-core-web.bobs.svc.cluster.local/graphql-beta
       hydraAdminUrl: http://hydra-hydra-admin-service:4445
       oauth2:
         authUrl: https://auth.bobstores.com/oauth2/auth
@@ -52,7 +52,7 @@ spec:
       max: 10
     image:
       repository: 893565362659.dkr.ecr.us-east-1.amazonaws.com/bobs
-      tag: 5279e08d0c01e6749960f67dbad4389e2ce8a847
+      tag: 153903abc3c447592330c63cffe36fb3716d53a9
     ingress:
       hosts:
         - host: jasper.bobstores.com

@@ -64,7 +64,7 @@ config:
   elasticsearchUrl: http://elasticsearch:9200
   graphqlIntrospectionEnabled: false
   graphqlPlaygroundEnabled: false
-  internalGraphqlUrl: http://reaction-core-web/graphql-alpha
+  internalGraphqlUrl: http://reaction-core-web/graphql-beta
   oauth2:
     adminPort: 4445
     #  url: https://www.example.com/ouath2/auth
