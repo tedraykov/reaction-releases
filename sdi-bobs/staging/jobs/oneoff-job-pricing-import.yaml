@@ -10,7 +10,7 @@ spec:
   containers:
   - name: runner
     image: sportsdirect/reaction-etl-pricing-import:f23d272839133158e8da9207988a2b9790f300f5
-    command: [ "node", "--max-old-space-size=4096", "src/run.js", "sdi-bobs-staging2-playground", "bobs-usd-retail-prices_20190621.zip" ]
+    command: [ "node", "--max-old-space-size=4096", "src/run.js", "sdi-bobs-staging2-playground", "BOBS_Web_SalePriceBook_2019-07-01_17-25-40.zip" ]
     envFrom:
       - secretRef:
           name: oneoffjobs
