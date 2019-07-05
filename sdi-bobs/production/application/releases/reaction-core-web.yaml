@@ -18,7 +18,7 @@ spec:
       max: 20
     image:
       repository: docker.io/sportsdirect/reaction
-      tag: 299e4ef532719f5fc7aa2da4c59f9a10093b0472
+      tag: 33a97f74e24d5773e09f7475bbcf6cc748801924
     imagePullSecrets:
       - name: reaction-docker-hub
     ingress:
