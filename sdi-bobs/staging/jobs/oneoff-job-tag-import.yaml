@@ -6,11 +6,11 @@ metadata:
 spec:
   restartPolicy: Never
   imagePullSecrets:
-    - name: dockerhub-creds
+    - name: reaction-docker-hub
   containers:
   - name: runner
-    image: reactioncommerce/oneoff-reaction-tags-import
-    command: [ "make", "start" ]
+    image: sportsdirect/reaction-tags-import:brent-change-makefile-to-work-in-pod
+    command: [ "make", "navigation" ]
     # This provides: MONGO_HOST, MONGO_DB, GRAFANA_AUTH_TOKEN, CLOUDFLARE_CLIENT_ID, CLOUDFLARE_CLIENT_SECRET
     envFrom:
       - secretRef:
@@ -20,6 +20,8 @@ spec:
         value: "BOBS"
       - name: ACTION
         value: "purge"
+      - name: REACTION_LOG_LEVEL
+        value: DEBUG
     imagePullPolicy: Always
     resources:
       limits:

@@ -9,19 +9,20 @@ spec:
     - name: reaction-docker-hub
   containers:
   - name: runner
-    image: sportsdirect/reaction-etl-catalog-sync:3616fcf52d187c88b8ff1482ab660a3a98203e79
+    image: sportsdirect/reaction-etl-catalog-sync:c1e35915a28f72ed1c47651296331e645c91ca51
     command:
       - node
       - --max-old-space-size=8000
       - /home/node/app/src/integrity-scripts/integrity.js
       - --test
-      - invalidProducts
       - checkOrphans
-      - checkForUnpublishedProducts
+      - diffProducts
     envFrom:
       - secretRef:
           name: oneoffjobs
     env:
+      - name: BUCKET_NAME
+        value: sdi-staging-feeds-product-catalog-bobs
       - name: JAEGER_ENDPOINT
         value: http://jaeger-collector.monitoring:14268/api/traces
       - name: INITIAL_IMPORT
