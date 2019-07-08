@@ -15,4 +15,4 @@ spec:
       pullSecrets:
         - reaction-docker-hub
       repository: 893565362659.dkr.ecr.us-east-1.amazonaws.com/elasticsearch
-      tag: 76c6ceb0614a5588a465da99452eb22851185e88
+      tag: 285792a7ded63b6df947c7e5fb1b6d9b8731c325
