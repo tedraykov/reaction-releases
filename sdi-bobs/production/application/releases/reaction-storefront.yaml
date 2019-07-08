@@ -52,7 +52,7 @@ spec:
       max: 10
     image:
       repository: 893565362659.dkr.ecr.us-east-1.amazonaws.com/bobs
-      tag: 1da00d3867b7e7818363dafb29b872b7195845f2
+      tag: b1e1bcbe07ea0f61daba8f4db46c11a0e9d37386
     ingress:
       hosts:
         - host: jasper.bobstores.com
