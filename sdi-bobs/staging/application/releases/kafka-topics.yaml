@@ -1,0 +1,14 @@
+apiVersion: flux.weave.works/v1beta1
+kind: HelmRelease
+metadata:
+  name: kafka-topics
+  namespace: kafka
+spec:
+  releaseName: kafka-topics
+  chart:
+    git: git@github.com:sportsdirect/sdi-releases.git
+    path: charts/kafka-topics
+    ref: feature/kafka-topic-chart
+  values:
+    config:
+      cluster: staging.k8s.bobs-test.io
