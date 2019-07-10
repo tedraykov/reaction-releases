@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: oneoff-job-pricing-import
-  namespace: staging
+  namespace: production
 spec:
   restartPolicy: Never
   imagePullSecrets:

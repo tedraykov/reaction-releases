@@ -20,9 +20,9 @@ spec:
       #- name: AWS_ACCESS_KEY_ID
       #- name: AWS_SECRET_ACCESS_KEY
       - name: JAEGER_ENDPOINT
-        value: "http://jaeger-collector.monitoring:14268/api/traces"
+        value: "http://af227f3265fed11e98729123d9d2638d-1672043513.us-east-1.elb.amazonaws.com:14268/api/traces"
       - name: KAFKA_BOOTSTRAP_SERVERS
-        value: "broker0.kafka-staging.k8s.bobs-test.io:9092,broker1.kafka-staging.k8s.bobs-test.io:9093,broker2.kafka-staging.k8s.bobs-test.io:9094"
+        value: "broker0.kafka-production.k8s.bobs-test.io:9092,broker1.kafka-production.k8s.bobs-test.io:9093,broker2.kafka-production.k8s.bobs-test.io:9094"
       - name: REACTION_LOG_LEVEL
         value: "DEBUG"
     resources:
