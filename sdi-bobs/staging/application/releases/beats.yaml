@@ -9,4 +9,6 @@ spec:
     git: git@github.com:sportsdirect/sdi-releases.git
     path: charts/beats
     ref: develop
-  values: {}
+  values:
+    annotations:
+      iam.amazonaws.com/role: arn:aws:iam::225761155017:role/sdi-bobs-staging-beats
