@@ -2,12 +2,11 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: oneoff-job-initial-inventory-import
-  namespace: staging
+  namespace: production
 spec:
   restartPolicy: Never
   imagePullSecrets:
     - name: reaction-docker-hub
-  nodeName: ip-172-17-53-238.ec2.internal
   containers:
   - name: runner
     image: sportsdirect/reaction-etl-shippable-inventory:oneoff-job-initial-inventory-import
