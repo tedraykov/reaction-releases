@@ -64,7 +64,7 @@ spec:
       startingNewCustomerNumber: "1100151420184"
     image:
       repository: docker.io/sportsdirect/reaction
-      tag: d9ebc2f390751ca0765f8c4091af1249a6dea331
+      tag: 4305f45b409c23a6f0b5c83e909d4803bda6af3a
     imagePullSecrets:
       - name: reaction-docker-hub
 #    resources:
