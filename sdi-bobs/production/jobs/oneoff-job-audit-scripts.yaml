@@ -1,0 +1,54 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: oneoff-job-audit-scripts
+  namespace: staging
+spec:
+  restartPolicy: Never
+  imagePullSecrets:
+    - name: reaction-docker-hub
+  containers:
+  - name: runner
+    image: sportsdirect/reaction-etl-catalog-sync:c1e35915a28f72ed1c47651296331e645c91ca51
+    command:
+      - node
+      - --max-old-space-size=8000
+      - /home/node/app/src/integrity-scripts/integrity.js
+      - --test
+      - checkOrphans
+      - diffProducts
+    envFrom:
+      - secretRef:
+          name: oneoffjobs
+    env:
+      - name: BUCKET_NAME
+        value: sdi-staging-feeds-product-catalog-bobs
+      - name: JAEGER_ENDPOINT
+        value: http://jaeger-collector.monitoring:14268/api/traces
+      - name: INITIAL_IMPORT
+        value: "false"
+      - name: KAFKA_BOOTSTRAP_SERVERS
+        value: "broker0.kafka-staging.k8s.bobs-test.io:9092,broker1.kafka-staging.k8s.bobs-test.io:9093,broker2.kafka-staging.k8s.bobs-test.io:9094"
+      - name: KAFKA_PARTITIONS
+        value: "3"
+      - name: KAFKA_TOPIC_CATALOG_SYNC_BOM_STREAM
+        value: etl.catalog-sync.streams.data.json-gen1
+      - name: KAFKA_TOPIC_CATALOG_SYNC_BOM_STREAM_PARTITIONS
+        value: "3"
+      - name: KAFKA_TOPIC_CATALOG_SYNC_ERRORS
+        value: etl.catalog-sync.errors.json-gen1
+      - name: KAFKA_TOPIC_CATALOG_SYNC_ERRORS_PARTITIONS
+        value: "3"
+      - name: KAFKA_TOPIC_CATALOG_SYNC_PRODUCTS
+        value: etl.catalog-sync.products.json-gen1
+      - name: KAFKA_TOPIC_CATALOG_SYNC_PRODUCTS_PARTITIONS
+        value: "3"
+      - name: LOCAL_TEST
+        value: "false"
+      - name: REACTION_LOG_LEVEL
+        value: DEBUG
+    imagePullPolicy: Always
+    resources:
+      requests:
+        cpu: 2
+        memory: "8192M"
