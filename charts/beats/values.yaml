@@ -24,6 +24,8 @@ resources:
 
 envFrom:
   - configMapRef:
+      name: beats
+  - configMapRef:
       name: elasticsearch
 
 nodeSelector: {}
@@ -31,4 +33,3 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
-
