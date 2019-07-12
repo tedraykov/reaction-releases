@@ -73,6 +73,7 @@ spec:
       startingNewCustomerNumber: "1100151420184"
       taxesConsumerEnabled: true
       radialItemExportConsumerEnabled: true
+      importOrderStatusConsumerEnabled: true
     resources:
       requests:
         memory: 3Gi

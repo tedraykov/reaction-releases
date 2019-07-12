@@ -70,6 +70,7 @@ config:
   productPublisherAutoPublish: false
   profilingEnabled: false
   radialItemExportConsumerEnabled: false
+  importOrderStatusConsumerEnabled: false
   skipFixtures: 1
   taxesConsumerEnabled: false
   user: "Reaction Admin"

@@ -58,6 +58,7 @@ data:
   PRODUCT_PUBLISHER_AUTO_PUBLISH: {{ required "config.productPublisherAutoPublish is not defined." .Values.config.productPublisherAutoPublish | quote }}
   TAXES_CONSUMER_ENABLED: {{ required "config.taxesConsumerEnabled is not defined." .Values.config.taxesConsumerEnabled  | quote }}
   MASTER_PUBLISH_CONSUMER_ENABLED: {{ required "config.masterPublishConsumerEnabled is not defined." .Values.config.masterPublishConsumerEnabled | quote }}
+  MASTER_PUBLISH_CONSUMER_ENABLED: {{ required "config.masterPublishConsumerEnabled is not defined." .Values.config.masterPublishConsumerEnabled | quote }}
   METRICS_ENABLED: {{ required "config.metricsEnabled is not defined." .Values.config.metricsEnabled  | quote }}
   METRICS_HOST: {{ required "config.metricsHost is not defined." .Values.config.metricsHost  | quote }}
   METRICS_PATH: {{ required "config.metricsPath is not defined." .Values.config.metricsPath  | quote }}
@@ -69,3 +70,4 @@ data:
   RADIAL_TAXES_API_URL: {{ required "config.radialTaxesApiUrl not defined." .Values.config.radialTaxesApiUrl | quote }}
   KAFKA_TOPIC_RADIAL_ITEM_EXPORT_STATUS: {{ required "config.kafkaTopicRadialItemExportStatus not defined." .Values.config.kafkaTopicRadialItemExportStatus | quote }}
   RADIAL_ITEM_EXPORT_CONSUMER_ENABLED: {{ required "config.radialItemExportConsumerEnabled not defined." .Values.config.radialItemExportConsumerEnabled | quote }}
+  IMPORT_ORDER_STATUS_CONSUMER_ENABLED: {{ required "config.importOrderStatusConsumerEnabled not defined." .Values.config.importOrderStatusConsumerEnabled | quote }}
