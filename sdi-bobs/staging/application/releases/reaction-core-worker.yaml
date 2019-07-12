@@ -46,6 +46,7 @@ spec:
       productConsumerEnabled: true
       productPublisherAutoPublish: false
       radialItemExportConsumerEnabled: true
+      importOrderStatusConsumerEnabled: true
       radialMode: sandbox
       radialPassword: >-
         AgBkc/9WcHtAeRcvA0V6QX1YqslRBV5Rb/CaDTsp2g5CpXkaIDoH53/GJQcQL10IAfdr7kL3d+v8gh4a53zo//xaOGfzk9z1WcS1rvoTPZVJthxd3deIHtiLWQHEUV3WFv08ckX2Vs4uC4jIg9V26QPZjXoK+qZ/vofkQF9JSxwLMWlHgLxYR/ugQ9DxYQLYijaGI5TSLDNaphyuVmZ5XwUAACyyFm7emZiea5I0bs+AC8AkX7F3xsijfUBBbfSE0wCxLybOy3MaYOAl7OvlfG31V3hp0y9a7v/yZ7p7BQuo/KrBde9sIQS9PXWgPA1aguNKPVQR9EDr3sAe9gbNHhFmS8llR/aJDe5/wd4bXJmU1t36dHzKeHvut8VuEkpez2ch7ZORWOwb4QI6PueER2O+uUE45XHz5EQI80MjdnH5I1pDiFk51X15CwdTDDn1KNL3gYiDcIFuILg5hBFlWXIhi+pe4Gxb4Wuik8+uWqlxsPl1CYxID0dlO0YWcFOaeI77+N3ZxK7LwwWMnsHdThJVdWZLoug8GPpcTqOsUWxgOmelDX2jM/smNvhVO28dyeL7CmejoeBg/ztnR19lITVvt99G8dy8wqdsOUeEuVnSZT1aXSaiz548r1vzdjg2ZsVk5zLrtsxUMWEeADrqMUO8aoPfCiSa56JPeiekIWGMLhbZMO9dQOY8L71IsGXId9MLkgX6kyg=
