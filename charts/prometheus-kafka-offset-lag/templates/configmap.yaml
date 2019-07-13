@@ -1,0 +1,13 @@
+{{- $fullName := include "prometheus-kafka-offset-lag.fullname" . -}}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ $fullName }}-config
+  labels:
+    app.kubernetes.io/name: {{ $fullName }}
+    app.kubernetes.io/component: prometheus-exporters
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+    helm.sh/chart: {{ include "prometheus-kafka-offset-lag.chart" . }}
+data:
+  KAFKA_BROKERS: {{ required "config.kafkaBrokers not defined." .Values.config.kafkaBrokers | quote }}
