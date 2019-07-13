@@ -1,0 +1,12 @@
+apiVersion: v1
+description: kafka-prometheus
+name: kafka-prometheus
+version: 1.0.0
+keywords:
+- kafka-prometheus
+home: https://github.com/reactioncommerce/kafka-prometheus
+sources:
+- https://github.com/reactioncommerce/kafka-prometheus
+maintainers:
+- name: Reaction Commerce
+  email: admin@reactioncommerce.com

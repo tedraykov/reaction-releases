@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "prometheus-kafka-offset-lag.fullname" . }}
+  labels:
+    app.kubernetes.io/name: {{ include "prometheus-kafka-offset-lag.name" . }}
+    app.kubernetes.io/component: prometheus-exporters
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+    helm.sh/chart: {{ include "prometheus-kafka-offset-lag.chart" . }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+  - name: http
+    port: {{ .Values.service.httpPort | int }}
+    targetPort: api
+    protocol: TCP
+  selector:
+    app.kubernetes.io/name: {{ include "prometheus-kafka-offset-lag.name" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
