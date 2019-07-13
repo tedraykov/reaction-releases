@@ -16,7 +16,7 @@ spec:
     service:
       serviceMonitorLabel: "application"
     config:
-      kafkaBrokers: "broker0.kafka-staging.k8s.bobs-test.io:9092,broker1.kafka-staging.k8s.bobs-test.io:9093,broker2.kafka-staging.k8s.bobs-test.io:9094"
+      kafkaBrokers: "b-3.staging.d0bnhg.c2.kafka.us-east-1.amazonaws.com:9092,b-2.staging.d0bnhg.c2.kafka.us-east-1.amazonaws.com:9092,b-1.staging.d0bnhg.c2.kafka.us-east-1.amazonaws.com:9092"
     resources:
         requests:
             memory: 256Mi
