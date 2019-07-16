@@ -16,12 +16,12 @@ data:
   EXTERNAL_EXPORT_BUCKET_NAME: {{ required "config.s3ExternalExportBucketName not defined." .Values.config.s3ExternalExportBucketName | quote }}
   INTERNAL_EXPORT_BUCKET_NAME: {{ required "config.s3InternalExportBucketName not defined." .Values.config.s3InternalExportBucketName | quote }}
   JAEGER_ENDPOINT: {{ required "config.jaegerEndpoint not defined." .Values.config.jaegerEndpoint | quote }}
-  KMS_KEY_ARN: {{ required "config.kmsKeyArn not defined." .Values.config.kmsKeyArn | quote }}
   KAFKA_BOOTSTRAP_SERVERS: {{ required "config.kafkaBootstrapServers not defined." .Values.config.kafkaBootstrapServers | quote }}
   KAFKA_TOPIC_CONTENT_FEED_STATUS: {{ required "config.kafkaTopicContentFeedStatus not defined." .Values.config.kafkaTopicContentFeedStatus | quote }}
   KAFKA_TOPIC_CONTENT_FEED_ERRORS: {{ required "config.kafkaTopicContentFeedErrors not defined." .Values.config.kafkaTopicContentFeedErrors | quote }}
   KAFKA_PARTITION_CONTENT_FEED_STATUS: {{ required "config.kafkaPartitionContentFeedStatus not defined." .Values.config.kafkaPartitionContentFeedStatus | quote }}
   KAFKA_PARTITION_CONTENT_FEED_ERRORS: {{ required "config.kafkaPartitionContentFeedErrors not defined." .Values.config.kafkaPartitionContentFeedErrors | quote }}
+  KMS_KEY_ARN: {{ required "config.kmsKeyArn not defined." .Values.config.kmsKeyArn | quote }}
   MONGODB_NAME: {{ required "config.mongoDbName not defined." .Values.config.mongoDbName | quote }}
   PRICEBOOK_ID: {{ required "config.pricebookId not defined." .Values.config.pricebookId | quote }}
   SITE_CODE: {{ required "config.siteCode not defined." .Values.config.siteCode | quote }}
