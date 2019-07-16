@@ -20,11 +20,12 @@ spec:
       cloudFolder: bobs/staging
       cloudName: sportsdirect
       jaegerEndpoint: http://jaeger-collector.monitoring:14268/api/traces
-      kafkaBootstrapServers: broker0.kafka-staging.k8s.bobs-test.io:9092,broker1.kafka-staging.k8s.bobs-test.io:9093,broker2.kafka-staging.k8s.bobs-test.io:9094
+      kafkaBootstrapServers: b-3.staging.d0bnhg.c2.kafka.us-east-1.amazonaws.com:9092,b-2.staging.d0bnhg.c2.kafka.us-east-1.amazonaws.com:9092,b-1.staging.d0bnhg.c2.kafka.us-east-1.amazonaws.com:9092
       kafkaPartitionContentFeedErrors: 3
       kafkaPartitionContentFeedStatus: 3
-      kafkaTopicContentFeedErrors: bobs.etl.content-feed.errors.json-gen1
-      kafkaTopicContentFeedStatus: bobs.etl.content-feed.json-gen1
+      kafkaTopicContentFeedErrors: etl.content-feed.errors.json-gen1
+      kafkaTopicContentFeedStatus: etl.content-feed.json-gen1
+      kmsKeyArn: arn:aws:kms:us-east-1:225761155017:key/e4294918-f196-4269-8294-8cfc8377a002
       mongoDbHost: >-
         AgB794nmi18qBOUxNvT83rS8FNfmvifLxon8Wp7I2H0SJQSkN7E2KOAvxHm4Mzf2yFIHJu7XAyBVzQ2uplTmw9eN613iUpOdXzg/OkTFTSOkWnhe590AdYTW2/+ZDCXC6ZgVGGXztwevZ2qTCsYX9HNS0ulplDO2yG1zTr5j5+IuykaN/0szrTiCjT67n1PO8mfgezEnIXW5SVMLQAu46vuFKTF1WreuCWq7008/rm3p0eIuAIPOkQI7P42MxXjcQ/atM8fRGx54WG/5M46CdtrEQlwAvutj/eqLlXLgx6Sxx6Eur1lhPI5ndAxPFRUsZCK1KQpCEGKFQR7neSkgach7EkJv6oipurteJBujLQWMEM8uVHiT88pRLEJRmZXGVJEgnWLw7M4A0vQQnZ6vcODXOoDvrVPbUCLsCBtqvaAXDkUyjchG6Rab2nzNtrQBIbR4/vvyFHPGkkDuXwV+fPR2dhbyf0B8YRh0CJEVCmV9ecJM11HyfJbUSeviIuw5geYoAAqITBfug/hf38T4xdZU2LWtKgMGUVaDEhSm5VOZn6/Oc0gtnS7Mun7a2aN0ypEH8PR4becDm5VpFk4cfNugTNkMIuJM4eqmstSupOpNRVN25BDKBMlgBlnM/86T6a7X+Ym6choNbTiDV+C6L5N1s7vfYaZYv6CLE8X3DU3aL5H0IQ68TLnKGo2NkE24BWs3xr/h7tV8pILCe9zmhVr0JN2qhvJ0vfSvcTH/PYKfNafPb6T052IV6bGdWwVCAeXD3x34OBERMp9Q5CBTt28nQQ01eorZ+vLbrVfniG8mvDkI8zAOl2+Mbq2ulzaVoLksGAOd3T+nc884NMw5uoqiI4wwCQT5zEVDI+ICxHjEBXbBY2YvS39IZLXMg5oQ+JTGbob3tDKT7KuG/BHmO346oqIvut4DjE7rDz41226eE/mYCXtmaPnjB7j6NGFYg46ucMu2F1K4LVoJ/m1uPSOq4d8Xw+Z5XHEOHYh5SZwCLLph384oIRfVyeE2JyTAKkJN8Y2tNVfUixZDI2+FBF7lZ8TPXNqpvT6F+1YCLQ==
       mongoDbName: sample-data-bobs-staging
