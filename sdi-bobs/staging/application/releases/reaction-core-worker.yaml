@@ -32,6 +32,7 @@ spec:
       kafkaSchemaRegistryUrl: http://schema-registry.kafka-staging.k8s.bobs-test.io:8081
       kafkaTopicProductImportErrorsPartitions: 3
       kafkaTopicProductImportProductsPartitions: 1
+      loyaltyConsumerEnabled: true
       loyaltyPluginBatchConsumeSize: 10000
       metricsEnabled: true
       mongoOplogUrl: >-
