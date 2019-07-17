@@ -1,0 +1,77 @@
+# Default values for kafka-topics.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+defaults:
+  config:
+    cleanup.policy: "delete"
+    compression.type: "snappy"
+    min.insync.replicas: 2
+  partitions: 3
+  replicas: 3
+
+topics:
+  # source: https://github.com/sportsdirect/reaction-plugin-product-import/blob/master/.env.example#L5
+  etl.product-import.products.json-gen1: {}
+
+  # source: https://github.com/sportsdirect/reaction-plugin-product-import/blob/master/.env.example#L3
+  etl.product-import.errors.json-gen1: {}
+
+  # source: https://github.com/sportsdirect/reaction-etl-catalog-sync/blob/master/scripts/kafka.sh#L3
+  etl.catalog-sync.streams.data.json-gen1:
+    cleanup.policy: "compact"
+  etl.catalog-sync.products.json-gen1:
+    cleanup.policy: "compact"
+  etl.catalog-sync.errors.json-gen1: {}
+
+  # source: https://github.com/sportsdirect/reaction-etl-content-feed/blob/master/scripts/kafka.sh#L11
+  etl.content-feed.json-gen1: {}
+  etl.content-feed.errors.json-gen1: {}
+
+  # source: https://github.com/sportsdirect/reaction-etl-image-import/blob/trunk/scripts/create-topics.sh#L19
+  etl.image-import-bom.json-gen1: {}
+  etl.image-import-status.json-gen2: {}
+  etl.image-import-errors.json-gen1: {}
+
+  # source: https://github.com/sportsdirect/reaction-etl-pricing-import
+  # notes:
+  #   - no topics info / script
+
+  # source: https://github.com/sportsdirect/reaction-etl-import-order-status/blob/master/scripts/kafka.sh#L11
+  etl.import-order-status.status.json-gen1: {}
+  etl.import-order-status.errors.json-gen1: {}
+
+  # source: https://github.com/sportsdirect/reaction-etl-import-seo-metadata/blob/master/scripts/create-kafka-topics.sh#L14
+  etl.import-seo-metadata.seo-metadata.json-gen1: {}
+  etl.import-seo-metadata.seo-metadata-errors.json-gen1: {}
+
+  # source: https://github.com/sportsdirect/reaction-etl-import-tax-codes/blob/master/scripts/kafka.sh#L11
+  etl.import-tax-codes.tax-codes.json-gen1: {}
+  etl.import-tax-codes.errors.json-gen1: {}
+
+  # source: https://github.com/sportsdirect/reaction-etl-loyalty
+  etl.loyalty-db-updates.json-gen1: {}
+  etl.loyalty-customer-import-errors.json-gen1: {}
+  etl.loyalty-customer-import-bom.json-gen1: {}
+  etl.loyalty-customer-consolidation-errors.json-gen1: {}
+  etl.loyalty-customer-consolidation-bom.json-gen1: {}
+  etl.rewards-import-errors.json-gen1: {}
+  etl.rewards-import-bom.json-gen1: {}
+
+  # source: https://github.com/sportsdirect/reaction-etl-radial-item-export/blob/master/scripts/kafka.sh#L7
+  etl.radial-item-export.status.json-gen1: {}
+  etl.radial-item-export.errors.json-gen1: {}
+
+  # source: https://github.com/sportsdirect/reaction-etl-shippable-inventory/blob/master/scripts/create-kafka-topics.sh#L14
+  etl.shippable-inventory.inventory-data.json-gen1: {}
+  etl.shippable-inventory.inventory-status.json-gen1: {}
+  etl.shippable-inventory.inventory-errors.json-gen1: {}
+
+  # source: https://github.com/sportsdirect/reaction-etl-upc-export/blob/master/scripts/create-kafka-topics.sh#L14
+  etl.upc-export.status.json-gen1: {}
+  etl.upc-export.errors.json-gen1: {}
+
+  # source: https://github.com/reactioncommerce/reaction-search/blob/release-latest/toolbox/kc-create-topic.sh#L8
+  reaction.cdc.search.catalog.json-gen1:
+    retention.ms: -1
+    cleanup.policy: "compact"
