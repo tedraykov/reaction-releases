@@ -11,4 +11,4 @@ spec:
     ref: develop
   values:
     config:
-      cluster: staging.k8s.bobs-test.io
+      cluster: production.k8s.bobs-test.io
