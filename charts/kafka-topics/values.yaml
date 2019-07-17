@@ -11,9 +11,6 @@ defaults:
   replicas: 3
 
 topics:
-  # source: https://github.com/sportsdirect/reaction-plugin-product-import/blob/master/.env.example#L5
-  etl.product-import.products.json-gen1: {}
-
   # source: https://github.com/sportsdirect/reaction-plugin-product-import/blob/master/.env.example#L3
   etl.product-import.errors.json-gen1: {}
 
