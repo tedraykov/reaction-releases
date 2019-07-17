@@ -12,7 +12,7 @@ spec:
   values:
     image:
       repository: 225761155017.dkr.ecr.us-east-1.amazonaws.com/reaction-pricing-engine
-      tag: "37ba7200d665041f8dab836b4072f797e7ba4284"
+      tag: "5467ad84a72ae6008e4bc85036e0249919a5a717"
     ingress:
       enabled: true
       hosts:
