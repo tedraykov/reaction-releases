@@ -30,7 +30,7 @@ topics:
 
   # source: https://github.com/sportsdirect/reaction-etl-image-import/blob/trunk/scripts/create-topics.sh#L19
   etl.image-import-bom.json-gen1: {}
-  etl.image-import-status.json-gen2: {}
+  etl.image-import-status.json-gen1: {}
   etl.image-import-errors.json-gen1: {}
 
   # source: https://github.com/sportsdirect/reaction-etl-pricing-import
