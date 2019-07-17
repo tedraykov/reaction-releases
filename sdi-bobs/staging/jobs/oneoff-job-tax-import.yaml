@@ -16,7 +16,7 @@ spec:
     # This provides: MONGO_HOST, MONGO_DB, GRAFANA_AUTH_TOKEN, CLOUDFLARE_CLIENT_ID, CLOUDFLARE_CLIENT_SECRET
     env:
       - name: JAEGER_ENDPOINT
-        value: http://jaeger-collector.monitoring:14268/api/traces
+        value: 'http://a20caf001938a11e98e1a0ad15df2ba7-1441443039.us-east-1.elb.amazonaws.com:14268/api/traces'
       - name: KAFKA_BOOTSTRAP_SERVERS
         value: "broker0.kafka-staging.k8s.bobs-test.io:9092,broker1.kafka-staging.k8s.bobs-test.io:9093,broker2.kafka-staging.k8s.bobs-test.io:9094"
       - name: KAFKA_PARTITIONS
@@ -34,7 +34,7 @@ spec:
       - name: LOCAL_TEST
         value: "true"
       - name: SITE_CODE
-        value: "BOBS"  
+        value: "BOBS"
     imagePullPolicy: Always
     resources:
       limits:
