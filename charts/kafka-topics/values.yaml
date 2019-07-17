@@ -33,9 +33,12 @@ topics:
   etl.image-import-status.json-gen1: {}
   etl.image-import-errors.json-gen1: {}
 
-  # source: https://github.com/sportsdirect/reaction-etl-pricing-import
-  # notes:
-  #   - no topics info / script
+  # source: https://github.com/reactioncommerce/pricing-engine
+  reaction.pricing.pricebook-aggregates.avro-gen1: {}
+  reaction.pricing.pricebook-entry-aggregates.avro-gen1: {}
+  reaction.pricing.pricebook-entry-events.avro-gen1: {}
+  reaction.pricing.pricebook-events.avro-gen1: {}
+  reaction.pricing.prices-by-id-aggregates.avro-gen1: {}
 
   # source: https://github.com/sportsdirect/reaction-etl-import-order-status/blob/master/scripts/kafka.sh#L11
   etl.import-order-status.status.json-gen1: {}
