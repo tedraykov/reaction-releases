@@ -9,7 +9,7 @@ spec:
     - name: reaction-docker-hub
   containers:
   - name: runner
-    image: sportsdirect/reaction-etl-pricing-import:72fd0cab008e7fcf7ddae637053aedecbd615f3f
+    image: sportsdirect/reaction-etl-pricing-import:67e560f8e82d85dadce16629c307952e19a69528
     command: [ "node", "--max-old-space-size=4096", "src/run.js", "sdi-bobs-staging-feeds-pricing", "" ]
     envFrom:
       - secretRef:
