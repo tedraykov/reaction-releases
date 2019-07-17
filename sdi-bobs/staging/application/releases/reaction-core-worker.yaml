@@ -31,7 +31,7 @@ spec:
       kafkaPartitionsLoyalty: 3
       kafkaSchemaRegistryUrl: http://schema-registry.kafka-staging.k8s.bobs-test.io:8081
       kafkaTopicProductImportErrorsPartitions: 3
-      kafkaTopicProductImportProductsPartitions: 1
+      kafkaTopicProductImportProductsPartitions: 3
       loyaltyPluginBatchConsumeSize: 10000
       metricsEnabled: true
       mongoOplogUrl: >-
