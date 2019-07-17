@@ -41,6 +41,7 @@ Make a PR to this repo as follows.
 
 - Verify with `git diff` that nothing weird is changed by mistake
 - commit, push, pull request, request review as normal
+  - Commit message convention: `gitops: release <component-name>`
 
 ### How to update storefront
 
@@ -63,3 +64,4 @@ Make a PR to this repo as follows.
 
 - Verify with `git diff` that nothing weird is changed by mistake
 - commit, push, pull request, request review as normal
+  - Commit message convention: `gitops: release <component-name>`
