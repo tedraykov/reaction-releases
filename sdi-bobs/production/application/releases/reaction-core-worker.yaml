@@ -37,8 +37,6 @@ spec:
       kafkaPartitionsEtlShippableInventoryStatus: 1
       kafkaPartitionsLoyalty: 3
       kafkaSchemaRegistryUrl: http://schema-registry.kafka-production.k8s.bobs-test.io:8081
-      kafkaTopicProductImportErrorsPartitions: 3
-      kafkaTopicProductImportProductsPartitions: 3
       logLevel: 'debug'
       loyaltyPluginBatchConsumeSize: 10000
       metricsEnabled: true

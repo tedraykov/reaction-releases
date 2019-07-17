@@ -32,7 +32,6 @@ data:
   SCHEMA_REGISTRY_URL: {{ required "config.kafkaSchemaRegistryUrl not defined." .Values.config.kafkaSchemaRegistryUrl | quote }}
   KAFKA_PARTITIONS_LOYALTY: {{ required "config.kafkaPartitionsLoyalty not defined." .Values.config.kafkaPartitionsLoyalty | quote }}
   KAFKA_PARTITION_ETL_SHIPPABLE_INVENTORY_STATUS: {{ required "config.kafkaPartitionsEtlShippableInventoryStatus not defined." .Values.config.kafkaPartitionsEtlShippableInventoryStatus | quote }}
-  KAFKA_TOPIC_CATALOG_IMPORT_ERRORS: {{ required "config.kafkaTopicCatalogImportErrors not defined." .Values.config.kafkaTopicCatalogImportErrors | quote }}
   KAFKA_TOPIC_CATALOG_SYNC_PRODUCTS: {{ required "config.kafkaTopicCatalogSyncProducts not defined." .Values.config.kafkaTopicCatalogSyncProducts | quote }}
   KAFKA_TOPIC_ETL_SHIPPABLE_INVENTORY_STATUS: {{ required "config.kafkaTopicEtlShippableInventoryStatus not defined." .Values.config.kafkaTopicEtlShippableInventoryStatus | quote }}
   KAFKA_TOPIC_ETL_SHIPPABLE_INVENTORY_STREAM: {{ required "config.kafkaTopicEtlShippableInventoryStream not defined." .Values.config.kafkaTopicEtlShippableInventoryStream | quote }}

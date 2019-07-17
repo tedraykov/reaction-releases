@@ -15,7 +15,7 @@ topics:
   etl.product-import.errors.json-gen1: {}
 
   # source: https://github.com/sportsdirect/reaction-plugin-product-import/blob/master/.env.example#L5
-  etl.product-import.products.stream.json-gen1: {}
+  etl.product-import.products.status.json-gen1: {}
 
   # source: https://github.com/sportsdirect/reaction-etl-catalog-sync/blob/master/scripts/kafka.sh#L3
   etl.catalog-sync.streams.data.json-gen1:
