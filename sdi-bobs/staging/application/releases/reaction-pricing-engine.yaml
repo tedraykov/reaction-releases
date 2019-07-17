@@ -23,7 +23,7 @@ spec:
       imageTag: configurable-via-env
     config:
       jvmOpts: "-d64 -Xms2560m -Xmx2560m"
-      bootstrapServers: "broker0.kafka-staging.k8s.bobs-test.io:9092,broker1.kafka-staging.k8s.bobs-test.io:9093,broker2.kafka-staging.k8s.bobs-test.io:9094"
+      bootstrapServers: "b-3.staging.d0bnhg.c2.kafka.us-east-1.amazonaws.com:9092,b-2.staging.d0bnhg.c2.kafka.us-east-1.amazonaws.com:9092,b-1.staging.d0bnhg.c2.kafka.us-east-1.amazonaws.com:9092"
       schemaRegistryUrl: "http://schema-registry.kafka-staging.k8s.bobs-test.io:8081"
       zookeeperConnect: "zookeeper.kafka-staging.k8s.bobs-test.io:2181"
       autoOffsetReset: "earliest"
