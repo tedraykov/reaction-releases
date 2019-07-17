@@ -49,8 +49,8 @@ config:
   kafkaTopicEtlShippableInventoryStream: etl.shippable-inventory.inventory-data.json-gen1
   kafkaTopicImportOrderStatusOrders: etl.import-order-status.status.json-gen1
   kafkaTopicImportTaxCodesTaxcodes: etl.import-tax-codes.tax-codes.json-gen1
-  kafkaTopicLoyaltyPluginDbUpdates: bobs.etl.loyalty-db-updates.json-gen1
-  kafkaTopicLoyaltyPluginDbUpdatesStatus: bobs.etl.loyalty-db-updates-status.json-gen1
+  kafkaTopicLoyaltyPluginDbUpdates: etl.loyalty-db-updates.json-gen1
+  kafkaTopicLoyaltyPluginDbUpdatesStatus: etl.loyalty-db-updates-status.json-gen1
   kafkaTopicPricebooks: reaction.pricing.pricebook-aggregates.avro-gen1
   kafkaTopicPricesById: reaction.pricing.prices-by-id-aggregates.avro-gen1
   kafkaTopicProductImportErrors: etl.product-import.errors.json-gen1
