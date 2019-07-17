@@ -33,12 +33,14 @@ git ls-remote --symref origin develop | awk '{print $1}'
 Make a PR to this repo as follows.
 
 - Start with your normal PR git mechanics (pull latest, create branch)
-- edit **ALL** of the files that apply to your target deployment
-  - staging: `sdi-bobs/staging/application/releases/reaction-core-*.yaml`
-  - production: `sdi-bobs/production/application/releases/reaction-core-*.yaml`
-- Edit the `yaml` file to change the nested key at `spec.values.image.tag` so it has the new commit sha you just found, which is a line that will look like this
-  - `      tag: d8219e812ccfb7064af1628fb847096eeab29c4d`
-- Commit, push, open PR, request review as normal
+- Run the following with either `staging` or `production`
+
+```sh
+./bin/update-reaction-core.sh staging NEW_SHA_GOES_HERE
+```
+
+- Verify with `git diff` that nothing weird is changed by mistake
+- commit, push, pull request, request review as normal
 
 ### How to update storefront
 
@@ -46,16 +48,18 @@ Make a PR to this repo as follows.
   - Typically this is the most recent commit on the default branch
 
 ```sh
-cd storefront
+cd reaction
 git ls-remote --symref origin develop | awk '{print $1}'
 ```
 
 Make a PR to this repo as follows.
 
 - Start with your normal PR git mechanics (pull latest, create branch)
-- edit the file that applies to your target deployment
-  - staging: `sdi-bobs/staging/application/releases/reaction-storefront.yaml`
-  - production: `sdi-bobs/production/application/releases/reaction-storefront.yaml`
-- Edit the `yaml` file to change the nested key at `spec.values.image.tag` so it has the new commit sha you just found, which is a line that will look like this
-  - `      tag: d8219e812ccfb7064af1628fb847096eeab29c4d`
-- Commit, push, open PR, request review as normal
+- Run the following with either `staging` or `production`
+
+```sh
+./bin/update-storefront.sh staging NEW_SHA_GOES_HERE
+```
+
+- Verify with `git diff` that nothing weird is changed by mistake
+- commit, push, pull request, request review as normal
