@@ -13,13 +13,13 @@ spec:
     imagePullSecret: reaction-docker-hub
     image:
       repository: reactioncommerce/reaction-etl-content-feed
-      tag: e29fde8
+      tag: e01d0fe
     schedule: "0 4 * * *"
     config:
       batchSize: 1000
-      cloudFolder: bobs/staging
-      cloudName: sportsdirect
-      jaegerEndpoint: http://jaeger-collector.monitoring:14268/api/traces
+      cloudFolder: w_1000,q_auto,f_auto
+      cloudName: bobstores-dev
+      jaegerEndpoint: http://a20caf001938a11e98e1a0ad15df2ba7-1441443039.us-east-1.elb.amazonaws.com:14268/api/traces
       kafkaBootstrapServers: b-3.staging.d0bnhg.c2.kafka.us-east-1.amazonaws.com:9092,b-2.staging.d0bnhg.c2.kafka.us-east-1.amazonaws.com:9092,b-1.staging.d0bnhg.c2.kafka.us-east-1.amazonaws.com:9092
       kafkaPartitionContentFeedErrors: 3
       kafkaPartitionContentFeedStatus: 3
@@ -41,3 +41,4 @@ spec:
       limits:
         memory: 4Gi
         cpu: "2"
+        
