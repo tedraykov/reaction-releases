@@ -10,7 +10,7 @@ spec:
     path: charts/reaction-trigger-master-publisher
     ref: develop
   values:
-    imagePullSecret: dockerhub-creds
+    imagePullSecret: reaction-docker-hub
     image:
       repository: reactioncommerce/reaction-cron-jobs
       tag: "trigger-master-publisher-63bfff3"

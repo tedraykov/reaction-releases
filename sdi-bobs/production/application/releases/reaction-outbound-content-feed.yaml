@@ -10,7 +10,7 @@ spec:
     path: charts/reaction-outbound-content-feed
     ref: develop
   values:
-    imagePullSecret: dockerhub-creds
+    imagePullSecret: reaction-docker-hub
     image:
       repository: reactioncommerce/reaction-etl-content-feed
       tag: "e01d0fe"

@@ -10,7 +10,7 @@ spec:
     path: charts/reaction-search-toolbox
     ref: develop
   values:
-    imagePullSecret: dockerhub-creds
+    imagePullSecret: reaction-docker-hub
     image:
       repository: reactioncommerce/reaction-search-toolbox
       tag: "f1b074de56a8da511db0d15279094abb6014bca0"

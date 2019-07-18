@@ -10,7 +10,7 @@ spec:
     path: charts/reaction-sftp-from-radial
     ref: develop
   values:
-    imagePullSecret: dockerhub-creds
+    imagePullSecret: reaction-docker-hub
     image:
       repository: sportsdirect/reaction-cron-jobs
       tag: sftp-from-radial-9c3d03b
