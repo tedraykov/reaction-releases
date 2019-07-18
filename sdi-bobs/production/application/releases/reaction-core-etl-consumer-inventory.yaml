@@ -2,7 +2,7 @@ apiVersion: flux.weave.works/v1beta1
 kind: HelmRelease
 metadata:
   name: reaction-core-etl-consumer-inventory
-  namespace: bobs
+  namespace: production
 spec:
   releaseName: reaction-core-etl-consumer-inventory
   chart:

@@ -2,7 +2,7 @@ apiVersion: flux.weave.works/v1beta1
 kind: HelmRelease
 metadata:
   name: reaction-sftp-from-radial
-  namespace: bobs
+  namespace: production
 spec:
   releaseName: reaction-sftp-from-radial
   chart:

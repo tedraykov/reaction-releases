@@ -2,7 +2,7 @@ apiVersion: flux.weave.works/v1beta1
 kind: HelmRelease
 metadata:
   name: reaction-pricing-engine
-  namespace: bobs
+  namespace: production
 spec:
   releaseName: reaction-pricing-engine
   chart:
