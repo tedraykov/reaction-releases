@@ -18,7 +18,6 @@ spec:
       rsDb: bobs-production
       rsElasticUrl: http://elasticsearch-master.bobs:9200
       rsIndexVersion: 3
-      rsIsLongRunning: false
       rsKafkaServer: broker0.kafka-production.k8s.bobs-test.io:9092
       rsKafkaConnectUrl: http://reaction-kafka-connect.bobs:8082
       rsMinInSyncReplicas: 2

@@ -18,7 +18,6 @@ spec:
       rsDb: sample-data-bobs-staging
       rsElasticUrl: http://elasticsearch-client:9200
       rsIndexVersion: 3
-      rsIsLongRunning: false
       rsKafkaServer: broker0.kafka-staging.k8s.bobs-test.io:9092
       rsKafkaConnectUrl: http://reaction-kafka-connect:8082
       rsMinInSyncReplicas: 2
