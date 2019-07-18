@@ -74,10 +74,3 @@ spec:
       rootUrl: https://api.bobstores.com
       siteCode: BOBS
       startingNewCustomerNumber: "1100151420184"
-    resources:
-      requests:
-        memory: 3Gi
-        cpu: "1500m"
-      limits:
-        memory: 3Gi
-        cpu: "2"

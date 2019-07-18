@@ -76,10 +76,3 @@ spec:
         - host: api-staging.bobs-test.io
           paths: ['/']
     maxUnavailable: 1
-#    resources:
-#      requests:
-#        memory: 3Gi
-#        cpu: "1500m"
-#      limits:
-#        memory: 3Gi
-#        cpu: "2"
