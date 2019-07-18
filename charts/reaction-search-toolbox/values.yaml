@@ -2,15 +2,15 @@
 replicas: 1
 
 config: {}
+  rsElasticUrl: http://elasticsearch-client:9200
+  rsIndexVersion: 3
+  rsMinInSyncReplicas: 2
+  rsReplicationFactor: 2
+  rsSynonymsPath: synonyms/synonyms-bobs-2019-01-16.solr.txt
+  rsTopic: reaction.cdc.search.catalog.json-gen1
 #  rsDb: value
-#  rsElasticUrl: value
-#  rsIndexVersion: value
 #  rsKafkaServer: value
 #  rsKafkaConnectUrl: value
-#  rsMinInSyncReplicas: value
-#  rsReplicationFactor: value
-#  rsSynonymsPath: value
-#  rsTopic: value
 #  rsZookeeper: value
 
 resources: {}
