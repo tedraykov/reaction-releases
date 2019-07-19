@@ -17,7 +17,7 @@ spec:
       - --max-old-space-size=8000
       - /home/node/app/src/integrity-scripts/integrity.js
       - --test
-      - checkOrphans
+      - checkOrphans,diffProducts
       - diffProducts
     envFrom:
       - configMapRef:
