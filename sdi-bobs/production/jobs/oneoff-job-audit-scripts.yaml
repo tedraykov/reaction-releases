@@ -18,7 +18,6 @@ spec:
       - /home/node/app/src/integrity-scripts/integrity.js
       - --test
       - checkOrphans,diffProducts
-      - diffProducts
     envFrom:
       - configMapRef:
           name: kafka
