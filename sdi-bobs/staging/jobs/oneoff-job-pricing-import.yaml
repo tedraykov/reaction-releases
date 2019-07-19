@@ -17,7 +17,7 @@ spec:
     # This provides: MONGO_HOST, MONGO_DB, GRAFANA_AUTH_TOKEN, CLOUDFLARE_CLIENT_ID, CLOUDFLARE_CLIENT_SECRET
     env:
       - name: PRICING_GRAPHQL_URL
-        value: "http://reaction-pricing-engine/graphql"
+        value: "https://pe-staging.bobs-test.io/graphql"
       - name: GRAFANA_API
         value: "https://grafana-staging.bobs-test.io/api"
       - name: REACTION_LOG_LEVEL
