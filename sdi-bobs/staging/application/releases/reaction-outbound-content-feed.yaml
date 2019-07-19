@@ -10,6 +10,8 @@ spec:
     path: charts/reaction-outbound-content-feed
     ref: develop
   values:
+    annotations:
+      iam.amazonaws.com/role: arn:aws:iam::225761155017:role/sdi-bobs-staging-reaction-job-outbound-content-feed
     imagePullSecret: reaction-docker-hub
     image:
       repository: reactioncommerce/reaction-etl-content-feed

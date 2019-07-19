@@ -10,6 +10,8 @@ spec:
     path: charts/reaction-sftp-from-radial
     ref: develop
   values:
+    annotations:
+      iam.amazonaws.com/role: arn:aws:iam::490759768946:role/sdi-bobs-production-reaction-job-sftp-from-radial
     imagePullSecret: reaction-docker-hub
     image:
       repository: sportsdirect/reaction-cron-jobs

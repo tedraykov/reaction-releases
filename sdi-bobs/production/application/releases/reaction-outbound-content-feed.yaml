@@ -10,6 +10,8 @@ spec:
     path: charts/reaction-outbound-content-feed
     ref: develop
   values:
+    annotations:
+      iam.amazonaws.com/role: arn:aws:iam::490759768946:role/sdi-bobs-production-reaction-job-outbound-content-feed
     imagePullSecret: reaction-docker-hub
     image:
       repository: reactioncommerce/reaction-etl-content-feed
@@ -24,7 +26,7 @@ spec:
       s3InternalExportBucketName: sdi-prod-feeds-ocf-bobs
       jaegerEndpoint: http://jaeger-collector.production.k8s.bobs-test.io:14268/api/traces
       kafkaBootstrapServers: broker0.kafka-production.k8s.bobs-test.io:9092,broker1.kafka-production.k8s.bobs-test.io:9093,broker2.kafka-production.k8s.bobs-test.io:9094
-      kafkaTopicContentFeedStatus: bobs.etl.content-feed.json-gen1  
+      kafkaTopicContentFeedStatus: bobs.etl.content-feed.json-gen1
       kafkaTopicContentFeedErrors: bobs.etl.content-feed.errors.json-gen1
       kafkaPartitionContentFeedStatus: 3
       kafkaPartitionContentFeedErrors: 3

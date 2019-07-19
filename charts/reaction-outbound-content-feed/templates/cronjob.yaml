@@ -16,6 +16,10 @@ spec:
       backoffLimit: 0
       template:
         metadata:
+{{- if .Values.annotations }}
+          annotations:
+            {{ toYaml .Values.annotations }}
+{{- end }}
           labels:
             app.kubernetes.io/name: {{ $fullName }}
             app.kubernetes.io/instance: {{ .Release.Name }}
