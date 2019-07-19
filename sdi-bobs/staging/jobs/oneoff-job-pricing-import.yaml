@@ -3,6 +3,8 @@ kind: Pod
 metadata:
   name: oneoff-job-pricing-import
   namespace: staging
+  annotations:
+    iam.amazonaws.com/role: arn:aws:iam::225761155017:role/sdi-bobs-staging-reaction-job-pricing-import
 spec:
   restartPolicy: Never
   imagePullSecrets:
@@ -10,7 +12,11 @@ spec:
   containers:
   - name: runner
     image: sportsdirect/reaction-etl-pricing-import:67e560f8e82d85dadce16629c307952e19a69528
-    command: [ "node", "--max-old-space-size=4096", "src/run.js", "sdi-bobs-staging-feeds-pricing", "" ]
+    command:
+      - node
+      - --max-old-space-size=4096
+      - src/run.js
+      - sdi-bobs-staging-feeds-pricing
     envFrom:
       - secretRef:
           name: oneoffjobs
