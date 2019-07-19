@@ -10,7 +10,7 @@ spec:
   containers:
   - name: runner
     image: sportsdirect/reaction-etl-shippable-inventory: 96679782757b2ed3f21398daf6f14b177cf79131
-    command: ["node", "run.js", "sdi-bobs-staging-feeds-inventory", "reaction-sdi-inventory.BOBS.full.201906211110Z.xml"]
+    command: ["node", "run.js", "sdi-bobs-production-feeds-inventory", "reaction-sdi-inventory.BOBS.full.201906211110Z.xml"]
     envFrom:
       - configMapRef:
           name: reaction-core-worker
