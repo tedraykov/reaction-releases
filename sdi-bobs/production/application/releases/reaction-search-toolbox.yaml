@@ -2,7 +2,7 @@ apiVersion: flux.weave.works/v1beta1
 kind: HelmRelease
 metadata:
   name: reaction-search-toolbox
-  namespace: bobs
+  namespace: production
 spec:
   releaseName: reaction-search-toolbox
   chart:
@@ -10,23 +10,16 @@ spec:
     path: charts/reaction-search-toolbox
     ref: develop
   values:
-    imagePullSecret: dockerhub-creds
+    imagePullSecret: reaction-docker-hub
     image:
       repository: reactioncommerce/reaction-search-toolbox
       tag: "f1b074de56a8da511db0d15279094abb6014bca0"
     config:
       rsDb: bobs-production
-      rsElasticUrl: http://elasticsearch-master.bobs:9200
-      rsIndexVersion: 3
-      rsIsLongRunning: false
       rsKafkaServer: broker0.kafka-production.k8s.bobs-test.io:9092
       rsKafkaConnectUrl: http://reaction-kafka-connect.bobs:8082
-      rsMinInSyncReplicas: 2
       rsMongoUrl: >-
         AgCSZiZlWKiyc6mXx6BIRfNKI461+gRoqbPfEG7Bg0DX2aHniXc9wZ6R7utDr+czSgpboCOvtzilTIq6syZAjI4bC23mop6rBRrqwhr+T+9TrL4pO/0J9XkTh15MWv23GHXAKmw266DsTEal4QYAVVuSfa4nvKetM+yP9FLpX9DRrjB0dbRjz85RPqxah1ahVL/6CNsSE0TcYQ92IXF+Sq0tb/qhwmobsFzIRPnHXxksOz+zAZdPEJqyVyS65Asb530r9fL+ttJy48iHLWOokXsKhgKobDSXLkkVPFkehFKQWURmQt8weq0HTqGX2ZIlkYEES82TgWa0hjdY4GUt2eCJS4xDAIm+1tG00T8ekcGDLp2t9EcUleO7za1hxH8C6Xv8V/apZ9BkBqKSBFUk0Efk8yM3DELvAEybzVzLYOB2XhlE6x38e/hmK7+AGkqBtYsfIZZvvbJ2zM0y/wwG0PFsPW9J+iQPdp19NMOurjgG8fjyiY6uud6cDrIjFm91odcpDRgdK2cKSiCUDLPyvQLzk2G2QRTTWitPlXBAs0TJX7Wuz6Nodx+kHhaHUBz1jnUJ2Fb7+aR6Mi4P4l2qcv2GyqzPd5Qc8Ip2Jvtx6q3O5ap1oyMHyVuL6kHyZJEkr42j+qsEv/HrRCMdc3rkXzzJD/QdAUk/MenP/aMZ4N5U36TlkLHijVoO6j9EGbOBFcsiR29rHphAQt4bVSK7Hz3uUl5MsvxHmv+EIwNRXAQSEdm8lE9QmhL3n8q0LBd3P3Pd0sLsVUs6t28UsYQgRSHbzQw6ykNmjVbEKlyXL5Q95EU9TuJbcQyjni7motQT0AVVrvvyIfFF8ZO36XdReHegXaNgsGIOysAWBYktWp6WhY0mJhkQHx7S5iM51uN4Ofji3LGBZkIQWBK7b70NFC73SViyYXX6aUbHgF20Rjo11VvDnvIkdVRJA/+LBZsZnI8w94eoc+wgoJAzFIzG7+2OGOtfjn5Y5lkpLdfkscKz6hHon85AhnSK7ywaOu5i5aqon7Qm4fZ1PGm9O01EJPb1PQceBdpKBAFttsnbFGygF1SJDyGbQtA=
-      rsReplicationFactor: 2
-      rsSynonymsPath: synonyms/synonyms-bobs-2019-01-16.solr.txt
-      rsTopic: bobs.cdc.search.catalog.json-gen2
       rsZookeeper: zookeeper.kafka-production.k8s.bobs-test.io:2181
     resources:
       requests:

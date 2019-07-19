@@ -2,7 +2,7 @@ apiVersion: flux.weave.works/v1beta1
 kind: HelmRelease
 metadata:
   name: reaction-core-worker
-  namespace: bobs
+  namespace: production
 spec:
   releaseName: reaction-core-worker
   chart:
@@ -72,10 +72,3 @@ spec:
       taxesConsumerEnabled: true
       radialItemExportConsumerEnabled: true
       importOrderStatusConsumerEnabled: true
-    resources:
-      requests:
-        memory: 3Gi
-        cpu: "1"
-      limits:
-        memory: 4Gi
-        cpu: "2"

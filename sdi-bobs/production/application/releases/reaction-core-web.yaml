@@ -2,7 +2,7 @@ apiVersion: flux.weave.works/v1beta1
 kind: HelmRelease
 metadata:
   name: reaction-core-web
-  namespace: bobs
+  namespace: production
 spec:
   releaseName: reaction-core-web
   chart:
@@ -74,10 +74,3 @@ spec:
       rootUrl: https://api.bobstores.com
       siteCode: BOBS
       startingNewCustomerNumber: "1100151420184"
-    resources:
-      requests:
-        memory: 3Gi
-        cpu: "1500m"
-      limits:
-        memory: 3Gi
-        cpu: "2"

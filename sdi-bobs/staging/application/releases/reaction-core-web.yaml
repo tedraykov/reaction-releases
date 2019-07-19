@@ -67,7 +67,7 @@ spec:
       max: 10
     image:
       repository: docker.io/sportsdirect/reaction
-      tag: 5d44834b2b68584d2a5429b443b14819bd83010e
+      tag: 9b6f3fbf4cd9a21bb5d6607180b52a28e6e6fbc1
     imagePullSecrets:
       - name: reaction-docker-hub
     ingress:
@@ -76,10 +76,3 @@ spec:
         - host: api-staging.bobs-test.io
           paths: ['/']
     maxUnavailable: 1
-#    resources:
-#      requests:
-#        memory: 3Gi
-#        cpu: "1500m"
-#      limits:
-#        memory: 3Gi
-#        cpu: "2"

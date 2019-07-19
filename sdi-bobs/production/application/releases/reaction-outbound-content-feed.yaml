@@ -2,7 +2,7 @@ apiVersion: flux.weave.works/v1beta1
 kind: HelmRelease
 metadata:
   name: reaction-outbound-content-feed
-  namespace: bobs
+  namespace: production
 spec:
   releaseName: reaction-outbound-content-feed
   chart:
@@ -10,7 +10,7 @@ spec:
     path: charts/reaction-outbound-content-feed
     ref: develop
   values:
-    imagePullSecret: dockerhub-creds
+    imagePullSecret: reaction-docker-hub
     image:
       repository: reactioncommerce/reaction-etl-content-feed
       tag: "e01d0fe"

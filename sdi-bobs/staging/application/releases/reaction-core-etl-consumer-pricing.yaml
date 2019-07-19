@@ -66,10 +66,3 @@ spec:
       tag: a99c464e1f5618a9000b972a37281af5ca46d62e
     imagePullSecrets:
       - name: reaction-docker-hub
-#    resources:
-#      requests:
-#        memory: 3Gi
-#        cpu: "1"
-#      limits:
-#        memory: 4Gi
-#        cpu: "2"

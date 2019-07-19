@@ -2,7 +2,7 @@ apiVersion: flux.weave.works/v1beta1
 kind: HelmRelease
 metadata:
   name: reaction-core-etl-consumer-pricing
-  namespace: bobs
+  namespace: production
 spec:
   releaseName: reaction-core-etl-consumer-pricing
   chart:
@@ -69,10 +69,3 @@ spec:
       rootUrl: https://api.bobstores.com
       siteCode: BOBS
       startingNewCustomerNumber: "1100151420184"
-    resources:
-      requests:
-        memory: 3Gi
-        cpu: "1"
-      limits:
-        memory: 4Gi
-        cpu: "2"

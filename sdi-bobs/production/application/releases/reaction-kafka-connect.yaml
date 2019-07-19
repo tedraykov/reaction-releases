@@ -2,7 +2,7 @@ apiVersion: flux.weave.works/v1beta1
 kind: HelmRelease
 metadata:
   name: reaction-kafka-connect
-  namespace: bobs
+  namespace: production
 spec:
   releaseName: reaction-kafka-connect
   chart:
