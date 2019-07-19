@@ -3,6 +3,8 @@ kind: Pod
 metadata:
   name: oneoff-job-tax-import
   namespace: staging
+  annotations:
+    iam.amazonaws.com/role: arn:aws:iam::225761155017:role/sdi-bobs-staging-reaction-job-tax-import
 spec:
   restartPolicy: Never
   imagePullSecrets:
@@ -11,14 +13,14 @@ spec:
   - name: runner
     image: sportsdirect/reaction-etl-import-tax-codes:2f1540b4c34e16c933da8073a0e13461e7054ccf
     envFrom:
+      - configMapRef:
+          name: kafka
       - secretRef:
           name: oneoffjobs
     # This provides: MONGO_HOST, MONGO_DB, GRAFANA_AUTH_TOKEN, CLOUDFLARE_CLIENT_ID, CLOUDFLARE_CLIENT_SECRET
     env:
       - name: JAEGER_ENDPOINT
         value: 'http://a20caf001938a11e98e1a0ad15df2ba7-1441443039.us-east-1.elb.amazonaws.com:14268/api/traces'
-      - name: KAFKA_BOOTSTRAP_SERVERS
-        value: "broker0.kafka-staging.k8s.bobs-test.io:9092,broker1.kafka-staging.k8s.bobs-test.io:9093,broker2.kafka-staging.k8s.bobs-test.io:9094"
       - name: KAFKA_PARTITIONS
         value: "3"
       - name: KAFKA_TOPIC_IMPORT_TAX_CODES_TAXCODES
