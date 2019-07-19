@@ -10,6 +10,7 @@ spec:
     path: charts/cp-schema-registry
     ref: develop
   values:
+    fullnameOverride: kafka-schema-registry
     imageTag: 5.1.2
     kafka:
-      bootstrapServers: "b-1.staging.d0bnhg.c2.kafka.us-east-1.amazonaws.com:9092,b-2.staging.d0bnhg.c2.kafka.us-east-1.amazonaws.com:9092,b-3.staging.d0bnhg.c2.kafka.us-east-1.amazonaws.com:9092"
+      bootstrapServers: "PLAINTEXT://b-1.staging.d0bnhg.c2.kafka.us-east-1.amazonaws.com:9092,PLAINTEXT://b-2.staging.d0bnhg.c2.kafka.us-east-1.amazonaws.com:9092,PLAINTEXT://b-3.staging.d0bnhg.c2.kafka.us-east-1.amazonaws.com:9092"
