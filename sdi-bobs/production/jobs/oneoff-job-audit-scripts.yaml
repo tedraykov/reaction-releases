@@ -22,7 +22,7 @@ spec:
           name: oneoffjobs
     env:
       - name: BUCKET_NAME
-        value: sdi-staging-feeds-product-catalog-bobs
+        value: sdi-bobs-production-feeds-product-catalog
       - name: JAEGER_ENDPOINT
         value: http://af227f3265fed11e98729123d9d2638d-1672043513.us-east-1.elb.amazonaws.com:14268/api/traces
       - name: INITIAL_IMPORT
