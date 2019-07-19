@@ -39,6 +39,10 @@ topics:
   reaction.pricing.pricebook-entry-events.avro-gen1: {}
   reaction.pricing.pricebook-events.avro-gen1: {}
   reaction.pricing.prices-by-id-aggregates.avro-gen1: {}
+  reaction.pricing.v1-reaction.pricing.pricebook-aggregates-store.avro-gen1-changelog: {}
+  reaction.pricing.v1-reaction.pricing.pricebook-entry-aggregates-store.avro-gen1-changelog: {}
+  reaction.pricing.v1-reaction.pricing.prices-by-id-aggregates-store.avro-gen1-changelog: {}
+  reaction.pricing.v1-reaction.pricing.prices-by-id-aggregates-store.avro-gen1-repartition: {}
 
   # source: https://github.com/sportsdirect/reaction-etl-import-order-status/blob/master/scripts/kafka.sh#L11
   etl.import-order-status.status.json-gen1: {}
