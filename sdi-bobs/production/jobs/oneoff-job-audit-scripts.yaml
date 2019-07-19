@@ -3,6 +3,8 @@ kind: Pod
 metadata:
   name: oneoff-job-audit-scripts
   namespace: production
+  annotations:
+    iam.amazonaws.com/role: arn:aws:iam::490759768946:role/sdi-bobs-production-reaction-job-audit-scripts
 spec:
   restartPolicy: Never
   imagePullSecrets:
@@ -18,6 +20,8 @@ spec:
       - checkOrphans
       - diffProducts
     envFrom:
+      - configMapRef:
+          name: kafka
       - secretRef:
           name: oneoffjobs
     env:
@@ -27,8 +31,6 @@ spec:
         value: http://af227f3265fed11e98729123d9d2638d-1672043513.us-east-1.elb.amazonaws.com:14268/api/traces
       - name: INITIAL_IMPORT
         value: "false"
-      - name: KAFKA_BOOTSTRAP_SERVERS
-        value: "broker0.kafka-production.k8s.bobs-test.io:9092,broker1.kafka-production.k8s.bobs-test.io:9093,broker2.kafka-production.k8s.bobs-test.io:9094"
       - name: KAFKA_PARTITIONS
         value: "3"
       - name: KAFKA_TOPIC_CATALOG_SYNC_BOM_STREAM

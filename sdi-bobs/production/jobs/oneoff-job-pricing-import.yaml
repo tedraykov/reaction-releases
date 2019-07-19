@@ -3,6 +3,8 @@ kind: Pod
 metadata:
   name: oneoff-job-pricing-import
   namespace: production
+  annotations:
+    iam.amazonaws.com/role: arn:aws:iam::490759768946:role/sdi-bobs-production-reaction-job-pricing-import
 spec:
   restartPolicy: Never
   imagePullSecrets:
@@ -10,7 +12,12 @@ spec:
   containers:
   - name: runner
     image: sportsdirect/reaction-etl-pricing-import:f23d272839133158e8da9207988a2b9790f300f5
-    command: [ "node", "--max-old-space-size=4096", "src/run.js", "sdi-bobs-staging2-playground", "BOBS_Web_SalePriceBook_2019-07-01_17-25-40.zip" ]
+    command:
+      - node
+      - --max-old-space-size=4096
+      - src/run.js
+      - sdi-bobs-production-playground
+      - BOBS_Web_SalePriceBook_2019-07-01_17-25-40.zip
     envFrom:
       - secretRef:
           name: oneoffjobs
@@ -19,7 +26,7 @@ spec:
       - name: PRICING_GRAPHQL_URL
         value: "http://reaction-pricing-engine/graphql"
       - name: GRAFANA_API
-        value: "https://grafana-staging.bobs-test.io/api"
+        value: "https://grafana.bobs-test.io/api"
       - name: REACTION_LOG_LEVEL
         value: INFO
     imagePullPolicy: Always
