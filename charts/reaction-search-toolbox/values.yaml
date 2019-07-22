@@ -3,7 +3,7 @@ replicas: 1
 
 config:
   rsElasticUrl: http://elasticsearch-client:9200
-  rsIndexVersion: 3
+  rsIndexVersion: 4
   rsMinInSyncReplicas: 2
   rsReplicationFactor: 2
   rsSynonymsPath: synonyms/synonyms-bobs-2019-01-16.solr.txt
