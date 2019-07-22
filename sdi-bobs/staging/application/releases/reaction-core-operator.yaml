@@ -28,7 +28,7 @@ spec:
       kafkaCluster: 'b-3.staging.d0bnhg.c2.kafka.us-east-1.amazonaws.com:9092,b-2.staging.d0bnhg.c2.kafka.us-east-1.amazonaws.com:9092,b-1.staging.d0bnhg.c2.kafka.us-east-1.amazonaws.com:9092'
       kafkaPartitionsEtlShippableInventoryStatus: 1
       kafkaPartitionsLoyalty: 3
-      kafkaSchemaRegistryUrl: http://schema-registry.kafka-staging.k8s.bobs-test.io:8081
+      kafkaSchemaRegistryUrl: http://kafka-schema-registry:8081
       logLevel: 'debug'
       loyaltyPluginBatchConsumeSize: 10000
       metricsEnabled: true
