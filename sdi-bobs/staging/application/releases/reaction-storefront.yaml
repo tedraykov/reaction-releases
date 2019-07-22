@@ -38,7 +38,7 @@ spec:
         writeKey: osQ8ZrOPWr89d7I6ecepCU1NcCP9uE0C
       sentry:
         enabled: true
-        dsn: https://0d6525f016ba482eba2b17fa3266dda9@sentry.io/1397837
+        dsn: https://222c72f6ba49483f88913050f9bd11ab@sentry.io/1397837
         environment: staging
       sessionSecret: AgA6AKu+5KvPVhnWryiBeVQ1w+nrJZ4xOzep22Z1/WW5ms0NWm+MiY+Ur0Cf6vyJmRP66ocbxhgE6Rmo0ygas0i+1dDT7CMEn/SJzMaRlCjUsXddDkPFDKk1NYxzwgWCW4SHbeUrqcUeYTWz9f2oN1De9P0nZtkLcn05RU9YrZjc5BdL4NNW0yc+ja+BtCvuaMsVIaS+01XxdGdTU93aQt5IB/KYQDWNDV9KUi3jgT2Eqw8mf/YDNX0k1W82rQPePWrD+z3FE9swMyWgN7RivbORdDrsJCy3Z8eqjPzUeUSs3cRAcVWnm+YHBzMwQfHyco3QhVMcBwgGDHNakFvtuCn9UySdlXV3ZXRCXI3dO+r8dXeL9xYMlwYA/ssr/9J7CzvcDIRs6UWGUH6z03auyhseCzWv6FMnBSWRPDZ7fTbuzw8et/eK81S4Qs7iyw8A18ud1z+YoeQENAIxgR72EvebYvO3Vzw05yN8bCng4bBP9fNsOaj/NciLtnRn/fwGw6EwRYh6u+qVssYd/4W2rx22V3Chur0AhVBzgslRQqakG/dXklQGBrOkd1DVT9pQStbM3ywpE6Bzb4QeeuijirAcFGGTNGZQxMsw4B9ayBNOzHNyMf3UJnYU5tO9CfwYkpEDCIhM1l1GcV6lQSFXg+tV8yvrXtEPN0KnThmj97gQ0zZ5jx46CZL+mtJsmb4eZE4aHeKJZ9ctXdO+DmJPNyGVjATAh13IfuH4g24=
     horizontalPodAutoscaler:
