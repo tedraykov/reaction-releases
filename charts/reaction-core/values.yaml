@@ -60,7 +60,6 @@ config:
   logFormat: json
   logLevel: info
   loyaltyConsumerEnabled: false
-  masterPublishConsumerEnabled: false
   metricsEnabled: false
   metricsHost: 0.0.0.0
   metricsPath: /metrics
