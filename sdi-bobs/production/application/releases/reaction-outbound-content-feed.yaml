@@ -21,7 +21,7 @@ spec:
     config:
       batchSize: 1000
       cloudFolder: w_1000,q_auto,f_auto
-      cloudName: bobstores-dev
+      cloudName: bobstores
       jaegerEndpoint: http://af227f3265fed11e98729123d9d2638d-1672043513.us-east-1.elb.amazonaws.com:14268/api/traces
       kafkaBootstrapServers: b-1.production.gkq6i5.c2.kafka.us-east-1.amazonaws.com:9092,b-2.production.gkq6i5.c2.kafka.us-east-1.amazonaws.com:9092,b-3.production.gkq6i5.c2.kafka.us-east-1.amazonaws.com:9092
       kafkaPartitionContentFeedStatus: 3
