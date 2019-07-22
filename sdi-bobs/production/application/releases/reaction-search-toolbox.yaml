@@ -13,7 +13,7 @@ spec:
     imagePullSecret: reaction-docker-hub
     image:
       repository: reactioncommerce/reaction-search-toolbox
-      tag: "f1b074de56a8da511db0d15279094abb6014bca0"
+      tag: "0a87978d5a3eaa7c7d59848be95ce224a5975e1a"
     config:
       rsDb: bobs-production
       rsKafkaServer: broker0.kafka-production.k8s.bobs-test.io:9092
