@@ -13,6 +13,9 @@ spec:
     image:
       repository: 225761155017.dkr.ecr.us-east-1.amazonaws.com/reaction-pricing-engine
       tag: "5467ad84a72ae6008e4bc85036e0249919a5a717"
+    # Disabling temporarily.
+    # See https://github.com/sportsdirect/reaction-devops/issues/95#issuecomment-513925115
+    command: ["tail", "-f", "/dev/null"]
     ingress:
       enabled: true
       hosts:
