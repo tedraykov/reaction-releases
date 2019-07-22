@@ -13,6 +13,9 @@ spec:
     image:
       repository: docker.io/reactioncommerce/pricing-engine
       tag: 5467ad84a72ae6008e4bc85036e0249919a5a717
+    imagePullSecrets:
+      - name: reaction-docker-hub
+
     # Disabling temporarily.
     # See https://github.com/sportsdirect/reaction-devops/issues/95#issuecomment-513925115
     command: ["tail", "-f", "/dev/null"]
