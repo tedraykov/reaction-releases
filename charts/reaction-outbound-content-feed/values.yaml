@@ -9,10 +9,10 @@ config:
 #  s3InternalExportBucketName: sdi-staging-feeds-ocf-bobs
 #  jaegerEndpoint: https://jaeger-collector.bobs-test.io/api/traces
 #  kafkaBootstrapServers: kafka-broker-0.bobs-test.io:9092
- kafkaTopicContentFeedStatus: etl.content-feed.json-gen1  
- kafkaTopicContentFeedErrors: etl.content-feed.errors.json-gen1
- kafkaPartitionContentFeedStatus: 0
- kafkaPartitionContentFeedErrors: 0
+  kafkaTopicContentFeedStatus: etl.content-feed.json-gen1
+  kafkaTopicContentFeedErrors: etl.content-feed.errors.json-gen1
+  kafkaPartitionContentFeedStatus: 0
+  kafkaPartitionContentFeedErrors: 0
 #  mongoDbName: sample-data-bobs-staging
 #  pricebookId: bobs-usd-retail-prices
 #  siteCode: BOBS
