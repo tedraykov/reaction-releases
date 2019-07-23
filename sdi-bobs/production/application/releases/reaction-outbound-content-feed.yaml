@@ -24,8 +24,8 @@ spec:
       cloudName: bobstores
       jaegerEndpoint: http://af227f3265fed11e98729123d9d2638d-1672043513.us-east-1.elb.amazonaws.com:14268/api/traces
       kafkaBootstrapServers: b-1.production.gkq6i5.c2.kafka.us-east-1.amazonaws.com:9092,b-2.production.gkq6i5.c2.kafka.us-east-1.amazonaws.com:9092,b-3.production.gkq6i5.c2.kafka.us-east-1.amazonaws.com:9092
-      kafkaPartitionContentFeedStatus: 3
-      kafkaPartitionContentFeedErrors: 3
+      kafkaPartitionContentFeedStatus: 2
+      kafkaPartitionContentFeedErrors: 2
       kafkaTopicContentFeedStatus: etl.content-feed.json-gen1
       kafkaTopicContentFeedErrors: etl.content-feed.errors.json-gen1
       kmsKeyArn: arn:aws:kms:us-east-1:490759768946:key/c65dc6e6-0e2b-4c6f-a5ca-3704fc11fcb6
