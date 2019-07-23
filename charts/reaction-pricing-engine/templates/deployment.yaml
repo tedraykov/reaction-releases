@@ -11,6 +11,8 @@ metadata:
     helm.sh/chart: {{ include "reaction-pricing-engine.chart" . }}
 spec:
   replicas: {{ .Values.replicaCount }}
+  strategy:
+    type: Recreate
   selector:
     matchLabels:
       app.kubernetes.io/name: {{ include "reaction-pricing-engine.name" . }}
