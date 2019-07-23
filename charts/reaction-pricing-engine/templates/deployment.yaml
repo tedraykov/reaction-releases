@@ -17,7 +17,7 @@ spec:
       app.kubernetes.io/instance: {{ .Release.Name }}
   template:
     metadata:
-      annotionas:
+      annotations:
         checksum/config: {{ values .Values.config | sortAlpha | toString | sha256sum }}
       labels:
         app.kubernetes.io/name: {{ include "reaction-pricing-engine.name" . }}
