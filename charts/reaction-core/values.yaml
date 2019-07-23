@@ -65,7 +65,6 @@ config:
   metricsPath: /metrics
   metricsPort: 3001
   pricingConsumerEnabled: false
-  pricingPublishEnabled: true
   productConsumerEnabled: false
   productPublisherAutoPublish: false
   profilingEnabled: false
