@@ -16,7 +16,7 @@ spec:
       - node
       - --max-old-space-size=4096
       - src/run.js
-      - sdi-bobs-production-playground
+      -  sdi-bobs-production-feeds-pricing
       - BOBS_Web_SalePriceBook_2019-07-01_17-25-40.zip
     envFrom:
       - secretRef:
