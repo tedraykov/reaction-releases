@@ -17,8 +17,9 @@ spec:
       app.kubernetes.io/instance: {{ .Release.Name }}
   template:
     metadata:
-{{- if .Values.annotations }}
       annotations:
+        checksum/config: {{ values .Values.config | sortAlpha | toString | sha256sum }}
+{{- if .Values.annotations }}
         {{- with .Values.annotations }}
         {{- toYaml . | nindent 8 }}
         {{- end }}
