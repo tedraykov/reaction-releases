@@ -18,7 +18,7 @@ spec:
       tag: sftp-from-radial-9c3d03b
     schedule: "*/5 * * * *"
     config:
-      s3BucketName: sdi-prod-feeds-order-status-import-bobs
+      s3BucketName: sdi-bobs-production-feeds-order-status-import
       sftpEndpoint: sftp.remotetools.gsipartners.com
       sftpHomedir: /home/bobsftp02
       sftpPassword: >-
