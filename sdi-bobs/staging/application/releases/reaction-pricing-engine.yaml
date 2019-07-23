@@ -18,7 +18,7 @@ spec:
 
     # Disabling temporarily.
     # See https://github.com/sportsdirect/reaction-devops/issues/95#issuecomment-513925115
-    command: ["tail", "-f", "/dev/null"]
+    #command: ["tail", "-f", "/dev/null"]
     ingress:
       enabled: true
       hosts:
