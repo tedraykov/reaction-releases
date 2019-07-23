@@ -2,7 +2,7 @@ apiVersion: flux.weave.works/v1beta1
 kind: HelmRelease
 metadata:
   name: reaction-pricing-engine
-  namespace: bobs
+  namespace: production
 spec:
   releaseName: reaction-pricing-engine
   chart:
@@ -13,7 +13,7 @@ spec:
     image:
       #repository: 490759768946.dkr.ecr.us-east-1.amazonaws.com/reaction-pricing-engine
       repository: docker.io/reactioncommerce/pricing-engine
-      tag: "59bafda3f020606d6fa79eb10896fcfa6eecb8e5"
+      tag: "5467ad84a72ae6008e4bc85036e0249919a5a717"
     imagePullSecrets:
       - name: reaction-docker-hub
     ingress:

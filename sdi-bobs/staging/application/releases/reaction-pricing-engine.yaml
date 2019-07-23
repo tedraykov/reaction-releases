@@ -11,8 +11,14 @@ spec:
     ref: develop
   values:
     image:
-      repository: 225761155017.dkr.ecr.us-east-1.amazonaws.com/reaction-pricing-engine
-      tag: "37ba7200d665041f8dab836b4072f797e7ba4284"
+      repository: docker.io/sportsdirect/reaction-pricing-engine
+      tag: 5467ad84a72ae6008e4bc85036e0249919a5a717
+    imagePullSecrets:
+      - name: reaction-docker-hub
+
+    # Disabling temporarily.
+    # See https://github.com/sportsdirect/reaction-devops/issues/95#issuecomment-513925115
+    #command: ["tail", "-f", "/dev/null"]
     ingress:
       enabled: true
       hosts:
@@ -23,9 +29,9 @@ spec:
       imageTag: configurable-via-env
     config:
       jvmOpts: "-d64 -Xms2560m -Xmx2560m"
-      bootstrapServers: "broker0.kafka-staging.k8s.bobs-test.io:9092,broker1.kafka-staging.k8s.bobs-test.io:9093,broker2.kafka-staging.k8s.bobs-test.io:9094"
-      schemaRegistryUrl: "http://schema-registry.kafka-staging.k8s.bobs-test.io:8081"
-      zookeeperConnect: "zookeeper.kafka-staging.k8s.bobs-test.io:2181"
+      bootstrapServers: "b-3.staging.d0bnhg.c2.kafka.us-east-1.amazonaws.com:9092,b-2.staging.d0bnhg.c2.kafka.us-east-1.amazonaws.com:9092,b-1.staging.d0bnhg.c2.kafka.us-east-1.amazonaws.com:9092"
+      schemaRegistryUrl: "http://kafka-schema-registry:8081"
+      zookeeperConnect: "172.17.22.66:2181,172.17.21.238:2181,172.17.23.37:2181"
       autoOffsetReset: "earliest"
       bufferedRecordsPerPartition: "0"
       cacheMaxBytesBuffering: "0"

@@ -2,7 +2,7 @@ apiVersion: flux.weave.works/v1beta1
 kind: HelmRelease
 metadata:
   name: reaction-sftp-from-radial
-  namespace: bobs
+  namespace: production
 spec:
   releaseName: reaction-sftp-from-radial
   chart:
@@ -10,7 +10,9 @@ spec:
     path: charts/reaction-sftp-from-radial
     ref: develop
   values:
-    imagePullSecret: dockerhub-creds
+    annotations:
+      iam.amazonaws.com/role: arn:aws:iam::490759768946:role/sdi-bobs-production-reaction-job-sftp-from-radial
+    imagePullSecret: reaction-docker-hub
     image:
       repository: sportsdirect/reaction-cron-jobs
       tag: sftp-from-radial-9c3d03b

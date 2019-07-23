@@ -1,0 +1,7 @@
+service:
+  httpPort: 80
+  apiPort: 7979
+  metricsPath: "/metrics"
+
+horizontalPodAutoscaler:
+  enabled: false

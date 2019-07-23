@@ -2,7 +2,7 @@ apiVersion: flux.weave.works/v1beta1
 kind: HelmRelease
 metadata:
   name: reaction-trigger-master-publisher
-  namespace: bobs
+  namespace: production
 spec:
   releaseName: reaction-trigger-master-publisher
   chart:
@@ -10,7 +10,7 @@ spec:
     path: charts/reaction-trigger-master-publisher
     ref: develop
   values:
-    imagePullSecret: dockerhub-creds
+    imagePullSecret: reaction-docker-hub
     image:
       repository: reactioncommerce/reaction-cron-jobs
       tag: "trigger-master-publisher-63bfff3"

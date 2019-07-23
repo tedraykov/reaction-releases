@@ -1,0 +1,26 @@
+apiVersion: flux.weave.works/v1beta1
+kind: HelmRelease
+metadata:
+  name: prometheus-kafka-offset-lag
+  namespace: monitoring
+spec:
+  releaseName: prometheus-kafka-offset-lag
+  chart:
+    git: git@github.com:sportsdirect/sdi-releases.git
+    path: charts/prometheus-kafka-offset-lag
+    ref: develop
+  values:
+    image:
+      repository: pceric/kafka-offset-lag-for-prometheus
+      tag: "v1.4"
+    service:
+      serviceMonitorLabel: "application"
+    config:
+      kafkaBrokers: "b-3.staging.d0bnhg.c2.kafka.us-east-1.amazonaws.com:9092,b-2.staging.d0bnhg.c2.kafka.us-east-1.amazonaws.com:9092,b-1.staging.d0bnhg.c2.kafka.us-east-1.amazonaws.com:9092"
+    resources:
+        requests:
+            memory: 256Mi
+            cpu: 500m
+        limits:
+            memory: 512Mi
+            cpu: 500m

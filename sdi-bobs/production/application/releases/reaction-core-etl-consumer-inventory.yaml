@@ -2,7 +2,7 @@ apiVersion: flux.weave.works/v1beta1
 kind: HelmRelease
 metadata:
   name: reaction-core-etl-consumer-inventory
-  namespace: bobs
+  namespace: production
 spec:
   releaseName: reaction-core-etl-consumer-inventory
   chart:
@@ -17,7 +17,7 @@ spec:
       max: 1
     image:
       repository: docker.io/sportsdirect/reaction
-      tag: 299e4ef532719f5fc7aa2da4c59f9a10093b0472
+      tag: ff3b6434e4def3806b04d70354080a5cac2b30a2
     imagePullSecrets:
       - name: reaction-docker-hub
     config:
@@ -38,8 +38,6 @@ spec:
       kafkaPartitionsEtlShippableInventoryStatus: 1
       kafkaPartitionsLoyalty: 3
       kafkaSchemaRegistryUrl: http://schema-registry.kafka-production.k8s.bobs-test.io:8081
-      kafkaTopicProductImportErrorsPartitions: 3
-      kafkaTopicProductImportProductsPartitions: 1
       logLevel: 'debug'
       loyaltyPluginBatchConsumeSize: 10000
       metricsEnabled: true
@@ -70,10 +68,3 @@ spec:
       rootUrl: https://api.bobstores.com
       siteCode: BOBS
       startingNewCustomerNumber: "1100151420184"
-    resources:
-      requests:
-        memory: 3Gi
-        cpu: "1"
-      limits:
-        memory: 4Gi
-        cpu: "2"

@@ -13,21 +13,14 @@ spec:
     imagePullSecret: reaction-docker-hub
     image:
       repository: reactioncommerce/reaction-search-toolbox
-      tag: "5e13b8ccbf2fdf7dcf78a6ffe64966c0c52b06ce"
+      tag: "0a87978d5a3eaa7c7d59848be95ce224a5975e1a"
     config:
-      rsDb: sample-data-bobs-staging
-      rsElasticUrl: http://elasticsearch-client:9200
-      rsIndexVersion: 3
-      rsIsLongRunning: false
-      rsKafkaServer: broker0.kafka-staging.k8s.bobs-test.io:9092
+      rsDb: bobs-staging
+      kafkaBootstrapServers: 'b-3.staging.d0bnhg.c2.kafka.us-east-1.amazonaws.com:9092,b-2.staging.d0bnhg.c2.kafka.us-east-1.amazonaws.com:9092,b-1.staging.d0bnhg.c2.kafka.us-east-1.amazonaws.com:9092'
       rsKafkaConnectUrl: http://reaction-kafka-connect:8082
-      rsMinInSyncReplicas: 2
       rsMongoUrl: >-
-        AgBN1dsSX55ZinSJyUXkyRkPYvIcXgMwMQZ0ZWhb32x6rX4Eyg2jR/qeS661hnFfoOvzRBvY54iUyhj0LODQPNrOsinOLYXNqgK00jpjiFda0h3vaK0cNFKkBDVShL3WNvMETqtppId7QGlzqJB3hDlkJV42CP4trUgUCKjBJ8XKzcXZQZnlG/3kzP5Roa90u4VK8rb2VcyEhimhuiQLOHfr/MbCppDThpQ4z3aRdAqHl7yBbc/sso/Tr/0QRDgLGx60Q2rKloXOyu+d4n4amJscUY4rwBE4N76a0Qqdbqfj1ODCdjdYu3u8vme+2Ubk8n67aR1lJ32SQuQcsv9KmB0259BJuPc32Hq36xeQObSn8sABIFsm7J2BP3JQBUv5PB1+6A0G1sVXRDb+soosptul9X5ekMQrJ6TgRiHo4DxkRMHSOSOu0al4/vDMVuePpFTr6OIyi5HNy5Qowr+J4rKzSl0HbbFsOPscxv7N5PmeBrL1d6banFUyrHg0SayJ7w0UXTq/WcmpNWRtVVw29RUEPlYiFpxs4VWv0ZyS5Q5DPXTYBVt7K5d/S/NXGoxi6fhCU0ibLFljSi2Y9fKupGb+Qg5eRweDazrgk6c8ktbHZR0Zbi6NcCogssO2ER2NBUKDzOLQWjsSmn9pUbm3/MAZTLbylVWAqdsB9ZwVjboZnTudacrdwJy8xbCjoHHxJqO923UOGMHCKhN2pWMd8JV0clZq8+cdyycevQJBSc54lObnA4934pXvg5fvZlb3GkB2wl6R/ekdkEKuSW9nmqfPJnYVgmi5xCjHWqlc6V0s5m2EEqZTFpftkxeQhwnzfk4F8lk7k76a/WEa4Wm/BdTUu4jN5rDWttJGLNkkfQSXZ4tj2MWwcIFgXU2ZASLgGwZvvdSdaN3bEfpHQGIkK7aXvI8PtjBavtaLKD2NVfozuHo6lZDRYEkaQmCIvGJVy4rYDyzlC+rM3eNExyphd9aCoAABI+DtXFm6x0N4aZBGegH555NEVSvBEbpvZbmAgN9BMSBIUiG3+rayBOtuf5hbscVd8RVORyAQ/UIX0g==
-      rsReplicationFactor: 2
-      rsSynonymsPath: synonyms/synonyms-bobs-2019-01-16.solr.txt
-      rsTopic: bobs.cdc.search.catalog.json-gen2
-      rsZookeeper: zookeeper.kafka-staging.k8s.bobs-test.io:2181
+        AgBuqymnPT+V4N7oeZncRb+fSyszW7+txaLZ+1dTU2BrWE1mWMkEcG+oPlUN1KLLEj3znZ9W3lzbG3T0RvSseTCzUtwG8KXOjZALV6RNQdtme9BpNXjSbRhNzY0gktabew3KUsw1NqQD/a775CGJapuIXrYGpajRB0jNA0AxbbYyjzRdGgGo+EydTJmHF1tEe+cmWB7NvANhPwt4WbJME53cda1md2TU8nHc4GdCQS0Vxm98uQd8J+V2ATpqDv2jAwM9t9BDwp2Y1wiIICE2zD1R8taxp6mJmkQimV3Y8DMA4P3nu0mwb9umAo4m99ya+LjZJbUOLBjoWGt4BIpTgr+x4Fto8OOcVU5yHokCVa/SMMj5HUIgy+pXH+P5RjHgsMbZo9JT9EKa8AsG4aAjj9TGkpTZSytdb/rTP2NQr34IWOK6Vu7r3hKACQiE3p995P3jbAyA2o9LlOBmdF1U3n1Hyw+BJ0Ec/SeVq3TORzTyYlLy5qi978gF6gmXB7UvHi3zwC2HyMaK024W4zxOu0UyShaquGWrYVRHE6djEBHXFo09kjAmHnV3ryk0nbfCF8V33BpMvlPy44ag8rEvS9UtEOKM6ROLDjyE8oZCrm3oZeJf8kx2wXjkbDhs7zseS9npn+guBUr/lcx2UyfVPpzgalx698lTyVzH7nH4c5uC6yCgVPpMHiEyiCz7f+huT/mpcaSnh4u7AK44+c8J3x47aLcQCg+e59hw/mX5Y/L+L5QKP273CX6OmQl9Q/uoavQkeeGOhAwMv7z1Rnbg7MXgt2ltMAL3u8nX9CFgtrEdlIJ+tpt924KJQtCWr77ZahFGvjI76sJD2l2QjG9iWNDFtNXYAPta4SqfVEQHjQiUVmHhPyZnDgsXC/XcUA0AYwMYZc3WjA/Ux4YfocY6kOXM4256o3G9ISBkWRyAbC51LDM+xVGgv8QSMRPWbtjYHejcTy1y8/mveA3KMfYFvTlT7MHSQEHuvjmG6gapn6l2K5DQAWAoA1hIURSA7oWA+uFGd+2z/Q==
+      rsZookeeper: "172.17.22.66:2181,172.17.21.238:2181,172.17.23.37:2181"
     resources:
       requests:
         memory: 1Gi

@@ -1,6 +1,6 @@
 ## How many replicas?
 replicas: 1
-
+annotations: {}
 #config:
 #  batchSize: 1000
 #  cloudName: sportsdirect

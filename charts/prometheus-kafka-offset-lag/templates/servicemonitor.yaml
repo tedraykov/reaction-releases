@@ -1,0 +1,18 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: {{ include "prometheus-kafka-offset-lag.fullname" . }}
+  labels:
+    app.kubernetes.io/name: {{ include "prometheus-kafka-offset-lag.name" . }}
+    app.kubernetes.io/component: core
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+    helm.sh/chart: {{ include "prometheus-kafka-offset-lag.chart" . }}
+    monitoring: "{{ .Values.service.serviceMonitorLabel }}"
+spec:
+  endpoints:
+  - interval: 30s
+    port: http
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: {{ include "prometheus-kafka-offset-lag.name" . }}

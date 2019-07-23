@@ -32,7 +32,6 @@ data:
   SCHEMA_REGISTRY_URL: {{ required "config.kafkaSchemaRegistryUrl not defined." .Values.config.kafkaSchemaRegistryUrl | quote }}
   KAFKA_PARTITIONS_LOYALTY: {{ required "config.kafkaPartitionsLoyalty not defined." .Values.config.kafkaPartitionsLoyalty | quote }}
   KAFKA_PARTITION_ETL_SHIPPABLE_INVENTORY_STATUS: {{ required "config.kafkaPartitionsEtlShippableInventoryStatus not defined." .Values.config.kafkaPartitionsEtlShippableInventoryStatus | quote }}
-  KAFKA_TOPIC_CATALOG_IMPORT_ERRORS: {{ required "config.kafkaTopicCatalogImportErrors not defined." .Values.config.kafkaTopicCatalogImportErrors | quote }}
   KAFKA_TOPIC_CATALOG_SYNC_PRODUCTS: {{ required "config.kafkaTopicCatalogSyncProducts not defined." .Values.config.kafkaTopicCatalogSyncProducts | quote }}
   KAFKA_TOPIC_ETL_SHIPPABLE_INVENTORY_STATUS: {{ required "config.kafkaTopicEtlShippableInventoryStatus not defined." .Values.config.kafkaTopicEtlShippableInventoryStatus | quote }}
   KAFKA_TOPIC_ETL_SHIPPABLE_INVENTORY_STREAM: {{ required "config.kafkaTopicEtlShippableInventoryStream not defined." .Values.config.kafkaTopicEtlShippableInventoryStream | quote }}
@@ -57,7 +56,6 @@ data:
   PRODUCT_CONSUMER_ENABLED: {{ required "config.productConsumerEnabled is not defined." .Values.config.productConsumerEnabled | quote }}
   PRODUCT_PUBLISHER_AUTO_PUBLISH: {{ required "config.productPublisherAutoPublish is not defined." .Values.config.productPublisherAutoPublish | quote }}
   TAXES_CONSUMER_ENABLED: {{ required "config.taxesConsumerEnabled is not defined." .Values.config.taxesConsumerEnabled  | quote }}
-  MASTER_PUBLISH_CONSUMER_ENABLED: {{ required "config.masterPublishConsumerEnabled is not defined." .Values.config.masterPublishConsumerEnabled | quote }}
   METRICS_ENABLED: {{ required "config.metricsEnabled is not defined." .Values.config.metricsEnabled  | quote }}
   METRICS_HOST: {{ required "config.metricsHost is not defined." .Values.config.metricsHost  | quote }}
   METRICS_PATH: {{ required "config.metricsPath is not defined." .Values.config.metricsPath  | quote }}
@@ -69,3 +67,4 @@ data:
   RADIAL_TAXES_API_URL: {{ required "config.radialTaxesApiUrl not defined." .Values.config.radialTaxesApiUrl | quote }}
   KAFKA_TOPIC_RADIAL_ITEM_EXPORT_STATUS: {{ required "config.kafkaTopicRadialItemExportStatus not defined." .Values.config.kafkaTopicRadialItemExportStatus | quote }}
   RADIAL_ITEM_EXPORT_CONSUMER_ENABLED: {{ required "config.radialItemExportConsumerEnabled not defined." .Values.config.radialItemExportConsumerEnabled | quote }}
+  IMPORT_ORDER_STATUS_CONSUMER_ENABLED: {{ required "config.importOrderStatusConsumerEnabled not defined." .Values.config.importOrderStatusConsumerEnabled | quote }}

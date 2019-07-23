@@ -43,23 +43,23 @@ config:
   hydraOauth2IntrospectUrl: http://hydra-hydra-admin-service:4445/oauth2/introspect
   initialImport: false
   shippableInventoryConsumerEnabled: false
-  kafkaTopicCatalogImportErrors: etl.product-import.errors.json-gen1
   kafkaTopicCatalogSyncProducts: etl.catalog-sync.products.json-gen1
   kafkaTopicEtlShippableInventoryStatus: etl.shippable-inventory.inventory-status.json-gen1
   kafkaTopicEtlShippableInventoryStream: etl.shippable-inventory.inventory-data.json-gen1
   kafkaTopicImportOrderStatusOrders: etl.import-order-status.status.json-gen1
   kafkaTopicImportTaxCodesTaxcodes: etl.import-tax-codes.tax-codes.json-gen1
-  kafkaTopicLoyaltyPluginDbUpdates: bobs.etl.loyalty-db-updates.json-gen1
-  kafkaTopicLoyaltyPluginDbUpdatesStatus: bobs.etl.loyalty-db-updates-status.json-gen1
+  kafkaTopicLoyaltyPluginDbUpdates: etl.loyalty-db-updates.json-gen1
+  kafkaTopicLoyaltyPluginDbUpdatesStatus: etl.loyalty-db-updates-status.json-gen1
   kafkaTopicPricebooks: reaction.pricing.pricebook-aggregates.avro-gen1
   kafkaTopicPricesById: reaction.pricing.prices-by-id-aggregates.avro-gen1
   kafkaTopicProductImportErrors: etl.product-import.errors.json-gen1
-  kafkaTopicProductImportProducts: event.product-import.products.stream.json-gen1
+  kafkaTopicProductImportProducts: etl.product-import.products.status.json-gen1
   kafkaTopicRadialItemExportStatus: etl.radial-item-export.status.json-gen1
+  kafkaTopicProductImportErrorsPartitions: 3
+  kafkaTopicProductImportProductsPartitions: 3
   logFormat: json
   logLevel: info
   loyaltyConsumerEnabled: false
-  masterPublishConsumerEnabled: false
   metricsEnabled: false
   metricsHost: 0.0.0.0
   metricsPath: /metrics
@@ -70,21 +70,18 @@ config:
   productPublisherAutoPublish: false
   profilingEnabled: false
   radialItemExportConsumerEnabled: false
+  importOrderStatusConsumerEnabled: false
   skipFixtures: 1
   taxesConsumerEnabled: false
   user: "Reaction Admin"
 
-resources: {}
-  # We usually recommend not to specify default resources and to leave this as a conscious
-  # choice for the user. This also increases chances charts run on environments with little
-  # resources, such as Minikube. If you do want to specify resources, uncomment the following
-  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
-  # limits:
-  #   cpu: 100m
-  #   memory: 128Mi
-  # requests:
-  #   cpu: 100m
-  #   memory: 128Mi
+resources:
+  limits:
+    cpu: 2
+    memory: 4Gi
+  requests:
+    cpu: 300m
+    memory: 512Mi
 
 #maxUnavailable: 1
 

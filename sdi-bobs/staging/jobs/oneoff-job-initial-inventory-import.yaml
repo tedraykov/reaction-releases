@@ -3,26 +3,28 @@ kind: Pod
 metadata:
   name: oneoff-job-initial-inventory-import
   namespace: staging
+  annotations:
+    iam.amazonaws.com/role: arn:aws:iam::225761155017:role/sdi-bobs-staging-reaction-job-initial-inventory-import
 spec:
   restartPolicy: Never
   imagePullSecrets:
     - name: reaction-docker-hub
-  nodeName: ip-172-17-53-238.ec2.internal
   containers:
   - name: runner
     image: sportsdirect/reaction-etl-shippable-inventory:oneoff-job-initial-inventory-import
-    command: ["node", "run.js", "sdi-bobs-staging-feeds-inventory", "reaction-sdi-inventory.BOBS.full.201906211110Z.xml"]
+    command:
+      - node
+      - run.js
+      - sdi-bobs-staging-feeds-inventory
+      - reaction-sdi-inventory.BOBS.full.201906211110Z.xml
     envFrom:
+      - configMapRef:
+          name: kafka
       - configMapRef:
           name: reaction-core-worker
     env:
-      # TODO Grig/Slawek please wire these up as secrets
-      #- name: AWS_ACCESS_KEY_ID
-      #- name: AWS_SECRET_ACCESS_KEY
       - name: JAEGER_ENDPOINT
-        value: "http://jaeger-collector.monitoring:14268/api/traces"
-      - name: KAFKA_BOOTSTRAP_SERVERS
-        value: "broker0.kafka-staging.k8s.bobs-test.io:9092,broker1.kafka-staging.k8s.bobs-test.io:9093,broker2.kafka-staging.k8s.bobs-test.io:9094"
+        value: 'http://a20caf001938a11e98e1a0ad15df2ba7-1441443039.us-east-1.elb.amazonaws.com:14268/api/traces'
       - name: REACTION_LOG_LEVEL
         value: "DEBUG"
     resources:

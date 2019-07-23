@@ -1,0 +1,21 @@
+{{- $fullname := include "kafka-topics.fullname" . }}
+{{- $chart := include "kafka-topics.chart" . }}
+{{- $config := .Values.config }}
+{{- $defaults := .Values.defaults }}
+{{- range $key, $value := .Values.topics }}
+apiVersion: kafka.strimzi.io/v1beta1
+kind: KafkaTopic
+metadata:
+  name: {{ $key }}
+  labels:
+    app.kubernetes.io/name: {{ $fullname }}
+    app.kubernetes.io/instance: {{ $.Release.Name }}
+    app.kubernetes.io/managed-by: {{ $.Release.Service }}
+    helm.sh/chart: {{ $chart }}
+    strimzi.io/cluster: {{ required "config.cluster not defined." $config.cluster | quote }}
+spec:
+  topicName: {{ $key }}
+{{- $spec := merge $value $defaults }}
+{{- toYaml $spec | nindent 2 }}
+---
+{{- end -}}

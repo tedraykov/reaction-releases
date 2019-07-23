@@ -21,10 +21,10 @@ spec:
     imagePullSecrets:
       - name: reaction-docker-hub
     config:
-      connectBootstrapServers: broker0.kafka-staging.k8s.bobs-test.io:9092,broker1.kafka-staging.k8s.bobs-test.io:9093,broker2.kafka-staging.k8s.bobs-test.io:9094
+      connectBootstrapServers: 'b-3.staging.d0bnhg.c2.kafka.us-east-1.amazonaws.com:9092,b-2.staging.d0bnhg.c2.kafka.us-east-1.amazonaws.com:9092,b-1.staging.d0bnhg.c2.kafka.us-east-1.amazonaws.com:9092'
       connectRestAdvertisedHostName: kafka-connect-staging.bobs-test.io
-      connectKeyConverterSchemaRegistryUrl: http://schema-registry.kafka-staging.k8s.bobs-test.io:8081
-      connectValueConverterSchemaRegistryUrl: http://schema-registry.kafka-staging.k8s.bobs-test.io:8081
+      connectKeyConverterSchemaRegistryUrl: http://kafka-schema-registry:8081
+      connectValueConverterSchemaRegistryUrl: http://kafka-schema-registry:8081
     resources:
       requests:
         memory: 2Gi

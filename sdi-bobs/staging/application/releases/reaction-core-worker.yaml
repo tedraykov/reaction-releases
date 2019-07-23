@@ -25,13 +25,13 @@ spec:
         AgCDVC5Yl+FT+vc2RLevIESVFXjlYzcxTZiwkHx7EXKzIFwXuGzWMiCI/P83anfrlF8YQC0ucgaUyVH1nHTJLumAWngLDa3TYkV3nDn2H4fx0Ehwl8kd/3PD7JxdR3sAtOxkZ06HNiUSA8x3BG0ENTRd0oZZ3EVGwzjM5oB7pIHmKaNA8Nvmh+wUIysvHcrgUYfRRJZIPZy1B2WWukEPGGyqRT95u81UmOl3fbB5i81459Z37cKnXqEAn6B7QeDe+/mD/2kTDudoe4uRjQZvOTmPpVVxYujF7N5H0msL40oIKcXumrRs3yncI8mXRLtP8qlH4PM/nkAz/+LdDhxtwgZjhE8T+iLhPH0XClIDx36hQrCesySPJUwZrOBk1gHYg1Jh2DWKc2DYX3wRmyTDqhtihq9hZprL5+j35O5ilInfsuNhuSJphIwdg12EgTkf5gJFpoXr76uaodjvND/aZNIHgozUbytZ/Y5/LpuO1u55EMlvWFWKou8IyU1efRQvL4KKN6CpYXJmh8Z7TpFAx5CMzRZK9/qbaAQCa4vbt5vFu4QxCgX+HEtCgtKiC3zsK1lRyO38egXbLIzrFdumUMji4mGnFRG6M/XH7UhqVHlnXK+gKEb8/+LyM4YS/dlRL4q2CK1yICm4ld2cc7wEIkABE9EOLo7WzR7JIBOxCZfQDOJqoFB8p07bG12w+ql7FagbK4OM4j+0c+4pOpWGg5TKAQ==
       kadiraAppSecret: >-
         AgAhkU26zle0W7zRBXGsVchLsSI5GWRgjQHyU9eCQDAPVIli/hZcGJgPzsAaGAODYpWt95xm7QnX5kE0Z2WwX1jR4gpwloBBy/PeZLku+byxdxMfh6fo9yZaGTSXJkUmLflJB/fPJl7ZLq8IC41oJYWCAJFK0Jvy6JB1HrAYLxi18sN6ismkQp053nBm/Z+J0oVtjEBANoy8hH3f/OqO7byU91W8ByVaCnzh7UQn3+ODsHHhZXmp3XCfbFDIteoL1ezH5itchANImXLLeVvsKMPP6WZZOvO3HXlPHb6RIE3uvl1nR2Xn5wNXBgbfsR/YyrblLxeoeeK3/2g9UvyVFx/fXta8maaiEPSKJB2yIH0EwU5kY6HZoSWmroefngMnB/fsfMakDwKW37atD8ggMm4emASqbNwxgPoUNbhF9TBpSj1CaAVPiqZvNdE4DlLoHIwd9u/0H0yeQsL5nPlZukJEwT315qlT7TIcSI0FVAdT0dDWrroTSOm3wBB+Crlthpdzunx9rf4UY2UVa0X2mgGIXCMtc6p/RyNsvk4qVJe84CUOP4WkVcD1vJ2ycsX4PsJ9IwTUUK9RoXJOmmwI8/lWkANgTNR5DCn5fDK7wob5AfhwKBBCYBv9Cm/tz6AbPp7a+nCTeQHzsY094Aa81HO+nInpTb954c0pEfWxxaytGkIxPf+mgBX1s4BQHDOB/Q+zx66KbFdY3UYq5JsYjejDbOHfJZQgT1NwzWJLxrv9Ld6T6OQ=
-      kafkaBootstrapServers: broker0.kafka-staging.k8s.bobs-test.io:9092,broker1.kafka-staging.k8s.bobs-test.io:9093,broker2.kafka-staging.k8s.bobs-test.io:9094
-      kafkaCluster: broker0.kafka-staging.k8s.bobs-test.io:9092,broker1.kafka-staging.k8s.bobs-test.io:9093,broker2.kafka-staging.k8s.bobs-test.io:9094
+      kafkaBootstrapServers: 'b-3.staging.d0bnhg.c2.kafka.us-east-1.amazonaws.com:9092,b-2.staging.d0bnhg.c2.kafka.us-east-1.amazonaws.com:9092,b-1.staging.d0bnhg.c2.kafka.us-east-1.amazonaws.com:9092'
+      kafkaCluster: 'b-3.staging.d0bnhg.c2.kafka.us-east-1.amazonaws.com:9092,b-2.staging.d0bnhg.c2.kafka.us-east-1.amazonaws.com:9092,b-1.staging.d0bnhg.c2.kafka.us-east-1.amazonaws.com:9092'
       kafkaPartitionsEtlShippableInventoryStatus: 1
       kafkaPartitionsLoyalty: 3
-      kafkaSchemaRegistryUrl: http://schema-registry.kafka-staging.k8s.bobs-test.io:8081
-      kafkaTopicProductImportErrorsPartitions: 3
-      kafkaTopicProductImportProductsPartitions: 1
+      kafkaSchemaRegistryUrl: http://kafka-schema-registry:8081
+      logLevel: 'debug'
+      loyaltyConsumerEnabled: true
       loyaltyPluginBatchConsumeSize: 10000
       metricsEnabled: true
       mongoOplogUrl: >-
@@ -46,6 +46,7 @@ spec:
       productConsumerEnabled: true
       productPublisherAutoPublish: false
       radialItemExportConsumerEnabled: true
+      importOrderStatusConsumerEnabled: true
       radialMode: sandbox
       radialPassword: >-
         AgBkc/9WcHtAeRcvA0V6QX1YqslRBV5Rb/CaDTsp2g5CpXkaIDoH53/GJQcQL10IAfdr7kL3d+v8gh4a53zo//xaOGfzk9z1WcS1rvoTPZVJthxd3deIHtiLWQHEUV3WFv08ckX2Vs4uC4jIg9V26QPZjXoK+qZ/vofkQF9JSxwLMWlHgLxYR/ugQ9DxYQLYijaGI5TSLDNaphyuVmZ5XwUAACyyFm7emZiea5I0bs+AC8AkX7F3xsijfUBBbfSE0wCxLybOy3MaYOAl7OvlfG31V3hp0y9a7v/yZ7p7BQuo/KrBde9sIQS9PXWgPA1aguNKPVQR9EDr3sAe9gbNHhFmS8llR/aJDe5/wd4bXJmU1t36dHzKeHvut8VuEkpez2ch7ZORWOwb4QI6PueER2O+uUE45XHz5EQI80MjdnH5I1pDiFk51X15CwdTDDn1KNL3gYiDcIFuILg5hBFlWXIhi+pe4Gxb4Wuik8+uWqlxsPl1CYxID0dlO0YWcFOaeI77+N3ZxK7LwwWMnsHdThJVdWZLoug8GPpcTqOsUWxgOmelDX2jM/smNvhVO28dyeL7CmejoeBg/ztnR19lITVvt99G8dy8wqdsOUeEuVnSZT1aXSaiz548r1vzdjg2ZsVk5zLrtsxUMWEeADrqMUO8aoPfCiSa56JPeiekIWGMLhbZMO9dQOY8L71IsGXId9MLkgX6kyg=
@@ -67,13 +68,6 @@ spec:
       taxesConsumerEnabled: true
     image:
       repository: docker.io/sportsdirect/reaction
-      tag: 299e4ef532719f5fc7aa2da4c59f9a10093b0472
+      tag: f9b98853261eec735ae7c7141c36ca6987b7cb1e
     imagePullSecrets:
       - name: reaction-docker-hub
-#    resources:
-#      requests:
-#        memory: 3Gi
-#        cpu: "1"
-#      limits:
-#        memory: 4Gi
-#        cpu: "2"
