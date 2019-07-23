@@ -1,0 +1,57 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: oneoff-job-reaction-etl-catalog-sync
+  namespace: production
+  annotations:
+    iam.amazonaws.com/role: arn:aws:iam::490759768946:role/sdi-bobs-production-reaction-job-catalog-sync
+  labels:
+    app: oneoff-job-reaction-etl-catalog-sync
+spec:
+  restartPolicy: Never
+  imagePullSecrets:
+    - name: reaction-docker-hub
+  containers:
+  - name: runner
+    image: sportsdirect/reaction-etl-catalog-sync:3616fcf52d187c88b8ff1482ab660a3a98203e79
+    command:
+      - node
+      - --max-old-space-size=8000
+      - /home/node/app/src/runMain.js
+      - -b
+      - sdi-bobs-production-feeds-product-catalog
+      - -f
+      - vestis_dware_master_catalog_2607_1554467067082.xml,vestis_dware_master_catalog_2608_1554467128592.xml,vestis_dware_master_catalog_2609_1554467212837.xml,vestis_dware_master_catalog_2610_1554467256555.xml,vestis_dware_master_catalog_2611_1554467308697.xml,vestis_dware_master_catalog_2612_1554467347022.xml,vestis_dware_master_catalog_2613_1554467384257.xml,vestis_dware_master_catalog_2614_1554467426397.xml,vestis_dware_master_catalog_2615_1554467460302.xml,vestis_dware_master_catalog_2616_1554467500462.xml,vestis_dware_master_catalog_2617_1554467528328.xml,vestis_dware_master_catalog_2618_1554467610217.xml,vestis_dware_master_catalog_2619_1554467633635.xml,vestis_dware_master_catalog_2620_1554467659383.xml,vestis_dware_master_catalog_2621_1554467686605.xml,vestis_dware_master_catalog_2622_1554467715832.xml,vestis_dware_master_catalog_2623_1554467779050.xml,vestis_dware_master_catalog_2624_1554467806420.xml,vestis_dware_master_catalog_2625_1554467878781.xml,vestis_dware_master_catalog_2626_1554468374502.xml,vestis_dware_master_catalog_2627_1554468402686.xml,vestis_dware_master_catalog_2628_1554468434116.xml,vestis_dware_master_catalog_2629_1554468465050.xml,vestis_dware_master_catalog_2630_1554468488369.xml,vestis_dware_master_catalog_2631_1554468515994.xml,vestis_dware_master_catalog_2632_1554468548102.xml,vestis_dware_master_catalog_2633_1554468574119.xml,vestis_dware_master_catalog_2634_1554468606448.xml,vestis_dware_master_catalog_2635_1554468637112.xml,vestis_dware_master_catalog_2636_1554468657350.xml,vestis_dware_master_catalog_2637_1554468678000.xml,vestis_dware_master_catalog_2638_1554468704063.xml,vestis_dware_master_catalog_2639_1554468754682.xml,vestis_dware_master_catalog_2640_1554509127848.xml,vestis_dware_master_catalog_2641_1554595262035.xml,vestis_dware_master_catalog_2642_1554768143765.xml,vestis_dware_master_catalog_2643_1554854693360.xml,vestis_dware_master_catalog_2644_1554941495660.xml,vestis_dware_master_catalog_2645_1555027655876.xml,vestis_dware_master_catalog_2646_1555113891276.xml,vestis_dware_master_catalog_2647_1555200080581.xml,vestis_dware_master_catalog_2648_1555286481168.xml,vestis_dware_master_catalog_2649_1555373016667.xml,vestis_dware_master_catalog_2650_1555459652524.xml,vestis_dware_master_catalog_2651_1555546621386.xml,vestis_dware_master_catalog_2652_1555632361328.xml,vestis_dware_master_catalog_2653_1555718591802.xml,vestis_dware_master_catalog_2654_1555977774612.xml,vestis_dware_master_catalog_2655_1556064208963.xml,vestis_dware_master_catalog_2656_1556150617745.xml,vestis_dware_master_catalog_2657_1556237416771.xml,vestis_dware_master_catalog_2658_1556323691834.xml,vestis_dware_master_catalog_2659_1556409667049.xml,vestis_dware_master_catalog_2660_1556496066118.xml,vestis_dware_master_catalog_2661_1556582629822.xml,vestis_dware_master_catalog_2662_1556669085654.xml,vestis_dware_master_catalog_2663_1556755877812.xml,vestis_dware_master_catalog_2664_1556841910244.xml,vestis_dware_master_catalog_2665_1556929092185.xml,vestis_dware_master_catalog_2666_1557014476092.xml,vestis_dware_master_catalog_2667_1557100871202.xml,vestis_dware_master_catalog_2668_1557187620639.xml,vestis_dware_master_catalog_2669_1557273747487.xml,vestis_dware_master_catalog_2670_1557360182318.xml,vestis_dware_master_catalog_2671_1557446687656.xml,vestis_dware_master_catalog_2672_1557538383479.xml,vestis_dware_master_catalog_2673_1557542416336.xml,vestis_dware_master_catalog_2674_1557545505287.xml,vestis_dware_master_catalog_2675_1557622973115.xml,vestis_dware_master_catalog_2676_1557624255047.xml,vestis_dware_master_catalog_2677_1557792261781.xml,vestis_dware_master_catalog_2678_1557878752051.xml,vestis_dware_master_catalog_2679_1557966757242.xml,vestis_dware_master_catalog_2680_1558051352577.xml,vestis_dware_master_catalog_2681_1558137997421.xml,vestis_dware_master_catalog_2682_1558224079210.xml,vestis_dware_master_catalog_2683_1558310476906.xml,vestis_dware_master_catalog_2684_1558397416939.xml,vestis_dware_master_catalog_2685_1558483620188.xml,vestis_dware_master_catalog_2686_1558569849046.xml,vestis_dware_master_catalog_2687_1558656228310.xml,vestis_dware_master_catalog_2688_1558742846090.xml,vestis_dware_master_catalog_2689_1558828860226.xml,vestis_dware_master_catalog_2690_1559088408742.xml,vestis_dware_master_catalog_2691_1559178664677.xml,vestis_dware_master_catalog_2692_1559181542605.xml,vestis_dware_master_catalog_2693_1559181575631.xml,vestis_dware_master_catalog_2694_1559263946422.xml,vestis_dware_master_catalog_2695_1559264456836.xml,vestis_dware_master_catalog_2696_1559349529836.xml,vestis_dware_master_catalog_2697_1559433661267.xml,vestis_dware_master_catalog_2698_1559607147935.xml,vestis_dware_master_catalog_2699_1559693069985.xml,vestis_dware_master_catalog_2700_1559779585264.xml,vestis_dware_master_catalog_2701_1559866753821.xml,vestis_dware_master_catalog_2702_1559952285408.xml,vestis_dware_master_catalog_2703_1560124856875.xml,vestis_dware_master_catalog_2704_1560211857690.xml,vestis_dware_master_catalog_2705_1560297800804.xml,vestis_dware_master_catalog_2706_1560384411351.xml,vestis_dware_master_catalog_2707_1560470721130.xml,vestis_dware_master_catalog_2708_1560557038955.xml,vestis_dware_master_catalog_2709_1560643257285.xml,vestis_dware_master_catalog_2710_1560816242554.xml,vestis_dware_master_catalog_2711_1560902798470.xml
+    envFrom:
+      - configMapRef:
+          name: kafka
+      - secretRef:
+          name: oneoff-job-reaction-etl-catalog-sync
+    env:
+      - name: JAEGER_ENDPOINT
+        value: http://af227f3265fed11e98729123d9d2638d-1672043513.us-east-1.elb.amazonaws.com:14268/api/traces
+      - name: INITIAL_IMPORT
+        value: "false"
+      - name: KAFKA_PARTITIONS
+        value: "3"
+      - name: KAFKA_TOPIC_CATALOG_SYNC_BOM_STREAM
+        value: etl.catalog-sync.streams.data.json-gen1
+      - name: KAFKA_TOPIC_CATALOG_SYNC_BOM_STREAM_PARTITIONS
+        value: "3"
+      - name: KAFKA_TOPIC_CATALOG_SYNC_ERRORS
+        value: etl.catalog-sync.errors.json-gen1
+      - name: KAFKA_TOPIC_CATALOG_SYNC_ERRORS_PARTITIONS
+        value: "3"
+      - name: KAFKA_TOPIC_CATALOG_SYNC_PRODUCTS
+        value: etl.catalog-sync.products.json-gen1
+      - name: KAFKA_TOPIC_CATALOG_SYNC_PRODUCTS_PARTITIONS
+        value: "3"
+      - name: LOCAL_TEST
+        value: "false"
+      - name: REACTION_LOG_LEVEL
+        value: DEBUG
+    imagePullPolicy: Always
+    resources:
+      requests:
+        cpu: 2
+        memory: "8192M"

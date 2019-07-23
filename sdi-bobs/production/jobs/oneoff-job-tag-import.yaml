@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: oneoff-job-tag-import
+  namespace: production
+spec:
+  restartPolicy: Never
+  imagePullSecrets:
+    - name: dockerhub-creds
+  containers:
+  - name: runner
+    image: reactioncommerce/oneoff-reaction-tags-import
+    command: [ "make", "start" ]
+    # This provides: MONGO_HOST, MONGO_DB, GRAFANA_AUTH_TOKEN, CLOUDFLARE_CLIENT_ID, CLOUDFLARE_CLIENT_SECRET
+    envFrom:
+      - secretRef:
+          name: oneoffjobs
+    env:
+      - name: SITE_CODE
+        value: "BOBS"
+      - name: ACTION
+        value: "purge"
+    imagePullPolicy: Always
+    resources:
+      limits:
+        cpu: 1
+        memory: "2028M"
+      requests:
+        cpu: 1
+        memory: "2028M"
