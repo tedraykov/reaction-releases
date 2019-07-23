@@ -29,6 +29,7 @@ data:
   GRAPHQL_PLAYGROUND_ENABLED: {{ required "config.graphqlPlaygroundEnabled not defined." .Values.config.graphqlPlaygroundEnabled | quote }}
   HYDRA_ADMIN_URL: {{ required "config.hydraAdminUrl not defined." .Values.config.hydraAdminUrl | quote }}
   INTERNAL_GRAPHQL_URL: {{ required "config.internalGraphqlUrl not defined." .Values.config.internalGraphqlUrl | quote }}
+  MAPBOX_TOKEN: {{ required "config.mapboxToken is not defined." .Values.config.mapboxToken | quote }}
   OAUTH2_ADMIN_PORT: {{ required "config.ouath2.adminPort not defined." .Values.config.oauth2.adminPort | quote }}
   OAUTH2_AUTH_URL: {{ required "config.oauth2.authUrl not defined." .Values.config.oauth2.authUrl | quote }}
   OAUTH2_CLIENT_ID: {{ required "config.oauth2.clientId not defined." .Values.config.oauth2.clientId | quote }}

@@ -21,6 +21,7 @@ spec:
         environment: staging
       elasticsearchUrl: http://elasticsearch-client:9200
       hydraAdminUrl: http://hydra:4445
+      mapboxToken: pk.eyJ1IjoianBoaWxvIiwiYSI6ImNqeHFlZHRkaDAwM3YzaXMwenNvZmcyYXYifQ.pEVH_imRqxqTjdpIcuiRBg
       oauth2:
         authUrl: https://auth2-staging.bobs-test.io/oauth2/auth
         clientId: bobs-staging-storefront
@@ -48,7 +49,7 @@ spec:
       max: 10
     image:
       repository: 893565362659.dkr.ecr.us-east-1.amazonaws.com/bobs
-      tag: 8881eb57e6b8754ede6c74d5e9c38f129fc23218
+      tag: 29916463dcee6f5aadfee901ad0f955e10032aa3
     ingress:
       hosts:
         - host: staging.bobs-test.io

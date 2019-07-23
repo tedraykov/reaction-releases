@@ -25,6 +25,7 @@ spec:
         playgroundEnabled: true
         url: http://reaction-core-web.bobs.svc.cluster.local/graphql-beta
       hydraAdminUrl: http://hydra-hydra-admin-service:4445
+      mapboxToken: pk.eyJ1IjoianBoaWxvIiwiYSI6ImNqeHFlaG1kaDAwNTUzaXA1NmVmbmJpMDEifQ.VCyMGmTZGRtZo_vUrXEutA
       oauth2:
         authUrl: https://auth.bobstores.com/oauth2/auth
         clientId: bobs-production-storefront
@@ -52,7 +53,7 @@ spec:
       max: 10
     image:
       repository: 893565362659.dkr.ecr.us-east-1.amazonaws.com/bobs
-      tag: 4ba29b31f2beeefb332caeb93e0a5a0fc061c44d
+      tag: 29916463dcee6f5aadfee901ad0f955e10032aa3
     ingress:
       hosts:
         - host: jasper.bobstores.com
