@@ -29,7 +29,7 @@ spec:
       jvmOpts: "-d64 -Xms2560m -Xmx2560m"
       bootstrapServers: "broker0.kafka-production.k8s.bobs-test.io:9092,broker1.kafka-production.k8s.bobs-test.io:9093,broker2.kafka-production.k8s.bobs-test.io:9094"
       schemaRegistryUrl: "http://schema-registry.kafka-production.k8s.bobs-test.io:8081"
-      zookeeperConnect: "zookeeper.kafka-production.k8s.bobs-test.io:2181"
+      zookeeperConnect: '10.200.23.193:2181,10.200.21.234:2181,10.200.22.232:2181'
       autoOffsetReset: "earliest"
       bufferedRecordsPerPartition: "0"
       cacheMaxBytesBuffering: "0"
