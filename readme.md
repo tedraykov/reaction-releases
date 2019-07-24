@@ -56,10 +56,14 @@ git ls-remote --symref origin develop | awk '{print $1}'
 Make a PR to this repo as follows.
 
 - Start with your normal PR git mechanics (pull latest, create branch)
-- Run the following with either `staging` or `production`
+- Run the one of the following with either `staging` or `production`
 
 ```sh
 ./bin/update-storefront.sh staging NEW_SHA_GOES_HERE
+
+or 
+
+./bin/update-reaction-core.sh staging NEW_SHA_GOES_HERE
 ```
 
 - Verify with `git diff` that nothing weird is changed by mistake
