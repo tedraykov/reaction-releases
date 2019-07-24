@@ -20,7 +20,7 @@ To get a change at a high level you:
 
 ## Developer How Tos With Detail
 
-### How to update reaction core
+### How to update reaction core in staging
 
 - Find the git commit hash of the version you want to deploy
   - Typically this is the most recent commit on the default branch
@@ -41,9 +41,9 @@ Make a PR to this repo as follows.
 
 - Verify with `git diff` that nothing weird is changed by mistake
 - commit, push, pull request, request review as normal
-  - Commit message convention: `gitops: release <component-name>`
+  - Commit message convention: `gitops: staging <component-name>`
 
-### How to update storefront
+### How to update storefront in staging
 
 - Find the git commit hash of the version you want to deploy
   - Typically this is the most recent commit on the default branch
@@ -64,4 +64,15 @@ Make a PR to this repo as follows.
 
 - Verify with `git diff` that nothing weird is changed by mistake
 - commit, push, pull request, request review as normal
-  - Commit message convention: `gitops: release <component-name>`
+  - Commit message convention: `gitops: staging <component-name>`
+
+### How to promote from staging to production
+
+Make a PR to this repo as follows.
+
+- Start with your normal PR git mechanics (pull latest, create branch)
+- Run `./bin/promote.sh`
+- Answer the `y/n` prompts with `y` for any components you want to promote
+- Verify with `git diff` that nothing weird is changed by mistake
+- commit, push, pull request, request review as normal
+  - Commit message convention: `gitops: production <component-name>`
