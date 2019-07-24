@@ -32,6 +32,8 @@ spec:
       kafkaPartitionsEtlShippableInventoryStatus: 1
       kafkaPartitionsLoyalty: 3
       kafkaSchemaRegistryUrl: http://kafka-schema-registry:8081
+      # Please leave this at DEBUG. It powers some grafana charts and alerts.
+      logLevel: 'DEBUG'
       loyaltyPluginBatchConsumeSize: 10000
       metricsEnabled: true
       mongoOplogUrl: >-
