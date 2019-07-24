@@ -26,7 +26,7 @@ spec:
       - configMapRef:
           name: kafka
       - secretRef:
-          name: oneoff-job-reaction-etl-catalog-sync
+          name: oneoffjobs
     env:
       - name: JAEGER_ENDPOINT
         value: http://af227f3265fed11e98729123d9d2638d-1672043513.us-east-1.elb.amazonaws.com:14268/api/traces
