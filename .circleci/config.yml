@@ -19,6 +19,6 @@ workflows:
     jobs:
       - tests:
           context: sdi-management
-        filters:
-          branches:
-            only: feature/tests
+          filters:
+            branches:
+              only: feature/tests
