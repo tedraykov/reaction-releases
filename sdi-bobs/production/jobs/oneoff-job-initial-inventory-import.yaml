@@ -11,7 +11,7 @@ spec:
     - name: reaction-docker-hub
   containers:
   - name: runner
-    image: sportsdirect/reaction-etl-shippable-inventory: 96679782757b2ed3f21398daf6f14b177cf79131
+    image: sportsdirect/reaction-etl-shippable-inventory:96679782757b2ed3f21398daf6f14b177cf79131
     command:
       - node
       - run.js
