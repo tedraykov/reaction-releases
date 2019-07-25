@@ -44,6 +44,7 @@ config:
   hydraOauth2IntrospectUrl: http://hydra:4445/oauth2/introspect
   kafkaPartitionsLoyalty: 3
   initialImport: false
+  inventoryPluginBatchConsumeSize: 1000
   shippableInventoryConsumerEnabled: false
   kafkaPartitionsEtlShippableInventoryStatus: 1
   kafkaTopicCatalogSyncProducts: etl.catalog-sync.products.json-gen1

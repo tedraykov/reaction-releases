@@ -14,7 +14,6 @@ spec:
       brontoAccessToken: >-
         AgAEPBH/Tu31oBQIvXqtvFlaKwaVt1cObrygh8YTpFNcubdHOCixt17hrKE/T8dTDK/n0ozKN73tr/i8MQcoT60U+H1SHMIVv+OxVof4i7KZN0/XqUFLDi2DNj/sLjWy1WssjMKjhxs6u2JSnrRaReDG++jg8d+ZyjaQ1AIg4RMTHwxRhPxNyQkbkbioET1/vbLCH3/EeJwC1orzlfEHvZ/gFjRszX3He9flG5X3jHKgBGnwyXE7xHitNlIsevKVQy4cPzEyGYppK1ZPyJrnnDoQW8/RSLkb3iaGwmk4b9nnzAg77f6XcYx/jFeKa/QuCguT5GYjPzHfX7rAjcTa+wks7cyFpSYCcmTplcnMexNMwcUjWHPjCNLb+obIzWfKqdfRuO5jYU3fzKWkCQ6DaJxYIVSdC1mI6SVXEYAZhVO44WsD8JwzaI9lObKU1T2vZbWdAYHJutYR37VjDtccdnAtolsAFexY3DboWFtso4tL+QpotzxnSrQ2EGKfFKT2wS5ihRve3gXY7emeXn5YX7TqjC8EtRSnE8am9wZ859Z2Wi/rotqZOXRUD8akUFE4pUvgCWyz5QWbiBkgbkfnBLi5ySQ5FHmGAHV+cSo9kSUUjOU0IoE8l2+puTGYD9Sbet0olFvMKrJniwvOA3DvHpf8r9tm0KorGHJAQbIxZW1OJx4egcAoeZVrzvKymKEODfSzPf03KPKK9iTlNxDeVCkxgx6mAcUZcpD+4iJTD8hU0Q56ljo=
       etcdUrl: http://etcd-application.internal.staging.k8s.bobs-test.io:2379
-      inventoryPluginBatchConsumeSize: 1000
       initialImport: true
       jaegerEndpoint: https://jaeger-collector.bobs-test.io/api/traces
       kadiraAppId: >-

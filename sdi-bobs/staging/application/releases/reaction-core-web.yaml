@@ -16,7 +16,6 @@ spec:
       etcdUrl: http://etcd-application.internal.staging.k8s.bobs-test.io:2379
       graphqlIntrospectionEnabled: true
       graphqlPlaygroundEnabled: true
-      inventoryPluginBatchConsumeSize: 1000
       jaegerEndpoint: https://jaeger-collector.bobs-test.io/api/traces
       kadiraAppId: >-
         AgCDVC5Yl+FT+vc2RLevIESVFXjlYzcxTZiwkHx7EXKzIFwXuGzWMiCI/P83anfrlF8YQC0ucgaUyVH1nHTJLumAWngLDa3TYkV3nDn2H4fx0Ehwl8kd/3PD7JxdR3sAtOxkZ06HNiUSA8x3BG0ENTRd0oZZ3EVGwzjM5oB7pIHmKaNA8Nvmh+wUIysvHcrgUYfRRJZIPZy1B2WWukEPGGyqRT95u81UmOl3fbB5i81459Z37cKnXqEAn6B7QeDe+/mD/2kTDudoe4uRjQZvOTmPpVVxYujF7N5H0msL40oIKcXumrRs3yncI8mXRLtP8qlH4PM/nkAz/+LdDhxtwgZjhE8T+iLhPH0XClIDx36hQrCesySPJUwZrOBk1gHYg1Jh2DWKc2DYX3wRmyTDqhtihq9hZprL5+j35O5ilInfsuNhuSJphIwdg12EgTkf5gJFpoXr76uaodjvND/aZNIHgozUbytZ/Y5/LpuO1u55EMlvWFWKou8IyU1efRQvL4KKN6CpYXJmh8Z7TpFAx5CMzRZK9/qbaAQCa4vbt5vFu4QxCgX+HEtCgtKiC3zsK1lRyO38egXbLIzrFdumUMji4mGnFRG6M/XH7UhqVHlnXK+gKEb8/+LyM4YS/dlRL4q2CK1yICm4ld2cc7wEIkABE9EOLo7WzR7JIBOxCZfQDOJqoFB8p07bG12w+ql7FagbK4OM4j+0c+4pOpWGg5TKAQ==

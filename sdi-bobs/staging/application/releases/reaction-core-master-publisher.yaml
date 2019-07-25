@@ -16,7 +16,6 @@ spec:
       constantPublisherMode: true
       constantPublisherPauseSeconds: 300
       etcdUrl: http://etcd-application.internal.staging.k8s.bobs-test.io:2379
-      inventoryPluginBatchConsumeSize: 1000
       initialImport: true
       jaegerEndpoint: https://jaeger-collector.bobs-test.io/api/traces
       kadiraAppId: >-
