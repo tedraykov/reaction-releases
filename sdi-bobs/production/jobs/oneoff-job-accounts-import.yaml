@@ -4,7 +4,7 @@ metadata:
   name: oneoff-job-accounts-import
   namespace: production
   annotations:
-    iam.amazonaws.com/role: arn:aws:iam::490759768946:role/sdi-bobs-stagin-reaction-accounts-import
+    iam.amazonaws.com/role: arn:aws:iam::490759768946:role/sdi-bobs-production-reaction-accounts-import
 spec:
   restartPolicy: Never
   imagePullSecrets:
@@ -23,7 +23,7 @@ spec:
       - name: OBFUSCATE_EMAIL
         value: false
       - name: S3_BUCKET
-        value: sdi-bobs-staging-feeds-web-customer
+        value: sdi-bobs-production-feeds-web-customer
       - name: S3_FILE_KEY
         value: Bobs_Customers_20190405.xml
       - name: SHOP_ID
