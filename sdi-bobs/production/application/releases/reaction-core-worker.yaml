@@ -33,7 +33,6 @@ spec:
       kafkaBootstrapServers: 'b-1.production.gkq6i5.c2.kafka.us-east-1.amazonaws.com:9092,b-2.production.gkq6i5.c2.kafka.us-east-1.amazonaws.com:9092,b-3.production.gkq6i5.c2.kafka.us-east-1.amazonaws.com:9092'
       kafkaCluster: 'b-1.production.gkq6i5.c2.kafka.us-east-1.amazonaws.com:9092,b-2.production.gkq6i5.c2.kafka.us-east-1.amazonaws.com:9092,b-3.production.gkq6i5.c2.kafka.us-east-1.amazonaws.com:9092'
       kafkaPartitionsEtlShippableInventoryStatus: 1
-      kafkaPartitionsLoyalty: 3
       kafkaSchemaRegistryUrl: http://schema-registry.kafka-production.k8s.bobs-test.io:8081
       logLevel: 'debug'
       loyaltyPluginBatchConsumeSize: 10000

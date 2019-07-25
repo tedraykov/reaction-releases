@@ -25,7 +25,6 @@ spec:
       kafkaBootstrapServers: 'b-3.staging.d0bnhg.c2.kafka.us-east-1.amazonaws.com:9092,b-2.staging.d0bnhg.c2.kafka.us-east-1.amazonaws.com:9092,b-1.staging.d0bnhg.c2.kafka.us-east-1.amazonaws.com:9092'
       kafkaCluster: 'b-3.staging.d0bnhg.c2.kafka.us-east-1.amazonaws.com:9092,b-2.staging.d0bnhg.c2.kafka.us-east-1.amazonaws.com:9092,b-1.staging.d0bnhg.c2.kafka.us-east-1.amazonaws.com:9092'
       kafkaPartitionsEtlShippableInventoryStatus: 1
-      kafkaPartitionsLoyalty: 3
       kafkaSchemaRegistryUrl: http://kafka-schema-registry:8081
       loyaltyPluginBatchConsumeSize: 10000
       metricsEnabled: true
