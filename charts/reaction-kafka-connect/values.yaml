@@ -33,6 +33,7 @@ config:
   connectInternalKeyConverter: org.apache.kafka.connect.json.JsonConverter
   connectInternalValueConverter: org.apache.kafka.connect.json.JsonConverter
   connectKeyConverter: org.apache.kafka.connect.json.JsonConverter
+  connectKeyConverterSchemaRegistryUrl: http://kafka-schema-registry:8081
   connectLog4jLoggers: org.reflections=ERROR
   connectMaxPartitionFetchBytes: '5000000'
   connectMaxRequestSize: '5000000'
@@ -46,6 +47,7 @@ config:
   connectStatusStorageReplicationFactor: 1
   connectStatusStorageTopic: reaction.default-connect-status
   connectValueConverter: org.apache.kafka.connect.json.JsonConverter
+  connectValueConverterSchemaRegistryUrl: http://kafka-schema-registry:8081
   consumerInterceptorClasses: io.confluent.monitoring.clients.interceptor.MonitoringConsumerInterceptor
   healthchecksEnabled: false
   producerInterceptorClasses: io.confluent.monitoring.clients.interceptor.MonitoringProducerInterceptor
