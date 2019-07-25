@@ -26,7 +26,6 @@ spec:
       cartReferenceIdPrefix: 44
       etcdUrl: http://etcd-application.internal.production.k8s.bobs-test.io:2379
       jaegerEndpoint: https://jaeger-collector.bobstores.com/api/traces
-      healthchecksEnabled: false
       inventoryPluginBatchConsumeSize: 1000
       shippableInventoryConsumerEnabled: true
       kadiraAppId: >-

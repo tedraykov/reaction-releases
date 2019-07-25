@@ -17,7 +17,6 @@ spec:
       constantPublisherMode: true
       constantPublisherPauseSeconds: 300
       etcdUrl: http://etcd-application.internal.staging.k8s.bobs-test.io:2379
-      healthchecksEnabled: false
       hydraAdminUrl: http://hydra:4445
       hydraOauth2IntrospectUrl: http://hydra:4445/oauth2/introspect
       inventoryPluginBatchConsumeSize: 1000
