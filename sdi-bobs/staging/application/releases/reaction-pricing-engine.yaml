@@ -30,7 +30,6 @@ spec:
     config:
       jvmOpts: "-d64 -Xms2560m -Xmx2560m"
       bootstrapServers: "b-3.staging.d0bnhg.c2.kafka.us-east-1.amazonaws.com:9092,b-2.staging.d0bnhg.c2.kafka.us-east-1.amazonaws.com:9092,b-1.staging.d0bnhg.c2.kafka.us-east-1.amazonaws.com:9092"
-      schemaRegistryUrl: "http://kafka-schema-registry:8081"
       zookeeperConnect: "172.17.22.66:2181,172.17.21.238:2181,172.17.23.37:2181"
       autoOffsetReset: "earliest"
       bufferedRecordsPerPartition: "0"
