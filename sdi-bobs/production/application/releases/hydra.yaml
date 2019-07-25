@@ -1,0 +1,28 @@
+apiVersion: flux.weave.works/v1beta1
+kind: HelmRelease
+metadata:
+  name: hydra
+  namespace: production
+spec:
+  releaseName: hydra
+  chart:
+    git: git@github.com:sportsdirect/sdi-releases.git
+    path: charts/hydra
+    ref: feature/hydra-v1.0.0-beta.9
+  values:
+    config:
+      OAUTH2_CONSENT_URL: https://api.bobstores.com/consent
+      OAUTH2_LOGIN_URL: https://api.bobstores.com/login
+      OAUTH2_ISSUER_URL: https://auth.bobstores.com
+    ingress:
+      enabled: true
+      hosts:
+        - host: auth.bobstores.com
+          paths: ['/']
+    initContainer: true
+    maxUnavailable: 1
+    sealedSecrets:
+      DATABASE_URL: AgAvwJxNb/d//L1l4VyXAgMysCpQh5LpHyopF+xQzLcZwM4XqLV2/MHLPtA15FU8hF/LVP7XCDaE71b41A+eqT5/Kwi71SLM/gVnKmgzLcFxVgf58W6Vjmo/TiOpbN2l2/NL8D82G29G0r1JQSvOQ4B85/0MchPY1V0j2I5pndXO6I21R5ty4gAc+kl/6/N/fh4suOE1zyuprNVsVu/OOTxJlTvFLsa2dl52ht0tgmcySFbQrFaJnXvJlHUJAp1U+KXLfu/ns2sDAkgXBlkgzZ35IHLju9ccFhQt0Z9m5zlAwjpu+Nsmf8n9TBgPhvvdP29FFBkGCqqsZbW+9FkbUGbCogULKIMmAWtZD28rV3dkXRrFQ10M13ikuHFXnKEqBTNSNrj4m+eCLUGPG84lwTFVo/XCH7tfa9qa+I4+V9QmjOh8npmqbC8//JHFn2PG+kAUSqD4O10qvOolS8ubf3zdhmJPxDBRIgzw3QLyw87X1QjjTRyEh6jZDfSImo8U8+LX//cmmvzm+HWgdtF6ggfzlBvrpUcYO2lrHlb3Pltkdty0edBzdydXqk//kBqZu+/KoVy+Qw/l4vLbEv8V2032nEM5azoxGtHI0Npx4/DSNWyg7457PGBSeH2kCjMDi+XyrlPP3VmuPizY5UfeuLP3y0XVSiV/yN/1TFhGh3wd5OGIfHZSTXesSeclqXCnO+rmOVoi3CXaJO6SJP1ucWhlIA48A+RA+esvk9+F3zyFUGs2RZflcDmsdWqv3cB9dm+6pqtES3pYJ+S5AZGkua6q0402zs1yPlP6kY9agwLRq4eai0Oe45+AkC3YGzrQF861ptR7F7g=
+      OIDC_SUBJECT_TYPE_PAIRWISE_SALT: AgCtjEvafrtA8C146AHlrohkXFFZBUZHZ0oh9ILKLYKwTTIw7sS6gOcLHUs7j/ENrzQfZ4zUflleBuB/aEXfDIoa6cunDsWJMIH3/qw41c0OQE/LF2IDfUw9h9FEeJ1RtPUthwef+TXxbLx7yFdKkpt+I4q30jRBuUonPLLM1qiCAGS3QFtd2DEP8iurHRpW7Cj/6dW3p5mN3JM+J0znR2mkMOYMl26aEi8C/dS3E3bkvUZWwEStQGO8jz+t6k7HcE5+ukfUrVnlpU4ztdyKxhJBoDPnOEuN2hSHHseQQ8Uxz4QBrmlAHiK6qxDDH76AOdTb7NR9mncN2xGMD8vSqh9tFz+AfnCg0Kyv04fZleFrXEyxedEPjiElbnO6SRWvbpUHHN9o6aBTRN3LVKCrMCuwp+nVRQElTZkCaWhL4V5kbdChlzpfcWR3ysNao4GMxfXeiFC0E5KAQVolegevubvl5uiI9H3MmkZWJP1DoPMObaZxsA7sezxW2G1VCc2Y9biQc6eb+yG3TZXSQAya1bA4+V3WnjIcJrOPnS6AXBXfs9BI+2dEaIrsGHrBhNCtyMbgFIRjVHRXA3Bx5NS03VF2igri0tcqjQMBlbQvT/67QAozC2oxm14klws+fe+UGJ35dbc4isW90qfZt9K0nQs9trDRioc761226tKrw6inatO9bP0kYobNfLPnBcPYCpj2uW8rgy2k61nJOYXOMaTsr6Qbxv7VlGDcKyfbgXk=
+      SYSTEM_SECRET: AgCVv2oHJumdPtkrfWs0hBiwNA6xSwiTxH/kfBq+ofYCeGFB2aBH9Up8qtPzIgTlL5kJsF1fXIUMs/w9fZAZAAP3p+O+DtcGs6WloVC0J4tuHc9OSiV1CZQHrSFzmRojvtcA9hHN6aqE4lZqGPvqS5s/HxftfE6aT6LeC55V7v9kfoxBHeM0QXryBy7iS6CO7BecLKZva6sLFi07w+3G+MLVxUqeNcWX7/hhs3mlw8sN9uEvtNYhBjeLfR7eRRNJp27eQx1s59q+OUwRCKyWUUHnAz791ffKZ0AH4lxbLzUTih0PCTWPeh5Gwdb/x3Kq8JTOzE+QcW8aRE/adL1TzGC07GB4oVhcCuJFrTdkAblzP25HXRbshesyBJTMbTAi331DOtM0w2IrIzGTyuRAaYVehZI+YuO0h2Xo061qy71+jxOSNCE0jL1ykOBopvlYFBdiZh2Te9OBmDRlBiP4DyIgn9heZP/Itm1DuWt7PgUoE+BjOxY+J9m6W714mOprgmXOZa/s/kqkd5zEJ7g7EumXpqCNcOb6LnHg3VcRNRBhgF3Hujg8cGzsTXEOt56OzmUsEkzPTYCHVWz6glNxMf8AahIbX7FTMfKpZz3yc69Sh6I3BAeLFPXwYZNxLRLZf0TKrD3ADxpDxstdiPL2VLZy11OaHqe+m1owa54/D8iXUZHmQOpZjWhgZBWsJ/qNSzma0KRCxVbSH3guRUJiB1qfRebzv30RnYDqz7wimMY=
+    resources: {}
