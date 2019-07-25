@@ -71,6 +71,7 @@ config:
   metricsPort: 3001
   orderExportRadialUrl: https://api-na.gsipartners.com/v1.0/OOMF/stores
   pricingConsumerEnabled: false
+  pricingGraphqlUrl: http://reaction-pricing-engine/graphql
   productConsumerEnabled: false
   productPublisherAutoPublish: false
   profilingEnabled: false

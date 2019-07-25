@@ -40,7 +40,6 @@ spec:
       orderExportRadialApiKey: >-
         AgBlZ9ToD2D1kOKwQ8oI0yG32S1r3YpN7ieC3mZQo2US+yNwG8H7uaM7BVv+Pngf6a1l8VE83Y8Sn+oMdWokqnvrbcFAgIX3UCJoUNDwKElC1MvJK+pgE8MbYGc9QrU2iwPLly6AjbjuFH674aKchtZ4lp5aVyy5LW1Fg/aT3zxY62gWknvtKI5bjmJMpNaGT9ew8JEr9Z0xMLggB8pp45pPF3Dd4LfyhRhDpjKLimuop2UyFBS9zsLgKcXg7bWGwnQY94j882lsWKQ531XxHcejgPNsVTiFewb1Fw8NiNZy+sQy9zxhea15bm1agtCzKXDmTZArEGX3yAlnl6DxqnsvcYS0rMhgpmp24gexWQT3HrqYFJ0uysk4KTMT2jpNSNsEd66mq5NFpZPjCoxHopfNf5VzprV+G6Rh+ACoB25ZoYsX6/eOv7s2SN0wNe+anylc+q+X0XyBVoOMf6MZR+/Ef2tqZmmIbQE+2gYsxeDZZQxDPZleurZDTYl0UWq8xGbJ75xTiW5oD+fplSAYALxQOFopZjlDBBZiu66atzleUnmg5/mjoirJNQu24BSzHN7SgadrXdrrTP3Spgj4wFgH8sfxRgQtTSv97EFUHfWypHEZAqUYaEr5YQUWDBadqkiUsxc58NaPcckSRCsMs8t4Oxna6ML2HBRI/wTtKn7puIQDKXZlOMu3N36600rRpbE8KfOYADa6T6+u0TWx2IkXNyxkC2hu4IumicWfj4wDmQ==
       pricingConsumerEnabled: true
-      pricingGraphqlUrl: http://reaction-pricing-engine.bobs:8888/graphql
       productPublisherAutoPublish: false
       radialMode: production
       radialPassword: >-
