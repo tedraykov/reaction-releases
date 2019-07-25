@@ -68,10 +68,11 @@ config:
     #  url: https://www.example.com/ouath2/auth
     #  clientId: XXX
     #  clientSecret: <encrypted-string>
-    #  host: XXX
+    host: hydra
     #  idpHostUrl: https://api.example.com/
     #  redirectUrl: https://www.example.com/callback
-    #  tokenUrl: https://auth.example.com/oauth2/token
+    tokenUrl: http://hydra:4444/oauth2/token
+  hydraAdminUrl: http://hydra:4445
   radial: {}
     #  clientId: XXX
     #  mode: sandbox
