@@ -39,4 +39,3 @@ spec:
         limits:
             memory: 4Gi
             cpu: 1000m
-    command: [ "tail", "-f", "/dev/null" ]
