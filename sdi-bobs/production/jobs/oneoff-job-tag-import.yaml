@@ -9,7 +9,7 @@ spec:
     - name: dockerhub-creds
   containers:
   - name: runner
-    image: reactioncommerce/oneoff-reaction-tags-import
+    image: reactioncommerce/oneoff-reaction-tags-import:0859e1b7d8d8c23f8b9a4be3999fc773adee4334
     command: [ "make", "start" ]
     # This provides: MONGO_HOST, MONGO_DB, GRAFANA_AUTH_TOKEN, CLOUDFLARE_CLIENT_ID, CLOUDFLARE_CLIENT_SECRET
     envFrom:
