@@ -13,7 +13,7 @@ spec:
     - name: reaction-docker-hub
   containers:
   - name: runner
-    image: sportsdirect/reaction-etl-catalog-sync:3616fcf52d187c88b8ff1482ab660a3a98203e79
+    image: sportsdirect/reaction-etl-catalog-sync:4e843c9d4f2066919bc1a8831cb994da660c7b99
     command:
       - node
       - --max-old-space-size=8000
