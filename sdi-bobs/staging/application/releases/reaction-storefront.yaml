@@ -19,7 +19,6 @@ spec:
         accessToken: cs7197fa31078b9f44382a5a77
         apiKey: blt1f2a37a50d4512f7
         environment: staging
-      elasticsearchUrl: http://elasticsearch-client:9200
       hydraAdminUrl: http://hydra:4445
       mapboxToken: pk.eyJ1IjoianBoaWxvIiwiYSI6ImNqeHFlZHRkaDAwM3YzaXMwenNvZmcyYXYifQ.pEVH_imRqxqTjdpIcuiRBg
       oauth2:

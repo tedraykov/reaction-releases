@@ -61,7 +61,7 @@ config:
   defaultCacheTTL: 3600
   defaultShippingMethodId: SPbMh5gdz24Wr4J94
   defaultShippingMethodRate: !!str 2.99
-  elasticsearchUrl: http://elasticsearch:9200
+  elasticsearchUrl: http://elasticsearch-client:9200
   internalGraphqlUrl: http://reaction-core-web/graphql-beta
   oauth2:
     adminPort: 4445
