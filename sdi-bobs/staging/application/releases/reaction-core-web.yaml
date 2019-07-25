@@ -17,8 +17,6 @@ spec:
       etcdUrl: http://etcd-application.internal.staging.k8s.bobs-test.io:2379
       graphqlIntrospectionEnabled: true
       graphqlPlaygroundEnabled: true
-      hydraAdminUrl: http://hydra:4445
-      hydraOauth2IntrospectUrl: http://hydra:4445/oauth2/introspect
       inventoryPluginBatchConsumeSize: 1000
       jaegerEndpoint: https://jaeger-collector.bobs-test.io/api/traces
       kadiraAppId: >-

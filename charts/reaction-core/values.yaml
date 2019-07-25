@@ -39,8 +39,8 @@ config:
   graphqlIntrospectionEnabled: false
   graphqlPlaygroundEnabled: false
   healthchecksEnabled: false
-  hydraAdminUrl: http://hydra-hydra-admin-service:4445
-  hydraOauth2IntrospectUrl: http://hydra-hydra-admin-service:4445/oauth2/introspect
+  hydraAdminUrl: http://hydra:4445
+  hydraOauth2IntrospectUrl: http://hydra:4445/oauth2/introspect
   initialImport: false
   shippableInventoryConsumerEnabled: false
   kafkaTopicCatalogSyncProducts: etl.catalog-sync.products.json-gen1
