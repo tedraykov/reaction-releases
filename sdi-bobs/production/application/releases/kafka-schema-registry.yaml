@@ -2,7 +2,7 @@ apiVersion: flux.weave.works/v1beta1
 kind: HelmRelease
 metadata:
   name: kafka-schema-registry
-  namespace: staging
+  namespace: production
 spec:
   releaseName: kafka-schema-registry
   chart:
