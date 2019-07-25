@@ -24,16 +24,16 @@ spec:
         introspectionEnabled: true
         playgroundEnabled: true
         url: http://reaction-core-web.bobs.svc.cluster.local/graphql-beta
-      hydraAdminUrl: http://hydra-hydra-admin-service:4445
+      hydraAdminUrl: http://hydra:4445
       mapboxToken: pk.eyJ1IjoianBoaWxvIiwiYSI6ImNqeHFlaG1kaDAwNTUzaXA1NmVmbmJpMDEifQ.VCyMGmTZGRtZo_vUrXEutA
       oauth2:
         authUrl: https://auth.bobstores.com/oauth2/auth
         clientId: bobs-production-storefront
         clientSecret: AgDJ6KJ5clKPJMZXoI9uLmQYCN2k44cUShx1azaaez6edVnjGGb0OVVI0xnMUN1DPQUb0d8K/Ro/l6cxpMkU+ickU15rfVsJo5aIyxOJXqzQa7SRqF56Rf5uzinx7kz35pnez0nFeOcDw/fnDt+IK7EdnNGsNTcwc0OzP4IZqpnfmQG9a0g1kNBhggrkHAlBflDLka7Abbzu2zEdMrTIzq1HfpX2ZE0+1aXgBOABs74OhbEyWWyHTf+ijwswcXoxFBCskJc1se87fGfFQrvdEqMPSMLDfCIilPo0IRyiFwol9wlmnYnKAuqkiGvFKNaa8orjbKWOtb79UStNbXQG8FOjGacncAuez2bmAYgJmh3eYtd7/ok82t/3qxeHgRHl5RcrH9lne4bEEu/4E090BSCx6Q2hZaphPTVY3c+rxSu7ecE56lzRjDYC0E91gDczYN83x4CGeFeIWAm1OUeTX1S1nKR2geIxr16BvGvqSAu5B6P1njLpbjMlNKs/hZjNyUtznwKDr/70cb6KBjPNwvOMmJBauL9+pzBAzPU5X0/QkZkwtmFspabbtCbyDtH9pxFDDamHei4YTUnNKziPcF6rITGXXitC+8ZRg19mXp1H70WtepBXOEUXtphLACDIpVWVkJUnzZCvYfe+c5DJxOr2iWhrDotq9XyAnTXMOjbxLFy16fLGq/GBSqxaMGeIbvbd7KojNbATee8uS79KEZMs8U+arbI=
-        host: hydra-hydra-admin-service
+        host: hydra
         idpHostUrl: https://api.bobstores.com/
         redirectUrl: https://jasper.bobstores.com/callback
-        tokenUrl: http://hydra-hydra-main-service:4444/oauth2/token
+        tokenUrl: http://hydra:4444/oauth2/token
       radial:
         clientId: BOBSUS
         mode: production
