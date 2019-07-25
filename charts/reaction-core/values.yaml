@@ -32,6 +32,7 @@ ingress:
 #     paths: ['/']
 
 config:
+  cartReferenceIdPrefix: 44
   constantPublisherMode: false
   constantPublisherPauseSeconds: 300
   defaultShippingMethodId: SPbMh5gdz24Wr4J94

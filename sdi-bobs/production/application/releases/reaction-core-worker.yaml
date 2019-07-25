@@ -23,7 +23,6 @@ spec:
     config:
       brontoAccessToken: >-
         AgA3kEmIiVkNfPmV3GX7cZlDqEkwSJoceNolqoUFKGcU9vfQr7+Qek7cFaLA7S7qWXCSNTGFFfnw3o6+b0mf9PFEtXW+l/TZTPCK5VtskQ7S1rhZGEWCUfsALMUX/2HsU0rchSvruyhfxbYqDZIAz0kQn67o/G/JDpd4AEmh2TtygJdd/0MNzRsPBpwK5s0Kgkwjb7ERwbhWmqhbFhDNABxfsB+eIfJE2hHq7YZepFmlyloO6bFexF/QK92K2LbDXJPf/Lwu8sVPU/ZxR9m/XV2k3GKXTal1nLeO8TealT193IwC7lLnDXvtMXNLk+Zu7PN/zxSVcUwxtbkQkdITxhLf99j9+QeIPEJ9VKEaNcbDxTbUO+QVdLHnH0ZjA0ubroTR7qXiGHaHBHFNEnGMA/PB5EXvGyizEr888bQRUERBhDFVTuTVIAMwN/jtsZjg+/d5ovDGgMbsxrHbpjC7tVjZMXOImoOeWPiN0iQl02RhblY7WM6zjJ4FAeISy/rX+0hkcmOUkbxCOd93llX3e+kHgrzajZl2D78rI/C8pgMulgBffYppMRkmpAD/0wQx/6wstELONqCIZt81g/wM9GtCpEK8iJsN3RZcSS5Csg8I3qzl1H+I5ox8ASBzBbsHlYyPYnHhydLZdrYX2N/0t5VCNMqaS3VLLsGv88t3H/1SIfbeOPbCypXmU2KfeJO9g3515s1T6ClM1nDbbD4Ft+tqCp0EZy9hIG0RvCltrXX1Eb5bXzA=
-      cartReferenceIdPrefix: 44
       etcdUrl: http://etcd-application.internal.production.k8s.bobs-test.io:2379
       jaegerEndpoint: https://jaeger-collector.bobstores.com/api/traces
       inventoryPluginBatchConsumeSize: 1000
