@@ -37,7 +37,6 @@ spec:
       kafkaPartitionsEtlShippableInventoryStatus: 1
       kafkaSchemaRegistryUrl: http://schema-registry.kafka-production.k8s.bobs-test.io:8081
       logLevel: 'debug'
-      loyaltyPluginBatchConsumeSize: 10000
       mongoOplogUrl: >-
         AgA+OEQuSOVg2rBHiiZTIGYitozM6+gNe98gHEIRLN7yiFZ7NpWK58uCPR2a2paDJhSsuEHp9Nxax4xwPRWHudsrprjNEnpEnleN5t8BO5pBNsGVNCs3MPa1UVEb/aYyZJg6OsEdwxVZ67NYIJl58rB5YwHfnDW9BA2M2Y7ePph3X6z0a/vXKX3An109q1n/MAFqen2pqTjU6Lq+i4Lmiou9C+6o9c6NtpEyL+4a0ew4dYYQ7vmWCOzydFFWeP9ByCPb71FZNkNVzP3N6G7W02CnzQxFw4b0GquXgvlFg0TQekNNAnGqpsVJXBA33wDlqh/u6GAGTqmIPwifD4uloJEFlAZTy6LuaaA8jjkvfy4frDwfLMVOHZQ+BDO//Nr/dS/PE7gSVeh+bNreSiwsnioAwEgkUhyPLG23rZDp7oCKlDK+asdACsvP6hphjZG5L7nllxCAzI1kF8zsG9SpXcD09pYd+WucWWg+JCxp2XgmQ6o6Qu7TFLqMx8urHnmONx+UKN3TyDF02KPXHaPn49xVVuzqIj89T9QGKCzaX4hlt94Hm8EvB1piXZHKbv91lCvCI7xCnDvqB0Kw8eZkc87LlVonsCzjgwlUPVcutwg2NExg1ex/lTwFQHi+g2FZ+tvLi4g+3B/xxKhHEGRJWNGxCF86Rll36OWQSrqYPhnnyJ/hOzvkUDXEZZGDI5PVo0/BJTJEsr4pSBeGF9+ZV3HsPQeuFfqI8Wdnexi1Plk+TyJ+Gx7ym6X8A4q2XYOGg1hL2kyMOxLRtfIMX2Q+4tI/ekYlLWn5eW/306XdlsYG69YCasphgByQQCMbYBxXfOAkv6dLPX7yHDKiaBhomaBmlmb1fvbOfl4F/kOLZfmxaOFssAHMKJo3NKHoQ4m166/XRGpmE37QgkTS//rGD4eJipIVonfQhJmYWbCdUMwety9U5nYJt/8gNQ+m8mY+icJ/JmeR4Ronnv9/n4wlIoGIwv7PAIAf/08vpOuQLxe9B1E1RFk/0CX7nUWKQqpuHExw7+pBl7AOmY+NKbqlxktSLUqJpXL1ZuVHd2/vkw==
       mongoUrl: >-

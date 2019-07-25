@@ -62,6 +62,7 @@ config:
   logFormat: json
   logLevel: info
   loyaltyConsumerEnabled: false
+  loyaltyPluginBatchConsumeSize: 10000
   metricsEnabled: true
   metricsHost: 0.0.0.0
   metricsPath: /metrics
