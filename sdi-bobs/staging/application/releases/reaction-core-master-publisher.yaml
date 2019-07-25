@@ -25,7 +25,6 @@ spec:
         AgAhkU26zle0W7zRBXGsVchLsSI5GWRgjQHyU9eCQDAPVIli/hZcGJgPzsAaGAODYpWt95xm7QnX5kE0Z2WwX1jR4gpwloBBy/PeZLku+byxdxMfh6fo9yZaGTSXJkUmLflJB/fPJl7ZLq8IC41oJYWCAJFK0Jvy6JB1HrAYLxi18sN6ismkQp053nBm/Z+J0oVtjEBANoy8hH3f/OqO7byU91W8ByVaCnzh7UQn3+ODsHHhZXmp3XCfbFDIteoL1ezH5itchANImXLLeVvsKMPP6WZZOvO3HXlPHb6RIE3uvl1nR2Xn5wNXBgbfsR/YyrblLxeoeeK3/2g9UvyVFx/fXta8maaiEPSKJB2yIH0EwU5kY6HZoSWmroefngMnB/fsfMakDwKW37atD8ggMm4emASqbNwxgPoUNbhF9TBpSj1CaAVPiqZvNdE4DlLoHIwd9u/0H0yeQsL5nPlZukJEwT315qlT7TIcSI0FVAdT0dDWrroTSOm3wBB+Crlthpdzunx9rf4UY2UVa0X2mgGIXCMtc6p/RyNsvk4qVJe84CUOP4WkVcD1vJ2ycsX4PsJ9IwTUUK9RoXJOmmwI8/lWkANgTNR5DCn5fDK7wob5AfhwKBBCYBv9Cm/tz6AbPp7a+nCTeQHzsY094Aa81HO+nInpTb954c0pEfWxxaytGkIxPf+mgBX1s4BQHDOB/Q+zx66KbFdY3UYq5JsYjejDbOHfJZQgT1NwzWJLxrv9Ld6T6OQ=
       kafkaBootstrapServers: 'b-3.staging.d0bnhg.c2.kafka.us-east-1.amazonaws.com:9092,b-2.staging.d0bnhg.c2.kafka.us-east-1.amazonaws.com:9092,b-1.staging.d0bnhg.c2.kafka.us-east-1.amazonaws.com:9092'
       kafkaCluster: 'b-3.staging.d0bnhg.c2.kafka.us-east-1.amazonaws.com:9092,b-2.staging.d0bnhg.c2.kafka.us-east-1.amazonaws.com:9092,b-1.staging.d0bnhg.c2.kafka.us-east-1.amazonaws.com:9092'
-      kafkaPartitionsEtlShippableInventoryStatus: 1
       kafkaSchemaRegistryUrl: http://kafka-schema-registry:8081
       # Please leave this at DEBUG. It powers some grafana charts and alerts.
       logLevel: 'DEBUG'

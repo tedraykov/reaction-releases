@@ -32,7 +32,6 @@ spec:
         AgAtTGq6udsyJ/zPILHli1SSO+dLdsDNT7Qz6SgWlmeU+B/7wSvw6/0icPaPH5Q2bt+t9J9/qAx4tb2G+M9pbXY1EV3DUu1EssoUdnEB/5miau7YADzBo7BJJ1366xtm4iLgNCTu7gwkwBN/6PAzsFsEGI7bgS/adCkqVByesjMLWiFTpJn9COf0Bs1ZweJfodXO6ZOtOGI4zEsU8vKVR6mfm1aWzKqmBjBl6Ei0nPz7aQwHCNMLGBd6A6Ad4Le6KhSCnS0PCzR2eGdmoUWbTgYlBMmvZoQxr2B8CoHRyT6VrwiRv/kVE2cfddtStg8k81YTbiGuRbCfjebbW4RuWJENqLKH3I8gOPWRlw8fASK9B4Ga1C45LnNcrM91XtwF59z3t3F+TihUASgrhSN6lb+SUPE/IVbt35AyNvLgcfRPdBJqbC60CBOG6x+w9dnVjceEwGZeOstIsClNLZjJaDpbyNpYEA1kWBv6UtERoWtVo7A258fKvv1vBV4iNo56KmaUMmm+XyU0FKLRhrGC4hJccdP8TEB0pyhKmoik+fbDTDoWZdbLYoYuHhBuL42QTRaGgjxBUXnwD/kTC3LmmROuzdP3b4RHavv4i5RgGe6neJqwY15lFCRvexSgxsyZii/BZWJ3f6Z01JgE3AiLFx4Ma12yK88hiZcbXHhfQ7O0fuUOm858aXEYqDcYcE0DFq2ItX/CYM1zS+7oEiYwvhVYgYyYIej3XaKVDrGUxtaQP+Ny7Tg=
       kafkaBootstrapServers: 'b-1.production.gkq6i5.c2.kafka.us-east-1.amazonaws.com:9092,b-2.production.gkq6i5.c2.kafka.us-east-1.amazonaws.com:9092,b-3.production.gkq6i5.c2.kafka.us-east-1.amazonaws.com:9092'
       kafkaCluster: broker0.kafka-production.k8s.bobs-test.io:9092,broker1.kafka-production.k8s.bobs-test.io:9093,broker2.kafka-production.k8s.bobs-test.io:9094
-      kafkaPartitionsEtlShippableInventoryStatus: 1
       kafkaSchemaRegistryUrl: http://schema-registry.kafka-production.k8s.bobs-test.io:8081
       logLevel: 'debug'
       mongoOplogUrl: >-

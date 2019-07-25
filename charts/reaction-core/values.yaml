@@ -45,6 +45,7 @@ config:
   kafkaPartitionsLoyalty: 3
   initialImport: false
   shippableInventoryConsumerEnabled: false
+  kafkaPartitionsEtlShippableInventoryStatus: 1
   kafkaTopicCatalogSyncProducts: etl.catalog-sync.products.json-gen1
   kafkaTopicEtlShippableInventoryStatus: etl.shippable-inventory.inventory-status.json-gen1
   kafkaTopicEtlShippableInventoryStream: etl.shippable-inventory.inventory-data.json-gen1
