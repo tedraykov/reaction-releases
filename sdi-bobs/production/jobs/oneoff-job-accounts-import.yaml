@@ -4,7 +4,7 @@ metadata:
   name: oneoff-job-accounts-import
   namespace: production
   annotations:
-    iam.amazonaws.com/role: arn:aws:iam::490759768946:role/sdi-bobs-production-reaction-accounts-import
+    iam.amazonaws.com/role: arn:aws:iam::490759768946:role/sdi-bobs-production-job-reaction-accounts-import
 spec:
   restartPolicy: Never
   imagePullSecrets:
