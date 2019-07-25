@@ -28,7 +28,6 @@ spec:
       logLevel: 'debug'
       loyaltyConsumerEnabled: true
       loyaltyPluginBatchConsumeSize: 10000
-      metricsEnabled: true
       mongoOplogUrl: >-
         AgBg4O8EQRhQB05fkUPLjRz1jwfBU681yU6L7wjnv3IDHcqSkJDEM0tr1zs+HgbctTW2Msnxm1gUYd0L9OO6HPT5qcAl3J7wgNP5OgNmLE+2+xnEPU7QCfPzx+0TrI+Zam6Ud6lTkl7AM+xBORKUhIrac309YxWrKyZM9J05d7OZcuk8G/WGROzwlbF/ZTrPJLK5B+J/deyZQy3Iqk3zGiB/X2yhDzwDnePW7/xUBIKOEUUn7DDpHrp872NDRybTJ3KyTMtlrKF2vaiKLDjsv0FTstwq/dnFCEvA9gunQXPJXpU1cKNrc/QEhBoGIDZcUwnKXiDbZ3kasevnzg+L2O+zx0lLYhVoLCnhpKW/bBLs/z7ocwYB4kYYmli5F2QMCUwaFdwAwN/U9sgOzlquDFpm9gdus/y4tIxAaMlXckcK6uYuAnS60TzPJ+nn0Qn9huvJ1yGn97RU6obget2s3ANWWZNCnl9NlmI/AnV5Pcbf4iKSanjz0JAn/4zR4hjIMoEyx3W7H2xXNjNdPC+0B9Q9ypEGrcs0WGstc6LB9WjZ2cTOgQ9uf6zNDYJMhvOIWyOgTr3/EhaJBqSQFu+iPpocQc7iFWoIUdk4MM6TcpfWiJAVBPlbwE6BDS8KqAzjkcTrJguEl6Ic+RYjyP8esv04/JC+uc7hNjQcZ4TSPUIeu2EkK1btZ9ogEk0ogQObJHpg4W9Mk5XpzZ2Vty/u7tEFaHpyUzeFCIPIQvnnSyn/ClNzf9g288cLcosOtcWT6HPpfh9kB2AVqtKrelX8qXWpiTFSBon/RypmrseTUSk3OJfRW65EsVcpKCMQSjlo/Zu8INyhoTc/jNaukDoSjG0R8qF3ODa0OFpN9u2TZmYzrONmqgEtgM7Z06cvpAsmgsfqeKeMqN+It6tdhNOHm0wJGi/o04FNC3qrBz4MKBu/C4wdAyb9MlSImOLBr5jgrZmIHxRf+jq0U4DiASfgCj5bMDk4ESDlPyjG+C5zUJ9MXM446UnWYZ7Zazqm2HMM
       mongoUrl: >-

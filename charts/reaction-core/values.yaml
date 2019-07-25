@@ -62,7 +62,7 @@ config:
   logFormat: json
   logLevel: info
   loyaltyConsumerEnabled: false
-  metricsEnabled: false
+  metricsEnabled: true
   metricsHost: 0.0.0.0
   metricsPath: /metrics
   metricsPort: 3001
