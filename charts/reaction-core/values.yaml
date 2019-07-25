@@ -73,6 +73,7 @@ config:
   radialItemExportConsumerEnabled: false
   importOrderStatusConsumerEnabled: false
   skipFixtures: 1
+  startingNewCustomerNumber: "1100151420184"
   taxesConsumerEnabled: false
   user: "Reaction Admin"
 

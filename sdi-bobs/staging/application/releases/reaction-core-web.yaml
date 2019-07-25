@@ -54,7 +54,6 @@ spec:
         AgCo8flFQ3WmaF6x4TNGkCE14iRVAWXZJkM4uoqlsxL+3oW7nWfakmYyLbzG6474T2Kt521PLQsSG0yB99PnJ1bCCny+ZDWdrtp1ymAVB35V9YscLBSIWygBjaIqPAi4QIQDdSoKCFEW9vUGEkAYNoZ68uFIcfFuJjCo0wXDS20tTxTow8J5oWj23r3qGj0UPd8HGSf1s/dDGwrTpnpZmYs/z6EGqeBWXfjZv6fAJRKWz5l0lYW8Fz499KVX6m/1GLJ5l3ot0fAKD6ebs3DmiCJEh+iHGxnB5WkBAMGcy7RgWzYnO7EVwOMd6i6Y8V5RKulAi57le/owNYWG7LhJBbSqy3gF1Jgnb0t6nrrgkyACA0woMQ1Eccjz7RXrL5YyCPrpoC50V2FoRIDhqgLhT7OLk7s1zP1CENUaOhSSqp7AAPLJjF1WvRGtTML6DQXS82YXCqGzECdF2Cq++PCScMhQB7MPwICkF7jfhhjPSq2uTFWGUUX05Zces1h/qLtL8pTlEfzoMPH2j1FkBidBstbFL7XmQmVghbvdSthf7/xMzNwf6gIiLg3zoIoyMBKMzWBdh7Hbc/wxdNCtdRP/vcXqBqLMgt9cCtbtDQTh/xhpq2BfU374eJc6Esl9Ob9RrJ5GU8awBbxhzCDnLP9PKvA7RWJ2DhrWX6NiA/3xlKDRCSxWrdArnFNSQFvWkoiepEDFM/sijy1jsoG0cz7quzk=
       rootUrl: https://api-staging.bobs-test.io
       siteCode: BOBS
-      startingNewCustomerNumber: "1100151420184"
     horizontalPodAutoscaler:
       enabled: true
       averageUtilization: 70
