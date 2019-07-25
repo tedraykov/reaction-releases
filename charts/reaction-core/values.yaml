@@ -61,6 +61,7 @@ config:
   kafkaTopicRadialItemExportStatus: etl.radial-item-export.status.json-gen1
   kafkaTopicProductImportErrorsPartitions: 3
   kafkaTopicProductImportProductsPartitions: 3
+  kafkaSchemaRegistryUrl: http://kafka-schema-registry:8081
   logFormat: json
   logLevel: info
   loyaltyConsumerEnabled: false
