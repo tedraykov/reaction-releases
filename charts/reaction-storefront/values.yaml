@@ -62,6 +62,7 @@ config:
   defaultShippingMethodId: SPbMh5gdz24Wr4J94
   defaultShippingMethodRate: !!str 2.99
   elasticsearchUrl: http://elasticsearch-client:9200
+  hydraAdminUrl: http://hydra:4445
   internalGraphqlUrl: http://reaction-core-web/graphql-beta
   oauth2:
     adminPort: 4445
@@ -72,7 +73,6 @@ config:
     #  idpHostUrl: https://api.example.com/
     #  redirectUrl: https://www.example.com/callback
     tokenUrl: http://hydra:4444/oauth2/token
-  hydraAdminUrl: http://hydra:4445
   radial: {}
     #  clientId: XXX
     #  mode: sandbox
