@@ -16,5 +16,6 @@ IFS=$'\n\t'
 cd "$(dirname "${BASH_SOURCE[0]}")/.."
 deployment="$1"
 new_tag="$2"
-find "sdi-bobs/${deployment}/application/releases" -type f -name "reaction-core-*.yaml" -print0 |
+# HEADS UP @impactmass, remove this when OK to change that image
+find "sdi-bobs/${deployment}/application/releases" -type f -name "reaction-core-*.yaml" -not -name "reaction-core-etl-consumer-inventory-v2.yaml" -print0 |
   xargs -0 perl -pi -e "s,^\s+tag:.*,      tag: ${new_tag},"
