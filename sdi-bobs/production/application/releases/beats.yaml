@@ -1,0 +1,14 @@
+apiVersion: flux.weave.works/v1beta1
+kind: HelmRelease
+metadata:
+  name: beats
+  namespace: logging
+spec:
+  releaseName: beats
+  chart:
+    git: git@github.com:sportsdirect/sdi-releases.git
+    path: charts/beats
+    ref: develop
+  values:
+    annotations:
+      iam.amazonaws.com/role: arn:aws:iam::490759768946:role/sdi-bobs-production-beats
