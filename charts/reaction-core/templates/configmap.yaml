@@ -47,6 +47,7 @@ data:
   KAFKA_TOPIC_PRODUCT_IMPORT_PRODUCTS_PARTITIONS: {{ required "config.kafkaTopicProductImportProductsPartitions not defined." .Values.config.kafkaTopicProductImportProductsPartitions | quote }}
   INVENTORY_PLUGIN_BATCH_CONSUME_SIZE: {{ required "config.inventoryPluginBatchConsumeSize is not defined." .Values.config.inventoryPluginBatchConsumeSize | quote }}
   SHIPPABLE_INVENTORY_CONSUMER_ENABLED: {{ required "config.shippableInventoryConsumerEnabled is not defined." .Values.config.shippableInventoryConsumerEnabled | quote }}
+  SEO_METADATA_CONSUMER_ENABLED: {{ required "config.seoMetadataConsumerEnabled is not defined." .Values.config.seoMetadataConsumerEnabled | quote }}
   LOYALTY_PLUGIN_BATCH_CONSUME_SIZE: {{ required "config.loyaltyPluginBatchConsumeSize is not defined." .Values.config.loyaltyPluginBatchConsumeSize | quote }}
   LOYALTY_CONSUMER_ENABLED: {{ required "config.loyaltyConsumerEnabled is not defined." .Values.config.loyaltyConsumerEnabled  | quote }}
   ORDER_EXPORT_RADIAL_URL: {{ required "config.orderExportRadialUrl is not defined." .Values.config.orderExportRadialUrl | quote }}
