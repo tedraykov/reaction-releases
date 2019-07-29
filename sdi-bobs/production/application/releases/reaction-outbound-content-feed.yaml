@@ -15,7 +15,7 @@ spec:
     imagePullSecret: reaction-docker-hub
     image:
       repository: reactioncommerce/reaction-etl-content-feed
-      tag: "e01d0fe"
+      tag: 13310e1f1b35cd4301cf88d3231db6b6b990c06a
     #schedule: "*/10 * * * *"
     schedule: "0 4 * * *"
     config:
@@ -23,11 +23,7 @@ spec:
       cloudFolder: w_1000,q_auto,f_auto
       cloudName: bobstores
       jaegerEndpoint: http://af227f3265fed11e98729123d9d2638d-1672043513.us-east-1.elb.amazonaws.com:14268/api/traces
-      kafkaBootstrapServers: b-1.production.gkq6i5.c2.kafka.us-east-1.amazonaws.com:9092,b-2.production.gkq6i5.c2.kafka.us-east-1.amazonaws.com:9092,b-3.production.gkq6i5.c2.kafka.us-east-1.amazonaws.com:9092
-      kafkaPartitionContentFeedStatus: 3
-      kafkaPartitionContentFeedErrors: 3
-      kafkaTopicContentFeedStatus: etl.content-feed.json-gen1
-      kafkaTopicContentFeedErrors: etl.content-feed.errors.json-gen1
+      kafkaBootstrapServers: 'b-1.production.gkq6i5.c2.kafka.us-east-1.amazonaws.com:9092,b-2.production.gkq6i5.c2.kafka.us-east-1.amazonaws.com:9092,b-3.production.gkq6i5.c2.kafka.us-east-1.amazonaws.com:9092'
       kmsKeyArn: arn:aws:kms:us-east-1:490759768946:key/c65dc6e6-0e2b-4c6f-a5ca-3704fc11fcb6
       mongoDbHost: >-
         AgBGixnBRJaZiZL6ScwAS4vycmRXen+HcK4UgUiPngnoWl1/PdbVVeHLVAwALCbeyfmgnOOtHk1fUi1htCUEbiEhasPqWO2TBezlaKn5kGPOspvd2TG7q9QVOlwMstTLJxExKqIt6VLPk6hgrHnH/+j6FFSi3l9YBKFN+M1LoY6/5yUvjU/OdJJih4M7nPMN9gYgOBWjjSRLcro+QipqcTxY7phYxxFVJI82ly8SAHX/AOH4RDZXDuE6rSYIZzyOJSdsuARfxEkTUsnT3yi7VNnQt7qN7Iv5Mq5S9zZpcMYGzRYj33DS40iTYHDZrWjafbApHaXRTWDv2vTOuzEokeBIQ4ZmfIpjT14rr57J1UifB8/a3gijRA1ulcKSOENgUMt9u2bJreo2F2Y2AGTZM7FKoRN7yiWkEAntO52fUBupBvkWSnwegPIPHV5gjdGTLhLZl22g9sNDd3vGw0FZRnmjS0I6NpgU6B0foqm05ydouEc5JiDoNCRyyYIxYBZrMT/+f5clZXtzOCD9INobEklWPTaoO3O8sBhJCsvOUEnvlTc8ubKMsVeJtVFAWDs+WpwWj5UfLhCfVuc/k3hdQH0cSIKIrgVbwZxCarKkvsblYfGpCMkg196hl2qCxf0ga3z3fB8uNSGmPrL8EUt09i5YedoYLJeGTFwt/juEQEtoVfu4rJR9f2flwstR+Hbi6cNAwUQ62IwWsZytb9+ux/xIFdn0J7iFcHbz1z7+EJ04UnEVuWyTiTiDptj2fba4/z83kjcLjvYdvad+SSCpmBIGvB2UN9wri7tylRhGqazjQdUueOFatiF+stKtYv+P4ANOXkH82BlAPJg7RuTAG7V/eNWwzMIaBLroPriIkWEfsu+AEu25uuNvWYAD+uysHQ13GCiJlSNQkuqOZPMoyq3SuD6LDwPWjVMsC+uFoO65USnW18sJuZc27/zgKdEsyf2sXff8k52ikISx9BMMFp+SO+MjfrXyx+m5J75EdANArnlQ1Ypuup/iXwmgcsic35faeMNYIxi/1nayP7SHJypM1VFw55oTG81jgVpT0KmU+0/oAnX59cM=

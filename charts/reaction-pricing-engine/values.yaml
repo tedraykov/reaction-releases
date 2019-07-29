@@ -48,6 +48,7 @@ config:
   pricebookEntryAggregatesStateStoreName: "reaction.pricing.pricebook-entry-aggregates-store.avro-gen1"
   pricesByIdAggregatesTopic: "reaction.pricing.prices-by-id-aggregates.avro-gen1"
   pricesByIdStateStoreName: "reaction.pricing.prices-by-id-aggregates-store.avro-gen1"
+  schemaRegistryUrl: "http://kafka-schema-registry:8081"
   debugGraphqlErrors: "0"
 #resources:
 #    requests:

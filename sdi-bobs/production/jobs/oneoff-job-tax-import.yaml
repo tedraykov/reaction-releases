@@ -11,7 +11,7 @@ spec:
     - name: reaction-docker-hub
   containers:
   - name: runner
-    image: sportsdirect/reaction-etl-import-tax-codes:2f1540b4c34e16c933da8073a0e13461e7054ccf
+    image: sportsdirect/reaction-etl-import-tax-codes:27af0afea2b00f0b080447d409f3098c48c860c0
     envFrom:
       - configMapRef:
           name: kafka

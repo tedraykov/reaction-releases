@@ -1,0 +1,24 @@
+---
+version: 2.1
+
+defaults: &defaults
+  docker:
+    - image: 816897914983.dkr.ecr.us-east-1.amazonaws.com/circleci-image
+
+jobs:
+  tests:
+    <<: *defaults
+    steps:
+      - checkout: {}
+      - run: make deps
+      - run: make test
+
+workflows:
+  version: 2
+  tests:
+    jobs:
+      - tests:
+          context: sdi-management
+          filters:
+            branches:
+              only: feature/tests

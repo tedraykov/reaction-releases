@@ -20,10 +20,8 @@ spec:
       repository: 490759768946.dkr.ecr.us-east-1.amazonaws.com/reaction-kafka-connect
       tag: "13985b30e691499150ff026255bb6fdf05e531a3"
     config:
-      connectBootstrapServers: broker0.kafka-production.k8s.bobs-test.io:9092,broker1.kafka-production.k8s.bobs-test.io:9093,broker2.kafka-production.k8s.bobs-test.io:9094
+      connectBootstrapServers: 'b-1.production.gkq6i5.c2.kafka.us-east-1.amazonaws.com:9092,b-2.production.gkq6i5.c2.kafka.us-east-1.amazonaws.com:9092,b-3.production.gkq6i5.c2.kafka.us-east-1.amazonaws.com:9092'
       connectRestAdvertisedHostName: kafka-connect-production.bobs-test.io
-      connectKeyConverterSchemaRegistryUrl: http://schema-registry.kafka-production.k8s.bobs-test.io:8081
-      connectValueConverterSchemaRegistryUrl: http://schema-registry.kafka-production.k8s.bobs-test.io:8081
     resources:
       requests:
         memory: 2Gi

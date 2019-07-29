@@ -1,10 +1,10 @@
 apiVersion: flux.weave.works/v1beta1
 kind: HelmRelease
 metadata:
-  name: reaction-core-master-publisher
+  name: reaction-core-etl-consumer-inventory-v2
   namespace: staging
 spec:
-  releaseName: reaction-core-master-publisher
+  releaseName: reaction-core-etl-consumer-inventory-v2
   chart:
     git: git@github.com:sportsdirect/sdi-releases.git
     path: charts/reaction-core
@@ -13,9 +13,8 @@ spec:
     config:
       brontoAccessToken: >-
         AgAEPBH/Tu31oBQIvXqtvFlaKwaVt1cObrygh8YTpFNcubdHOCixt17hrKE/T8dTDK/n0ozKN73tr/i8MQcoT60U+H1SHMIVv+OxVof4i7KZN0/XqUFLDi2DNj/sLjWy1WssjMKjhxs6u2JSnrRaReDG++jg8d+ZyjaQ1AIg4RMTHwxRhPxNyQkbkbioET1/vbLCH3/EeJwC1orzlfEHvZ/gFjRszX3He9flG5X3jHKgBGnwyXE7xHitNlIsevKVQy4cPzEyGYppK1ZPyJrnnDoQW8/RSLkb3iaGwmk4b9nnzAg77f6XcYx/jFeKa/QuCguT5GYjPzHfX7rAjcTa+wks7cyFpSYCcmTplcnMexNMwcUjWHPjCNLb+obIzWfKqdfRuO5jYU3fzKWkCQ6DaJxYIVSdC1mI6SVXEYAZhVO44WsD8JwzaI9lObKU1T2vZbWdAYHJutYR37VjDtccdnAtolsAFexY3DboWFtso4tL+QpotzxnSrQ2EGKfFKT2wS5ihRve3gXY7emeXn5YX7TqjC8EtRSnE8am9wZ859Z2Wi/rotqZOXRUD8akUFE4pUvgCWyz5QWbiBkgbkfnBLi5ySQ5FHmGAHV+cSo9kSUUjOU0IoE8l2+puTGYD9Sbet0olFvMKrJniwvOA3DvHpf8r9tm0KorGHJAQbIxZW1OJx4egcAoeZVrzvKymKEODfSzPf03KPKK9iTlNxDeVCkxgx6mAcUZcpD+4iJTD8hU0Q56ljo=
-      constantPublisherMode: true
-      constantPublisherPauseSeconds: 300
       etcdUrl: http://etcd-application.internal.staging.k8s.bobs-test.io:2379
+      shippableInventoryConsumerEnabled: true
       initialImport: true
       jaegerEndpoint: https://jaeger-collector.bobs-test.io/api/traces
       kadiraAppId: >-
@@ -24,6 +23,9 @@ spec:
         AgAhkU26zle0W7zRBXGsVchLsSI5GWRgjQHyU9eCQDAPVIli/hZcGJgPzsAaGAODYpWt95xm7QnX5kE0Z2WwX1jR4gpwloBBy/PeZLku+byxdxMfh6fo9yZaGTSXJkUmLflJB/fPJl7ZLq8IC41oJYWCAJFK0Jvy6JB1HrAYLxi18sN6ismkQp053nBm/Z+J0oVtjEBANoy8hH3f/OqO7byU91W8ByVaCnzh7UQn3+ODsHHhZXmp3XCfbFDIteoL1ezH5itchANImXLLeVvsKMPP6WZZOvO3HXlPHb6RIE3uvl1nR2Xn5wNXBgbfsR/YyrblLxeoeeK3/2g9UvyVFx/fXta8maaiEPSKJB2yIH0EwU5kY6HZoSWmroefngMnB/fsfMakDwKW37atD8ggMm4emASqbNwxgPoUNbhF9TBpSj1CaAVPiqZvNdE4DlLoHIwd9u/0H0yeQsL5nPlZukJEwT315qlT7TIcSI0FVAdT0dDWrroTSOm3wBB+Crlthpdzunx9rf4UY2UVa0X2mgGIXCMtc6p/RyNsvk4qVJe84CUOP4WkVcD1vJ2ycsX4PsJ9IwTUUK9RoXJOmmwI8/lWkANgTNR5DCn5fDK7wob5AfhwKBBCYBv9Cm/tz6AbPp7a+nCTeQHzsY094Aa81HO+nInpTb954c0pEfWxxaytGkIxPf+mgBX1s4BQHDOB/Q+zx66KbFdY3UYq5JsYjejDbOHfJZQgT1NwzWJLxrv9Ld6T6OQ=
       kafkaBootstrapServers: 'b-3.staging.d0bnhg.c2.kafka.us-east-1.amazonaws.com:9092,b-2.staging.d0bnhg.c2.kafka.us-east-1.amazonaws.com:9092,b-1.staging.d0bnhg.c2.kafka.us-east-1.amazonaws.com:9092'
       kafkaCluster: 'b-3.staging.d0bnhg.c2.kafka.us-east-1.amazonaws.com:9092,b-2.staging.d0bnhg.c2.kafka.us-east-1.amazonaws.com:9092,b-1.staging.d0bnhg.c2.kafka.us-east-1.amazonaws.com:9092'
+      kafkaPartitionsEtlShippableInventoryStatus: 3
+      kafkaTopicEtlShippableInventoryStream: 'etl.shippable-inventory.inventory-data.json-gen2'
+      kafkaTopicEtlShippableInventoryStatus: 'etl.shippable-inventory.inventory-status.json-gen2'
       mongoOplogUrl: >-
         AgBg4O8EQRhQB05fkUPLjRz1jwfBU681yU6L7wjnv3IDHcqSkJDEM0tr1zs+HgbctTW2Msnxm1gUYd0L9OO6HPT5qcAl3J7wgNP5OgNmLE+2+xnEPU7QCfPzx+0TrI+Zam6Ud6lTkl7AM+xBORKUhIrac309YxWrKyZM9J05d7OZcuk8G/WGROzwlbF/ZTrPJLK5B+J/deyZQy3Iqk3zGiB/X2yhDzwDnePW7/xUBIKOEUUn7DDpHrp872NDRybTJ3KyTMtlrKF2vaiKLDjsv0FTstwq/dnFCEvA9gunQXPJXpU1cKNrc/QEhBoGIDZcUwnKXiDbZ3kasevnzg+L2O+zx0lLYhVoLCnhpKW/bBLs/z7ocwYB4kYYmli5F2QMCUwaFdwAwN/U9sgOzlquDFpm9gdus/y4tIxAaMlXckcK6uYuAnS60TzPJ+nn0Qn9huvJ1yGn97RU6obget2s3ANWWZNCnl9NlmI/AnV5Pcbf4iKSanjz0JAn/4zR4hjIMoEyx3W7H2xXNjNdPC+0B9Q9ypEGrcs0WGstc6LB9WjZ2cTOgQ9uf6zNDYJMhvOIWyOgTr3/EhaJBqSQFu+iPpocQc7iFWoIUdk4MM6TcpfWiJAVBPlbwE6BDS8KqAzjkcTrJguEl6Ic+RYjyP8esv04/JC+uc7hNjQcZ4TSPUIeu2EkK1btZ9ogEk0ogQObJHpg4W9Mk5XpzZ2Vty/u7tEFaHpyUzeFCIPIQvnnSyn/ClNzf9g288cLcosOtcWT6HPpfh9kB2AVqtKrelX8qXWpiTFSBon/RypmrseTUSk3OJfRW65EsVcpKCMQSjlo/Zu8INyhoTc/jNaukDoSjG0R8qF3ODa0OFpN9u2TZmYzrONmqgEtgM7Z06cvpAsmgsfqeKeMqN+It6tdhNOHm0wJGi/o04FNC3qrBz4MKBu/C4wdAyb9MlSImOLBr5jgrZmIHxRf+jq0U4DiASfgCj5bMDk4ESDlPyjG+C5zUJ9MXM446UnWYZ7Zazqm2HMM
       mongoUrl: >-
@@ -50,6 +52,6 @@ spec:
       siteCode: BOBS
     image:
       repository: docker.io/sportsdirect/reaction
-      tag: ac3ec1ed91683f0bd76e3f5b59265d50a9790c4c
+      tag: d6dd65f09ff0e193862925249af54b25bc311c39 # do not change this; it's a separate image (not develop)
     imagePullSecrets:
       - name: reaction-docker-hub
