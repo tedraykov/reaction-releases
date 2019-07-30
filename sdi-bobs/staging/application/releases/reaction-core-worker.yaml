@@ -34,7 +34,7 @@ spec:
       productConsumerEnabled: true
       productPublisherAutoPublish: false
       radialItemExportConsumerEnabled: true
-      importOrderStatusConsumerEnabled: true
+      importOrderStatusConsumerEnabled: false
       seoMetadataConsumerEnabled: true
       radialMode: sandbox
       radialPassword: >-
