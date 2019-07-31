@@ -9,7 +9,7 @@ spec:
     - name: reaction-docker-hub
   containers:
   - name: runner
-    image: sportsdirect/reaction-tags-import:4d5c19dd14d7d500b66f981300c3ba464f548916
+    image: sportsdirect/reaction-tags-import:c4f223658862b11262a926fe34c9b5aebf66fb70
     command: [ "make", "start" ]
     # This provides: MONGO_HOST, MONGO_DB, GRAFANA_AUTH_TOKEN, CLOUDFLARE_CLIENT_ID, CLOUDFLARE_CLIENT_SECRET
     envFrom:
