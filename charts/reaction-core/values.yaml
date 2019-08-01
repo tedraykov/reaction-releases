@@ -83,6 +83,7 @@ config:
   startingNewCustomerNumber: "1100151420184"
   taxesConsumerEnabled: false
   user: "Reaction Admin"
+  productImportDefaultInvisible: true
 
 resources:
   limits:
