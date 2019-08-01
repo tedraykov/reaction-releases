@@ -74,6 +74,7 @@ config:
   pricingConsumerEnabled: false
   pricingGraphqlUrl: http://reaction-pricing-engine/graphql
   productConsumerEnabled: false
+  productImportDefaultInvisible: true
   productPublisherAutoPublish: false
   profilingEnabled: false
   radialItemExportConsumerEnabled: false
