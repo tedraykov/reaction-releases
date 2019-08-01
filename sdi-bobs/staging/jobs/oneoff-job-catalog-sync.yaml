@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: oneoff-job-reaction-etl-catalog-sync
+  name: oneoff-job-catalog-sync
   namespace: staging
   labels:
-    app: oneoff-job-reaction-etl-catalog-sync
+    app: oneoff-job-catalog-sync
   annotations:
     iam.amazonaws.com/role: arn:aws:iam::225761155017:role/sdi-bobs-staging-reaction-job-catalog-sync
 spec:
@@ -26,7 +26,7 @@ spec:
       - configMapRef:
           name: kafka
       - secretRef:
-          name: oneoff-job-reaction-etl-catalog-sync
+          name: oneoffjobs
     env:
       - name: JAEGER_ENDPOINT
         value: 'http://a20caf001938a11e98e1a0ad15df2ba7-1441443039.us-east-1.elb.amazonaws.com:14268/api/traces'
