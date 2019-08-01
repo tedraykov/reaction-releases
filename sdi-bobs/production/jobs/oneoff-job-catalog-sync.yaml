@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: oneoff-job-reaction-etl-catalog-sync
+  name: oneoff-job-catalog-sync
   namespace: production
   annotations:
     iam.amazonaws.com/role: arn:aws:iam::490759768946:role/sdi-bobs-production-reaction-job-catalog-sync
   labels:
-    app: oneoff-job-reaction-etl-catalog-sync
+    app: oneoff-job-catalog-sync
 spec:
   restartPolicy: Never
   imagePullSecrets:
