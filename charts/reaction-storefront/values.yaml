@@ -84,9 +84,11 @@ config:
     #  writeKey: XXX
   stacktracecEnabled: false
   sentry:
-    enabled: false
+    #  authToken: XXX
     #  dsn: https://XXX@sentry.io/XXX
+    enabled: false
     #  environment: staging
+    #  project: XXX
 
 horizontalPodAutoscaler:
   enabled: false
