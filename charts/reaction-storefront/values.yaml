@@ -88,6 +88,7 @@ config:
     #  dsn: https://XXX@sentry.io/XXX
     enabled: false
     #  environment: staging
+    org: sportsdirect
     #  project: XXX
 
 horizontalPodAutoscaler:
