@@ -4,7 +4,7 @@ metadata:
   name: oneoff-job-accounts-import
   namespace: staging
   annotations:
-    iam.amazonaws.com/role: arn:aws:iam::225761155017:role/sdi-bobs-staging-job-reaction-accounts-import
+    iam.amazonaws.com/role: arn:aws:iam::225761155017:role/sdi-bobs-staging-reaction-job-accounts-import
 spec:
   restartPolicy: Never
   imagePullSecrets:
