@@ -2,7 +2,7 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: {{ $fullName }}-notify-sentry
+  generateName: {{ $fullName }}-sentry
   labels:
     app.kubernetes.io/name: {{ $fullName }}-notify-sentry
     app.kubernetes.io/component: frontend
@@ -13,6 +13,7 @@ metadata:
     "helm.sh/hook": post-install,post-upgrade,post-rollback
     "helm.sh/hook-delete-policy": hook-succeeded
 spec:
+  backoffLimit: 0
   template:
     metadata:
       labels:
