@@ -88,7 +88,7 @@ config:
     #  dsn: https://XXX@sentry.io/XXX
     enabled: false
     #  environment: staging
-    project: bobs
+    #  project: XXX
 
 horizontalPodAutoscaler:
   enabled: false
