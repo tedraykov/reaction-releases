@@ -12,7 +12,7 @@ metadata:
   annotations:
     "helm.sh/hook": post-install,post-upgrade,post-rollback
     "helm.sh/hook-delete-policy": before-hook-creation
-    "helm.sh/hook-delete-timeout": 0
+    "helm.sh/hook-delete-timeout": "0"
 spec:
   backoffLimit: 0
   template:
