@@ -2,9 +2,9 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  generateName: {{ $fullName }}-sentry
+  generateName: {{ $fullName }}-sentry-
   labels:
-    app.kubernetes.io/name: {{ $fullName }}-notify-sentry
+    app.kubernetes.io/name: {{ $fullName }}-sentry-
     app.kubernetes.io/component: frontend
     app.kubernetes.io/instance: {{ .Release.Name }}
     app.kubernetes.io/managed-by: {{ .Release.Service }}
