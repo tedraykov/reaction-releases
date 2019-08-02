@@ -44,7 +44,9 @@ data:
   SEGMENT_ANALYTICS_WRITE_KEY: {{ required "config.segmentAnalytics.writeKey not defined." .Values.config.segmentAnalytics.writeKey | quote }}
 {{- end }}
 {{- if .Values.config.sentry.enabled }}
+  SENTRY_AUTH_TOKEN: {{ required "config.sentry.authToken not defined" .Values.config.sentry.authToken | quote }}
   SENTRY_DSN: {{ required "config.sentry.dsn not defined" .Values.config.sentry.dsn | quote }}
   SENTRY_ENV: {{ required "config.sentry.environment not defined" .Values.config.sentry.environment | quote }}
+  SENTRY_PROJECT: {{ required "config.sentry.project not defined" .Values.config.sentry.project | quote }}
 {{- end }}
   SESSION_MAX_AGE_MS: {{ required "config.sessionMaxAge not defined." .Values.config.sessionMaxAge | quote }}
