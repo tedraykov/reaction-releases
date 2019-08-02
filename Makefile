@@ -1,3 +1,5 @@
+MAKEFLAGS   += --silent --stop
+
 PYTESS_ARGS += tests
 PYTEST_ARGS	+= -rx --tb=short --quiet
 
