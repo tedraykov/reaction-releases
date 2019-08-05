@@ -12,7 +12,7 @@ metadata:
 data:
   BATCH_SIZE: {{ required "config.batchSize not defined." .Values.config.batchSize | quote }}
   CLOUD_NAME: {{ required "config.cloudName not defined." .Values.config.cloudName | quote }}
-  CLOUD_FOLDER: {{ required "config.cloudFolder not defined." .Values.config.cloudFolder | quote }}
+  CLOUD_FOLDER: {{ .Values.config.cloudFolder | quote }}
   EXTERNAL_EXPORT_BUCKET_NAME: {{ required "config.s3ExternalExportBucketName not defined." .Values.config.s3ExternalExportBucketName | quote }}
   INTERNAL_EXPORT_BUCKET_NAME: {{ required "config.s3InternalExportBucketName not defined." .Values.config.s3InternalExportBucketName | quote }}
   JAEGER_ENDPOINT: {{ required "config.jaegerEndpoint not defined." .Values.config.jaegerEndpoint | quote }}
