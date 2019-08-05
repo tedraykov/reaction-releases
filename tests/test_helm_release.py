@@ -32,15 +32,16 @@ def valid_namespaces():
 
 class HelmReleaseMetadata(object):
     def __init__(self, path):
+        abspath = os.path.abspath(path)
         try:
-            meta = META_PATTERN.match(path).groupdict()
+            meta = META_PATTERN.match(abspath).groupdict()
             self.environment = meta.get('environment')
             self.project = meta.get('project')
             self.cluster = meta.get('cluster')
             self.basename = meta.get('name')
         except AttributeError:
             self.error = True
-            self.reason = "Failed to extract metadata from file path: {}. This usually means wrong location for the manifest file. ".format(path)
+            self.reason = "Failed to extract metadata from file path: {}. This usually means wrong location for the manifest file. ".format(abspath)
             return
 
 @pytest.mark.parametrize("path", yaml_files())

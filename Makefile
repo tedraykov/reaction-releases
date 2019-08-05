@@ -1,9 +1,9 @@
 MAKEFLAGS   += --silent --stop
+ROOT_DIR 	:= $(dir $(realpath $(firstword $(MAKEFILE_LIST))))
+TESTS_DIR	:= $(ROOT_DIR)/tests
 
 PYTESS_ARGS += tests
 PYTEST_ARGS	+= -rx --tb=short --quiet
-
-TESTS_DIR	:= $(dir $(realpath $(firstword $(MAKEFILE_LIST))))/tests
 
 -include local.mk
 
