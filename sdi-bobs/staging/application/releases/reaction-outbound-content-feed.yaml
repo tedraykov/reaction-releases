@@ -15,11 +15,10 @@ spec:
     imagePullSecret: reaction-docker-hub
     image:
       repository: reactioncommerce/reaction-etl-content-feed
-      tag: 13310e1f1b35cd4301cf88d3231db6b6b990c06a
+      tag: ac571f0666983651e52cecbb900a40968e448177
     schedule: "0 4 * * *"
     config:
       batchSize: 1000
-      cloudFolder: w_1000,q_auto,f_auto
       cloudName: bobstores-dev
       jaegerEndpoint: http://a20caf001938a11e98e1a0ad15df2ba7-1441443039.us-east-1.elb.amazonaws.com:14268/api/traces
       kafkaBootstrapServers: b-3.staging.d0bnhg.c2.kafka.us-east-1.amazonaws.com:9092,b-2.staging.d0bnhg.c2.kafka.us-east-1.amazonaws.com:9092,b-1.staging.d0bnhg.c2.kafka.us-east-1.amazonaws.com:9092
