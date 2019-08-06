@@ -79,7 +79,7 @@ config:
   profilingEnabled: false
   radialItemExportConsumerEnabled: false
   importOrderStatusConsumerEnabled: false
-  seoMetadataConsumerEnabled: true
+  seoMetadataConsumerEnabled: false
   skipFixtures: 1
   startingNewCustomerNumber: "1100151420184"
   taxesConsumerEnabled: false
