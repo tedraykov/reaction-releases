@@ -10,9 +10,18 @@ spec:
     name: elasticsearch
     version: 1.26.0
   values:
+    client.resources:
+      requests:
+        memory: 2Gi
     cluster.name: search
+    data.resources:
+      requests:
+        memory: 4Gi
     image:
       pullSecrets:
         - reaction-docker-hub
       repository: 893565362659.dkr.ecr.us-east-1.amazonaws.com/elasticsearch
       tag: 285792a7ded63b6df947c7e5fb1b6d9b8731c325
+    master.resources:
+      requests:
+        memory: 2Gi
