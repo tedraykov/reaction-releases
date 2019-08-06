@@ -15,7 +15,7 @@ spec:
     imagePullSecret: reaction-docker-hub
     image:
       repository: reactioncommerce/reaction-etl-content-feed
-      tag: ac571f0666983651e52cecbb900a40968e448177
+      tag: ju8261bdhu910jdb17nwlqp12jd6ynapqjdk156dnkw
     #schedule: "*/10 * * * *"
     schedule: "0 4 * * *"
     config:
