@@ -14,12 +14,13 @@ spec:
       iam.amazonaws.com/role: arn:aws:iam::490759768946:role/sdi-bobs-production-reaction-job-outbound-content-feed
     imagePullSecret: reaction-docker-hub
     image:
-      tag: 3a0b342
+      tag: cd86ed7
     #schedule: "*/10 * * * *"
     schedule: "0 4 * * *"
     config:
       batchSize: 1000
       cloudName: bobstores
+      cloudFolder: 0
       jaegerEndpoint: http://af227f3265fed11e98729123d9d2638d-1672043513.us-east-1.elb.amazonaws.com:14268/api/traces
       kafkaBootstrapServers: 'b-1.production.gkq6i5.c2.kafka.us-east-1.amazonaws.com:9092,b-2.production.gkq6i5.c2.kafka.us-east-1.amazonaws.com:9092,b-3.production.gkq6i5.c2.kafka.us-east-1.amazonaws.com:9092'
       kmsKeyArn: arn:aws:kms:us-east-1:490759768946:key/c65dc6e6-0e2b-4c6f-a5ca-3704fc11fcb6
