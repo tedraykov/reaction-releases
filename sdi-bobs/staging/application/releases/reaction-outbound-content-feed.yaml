@@ -14,7 +14,6 @@ spec:
       iam.amazonaws.com/role: arn:aws:iam::225761155017:role/sdi-bobs-staging-reaction-job-outbound-content-feed
     imagePullSecret: reaction-docker-hub
     image:
-      repository: 816897914983.dkr.ecr.us-east-1.amazonaws.com/reaction-etl-content-feed
       tag: 3a0b342
     schedule: "0 4 * * *"
     config:
