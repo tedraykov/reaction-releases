@@ -4,7 +4,7 @@ metadata:
   name: oneoff-job-loyalty-customers-import.yaml
   namespace: production
   annotations:
-    iam.amazonaws.com/role: arn:aws:iam::490759768946:role/sdi-bobs-production-job-reaction-loyalty-accounts-import
+    iam.amazonaws.com/role: arn:aws:iam::490759768946:role/sdi-bobs-production-reaction-job-loyalty-accounts-import
 spec:
   restartPolicy: Never
   imagePullSecrets:
