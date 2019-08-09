@@ -23,6 +23,8 @@ data:
   KAFKA_PARTITION_CONTENT_FEED_ERRORS: {{ required "config.kafkaPartitionContentFeedErrors not defined." .Values.config.kafkaPartitionContentFeedErrors | quote }}
   KMS_KEY_ARN: {{ required "config.kmsKeyArn not defined." .Values.config.kmsKeyArn | quote }}
   MONGODB_NAME: {{ required "config.mongoDbName not defined." .Values.config.mongoDbName | quote }}
-  PRICEBOOK_ID: {{ required "config.pricebookId not defined." .Values.config.pricebookId | quote }}
+  PRICEBOOK_ID_PERM: {{ required "config.pricebookIdPerm not defined." .Values.config.pricebookIdPerm | quote }}
+  PRICEBOOK_ID_RETAIL: {{ required "config.pricebookIdRetail not defined." .Values.config.pricebookIdRetail | quote }}
+  PRICEBOOK_ID_SALE: {{ required "config.pricebookIdSale not defined." .Values.config.pricebookIdSale | quote }}
   SITE_CODE: {{ required "config.siteCode not defined." .Values.config.siteCode | quote }}
   STOREFRONT_BASE_URL: {{ required "config.storefrontBaseUrl not defined." .Values.config.storefrontBaseUrl | quote }}
