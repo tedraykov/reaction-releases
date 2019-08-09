@@ -20,7 +20,7 @@ spec:
     # This provides: MONGO_HOST, MONGO_DB, GRAFANA_AUTH_TOKEN, CLOUDFLARE_CLIENT_ID, CLOUDFLARE_CLIENT_SECRET
     env:
       - name: JAEGER_ENDPOINT
-        value: http://af227f3265fed11e98729123d9d2638d-1672043513.us-east-1.elb.amazonaws.com:14268/api/traces
+        value: 'http://jaeger-collector.production.k8s.bobs-test.io:14268/api/traces'
       - name: KAFKA_PARTITIONS
         value: "3"
       - name: KAFKA_TOPIC_IMPORT_TAX_CODES_TAXCODES
