@@ -14,7 +14,9 @@ config:
   kafkaPartitionContentFeedStatus: 0
   kafkaPartitionContentFeedErrors: 0
 #  mongoDbName: sample-data-bobs-staging
-#  pricebookId: bobs-usd-retail-prices
+  pricebookIdPerm: bobs-usd-perm-prices
+  pricebookIdRetail: bobs-usd-retail-prices
+  pricebookIdSale: bobs-usd-sale-prices
 #  siteCode: BOBS
 #  storefrontBaseUrl: https://storefront.bobs-test.io
 
