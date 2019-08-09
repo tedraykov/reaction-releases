@@ -21,7 +21,7 @@ spec:
       batchSize: 1000
       cloudName: bobstores
       cloudFolder: 0
-      jaegerEndpoint: http://af227f3265fed11e98729123d9d2638d-1672043513.us-east-1.elb.amazonaws.com:14268/api/traces
+      jaegerEndpoint: http://jaeger-collector.production.k8s.bobs-test.io:14268/api/traces
       kafkaBootstrapServers: 'b-1.production.gkq6i5.c2.kafka.us-east-1.amazonaws.com:9092,b-2.production.gkq6i5.c2.kafka.us-east-1.amazonaws.com:9092,b-3.production.gkq6i5.c2.kafka.us-east-1.amazonaws.com:9092'
       kmsKeyArn: arn:aws:kms:us-east-1:490759768946:key/c65dc6e6-0e2b-4c6f-a5ca-3704fc11fcb6
       mongoDbHost: >-

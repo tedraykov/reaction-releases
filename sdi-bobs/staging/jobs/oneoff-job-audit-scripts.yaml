@@ -28,7 +28,7 @@ spec:
       - name: BUCKET_NAME
         value: sdi-bobs-staging-feeds-product-catalog
       - name: JAEGER_ENDPOINT
-        value: 'http://a20caf001938a11e98e1a0ad15df2ba7-1441443039.us-east-1.elb.amazonaws.com:14268/api/traces'
+        value: 'http://jaeger-collector.staging.k8s.bobs-test.io:14268/api/traces'
       - name: INITIAL_IMPORT
         value: "false"
       - name: KAFKA_PARTITIONS
