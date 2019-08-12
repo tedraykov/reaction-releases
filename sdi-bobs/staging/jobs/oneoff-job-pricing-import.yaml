@@ -11,12 +11,12 @@ spec:
     - name: reaction-docker-hub
   containers:
   - name: runner
-    image: sportsdirect/reaction-etl-pricing-import:4caf3f7211475287e74fcaca3c536ff93449de5c
+    image: sportsdirect/reaction-etl-pricing-import:3dbc7ba0738f05194b3562ac45180c45b4a153bb
     # Make sure to add both a `bucket` argument and a `filename` argument to `run.js` before running
     command:
       - node
       - --max-old-space-size=4096
-      - src/run.js
+      - bin/run.js
       - sdi-bobs-staging-feeds-pricing
       - null
     envFrom:
