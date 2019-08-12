@@ -39,7 +39,7 @@ config:
   defaultShippingMethodRate: "2.99"
   graphqlIntrospectionEnabled: false
   graphqlPlaygroundEnabled: false
-  healthchecksEnabled: false
+  healthchecksEnabled: true
   hydraAdminUrl: http://hydra:4445
   hydraOauth2IntrospectUrl: http://hydra:4445/oauth2/introspect
   kafkaPartitionsLoyalty: 3
