@@ -46,6 +46,7 @@ config:
   initialImport: false
   inventoryPluginBatchConsumeSize: 1000
   shippableInventoryConsumerEnabled: false
+  kadiraEnabled: false
   kafkaPartitionsEtlShippableInventoryStatus: 1
   kafkaTopicCatalogSyncProducts: etl.catalog-sync.products.json-gen1
   kafkaTopicEtlShippableInventoryStatus: etl.shippable-inventory.inventory-status.json-gen1
