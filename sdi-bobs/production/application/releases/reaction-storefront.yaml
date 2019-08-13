@@ -55,8 +55,6 @@ spec:
       hosts:
         - host: www.bobstores.com
           paths: ['/']
-        - host: jasper.bobstores.com
-          paths: ['/']
     maxUnavailable: 1
     resources:
       requests:
