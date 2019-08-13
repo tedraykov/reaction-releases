@@ -53,6 +53,8 @@ spec:
       tag: 41626e68ca30a175ead104909d2e2d232fc2da4e
     ingress:
       hosts:
+        - host: www.bobstores.com
+          paths: ['/']
         - host: jasper.bobstores.com
           paths: ['/']
     maxUnavailable: 1
