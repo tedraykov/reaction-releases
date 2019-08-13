@@ -31,7 +31,7 @@ spec:
       s3ExternalExportBucketName: sdi-bobs-production-feeds-outbound-content
       s3InternalExportBucketName: sdi-bobs-production-feeds-ocf
       siteCode: BOBS
-      storefrontBaseUrl: https://jasper.bobstores.com
+      storefrontBaseUrl: https://www.bobstores.com
     resources:
       requests:
         memory: 3Gi
