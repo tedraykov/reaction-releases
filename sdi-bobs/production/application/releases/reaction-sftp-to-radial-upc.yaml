@@ -16,7 +16,7 @@ spec:
     image:
       repository: reactioncommerce/reaction-cron-jobs
       tag: sftp-to-radial-ccaf07a
-    schedule: "*/5 * * * *"
+    schedule: "5 1 * * *"
     config:
       s3BucketName: sdi-bobs-production-feeds-upc
       sftpEndpoint: sftp.remotetools.gsipartners.com
