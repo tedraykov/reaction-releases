@@ -19,15 +19,17 @@ spec:
           name: oneoffjobs
     env:
       - name: GROUP_ID
-        value: kx2fmpdaG4gfvGdrN
+        value: QFfLgQGGvFhChReQg
       - name: OBFUSCATE_EMAIL
-        value: false
+        value: "false"
       - name: S3_BUCKET
         value: sdi-bobs-production-feeds-web-customer
       - name: S3_FILE_KEY
-        value: Bobs_Customers_20190405.xml
+        value: Bobs_Customers_Delta_20190813.xml
       - name: SHOP_ID
-        value: 44
+        value: "44"
+      - name: START_AT
+        value: "0"
     imagePullPolicy: Always
     resources:
       requests:
