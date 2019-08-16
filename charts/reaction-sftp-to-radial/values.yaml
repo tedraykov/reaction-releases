@@ -1,0 +1,8 @@
+replicas: 1
+annotations: {}
+config:
+  sftpEndpoint: sftp.remotetools.gsipartners.com
+  sftpHomedir: /home/bobsftp02
+  sftpUsername: bobsftp02
+resources: {}
+schedule: "0 0 * * *"

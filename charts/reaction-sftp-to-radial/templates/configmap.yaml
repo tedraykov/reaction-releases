@@ -1,0 +1,17 @@
+{{- $fullName := include "reaction-sftp-to-radial.fullname" . -}}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ $fullName }}
+  labels:
+    app.kubernetes.io/name: {{ include "reaction-sftp-to-radial.name" . }}
+    app.kubernetes.io/component: sftp
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+    helm.sh/chart: {{ include "reaction-sftp-to-radial.chart" . }}
+data:
+  S3_BUCKET_NAME: {{ required "config.s3BucketName not defined." .Values.config.s3BucketName | quote }}
+  SFTP_ENDPOINT: {{ required "config.sftpEndpoint not defined." .Values.config.sftpEndpoint | quote }}
+  SFTP_HOMEDIR: {{ required "config.sftpHomedir not defined." .Values.config.sftpHomedir | quote }}
+  SFTP_USERNAME: {{ required "config.sftpUsername not defined." .Values.config.sftpUsername | quote }}
+  SFTP_DESTINATION_FOLDER: {{ required "config.sftpDestinationFolder not defined." .Values.config.sftpDestinationFolder | quote }}
