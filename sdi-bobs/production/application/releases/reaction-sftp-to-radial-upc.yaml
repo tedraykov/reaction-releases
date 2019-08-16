@@ -1,10 +1,10 @@
 apiVersion: flux.weave.works/v1beta1
 kind: HelmRelease
 metadata:
-  name: reaction-sftp-to-radial
+  name: reaction-sftp-to-radial-upc
   namespace: production
 spec:
-  releaseName: reaction-sftp-to-radial
+  releaseName: reaction-sftp-to-radial-upc
   chart:
     git: git@github.com:sportsdirect/sdi-releases.git
     path: charts/reaction-sftp-to-radial
