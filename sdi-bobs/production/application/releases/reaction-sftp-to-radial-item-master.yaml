@@ -15,7 +15,7 @@ spec:
     imagePullSecret: reaction-docker-hub
     image:
       repository: reactioncommerce/reaction-cron-jobs
-      tag: sftp-to-radial-ccaf07a
+      tag: sftp-to-radial-36a03a9
     schedule: "15 1 * * *"
     config:
       s3BucketName: sdi-bobs-production-feeds-item-master
