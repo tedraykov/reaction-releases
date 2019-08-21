@@ -51,7 +51,7 @@ spec:
           readinessProbe:
             httpGet:
               path: /health
-              port: http
+              port: admin
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
