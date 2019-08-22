@@ -45,6 +45,7 @@ data:
 {{- end }}
 {{- if .Values.config.sentry.enabled }}
   SENTRY_AUTH_TOKEN: {{ required "config.sentry.authToken not defined" .Values.config.sentry.authToken | quote }}
+  SENTRY_SOURCEMAP_TOKEN: {{ required "config.sentry.sourcemapToken not defined" .Values.config.sentry.sourcemapToken | quote }}
   SENTRY_DSN: {{ required "config.sentry.dsn not defined" .Values.config.sentry.dsn | quote }}
   SENTRY_ENV: {{ required "config.sentry.environment not defined" .Values.config.sentry.environment | quote }}
   SENTRY_ORG: {{ required "config.sentry.org not defined" .Values.config.sentry.org | quote }}
