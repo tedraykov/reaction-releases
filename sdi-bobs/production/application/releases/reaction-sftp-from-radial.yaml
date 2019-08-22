@@ -14,7 +14,7 @@ spec:
       iam.amazonaws.com/role: arn:aws:iam::490759768946:role/sdi-bobs-production-reaction-job-sftp-from-radial
     imagePullSecret: reaction-docker-hub
     image:
-      repository: reactioncommerce/reaction-cron-jobs
+      repository: sportsdirect/reaction-cron-jobs
       tag: sftp-from-radial-e6414af
     schedule: "*/5 * * * *"
     config:
