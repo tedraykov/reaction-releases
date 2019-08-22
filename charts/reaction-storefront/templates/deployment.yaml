@@ -54,7 +54,7 @@ spec:
               port: http
               httpHeaders:
               - name: Kube-Readiness
-                value: 1
+                value: "1"
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
