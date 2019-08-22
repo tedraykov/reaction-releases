@@ -50,8 +50,11 @@ spec:
               port: admin
           readinessProbe:
             httpGet:
-              path: /health
-              port: admin
+              path: /
+              port: http
+              httpHeaders:
+              - name: Kube-Readiness
+                value: 1
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
