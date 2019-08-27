@@ -46,6 +46,13 @@ spec:
             - main.js
           {{- end }}
 {{- end }}
+{{- if .Values.config.datadogEnabled }}
+          env:
+            - name: DD_AGENT_HOST
+              valueFrom:
+                fieldRef:
+                  fieldPath: status.hostIP
+{{- end }}
           envFrom:
             - configMapRef:
                 name: {{ $fullName }}

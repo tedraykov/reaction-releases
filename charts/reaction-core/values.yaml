@@ -35,6 +35,7 @@ config:
   cartReferenceIdPrefix: 44
   constantPublisherMode: false
   constantPublisherPauseSeconds: 300
+  datadogEnabled: true
   defaultShippingMethodId: SPbMh5gdz24Wr4J94
   defaultShippingMethodRate: "2.99"
   graphqlIntrospectionEnabled: false
