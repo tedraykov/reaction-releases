@@ -36,7 +36,6 @@ config:
   constantPublisherMode: false
   constantPublisherPauseSeconds: 300
   datadogEnabled: true
-  datadogServiceName: reaction-core-web
   defaultShippingMethodId: SPbMh5gdz24Wr4J94
   defaultShippingMethodRate: "2.99"
   graphqlIntrospectionEnabled: false
