@@ -8,7 +8,7 @@ spec:
   chart:
     git: git@github.com:sportsdirect/sdi-releases.git
     path: charts/reaction-core
-    ref: develop
+    ref: datadog
   values:
     config:
       brontoAccessToken: >-
@@ -56,7 +56,7 @@ spec:
       max: 10
     image:
       repository: docker.io/sportsdirect/reaction
-      tag: 556b70fbb384cace390173561a7bc0db8043edf3
+      tag: 523229366b375559bc5d11f5a0db4eb8bfb6085c
     imagePullSecrets:
       - name: reaction-docker-hub
     ingress:
