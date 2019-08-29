@@ -34,7 +34,7 @@ spec:
                 name: {{ printf "%s-%s" $fullName "config" }}
           ports:
             - name: http
-              httpPort: {{ .Values.service.httpPort }}
+              containerPort: {{ .Values.service.httpPort }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           volumes:
