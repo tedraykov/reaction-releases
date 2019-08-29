@@ -1,0 +1,24 @@
+apiVersion: flux.weave.works/v1beta1
+kind: HelmRelease
+metadata:
+  name: elastichq
+  namespace: monitoring
+spec:
+  releaseName: elastichq
+  chart:
+    git: git@github.com:sportsdirect/sdi-releases.git
+    path: charts/elastichq
+    ref: develop
+  values:
+    image:
+      repository: 'elastichq/elasticsearch-hq'
+      tag: 'release-v3.5.0'
+    service:
+      serviceMonitorLabel: "application"
+    resources:
+      requests:
+        memory: 256Mi
+        cpu: 500m
+      limits:
+        memory: 512Mi
+        cpu: 500m

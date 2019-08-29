@@ -1,0 +1,14 @@
+{{- $fullName := include "elastichq.fullname" . -}}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ $fullName }}-config
+  labels:
+    app.kubernetes.io/name: {{ $fullName }}
+    app.kubernetes.io/component: elastichq
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+    helm.sh/chart: {{ include "elastichq.chart" . }}
+data:
+  HQ_DEFAULT_URL: {{ required "config.hqDefaultUrl not defined." .Values.config.hqDefaultUrl | quote }}
+  SQLALCHEMY_DATABASE_URI: {{ required "config.sqlalchemyDatabaseUri not defined." .Values.config.sqlalchemyDatabaseUri | quote }}
