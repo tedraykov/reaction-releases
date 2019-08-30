@@ -4,7 +4,7 @@ metadata:
   name: oneoff-job-loyalty-rewards-import
   namespace: staging
   annotations:
-    iam.amazonaws.com/role: arn:aws:iam::225761155017:role/sdi-bobs-staging-reaction-job-rewards-import
+    iam.amazonaws.com/role: arn:aws:iam::225761155017:role/sdi-bobs-staging-reaction-job-loyalty-rewards-import
 spec:
   restartPolicy: Never
   imagePullSecrets:
