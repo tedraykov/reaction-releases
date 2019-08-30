@@ -1,0 +1,16 @@
+service:
+  httpPort: 5000
+
+horizontalPodAutoscaler:
+  enabled: false
+
+config:
+  hqDefaultUrl: "http://elasticsearch-client:9200"
+  sqlalchemyDatabaseUri: "sqlite:////var/local/elastichq/elastichq.db"
+
+persistence:
+  enabled: true
+  accessMode: ReadWriteOnce
+  size: 10Gi
+
+mountPath: /var/local/elastichq
