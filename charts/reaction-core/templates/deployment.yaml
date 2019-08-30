@@ -46,6 +46,15 @@ spec:
             - main.js
           {{- end }}
 {{- end }}
+{{- if .Values.config.datadogEnabled }}
+          env:
+            - name: DD_AGENT_HOST
+              valueFrom:
+                fieldRef:
+                  fieldPath: status.hostIP
+            - name: DD_SERVICE_NAME
+              value: {{ $fullName | quote }}
+{{- end }}
           envFrom:
             - configMapRef:
                 name: {{ $fullName }}
@@ -65,10 +74,14 @@ spec:
             httpGet:
               path: /health
               port: http
+            timeoutSeconds: 15
           readinessProbe:
             httpGet:
               path: /health
               port: http
+            initialDelaySeconds: 15
+            successThreshold: 2
+            timeoutSeconds: 15
 {{- end }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}

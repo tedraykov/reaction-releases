@@ -1,62 +1,51 @@
-{{- $fullName := include "reaction-storefront.fullname" . -}}
+{{- $fullName := include "elastichq.fullname" . -}}
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ $fullName }}
   labels:
     app.kubernetes.io/name: {{ $fullName }}
-    app.kubernetes.io/component: frontend
+    app.kubernetes.io/component: elastichq
     app.kubernetes.io/instance: {{ .Release.Name }}
     app.kubernetes.io/managed-by: {{ .Release.Service }}
-    helm.sh/chart: {{ $fullName }}
+    helm.sh/chart: {{ include "elastichq.chart" . }}
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      app.kubernetes.io/name: {{ $fullName }}
+      app.kubernetes.io/name: {{ include "elastichq.name" . }}
       app.kubernetes.io/instance: {{ .Release.Name }}
   template:
     metadata:
-      annotations:
-        checksum/config: {{ values .Values.config | sortAlpha | toString | sha256sum }}
-{{- if .Values.annotations }}
-        {{- with .Values.annotations }}
-        {{- toYaml . | nindent 8 }}
-        {{- end }}
-{{- end }}
       labels:
-        app.kubernetes.io/name: {{ $fullName }}
+        app.kubernetes.io/name: {{ include "elastichq.name" . }}
         app.kubernetes.io/instance: {{ .Release.Name }}
     spec:
+{{- if .Values.imagePullSecrets }}
+      imagePullSecrets:
+{{ toYaml .Values.imagePullSecrets | indent 8 }}
+{{- end }}
       containers:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           envFrom:
             - configMapRef:
-                name: {{ $fullName }}
-            - secretRef:
-                name: {{ $fullName }}
+                name: {{ printf "%s-%s" $fullName "config" }}
           ports:
             - name: http
-              containerPort: 8080
-              protocol: TCP
-            - name: admin
-              containerPort: 8081
-              protocol: TCP
-          livenessProbe:
-            httpGet:
-              path: /health
-              port: admin
-          readinessProbe:
-            httpGet:
-              path: /
-              port: http
-              httpHeaders:
-              - name: Kube-Readiness
-                value: "1"
+              containerPort: {{ .Values.service.httpPort }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
+          volumes:
+          - name: data
+            {{- if .Values.persistence.enabled }}
+            persistentVolumeClaim:
+              claimName: {{ include "elastichq.fullname" . }}
+            {{- else }}
+            emptyDir: {}
+            {{- end }}
+
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
