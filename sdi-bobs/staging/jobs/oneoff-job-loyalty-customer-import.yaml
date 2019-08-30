@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: oneoff-job-loyalty-customers-import.yaml
+  name: oneoff-job-loyalty-customer-import
   namespace: staging
   annotations:
-    iam.amazonaws.com/role: arn:aws:iam::225761155017:role/sdi-bobs-staging-reaction-job-loyalty-accounts-import
+    iam.amazonaws.com/role: arn:aws:iam::225761155017:role/sdi-bobs-staging-reaction-job-loyalty-customer-import
 spec:
   restartPolicy: Never
   imagePullSecrets:
