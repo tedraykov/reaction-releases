@@ -14,8 +14,8 @@ spec:
       iam.amazonaws.com/role: arn:aws:iam::490759768946:role/sdi-bobs-production-feeds-item-master
     imagePullSecret: reaction-docker-hub
     image:
-      repository: reactioncommerce/reaction-cron-jobs
-      tag: sftp-to-radial-ccaf07a
+      repository: sportsdirect/reaction-cron-jobs
+      tag: sftp-to-radial-8dd1e8a4fb928a935524c014e387cd30ac10152b
     schedule: "15 1 * * *"
     config:
       s3BucketName: sdi-bobs-production-feeds-item-master
