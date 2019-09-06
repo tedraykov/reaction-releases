@@ -15,8 +15,8 @@ spec:
     imagePullSecret: reaction-docker-hub
     image:
       repository: sportsdirect/reaction-cron-jobs
-      tag: sftp-to-radial-ebb75ed111d74527c7d152be42d40a21f6611014
-    schedule: "*/5 * * * *"
+      tag: sftp-to-radial-b29cd94fbf557831ed933514666113d74f56ae50
+    schedule: "15 2 * * *"
     config:
       s3BucketName: sdi-bobs-staging-feeds-upc
       sftpEndpoint: ftp.gsipartners.com
