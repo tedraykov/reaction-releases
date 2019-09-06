@@ -11,7 +11,7 @@ spec:
     ref: develop
   values:
     annotations:
-      iam.amazonaws.com/role: arn:aws:iam::225761155017:role/sdi-bobs-staging-reaction-job-sftp-to-radial
+      iam.amazonaws.com/role: arn:aws:iam::225761155017:role/sdi-bobs-staging-reaction-job-sftp-to-radial-item-master
     imagePullSecret: reaction-docker-hub
     image:
       repository: reactioncommerce/reaction-cron-jobs
