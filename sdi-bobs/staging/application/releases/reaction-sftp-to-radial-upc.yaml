@@ -14,8 +14,8 @@ spec:
       iam.amazonaws.com/role: arn:aws:iam::225761155017:role/sdi-bobs-staging-reaction-job-sftp-to-radial-upc
     imagePullSecret: reaction-docker-hub
     image:
-      repository: reactioncommerce/reaction-cron-jobs
-      tag: ftp-to-radial-205296d
+      repository: sportsdirect/reaction-cron-jobs
+      tag: sftp-to-radial-b28ee0f70a199ff0448df5e4c22dc8b8b4a951ab
     schedule: "*/5 * * * *"
     config:
       s3BucketName: sdi-bobs-staging-feeds-upc
