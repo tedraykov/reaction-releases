@@ -34,8 +34,6 @@ spec:
             envFrom:
               - configMapRef:
                   name: {{ $fullName }}
-              - secretRef:
-                  name: {{ $fullName }}
             # resource requests/limits
             resources:
               requests:
