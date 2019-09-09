@@ -46,7 +46,7 @@ spec:
       max: 10
     image:
       repository: 893565362659.dkr.ecr.us-east-1.amazonaws.com/bobs
-      tag: f17a8cbb55760d373d32de0a3127318148846bad
+      tag: 58aca8c0b49a9ab05b6f6b7471af817c463905aa
     ingress:
       hosts:
         - host: staging.bobs-test.io
