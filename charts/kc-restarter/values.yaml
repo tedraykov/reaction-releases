@@ -1,0 +1,6 @@
+replicas: 1
+annotations: {}
+config:
+  kafkaConnectUrl: 'http://reaction-kafka-connect:8082'
+resources: {}
+schedule: '0/15 * * * *'
