@@ -1,0 +1,48 @@
+{{- $fullName := include "kc-restarter.fullname" . -}}
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: {{ $fullName }}
+  labels:
+    app.kubernetes.io/name: {{ $fullName }}
+    app.kubernetes.io/component: {{ $fullName }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+    helm.sh/chart: {{ $fullName }}
+spec:
+  schedule: "{{ .Values.schedule }}"
+  jobTemplate:
+    spec:
+      backoffLimit: 1
+      template:
+        metadata:
+{{- if .Values.annotations }}
+          annotations:
+            {{ toYaml .Values.annotations }}
+{{- end }}
+          labels:
+            app.kubernetes.io/name: {{ $fullName }}
+            app.kubernetes.io/instance: {{ .Release.Name }}
+        spec:
+          concurrencyPolicy: 'Replace'
+          restartPolicy: 'Never'
+          #ttlSecondsAfterFinished: 86400
+          containers:
+          - name: {{ .Chart.Name }}
+            image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+            imagePullPolicy: {{ .Values.image.pullPolicy }}
+            envFrom:
+              - configMapRef:
+                  name: {{ $fullName }}
+            # resource requests/limits
+            resources:
+              requests:
+                memory: {{ .Values.resources.requests.memory }}
+                cpu: {{ .Values.resources.requests.cpu }}
+              limits:
+                memory: {{ .Values.resources.limits.memory }}
+                cpu: {{ .Values.resources.limits.cpu }}
+          {{- if .Values.imagePullSecret }}
+          imagePullSecrets:
+            - name: "{{ .Values.imagePullSecret }}"
+          {{- end }}
