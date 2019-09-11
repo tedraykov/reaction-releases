@@ -1,0 +1,13 @@
+{{- $fullName := include "kc-restarter.fullname" . -}}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ $fullName }}
+  labels:
+    app.kubernetes.io/name: {{ include "kc-restarter.name" . }}
+    app.kubernetes.io/component: kc-restarter
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+    helm.sh/chart: {{ include "kc-restarter.chart" . }}
+data:
+  KAFKA_CONNECT_URL: {{ required "config.kafkaConnectUrl not defined." .Values.config.kafkaConnectUrl | quote }}
