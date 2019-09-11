@@ -32,6 +32,7 @@ spec:
         opened: outbound/order_status/BOBS/opened
         returned: outbound/order_status/BOBS/returned
         shipped: outbound/order_status/BOBS/shipped
+      sftpKexAlgorithmOptions: -oKexAlgorithms=diffie-hellman-group-exchange-sha1,diffie-hellman-group1-sha1
     resources:
       requests:
         memory: 1Gi
