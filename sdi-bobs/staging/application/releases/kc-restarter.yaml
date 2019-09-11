@@ -13,7 +13,7 @@ spec:
     imagePullSecret: reaction-docker-hub
     image:
       repository: reactioncommerce/kc-restarter
-      tag: '9ba46ae9fde4799e1a2751f92be95d683d9eb095'
+      tag: 'a2d9e3948187258e96b5d0d288cfeda534108386'
     resources:
       requests:
         memory: 256Mi
