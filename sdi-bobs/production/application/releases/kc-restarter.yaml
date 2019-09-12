@@ -1,0 +1,23 @@
+apiVersion: flux.weave.works/v1beta1
+kind: HelmRelease
+metadata:
+  name: kc-restarter
+  namespace: production
+spec:
+  releaseName: kc-restarter
+  chart:
+    git: git@github.com:sportsdirect/sdi-releases.git
+    path: charts/kc-restarter
+    ref: develop
+  values:
+    imagePullSecret: reaction-docker-hub
+    image:
+      repository: reactioncommerce/kc-restarter
+      tag: 'a2d9e3948187258e96b5d0d288cfeda534108386'
+    resources:
+      requests:
+        memory: 256Mi
+        cpu: "500m"
+      limits:
+        memory: 500Mi
+        cpu: "1"

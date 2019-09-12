@@ -21,3 +21,6 @@ data:
   SFTP_SUBFOLDER_OPENED: {{ required "config.sftpSubfolders.opened not defined." .Values.config.sftpSubfolders.opened | quote }}
   SFTP_SUBFOLDER_RETURNED: {{ required "config.sftpSubfolders.returned not defined." .Values.config.sftpSubfolders.returned | quote }}
   SFTP_SUBFOLDER_SHIPPED: {{ required "config.sftpSubfolders.shipped not defined." .Values.config.sftpSubfolders.shipped | quote }}
+{{ if .Values.config.sftpKexAlgorithmOptions }}
+  SFTP_KEX_ALGORITHM_OPTIONS: {{ .Values.config.sftpKexAlgorithmOptions | quote }}
+{{ end }}

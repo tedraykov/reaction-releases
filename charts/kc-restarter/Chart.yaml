@@ -1,0 +1,12 @@
+apiVersion: v1
+description: kc-restarter
+name: kc-restarter
+version: 1.0.0
+keywords:
+- kc-restarter
+home: https://github.com/reactioncommerce/reaction-search/kc-restarter
+sources:
+- https://github.com/reactioncommerce/reaction-search
+maintainers:
+- name: Reaction Commerce
+  email: admin@reactioncommerce.com

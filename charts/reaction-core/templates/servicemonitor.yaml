@@ -16,5 +16,5 @@ spec:
     port: admin
   selector:
     matchLabels:
-      app.kubernetes.io/name: {{ include "reaction-core.name" . }}
+      app.kubernetes.io/instance: {{ .Release.Name }}
 {{- end }}

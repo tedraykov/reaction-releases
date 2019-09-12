@@ -11,17 +11,18 @@ spec:
     ref: develop
   values:
     annotations:
-      iam.amazonaws.com/role: arn:aws:iam::490759768946:role/sdi-bobs-production-feeds-upc
+      iam.amazonaws.com/role: arn:aws:iam::490759768946:role/sdi-bobs-production-reaction-job-sftp-to-radial-upc
     imagePullSecret: reaction-docker-hub
     image:
       repository: sportsdirect/reaction-cron-jobs
-      tag: sftp-to-radial-8dd1e8a4fb928a935524c014e387cd30ac10152b
+      tag: sftp-to-radial-8e81554539d23ffa57c6fa0d74657b414249ada9
     schedule: "15 2 * * *"
     config:
       s3BucketName: sdi-bobs-production-feeds-upc
       sftpPassword: >-
         AgDEP2VKigQ/z1n1tzcYZb9P9rz7mXfGklld1x+wKtnNzWAYaJ/V8oZp8ZxOP1/gx5bRWHldc61ModooLhlaxFsbAnbr7ai7WIycd3HRv4F3tFwqmypKsRF6vYjscmgtBUZjGuvn0W7xjF2gVfxhxlcctnWZ1t7nXjpoSnP50Hzi3E0RowlZfBgotQpbBcxYUTZdiitovi1bXbXEBFokX2NvzdwbL2LFl/b9U+vuWbuiT+JeGz0raz5KfdI0qEXRAEN1I4m+TG652zwLwJCZk5cp3CyMfan911hVB/Iy9UTXvzUXzyu3roPH9C9BWZifNgnsDjWyFmtMaJIfGwLkm4vEXEqeGhrlplAI1sJ8kCAnqa0awxNxacaVqZUqSj72KSD49QXqu6qAFWR2NmL3QhmqbcyAGrmMubkL9dCCQD3AwffmII8y8Ea3fn+4O5+JBoCDTe12hCiRAeiEgy2rLbmOr/25/0n5GsWJmA49uwt+Sawo/jdl4oyeKfN9f7DaJXuvQbrXb1DZ/LH4DF081zCIhlm7V+0pDkJdR00rlQXrJLawTstRVQ1JpSA1QxOIhm9b02UlHV+1h6Xy0o81EB99yXdmgWenOVCDHdLGRE3x7vEhlVjw9xHNMt+rlw9SB93zigMvZ+Tj0QaQAGTBUB2D4km7XJTdwx6N/AOuqhveCD8dzdbyYcy9CiPYsxMdbOaONMzfiTV0xXzk
-      sftpDestinationFolder: /inbound/upc
+      sftpDestinationFolder: inbound/upc
+      sftpKexAlgorithmOptions: -oKexAlgorithms=diffie-hellman-group-exchange-sha1,diffie-hellman-group1-sha1
     resources:
       requests:
         memory: 256Mi

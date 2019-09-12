@@ -15,3 +15,6 @@ data:
   SFTP_HOMEDIR: {{ required "config.sftpHomedir not defined." .Values.config.sftpHomedir | quote }}
   SFTP_USERNAME: {{ required "config.sftpUsername not defined." .Values.config.sftpUsername | quote }}
   SFTP_DESTINATION_FOLDER: {{ required "config.sftpDestinationFolder not defined." .Values.config.sftpDestinationFolder | quote }}
+{{ if .Values.config.sftpKexAlgorithmOptions }}
+  SFTP_KEX_ALGORITHM_OPTIONS: {{ .Values.config.sftpKexAlgorithmOptions | quote }}
+{{ end }}
