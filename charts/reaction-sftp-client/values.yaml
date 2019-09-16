@@ -1,0 +1,17 @@
+annotations: {}
+config:
+  # sftpClientSource: s3://bucket/location
+  # sftpClientTarget: sftp://hostname/location
+  # sftpClientUsername: login
+  # sftpClientPassword: <encrypted-string>
+image:
+  tag: latest
+  repository: 816897914983.dkr.ecr.us-east-1.amazonaws.com/reaction-sftp-client
+resources:
+  requests:
+    memory: 15Mi
+    cpu: 5m
+  limits:
+    memory: 200Mi
+    cpu: 250m
+schedule: "0 0 * * *"
