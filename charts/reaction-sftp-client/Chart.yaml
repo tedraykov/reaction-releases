@@ -1,0 +1,13 @@
+apiVersion: v1
+description: SFTP Client for Radial data uploads
+name: reaction-sftp-client
+version: 1.0.0
+keywords:
+- sftp
+- radial
+home: https://github.com/sportsdirect/reaction-sftp-client
+sources:
+- https://github.com/sportsdirect/reaction-sftp-client
+maintainers:
+- name: Reaction Commerce
+  email: admin@reactioncommerce.com

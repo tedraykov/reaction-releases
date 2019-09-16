@@ -1,0 +1,15 @@
+{{- $fullName := include "reaction-sftp-client.fullname" . -}}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ $fullName }}
+  labels:
+    app.kubernetes.io/name: {{ include "reaction-sftp-client.name" . }}
+    app.kubernetes.io/component: sftp
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+    helm.sh/chart: {{ include "reaction-sftp-client.chart" . }}
+data:
+  SFTP_CLIENT_SOURCE: {{ required "config.sftpClientSource not defined." .Values.config.sftpClientSource | quote }}
+  SFTP_CLIENT_TARGET: {{ required "config.sftpClientTarget not defined." .Values.config.sftpClientTarget | quote }}
+  SFTP_CLIENT_USERNAME: {{ required "config.sftpClientUsername not defined." .Values.config.sftpClientUsername | quote }}
