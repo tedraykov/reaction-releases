@@ -17,6 +17,7 @@ config:
   pricebookIdPerm: bobs-usd-perm-prices
   pricebookIdRetail: bobs-usd-retail-prices
   pricebookIdSale: bobs-usd-sale-prices
+  pricebookIdMember: bobs-member-pricing
 #  siteCode: BOBS
 #  storefrontBaseUrl: https://storefront.bobs-test.io
 
