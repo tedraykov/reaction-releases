@@ -26,5 +26,6 @@ data:
   PRICEBOOK_ID_PERM: {{ required "config.pricebookIdPerm not defined." .Values.config.pricebookIdPerm | quote }}
   PRICEBOOK_ID_RETAIL: {{ required "config.pricebookIdRetail not defined." .Values.config.pricebookIdRetail | quote }}
   PRICEBOOK_ID_SALE: {{ required "config.pricebookIdSale not defined." .Values.config.pricebookIdSale | quote }}
+  PRICEBOOK_ID_MEMBER: {{ required "config.pricebookIdMember not defined." .Values.config.pricebookIdMember | quote }}
   SITE_CODE: {{ required "config.siteCode not defined." .Values.config.siteCode | quote }}
   STOREFRONT_BASE_URL: {{ required "config.storefrontBaseUrl not defined." .Values.config.storefrontBaseUrl | quote }}
