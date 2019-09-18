@@ -14,7 +14,7 @@ spec:
       iam.amazonaws.com/role: arn:aws:iam::225761155017:role/sdi-bobs-staging-reaction-job-sftp-to-radial-ocf
     fullnameOverride: reaction-sftp-to-radial-ocf
     image:
-      tag: adda55f
+      tag: 9105c00
     schedule: "0 5 * * *"
     config:
       sftpClientPassword: AgCR5/vKtG7/96jRpTN1n4t7RIe0Q+LseTIjECqfqVgaiv4nssM561z/HYkFff0HKRp7bBSv/eMjywUmCqjPHFkQGQdyvrxt2sZblv6CdM/ZZ4oshk0uF8bieeJIUbsuXNFEi3GdsYXmVW10e74fFnMAyHs0AbU4KG4gNNM8qiTJnNtO5kthR41+VDCaY/b+6aked+nT6wx5Pt9+L3+Uxpv2xzWU18YtDo7mttgy8I8Dx8DtUoj09XZDIKIFTeGu48qOkNzb8VXlbrTZFGf6qJ3JVS8QVZ7dC4qAGVt0H9YwkzyS5avqNrDJi++Kc47BdtEv751p+5J6dBJViianZMnY+Zcs8mxCfrcQ3Q4kVa8c1RYIT3F/gBU70A/LJ41iYGT/2qLIxGvEMxiAvC/Rfl8AkVpDT5UUSiuFZqYnC+U7/y/3AzAyvOryTYAF590tLZ1nhiaCG5JeWEeKbfd31fOPnDNdaAEuT3mb7jtfmCsicmpvu/at0jrp2EfMhet890BlNQUWRT3nrk0B/zt4dxbXSkzWfIcRiCTdoFsgWLYvJ+3+VXYCMwbRBPMMpz12D/A/pNi7gSBV8t8vBMaYQJz3l28/u/CCq60AVWtJaMBJKdFbEwZ478dlIEIkbwuY8ffCm5aaps7RpbK+2ug6axwcXZgbN61u5K37IsORI6oC9PBIv6rGbZE3pgiyxGaBsRncumL5LLjogDvI
