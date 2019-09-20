@@ -14,7 +14,7 @@ spec:
       iam.amazonaws.com/role: arn:aws:iam::490759768946:role/sdi-bobs-production-reaction-job-outbound-content-feed
     imagePullSecret: reaction-docker-hub
     image:
-      tag: 3d68ba5
+      tag: d0e62f9
     #schedule: "*/10 * * * *"
     schedule: "0 4 * * *"
     config:
