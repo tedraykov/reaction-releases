@@ -13,3 +13,6 @@ data:
   SFTP_CLIENT_SOURCE: {{ required "config.sftpClientSource not defined." .Values.config.sftpClientSource | quote }}
   SFTP_CLIENT_TARGET: {{ required "config.sftpClientTarget not defined." .Values.config.sftpClientTarget | quote }}
   SFTP_CLIENT_USERNAME: {{ required "config.sftpClientUsername not defined." .Values.config.sftpClientUsername | quote }}
+{{- if .Values.config.sftpClientDirectories }}
+  SFTP_CLIENT_DIRECTORIES: {{ .Values.config.sftpClientDirectories | quote }}
+{{- end }}
