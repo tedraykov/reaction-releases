@@ -12,8 +12,8 @@ spec:
   values:
     imagePullSecret: reaction-docker-hub
     image:
-      repository: reactioncommerce/reaction-search-toolbox
-      tag: "31befc43fcae33ae6e1a15c015e718b8aed3d20a"
+      repository: '893565362659.dkr.ecr.us-east-1.amazonaws.com/reaction-search-toolbox'
+      tag: '839e7ab154f53ea316df0522448c78d2a2bdc64b'
     config:
       rsDb: bobs-staging
       kafkaBootstrapServers: 'b-3.staging.d0bnhg.c2.kafka.us-east-1.amazonaws.com:9092,b-2.staging.d0bnhg.c2.kafka.us-east-1.amazonaws.com:9092,b-1.staging.d0bnhg.c2.kafka.us-east-1.amazonaws.com:9092'
