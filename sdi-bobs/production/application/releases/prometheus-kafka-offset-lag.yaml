@@ -2,7 +2,7 @@ apiVersion: flux.weave.works/v1beta1
 kind: HelmRelease
 metadata:
   name: prometheus-kafka-offset-lag
-  namespace: monitoring
+  namespace: production
 spec:
   releaseName: prometheus-kafka-offset-lag
   chart:
