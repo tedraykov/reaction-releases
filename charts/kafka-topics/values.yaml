@@ -85,6 +85,10 @@ topics:
   reaction.cdc.search.catalog.json-gen1:
     retention.ms: -1
     cleanup.policy: "compact"
+  
+  reaction.cdc.search.catalog2.json-gen1:
+    retention.ms: -1
+    cleanup.policy: "compact"
 
   # source: https://docs.confluent.io/current/connect/references/allconfigs.html#distributed-worker-configuration
   reaction.default-connect-config:
