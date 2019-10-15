@@ -11,7 +11,7 @@ metadata:
     helm.sh/chart: {{ $fullName }}
 data:
   CANONICAL_URL: {{ required "config.baseUrl not defined." .Values.config.baseUrl | quote }}
-  APPLEPAY_ASSOCIATION_DOMAIN: {{ required "config.baseUrl not defined." .Values.config.baseUrl | quote }}
+  APPLE_PAY_ASSOCIATION_DOMAIN: {{ required "config.baseUrl not defined." .Values.config.baseUrl | quote }}
 {{- if .Values.config.contentstack.enabled }}
   CONTENTSTACK_ACCESS_TOKEN: {{ required "config.contentstack.accessToken is not defined." .Values.config.contentstack.accessToken | quote }}
   CONTENTSTACK_API_KEY: {{ required "config.contentstack.apiKey is not defined." .Values.config.contentstack.apiKey | quote }}
