@@ -8,9 +8,11 @@ spec:
   chart:
     git: git@github.com:sportsdirect/sdi-releases.git
     path: charts/reaction-storefront
-    ref: develop
+    ref: feature/apple-pay
   values:
     config:
+      applePayMerchantId: merchant.staging.bobstores
+      applePayMerchantCertificatePassphrase: AgCdxYYMk7WJhLUm+QF0U9ZWWro5AzYrxZIceGp0VjBZ4k0EbAMrFgCPKKVgVbee4AhTjho06D1ezieHr9M5Qz5mwsv1NFeeMaU09JlcNFMGkT4QcqYUitUVa/X3Lcv2sC5l3Q/L7TYauE7LeMlxyh8pkB9JyfPL8H65wUY83d3dsJCASlpa9+zW+Lb/+Gk+QtuVJ3C42UmMqVnTwqFsxkjuJmzrPJx/S0Br4wpS84z65ySUwtzdEydA7f/WHZoyCDhc9xIVPlXxRxaBfbumyMSd4Ndy5mcO/yHZCaBw+AgspYZNisqlJMN98/aVOs1GGMU/zF6Gn8tKrdgR3UCsv3SWepCM95mDaBwydh5yKsto0Ev1WNlLNZ7O7HZRpeOtfnVgvGnciIcp96T+CkufAuDLl+oeSZk8RkUF6SysrAZu8e7fQgfI+G7TKGo/76sxSgrcHXcYL3G9L8wJfBOehmDSanrf3ssJQiLQ2/pkGsm4b7Pd62DPBxc/DjWDpPTquxrH8k5YQjbFsHbso8asluHFJiHxY4K6bBRlU+1zmNYlYaSxbGHrVtKPOuQuckzYmYieDqYHXSmOEDd7UiLxCaEBjNbWsaWScmAAMv50hgPLDMKR3KtnAd9uMA0kUAYzkVcCQIpSYCAQbhTgMaww7+Boa2YiYtdQEshwDZ34/R1Y1cfpLJjJnmPBTlBmJN3OstMd1aCcCdzq+Yp+b6g1ScfV
       baseUrl: https://staging.bobs-test.io
       cloudinary:
         name: bobstores-dev
