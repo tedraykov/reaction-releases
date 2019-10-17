@@ -1,0 +1,32 @@
+apiVersion: flux.weave.works/v1beta1
+kind: HelmRelease
+metadata:
+  name: reaction-search-toolbox-v2
+  namespace: staging
+spec:
+  releaseName: reaction-search-toolbox-v2
+  chart:
+    git: git@github.com:sportsdirect/sdi-releases.git
+    path: charts/reaction-search-toolbox
+    ref: develop
+  values:
+    imagePullSecret: reaction-docker-hub
+    image:
+      repository: reactioncommerce/reaction-search-toolbox
+      tag: "31befc43fcae33ae6e1a15c015e718b8aed3d20a"
+    config:
+      rsDb: bobs-staging
+      rsElasticUrl: https://vpc-staging-storefront-jeko6lvexsm3iengavybl2caxe.us-east-1.es.amazonaws.com:443
+      kafkaBootstrapServers: 'b-3.staging.d0bnhg.c2.kafka.us-east-1.amazonaws.com:9092,b-2.staging.d0bnhg.c2.kafka.us-east-1.amazonaws.com:9092,b-1.staging.d0bnhg.c2.kafka.us-east-1.amazonaws.com:9092'
+      rsKafkaConnectUrl: http://reaction-kafka-connect:8082
+      rsMongoUrl: >-
+        AgBuqymnPT+V4N7oeZncRb+fSyszW7+txaLZ+1dTU2BrWE1mWMkEcG+oPlUN1KLLEj3znZ9W3lzbG3T0RvSseTCzUtwG8KXOjZALV6RNQdtme9BpNXjSbRhNzY0gktabew3KUsw1NqQD/a775CGJapuIXrYGpajRB0jNA0AxbbYyjzRdGgGo+EydTJmHF1tEe+cmWB7NvANhPwt4WbJME53cda1md2TU8nHc4GdCQS0Vxm98uQd8J+V2ATpqDv2jAwM9t9BDwp2Y1wiIICE2zD1R8taxp6mJmkQimV3Y8DMA4P3nu0mwb9umAo4m99ya+LjZJbUOLBjoWGt4BIpTgr+x4Fto8OOcVU5yHokCVa/SMMj5HUIgy+pXH+P5RjHgsMbZo9JT9EKa8AsG4aAjj9TGkpTZSytdb/rTP2NQr34IWOK6Vu7r3hKACQiE3p995P3jbAyA2o9LlOBmdF1U3n1Hyw+BJ0Ec/SeVq3TORzTyYlLy5qi978gF6gmXB7UvHi3zwC2HyMaK024W4zxOu0UyShaquGWrYVRHE6djEBHXFo09kjAmHnV3ryk0nbfCF8V33BpMvlPy44ag8rEvS9UtEOKM6ROLDjyE8oZCrm3oZeJf8kx2wXjkbDhs7zseS9npn+guBUr/lcx2UyfVPpzgalx698lTyVzH7nH4c5uC6yCgVPpMHiEyiCz7f+huT/mpcaSnh4u7AK44+c8J3x47aLcQCg+e59hw/mX5Y/L+L5QKP273CX6OmQl9Q/uoavQkeeGOhAwMv7z1Rnbg7MXgt2ltMAL3u8nX9CFgtrEdlIJ+tpt924KJQtCWr77ZahFGvjI76sJD2l2QjG9iWNDFtNXYAPta4SqfVEQHjQiUVmHhPyZnDgsXC/XcUA0AYwMYZc3WjA/Ux4YfocY6kOXM4256o3G9ISBkWRyAbC51LDM+xVGgv8QSMRPWbtjYHejcTy1y8/mveA3KMfYFvTlT7MHSQEHuvjmG6gapn6l2K5DQAWAoA1hIURSA7oWA+uFGd+2z/Q==
+      rsZookeeper: "172.17.22.66:2181,172.17.21.238:2181,172.17.23.37:2181"
+    resources:
+      requests:
+        memory: 1Gi
+        cpu: "1"
+      limits:
+        memory: 2Gi
+        cpu: "2"
+    #ttlSecondsAfterFinished: 86400000
