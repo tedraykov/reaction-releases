@@ -22,7 +22,7 @@ spec:
       - name: reaction-docker-hub
     config:
       connectBootstrapServers: 'b-3.staging.d0bnhg.c2.kafka.us-east-1.amazonaws.com:9092,b-2.staging.d0bnhg.c2.kafka.us-east-1.amazonaws.com:9092,b-1.staging.d0bnhg.c2.kafka.us-east-1.amazonaws.com:9092'
-      connectRestAdvertisedHostName: kafka-connect-staging.bobs-test.io
+      connectRestAdvertisedHostName: reaction-kafka-connect-v2
     resources:
       requests:
         memory: 2Gi
