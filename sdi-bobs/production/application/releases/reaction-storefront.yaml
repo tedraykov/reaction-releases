@@ -19,6 +19,7 @@ spec:
         accessToken: cs0bda4ea9bca9d324578a2b25
         apiKey: blt1f2a37a50d4512f7
         environment: production
+      elasticsearchUrl: https://vpc-production-storefront-t66vs7c76yhn5ajh7omlrumajy.us-east-1.es.amazonaws.com:443
       graphql:
         introspectionEnabled: true
         playgroundEnabled: true
