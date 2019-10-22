@@ -58,19 +58,7 @@ CERTIFICATE := public.pem
 #:
 .PHONY: encrypt-string
 encrypt-string:
-	read -s SECRET_VALUE;\
-	kubectl create secret generic kubeseal\
-	    --dry-run\
-	    --output json\
-	    --namespace $(NAMESPACE)\
-	    --from-literal=value=$${SECRET_VALUE}\
-	|kubectl annotate secret kubeseal\
-		--dry-run\
-		--filename /dev/stdin\
-		--local\
-		--output json\
-		"sealedsecrets.bitnami.com/cluster-wide=true"\
-	|kubeseal --cert $(CERTIFICATE)|jq -r .spec.encryptedData.value
+	kubeseal --cert $(CERTIFICATE) --namespace $(NAMESPACE) --raw --from-file /dev/stdin --scope cluster-wide
 
 #:README.md
 #:---------
