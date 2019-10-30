@@ -51,6 +51,9 @@ tolerations: []
 affinity: {}
 
 config:
+#  applePayMerchantCertificatePassphrase: <encrypted-string>
+  applePayMerchantCertificatePath: /etc/reaction-storefront/certs/apple-pay-merchant-id.pem
+#  applePayMerchantId: XXX
 #  baseUrl: https://www.example.com/
 #  elasticsearchUrl: http://elasticsearch:9200
   contentstack:

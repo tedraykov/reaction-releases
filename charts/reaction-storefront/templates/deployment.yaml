@@ -4,16 +4,16 @@ kind: Deployment
 metadata:
   name: {{ $fullName }}
   labels:
-    app.kubernetes.io/name: {{ $fullName }}
+    app.kubernetes.io/name: {{ include "reaction-storefront.name" . }}
     app.kubernetes.io/component: frontend
     app.kubernetes.io/instance: {{ .Release.Name }}
     app.kubernetes.io/managed-by: {{ .Release.Service }}
-    helm.sh/chart: {{ $fullName }}
+    helm.sh/chart: {{ include "reaction-storefront.chart" . }}
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      app.kubernetes.io/name: {{ $fullName }}
+      app.kubernetes.io/name: {{ include "reaction-storefront.name" . }}
       app.kubernetes.io/instance: {{ .Release.Name }}
   template:
     metadata:
@@ -25,7 +25,7 @@ spec:
         {{- end }}
 {{- end }}
       labels:
-        app.kubernetes.io/name: {{ $fullName }}
+        app.kubernetes.io/name: {{ include "reaction-storefront.name" . }}
         app.kubernetes.io/instance: {{ .Release.Name }}
     spec:
       containers:
@@ -55,6 +55,12 @@ spec:
               httpHeaders:
               - name: Kube-Readiness
                 value: "1"
+{{- if .Values.config.applePayMerchantId }}
+          volumeMounts:
+            - name: certs
+              readOnly: true
+              mountPath: /etc/reaction-storefront/certs
+{{- end }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
@@ -69,3 +75,10 @@ spec:
       tolerations:
         {{- toYaml . | nindent 8 }}
     {{- end }}
+{{- if .Values.config.applePayMerchantId }}
+      volumes:
+        - name: certs
+          secret:
+            secretName: {{ $fullName }}-certs
+            defaultMode: 256
+{{- end }}

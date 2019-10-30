@@ -1,3 +1,4 @@
+{{- if .Values.config.sentry.enabled }}
 {{- $fullName := include "reaction-storefront.fullname" . -}}
 apiVersion: batch/v1
 kind: Job
@@ -26,11 +27,20 @@ spec:
         - name: {{ .Chart.Name }}-notify-sentry
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
-          envFrom:
-            - configMapRef:
-                name: {{ $fullName }}
-            - secretRef:
-                name: {{ $fullName }}
+          env:
+            - name: SENTRY_AUTH_TOKEN
+              value: {{ required "config.sentry.authToken not defined" .Values.config.sentry.authToken | quote }}
+            - name: SENTRY_SOURCEMAP_TOKEN
+              value: {{ required "config.sentry.sourcemapToken not defined" .Values.config.sentry.sourcemapToken | quote }}
+            - name: SENTRY_DSN
+              value: {{ required "config.sentry.dsn not defined" .Values.config.sentry.dsn | quote }}
+            - name: SENTRY_ENV
+              value: {{ required "config.sentry.environment not defined" .Values.config.sentry.environment | quote }}
+            - name: SENTRY_ORG
+              value: {{ required "config.sentry.org not defined" .Values.config.sentry.org | quote }}
+            - name: SENTRY_PROJECT
+              value: {{ required "config.sentry.project not defined" .Values.config.sentry.project | quote }}
           command:
             - yarn
             - sentry:deploy
+{{- end }}

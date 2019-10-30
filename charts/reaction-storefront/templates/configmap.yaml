@@ -12,6 +12,8 @@ metadata:
 data:
   CANONICAL_URL: {{ required "config.baseUrl not defined." .Values.config.baseUrl | quote }}
   APPLE_PAY_ASSOCIATION_DOMAIN: {{ required "config.baseUrl not defined." .Values.config.baseUrl | quote }}
+  APPLE_PAY_MERCHANT_CERTIFICATE_PATH: {{ required "config.applePayMerchantCertificatePath not defined." .Values.config.applePayMerchantCertificatePath | quote }}
+  APPLE_PAY_MERCHANT_ID: {{ required "config.applePayMerchantId not defined." .Values.config.applePayMerchantId | quote }}
 {{- if .Values.config.contentstack.enabled }}
   CONTENTSTACK_ACCESS_TOKEN: {{ required "config.contentstack.accessToken is not defined." .Values.config.contentstack.accessToken | quote }}
   CONTENTSTACK_API_KEY: {{ required "config.contentstack.apiKey is not defined." .Values.config.contentstack.apiKey | quote }}

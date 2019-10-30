@@ -1,7 +1,8 @@
+{{- $fullName := include "reaction-storefront.fullname" . -}}
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ include "reaction-storefront.fullname" . }}
+  name: {{ $fullName }}
   labels:
     app.kubernetes.io/name: {{ include "reaction-storefront.name" . }}
     app.kubernetes.io/component: frontend
