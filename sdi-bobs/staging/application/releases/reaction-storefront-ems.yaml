@@ -20,7 +20,7 @@ spec:
         domain: res.cloudinary.com
       contentstack:
         accessToken: csb02ca017686e318f87dff41b
-        apiKey: blt1f2a37a50d4512f7
+        apiKey: blt7841d2a593726d96
         environment: staging
       elasticsearchUrl: https://vpc-staging-storefront-jeko6lvexsm3iengavybl2caxe.us-east-1.es.amazonaws.com:443
       mapboxToken: pk.eyJ1IjoianBoaWxvIiwiYSI6ImNqeHFlZHRkaDAwM3YzaXMwenNvZmcyYXYifQ.pEVH_imRqxqTjdpIcuiRBg
