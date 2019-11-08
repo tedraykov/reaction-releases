@@ -10,11 +10,6 @@ spec:
     path: charts/reaction-core
     ref: develop
   values:
-    horizontalPodAutoscaler:
-      enabled: true
-      averageUtilization: 70
-      min: 1
-      max: 1
     image:
       repository: docker.io/sportsdirect/reaction
       tag: 8aeb09772dd6aae720715d8a4579ce6113171f58
@@ -56,5 +51,9 @@ spec:
         AgC97PM95eXqz7eYgQ2lJhGnAh9h5FD+kOChQRA7RN0j5lTO9y5NSieuYUY91dk04gkLvgH8jheeFNueKNYxILXmyHJ2F1QvsLCUjcctXa470BM0iWrgFO2pFyWf+o0fA/ft1czGFRH4V197jy156hJWhPGJlyP3d9K8CQ62tgtpHsc/lxniP6we9yTkqLGNuh3pyS539qg4qcCmvhsMz+KN7qbNOE6WTi7m26BTW/tslZUCdIA2gzRskkgebkf5ELCiP/bdt4pIAuBn2QlDEQFtOvFoc7mV2Ut1UATdwh68YhH1voImOgtaJMPIQd1/Si0vuXZGdqI7sVyMOfmoo98hV1b/oli2UTWWRh+6NlzhZrshJqtnKvMd1CCQbUjnP4JkIbwlKn1moezQN+SdBPwBK7s5lRkDvkqYzKSBD0uw5etb3o6l+SfFmBTaoDxes1zDGf0VdMLmSYgB+dPgIbyFg79hUJ18/8DJC8aI0DjQWBrWrG+P096ZW/jXzdyISRaUBaIKYAJNJ+fXco+opoUxLkclWMwJ3O6D1OVo5qgSj9uNz3qZzAcUh1aDosieW9TZLW4KDMgj5n1OFonRqGdd2pLMnocG+zZfBKtdL6kGjWRrup/Qt4XgWjp04EG75XJM+FgG/5aNWA7eyroLAfplaQYVqNTKMjEOi0zJoP96xjrg7IJpdUO1Uhdyt3uI/Yq+OefEA0zc0g==
       reactionEmail: >-
         AgC13IY+rwcLx2F9R376WEPYrQ/o4/XGMljHuQLJ/Op7IL3SnwjnVMSXv3ZPnPm864bYS4OslfNU1TQZr9t5s2B2ZqFjaBLA9jcXJ5EBL0YkE/euD+OxRFzptYwjRID21xWgCNroy7rtQ1ngxtJRMA3+eiaXWWZlW9MOwyXCdjCo2sX2dYVow+M63/DrY1FkMMPGSEb3uLR30Lrqgi0lM6UFFbQCzxfYyFxAJbSvVis7TE/5Rpff5ef2SSp1avYqDDye4MLy+vTbbkZiSovsJTiw0g2tUwYZ5r701dkHlGxnAUiZ2o4fKYMq/FUpVNqXNvZzNQfuePKN66jDrd0N+ys1NNb+d5PVaQ159Dtka2y0TvKuM57R7X775xxCTNZI0S+ZRHnrJfS4nJCkE5+UzYn0t/yVtGtiU17iPl5n3Y/E6GGgpTE6HB0tixPgjHgn6rxOGhWESNQRH9+ftj8RoB3dX8DnJ/OI0qgKf22dKWDc+I+ekuC559AxEX5S/zU2YoDexSu1Uws12ODN7/aomNbn82a6dFy9UTlzGNbnFpcLBu14WTXFvXndRQFBQ6JMj5pOTFFdIGBl9+0xNNSULRJbs8ktvpo7qvGTLR39t7VMIEym+LPw7PF94yR3xDuPas1aRHTbgNDJ5bYD9a5ykEDuzyjWtIVo4zRpHtxx+8BLWZ1ZgYCjBnWAjJs/NDzQC8VSGPMi2PZVSwm9/nb+KcI=
+      resources:
+        limits:
+          cpu: 2
+          memory: 8Gi
       rootUrl: https://api.bobstores.com
       siteCode: BOBS
