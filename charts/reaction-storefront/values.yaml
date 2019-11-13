@@ -58,7 +58,7 @@ config:
 #  elasticsearchUrl: http://elasticsearch:9200
   contentSecurityPolicy:
     # policy: default-src *
-    reportOnlyPolicy: default-src *; script-src 'self' 'unsafe-inline' https://cdn.segment.com https://www.google-analytics.com https://p.bm23.com https://static.criteo.net https://connect.facebook.net https://www.googletagmanager.com https://www.snapengage.com https://cdn.merklesearch.com https://cdn.avmws.com https://snip.bronto.com https://widget.us.criteo.com; style-src 'unsafe-inline'; img-src *; font-src *
+    reportOnlyPolicy: default-src *; script-src 'self' 'unsafe-inline' https://storage.googleapis.com https://sslwidget.criteo.com https://cdn.segment.com https://www.google-analytics.com https://p.bm23.com https://static.criteo.net https://connect.facebook.net https://www.googletagmanager.com https://www.snapengage.com https://cdn.merklesearch.com https://cdn.avmws.com https://snip.bronto.com https://widget.us.criteo.com; style-src 'unsafe-inline'; img-src *; font-src *
   contentstack:
     enabled: true
     # accessToken: XXX
