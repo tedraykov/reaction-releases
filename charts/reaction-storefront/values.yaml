@@ -56,6 +56,9 @@ config:
 #  applePayMerchantId: XXX
 #  baseUrl: https://www.example.com/
 #  elasticsearchUrl: http://elasticsearch:9200
+  contentSecurityPolicy:
+    # policy: default-src *
+    reportOnlyPolicy: default-src *; script-src 'self' https://cdn.segment.com https://www.google-analytics.com https://p.bm23.com https://static.criteo.net https://connect.facebook.net https://www.googletagmanager.com https://www.snapengage.com https://cdn.merklesearch.com https://cdn.avmws.com https://snip.bronto.com https://widget.us.criteo.com
   contentstack:
     enabled: true
     # accessToken: XXX

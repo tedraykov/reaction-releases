@@ -14,6 +14,14 @@ data:
   APPLE_PAY_ASSOCIATION_DOMAIN: {{ required "config.baseUrl not defined." .Values.config.baseUrl | quote }}
   APPLE_PAY_MERCHANT_CERTIFICATE_PATH: {{ required "config.applePayMerchantCertificatePath not defined." .Values.config.applePayMerchantCertificatePath | quote }}
   APPLE_PAY_MERCHANT_ID: {{ required "config.applePayMerchantId not defined." .Values.config.applePayMerchantId | quote }}
+{{- if .Values.config.contentSecurityPolicy.policy }}
+  CSP_POLICY: {{ .Values.config.contentSecurityPolicy.policy | quote }}
+  CSP_POLICY_REPORT_URI: {{ required "config.contentSecurityPolicy.policyReportUri is not defined." .Values.config.contentSecurityPolicy.policyReportUri | quote }}
+{{- end }}
+{{- if .Values.config.contentSecurityPolicy.reportOnlyPolicy }}
+  CSP_REPORT_ONLY_POLICY: {{ .Values.config.contentSecurityPolicy.reportOnlyPolicy | quote }}
+  CSP_REPORT_ONLY_POLICY_REPORT_URI: {{ required "config.contentSecurityPolicy.reportOnlyPolicyReportUri is not defined." .Values.config.contentSecurityPolicy.reportOnlyPolicyReportUri | quote }}
+{{- end }}
 {{- if .Values.config.contentstack.enabled }}
   CONTENTSTACK_ACCESS_TOKEN: {{ required "config.contentstack.accessToken is not defined." .Values.config.contentstack.accessToken | quote }}
   CONTENTSTACK_API_KEY: {{ required "config.contentstack.apiKey is not defined." .Values.config.contentstack.apiKey | quote }}
@@ -51,6 +59,7 @@ data:
   SENTRY_SOURCEMAP_TOKEN: {{ required "config.sentry.sourcemapToken not defined" .Values.config.sentry.sourcemapToken | quote }}
   SENTRY_DSN: {{ required "config.sentry.dsn not defined" .Values.config.sentry.dsn | quote }}
   SENTRY_ENV: {{ required "config.sentry.environment not defined" .Values.config.sentry.environment | quote }}
+  SENTRY_KEY: {{ required "config.sentry.key not defined" .Values.config.sentry.key | quote }}
   SENTRY_ORG: {{ required "config.sentry.org not defined" .Values.config.sentry.org | quote }}
   SENTRY_PROJECT: {{ required "config.sentry.project not defined" .Values.config.sentry.project | quote }}
 {{- end }}

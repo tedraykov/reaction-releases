@@ -18,6 +18,9 @@ spec:
       cloudinary:
         name: bobstores
         domain: res.cloudinary.com
+      contentSecurityPolicy:
+        policyReportUri: https://sentry.io/api/1397837/security/
+        reportOnlyPolicyReportUri: https://sentry.io/api/1397837/security/
       contentstack:
         accessToken: cs0bda4ea9bca9d324578a2b25
         apiKey: blt1f2a37a50d4512f7
@@ -45,6 +48,7 @@ spec:
         enabled: true
         dsn: https://4f005e6157cf4e91b12a2dba72c188ba@sentry.io/1397837
         environment: production
+        key: 4f005e6157cf4e91b12a2dba72c188ba
         project: bobs
       sessionSecret: AgBjpLp6G+belJSMxxhwqaq3boEUypQrcJe5+4GHtK6IJWvXSqRkLF/2Z+McJWPhPmwTx5H6L76c/eVKJX42y+KRK0xFXY17078pXv7DIuBgh5kzFh7mR7vwze2NgVUfhpdf6K9O3Y0Vg0DgxPkxKJdrUHYhJvfiZ+0q6om6mKmKk7tNE1IFJN2IGNzSS2KjXU2665I0tuHNOKpzI9cCk4nqaNYwd7HRFFIORkOCds2dvCG1ugAsBpSVTgJhLPYnmxpyN3C58X5cRV7+1gqsKvcPVHTsaIQb+raFRuE96AufoTrQeF9I65+MOiUGSGNhHrvLcn3qzA4MdD0KauIs1KN3MNBdNERwB2dxvImTwLgjG75fNxlHEeC6B6/HrqnWhTEJ+2Ve9fsP6THeAFYbZJfCv01RbYYSGgWW05U1wN87FcKwD74zKJLzyHC+yQkO7oBq9wqw+/Do28ylepSdEOBlrkk3DO/d8PaELoZwozQbhdfk0X+7dPpNMtc91u3kiRCPYYtfpwIZVl8iLJfQo4Le8M9g15dNFvo+Lc3JdXviMuBowCPG/K2zgvjPu1qfwlxk3UQwZkqwbugK96qhflO12MjI2ONzoCxSh1Gm3/CWHHh3Y/XECkHuFzxXmt3uk9ry4GNTV8Zvy0KA7KV6/sPCNch3qw/CUdX08F7vld4STK8YP44xyk/NW3ys5wDpGNJvcbsPaiLRLWjdbOzkVkcARZ/O2Un92wlCeH8=
     horizontalPodAutoscaler:
