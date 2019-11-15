@@ -28,6 +28,7 @@ def valid_namespaces():
         'kube-system',
         'logging',
         'monitoring',
+        'serverless',
     ]
 
 class HelmReleaseMetadata(object):
