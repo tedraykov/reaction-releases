@@ -34,9 +34,9 @@ spec:
         idpHostUrl: https://api-staging.ems-test.io/
         redirectUrl: https://staging.ems-test.io/callback
       radial:
-        clientId: EMS
+        clientId: EMSUS
         mode: sandbox
-        rdfUrl: https://rdf.radial.com/rdf/service/scripts?clientIdentifier=EMS
+        rdfUrl: https://rdf.radial.com/rdf/service/scripts?clientIdentifier=EMSUS
       segmentAnalytics:
         enabled: true
         writeKey: oTm3YQxgfc6udco67OFJDumcfUX2fCU2
