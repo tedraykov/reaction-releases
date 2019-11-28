@@ -17,6 +17,7 @@ def yaml_files():
 @pytest.fixture
 def valid_api_versions():
     return [
+        'helm.fluxcd.io/v1',
         'flux.weave.works/v1beta1',
     ]
 
