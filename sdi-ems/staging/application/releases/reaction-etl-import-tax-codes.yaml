@@ -1,0 +1,24 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: reaction-etl-import-tax-codes
+  namespace: serverless
+spec:
+  releaseName: reaction-etl-import-tax-codes
+  chart:
+    git: git@github.com:sportsdirect/sdi-releases.git
+    path: charts/serverless-deploy
+    ref: develop
+  values:
+    annotations:
+      iam.amazonaws.com/role: arn:aws:iam::551763058466:role/sdi-ems-staging-serverless-deploy
+    environment:
+      JAEGER_ENDPOINT: http://jaeger-collector.staging.k8s.ems-test.io:14268/api/traces
+      KAFKA_PARTITIONS: 3
+      KAFKA_TOPIC_IMPORT_TAX_CODES_TAXCODES: etl.import-tax-codes.tax-codes.json-gen1
+      REACTION_LOG_LEVEL: INFO
+      SITE_CODE: EMS
+      SKIP_INVOCATION: false
+    package:
+      name: reaction-etl-import-tax-codes
+      version: a851828
