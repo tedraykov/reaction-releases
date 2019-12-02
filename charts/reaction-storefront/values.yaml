@@ -97,6 +97,7 @@ config:
     #  environment: staging
     org: sportsdirect
     #  project: XXX
+  tagAttributesReportEnabled: false
 
 horizontalPodAutoscaler:
   enabled: false
