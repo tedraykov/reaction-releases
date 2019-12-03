@@ -13,11 +13,11 @@ spec:
     config:
       OAUTH2_CONSENT_URL: https://api-staging.bobs-test.io/consent
       OAUTH2_LOGIN_URL: https://api-staging.bobs-test.io/login
-      OAUTH2_ISSUER_URL: https://auth2-staging.bobs-test.io
+      OAUTH2_ISSUER_URL: https://auth-staging.bobs-test.io
     ingress:
       enabled: true
       hosts:
-        - host: auth2-staging.bobs-test.io
+        - host: auth-staging.bobs-test.io
           paths: ['/']
     initContainer: true
     maxUnavailable: 1
