@@ -1,10 +1,10 @@
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
-  name: reaction-core-web
+  name: reaction-core-master-publisher
   namespace: staging
 spec:
-  releaseName: reaction-core-web
+  releaseName: reaction-core-master-publisher
   chart:
     git: git@github.com:sportsdirect/sdi-releases.git
     path: charts/reaction-core
@@ -12,17 +12,15 @@ spec:
   values:
     config:
       brontoAccessToken: AgCd2uViBmQY+YbrOPUVMWmkeb7I5W5nCaaTpzZWuGbZM55ZxBysH2V+zWlpGWPg4In5YQCyIs3Ih8ppmF1DmLkI4A5Jwk3KMsYAQ3eaMj9ZfsCv4J1Y4RA4CGX5qZJxh8a9zlsRthEHC6kdBWXSBwFNcqDeZwO8g+jaEDf9I7wQt/4d+NzCRak0+4wXwZdifpjuDD1XcSYuNEX6YC3uRF+y8gkmfTFq7Caj6/3VRihg7tmn+zmCx100/VE1Z/7SezdsIzkJ5t5/Wg1LRPlqYeqmjH34t/eISS7mNwe5XZ2ANx4uMi1OybWRYl2cdfCN/hXYdTxQ9wkmKOOdZyZRzyzV3YtEUxOVE+I6PoSoX6O/Nl1wZGPoskg/QtsvTuVH7PTUe5fXydhbrLnWS6E6TjCX9FF4Bg+5d/MOv6FZgr1k4Gu2EymeGWiWQVbBP+JQt5/7Z7302GArhAdMDmd8rPmcGzycosc3RgetI7KBo0QXhTmuY/Bu2wT+tKIsnkwFZ88Lse9uzqdzuOj3WlK2MEHj9LHzuTWJQH+yb6SXg8DUUd/x90gxirg+Yw+9LL71yV8+++vbIly9tT5hMk5I2Lc4PZTyzEwi/3MO649No+YLirBikW34Mgjct7nCw6QOZT6ORAHjH3oo1fWcKphXtsFDg2pzd3GJWki1VyShZuiGV+LAJIF05l7BOBtAedNNiz9ouQl0omdj9EbZzxH154aMbyJlI6/lfiZu4iPnV5CB2UUau7v9
+      constantPublisherMode: true
+      constantPublisherPauseSeconds: 300
       etcdUrl: http://etcd-application.internal.staging.k8s.ems-test.io:2379
-      graphqlIntrospectionEnabled: true
-      graphqlPlaygroundEnabled: true
       jaegerEndpoint: http://jaeger-collector.staging.k8s.ems-test.io:14268/api/traces
       kafkaBootstrapServers: 'b-3.staging.zby85f.c5.kafka.us-east-1.amazonaws.com:9092,b-2.staging.zby85f.c5.kafka.us-east-1.amazonaws.com:9092,b-1.staging.zby85f.c5.kafka.us-east-1.amazonaws.com:9092'
       kafkaCluster: 'b-3.staging.zby85f.c5.kafka.us-east-1.amazonaws.com:9092,b-2.staging.zby85f.c5.kafka.us-east-1.amazonaws.com:9092,b-1.staging.zby85f.c5.kafka.us-east-1.amazonaws.com:9092'
-      logLevel: 'debug'
       mongoOplogUrl: AgAvovp9JoPve6n8ccdHMqxjQomdxQm/uAfTJdkWzVAEoB9WP7tw+TKR2eqX1CJbwCSbBnUBUFDWob4Jvm8qcPi2zdVI2w4yg9AEwM0OGaIe4XhvjbGxIfm8lcJ83D8hVPy48Ls3B+VSmQgWQGOM0wC4dRQvLbl5bFpq4SaTq2N5WdeGLVdg2A6dwpe/b77wp0ee937Wt2wTa8n/ya59/dPXmLnDInrf/kEK5izn9BLIlK42dexuQU4/Gkt3kxXSdki2uyl5h0JIAM0EER4tJoFam8BAQXC4kLg4O4CGULeaN4ZSoglugMdYe5lGnulCLI8woHMqcgYiJyNOtGv29kjosaJOmbzrtQca7ZDk6vqOoylMubH3+m5g+Ni6tLGmhQgoR7zO/3hiw61zoUIgQLNBoAos0GFejmHItEntcoySoVaTSj4+SyZ/E0TzzpcEv9+u8vmpIyOEPbXrDQ+dKPpNECRpmAL9V65cXB530TAWo83tGLAh+6LnQOsgVtlK/v9lFB2e63gj6a340fqPWLuO7UASJaI4yhLlfSBv6okTqvKtcSybEx8b5UXVQ7Elol1ckUG0WKvidBUs6rNOR+vPIiINNEzbLBe4NbjdbY+bqWvw6MbHhiuMBUUMuKGu/X9A1dbZWie61ahbL8BqO49IQ6ZPoUTR5lDFRZMHWgaXH7hluAxE+KHzsAaQgebJZ+jKRdYcIsMXvmuzz8MIix3n6+ESQlU8Scrlqnj1PwQkBgtnHyPDviupZxcybvmIsLnj+6Og+/eWBA3U6OCRXtXBVMmibvW67X02XeZoGrj2Wr7ASYLEYQIUM9IabLHGPav8frBUqbeW/1zFzaxyp5Mr/QhQyHtG0hqaDiEP5R0qR/gJq2/XqmkB+a3z1BxkEHjvEirZEWr48ZLS6eeGxu32XtanFvDYvUoEPttNvQ2ZpgPkFsENIbUGM4O9yUGVJch4EJdIPcY4kbghsnA4Ibm7joShAFKulXsAyu0WzQeriN5poN+8nnTWTqomOSDoZ6VxusBu4NA=
       mongoUrl: AgCoYHLzyA474mjSXG+0IO3wbrzFxewHv5RdRifAwVzUnbCslzqukUW1WSRC/vt8aWk0xrKgiNzMS9rMa/iUBZnz0LO1cp61U3IeyIeXaNkcgN3DrgNFnNz8X2HJ/uLhiBMBIBrQUNr+QBD4JN8KKEb3Yg+mHkDLOrLyY/RDZo5gt8R7dTO2yuUuBjz8pqm0xD3qJKMfL+4zK0QoxW/oRCVjvfKOvDJCS+wvkA8WSOe6jWXAHEGJjaJReJmreuv67+o39ctrHFhNXwKMxIGSNgRl0h8DWav1TSb8jAZA+ncuyIn1NtrlKdjZdsR9xDDkG3MjzrO4IEsxcQwOpOFBvs1zF3xYwHvP0R1rT8lw+RjyLq6sfzZtOuPfIgIO4yqkxcV4r/f3iHhaSFCBGCLtqXVqCIx7rttyHWRYfGehWJJjxUBDVNyiyBC6OTknYLQTgDsqRyYH/t0k7HYfoe81EbJlwERCDBoiqKOMdhfYnqGANaKexZWAXbgi41Z+Ts7iwY/HA7sSvn9XUKPyhbw4HZ0P+N0mXZJUN95k0P33LSWnNKDqeXpjvKz4btN1QjwumJ1ZkSz/NsiLYt5Y31oKLq0km4eDjQZaveD1aqXSt6qwOVYzqZSac0xbWlELjSac0kE74hVM8qGKmh80xTzL6Sb9Vavv0WBm2TBkXnA3+yCvxylLmcDuZrtP7Wy/PxSuvKCAPKd+LwUDP6SoihGBpyjN4h2RGj9FUVg9XPEtl+CMdohBQ+tkURtIlshxwr2sooUN8DfqDUgCTz8LtCFrgfEvSLPZzKKBu0+8WsLuVxUTjuJOnGuOMy5X4N8q/pzRRUb9WLibGRCJWwBaOcIKruuUYfacmRn8Ti/kSbx4p5kKJgpWgAO5QK+9FJJHEZPKWHQrQi9+z5hQPTMACz0+J2iXOI1rwF5tx10OkeiyXnzf4HA3mGu9SCAhL0K90fJ6AnMTGXr55xQ/l1Zu9zniO3BYzjyHxx7euS1qwoX/zgzhf9FflR+fuqfJzpVpiyz37Rq98xzJ4R9EVDVeLkg=
       orderExportRadialApiKey: AgA8ALJS6t7xhJ/prJuxLM7J97TCYtzQ1PmbfxP0bKDLD2ZYoxr+embs/Spr+8KuF3aQqZjqGE/AMA1z+cqrFgUjnAYNgYUeWMl3nIkySTUejBP6DI89LGYAkhBGSWKI8eP0sRYW04VKabHh+HR4qCtNlvBx/823mckHZfiAnP1z+LQ4K87z4ChvRHwA+vj0ckQf4B/NRcrXTELY/OZuIvlWV2lyZXr1H0VY7dslrtc5FHMHJ3u2xHgpiC327VKDKodGKPWyFSVxKHl/vIgOqnoS+DGmxjPe/rhGLmhuWV9Je90J3VPRXirEeROmapDwy8D/HdmCp1+PvWq+4w3S3v5MXQfnSV6vLk398RU2ffmZnwlq54VUm7jNnMl+J3c8hkpbWSw85AjpjuW1/J6LUU16tKCEduvrDZWTW0Rz/EVurGXC3eLnhurOpBt4LFUplr40y/gbe3duuUtFgKbmzw66CIdjhGscKy7gBbuuW+5S3BVRtl+9ImL1oQzDIvtxnTEQdggOK0fgrRQwRbMa1P9flvQnEzYPjgOns9JUJMGssxp/X2PdeIzLcvbIUY+3VUEvtBVaOXk6afKJ/EdRae2YEwxPMXj1K3DsIJ6bVfwd3cbAxb/utPrA7IXDO77aZUOCr4NV+o4fiRtuSmBtlUirFQErwvXEttKfFEZgodSH5ChXBt/AAbT3j12w6Pyd7MZJuruK/wj0l97/aUdVJ4BjyzTjy3SUCbyQ+sS45AthNfo=
-      orderExportRadialUrl: https://tst05-epapi-na.gsipartners.com/v1.0/OOMF/stores
       productPublisherAutoPublish: false
       radialMode: sandbox
       radialPassword: AgCdCCYgf65kMp+CzgBvZQpsYzs6nW9fSAu4xyjm3IF9u6P9xXI7zcTrtCsbT9loVQyEpp5Oy3nvAhBCgVITnSx2VQzMnYWeY1lwgOEC9sMIHUurxtxJkCn6+NVglTFc0Lu2wQYX0hw4uypFpbYX5+wGF02h+GxDC6f+Ix2h6ow8mlqkAHZ/TrZkS7hqUt/vaw+R8jrdeb48M8IQE7BjnykqhfBDHPEZYaPz8gqBwlInj3SeZafvoHxGLxOnwzqQ657bkHVvzkJxBMfOkLyXWBfWDSrIAMbjXXiP3KODcV+71qO+s8KG3Cwk4Ox8FwE3msJtZVeC5JMeJdoTm2n1vJBjOmlrtF0L6boVcp2DOvrI4HIctMXDvh53LXrcobOQ/XxQou/rEAKxV6cSROSb8WuKwz3jA+a4RjkGgXUySJyfvqOnwHd1auCP6+xXNqCw+Mb51WPC5YIE2dSa7ZtKQONd/VNAOyQJZnxZxJ/asZLR5Z9roR1rsUKInyG4KRaeCYBFLICRMD1g0U3deHjEPotIrAFXgYeqU1l4bFnqdDGe1sRHyh99CyW172dP+Wee4Lh8/SxdC4DaAi2OwHcxHVpXZMUyzap5S47iGHAlypSTgvIClyx6zOnn/F403o66yaKpOdg4S1ECojYotbznr1G4gyNKgreNu9x3nFyrgBcYz/6d4NrxDOv8lcAgk/hRohWPq7duQF0a
@@ -35,19 +33,8 @@ spec:
       reactionEmail: AgAD0OMFROJMczEA3xl6phA1DhjE7NrjxNdIkQN/6Pq+MtBmAYxso2iKEl750QQIC0Mw9Uw+oPAh4HyARro0/W3ZbtIr+gz1/bFtp1wfZ8Iku6ourSzVeJFptlufWtexAhFdDLL3oeXQZb0ZnATH24t3hJDSggZyE2BLcSqaYe8tzxoNLxpuZT+HvqG+HjDZ8hnD8zkBGfd+M2c+r4aB35a3teRimgVvA3PxhsZ6QWwgX5yu2MoSUXPzFiHJnDe3NNKNbUILm3hS/nE1Vs3dZ9ZUgkJgGzUzZgo+HqIzjvCpRc2M7+La5kfgsfvY7atLRpvTWNidl+6hQI22YP8a4c+gc258lqzaS4iOAb2N6/HmsH8LgU7fB7JU8MkLxiQOBmjP/VuwmfKS3MAjFgeoNFgq8nckWrGCN1zaUNHEhT1xZR1WHh6YJBQ8X7wc9ym8h3uR1JcVdelIdre9joH7w7eMTnTQwlKhf6ClRBNcVKG7MGnMPRfj0+CEN776EaC4kjEaAUB/g9wEjJlsqzZkeEsL61s+W/gMKS3cMmAanlhm6rBQEQAZBe5KKk5C+KwwkP9EzHUJ8SgQD4RfjnyFZGq4Wf5YHRbmlcNeFKmurMEgDaNQSkGQVYJL4JqkeLlxKplVq3mja7aQZz1QOKutzU7s1p6Pqh6xmbd9f0PwdpQjsYv4OlAr5dKdq9foCpbUDoUkBc6BmBpVaNMkBY3uVJO+
       rootUrl: https://api-staging.ems-test.io
       siteCode: EMS
-    horizontalPodAutoscaler:
-      enabled: true
-      averageUtilization: 70
-      min: 3
-      max: 10
     image:
       repository: docker.io/sportsdirect/reaction
       tag: 749ce9cb6f30f70e5a9294f888020afbcf3f1bbe
     imagePullSecrets:
       - name: reaction-docker-hub
-    ingress:
-      enabled: true
-      hosts:
-        - host: api-staging.ems-test.io
-          paths: ['/']
-    maxUnavailable: 1
