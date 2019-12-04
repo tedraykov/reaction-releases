@@ -82,6 +82,10 @@ config:
   radialItemExportConsumerEnabled: false
   importOrderStatusConsumerEnabled: false
   seoMetadataConsumerEnabled: false
+  sentry:
+    enabled: false
+    # dsn: XXX
+    # environment: XXX
   skipFixtures: 1
   startingNewCustomerNumber: "1100151420184"
   taxesConsumerEnabled: false
