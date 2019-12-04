@@ -24,6 +24,8 @@ spec:
       hosts:
         - host: pe-staging.ems-test.io
           paths: ['/']
+        - host: pe.staging.k8s.ems-test.io
+          paths: ['/']
     jmx:
       image: reactioncommerce/jmx-prometheus-exporter
       imageTag: configurable-via-env
