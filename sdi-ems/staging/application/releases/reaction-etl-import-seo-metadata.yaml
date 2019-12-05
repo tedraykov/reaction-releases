@@ -1,10 +1,10 @@
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
-  name: reaction-etl-catalog-sync
+  name: reaction-etl-import-seo-metadata
   namespace: serverless
 spec:
-  releaseName: reaction-etl-catalog-sync
+  releaseName: reaction-etl-import-seo-metadata
   chart:
     git: git@github.com:sportsdirect/sdi-releases.git
     path: charts/serverless-deploy
@@ -15,10 +15,11 @@ spec:
     environment:
       JAEGER_ENDPOINT: http://jaeger-collector.staging.k8s.ems-test.io:14268/api/traces
       KAFKA_PARTITIONS: 3
-      KAFKA_TOPIC_CATALOG_SYNC_PRODUCTS: etl.catalog-sync.products.json-gen1
+      KAFKA_TOPIC_IMPORT_SEO_METADATA: etl.import-seo-metadata.seo-metadata.json-gen1
+      REACTION_LOG_FORMAT: json
       REACTION_LOG_LEVEL: INFO
       SITE_CODE: EMS
       SKIP_INVOCATION: false
     package:
-      name: reaction-etl-catalog-sync
-      version: e61060e
+      name: reaction-etl-import-seo-metadata
+      version: b24497e
