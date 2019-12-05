@@ -19,7 +19,7 @@ configMapRefs:
 
 environment: {}
 
-jobBackoffLimit: 1
+jobBackoffLimit: 0
 
 package:
   baseUrl: "https://sdi-management-serverless-packages.s3.amazonaws.com"
