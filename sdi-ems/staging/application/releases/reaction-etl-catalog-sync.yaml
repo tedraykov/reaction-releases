@@ -18,7 +18,7 @@ spec:
       KAFKA_TOPIC_CATALOG_SYNC_PRODUCTS: etl.catalog-sync.products.json-gen1
       REACTION_LOG_LEVEL: INFO
       SITE_CODE: EMS
-      SKIP_INVOCATION: false
+      SKIP_INVOCATION: true
     package:
       name: reaction-etl-catalog-sync
       version: 6a6480d
