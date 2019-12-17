@@ -26,6 +26,14 @@ spec:
         apiKey: blt1f2a37a50d4512f7
         environment: staging
       elasticsearchUrl: https://vpc-staging-storefront-jeko6lvexsm3iengavybl2caxe.us-east-1.es.amazonaws.com:443
+      healthcheck:
+        applePay: 89dbdd88-a788-43d6-9f96-f3594f86cab0
+        cardAmericanExpress: 02e6b311-a346-42f8-ab70-b0d38d7c5afe
+        cardDiscoverCard: 22ff9c17-8f5e-466c-8e46-21ecf874b401
+        cardMasterCard: 00de82e0-d5c2-4c59-8c2c-b7a419d092d3
+        cardVisa: 2d6a0d11-0b61-4ec8-920c-af76ddef6425
+        orderCompleted: 2324b57e-3f0d-49ae-80bf-4349b550a6d2
+        paypal: 17b6937d-bdb2-41c2-80cf-93afabb2cb57
       mapboxToken: pk.eyJ1IjoianBoaWxvIiwiYSI6ImNqeHFlZHRkaDAwM3YzaXMwenNvZmcyYXYifQ.pEVH_imRqxqTjdpIcuiRBg
       oauth2:
         authUrl: https://auth-staging.bobs-test.io/oauth2/auth
@@ -55,7 +63,7 @@ spec:
       max: 10
     image:
       repository: 816897914983.dkr.ecr.us-east-1.amazonaws.com/reaction-storefront-bobs
-      tag: db26d3ec
+      tag: a0ac4be2
     ingress:
       hosts:
         - host: staging.bobs-test.io

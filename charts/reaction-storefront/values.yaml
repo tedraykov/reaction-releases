@@ -68,6 +68,14 @@ config:
   defaultShippingMethodId: SPbMh5gdz24Wr4J94
   defaultShippingMethodRate: !!str 2.99
   elasticsearchUrl: http://elasticsearch-client:9200
+  healthcheck:
+    #  applePay: XXX
+    #  cardAmericanExpress: XXX
+    #  cardDiscoverCard: XXX
+    #  cardMasterCard: XXX
+    #  cardVisa: XXX
+    #  orderCompleted: XXX
+    #  paypal: XXX
   hydraAdminUrl: http://hydra:4445
   internalGraphqlUrl: http://reaction-core-web/graphql-beta
   oauth2:
@@ -95,7 +103,7 @@ config:
     #  dsn: https://XXX@sentry.io/XXX
     enabled: false
     #  environment: staging
-    org: sportsdirect
+    org: frasers
     #  project: XXX
   tagAttributesReportEnabled: false
 

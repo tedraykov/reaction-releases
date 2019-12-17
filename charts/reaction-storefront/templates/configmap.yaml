@@ -36,6 +36,27 @@ data:
   DEFAULT_SHIPPING_METHOD_ID: {{ required "config.defaultShippingMethodId not defined." .Values.config.defaultShippingMethodId | quote }}
   DEFAULT_SHIPPING_METHOD_RATE: {{ required "config.defaultShippingMethodRate not defined." .Values.config.defaultShippingMethodRate | quote }}
   ELASTICSEARCH_URL: {{ required "config.elasticsearchUrl not defined." .Values.config.elasticsearchUrl | quote }}
+{{- if .Values.config.healthcheck.applePay }}
+  HEALTHCHECK_APPLEPAY: {{ .Values.config.healthcheck.applePay | quote }}
+{{- end }}
+{{- if .Values.config.healthcheck.cardAmericanExpress }}
+  HEALTHCHECK_CARD_AMERICANEXPRESS: {{ .Values.config.healthcheck.cardAmericanExpress | quote }}
+{{- end }}
+{{- if .Values.config.healthcheck.cardDiscoverCard }}
+  HEALTHCHECK_CARD_DISCOVERCARD: {{ .Values.config.healthcheck.cardDiscoverCard | quote }}
+{{- end }}
+{{- if .Values.config.healthcheck.cardMasterCard }}
+  HEALTHCHECK_CARD_MASTERCARD: {{ .Values.config.healthcheck.cardMasterCard | quote }}
+{{- end }}
+{{- if .Values.config.healthcheck.cardVisa }}
+  HEALTHCHECK_CARD_VISA: {{ .Values.config.healthcheck.cardVisa | quote }}
+{{- end }}
+{{- if .Values.config.healthcheck.orderCompleted }}
+  HEALTHCHECK_ORDERCOMPLETED: {{ .Values.config.healthcheck.orderCompleted | quote }}
+{{- end }}
+{{- if .Values.config.healthcheck.payPal }}
+  HEALTHCHECK_PAYPAL: {{ .Values.config.healthcheck.payPal | quote }}
+{{- end }}
   HYDRA_ADMIN_URL: {{ required "config.hydraAdminUrl not defined." .Values.config.hydraAdminUrl | quote }}
   INTERNAL_GRAPHQL_URL: {{ required "config.internalGraphqlUrl not defined." .Values.config.internalGraphqlUrl | quote }}
   MAPBOX_TOKEN: {{ required "config.mapboxToken is not defined." .Values.config.mapboxToken | quote }}
