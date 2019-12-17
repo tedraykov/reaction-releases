@@ -22,4 +22,4 @@ spec:
       INITIAL_IMPORT: true
     package:
       name: reaction-etl-import-tax-codes
-      version: a851828
+      version: 4916b3d
