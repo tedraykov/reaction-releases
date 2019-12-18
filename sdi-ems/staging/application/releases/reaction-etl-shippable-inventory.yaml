@@ -15,7 +15,7 @@ spec:
     environment:
       JAEGER_ENDPOINT: http://jaeger-collector.staging.k8s.ems-test.io:14268/api/traces
       KAFKA_PARTITIONS: 3
-      KAFKA_TOPIC_CATALOG_SYNC_PRODUCTS: etl.catalog-sync.products.json-gen1
+      KAFKA_TOPIC_ETL_SHIPPABLE_INVENTORY_STREAM: etl.shippable-inventory.inventory-data.json-gen2
       REACTION_LOG_LEVEL: INFO
       SITE_CODE: EMS
       SKIP_INVOCATION: false
