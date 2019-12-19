@@ -68,7 +68,7 @@ config:
   defaultShippingMethodId: SPbMh5gdz24Wr4J94
   defaultShippingMethodRate: !!str 2.99
   elasticsearchUrl: http://elasticsearch-client:9200
-  healthcheck:
+  healthcheck: {}
     #  applePay: XXX
     #  cardAmericanExpress: XXX
     #  cardDiscoverCard: XXX
