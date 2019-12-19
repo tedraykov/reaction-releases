@@ -13,7 +13,7 @@ spec:
     annotations:
       iam.amazonaws.com/role: arn:aws:iam::551763058466:role/sdi-ems-staging-serverless-deploy
     environment:
-      PRICING_GRAPHQL_URL: http://pe.staging.k8s.ems-test.io
+      PRICING_GRAPHQL_URL: http://pe.staging.k8s.ems-test.io/graphql
       GRAFANA_API:
       GRAFANA_AUTH_TOKEN:
       CLOUDFLARE_CLIENT_ID:
