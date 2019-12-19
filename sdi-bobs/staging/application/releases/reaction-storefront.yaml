@@ -33,7 +33,7 @@ spec:
         cardMasterCard: 00de82e0-d5c2-4c59-8c2c-b7a419d092d3
         cardVisa: 2d6a0d11-0b61-4ec8-920c-af76ddef6425
         orderCompleted: 2324b57e-3f0d-49ae-80bf-4349b550a6d2
-        paypal: 17b6937d-bdb2-41c2-80cf-93afabb2cb57
+        payPal: 17b6937d-bdb2-41c2-80cf-93afabb2cb57
       mapboxToken: pk.eyJ1IjoianBoaWxvIiwiYSI6ImNqeHFlZHRkaDAwM3YzaXMwenNvZmcyYXYifQ.pEVH_imRqxqTjdpIcuiRBg
       oauth2:
         authUrl: https://auth-staging.bobs-test.io/oauth2/auth
@@ -63,7 +63,7 @@ spec:
       max: 10
     image:
       repository: 816897914983.dkr.ecr.us-east-1.amazonaws.com/reaction-storefront-bobs
-      tag: 49948efa
+      tag: 25312c38
     ingress:
       hosts:
         - host: staging.bobs-test.io

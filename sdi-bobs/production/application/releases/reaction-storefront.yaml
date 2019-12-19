@@ -37,7 +37,7 @@ spec:
         cardMasterCard: 443ba58b-4e39-47bf-9996-b243284aac89
         cardVisa: a3ecb346-bfd4-420a-b259-5b625b6d17a9
         orderCompleted: 5be5cefc-24cc-4cb0-b0db-1f572766d07b
-        paypal: a29cb5cd-9236-4f48-a3ce-ef5a094c331c
+        payPal: a29cb5cd-9236-4f48-a3ce-ef5a094c331c
       mapboxToken: pk.eyJ1IjoianBoaWxvIiwiYSI6ImNqeHFlaG1kaDAwNTUzaXA1NmVmbmJpMDEifQ.VCyMGmTZGRtZo_vUrXEutA
       oauth2:
         authUrl: https://auth.bobstores.com/oauth2/auth

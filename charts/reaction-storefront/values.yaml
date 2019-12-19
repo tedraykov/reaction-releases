@@ -75,7 +75,7 @@ config:
     #  cardMasterCard: XXX
     #  cardVisa: XXX
     #  orderCompleted: XXX
-    #  paypal: XXX
+    #  payPal: XXX
   hydraAdminUrl: http://hydra:4445
   internalGraphqlUrl: http://reaction-core-web/graphql-beta
   oauth2:
