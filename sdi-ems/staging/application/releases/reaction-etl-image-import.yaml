@@ -22,4 +22,4 @@ spec:
       CLOUDINARY_API_SECRET: AgA9r19MOcGEC0Ka3SIirZ/xzGr+IiNy42ov0wJtlWB1qjquvpFuR/kJj3U8oyhywBkDnVMak5n/07UwfGpIRqshXezNkQEaqLMzqozDdO7i8s4j1Zg/CAfD2IQPRAuHAcqXJKcJBDynRhIUZokWNWfDjJV5w1tgWqE1QFpGl69uuTzxLKm/pac5MaG6XfFuaexUlnaEOWncsr5OnU8rjN2h0vf+/1WfCsJHzwI15VOkhn+OskILQdqiULA55sciVNeiQnWJaKlkqPJWaoBwu/Wcl0lt72ZNUSIrnRXS95tmfR64GmKjNUzTfIaENybng/vvtAbDmorzJ0yNX0Qw+Kr9N+Z6s9G0DqUrtq7VYtrIbreEWIOgv8yuUzDg92XgS97kvPT+tAhvAWJ3HTSQaWR/rNqbqvipAmcMqPdQXzd/X0J6Lel8JedoGLBFoL+xEON0QR4kTCa1l7avfxDP4xkGG5nfiDOrb/fBXl0W8uS5x5iNLN5LM/nFD/pi+k5Fewz+6bsUoUK3r7IrZjDvxdLeE5f0kONZpcan1tzGcfJ0GdW18UUnMBVtPJ/dQVpbBybshkc9b1vSnltLGJNGilByYmu3JB/MhPeFO9hpWZPNruOEcL5lqAcb8v7L2+k6Z7kkuJ6J+e5Z2lQQkv+CEVSVi6D7K/lLmO1OLiV2njh3XcsKRUFoOJ6jAk5h7ihldzk09iY4qftdtr/W81OUpqXnRoPBRHobUosCrnq8
     package:
       name: reaction-etl-image-import
-      version: 5eee101
+      version: 4815f72
