@@ -13,7 +13,7 @@ spec:
     annotations:
       iam.amazonaws.com/role: arn:aws:iam::551763058466:role/sdi-ems-staging-serverless-deploy
     environment:
-      CLOUDINARY_CLOUD_NAME: eastern
+      CLOUDINARY_CLOUD_NAME: eastern-dev
       JAEGER_ENDPOINT: http://jaeger-collector.staging.k8s.ems-test.io:14268/api/traces
       REACTION_LOG_LEVEL: INFO
       SKIP_INVOCATION: false
