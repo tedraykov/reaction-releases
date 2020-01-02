@@ -43,7 +43,7 @@ data:
   HEALTHCHECK_CARD_AMERICANEXPRESS: {{ .Values.config.healthcheck.cardAmericanExpress | quote }}
 {{- end }}
 {{- if .Values.config.healthcheck.cardDiscoverCard }}
-  HEALTHCHECK_CARD_DISCOVERCARD: {{ .Values.config.healthcheck.cardDiscoverCard | quote }}
+  HEALTHCHECK_CARD_DISCOVER: {{ .Values.config.healthcheck.cardDiscoverCard | quote }}
 {{- end }}
 {{- if .Values.config.healthcheck.cardMasterCard }}
   HEALTHCHECK_CARD_MASTERCARD: {{ .Values.config.healthcheck.cardMasterCard | quote }}
