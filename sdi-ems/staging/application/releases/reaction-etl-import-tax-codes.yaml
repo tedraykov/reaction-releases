@@ -19,7 +19,7 @@ spec:
       REACTION_LOG_LEVEL: INFO
       SITE_CODE: EMS
       SKIP_INVOCATION: false
-      INITIAL_IMPORT: true
+      INITIAL_IMPORT: false
     package:
       name: reaction-etl-import-tax-codes
       version: 286406d
