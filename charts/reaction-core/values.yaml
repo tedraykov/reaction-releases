@@ -32,6 +32,7 @@ ingress:
 #     paths: ['/']
 
 config:
+  allowResetCodesMutation: false
   cartReferenceIdPrefix: 44
   constantPublisherMode: false
   constantPublisherPauseSeconds: 300

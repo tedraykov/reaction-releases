@@ -11,6 +11,7 @@ spec:
     ref: develop
   values:
     config:
+      allowResetCodesMutation: true
       brontoAccessToken: AgCd2uViBmQY+YbrOPUVMWmkeb7I5W5nCaaTpzZWuGbZM55ZxBysH2V+zWlpGWPg4In5YQCyIs3Ih8ppmF1DmLkI4A5Jwk3KMsYAQ3eaMj9ZfsCv4J1Y4RA4CGX5qZJxh8a9zlsRthEHC6kdBWXSBwFNcqDeZwO8g+jaEDf9I7wQt/4d+NzCRak0+4wXwZdifpjuDD1XcSYuNEX6YC3uRF+y8gkmfTFq7Caj6/3VRihg7tmn+zmCx100/VE1Z/7SezdsIzkJ5t5/Wg1LRPlqYeqmjH34t/eISS7mNwe5XZ2ANx4uMi1OybWRYl2cdfCN/hXYdTxQ9wkmKOOdZyZRzyzV3YtEUxOVE+I6PoSoX6O/Nl1wZGPoskg/QtsvTuVH7PTUe5fXydhbrLnWS6E6TjCX9FF4Bg+5d/MOv6FZgr1k4Gu2EymeGWiWQVbBP+JQt5/7Z7302GArhAdMDmd8rPmcGzycosc3RgetI7KBo0QXhTmuY/Bu2wT+tKIsnkwFZ88Lse9uzqdzuOj3WlK2MEHj9LHzuTWJQH+yb6SXg8DUUd/x90gxirg+Yw+9LL71yV8+++vbIly9tT5hMk5I2Lc4PZTyzEwi/3MO649No+YLirBikW34Mgjct7nCw6QOZT6ORAHjH3oo1fWcKphXtsFDg2pzd3GJWki1VyShZuiGV+LAJIF05l7BOBtAedNNiz9ouQl0omdj9EbZzxH154aMbyJlI6/lfiZu4iPnV5CB2UUau7v9
       etcdUrl: http://etcd-application.internal.staging.k8s.ems-test.io:2379
       graphqlIntrospectionEnabled: true
