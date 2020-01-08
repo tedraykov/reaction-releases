@@ -21,4 +21,4 @@ spec:
       SKIP_INVOCATION: false
     package:
       name: reaction-etl-catalog-sync
-      version: ba4ecfc
+      version: df18eff
