@@ -1,0 +1,55 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: reaction-job-import-catalog
+  namespace: staging
+  labels:
+    app.kubernetes.io/name: reaction-import
+    app.kubernetes.io/instance: reaction-import-catalog
+  annotations:
+    iam.amazonaws.com/role: arn:aws:iam::551763058466:role/sdi-ems-staging-reaction-job-catalog-sync
+spec:
+  restartPolicy: Never
+  containers:
+  - name: runner
+    image: 816897914983.dkr.ecr.us-east-1.amazonaws.com/reaction-etl-catalog-sync:6a6480d
+    imagePullPolicy: Always
+    command:
+      - node
+      - --max-old-space-size=8000
+      - /home/node/app/runMain.js
+      - -b
+      - $(BUCKET_FEEDS_PRODUCT_CATALOG)
+      - --all
+    envFrom:
+      - configMapRef:
+          name: kafka
+      - configMapRef:
+          name: reaction-core-worker
+    env:
+      - name: INITIAL_IMPORT
+        value: "false"
+      - name: KAFKA_PARTITIONS
+        value: "3"
+      - name: KAFKA_TOPIC_CATALOG_SYNC_PRODUCTS
+        value: etl.catalog-sync.products.json-gen1
+      - name: KAFKA_TOPIC_CATALOG_SYNC_PRODUCTS_PARTITIONS
+        value: "3"
+      - name: LOCAL_TEST
+        value: "false"
+      - name: BUCKET_FEEDS_PRODUCT_CATALOG
+        valueFrom:
+          configMapKeyRef:
+            name: buckets
+            key: BUCKET_FEEDS_PRODUCT_CATALOG
+      - name: MONGO_URL
+        valueFrom:
+          secretKeyRef:
+            name: reaction-core-worker
+            key: MONGO_URL
+      - name: REACTION_LOG_LEVEL
+        value: DEBUG
+    resources:
+      requests:
+        cpu: 2
+        memory: "8Gi"
