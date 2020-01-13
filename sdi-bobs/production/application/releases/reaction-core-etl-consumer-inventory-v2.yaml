@@ -12,7 +12,7 @@ spec:
   values:
     image:
       repository: docker.io/sportsdirect/reaction
-      tag: 34aa55ed32790feb349ebc36d36adb9a0f8da813 # DO NOT UPDATE THIS LINE. This is s special one-off image and must not change
+      tag: 6786b1d3700c4941aa109d0e1d5d8d714461fb45
     imagePullSecrets:
       - name: reaction-docker-hub
     config:
