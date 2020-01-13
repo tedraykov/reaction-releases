@@ -12,6 +12,7 @@ spec:
   values:
     config:
       brontoAccessToken: AgCZ3V0x/T5JXW3i1pa9q536QAaQP8gxGc4EjuO4cO00T8Vt4j86pEC3+HATI4WGEXiLHHejxBrIOpJJ9f2eDyo7Pl45xPoluoW+u0ltdyZUDPZVYRO5KnO8SKX9irhJAP3xUOvRSxr2KBlgJh00bI2dxnDJvBVG9BonXLRnIVuYAIf5mSyf+A3aMYhsL41wBPDfjsVtSNV9ELDPn+8qmKwcs0GDg/VT8tjBLpby9ZwQFbP63p6Z21Umgzx2ROCn8P66Hxqadf0Gr0d4aIgiWcVvAcZghxMDuHrSO4ZWAAlrS5XiSrvOou+uwZzTH6ohc2mNxZy2mZNu6D/dXUKhJJu9FNz5lzR5XPXTCG3BccNZFgs4xR2aNk/GutDyLjntlBwWNUXYwg4e99pG8lJbqsBDIAO7pQ9WgM221v1nYjiRQ86IaA5w9TRNmDViToWXcD6zSYRiJJAmi9JZtWCrpB922sUEmuyTSMGe8eTUQRrmRfpwchz5ec8Nh/mQwzczr7Ath4hqkVSF6Qjs8e7LxDalOxjznKJ5rs3yEZz7WfhhYyQs+nBRL1874a549DNJ38G2IXU5VWo35mPfKj2ybd/rbe/9fFmpqaVu8dek6L9HjjlVayq1xWJJtGHhc1Z90FsnAQnujIpHe7TR4gQajPRCl+IlDOQkyZA16Xx4YjIcoaFn6eM6k6oW98BQa+lWR7ITiGj1zeeOdMTcU51neEO0DsUb/AWFGbfpOhO7ZhMvPgxW4o8=
+      cartReferenceIdPrefix: 66
       constantPublisherMode: true
       constantPublisherPauseSeconds: 300
       etcdUrl: http://etcd-application.internal.staging.k8s.ems-test.io:2379
