@@ -22,4 +22,4 @@ spec:
       SKIP_INVOCATION: false
     package:
       name: reaction-etl-import-seo-metadata
-      version: b24497e
+      version: 7eaa89a
