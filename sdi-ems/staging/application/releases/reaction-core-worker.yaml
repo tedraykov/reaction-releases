@@ -25,8 +25,8 @@ spec:
       productConsumerEnabled: true
       productImportDefaultInvisible: false
       productPublisherAutoPublish: false
-      radialItemExportConsumerEnabled: false
-      importOrderStatusConsumerEnabled: false
+      radialItemExportConsumerEnabled: true
+      importOrderStatusConsumerEnabled: true
       seoMetadataConsumerEnabled: false
       radialMode: sandbox
       radialPassword: AgB34BtXm7epHLzX2L1wC7mwbIoFwVqZOpY9xyZ8KGiMfUoVSBWlfbsimwn6KRrIn6wmQ5Btfx8lFrZKLQGXdh9muXvCcMPznLb4ljfQKqax4szr9KF2JvVSPg02ZukXl6ncLUkA6hMwPc74ugjzrsNHkBta4CW+Q2QCGR3Tnqr6nXsHnORlAGQhgz76PKm68v0aOdr0rzJ5tz/u+YKp43xQ007TTs9WkuEK6fHpMqxQu6cdKROvVMXuLsGEo3XXenoreTwotJcCu0JkBD3UK3QbhOJpVXqsiyVtv3K9emHBgmJAfe6hXpvRnXLiq4CBasD7CI/2FrAQMS/iKkMgsWVQ+OWrq+u2p2nzNsYzgsLP0iMPVEsLTMeCY3nFBF2iggr5H9O6OBuZg3VSPCYS7YYQNl/HTT+OuMUvbRsyd7sN5jD4FgxfzT8ue3Cn+Ogwq/U9L1sXh9jJxgoaYuqftAi6ZrYlAMqN1Tw3QawuDfKSV8rxCMQk8iwp7PGz4SE1lT7As0ZIGVI4N8HdOMCbNiHiK8/abXjnSaUZxIv9WCfaDlr+8LhhAKzAIe76YI1UzMmhzYR86jJooPIENPvs1x6ipDRN+C5DNX7JL359tw7OdwWwTI5U2OAmtnLTBu32STINFks5EOBj+Uvv68dqEBiVc2ma7g9Wvg9ZPRBTsgRSstTJEKM5dyuJ4TSuw2jv1pWioBTqkVk=
@@ -39,7 +39,7 @@ spec:
       reactionEmail:  AgB0jP8pfewJ1eeI57ylZRXCzsY/rh8I6B7mgYzOb2N4VWGUXpZ90ZdVg/YjAeMFb0MtMKUlQbWUaBvsiA9YgBmmGzQdMUh6GQClvGxnlnjO68KpryqkQrCaCJh7237T2ShW15ijkXncEyTMM6+puEQGdRVOvsC2xLXiIP0Q5dthxYIe3zwlnyPdWGu5BDBmbr2U009eZ0pu+khpMW+ad+IdB+MmT+5rOrIjw1gKGDJO1pUPjFnjtOlcVzsCaS1E7c2Kcz7g7pZEWPwYQXvVphmPwYB43isFrYDKGlfnzaSExyWi+GJ3dDKW1i3riuUVSHgzhcQ5kgPPX0Fm7+qLtHUOnaWpecd4+MfuN38ZSGaPM6d45GGlEDwU+DSnBzSwe3djlYBK0twN2Dbba8tU48mpU2XCQZmxuOK+isfkGH9/NF26WFjt/cgnsROMWmbVSObZqh+8HXoxVJMkMTNvPqPK99UYl8W+cJwOqNVzTr7VXebOeNUtW5HpkS3pkaZ5WKpx0aC3ywX7hLFPaUDYm4DkXeh4ZE9xRsr3Fo97jaa4QYPQJvqykFfRh+J7wuDEbk899y+jiH57PsD99SW62ld4UV0sTBJ1Os+lNtOdeP0CqYtj82wjbGDLNE9wMWuCM+QAtsy6EhvKv8I+rIU8Us2wvyDMTqoGdrcvSb49bvLGz1e8VbzKj0x+y+ZN90fZz4B16vKQqvYJkzBr8+ChGGo=
       rootUrl: https://api-staging.ems-test.io
       siteCode: EMS
-      taxesConsumerEnabled: false
+      taxesConsumerEnabled: true
     image:
       repository: docker.io/sportsdirect/reaction
       tag: 6786b1d3700c4941aa109d0e1d5d8d714461fb45
