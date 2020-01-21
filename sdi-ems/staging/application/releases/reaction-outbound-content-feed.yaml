@@ -1,0 +1,39 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: reaction-outbound-content-feed
+  namespace: staging
+spec:
+  releaseName: reaction-outbound-content-feed
+  chart:
+    git: git@github.com:sportsdirect/sdi-releases.git
+    path: charts/reaction-outbound-content-feed
+    ref: develop
+  values:
+    annotations:
+      iam.amazonaws.com/role: arn:aws:iam::551763058466:role/sdi-ems-staging-reaction-job-outbound-content-feed
+    imagePullSecret: reaction-docker-hub
+    image:
+      tag: d0e62f9
+    schedule: "0 4 * * *"
+    config:
+      batchSize: 1000
+      cloudName: eastern-dev
+      cloudFolder: 0
+      jaegerEndpoint: http://jaeger-collector.staging.k8s.ems-test.io:14268/api/traces
+      kafkaBootstrapServers: 'b-1.staging.zby85f.c5.kafka.us-east-1.amazonaws.com:9092,b-2.staging.zby85f.c5.kafka.us-east-1.amazonaws.com:9092,b-3.staging.zby85f.c5.kafka.us-east-1.amazonaws.com:9092'
+      kmsKeyArn: arn:aws:kms:us-east-1:225761155017:key/e4294918-f196-4269-8294-8cfc8377a002
+      mongoDbHost: AgAczk1RKfaV+PgUnMjrMhBzNRCRUj6hgHqJqBfuxLZIndKJJumlBK050s61w6k975oYECvvq5H3wzWrp0xsrJWaNqARZZbD9BmHRYgv0xNsDf4b2p04P8DAWN9Qqvy31CMaiBur167PAbq8UGG6bokPVBc+ikIHyQH1ZOV7jGF4QJmJ/sJfbsHDLne0A/Xys2w6EvJAUCuJ2MPQ7ONcb4Knta6yGIYhMtdzOjbqCojiuA2QLhScet7FKnvAut/J5WidQVyKyLaSlz0rJ0GVdb7r5q2gjCQc7ueTJyhwJfvLTF7KdDDdDmLvP0IrVDT50i3q0tGJ87nRJ3NGcmX5XsCfjCrlrqsE01Y8jLfjUg4asxBesQf/sQFg9fey6sSDc+yon/UjYwuJhZbpDbQUNDsMTm+M0FMaSwUolftjrEmHYR0EuopyjO3UmX5iiTRT7mIdfWZ/u+NKPCzEls+ZxyLjf6LZ+IT7Ublv2K5La/WPFigsuX/ekgFSxnd+AbX5T9QCWmTUMpiQwRd0XNh42KXgi8Q27aBVKOcdTdDo44HtO0PtDNpfufsOs/Ww3fgQ9ZNuK2icNoGh1u9b3Mat8G9f19jMDSS1ht6tRsMlXDoSnltIhKup2E9VzwOJ1W6fFjOKCmr7vRdThvxBlfEGaAy73RaX83N1GvS6pJ3hVb3BnWbGHIgcoz4tTrT7dN9TWQFBIJM5ri8zc/iXlq1nVmjRFWglECk639kW3+6Jd+YOM1M0BiHRFrEsPWMouHom27zN3AxHkLjFTay2S9t7fhTUHdEifigwKcLCI0g4zFrdOUJ4TMzUBBF4B/c5QeBaU8Sa5Fh6ylUdPNB2ZMnT6JPcyIIgzPT797IJtQb0i3hHfCI42j26NCddM7EUsxETMXSvlCFQ8y7qfs8RoDb6xuev5nPU9etkBw6fUdXUiDgTmMyBgpp8f+cG1FaaGZWUDArfxnj749Gtjm8E7SqSWRuK7MMnhiwnngeGRklHGuRewlk9ypJd+dvDGNzpqxIXVOMF++R3R3AiVnRcBQ==
+      mongoDbName: ems-staging
+      pricebookId: ems-usd-retail-prices
+      s3ExternalExportBucketName: sdi-ems-staging-feeds-outbound-content
+      s3InternalExportBucketName: sdi-ems-staging-feeds-ocf
+      siteCode: EMS
+      storefrontBaseUrl: https://staging.ems-test.io
+    resources:
+      requests:
+        memory: 3Gi
+        cpu: "1"
+      limits:
+        memory: 4Gi
+        cpu: "2"
