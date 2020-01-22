@@ -58,6 +58,7 @@ topics:
 
   # source: https://github.com/sportsdirect/reaction-etl-loyalty
   etl.loyalty-db-updates.json-gen1: {}
+  etl.loyalty-db-updates-status.json-gen1: {}
   etl.loyalty-customer-import-errors.json-gen1: {}
   etl.loyalty-customer-import-bom.json-gen1: {}
   etl.loyalty-customer-consolidation-errors.json-gen1: {}
