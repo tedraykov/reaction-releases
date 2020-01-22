@@ -40,6 +40,7 @@ spec:
       segmentAnalytics:
         enabled: true
         writeKey: oTm3YQxgfc6udco67OFJDumcfUX2fCU2
+        serverWriteKey: XmeVGVB320SC3CEuuZOIVeHZDQxNQHq3
       sentry:
         enabled: true
         dsn: https://e5a55219e65d473a9c04625b0e2cbcca@sentry.io/1802036
@@ -55,7 +56,7 @@ spec:
       max: 10
     image:
       repository: 816897914983.dkr.ecr.us-east-1.amazonaws.com/reaction-storefront-ems
-      tag: 35391a1b
+      tag: 3492a5bd
     ingress:
       hosts:
         - host: staging.ems-test.io

@@ -48,6 +48,7 @@ spec:
       segmentAnalytics:
         enabled: true
         writeKey: osQ8ZrOPWr89d7I6ecepCU1NcCP9uE0C
+        serverWriteKey: MEBPfPlBriDxlltmtX3SbVsZXhYeR3pQ
       sentry:
         enabled: true
         dsn: https://222c72f6ba49483f88913050f9bd11ab@sentry.io/1397837
@@ -63,7 +64,7 @@ spec:
       max: 10
     image:
       repository: 816897914983.dkr.ecr.us-east-1.amazonaws.com/reaction-storefront-bobs
-      tag: 35391a1b
+      tag: 3492a5bd
     ingress:
       hosts:
         - host: staging.bobs-test.io

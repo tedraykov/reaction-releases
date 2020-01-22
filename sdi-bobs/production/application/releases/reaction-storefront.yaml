@@ -52,6 +52,7 @@ spec:
       segmentAnalytics:
         enabled: true
         writeKey: eUneJGrllfMElXRQnrIzBI8L96p81cfu
+        serverWriteKey: AhjAtkINaIoVPOSIRd19lqbYxtbBtTfR
       sentry:
         enabled: true
         dsn: https://4f005e6157cf4e91b12a2dba72c188ba@sentry.io/1397837

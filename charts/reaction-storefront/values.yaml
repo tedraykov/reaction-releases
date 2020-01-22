@@ -96,6 +96,7 @@ config:
   segmentAnalytics:
     enabled: true
     #  writeKey: XXX
+    #  serverWriteKey: XXX
   stacktracecEnabled: false
   sentry:
     authToken: cfd896342463403298b3256945c1fc8e34a4a7e60a62413295b84a779925c73d
