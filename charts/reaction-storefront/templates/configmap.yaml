@@ -74,6 +74,7 @@ data:
   SEARCH_ENABLED: "true"
 {{- if .Values.config.segmentAnalytics.enabled }}
   SEGMENT_ANALYTICS_WRITE_KEY: {{ required "config.segmentAnalytics.writeKey not defined." .Values.config.segmentAnalytics.writeKey | quote }}
+  SEGMENT_ANALYTICS_SERVER_WRITE_KEY: {{ required "config.segmentAnalytics.serverWriteKey not defined." .Values.config.segmentAnalytics.serverWriteKey | quote }}
 {{- end }}
 {{- if .Values.config.sentry.enabled }}
   SENTRY_AUTH_TOKEN: {{ required "config.sentry.authToken not defined" .Values.config.sentry.authToken | quote }}
