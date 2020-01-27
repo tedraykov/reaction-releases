@@ -8,7 +8,7 @@ PYTEST_ARGS	+= -rx --tb=short --quiet
 -include local.mk
 
 deps:
-	pip install --upgrade -r requirements.txt
+	pip3 install --upgrade -r requirements.txt
 
 .PHONY: test-spec
 test-spec:
