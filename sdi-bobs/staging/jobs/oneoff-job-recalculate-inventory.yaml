@@ -15,7 +15,7 @@ spec:
     command:
       - node
       - --max-old-space-size=8192
-      - /home/node/reaction-one-off-tools/recalculate-reserved-inventory/main.js
+      - /opt/reaction-one-off-tools/recalculate-reserved-inventory/main.js
     envFrom:
       - configMapRef:
           name: reaction-core-worker
