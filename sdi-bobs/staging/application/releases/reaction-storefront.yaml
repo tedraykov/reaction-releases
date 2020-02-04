@@ -64,7 +64,7 @@ spec:
       max: 10
     image:
       repository: 816897914983.dkr.ecr.us-east-1.amazonaws.com/reaction-storefront-bobs
-      tag: 3b868ac5
+      tag: 05d9404b
     ingress:
       hosts:
         - host: staging.bobs-test.io
