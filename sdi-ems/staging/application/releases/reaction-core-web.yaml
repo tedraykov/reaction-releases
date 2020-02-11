@@ -36,6 +36,10 @@ spec:
       reactionAuth: AgBEephf5LweUSSnws3dWM8M2wd8mByyaau+2KwpOhvJfeGlVjlo4xHEzm9KMNS9NSLYY72ztOPCn9ct43IenEZHLyCV+7m4D0M5dmQT+km5jX84nHbRDh+SiRe3jIAZk2ncs2kBLJEB73VHlJYs53Tgwm4J1uaDjoGOEOvs88w+ErTKMInsNJtO1fxAtYyKg3iZeqoYw0dLNnbTWbT+4g2ar9Oqvgamr+9IQMUNfvTsfYoCvA6J2DV/fp+CFiTdPxj590x0n1dW02jXIibn4d6yHmL3frUqUxJ0f1mvW40N4mOrOLr2wXZR4vLWANnLtvZsdaBQjSuSe+qIHbZ+8qtRu7sPljyE/2oacVWJmquiqqmycjK5jzzoTF2uER+ZeNAlx8SL+Sp1BxLgFNSSzThLX2yXpcstrgWRAh2zTC3OFBSAX16pZ3scE23xiCcOZQuV3zwjoNrksFgeI9d09StZ/Es+aTY6YSjxgPOT1e81e5GOo8x08MnDZYOXweiwQKN3le6CqXIqnkX+l36+pqFASE9h4viDF7/y3Zq+TjlDedkZpu+UfeuMyJbcno26ig7nGnd2KWDk2+O48o6fwXSBbiFFIyvbgGIPtVkXLLvsPGk2Md/SU76ikCzgipi44lPLxq2ByuFRqlbfXidrcM2/nk7xZ6FINmi4LGbFmh9yzgLuu413CzukjHEH0uvwG62cU23uXapWEQ==
       reactionEmail:  AgB0jP8pfewJ1eeI57ylZRXCzsY/rh8I6B7mgYzOb2N4VWGUXpZ90ZdVg/YjAeMFb0MtMKUlQbWUaBvsiA9YgBmmGzQdMUh6GQClvGxnlnjO68KpryqkQrCaCJh7237T2ShW15ijkXncEyTMM6+puEQGdRVOvsC2xLXiIP0Q5dthxYIe3zwlnyPdWGu5BDBmbr2U009eZ0pu+khpMW+ad+IdB+MmT+5rOrIjw1gKGDJO1pUPjFnjtOlcVzsCaS1E7c2Kcz7g7pZEWPwYQXvVphmPwYB43isFrYDKGlfnzaSExyWi+GJ3dDKW1i3riuUVSHgzhcQ5kgPPX0Fm7+qLtHUOnaWpecd4+MfuN38ZSGaPM6d45GGlEDwU+DSnBzSwe3djlYBK0twN2Dbba8tU48mpU2XCQZmxuOK+isfkGH9/NF26WFjt/cgnsROMWmbVSObZqh+8HXoxVJMkMTNvPqPK99UYl8W+cJwOqNVzTr7VXebOeNUtW5HpkS3pkaZ5WKpx0aC3ywX7hLFPaUDYm4DkXeh4ZE9xRsr3Fo97jaa4QYPQJvqykFfRh+J7wuDEbk899y+jiH57PsD99SW62ld4UV0sTBJ1Os+lNtOdeP0CqYtj82wjbGDLNE9wMWuCM+QAtsy6EhvKv8I+rIU8Us2wvyDMTqoGdrcvSb49bvLGz1e8VbzKj0x+y+ZN90fZz4B16vKQqvYJkzBr8+ChGGo=
       rootUrl: https://api-staging.ems-test.io
+      sentry:
+        enabled: true
+        dsn: https://1dfbd3f09cd94f3f982aac440b40ffae@sentry.io/1802036
+        environment: staging
       siteCode: EMS
     horizontalPodAutoscaler:
       enabled: true
