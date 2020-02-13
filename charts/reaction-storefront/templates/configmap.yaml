@@ -13,7 +13,9 @@ data:
   CANONICAL_URL: {{ required "config.baseUrl not defined." .Values.config.baseUrl | quote }}
   APPLE_PAY_ASSOCIATION_DOMAIN: {{ required "config.baseUrl not defined." .Values.config.baseUrl | quote }}
   APPLE_PAY_MERCHANT_CERTIFICATE_PATH: {{ required "config.applePayMerchantCertificatePath not defined." .Values.config.applePayMerchantCertificatePath | quote }}
+{{- if .Values.config.applePayMerchantId }}
   APPLE_PAY_MERCHANT_ID: {{ required "config.applePayMerchantId not defined." .Values.config.applePayMerchantId | quote }}
+{{- end }}
 {{- if .Values.config.contentSecurityPolicy.policy }}
   CSP_POLICY: {{ .Values.config.contentSecurityPolicy.policy | quote }}
   CSP_POLICY_REPORT_URI: {{ required "config.contentSecurityPolicy.policyReportUri is not defined." .Values.config.contentSecurityPolicy.policyReportUri | quote }}
