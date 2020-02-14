@@ -1,0 +1,71 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: reaction-storefront
+  namespace: production
+spec:
+  releaseName: reaction-storefront
+  chart:
+    git: git@github.com:sportsdirect/sdi-releases.git
+    path: charts/reaction-storefront
+    ref: fix-apple-pay-templating
+  values:
+    config:
+      #applePayMerchantId: merchant.production.ems
+      #applePayMerchantCertificateBundle: XXX
+      #applePayMerchantCertificatePassphrase: XXX
+      baseUrl: https://boris.ems.com
+      cloudinary:
+        name: eastern
+        domain: res.cloudinary.com
+      #contentSecurityPolicy:
+        #policyReportUri: https://sentry.io/api/1802036/security/
+        #reportOnlyPolicyReportUri: https://sentry.io/api/1802036/security/
+      contentstack:
+        accessToken: cs95495781be2a2d48f640aa0e
+        apiKey: blt7841d2a593726d96
+        environment: production
+      elasticsearchUrl: https://vpc-production-storefront-bqztylrrrcalisngun4njcgjna.us-east-1.es.amazonaws.com:443
+      mapboxToken: pk.eyJ1IjoianBoaWxvIiwiYSI6ImNqeHFlZHRkaDAwM3YzaXMwenNvZmcyYXYifQ.pEVH_imRqxqTjdpIcuiRBg
+      oauth2:
+        authUrl: https://auth.ems.com/oauth2/auth
+        clientId: ems-production-storefront
+        clientSecret: AgDKuxGPtjzbLYVBlAxbpZJf1XXeTgVEcbr+AvXKFA8RbzsKtcVcCBt0P5q0ROS0+vVFdwCF1eA9jk1MjAzsOYvPX2DKfmFZnsU1BhypQ97Fx9RtkVcNh3y75gWhzkMGIpQ7QrSjPw1IngmMCdUhgQ6WSzb4aW1FStZ2feIWXstkyk4DsuFr/XpnZA08zDXrPig0Q5xCJcE+zyGONnGm2r8tOMthyEK8M0BlDISXBht1t3OqNJCchOT+1DYXvaNfycH6FntINy/eeNwiIPZcXAT79i27i6LRT0/ch20f/R3LaODzpqJVNCHd39oKBJMesCInkAiuXO0vl3/lPlIMYW1TaClOYSeukGnptDdsZOFe2Khj5dOeXp8qd/82dfJxZIdPRm9paWV5zJOdqLJe4Ougr74o2lg6zMilaF4ul7tf44sSSd48p+VjrLqbkp4Es/ajRZsK4c+4IEvjSWymPaFqzLEbVM8Vwz4+f59Mb6bR8zwFXSBX2uVk15IIoTQlg6PUUVjCMj7X9VVClZwpKMJQC4gK3HQRM8EVw0mARgkQtmk+/JeLvqTUA0A4Jb/xrRm00eO2RT9FsD2kErdu+Udz0t2PO7eowaK3Ij0msXWTlfEo0dpkyel1NJPv2xmVR0+P/PAcSO9W1viEfL61rlRA9Cr8kyNdTTs8mhil0n2XSOhSnxcgD/oQBfV5fw437r5uV8W93K1brchc28w=
+        idpHostUrl: https://api.ems.com/
+        redirectUrl: https://boris.ems.com/callback
+      radial:
+        clientId: EMSUS
+        mode: sandbox
+        rdfUrl: https://rdf.radial.com/rdf/service/scripts?clientIdentifier=EMSUS
+      segmentAnalytics:
+        enabled: true
+        writeKey: lP6S7JFlVKryAHeiW7phvWEkwWTVfbUZ
+        serverWriteKey: 4Ycnbe9zJqF5LzjUPfxRvbz0RqTpXu2M
+      sentry:
+        enabled: false
+        dsn: https://a3e4a12345714bfd960dc5c83f6b7899@sentry.io/1802036
+        environment: production
+        key: cfd896342463403298b3256945c1fc8e34a4a7e60a62413295b84a779925c73d
+        project: ems
+        #sourcemapToken: XXX
+      sessionSecret: AgBvu1G5s5Ibj0Bfi8z7UnDDPrRgipa4XIPLIEZr3ddAuhiCRVglER+2BsbPKtmxPLqDvQrjDdOmaNzz/In0DCpaNVT76yVQ1R3oR4AdGAD3P9TxSQSyXLAo3osTDT/FL16pFi/FLnInxzcA730MAuozBIo5gN5ibNbIMS76AZ5g91rcZ7zBdfSgJbw+TImfGdHqAioe/+Rrlhb6MRBQiPgmrLDp3/DKGigWJG20DvKA6HZvULIY8ts8XiVRNEN4JnIdJRoe8EFnLubGt0hxn6uehNjRc7ORT4njOGtaNNzRT+pxkp5g3nTXd+/nuXZu+EHzs/JUtSlPMy5ZVJK1fPHnKl40RYWp0Lb5m1Ef10VmD4HXy1YT36+4NBow9deH0Qey3yZHO+h0YOLupQsSPrtxIbIplApn22DVNytCsfD439L97UnWJ7iq6WNfMETjoZXjp8O6AhFYc61el5I3z94sJseB3k4eJo+qxOXtI7ojpWjBBa+ShyATLsTMvTtXSAl6sarBE/pitWGRpNAYVkbCPnUvUYiQFGs6lsJfewEtOM6cUKoUDbuRPdl2CvADWdaUO2jahTqhq/1x59SEfYocS10gevUWBnHLXa2joS+4K+Qh3hwSrxxNuo38KlITFUqHSCQ++FlE3WCRk4xImWD9xaGQJc7nQmqkKOBalXihKmO++3RUhWXGgyRzXPJ1sCN1xO1OtLr8M9fne8+PHxlF
+    horizontalPodAutoscaler:
+      enabled: true
+      averageUtilization: 70
+      min: 3
+      max: 10
+    image:
+      repository: 816897914983.dkr.ecr.us-east-1.amazonaws.com/reaction-storefront-ems
+      tag: a18dbcda
+    ingress:
+      hosts:
+        - host: boris.ems.com
+          paths: ['/']
+    maxUnavailable: 1
+    resources:
+      requests:
+        memory: 100Mi
+        cpu: 100m
+      limits:
+        memory: 2Gi
+        cpu: "2"

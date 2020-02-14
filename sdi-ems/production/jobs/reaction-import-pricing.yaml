@@ -1,0 +1,37 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: reaction-import-pricing
+  namespace: production
+  annotations:
+    iam.amazonaws.com/role: arn:aws:iam::875618166390:role/sdi-ems-production-reaction-job-pricing-import
+  labels:
+    app.kubernetes.io/name: reaction-import
+    app.kubernetes.io/instance: reaction-import-pricing
+spec:
+  restartPolicy: Never
+  containers:
+  - name: runner
+    image: 816897914983.dkr.ecr.us-east-1.amazonaws.com/reaction-etl-pricing-import:0453fda
+    imagePullPolicy: Always
+    command:
+      - node
+      - --max-old-space-size=4096
+      - bin/run.js
+      - -b
+      - $(BUCKET_FEEDS_PRICING)
+      - -f
+      - ems-usd-retail-prices20191203.zip
+    envFrom:
+      - configMapRef:
+          name: buckets
+    env:
+      - name: PRICING_GRAPHQL_URL
+        value: "http://reaction-pricing-engine/graphql"
+      - name: GRAFANA_API
+        value: "https://grafana-production.ems-test.io/api"
+      - name: REACTION_LOG_LEVEL
+        value: INFO
+    resources:
+      requests:
+        memory: "4Gi"

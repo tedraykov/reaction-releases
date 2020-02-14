@@ -1,0 +1,14 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: kafka-topics
+  namespace: kafka
+spec:
+  releaseName: kafka-topics
+  chart:
+    git: git@github.com:sportsdirect/sdi-releases.git
+    path: charts/kafka-topics
+    ref: develop
+  values:
+    config:
+      cluster: ems-production.k8s.frasers.io

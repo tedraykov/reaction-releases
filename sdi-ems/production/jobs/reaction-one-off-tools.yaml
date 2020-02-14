@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: reaction-one-off-tools
+  namespace: production
+spec:
+  restartPolicy: Never
+  containers:
+  - name: runner
+    image: 816897914983.dkr.ecr.us-east-1.amazonaws.com/reaction-one-off-tools:6c8d403
+    env:
+      - name: SITE_CODE
+        value: EMS
+    envFrom:
+      - configMapRef:
+          name: kafka
+      - secretRef:
+          name: reaction-one-off-tools
+    imagePullPolicy: Always
+    resources:
+      requests:
+        cpu: 1
+        memory: 128M

@@ -1,0 +1,25 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: reaction-etl-import-seo-metadata
+  namespace: serverless
+spec:
+  releaseName: reaction-etl-import-seo-metadata
+  chart:
+    git: git@github.com:sportsdirect/sdi-releases.git
+    path: charts/serverless-deploy
+    ref: develop
+  values:
+    annotations:
+      iam.amazonaws.com/role: arn:aws:iam::875618166390:role/sdi-ems-production-serverless-deploy
+    environment:
+      JAEGER_ENDPOINT: http://jaeger-collector.ems-production.k8s.frasers.io:14268/api/traces
+      KAFKA_PARTITIONS: 3
+      KAFKA_TOPIC_IMPORT_SEO_METADATA: etl.import-seo-metadata.seo-metadata.json-gen1
+      REACTION_LOG_FORMAT: json
+      REACTION_LOG_LEVEL: INFO
+      SITE_CODE: EMS
+      SKIP_INVOCATION: true
+    package:
+      name: reaction-etl-import-seo-metadata
+      version: 7eaa89a

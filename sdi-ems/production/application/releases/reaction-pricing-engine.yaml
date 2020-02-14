@@ -1,0 +1,44 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: reaction-pricing-engine
+  namespace: production
+spec:
+  releaseName: reaction-pricing-engine
+  chart:
+    git: git@github.com:sportsdirect/sdi-releases.git
+    path: charts/reaction-pricing-engine
+    ref: develop
+  values:
+    image:
+      repository: docker.io/sportsdirect/reaction-pricing-engine
+      tag: 5467ad84a72ae6008e4bc85036e0249919a5a717
+    imagePullSecrets:
+      - name: reaction-docker-hub
+    ingress:
+      enabled: true
+      hosts:
+        - host: pe.ems.com
+          paths: ['/']
+        - host: pe.ems-production.k8s.frasers.io
+          paths: ['/']
+    jmx:
+      image: reactioncommerce/jmx-prometheus-exporter
+      imageTag: configurable-via-env
+    config:
+      jvmOpts: "-d64 -Xms2560m -Xmx2560m"
+      bootstrapServers: "b-1.production.p9ku7n.c4.kafka.us-east-1.amazonaws.com:9092,b-2.production.p9ku7n.c4.kafka.us-east-1.amazonaws.com:9092,b-3.production.p9ku7n.c4.kafka.us-east-1.amazonaws.com:9092"
+      zookeeperConnect: "z-1.production.p9ku7n.c4.kafka.us-east-1.amazonaws.com:2181,z-2.production.p9ku7n.c4.kafka.us-east-1.amazonaws.com:2181,z-3.production.p9ku7n.c4.kafka.us-east-1.amazonaws.com:2181"
+      autoOffsetReset: "earliest"
+      bufferedRecordsPerPartition: "0"
+      cacheMaxBytesBuffering: "0"
+      debugGraphqlErrors: "1"
+    horizontalPodAutoscaler:
+      enabled: false
+    resources:
+      requests:
+        memory: 4Gi
+        cpu: 1000m
+      limits:
+        memory: 4Gi
+        cpu: 1000m

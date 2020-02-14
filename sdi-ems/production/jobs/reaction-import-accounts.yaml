@@ -1,0 +1,41 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: reaction-import-accounts
+  namespace: production
+  annotations:
+    iam.amazonaws.com/role: arn:aws:iam::875618166390:role/sdi-ems-production-reaction-job-accounts-import
+  labels:
+    app.kubernetes.io/name: reaction-import
+    app.kubernetes.io/instance: reaction-import-accounts
+spec:
+  restartPolicy: Never
+  imagePullPolicy: Always
+  imagePullSecrets:
+    - name: reaction-docker-hub
+  containers:
+  - name: runner
+    image: sportsdirect/reaction-etl-accounts-import:latest
+    command: [ "make", "start" ]
+    env:
+      - name: GROUP_ID
+        value: XXX
+      - name: OBFUSCATE_EMAIL
+        value: true
+      - name: MONGO_URL
+        valueFrom:
+          secretRef:
+            name: reaction-core-worker
+            key: MONGO_URL
+      - name: S3_BUCKET
+        valueFrom:
+          configMapKeyRef:
+            name: buckets
+            key: BUCKET_FEEDS_WEB_CUSTOMER
+      - name: S3_FILE_KEY
+        value: XXX
+      - name: SHOP_ID
+        value: XXX
+    resources:
+      requests:
+        memory: "8Gi"
