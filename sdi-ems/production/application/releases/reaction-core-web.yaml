@@ -54,6 +54,6 @@ spec:
     ingress:
       enabled: true
       hosts:
-        - host: api-staging.ems-test.io
+        - host: api.ems.com
           paths: ['/']
     maxUnavailable: 1
