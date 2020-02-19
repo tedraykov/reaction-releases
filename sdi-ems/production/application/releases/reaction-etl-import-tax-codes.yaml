@@ -18,7 +18,7 @@ spec:
       KAFKA_TOPIC_IMPORT_TAX_CODES_TAXCODES: etl.import-tax-codes.tax-codes.json-gen1
       REACTION_LOG_LEVEL: INFO
       SITE_CODE: EMS
-      SKIP_INVOCATION: true
+      SKIP_INVOCATION: false
       INITIAL_IMPORT: false
     package:
       name: reaction-etl-import-tax-codes
