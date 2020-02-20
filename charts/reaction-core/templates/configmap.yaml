@@ -74,3 +74,5 @@ data:
   IMPORT_ORDER_STATUS_CONSUMER_ENABLED: {{ required "config.importOrderStatusConsumerEnabled not defined." .Values.config.importOrderStatusConsumerEnabled | quote }}
   PRODUCT_IMPORT_DEFAULT_INVISIBLE: {{ required "config.productImportDefaultInvisible not defined." .Values.config.productImportDefaultInvisible | quote }}
   ALLOW_RESET_CODES_MUTATION: {{ required "config.allowResetCodesMutation not defined." .Values.config.allowResetCodesMutation | quote }}
+  KAFKA_TOPIC_SURCHARGES: {{ required "config.kafkaTopicSurcharges not defined." .Values.config.kafkaTopicSurcharges | quote }}
+  SURCHARGE_CONSUMER_ENABLED: {{ required "config.surchargeConsumerEnabled not defined." .Values.config.surchargeConsumerEnabled | quote }}
