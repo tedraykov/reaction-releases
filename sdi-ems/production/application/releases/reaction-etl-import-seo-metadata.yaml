@@ -19,7 +19,7 @@ spec:
       REACTION_LOG_FORMAT: json
       REACTION_LOG_LEVEL: INFO
       SITE_CODE: EMS
-      SKIP_INVOCATION: true
+      SKIP_INVOCATION: false
     package:
       name: reaction-etl-import-seo-metadata
       version: 7eaa89a
