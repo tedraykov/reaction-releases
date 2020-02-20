@@ -49,6 +49,6 @@ spec:
       siteCode: BOBS
     image:
       repository: docker.io/sportsdirect/reaction
-      tag: e7b8e7113cb244d5bad253a7e8c84fc47b724014
+      tag: a01fcb6632f3e4ea005491053973a1769d5df552
     imagePullSecrets:
       - name: reaction-docker-hub
