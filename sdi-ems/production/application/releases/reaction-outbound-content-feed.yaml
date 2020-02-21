@@ -11,7 +11,7 @@ spec:
     ref: develop
   values:
     annotations:
-      iam.amazonaws.com/role: arn:aws:iam::551763058466:role/sdi-ems-production-reaction-job-outbound-content-feed
+      iam.amazonaws.com/role: arn:aws:iam::875618166390:role/sdi-ems-production-reaction-job-outbound-content-feed
     imagePullSecret: reaction-docker-hub
     image:
       tag: d0e62f9
