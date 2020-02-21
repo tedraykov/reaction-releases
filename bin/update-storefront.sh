@@ -19,5 +19,8 @@ IFS=$'\n\t'
 cd "$(dirname "${BASH_SOURCE[0]}")/.."
 deployment="$1"
 new_tag="$2"
-find "sdi-bobs/${deployment}/application/releases" -type f -name "reaction-storefront*.yaml" -print0 |
-  xargs -0 perl -pi -e "s,^\s+tag:.*,      tag: ${new_tag},"
+stores=("bobs" "ems")
+for store in ${stores[*]} ; do
+  find "sdi-${store}/${deployment}/application/releases" -type f -name "reaction-storefront*.yaml" -print0 |
+    xargs -0 perl -pi -e "s,^\s+tag:.*,      tag: ${new_tag},"
+done
