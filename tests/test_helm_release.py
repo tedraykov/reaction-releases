@@ -5,6 +5,9 @@ import re
 
 META_PATTERN = re.compile(r"(?P<project>.+)/(?P<environment>.+)/(?P<cluster>.+)/releases/(?P<name>.+)\.yaml$")
 
+PATTERN_SHA1_LONG = re.compile(r'^[0-9a-f]{40}$')
+PATTERN_SHA1_SHORT = re.compile(r'^[0-9a-f]{8}$')
+
 def yaml_files():
     found = []
     for root, dirs, files in os.walk(os.getcwd()):
@@ -31,6 +34,18 @@ def valid_namespaces():
         'monitoring',
         'serverless',
     ]
+
+@pytest.fixture
+def valid_image_tag():
+    return {
+        'reaction-core-etl-consumer-inventory': PATTERN_SHA1_LONG,
+        'reaction-core-etl-consumer-loyalty': PATTERN_SHA1_LONG,
+        'reaction-core-etl-consumer-pricing': PATTERN_SHA1_LONG,
+        'reaction-core-master-publisher': PATTERN_SHA1_LONG,
+        'reaction-core-web': PATTERN_SHA1_LONG,
+        'reaction-core-worker': PATTERN_SHA1_LONG,
+        'reaction-storefront': PATTERN_SHA1_SHORT,
+    }
 
 class HelmReleaseMetadata(object):
     def __init__(self, path):
@@ -72,3 +87,15 @@ class TestHelmReleaseSpec(object):
 
     def test_kind(self):
         assert self.yaml.kind == 'HelmRelease'
+
+    def test_image_tag(self, valid_image_tag):
+        pattern = valid_image_tag.get(self.yaml.name)
+        try:
+            image_tag = self.yaml.image_tag
+        except KeyError:
+            pytest.skip("Image.tag not defined.")
+
+        if pattern is None:
+            pytest.skip("Pattern for image.tag not defined.")
+
+        assert pattern.match(image_tag) is not None, "Wrong image.tag specified."
