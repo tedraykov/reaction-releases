@@ -18,7 +18,7 @@ IFS=$'\n\t'
 
 cd "$(dirname "${BASH_SOURCE[0]}")/.."
 deployment="$1"
-new_tag="${2:0:7}"
+new_tag="${2:0:8}"
 stores=("bobs" "ems")
 for store in ${stores[*]} ; do
   find "sdi-${store}/${deployment}/application/releases" -type f -name "reaction-storefront*.yaml" -print0 |
