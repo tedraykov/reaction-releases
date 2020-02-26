@@ -37,6 +37,6 @@ spec:
       siteCode: EMS
     image:
       repository: docker.io/sportsdirect/reaction
-      tag: a9100185e3aaf5926386f03cff5e2290c7b26d06
+      tag: 965e1d90cdce3ea39ffc6781ccc5675ab28bca8f
     imagePullSecrets:
       - name: reaction-docker-hub
