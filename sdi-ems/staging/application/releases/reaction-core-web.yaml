@@ -17,7 +17,7 @@ spec:
       etcdUrl: http://etcd-application.internal.staging.k8s.ems-test.io:2379
       graphqlIntrospectionEnabled: true
       graphqlPlaygroundEnabled: true
-      jaegerEndpoint: http://jaeger-collector.staging.k8s.ems-test.io:14268/api/traces
+      jaegerEndpoint: http://jaeger-collector.staging.k8s.ems-test.io/api/traces
       kafkaBootstrapServers: 'b-3.staging.zby85f.c5.kafka.us-east-1.amazonaws.com:9092,b-2.staging.zby85f.c5.kafka.us-east-1.amazonaws.com:9092,b-1.staging.zby85f.c5.kafka.us-east-1.amazonaws.com:9092'
       kafkaCluster: 'b-3.staging.zby85f.c5.kafka.us-east-1.amazonaws.com:9092,b-2.staging.zby85f.c5.kafka.us-east-1.amazonaws.com:9092,b-1.staging.zby85f.c5.kafka.us-east-1.amazonaws.com:9092'
       logLevel: 'debug'
