@@ -70,8 +70,8 @@ topics:
   etl.radial-item-export.status.json-gen1: {}
   etl.radial-item-export.errors.json-gen1: {}
 
-  # source: https://github.com/frasersgroup/reaction-plugin-surcharges/blob/ba9a05e1222647e612683827a0f8eea90e4827ef/.env.example#L2
-  etl.surcharges.json-gen1: {}
+  # source: https://github.com/frasersgroup/reaction-plugin-surcharges/blob/master/.env.example
+  etl.surcharges.surcharges.json-gen1: {}
 
   # source: https://github.com/sportsdirect/reaction-etl-shippable-inventory/blob/master/scripts/create-kafka-topics.sh#L14
   etl.shippable-inventory.inventory-data.json-gen1: {}

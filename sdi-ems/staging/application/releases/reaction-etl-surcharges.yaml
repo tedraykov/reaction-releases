@@ -1,0 +1,23 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: reaction-etl-surcharges
+  namespace: serverless
+spec:
+  releaseName: reaction-etl-surcharges
+  chart:
+    git: git@github.com:sportsdirect/sdi-releases.git
+    path: charts/serverless-deploy
+    ref: develop
+  values:
+    annotations:
+      iam.amazonaws.com/role: arn:aws:iam::551763058466:role/sdi-ems-staging-serverless-deploy
+    environment:
+      KAFKA_PARTITIONS: 3
+      KAFKA_TOPIC_SURCHARGES: etl.surcharges.surcharges.json-gen1
+      REACTION_LOG_LEVEL: INFO
+      SITE_CODE: EMS
+      SKIP_INVOCATION: false
+    package:
+      name: reaction-etl-surcharges
+      version: e6a16d3
