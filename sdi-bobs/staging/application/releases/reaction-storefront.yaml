@@ -5,6 +5,11 @@ metadata:
   namespace: staging
 spec:
   releaseName: reaction-storefront
+  rollback:
+    enable: true
+    disableHooks: true
+    timeout: 300
+    wait: true
   chart:
     git: git@github.com:sportsdirect/sdi-releases.git
     path: charts/reaction-storefront
