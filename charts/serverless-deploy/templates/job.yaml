@@ -44,6 +44,8 @@ spec:
               value: "{{ $packageBaseUrl }}/{{ $packageName }}/{{ $packageName }}-{{ $packageVersion }}.zip"
             - name: PACKAGE_VERSION
               value: {{ $packageVersion | quote }}
+            - name: JAEGER_SERVICE_NAME
+              value: {{ $packageName }}
 {{- if .Values.serverless.debug }}
             - name: SLS_DEBUG
               value: {{ .Values.serverless.debug | quote }}
