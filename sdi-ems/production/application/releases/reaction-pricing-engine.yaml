@@ -26,7 +26,7 @@ spec:
       image: reactioncommerce/jmx-prometheus-exporter
       imageTag: configurable-via-env
     config:
-      jvmOpts: "-d64 -Xms2560m -Xmx2560m"
+      jvmOpts: "-d64 -Xms7168m -Xmx7168m"
       bootstrapServers: "b-1.production.p9ku7n.c4.kafka.us-east-1.amazonaws.com:9092,b-2.production.p9ku7n.c4.kafka.us-east-1.amazonaws.com:9092,b-3.production.p9ku7n.c4.kafka.us-east-1.amazonaws.com:9092"
       zookeeperConnect: "z-1.production.p9ku7n.c4.kafka.us-east-1.amazonaws.com:2181,z-2.production.p9ku7n.c4.kafka.us-east-1.amazonaws.com:2181,z-3.production.p9ku7n.c4.kafka.us-east-1.amazonaws.com:2181"
       autoOffsetReset: "earliest"
@@ -37,8 +37,8 @@ spec:
       enabled: false
     resources:
       requests:
-        memory: 4Gi
-        cpu: 1000m
+        memory: 8Gi
+        cpu: 2000m
       limits:
-        memory: 4Gi
-        cpu: 1000m
+        memory: 8Gi
+        cpu: 2000m
