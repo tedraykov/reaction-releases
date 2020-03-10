@@ -16,7 +16,7 @@ spec:
       JAEGER_ENDPOINT: http://jaeger-collector.ems-production.k8s.frasers.io:14268/api/traces
       REACTION_LOG_LEVEL: INFO
       SITE_CODE: EMS
-      SKIP_INVOCATION: true
+      SKIP_INVOCATION: false
       STORE_UPC_CODE: 729
       UPC_ATTRIBUTE_NAMES: "epicorUPC,vendorUPC,UPC"
     secrets:
