@@ -14,7 +14,7 @@ spec:
       iam.amazonaws.com/role: arn:aws:iam::551763058466:role/sdi-ems-staging-reaction-job-outbound-content-feed
     imagePullSecret: reaction-docker-hub
     image:
-      tag: d0e62f9
+      tag: 72bc047
     schedule: "0 4 * * *"
     config:
       batchSize: 1000

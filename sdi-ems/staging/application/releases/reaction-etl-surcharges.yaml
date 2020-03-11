@@ -20,4 +20,4 @@ spec:
       SKIP_INVOCATION: false
     package:
       name: reaction-etl-surcharges
-      version: b5988c6
+      version: c6cfe2c
