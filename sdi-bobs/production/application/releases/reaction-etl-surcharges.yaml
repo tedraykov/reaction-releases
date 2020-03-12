@@ -11,7 +11,7 @@ spec:
     ref: develop
   values:
     annotations:
-      iam.amazonaws.com/role: arn:aws:iam::490759768946:role/sdi-ems-staging-serverless-deploy
+      iam.amazonaws.com/role: arn:aws:iam::490759768946:role/sdi-bobs-staging-serverless-deploy
     environment:
       REACTION_LOG_LEVEL: INFO
       SITE_CODE: BOBS
