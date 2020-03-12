@@ -1,4 +1,4 @@
-apiVersion: helm.fluxcd.io/v1
+apiVersion: flux.weave.works/v1beta1
 kind: HelmRelease
 metadata:
   name: reaction-etl-surcharges
@@ -11,11 +11,11 @@ spec:
     ref: develop
   values:
     annotations:
-      iam.amazonaws.com/role: arn:aws:iam::551763058466:role/sdi-ems-staging-serverless-deploy
+      iam.amazonaws.com/role: arn:aws:iam::490759768946:role/sdi-ems-staging-serverless-deploy
     environment:
       REACTION_LOG_LEVEL: INFO
-      SITE_CODE: EMS
+      SITE_CODE: BOBS
       SKIP_INVOCATION: false
     package:
       name: reaction-etl-surcharges
-      version: c6cfe2c
+      version: b5988c6

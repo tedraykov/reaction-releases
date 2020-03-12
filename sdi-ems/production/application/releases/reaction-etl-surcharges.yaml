@@ -11,11 +11,11 @@ spec:
     ref: develop
   values:
     annotations:
-      iam.amazonaws.com/role: arn:aws:iam::551763058466:role/sdi-ems-staging-serverless-deploy
+      iam.amazonaws.com/role: arn:aws:iam::875618166390:role/sdi-ems-staging-serverless-deploy
     environment:
       REACTION_LOG_LEVEL: INFO
       SITE_CODE: EMS
       SKIP_INVOCATION: false
     package:
       name: reaction-etl-surcharges
-      version: c6cfe2c
+      version: b5988c6
