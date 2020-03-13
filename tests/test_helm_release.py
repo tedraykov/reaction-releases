@@ -69,26 +69,26 @@ class TestHelmReleaseSpec(object):
         self.meta = HelmReleaseMetadata(path)
         self.path = path
 
-    def test_loaded(self):
+    def test_loaded(self, path):
         assert self.path
 
-    def test_namespace(self, valid_namespaces):
+    def test_namespace(self, path, valid_namespaces):
          assert self.yaml.namespace in valid_namespaces\
              or self.yaml.namespace == self.meta.environment
 
-    def test_name(self):
+    def test_name(self, path):
         assert self.meta.basename == self.yaml.name
 
-    def test_release_name(self):
+    def test_release_name(self, path):
         assert self.meta.basename == self.yaml.release_name
 
-    def test_api_version(self, valid_api_versions):
+    def test_api_version(self, path, valid_api_versions):
         assert self.yaml.api_version in valid_api_versions
 
-    def test_kind(self):
+    def test_kind(self, path):
         assert self.yaml.kind == 'HelmRelease'
 
-    def test_image_tag(self, valid_image_tag):
+    def test_image_tag(self, path, valid_image_tag):
         pattern = valid_image_tag.get(self.yaml.name)
         try:
             image_tag = self.yaml.image_tag
