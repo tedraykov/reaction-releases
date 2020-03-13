@@ -10,23 +10,24 @@ metadata:
     app.kubernetes.io/instance: reaction-import-accounts
 spec:
   restartPolicy: Never
-  imagePullPolicy: Always
-  imagePullSecrets:
-    - name: reaction-docker-hub
   containers:
   - name: runner
-    image: sportsdirect/reaction-etl-accounts-import:latest
+    image: 816897914983.dkr.ecr.us-east-1.amazonaws.com/reaction-etl-accounts-import:39b6696
+    imagePullPolicy: Always
+    imagePullSecrets:
+      - name: reaction-docker-hub
+    command:
       - node
       - --max-old-space-size=8192
       - /home/node/app/main.js
     env:
       - name: GROUP_ID
-        value: XXX
+        value: "FF6RHwk7KQjmzh2Fj"
       - name: OBFUSCATE_EMAIL
         value: true
       - name: MONGO_URL
         valueFrom:
-          secretRef:
+          secretKeyRef:
             name: reaction-core-worker
             key: MONGO_URL
       - name: S3_BUCKET
@@ -35,7 +36,7 @@ spec:
             name: buckets
             key: BUCKET_FEEDS_WEB_CUSTOMER
       - name: S3_FILE_KEY
-        value: XXX
+        value: test_customers_20200312.xml
       - name: SHOP_ID
         value: 66
     resources:
