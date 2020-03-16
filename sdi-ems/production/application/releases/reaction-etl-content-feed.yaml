@@ -15,7 +15,7 @@ spec:
     fullnameOverride: reaction-etl-content-feed
     imagePullSecret: reaction-docker-hub
     image:
-      tag: 72bc047
+      tag: 72c9e6d
     schedule: "0 4 * * *"
     config:
       batchSize: 1000
