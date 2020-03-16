@@ -1,10 +1,10 @@
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
-  name: reaction-outbound-content-feed
+  name: reaction-etl-content-feed
   namespace: staging
 spec:
-  releaseName: reaction-outbound-content-feed
+  releaseName: reaction-etl-content-feed
   chart:
     git: git@github.com:sportsdirect/sdi-releases.git
     path: charts/reaction-outbound-content-feed
