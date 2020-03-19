@@ -12,10 +12,7 @@ spec:
   restartPolicy: Never
   containers:
   - name: runner
-    image: 816897914983.dkr.ecr.us-east-1.amazonaws.com/reaction-etl-accounts-import:39b6696
-    imagePullPolicy: Always
-    imagePullSecrets:
-      - name: reaction-docker-hub
+    image: 816897914983.dkr.ecr.us-east-1.amazonaws.com/reaction-etl-accounts-import:062c5bd
     command:
       - node
       - --max-old-space-size=8192
@@ -24,7 +21,7 @@ spec:
       - name: GROUP_ID
         value: "FF6RHwk7KQjmzh2Fj"
       - name: OBFUSCATE_EMAIL
-        value: true
+        value: "true"
       - name: MONGO_URL
         valueFrom:
           secretKeyRef:
@@ -36,9 +33,11 @@ spec:
             name: buckets
             key: BUCKET_FEEDS_WEB_CUSTOMER
       - name: S3_FILE_KEY
-        value: test_customers_20200312.xml
+        value: "test_customers_20200312.xml"
       - name: SHOP_ID
-        value: 66
+        value: "66"
+      - name: REACTION_LOG_LEVEL
+        value: "INFO"
     resources:
       requests:
         memory: "8Gi"
