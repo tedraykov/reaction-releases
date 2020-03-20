@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: reaction-oneoff-add-friendly-order-status
+  namespace: staging
+  annotations:
+    iam.amazonaws.com/role: arn:aws:iam::551763058466:role/sdi-ems-staging-reaction-one-off-tools
+  labels:
+    app.kubernetes.io/name: reaction-oneoff
+    app.kubernetes.io/instance: reaction-oneoff-add-friendly-order-status
+spec:
+  restartPolicy: Never
+  containers:
+  - name: runner
+    image: 816897914983.dkr.ecr.us-east-1.amazonaws.com/reaction-one-off-tools:54d1318
+    imagePullPolicy: Always
+    command:
+      - node
+      - --max-old-space-size=8192
+      - /home/node/app/add-friendly-order-status/main.js
+    env:
+      - name: MONGO_URL
+        valueFrom:
+          secretKeyRef:
+            name: reaction-core-worker
+            key: MONGO_URL
+    resources:
+      requests:
+        memory: "512M"
