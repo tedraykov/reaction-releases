@@ -56,7 +56,7 @@ spec:
       max: 10
     image:
       repository: 816897914983.dkr.ecr.us-east-1.amazonaws.com/reaction-storefront-ems
-      tag: 6db529df
+      tag: f1adb4b8
     ingress:
       hosts:
         - host: boris.ems.com
