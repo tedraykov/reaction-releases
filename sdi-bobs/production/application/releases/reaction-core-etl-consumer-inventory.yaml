@@ -1,10 +1,10 @@
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
-  name: reaction-core-etl-consumer-inventory-v2
+  name: reaction-core-etl-consumer-inventory
   namespace: production
 spec:
-  releaseName: reaction-core-etl-consumer-inventory-v2
+  releaseName: reaction-core-etl-consumer-inventory
   chart:
     git: git@github.com:sportsdirect/sdi-releases.git
     path: charts/reaction-core
@@ -12,7 +12,7 @@ spec:
   values:
     image:
       repository: docker.io/sportsdirect/reaction
-      tag: 95b84a094a61365d6c5af279f52cf58baf7f0b5e
+      tag: 7a9a93d31350c78fb74ebd504c5e2f7800948f16
     imagePullSecrets:
       - name: reaction-docker-hub
     config:
