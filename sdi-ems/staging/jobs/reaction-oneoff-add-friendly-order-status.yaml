@@ -17,7 +17,7 @@ spec:
     command:
       - node
       - --max-old-space-size=8192
-      - /home/node/app/add-friendly-order-status/main.js
+      - /opt/reaction-one-off-tools/add-friendly-order-status/main.js
     env:
       - name: MONGO_URL
         valueFrom:
