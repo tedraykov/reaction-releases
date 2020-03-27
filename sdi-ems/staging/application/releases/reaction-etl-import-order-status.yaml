@@ -20,4 +20,4 @@ spec:
       SKIP_INVOCATION: false
     package:
       name: reaction-etl-import-order-status
-      version: 1217881
+      version: "1217881"
