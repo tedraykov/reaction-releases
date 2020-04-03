@@ -40,6 +40,6 @@ spec:
       shippableInventoryConsumerEnabled: true
     image:
       repository: docker.io/sportsdirect/reaction
-      tag: f76e5143114218b649088919cbfaa5818242323d
+      tag: eb9dd4f205370005b88ccff7b4adbfb447480fe1
     imagePullSecrets:
       - name: reaction-docker-hub
