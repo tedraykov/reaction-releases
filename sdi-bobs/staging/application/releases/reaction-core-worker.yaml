@@ -60,6 +60,6 @@ spec:
       taxesConsumerEnabled: true
     image:
       repository: docker.io/sportsdirect/reaction
-      tag: 9d9ca7877fca31e80e597bf672734dbd287488a2
+      tag: c5323e40ba578834d8ec8f8f2804cf78b84f5a71
     imagePullSecrets:
       - name: reaction-docker-hub
