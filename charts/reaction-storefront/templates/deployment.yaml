@@ -50,7 +50,7 @@ spec:
               port: admin
           readinessProbe:
             httpGet:
-              path: /
+              path: /coupons
               port: http
               httpHeaders:
               - name: Kube-Readiness
