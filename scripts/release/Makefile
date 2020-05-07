@@ -58,7 +58,7 @@ CERTIFICATE := public.pem
 #:
 .PHONY: encrypt-string
 encrypt-string:
-	tr -d \\n $(cat /dev/stdin)|kubeseal --cert $(CERTIFICATE) --namespace $(NAMESPACE) --raw --from-file /dev/stdin --scope cluster-wide;echo
+	tr -d \\n $(cat /dev/stdin)|kubeseal --cert $(CERTIFICATE) --raw --from-file /dev/stdin --scope cluster-wide;echo
 
 #:README.md
 #:---------
