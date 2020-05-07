@@ -35,7 +35,7 @@ spec:
         redirectUrl: https://boris.ems.com/callback
       radial:
         clientId: EMSUS
-        mode: sandbox
+        mode: production
         rdfUrl: https://rdf.radial.com/rdf/service/scripts?clientIdentifier=EMSUS
       segmentAnalytics:
         enabled: true
