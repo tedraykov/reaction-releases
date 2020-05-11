@@ -76,3 +76,5 @@ data:
   ALLOW_RESET_CODES_MUTATION: {{ required "config.allowResetCodesMutation not defined." .Values.config.allowResetCodesMutation | quote }}
   KAFKA_TOPIC_SURCHARGES: {{ required "config.kafkaTopicSurcharges not defined." .Values.config.kafkaTopicSurcharges | quote }}
   SURCHARGE_CONSUMER_ENABLED: {{ required "config.surchargeConsumerEnabled not defined." .Values.config.surchargeConsumerEnabled | quote }}
+  CART_EXPIRY_SECONDS: {{ .Values.config.cartExpirySeconds | quote }}
+
