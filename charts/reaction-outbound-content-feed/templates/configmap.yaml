@@ -29,3 +29,4 @@ data:
   PRICEBOOK_ID_MEMBER: {{ required "config.pricebookIdMember not defined." .Values.config.pricebookIdMember | quote }}
   SITE_CODE: {{ required "config.siteCode not defined." .Values.config.siteCode | quote }}
   STOREFRONT_BASE_URL: {{ required "config.storefrontBaseUrl not defined." .Values.config.storefrontBaseUrl | quote }}
+  VENDOR_FILE_PREFIX: {{ required "config.vendorFilePrefix not defined." .Values.config.vendorFilePrefix | quote }}

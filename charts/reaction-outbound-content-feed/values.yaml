@@ -20,6 +20,7 @@ config:
 #  pricebookIdMember: bobs-member-pricing
 #  siteCode: BOBS
 #  storefrontBaseUrl: https://storefront.bobs-test.io
+  vendorFilePrefix: "DW"
 
 image:
   repository: 816897914983.dkr.ecr.us-east-1.amazonaws.com/reaction-etl-content-feed

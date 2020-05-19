@@ -15,7 +15,7 @@ spec:
     fullnameOverride: reaction-etl-content-feed
     imagePullSecret: reaction-docker-hub
     image:
-      tag: 72c9e6d
+      tag: 818f5d7
     schedule: "0 4 * * *"
     config:
       batchSize: 1000
@@ -34,6 +34,7 @@ spec:
       s3InternalExportBucketName: sdi-ems-production-feeds-ocf
       siteCode: EMS
       storefrontBaseUrl: https://boris.ems.com
+      vendorFilePrefix: "RC"
     resources:
       requests:
         memory: 3Gi

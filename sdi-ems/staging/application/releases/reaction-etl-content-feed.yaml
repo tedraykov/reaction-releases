@@ -15,7 +15,7 @@ spec:
     fullnameOverride: reaction-etl-content-feed
     imagePullSecret: reaction-docker-hub
     image:
-      tag: 66d86a3
+      tag: 818f5d7
     schedule: "0 4 * * *"
     config:
       batchSize: 1000
@@ -33,6 +33,7 @@ spec:
       s3InternalExportBucketName: sdi-ems-staging-feeds-ocf
       siteCode: EMS
       storefrontBaseUrl: https://staging.ems-test.io
+      vendorFilePrefix: "RC"
     resources:
       requests:
         memory: 3Gi
