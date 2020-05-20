@@ -27,6 +27,14 @@ spec:
         environment: production
       elasticsearchUrl: https://vpc-production-storefront-bqztylrrrcalisngun4njcgjna.us-east-1.es.amazonaws.com:443
       mapboxToken: pk.eyJ1IjoianBoaWxvIiwiYSI6ImNqeHFlZHRkaDAwM3YzaXMwenNvZmcyYXYifQ.pEVH_imRqxqTjdpIcuiRBg
+      healthcheck:
+        applePay: 0377a72f-1237-4742-8c38-6ee626e147c8
+        cardAmericanExpress: cc090b27-a644-49ab-a940-4a5f37786104
+        cardDiscoverCard: 49550661-cc32-47f1-b217-bf48fcead434
+        cardMasterCard: f91da11c-5d59-46ec-ac5e-53b54d1dc812
+        cardVisa: 26413c6c-e1a4-46ca-8f26-2870ccc7e4f6
+        orderCompleted: 0ee96746-65ab-4c5c-b8ff-d5a091bb1516
+        payPal: 6bba35cb-e9dc-41b9-8361-c115b694bcf7
       oauth2:
         authUrl: https://auth.ems.com/oauth2/auth
         clientId: ems-production-storefront

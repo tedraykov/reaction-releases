@@ -26,6 +26,14 @@ spec:
         apiKey: blt7841d2a593726d96
         environment: staging
       elasticsearchUrl: https://vpc-staging-storefront-mduien76trlzpmbscx5il5tszy.us-east-1.es.amazonaws.com:443
+      healthcheck:
+        applePay: 620ef403-4e09-46f8-a7e1-9bcbaf3e85b9
+        cardAmericanExpress: e4e4df83-6692-48b8-be94-cd0bc51a4dfe
+        cardDiscoverCard: 1102bef7-682b-4019-a25f-0e9b1e333bf6
+        cardMasterCard: 3c7834b4-e771-44fb-97a1-93e4521b0f16
+        cardVisa: 6bf56e7b-2308-4298-ad39-03f641531709
+        orderCompleted: 07c43c20-c57c-4348-af74-2bb608f9424f
+        payPal: 2e762d6d-4e1c-4eb5-854b-42dfc24a9389
       mapboxToken: pk.eyJ1IjoianBoaWxvIiwiYSI6ImNqeHFlZHRkaDAwM3YzaXMwenNvZmcyYXYifQ.pEVH_imRqxqTjdpIcuiRBg
       oauth2:
         authUrl: https://auth-staging.ems-test.io/oauth2/auth
