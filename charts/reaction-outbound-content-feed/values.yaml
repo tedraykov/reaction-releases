@@ -8,6 +8,7 @@ config:
 #  s3ExternalExportBucketName: sdi-staging-feeds-outbound-content-bobs
 #  s3InternalExportBucketName: sdi-staging-feeds-ocf-bobs
 #  jaegerEndpoint: https://jaeger-collector.bobs-test.io/api/traces
+  jaegerServiceName: reaction-etl-content-feed
 #  kafkaBootstrapServers: kafka-broker-0.bobs-test.io:9092
   kafkaTopicContentFeedStatus: etl.content-feed.json-gen1
   kafkaTopicContentFeedErrors: etl.content-feed.errors.json-gen1
