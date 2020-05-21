@@ -22,7 +22,11 @@ data:
   KAFKA_PARTITION_CONTENT_FEED_STATUS: {{ required "config.kafkaPartitionContentFeedStatus not defined." .Values.config.kafkaPartitionContentFeedStatus | quote }}
   KAFKA_PARTITION_CONTENT_FEED_ERRORS: {{ required "config.kafkaPartitionContentFeedErrors not defined." .Values.config.kafkaPartitionContentFeedErrors | quote }}
   KMS_KEY_ARN: {{ required "config.kmsKeyArn not defined." .Values.config.kmsKeyArn | quote }}
+{{ if .Values.config.mongoUrl }}
+  MONGO_URL: {{ required "config.mongoUrl not defined" .Values.config.mongoUrl | quote }}
+{{ else }}
   MONGODB_NAME: {{ required "config.mongoDbName not defined." .Values.config.mongoDbName | quote }}
+{{ end }}
   PRICEBOOK_ID_PERM: {{ required "config.pricebookIdPerm not defined." .Values.config.pricebookIdPerm | quote }}
   PRICEBOOK_ID_RETAIL: {{ required "config.pricebookIdRetail not defined." .Values.config.pricebookIdRetail | quote }}
   PRICEBOOK_ID_SALE: {{ required "config.pricebookIdSale not defined." .Values.config.pricebookIdSale | quote }}
