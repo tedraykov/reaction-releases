@@ -12,7 +12,7 @@ spec:
   restartPolicy: Never
   containers:
   - name: runner
-    image: 816897914983.dkr.ecr.us-east-1.amazonaws.com/reaction-etl-accounts-import:062c5bd
+    image: 816897914983.dkr.ecr.us-east-1.amazonaws.com/reaction-etl-accounts-import:1baaeda
     command:
       - node
       - --max-old-space-size=8192
@@ -33,7 +33,7 @@ spec:
             name: buckets
             key: BUCKET_FEEDS_WEB_CUSTOMER
       - name: S3_FILE_KEY
-        value: "file_not_provided_yet"
+        value: "ems_customers_split_1.xml"
       - name: SHOP_ID
         value: "66"
     resources:
