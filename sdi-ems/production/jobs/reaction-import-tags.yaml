@@ -10,13 +10,11 @@ spec:
   restartPolicy: Never
   containers:
   - name: runner
-    image: 816897914983.dkr.ecr.us-east-1.amazonaws.com/reaction-tags-import:500f08d
+    image: 816897914983.dkr.ecr.us-east-1.amazonaws.com/reaction-tags-import:162657e
     command: [ "yarn", "start" ]
     env:
       - name: SITE_CODE
         value: "EMS"
-      - name: ACTION
-        value: "purge"
       - name: MONGO_URL
         valueFrom:
           secretKeyRef:
@@ -24,6 +22,8 @@ spec:
             key: MONGO_URL
       - name: REACTION_LOG_LEVEL
         value: DEBUG
+      - name: ACTION
+        value: ""
     imagePullPolicy: Always
     resources:
       requests:
