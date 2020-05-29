@@ -1,0 +1,23 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: reaction-sftp-to-radial-ocf
+  namespace: production
+spec:
+  releaseName: reaction-sftp-to-radial-ocf
+  chart:
+    git: git@github.com:sportsdirect/sdi-releases.git
+    path: charts/reaction-sftp-client
+    ref: develop
+  values:
+    annotations:
+      iam.amazonaws.com/role: arn:aws:iam::875618166390:role/sdi-ems-production-reaction-job-sftp-to-radial-ocf
+    fullnameOverride: reaction-sftp-to-radial-ocf
+    image:
+      tag: 9105c00
+    schedule: "0 5 * * *"
+    config:
+      sftpClientPassword: AgCQwakRMy/bflHwkdcbLs8P8HelfClnlqyFSJudJbJxnyhvcm1RkyClm8WR6+O4qF6bZ0k5DdaSQl90PYx907If/sgRC1JSqfWBD8DvftuX6cdgRqH/jTWzlxJXySzyjsdL5FxWV26AtPncx/inpN+P9s6IjroBwYiOko83f1VAid2TzuNnFo0fVKwzlL7cLEar2QAsdz2NbgWjt6TTMMGgr/r/8HHp4yN0WBc8mm0Z9KirVbF1OlN9sL4qg9ZKbs/qckYc9gjyJCa8Id+awto2GeT2xDkOi1g1qX2wudZ15/8aFrTPDIu5s7uAV5f1+rvp5ZmAPQy56TG4F+p39acP7zz9ZuFy5nNhEBrO3MitiyyAIXkZXesu+QjtpTT3m/rnu67VOpGeqKcRjf2s/mbyHFkHI9hHuGSlzFWOAHhbwmANifsWNgGHH5eJheQh28j+Z9c0ep2Wdwq9spctZqkvheYHo5y0khGpQERZt3dAeth3DPMcLS8/FafhI74s/nkazomLpnYWxtQBlPNrF2tEy9YFjw/Gz+6HEk+1PIWYoEJGIV94PuWeii/OMBClu11wTIWcRmzdfU+AN0fgkdkb8NJfws1H/WtinwVysHjECeosT7ufF2p+uQ/syqO7qyI/DOr8CgeRn9dIlhw7FAUsB7gOTDnEQHexSI3Nljuvl+tEHmIaxREhQStMpqX2L4dMqyllnrgtwMBB
+      sftpClientSource: s3://sdi-ems-production-feeds-outbound-content
+      sftpClientTarget: sftp://ftp.gsipartners.com/marketplace
+      sftpClientUsername: emsmpftp
