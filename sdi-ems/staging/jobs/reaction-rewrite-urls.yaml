@@ -1,0 +1,28 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: reaction-rewrite-urls
+  namespace: production
+  labels:
+    app.kubernetes.io/name: reaction-rewrite-urls
+    app.kubernetes.io/instance: reaction-rewrite-urls
+spec:
+  restartPolicy: Never
+  containers:
+  - name: runner
+    image: 816897914983.dkr.ecr.us-east-1.amazonaws.com/reaction-tags-import:8f2f666
+    command: [ "yarn", "friendly-tag-slugs", "--commit" ]
+    env:
+      - name: SITE_CODE
+        value: "EMS"
+      - name: MONGO_URL
+        valueFrom:
+          secretKeyRef:
+            name: reaction-core-worker
+            key: MONGO_URL
+      - name: REACTION_LOG_LEVEL
+        value: DEBUG
+    imagePullPolicy: Always
+    resources:
+      requests:
+        memory: "2Gi"
