@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: reaction-rewrite-urls
-  namespace: production
+  namespace: staging
   labels:
     app.kubernetes.io/name: reaction-rewrite-urls
     app.kubernetes.io/instance: reaction-rewrite-urls
