@@ -10,7 +10,7 @@ spec:
   restartPolicy: Never
   containers:
   - name: runner
-    image: 816897914983.dkr.ecr.us-east-1.amazonaws.com/reaction-tags-import:8f2f666
+    image: 816897914983.dkr.ecr.us-east-1.amazonaws.com/reaction-tags-import:56c35ac
     command: [ "yarn", "friendly-tag-slugs", "--commit" ]
     env:
       - name: SITE_CODE
