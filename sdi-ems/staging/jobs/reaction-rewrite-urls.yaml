@@ -15,6 +15,8 @@ spec:
     env:
       - name: SITE_CODE
         value: "EMS"
+      - name: ACTION
+        value: ""
       - name: MONGO_URL
         valueFrom:
           secretKeyRef:
