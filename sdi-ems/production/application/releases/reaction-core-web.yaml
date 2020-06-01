@@ -39,8 +39,8 @@ spec:
       rootUrl: https://api.ems.com
       sentry:
         enabled: true
-        dsn: https://1dfbd3f09cd94f3f982aac440b40ffae@sentry.io/1802036
-        environment: staging
+        dsn: https://fa826e3bbc024bf8bf66570867968425@o234104.ingest.sentry.io/1802036
+        environment: production
       siteCode: EMS
     horizontalPodAutoscaler:
       enabled: true
