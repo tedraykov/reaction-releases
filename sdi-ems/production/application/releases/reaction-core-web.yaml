@@ -42,6 +42,7 @@ spec:
         dsn: https://fa826e3bbc024bf8bf66570867968425@o234104.ingest.sentry.io/1802036
         environment: production
       siteCode: EMS
+      startingNewCustomerNumber: "7770000700001"
     horizontalPodAutoscaler:
       enabled: true
       averageUtilization: 70

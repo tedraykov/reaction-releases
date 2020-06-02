@@ -39,6 +39,7 @@ spec:
       rootUrl: https://api.ems.com
       siteCode: EMS
       shippableInventoryConsumerEnabled: true
+      startingNewCustomerNumber: "7770000700001"
     image:
       repository: docker.io/sportsdirect/reaction
       tag: 2dc7c865bd579ac59a85b12fd6ae9e9a6ce3dbbe

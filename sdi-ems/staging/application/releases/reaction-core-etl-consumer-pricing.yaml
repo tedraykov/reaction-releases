@@ -35,6 +35,7 @@ spec:
       reactionEmail: AgB0jP8pfewJ1eeI57ylZRXCzsY/rh8I6B7mgYzOb2N4VWGUXpZ90ZdVg/YjAeMFb0MtMKUlQbWUaBvsiA9YgBmmGzQdMUh6GQClvGxnlnjO68KpryqkQrCaCJh7237T2ShW15ijkXncEyTMM6+puEQGdRVOvsC2xLXiIP0Q5dthxYIe3zwlnyPdWGu5BDBmbr2U009eZ0pu+khpMW+ad+IdB+MmT+5rOrIjw1gKGDJO1pUPjFnjtOlcVzsCaS1E7c2Kcz7g7pZEWPwYQXvVphmPwYB43isFrYDKGlfnzaSExyWi+GJ3dDKW1i3riuUVSHgzhcQ5kgPPX0Fm7+qLtHUOnaWpecd4+MfuN38ZSGaPM6d45GGlEDwU+DSnBzSwe3djlYBK0twN2Dbba8tU48mpU2XCQZmxuOK+isfkGH9/NF26WFjt/cgnsROMWmbVSObZqh+8HXoxVJMkMTNvPqPK99UYl8W+cJwOqNVzTr7VXebOeNUtW5HpkS3pkaZ5WKpx0aC3ywX7hLFPaUDYm4DkXeh4ZE9xRsr3Fo97jaa4QYPQJvqykFfRh+J7wuDEbk899y+jiH57PsD99SW62ld4UV0sTBJ1Os+lNtOdeP0CqYtj82wjbGDLNE9wMWuCM+QAtsy6EhvKv8I+rIU8Us2wvyDMTqoGdrcvSb49bvLGz1e8VbzKj0x+y+ZN90fZz4B16vKQqvYJkzBr8+ChGGo=
       rootUrl: https://api-staging.ems-test.io
       siteCode: EMS
+      startingNewCustomerNumber: "7770000700001"
     image:
       repository: docker.io/sportsdirect/reaction
       tag: 2dc7c865bd579ac59a85b12fd6ae9e9a6ce3dbbe

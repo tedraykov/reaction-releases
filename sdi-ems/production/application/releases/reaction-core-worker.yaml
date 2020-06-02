@@ -40,6 +40,7 @@ spec:
       reactionEmail: AgA+Bv1UTGxRF15ldwhOPJRU/67NmVXKoeWoe4PntqCP5jndHi8rtn+qw8ubjEN5T/YuI+/XPDbgqLDS/gPXaxk5Rn5KMSzzVXelz0/SVoC7KxdWEGENGwhsT+uN3lPBjqFNxumkHFwFHDTmzUKiNiuXOXqb598JIbBJcKH0gXWsfOf87f/RwnXbV3pT1r0Ke06BqZRbIMF1mW4DFDceGXrGf7zv0Ga/VZLrvzytVwoKsgVccAoFKjtrSVJiomfpBERNC3rwHt6G47v+YSD/aLqtYwoXFh2EHugLzjvs0oSIGICex6mbmQAbPlqQABaHRbiABkWp4L3gXw0El20cyNoGesKXYYGrpP8b9w5RwIgWqQA6Mb699Il7JQ6cfue/r8KcTLKzKLhzccRdaVpLvORlKbuAY1kLNPVFJelZOksDrrgzEbmrADp3iq4+rRUx6LDmBzA3Xry+IX/UPEiE2aaxfKmAwrtjC58r8/AXN7MlwbCDyvybMDn4RDp7s/NM8wBxu5BtKX+Jb+5E7KN4WN0r3Vrs/HJLiQ+XNsZK2vLpUYWb5nSskxLjEfgJ15XWjNv3zk0yOEk1qJcnSwueME8en4L4OjNd3gq7osbQPyVjsLbObTV/nWhsPv6quVJU6JbKi6tzItldXY9j0RKmh9NOSzc/KOHuHwWh7NC22LogCO/mfnoDCJhxQ0RPBp943EQFt3qqH79WivfoRE7isk0=
       rootUrl: https://api.ems.com
       siteCode: EMS
+      startingNewCustomerNumber: "7770000700001"
       surchargeConsumerEnabled: true
       taxesConsumerEnabled: true
     image:
