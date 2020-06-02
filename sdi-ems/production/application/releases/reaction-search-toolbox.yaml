@@ -21,8 +21,8 @@ spec:
       rsKafkaConnectUrl: http://reaction-kafka-connect:8082
       rsMongoUrl: AgBXobbzOgpy3n3oz64n6+P+SS0NxSr5/huOm7GWBYIcdcqkQlZQMO+ib1x/LW/d4+jz9+BOGqMhq5JZ6aCdLFagM8k5dtYYUvwIafOvf7iV9w6+AYvEeMnuLv0SDPAW2AX2muVBsu0em+MSSYszU8Tga26f1unynOL8tgktlHiNxJDH3I3V4RCM2ASLw8Gfat4XbOWIxH3L+9d5uX/DIAvQ7u9sJ74ciyfvvD3+3SBjyrTupuP/wn27hDwDlEewbWK9jZkFmYpD4ldhE9cuQMepdX2iNDzoRHF5uV0JQFSDgXxzkiVewdb72zwihnsyB8klgbrkHFptJJDI1+gJzk1c2WUA1i7eYQ12KmLuDBDyzGmd1CYQi0PZsAcHjCiW6lXqGLOsc75M9HxRlF8HoA51TDG9xfqOau5hiZ4CWL8VLB0me0lrfYZco4Bh2sGkQxE22AUJriSp+3LshlfzRzaztG9nTNjfMuCBBOJpOgioi3vVToeGUo8Nd6R08kI9ZLAySrrJZPl6IWFwhmEnUXIFkoLnRZxrKc1RefFXQoAkM9oEsF0/2LzXhpaVH0R15lvGGSMvXBpW1w3mUo8yFjzzMhQVHKhITj1sTW3NbT1k3vxZWfOFEQRugV2JgWjVS9NSVJM5M0XDKTv7MQ7GChksLw5331K+5J0v/WvDt9AshMWdyL2RDLaOz6tbgky1EthsO05hkcrvIoz1msWkY3SL3BOUdS5hDjH6GhTjpYi5mhas35J+ITwQofF1EDJMtJfd4tIc5Xrj3ZTKr0IFBaTFWcAkrQPut84c6POx7AErOzkqRMKq6Xuj6B/dKF2l3MqvYY/4EF3/HojTEfppOaVE3OtAaEcmQXiBrNg0PS6NSjxnpgegnL9MeWnLfLvgBlp7DZwTZCG1nENIt+hUlSzMmnutERo3W1yKV8n+ZRxDH5xiUsCW+/qOoXoAPQAkSIDeB4mXglHLYFl5rLx6oItw/HG3FBZvBul5VeqrQHjORaYsE9YnZ6Qwml295f0jKD7TDHNIfxGN/vWpZg+MMJroig+j/1D4bmwxZQ==
       rsZookeeper: "z-1.production.p9ku7n.c4.kafka.us-east-1.amazonaws.com:2181,z-2.production.p9ku7n.c4.kafka.us-east-1.amazonaws.com:2181,z-3.production.p9ku7n.c4.kafka.us-east-1.amazonaws.com:2181"
-      rsIndexVersion: '10'
-      rsTopic: 'reaction.cdc.search.catalog.json-gen5'
+      rsIndexVersion: '11'
+      rsTopic: 'reaction.cdc.search.catalog.json-gen2'
     resources:
       requests:
         memory: 1Gi
