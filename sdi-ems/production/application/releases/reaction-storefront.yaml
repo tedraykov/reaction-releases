@@ -26,7 +26,7 @@ spec:
         apiKey: blt7841d2a593726d96
         environment: production
       elasticsearchUrl: https://vpc-production-storefront-bqztylrrrcalisngun4njcgjna.us-east-1.es.amazonaws.com:443
-      mapboxToken: pk.eyJ1IjoianBoaWxvIiwiYSI6ImNqeHFlZHRkaDAwM3YzaXMwenNvZmcyYXYifQ.pEVH_imRqxqTjdpIcuiRBg
+      mapboxToken: pk.eyJ1IjoianBoaWxvIiwiYSI6ImNqeHFlaG1kaDAwNTUzaXA1NmVmbmJpMDEifQ.VCyMGmTZGRtZo_vUrXEutA
       healthcheck:
         applePay: 0377a72f-1237-4742-8c38-6ee626e147c8
         cardAmericanExpress: cc090b27-a644-49ab-a940-4a5f37786104
