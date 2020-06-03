@@ -19,6 +19,6 @@ spec:
     config:
       sftpClientDirectories: "canceled returned shipped"
       sftpClientPassword: AgA4HHdHhBrIXswHsXy6P4Nc/xjDJO9xCmKOo9sZwjU42BN6ZfFEn5Gu8vuWFIPDaaaP/l5wyVditkWAcXDNUV8aQ28UYc7xpYayms4H21LAuUzpparR6aoEy53H/yH2ar3mh0ADHc8D2okpu4p/fIVvOEhCor8zDB9F+0GKMvupkPivU7deWG2FW1fKMNV4A0miFmWWKg8Dld9OKb3CCIjYwPiYPITkxIUmDXBwaCnr4JfBvygb2wpQnxA/1LzmV5vDj4zgG1sfIKYKifr5tkLQZKm3zCsc1DZE3md9WCB7jnlCiBjfeQXwpndOqO11SH4dGSLjldw+0OxICxv4pjD/fymzvGE8AcV/GrGGLD6hCxrdke59sM6cLjYehbfNFn62jx1+CcBCw1KP5cW09+036GuEIvnUF16r5hlT+/eKT1lM0Tdk9kNzh4dmtrJe7tWhrovKjX+D4OkEz7ml5p/YpG9x6I3fyjEK6Hg8Ok5rJcn67rZM8S1dY9caEG/F07ViiRMXbSdLEMiMFx727NifIoYr/Wchw4yXW8K8X+sgCKzS+csptZu0usEUHD//I/s+kl4T3dRUXI2Muie6xZc1sofDro8mzdYZZTWwLXJ1ywzrHz6XdfuJIv71Mlo60qZmjFjDPA8ouA3mph5/ZcgJpiB73fqqplrOPpgx1avLSWjDB3Qdy4CrbxmtRBeCzK2Lfa+HO7TEpw==
-      sftpClientSource: sftp://sftp.remotetools.gsipartners.com/home/outbound/order_status/EMS
+      sftpClientSource: sftp://sftp.remotetools.gsipartners.com/local/jail/emsftp/home/outbound/order_status/EMS/outbound/order_status/EMS
       sftpClientTarget: s3://sdi-ems-production-feeds-order-status-import
       sftpClientUsername: emsjda
