@@ -32,7 +32,7 @@ spec:
       s3ExternalExportBucketName: sdi-ems-production-feeds-outbound-content
       s3InternalExportBucketName: sdi-ems-production-feeds-ocf
       siteCode: EMS
-      storefrontBaseUrl: https://boris.ems.com
+      storefrontBaseUrl: https://www.ems.com
       vendorFilePrefix: "RC"
     resources:
       requests:
