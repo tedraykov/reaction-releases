@@ -13,12 +13,12 @@ spec:
     annotations:
       iam.amazonaws.com/role: arn:aws:iam::875618166390:role/sdi-ems-production-reaction-job-sftp-from-radial
     image:
-      tag: d38cb82
+      tag: b662c5f
     fullnameOverride: reaction-sftp-from-radial
     schedule: "*/5 * * * *"
     config:
       sftpClientDirectories: "canceled returned shipped"
-      sftpClientPassword: AgCpbn6qUjU+XMu28/TaVFRxvz6i3RP/L3avxDFs6KfClkSMNBS6eOTqil0EPF8Oa9g8kxSsJ4Rc15ErOkwHLh5FlYJH42ce99ZMeNMIa5xtW0Iyo5vmVfD7E50igd+yR4V+UEP8yNlEcuDUjfelSRzabciNWYl5Q0Tau6qUXztALlafhwN89Simb4lm0luq8WvqmTOb8MMsTqGvGeU0Dh8IurRJeNuXwmkhUeIJZnKMscqJ267yy4e0fwL6+zm9vV1c0XkPCfvPmh2qg7chw1yt0F0WLoTqvibp7M09p1nf1oq/Tgb0DdZo4oe61D2cQm7ucZY9GUCIhYiddyqVYWy6QesQa4GIoMPWnPq9vRPV7QJcr6wl+I1bcGW1OffP3/u06xbrrIQVq1eR+Oa4Q4iL4BoVO1GnJXYrSkAuWNEOr+Vopx9vC2UnXiOAWR0GfxUZXR9zrmBgBIgrI2QKmLhtuk7RYwNvYIoM/ny+jlO4t/Lts2JzzjkPSd6MaCTx9hgpXNg44ioaCGuf723VFxWtarIQ1g/0hdsQq1Q11XxhBAfzGN7BMqKl6WxSXFYGcoivhMrYavcEmqPXvH+sQSmnVjp8qcthJ25oBgU0yaW69Z/p4y6oEg1FcQVt2VBePJYm94BH3XskOs8mYmBoeKIW4ZLiyVuqwmmfWRQg6n4b39/He2SEEuRcEGnjYFZ364YW6q7E621OBd+V
+      sftpClientPassword: AgA4HHdHhBrIXswHsXy6P4Nc/xjDJO9xCmKOo9sZwjU42BN6ZfFEn5Gu8vuWFIPDaaaP/l5wyVditkWAcXDNUV8aQ28UYc7xpYayms4H21LAuUzpparR6aoEy53H/yH2ar3mh0ADHc8D2okpu4p/fIVvOEhCor8zDB9F+0GKMvupkPivU7deWG2FW1fKMNV4A0miFmWWKg8Dld9OKb3CCIjYwPiYPITkxIUmDXBwaCnr4JfBvygb2wpQnxA/1LzmV5vDj4zgG1sfIKYKifr5tkLQZKm3zCsc1DZE3md9WCB7jnlCiBjfeQXwpndOqO11SH4dGSLjldw+0OxICxv4pjD/fymzvGE8AcV/GrGGLD6hCxrdke59sM6cLjYehbfNFn62jx1+CcBCw1KP5cW09+036GuEIvnUF16r5hlT+/eKT1lM0Tdk9kNzh4dmtrJe7tWhrovKjX+D4OkEz7ml5p/YpG9x6I3fyjEK6Hg8Ok5rJcn67rZM8S1dY9caEG/F07ViiRMXbSdLEMiMFx727NifIoYr/Wchw4yXW8K8X+sgCKzS+csptZu0usEUHD//I/s+kl4T3dRUXI2Muie6xZc1sofDro8mzdYZZTWwLXJ1ywzrHz6XdfuJIv71Mlo60qZmjFjDPA8ouA3mph5/ZcgJpiB73fqqplrOPpgx1avLSWjDB3Qdy4CrbxmtRBeCzK2Lfa+HO7TEpw==
       sftpClientSource: sftp://sftp.remotetools.gsipartners.com/outbound/order_status/EMS
       sftpClientTarget: s3://sdi-ems-production-feeds-order-status-import
-      sftpClientUsername: ems_sftp
+      sftpClientUsername: emsjda
