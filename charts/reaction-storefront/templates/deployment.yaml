@@ -35,6 +35,9 @@ spec:
           envFrom:
             - configMapRef:
                 name: {{ $fullName }}
+            - configMapRef:
+                name: {{ include "reaction-storefront.name" . }}-provisioned
+                optional: true
             - secretRef:
                 name: {{ $fullName }}
           ports:

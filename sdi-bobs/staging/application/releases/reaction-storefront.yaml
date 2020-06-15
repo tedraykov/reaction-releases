@@ -13,7 +13,7 @@ spec:
   chart:
     git: git@github.com:sportsdirect/sdi-releases.git
     path: charts/reaction-storefront
-    ref: feature/redis-configmap
+    ref: develop
   values:
     config:
       applePayMerchantId: merchant.staging.bobstores
