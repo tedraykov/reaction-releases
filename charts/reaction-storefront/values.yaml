@@ -84,7 +84,7 @@ config:
     #  clientId: XXX
     #  clientSecret: <encrypted-string>
     host: hydra
-    #  idpHostUrl: https://api.example.com/
+    idpHostUrl: http://reaction-core-web/
     #  redirectUrl: https://www.example.com/callback
     tokenUrl: http://hydra:4444/oauth2/token
   radial: {}
