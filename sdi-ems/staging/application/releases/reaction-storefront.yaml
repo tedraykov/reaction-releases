@@ -56,6 +56,8 @@ spec:
         project: ems
         sourcemapToken: 13a829e4fb0e11e994f94201c0a8d02b
       sessionSecret: AgAcr7m9TRQXNzQGf1dJbRNjT8aTKvODxPwCjlSllyOxsCqLUK04E3Z8u/rC3SO1MffgvH06qk+BUnTOVKSBG8eRF8kzUGIqoJslxq6cX/fpaEifaj2bmqQKQC0lY1U3X9y3qXXzUlcf2Q+6D1bAGkJtecB3cceXhgANutCbikSdsYgKxT1dWfcUp2uD+P3dhapN2epDgOpNSGav32vHfyKARY+ykQV0Fi+fKXRv70VimE9++1ruSvfsYeSKDYAWGvg9Iag0JQt6gZbQhnUSe6CWRCqh4TlYEYrCIkB+tuo8dQOry8tKgifi9v5Pa7dbJED8ggbDBiVzIgXyyKNH1TF4QSyLYKIhtsdGJ/5zOX8WeFpi5nTmIulEKZ3vpmHUODECLL560HvDg1E5B07TacFptasiLZ+2oGtngWYXj4rx7gNK7/lJfIlhC1Ra6N/C8NkEEwLzOfPRkhAmckhtews4npKKc/B20J/EPS2QHkA/Bg18+uojkb/YP7aEn88ahQAWnqnHPqNyahRqSgTmwnNQL6RrM3k/i3Z9wrWvYpNzCamB6Ud/mNiwf+K5WsMG+yU82Nxfet+EcWj2YmyqHnH9NfOECB/epWDQK5kauaAzoNXtOB4wkIB/scXQhlMU7mJsAQnir/xnDNZ/ToHFt8GPCwAGxnmOXezHqNgZZK4dQ49KSo8tVY5f/m1FbxER0leeO3JuJWrzTTviDozxAl0=
+      productCountReportEnabled: true
+      tagAttributesReportEnabled: true
     horizontalPodAutoscaler:
       enabled: true
       averageUtilization: 70
@@ -63,7 +65,7 @@ spec:
       max: 10
     image:
       repository: 816897914983.dkr.ecr.us-east-1.amazonaws.com/reaction-storefront-ems
-      tag: c6ed3417
+      tag: a058f50c
     ingress:
       hosts:
         - host: staging.ems-test.io

@@ -106,6 +106,7 @@ config:
     #  environment: staging
     org: frasers
     #  project: XXX
+  productCountReportEnabled: false
   tagAttributesReportEnabled: false
 
 horizontalPodAutoscaler:

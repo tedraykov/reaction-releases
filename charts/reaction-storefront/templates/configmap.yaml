@@ -88,6 +88,9 @@ data:
   SENTRY_PROJECT: {{ required "config.sentry.project not defined" .Values.config.sentry.project | quote }}
 {{- end }}
   SESSION_MAX_AGE_MS: {{ required "config.sessionMaxAge not defined." .Values.config.sessionMaxAge | quote }}
+{{- if .Values.config.productCountReportEnabled }}
+  PRODUCT_COUNT_REPORT_ENABLED: {{ .Values.config.productCountReportEnabled | quote }}
+{{- end }}
 {{- if .Values.config.tagAttributesReportEnabled }}
   TAG_ATTRIBUTES_REPORT_ENABLED: {{ .Values.config.tagAttributesReportEnabled | quote }}
 {{- end }}
