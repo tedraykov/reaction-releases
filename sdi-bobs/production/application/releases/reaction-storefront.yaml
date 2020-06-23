@@ -67,7 +67,7 @@ spec:
       max: 10
     image:
       repository: 816897914983.dkr.ecr.us-east-1.amazonaws.com/reaction-storefront-bobs
-      tag: 28b92615
+      tag: ba0a9a3c
     ingress:
       hosts:
         - host: www.bobstores.com
