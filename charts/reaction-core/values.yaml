@@ -94,6 +94,11 @@ config:
   taxesConsumerEnabled: false
   user: "Reaction Admin"
 
+envFrom:
+  - secretRef:
+      name: mongodb
+      optional: true
+
 resources:
   limits:
     cpu: 2
