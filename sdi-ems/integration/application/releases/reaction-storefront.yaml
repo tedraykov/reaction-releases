@@ -40,8 +40,8 @@ spec:
         writeKey: oTm3YQxgfc6udco67OFJDumcfUX2fCU2
         serverWriteKey: XmeVGVB320SC3CEuuZOIVeHZDQxNQHq3
       sentry:
-        enabled: false
-        dsn: https://e5a55219e65d473a9c04625b0e2cbcca@sentry.io/1802036
+        enabled: true
+        dsn: https://a02dce0a98034d6b8c141cf525a41de4@o234104.ingest.sentry.io/1802036
         environment: integration
         key: e5a55219e65d473a9c04625b0e2cbcca
         project: ems

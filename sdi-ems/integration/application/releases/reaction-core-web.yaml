@@ -41,7 +41,7 @@ spec:
       rootUrl: https://api-integration.ems-test.io
       sentry:
         enabled: true
-        dsn: https://1dfbd3f09cd94f3f982aac440b40ffae@sentry.io/1802036
+        dsn: https://f60d09019bf940c48af8ca7ca9a081ec@o234104.ingest.sentry.io/1802036
         environment: integration
       siteCode: EMS
       startingNewCustomerNumber: "7770000700001"
