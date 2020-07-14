@@ -38,12 +38,6 @@ def valid_namespaces():
 @pytest.fixture
 def valid_image_tag():
     return {
-        'reaction-core-etl-consumer-inventory': PATTERN_SHA1_LONG,
-        'reaction-core-etl-consumer-loyalty': PATTERN_SHA1_LONG,
-        'reaction-core-etl-consumer-pricing': PATTERN_SHA1_LONG,
-        'reaction-core-master-publisher': PATTERN_SHA1_LONG,
-        'reaction-core-web': PATTERN_SHA1_LONG,
-        'reaction-core-worker': PATTERN_SHA1_LONG,
         'reaction-storefront': PATTERN_SHA1_SHORT,
     }
 

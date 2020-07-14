@@ -1,0 +1,29 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: reaction-search-toolbox
+  namespace: integration
+spec:
+  releaseName: reaction-search-toolbox
+  chart:
+    git: git@github.com:sportsdirect/sdi-releases.git
+    path: charts/reaction-search-toolbox
+    ref: reaction-core/v3
+  helmVersion: v3
+  values:
+    imagePullSecrets:
+      - name: reaction-docker-hub
+    image:
+      repository: reactioncommerce/reaction-search-toolbox
+      tag: "31befc43fcae33ae6e1a15c015e718b8aed3d20a"
+    config:
+      rsDb: ems-integration
+      rsIndexVersion: '1'
+      rsTopic: 'reaction.cdc.search.catalog.json-gen1'
+    resources:
+      requests:
+        memory: 1Gi
+        cpu: "1"
+      limits:
+        memory: 2Gi
+        cpu: "2"

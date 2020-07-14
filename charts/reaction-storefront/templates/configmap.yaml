@@ -94,3 +94,6 @@ data:
 {{- if .Values.config.tagAttributesReportEnabled }}
   TAG_ATTRIBUTES_REPORT_ENABLED: {{ .Values.config.tagAttributesReportEnabled | quote }}
 {{- end }}
+{{- if .Values.config.reactionVersionThree }}
+  REACTION_VERSION_THREE: {{ .Values.config.reactionVersionThree | quote }}
+{{- end }}

@@ -1,0 +1,20 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: reaction-identity
+  namespace: integration
+spec:
+  releaseName: reaction-identity
+  chart:
+    git: git@github.com:sportsdirect/sdi-releases.git
+    path: charts/reaction-identity
+    ref: reaction-core/v3
+  values:
+    config:
+      oauth2ClientDomains: https://integration.bobs-test.io
+      rootUrl: https://id-integration.ems-test.io
+    ingress:
+      enabled: true
+      hosts:
+        - host: id-integration.ems-test.io
+          paths: ['/']

@@ -1,0 +1,71 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: reaction-storefront
+  namespace: integration
+spec:
+  releaseName: reaction-storefront
+  chart:
+    git: git@github.com:sportsdirect/sdi-releases.git
+    path: charts/reaction-storefront
+    ref: develop
+  values:
+    config:
+      baseUrl: https://integration.ems-test.io
+      cloudinary:
+        name: eastern-dev
+        domain: res.cloudinary.com
+      contentSecurityPolicy:
+        policyReportUri: https://sentry.io/api/1802036/security/
+        reportOnlyPolicyReportUri: https://sentry.io/api/1802036/security/
+      contentstack:
+        accessToken: csb02ca017686e318f87dff41b
+        apiKey:  blt7841d2a593726d96
+        environment: staging
+      elasticsearchUrl: https://vpc-integration-storefront-qlk4agdfm4exieomxauk6mnkza.us-east-1.es.amazonaws.com:443
+      hydraAdminUrl: http://ory-hydra-admin:4445
+      mapboxToken: pk.eyJ1IjoianBoaWxvIiwiYSI6ImNqeHFlZHRkaDAwM3YzaXMwenNvZmcyYXYifQ.pEVH_imRqxqTjdpIcuiRBg
+      oauth2:
+        authUrl: https://auth-integration.ems-test.io/oauth2/auth
+        clientId: ems-integration-storefront
+        clientSecret: AgAFszEBLwnVsGbcnrGlFlXsoGEatSsAkRTfTdPu5i9VZFRZqlRU5kFkWJwKoTCOVGRbnnTLcjJb8SnAb2nW6CSqJjBd/lIcre3DHXFGpZWHIMlu8uEpH7bPtKHQchDnE9Gf0soge6I5DbbxNPffM/cA7Dg2ZJdNPh1O6O9qr8O1gm4ir2b5nAX3F1DOVixyi1TilEGwEYpNhhhtr2GWF5sVuco4nCypew4FvYNDQMtFdfNWNrCmFYdLt+12Tuu3mnlS8d1dO0pL+CGeRZrrBoC3ga6lwfNDy9hxwPnOwlfT9IlscVUJV4aTY0ez357+iePRqDVjJySteAHenrbt9biGWTSir9lugaARvgi48FuACfy9KAxXA3vJCXo9wCXBZ8oCylnlmQUTO4CQ+QVjPbGzAyRtIqioqUU+4dNWpbMFlqmIQpCNSBssLgoeTdJLAax9eqWVbPLtQYY5VrLFjyOlhbOBvgfFn6uesH9QxOPgbQLgE27FVf4EBp5KL/n2s7+HpaVMP4oLcYP3VNHvUyYxmVnldN4hRmBJ437J30cstUOcip6gB4xwR5PfrlqnzNdoicNLv6tbaX7TKaxlXiK+RTWwbVONFN4B/hyVBF71hIJeatKLYyLa1x8fPO/Ejo4KEJoMGsO2ELo1DSVe/4rFjFdUXZcDx10LSAcLj7RZWUktfyYnEw0lv0t4TmO7WVuhu5HE+KBhbd2uOUIOZ44=
+        redirectUrl: https://integration.ems-test.io/callback
+      radial:
+        clientId: EMSUS
+        mode: sandbox
+        rdfUrl: https://rdf.radial.com/rdf/service/scripts?clientIdentifier=EMSUS
+      reactionVersionThree: "true"
+      segmentAnalytics:
+        enabled: true
+        writeKey: oTm3YQxgfc6udco67OFJDumcfUX2fCU2
+        serverWriteKey: XmeVGVB320SC3CEuuZOIVeHZDQxNQHq3
+      sentry:
+        enabled: false
+        dsn: https://e5a55219e65d473a9c04625b0e2cbcca@sentry.io/1802036
+        environment: integration
+        key: e5a55219e65d473a9c04625b0e2cbcca
+        project: ems
+        sourcemapToken: 13a829e4fb0e11e994f94201c0a8d02b
+      sessionSecret: AgBAKQJtPyumUbv/LbVCyzayB6T2ulnIjQC330Hig22THxqlA7GgeLnPjhwSuWcHKXjLc3CvpiOzQwT4XRUJ6wFVypw+dzmqYT6B6OZdi87OY41L4iIP9nfoGp0NMqlUs6YenR80UEKlzv4HTJSeluJlwDzhk7hE/9DLRg52H0kQDQjgAAD1FYvuZzn+h6rDYQKbAVsQ3FUqbA4CDi+4fcFuiEM+KBUq9yTs+eIHlQVKGqyYNCDEHt4lWVCuFicGhEmNmHqZxCJByWNgoiuE7MR4XRGTENyT74p3dSD2s5VioYUlCcOTE0mK+LaUjsBeO+yw9JNgQBouW/wqP9EL6sIs17hhrGKoicwU9UIAfNJ5MBn2OZRAFf5JOKG8OLmg0Ok6Qzy+cEy8B1kGnofbZ3Vui/MRzidgClmEvbTRROigS7yRDmaUILWNicOh6C4LI6sCJsPvqCn4VAac9ABBVD5vTTr6aYRp7EogbpdVA6WB9cbzOlrGp+h2p0muJZBxC7eeQGm23uVyUjIMxmO/VF31Uoy0YAmGrNfc6wgOnHrh9gWNGEO7qUR8RWEMHmTJY+wsH2sfs/Q6InEPOPwD42wrWS41Ypn9iFqi+vXVKWIgZ1bMupfIsSWcOXhgGgXDAqHC8rD87c25WZvO7s7yqmsucu0fshSsDMagXPFoRmqcHZnEDHU5XwF3RctNIMsmo/WJsZ4mP5eOaCI4fUbMph0=
+      productCountReportEnabled: true
+      tagAttributesReportEnabled: true
+    horizontalPodAutoscaler:
+      enabled: true
+      averageUtilization: 70
+      min: 3
+      max: 10
+    image:
+      repository: 816897914983.dkr.ecr.us-east-1.amazonaws.com/reaction-storefront-ems
+      tag: 4957304c
+    ingress:
+      hosts:
+        - host: integration.ems-test.io
+          paths: ['/']
+    maxUnavailable: 1
+    resources:
+      requests:
+        memory: 100Mi
+        cpu: 100m
+      limits:
+        memory: 2Gi
+        cpu: "2"
