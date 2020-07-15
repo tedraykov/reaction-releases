@@ -18,7 +18,7 @@ spec:
       cloudinaryCloudName: eastern-dev
       etcdUrl: http://etcd-application.internal.integration.k8s.ems-test.io:2379
       healthchecksEnabled: false
-      jaegerEndpoint: http://jaeger-collector.integration.k8s.ems-test.io/api/traces
+      jaegerEndpoint: http://jaeger-collector.tracing.svc.cluster.local:14268/api/traces
       kafkaPartitionsEtlShippableInventoryStatus: 3
       kafkaTopicEtlShippableInventoryStream: 'etl.shippable-inventory.inventory-data.json-gen2'
       kafkaTopicEtlShippableInventoryStatus: 'etl.shippable-inventory.inventory-status.json-gen2'
