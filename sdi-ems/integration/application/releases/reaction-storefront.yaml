@@ -57,7 +57,7 @@ spec:
       max: 10
     image:
       repository: 816897914983.dkr.ecr.us-east-1.amazonaws.com/reaction-storefront-ems
-      tag: 1ae860f6
+      tag: d30f8fa7
     ingress:
       hosts:
         - host: integration.ems-test.io
