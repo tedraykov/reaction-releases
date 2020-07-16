@@ -15,11 +15,18 @@ spec:
     hydra:
       autoMigrate: true
       config:
+        serve:
+          public:
+            cors:
+              allowed_origins:
+                - https://admin-integration.ems-test.io
+                - https://integration.ems-test.io
+              enabled: true
         urls:
           self:
             issuer: https://auth-integration.ems-test.io
-          consent: https://api-integration.ems-test.io/consent
-          login: https://api-integration.ems-test.io/login
+          consent: https://id-integration.ems-test.io/consent
+          login: https://id-integration.ems-test.io/login
       dangerousForceHttp: true
       existingSecret: ory-hydra
     maester:

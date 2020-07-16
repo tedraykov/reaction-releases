@@ -12,7 +12,9 @@ spec:
   helmVersion: v3
   values:
     config:
-      oauth2ClientDomains: https://integration.bobs-test.io
+      oauth2ClientDomains:
+        - https://admin-integration.bobs-test.io
+        - https://integration.bobs-test.io
       rootUrl: https://id-integration.ems-test.io
     ingress:
       enabled: true
