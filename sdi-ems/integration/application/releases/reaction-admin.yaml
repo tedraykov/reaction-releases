@@ -15,7 +15,6 @@ spec:
       oauth2IdpPublicChangePasswordUrl: https://id-integration.ems-test.io/account/change-password?email=EMAIL&from=FROM
       oauth2PublicUrl: https://auth-integration.ems-test.io
       publicGraphqlApiUrlHttp: https://api-integration.ems-test.io/graphql
-      publicGraphqlApiUrlWs: wss://api-integration.ems-test.io/graphql
       publicFilesBaseUrl: https://api-integration.ems-test.io
       publicI18nBaseUrl: https://api-integration.ems-test.io
       publicStorefrontHomeUrl: https://integration.ems-test.io
