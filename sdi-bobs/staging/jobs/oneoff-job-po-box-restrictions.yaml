@@ -9,27 +9,24 @@ spec:
   restartPolicy: Never
   containers:
   - name: runner
-    image: 816897914983.dkr.ecr.us-east-1.amazonaws.com/reaction-one-off-tools:b1f373c
+    image: 816897914983.dkr.ecr.us-east-1.amazonaws.com/reaction-one-off-tools:1ef0f6d
     imagePullPolicy: Always
     command:
       - node
-      - --max-old-space-size=8192
+      - --max-old-space-size=1024
       - --trace-warnings
       - /opt/reaction-one-off-tools/add-usps-priority-shipping-restriction/main.js
     envFrom:
       - configMapRef:
           name: reaction-core-worker
+      - secretRef:
+          name: mongodb
     env:
-      - name: MONGO_URL
-        valueFrom:
-          secretKeyRef:
-            name: reaction-core-worker
-            key: MONGO_URL
       - name: REACTION_LOG_LEVEL
         value: DEBUG
       - name: SHOP_ID
         value: "44"
     resources:
       requests:
-        cpu: 2
-        memory: "8Gi"
+        cpu: 1
+        memory: "1Gi"
