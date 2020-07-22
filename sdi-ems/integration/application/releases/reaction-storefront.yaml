@@ -34,7 +34,7 @@ spec:
         clientId: ems-integration-storefront
         clientSecret: AgAFszEBLwnVsGbcnrGlFlXsoGEatSsAkRTfTdPu5i9VZFRZqlRU5kFkWJwKoTCOVGRbnnTLcjJb8SnAb2nW6CSqJjBd/lIcre3DHXFGpZWHIMlu8uEpH7bPtKHQchDnE9Gf0soge6I5DbbxNPffM/cA7Dg2ZJdNPh1O6O9qr8O1gm4ir2b5nAX3F1DOVixyi1TilEGwEYpNhhhtr2GWF5sVuco4nCypew4FvYNDQMtFdfNWNrCmFYdLt+12Tuu3mnlS8d1dO0pL+CGeRZrrBoC3ga6lwfNDy9hxwPnOwlfT9IlscVUJV4aTY0ez357+iePRqDVjJySteAHenrbt9biGWTSir9lugaARvgi48FuACfy9KAxXA3vJCXo9wCXBZ8oCylnlmQUTO4CQ+QVjPbGzAyRtIqioqUU+4dNWpbMFlqmIQpCNSBssLgoeTdJLAax9eqWVbPLtQYY5VrLFjyOlhbOBvgfFn6uesH9QxOPgbQLgE27FVf4EBp5KL/n2s7+HpaVMP4oLcYP3VNHvUyYxmVnldN4hRmBJ437J30cstUOcip6gB4xwR5PfrlqnzNdoicNLv6tbaX7TKaxlXiK+RTWwbVONFN4B/hyVBF71hIJeatKLYyLa1x8fPO/Ejo4KEJoMGsO2ELo1DSVe/4rFjFdUXZcDx10LSAcLj7RZWUktfyYnEw0lv0t4TmO7WVuhu5HE+KBhbd2uOUIOZ44=
         redirectUrl: https://integration.ems-test.io/callback
-        tokenUrl: http://ory-hydra-public:4444
+        tokenUrl: http://ory-hydra-public:4444/oauth2/token
       radial:
         clientId: EMSUS
         mode: sandbox
