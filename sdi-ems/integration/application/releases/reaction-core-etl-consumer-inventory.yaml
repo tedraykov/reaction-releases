@@ -43,5 +43,5 @@ spec:
       startingNewCustomerNumber: "7770000700001"
     image:
       repository: 816897914983.dkr.ecr.us-east-1.amazonaws.com/reaction-core
-      tag: d9d9ee6
+      tag: 985d103
 
