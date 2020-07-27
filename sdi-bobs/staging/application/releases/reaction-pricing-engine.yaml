@@ -8,29 +8,25 @@ spec:
   chart:
     git: git@github.com:sportsdirect/sdi-releases.git
     path: charts/reaction-pricing-engine
-    ref: develop
+    ref: refactor/external-config
   values:
     image:
       repository: docker.io/sportsdirect/reaction-pricing-engine
       tag: 5467ad84a72ae6008e4bc85036e0249919a5a717
     imagePullSecrets:
       - name: reaction-docker-hub
-
-    # Disabling temporarily.
-    # See https://github.com/sportsdirect/reaction-devops/issues/95#issuecomment-513925115
-    #command: ["tail", "-f", "/dev/null"]
     ingress:
       enabled: true
       hosts:
         - host: pe-staging.bobs-test.io
+          paths: ['/']
+        - host: pe.staging.k8s.bobs-test.io
           paths: ['/']
     jmx:
       image: reactioncommerce/jmx-prometheus-exporter
       imageTag: configurable-via-env
     config:
       jvmOpts: "-d64 -Xms2560m -Xmx2560m"
-      bootstrapServers: "b-3.staging.d0bnhg.c2.kafka.us-east-1.amazonaws.com:9092,b-2.staging.d0bnhg.c2.kafka.us-east-1.amazonaws.com:9092,b-1.staging.d0bnhg.c2.kafka.us-east-1.amazonaws.com:9092"
-      zookeeperConnect: "172.17.22.66:2181,172.17.21.238:2181,172.17.23.37:2181"
       autoOffsetReset: "earliest"
       bufferedRecordsPerPartition: "0"
       cacheMaxBytesBuffering: "0"
