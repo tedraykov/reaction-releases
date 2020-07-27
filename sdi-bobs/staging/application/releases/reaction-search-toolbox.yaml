@@ -10,7 +10,8 @@ spec:
     path: charts/reaction-search-toolbox
     ref: refactor/external-config
   values:
-    imagePullSecret: reaction-docker-hub
+    imagePullSecrets:
+      - reaction-docker-hub
     image:
       repository: reactioncommerce/reaction-search-toolbox
       tag: "31befc43fcae33ae6e1a15c015e718b8aed3d20a"
