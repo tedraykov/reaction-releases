@@ -1,20 +1,22 @@
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
-  name: reaction-outbound-content-feed
+  name: reaction-etl-content-feed
   namespace: staging
 spec:
-  releaseName: reaction-outbound-content-feed
+  releaseName: reaction-etl-content-feed
   chart:
     git: git@github.com:sportsdirect/sdi-releases.git
     path: charts/reaction-outbound-content-feed
-    ref: refactor/external-config
+    ref: reaction-ocf/external-refs
+  #helmVersion: v3
   values:
     annotations:
-      iam.amazonaws.com/role: arn:aws:iam::225761155017:role/sdi-bobs-staging-reaction-job-outbound-content-feed
+      iam.amazonaws.com/role: sdi-bobs-staging-reaction-job-outbound-content-feed
+    fullnameOverride: reaction-etl-content-feed
     imagePullSecret: reaction-docker-hub
     image:
-      tag: 72c9e6d
+      tag: 818f5d7
     schedule: "0 4 * * *"
     config:
       batchSize: 1000
@@ -31,6 +33,7 @@ spec:
       s3InternalExportBucketName: sdi-bobs-staging-feeds-ocf
       siteCode: BOBS
       storefrontBaseUrl: https://staging.bobs-test.io
+      vendorFilePrefix: "DW"
     resources:
       requests:
         memory: 3Gi
