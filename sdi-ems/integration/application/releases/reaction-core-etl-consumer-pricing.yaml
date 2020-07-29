@@ -13,6 +13,10 @@ spec:
   values:
     config:
       brontoAccessToken: AgB/hUXFy3MpiSXstVnJK/fy1L+uEX1D7HZYKDnAwHK1ifd6jzr0Xfr4lIdXFZRnOMs+kcLp32i2zZDuuVXmHF5eYoRsyFbiUko0Ut6BnlfRcyNj8mawr0EPrTi70aY91jMubRmtEeLJ+lflaH5ruD5viBaRAlCVV0kjZ7+WacESrZshBQiVaA04ijO2DhxiL9R5ypPPexDr+sz6r+44uukx5c9QPnwsA2usTXKHlCSCcIrdTDEjP0+/p61u8ZJRRbnfIvZ/LAYd6US5EeT1Wh6Ihm0HDftijw4C9B8Gv1SZhDw9e2/azYms1ZBhX5uqwJO+kOOX4va8w8C9AbfxSXdTUHtj2cEFQxglrV8roPQEvGR2raVtCwvdBeYk+EVocmFdloHUxPJNEOeqKdcrgqsr2b4cLLiHerPhjamXvVGhQt+UCYeb4A5o+ERifWc/Ab1QLUU6wjU46/64lHA4w5ngBONB0MLcU0BzIUzeRRh6WiPQI6DtzV8mzJC8HG2gJies/LaOlRUuLLrWip6/pjoTMoFENXGXsdxNJI4ikkuJlDK8gQ9nui6gbmuYb3s0ImqB0pAR7LP/5blJRuKGv4EgfX7F3ODGIrlxMwAmleFfppuh25Zh66M8Wj/f+nXtyAr75T9OkWYX+GyE2Gf9slP4/eauQQvUSy2Rxir9INKTIG6QIXbHv0svGMo0GgJBmtpktmYR7kBCdT7jyox046Vh/474z4z+QB4mVbPjm0+jKuIyaT8=
+      brontoMessageName: EMS_RC_TRIGGERED_EMAILS
+      brontoFromName: "Eastern Mountain Sports"
+      brontoNewsletterListId: 0bca03eb00000000000000000000000dd510
+      brontoReplyToEmail: "admin@ems-test.io"
       cartExpirySeconds: 1296000
       cartReferenceIdPrefix: 66
       cloudinaryCloudName: eastern-dev
