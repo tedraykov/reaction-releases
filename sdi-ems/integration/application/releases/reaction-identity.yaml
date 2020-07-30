@@ -13,8 +13,8 @@ spec:
   values:
     config:
       oauth2ClientDomains:
-        - https://admin-integration.bobs-test.io
-        - https://integration.bobs-test.io
+        - https://admin-integration.ems-test.io
+        - https://integration.ems-test.io
       rootUrl: https://id-integration.ems-test.io
     ingress:
       enabled: true

@@ -29,7 +29,6 @@ spec:
           logout: https://id-integration.ems-test.io/logout
           self:
             issuer: https://auth-integration.ems-test.io
-      dangerousForceHttp: true
       existingSecret: ory-hydra
     maester:
       enabled: false
