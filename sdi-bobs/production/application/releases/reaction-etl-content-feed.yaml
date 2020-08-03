@@ -1,0 +1,43 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: reaction-etl-content-feed
+  namespace: production
+spec:
+  releaseName: reaction-etl-content-feed
+  chart:
+    git: git@github.com:sportsdirect/sdi-releases.git
+    path: charts/reaction-outbound-content-feed
+    ref: refactor/external-config
+  #helmVersion: v3
+  values:
+    annotations:
+      iam.amazonaws.com/role: sdi-bobs-production-reaction-job-outbound-content-feed
+    fullnameOverride: reaction-etl-content-feed
+    imagePullSecret: reaction-docker-hub
+    image:
+      tag: 818f5d7
+    schedule: "0 4 * * *"
+    config:
+      batchSize: 1000
+      cloudName: bobstores
+      cloudFolder: 0
+      jaegerEndpoint: http://jaeger-collector.production.k8s.bobs-test.io:14268/api/traces
+      kmsKeyArn: arn:aws:kms:us-east-1:490759768946:key/c65dc6e6-0e2b-4c6f-a5ca-3704fc11fcb6
+      mongoDbName: bobs-production
+      pricebookIdPerm: bobs-usd-perm-prices
+      pricebookIdRetail: bobs-usd-retail-prices
+      pricebookIdSale: bobs-usd-sale-prices
+      pricebookIdMember: bobs-member-pricing
+      s3ExternalExportBucketName: sdi-bobs-production-feeds-outbound-content
+      s3InternalExportBucketName: sdi-bobs-production-feeds-ocf
+      siteCode: BOBS
+      storefrontBaseUrl: https://www.bobstores.com
+      vendorFilePrefix: "DW"
+    resources:
+      requests:
+        memory: 3Gi
+        cpu: "1"
+      limits:
+        memory: 4Gi
+        cpu: "2"

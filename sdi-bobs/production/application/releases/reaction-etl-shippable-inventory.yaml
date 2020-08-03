@@ -1,10 +1,10 @@
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
-  name: reaction-etl-surcharges
+  name: reaction-etl-shippable-inventory
   namespace: serverless
 spec:
-  releaseName: reaction-etl-surcharges
+  releaseName: reaction-etl-shippable-inventory
   chart:
     git: git@github.com:sportsdirect/sdi-releases.git
     path: charts/serverless-deploy
@@ -15,9 +15,13 @@ spec:
       iam.amazonaws.com/role: sdi-bobs-production-serverless-deploy
     environment:
       JAEGER_ENDPOINT: http://jaeger-collector.monitoring.svc.cluster.local:14268/api/traces
+      KAFKA_PARTITIONS: 3
+      KAFKA_TOPIC_ETL_SHIPPABLE_INVENTORY_STREAM: etl.shippable-inventory.inventory-data.json-gen2
       REACTION_LOG_LEVEL: INFO
       SITE_CODE: BOBS
       SKIP_INVOCATION: false
+    secretRefs:
+      - mongodb
     package:
-      name: reaction-etl-surcharges
-      version: 62ae5a2
+      name: reaction-etl-shippable-inventory
+      version: 13dd8b4

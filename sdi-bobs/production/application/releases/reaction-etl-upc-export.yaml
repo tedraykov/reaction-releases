@@ -1,10 +1,10 @@
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
-  name: reaction-etl-surcharges
+  name: reaction-etl-upc-export
   namespace: serverless
 spec:
-  releaseName: reaction-etl-surcharges
+  releaseName: reaction-etl-upc-export
   chart:
     git: git@github.com:sportsdirect/sdi-releases.git
     path: charts/serverless-deploy
@@ -18,6 +18,10 @@ spec:
       REACTION_LOG_LEVEL: INFO
       SITE_CODE: BOBS
       SKIP_INVOCATION: false
+      STORE_UPC_CODE: 729
+      UPC_ATTRIBUTE_NAMES: "epicorUPC,vendorUPC,UPC"
+    secretRefs:
+      - mongodb
     package:
-      name: reaction-etl-surcharges
-      version: 62ae5a2
+      name: reaction-etl-upc-export
+      version: 59a4085
