@@ -41,7 +41,9 @@ spec:
           - serve
           - all
           - --config=/hydra/config.yaml
+{{- if .Values.hydra.dangerousForceHttp }}
           - --dangerous-force-http
+{{- end }}
           - --sqa-opt-out
           envFrom:
           - secretRef:

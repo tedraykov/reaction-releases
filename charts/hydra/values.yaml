@@ -45,6 +45,9 @@ config:
     accessToken: 1h
     idToken: 1h
 
+hydra:
+  dangerousForceHttp: true
+
 sealedSecrets: {}
 
 resources: {}
