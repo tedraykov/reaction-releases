@@ -11,14 +11,14 @@ spec:
     ref: refactor/external-config
   values:
     imagePullSecrets:
-      - reaction-docker-hub
+      - name: reaction-docker-hub
     image:
       repository: reactioncommerce/reaction-search-toolbox
-      tag: '31befc43fcae33ae6e1a15c015e718b8aed3d20a'
+      tag: "31befc43fcae33ae6e1a15c015e718b8aed3d20a"
     config:
       rsDb: bobs-production
-      rsIndexVersion: '10'
-      rsTopic: 'reaction.cdc.search.catalog4.json-gen1'
+      rsIndexVersion: "10"
+      rsTopic: "reaction.cdc.search.catalog4.json-gen1"
     resources:
       requests:
         memory: 1Gi
