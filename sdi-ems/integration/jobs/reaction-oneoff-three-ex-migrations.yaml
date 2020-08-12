@@ -9,13 +9,13 @@ spec:
   restartPolicy: Never
   containers:
   - name: runner
-    image: 816897914983.dkr.ecr.us-east-1.amazonaws.com/reaction-api-migrations:04ae6a1
+    image: 816897914983.dkr.ecr.us-east-1.amazonaws.com/reaction-api-migrations:26b75a2
     imagePullPolicy: Always
     envFrom:
       - configMapRef:
           name: reaction-core-worker
       - secretRef:
-          name: mongodb
+          name: mongodb-temp
     env:
       - name: REACTION_LOG_LEVEL
         value: DEBUG
