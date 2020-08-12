@@ -28,6 +28,7 @@ spec:
         environment: staging
       elasticsearchUrl: https://vpc-integration-storefront-qlk4agdfm4exieomxauk6mnkza.us-east-1.es.amazonaws.com:443
       hydraAdminUrl: http://ory-hydra-admin:4445
+      identityServiceUrl: http://reaction-storefront-identity:4100
       mapboxToken: pk.eyJ1IjoianBoaWxvIiwiYSI6ImNqeHFlZHRkaDAwM3YzaXMwenNvZmcyYXYifQ.pEVH_imRqxqTjdpIcuiRBg
       oauth2:
         authUrl: https://auth-integration.ems-test.io/oauth2/auth

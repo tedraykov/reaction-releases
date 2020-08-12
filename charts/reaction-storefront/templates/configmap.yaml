@@ -60,6 +60,9 @@ data:
   HEALTHCHECK_PAYPAL: {{ .Values.config.healthcheck.payPal | quote }}
 {{- end }}
   HYDRA_ADMIN_URL: {{ required "config.hydraAdminUrl not defined." .Values.config.hydraAdminUrl | quote }}
+{{- if .Values.config.identityServiceUrl }}
+  IDENTITY_SERVICE_URL: {{ .Values.config.identityServiceUrl | quote }}
+{{- end }}
   INTERNAL_GRAPHQL_URL: {{ required "config.internalGraphqlUrl not defined." .Values.config.internalGraphqlUrl | quote }}
   MAPBOX_TOKEN: {{ required "config.mapboxToken is not defined." .Values.config.mapboxToken | quote }}
   OAUTH2_ADMIN_PORT: {{ required "config.ouath2.adminPort not defined." .Values.config.oauth2.adminPort | quote }}
