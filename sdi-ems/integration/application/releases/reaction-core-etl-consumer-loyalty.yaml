@@ -35,9 +35,9 @@ spec:
       radialTaxesApiKey: AgCi1aNFrX4oY0bJazM2awfjt+GIwJwUGHxNTycJSvB/q2/lQKLEU1x6S+WxXcI6oDfR9iIrxh3P5uFetvai1kRxcarNI+Lb327obk+e727WZFxTnCUBs+5YV9WD+giVA0n6Ti4kSNkfIN4xQJ4sIK+KUl27oyRR88oABpZVN2eI33TPEMIEMGg+Mlu0uoXkaK++3/aJvnYaGrhXqpeF40MmlG1XzGmRORvh2IFvvVBaERsM8winWG7Umj6ZbZ8ZRAXl174W2KmrXy8TxmOSkEkcAIR/JwZtsZl3xmfNiX2GEqfAIwSy5ZWjYFNR5WEYk2+fJNf1UFsVyXEPOwJXkCgxbOPnm7JyBBvAYU0DUcGWCBD4gBXNopjHp1+lLlYDGY2uRiAdROIrFsacWrrLKoaC3AkAFFJlRHR3dn46D/JRUANt/btLm+++rSRkg9FI0tsRARXK8pvjeMwnO9TwBbRRITkYNR34073BdCAHEjHsCXmlewFOS+EWxunCtUzUsk+ZJ9mqHxC/ZPiFpLtm6NdX3gKx5xn9zRgY5PFIfoSSEFsYckIchZ9qFHatb/2jZhpqpYBgStnhwVNzBjV6H7Jxz804PyJEEF4p17BU16PWbeNozPH5iLU7HyY28bvTNabJZBPQUERwt0VJ+IJTGSCWII5AI4Vx3eeOnh331FmDC/0ysFirgjqcKM4zNc43ZtnG7o6haGcEuWwZXdT/RUlHFVkQ6cpsjCsusUcgpqIoNQ==
       radialTaxesApiUrl: https://tst02-epapi-na.gsipartners.com/v1.0/stores
       radialUsername: AgBI1zkq13647WjgtcyUXMOm4VWtqoHufd2g+pvpK7XxPRKfO5Eskhb/IvySpy5btADXqQPIssnGSGFfdIhmI7Tt+EHTEPDLb/n3qmqaerWD/y4Ku2dlOPLfyDwXxw91QF2W3uY2oDoBHFNOLRxCN5zCgp4rBm6a5dwVXFd21hXtpGOVBBvxgs5e/+5TUSBIXYT8ui8r1t8vVCAMnGzXmuOrKUCoS+Y2oD2zd+k/ufMMgVicmmd1WsiZW480NZbg6Yj1XJxa1EWa7Eo0t/kYo+SSBMNOd9TvZvi8G7Lgbko8ur3OPXAifzuIhnEnz+wlRGHrC0xCEkDItD9ey0T7MmQPWBKktBKsptsk7r1romjE1HoVCDWddD16ywwA3SEeeH+DzDi3d75JQf552ca4tEmmPjKa9Y3seyQV7GZEklK7us7OxUdAuIIHanM5aGRKLLNwWuFo7ZUeiaTnw4xGAmiRu99kaCT3An5OK4NKUwxyat2oHZc0oVUBqRYXdSG+b+BKhjfAsb3ffyy7ADEhUCmCuTGz7kBGeHUa2F6/NJCumH1HfmBKGVm9ri1U/45DDLZF/cm7hECyVzQvO+tGSe8sv897qQkWKr+PzOddOU9klJNudUEAZsFprOw3bTvuqE6hL8NFwAltEhcAjtg3rekYE9RdZ+OVAQN3/XfPqs9nre6O2IbM4a2eRs8F/e39/L3U8XRyKg==
-      reactionAdminPublicAccountRegistrationUrl: https://admin-integration.ems-test.io
-      reactionIdentityPublicPasswordResetUrl: https://id-integration.ems-test.io
-      reactionIdentityPublicVerifyEmailUrl: https://id-integration.ems-test.io
+      reactionAdminPublicAccountRegistrationUrl: https://integration.ems-test.io/signup
+      reactionIdentityPublicPasswordResetUrl: https://integration.ems-test.io/reset-password/TOKEN
+      reactionIdentityPublicVerifyEmailUrl: https://integration.ems-test.io/account/verify/TOKEN
       rootUrl: https://api-integration.ems-test.io
       siteCode: EMS
       startingNewCustomerNumber: "7770000700001"
