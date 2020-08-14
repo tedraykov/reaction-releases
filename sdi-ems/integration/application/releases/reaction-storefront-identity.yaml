@@ -14,4 +14,4 @@ spec:
     config:
       oauth2RedirectUrl: https://integration.ems-test.io/callback
     image:
-      tag: 5e84faa
+      tag: fc8e6d2
