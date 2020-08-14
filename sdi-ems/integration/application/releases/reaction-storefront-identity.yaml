@@ -11,5 +11,7 @@ spec:
     ref: feature/reaction-storefront-identity
   helmVersion: v3
   values:
+    config:
+      oauth2RedirectUrl: https://integration.ems-test.io/callback
     image:
       tag: 5e84faa
