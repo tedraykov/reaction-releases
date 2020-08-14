@@ -12,4 +12,4 @@ spec:
   helmVersion: v3
   values:
     image:
-      tag: 85a9c35
+      tag: 43de986
