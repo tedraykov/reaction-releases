@@ -17,4 +17,4 @@ spec:
         dsn: https://4c521af79b454fcd82a53d5bcba33e5d@o234104.ingest.sentry.io/1802036
         environment: integration
     image:
-      tag: 4fb06ca
+      tag: e1c1b6b
