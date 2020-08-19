@@ -23,7 +23,6 @@ spec:
       etcdUrl: http://etcd-application.internal.integration.k8s.ems-test.io:2379
       graphqlIntrospectionEnabled: false
       graphqlPlaygroundEnabled: false
-      healthchecksEnabled: false
       importOrderStatusConsumerEnabled: true
       jaegerEndpoint: http://jaeger-collector.tracing.svc.cluster.local:14268/api/traces
       logLevel: 'INFO'

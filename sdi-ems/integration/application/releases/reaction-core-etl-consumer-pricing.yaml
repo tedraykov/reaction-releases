@@ -21,7 +21,6 @@ spec:
       cartReferenceIdPrefix: 66
       cloudinaryCloudName: eastern-dev
       etcdUrl: http://etcd-application.internal.integration.k8s.ems-test.io:2379
-      healthchecksEnabled: false
       jaegerEndpoint: http://jaeger-collector.tracing.svc.cluster.local:14268/api/traces
       orderExportRadialApiKey: AgCi1aNFrX4oY0bJazM2awfjt+GIwJwUGHxNTycJSvB/q2/lQKLEU1x6S+WxXcI6oDfR9iIrxh3P5uFetvai1kRxcarNI+Lb327obk+e727WZFxTnCUBs+5YV9WD+giVA0n6Ti4kSNkfIN4xQJ4sIK+KUl27oyRR88oABpZVN2eI33TPEMIEMGg+Mlu0uoXkaK++3/aJvnYaGrhXqpeF40MmlG1XzGmRORvh2IFvvVBaERsM8winWG7Umj6ZbZ8ZRAXl174W2KmrXy8TxmOSkEkcAIR/JwZtsZl3xmfNiX2GEqfAIwSy5ZWjYFNR5WEYk2+fJNf1UFsVyXEPOwJXkCgxbOPnm7JyBBvAYU0DUcGWCBD4gBXNopjHp1+lLlYDGY2uRiAdROIrFsacWrrLKoaC3AkAFFJlRHR3dn46D/JRUANt/btLm+++rSRkg9FI0tsRARXK8pvjeMwnO9TwBbRRITkYNR34073BdCAHEjHsCXmlewFOS+EWxunCtUzUsk+ZJ9mqHxC/ZPiFpLtm6NdX3gKx5xn9zRgY5PFIfoSSEFsYckIchZ9qFHatb/2jZhpqpYBgStnhwVNzBjV6H7Jxz804PyJEEF4p17BU16PWbeNozPH5iLU7HyY28bvTNabJZBPQUERwt0VJ+IJTGSCWII5AI4Vx3eeOnh331FmDC/0ysFirgjqcKM4zNc43ZtnG7o6haGcEuWwZXdT/RUlHFVkQ6cpsjCsusUcgpqIoNQ==
       orderExportRadialUrl: https://tst05-epapi-na.gsipartners.com/v1.0/OOMF/stores
