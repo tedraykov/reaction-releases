@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: oneoffjob-2x-migrations
+  name: oneoffjob-rewards-migrations
   namespace: integration
   labels:
-    app: oneoffjob-2x-migrations
+    app: oneoffjob-rewards-migrations
 spec:
   restartPolicy: Never
   containers:
@@ -15,7 +15,7 @@ spec:
       - node
       - --max-old-space-size=8192
       - --trace-warnings
-      - /opt/reaction-one-off-tools/2x-migrations/main.js
+      - /opt/reaction-one-off-tools/2x-migrations/mainRewards.js
     envFrom:
       - configMapRef:
           name: reaction-core-worker
