@@ -9,7 +9,7 @@ spec:
   restartPolicy: Never
   containers:
   - name: runner
-    image: 816897914983.dkr.ecr.us-east-1.amazonaws.com/reaction-one-off-tools:a400a2a
+    image: 816897914983.dkr.ecr.us-east-1.amazonaws.com/reaction-one-off-tools:681b08f
     imagePullPolicy: Always
     command:
       - node
