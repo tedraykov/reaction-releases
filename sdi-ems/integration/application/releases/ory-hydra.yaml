@@ -23,7 +23,7 @@ spec:
                 - https://integration.ems-test.io
               enabled: true
         urls:
-          consent: https://integration.ems-test.io/signin
+          consent: https://integration.ems-test.io/private/consent
           error: https://integration.ems-test.io/signin
           login: https://integration.ems-test.io/signin
           logout: https://integration.ems-test.io/logout
