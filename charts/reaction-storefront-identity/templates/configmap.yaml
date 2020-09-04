@@ -1,0 +1,23 @@
+{{- $fullName := include "reaction-storefront-identity.fullname" . -}}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ $fullName }}
+  labels:
+    app.kubernetes.io/name: {{ include "reaction-storefront-identity.name" . }}
+    app.kubernetes.io/component: core
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+    helm.sh/chart: {{ include "reaction-storefront-identity.chart" . }}
+data:
+  HYDRA_ADMIN_URL: {{ required "config.hydraAdminUrl not defined." .Values.config.hydraAdminUrl | quote }}
+  HYDRA_PUBLIC_URL: {{ required "config.hydraPublicUrl not defined." .Values.config.hydraPublicUrl | quote }}
+{{- if .Values.config.mockTlsTermination }}
+  MOCK_TLS_TERMINATION: {{ .Values.config.mockTlsTermination | quote }}
+{{- end }}
+  NODE_ENV: {{ .Values.config.nodeEnv | quote }}
+  OAUTH2_REDIRECT_URL: {{ required "config.oauth2RedirectUrl not defined." .Values.config.oauth2RedirectUrl | quote }}
+  PORT: {{ .Values.service.port | quote }}
+{{- if .Values.config.sentryDsn }}
+  SENTRY_DSN: {{ .Values.config.sentryDsn }}
+{{- end }}

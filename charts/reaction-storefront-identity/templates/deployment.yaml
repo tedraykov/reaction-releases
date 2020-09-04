@@ -1,0 +1,70 @@
+{{- $fullName := include "reaction-storefront-identity.fullname" . -}}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "reaction-storefront-identity.fullname" . }}
+  labels:
+    {{- include "reaction-storefront-identity.labels" . | nindent 4 }}
+spec:
+{{- if not .Values.autoscaling.enabled }}
+  replicas: {{ .Values.replicaCount }}
+{{- end }}
+  selector:
+    matchLabels:
+      {{- include "reaction-storefront-identity.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      annotations:
+        checksum/config: {{ values .Values.config | sortAlpha | toString | sha256sum }}
+    {{- with .Values.podAnnotations }}
+        {{- toYaml . | nindent 8 }}
+    {{- end }}
+      labels:
+        {{- include "reaction-storefront-identity.selectorLabels" . | nindent 8 }}
+    spec:
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      containers:
+        - name: {{ .Chart.Name }}
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          envFrom:
+            - configMapRef:
+                name: {{ $fullName }}
+            - secretRef:
+                name: {{ .Values.mongodbSecret }}
+          ports:
+            - name: admin
+              containerPort: {{ .Values.config.adminPort }}
+              protocol: TCP
+            - name: http
+              containerPort: {{ .Values.config.port }}
+              protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: admin
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: admin
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
