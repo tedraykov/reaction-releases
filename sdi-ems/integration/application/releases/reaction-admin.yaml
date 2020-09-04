@@ -12,7 +12,7 @@ spec:
   helmVersion: v3
   values:
     config:
-      oauth2IdpPublicChangePasswordUrl: https://id-integration.ems-test.io/account/change-password?email=EMAIL&from=FROM
+      oauth2IdpPublicChangePasswordUrl: https://integration.ems-test.io/account?email=EMAIL&from=FROM
       oauth2PublicUrl: https://auth-integration.ems-test.io
       publicGraphqlApiUrlHttp: https://api-integration.ems-test.io/graphql
       publicFilesBaseUrl: https://api-integration.ems-test.io

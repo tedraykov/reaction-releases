@@ -23,10 +23,10 @@ spec:
                 - https://integration.ems-test.io
               enabled: true
         urls:
-          consent: https://id-integration.ems-test.io/consent
-          error: https://id-integration.ems-test.io/account/oauth-error
-          login: https://id-integration.ems-test.io/login
-          logout: https://id-integration.ems-test.io/logout
+          consent: https://integration.ems-test.io/signin
+          error: https://integration.ems-test.io/signin
+          login: https://integration.ems-test.io/signin
+          logout: https://integration.ems-test.io/logout
           self:
             issuer: https://auth-integration.ems-test.io
       existingSecret: ory-hydra
