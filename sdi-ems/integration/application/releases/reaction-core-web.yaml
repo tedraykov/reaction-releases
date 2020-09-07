@@ -55,7 +55,7 @@ spec:
       max: 10
     image:
       repository: 816897914983.dkr.ecr.us-east-1.amazonaws.com/reaction-core
-      tag: ec8101f
+      tag: 0d07f78
     ingress:
       enabled: true
       hosts:
