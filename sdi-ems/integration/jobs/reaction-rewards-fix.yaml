@@ -24,6 +24,8 @@ spec:
     env:
       - name: REACTION_LOG_LEVEL
         value: DEBUG
+      - name: SHOP_ID
+        value: "66"
     resources:
       requests:
         cpu: 1
