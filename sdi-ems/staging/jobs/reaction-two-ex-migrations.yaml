@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: oneoffjob-2x-migrations
-  namespace: integration
+  namespace: staging
   labels:
     app: oneoffjob-2x-migrations
 spec:

@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: migrator-3x-migration
+  namespace: staging
+  labels:
+    app: migrator-3x-migration
+spec:
+  restartPolicy: Never
+  containers:
+  - name: runner
+    image: 816897914983.dkr.ecr.us-east-1.amazonaws.com/reaction-api-migrations:26b75a2
+    imagePullPolicy: Always
+    envFrom:
+      - configMapRef:
+          name: reaction-core-worker
+      - secretRef:
+          name: mongodb-temp
+    env:
+      - name: REACTION_LOG_LEVEL
+        value: DEBUG
+    resources:
+      requests:
+        cpu: 1
+        memory: "2Gi"
