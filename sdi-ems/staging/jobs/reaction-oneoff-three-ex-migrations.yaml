@@ -12,8 +12,6 @@ spec:
     image: 816897914983.dkr.ecr.us-east-1.amazonaws.com/reaction-api-migrations:26b75a2
     imagePullPolicy: Always
     envFrom:
-      - configMapRef:
-          name: reaction-core-worker
       - secretRef:
           name: mongodb-temp
     env:

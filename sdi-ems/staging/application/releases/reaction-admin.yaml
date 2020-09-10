@@ -1,0 +1,26 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: reaction-admin
+  namespace: staging
+spec:
+  releaseName: reaction-admin
+  chart:
+    git: git@github.com:sportsdirect/sdi-releases.git
+    path: charts/reaction-admin
+    ref: feature/reaction-admin
+  helmVersion: v3
+  values:
+    config:
+      oauth2IdpPublicChangePasswordUrl: https://staging.ems-test.io/account?email=EMAIL&from=FROM
+      oauth2PublicUrl: https://auth-staging.ems-test.io
+      publicGraphqlApiUrlHttp: https://api-staging.ems-test.io/graphql
+      publicFilesBaseUrl: https://api-staging.ems-test.io
+      publicI18nBaseUrl: https://api-staging.ems-test.io
+      publicStorefrontHomeUrl: https://staging.ems-test.io
+      rootUrl: https://admin-staging.ems-test.io
+    ingress:
+      enabled: true
+      hosts:
+        - host: admin-staging.ems-test.io
+          paths: ['/']

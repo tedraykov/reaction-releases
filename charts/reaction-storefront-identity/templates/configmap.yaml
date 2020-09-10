@@ -16,8 +16,8 @@ data:
   MOCK_TLS_TERMINATION: {{ .Values.config.mockTlsTermination | quote }}
 {{- end }}
   NODE_ENV: {{ .Values.config.nodeEnv | quote }}
-  OAUTH2_REDIRECT_URL: {{ required "config.oauth2RedirectUrl not defined." .Values.config.oauth2RedirectUrl | quote }}
   PORT: {{ .Values.service.port | quote }}
-{{- if .Values.config.sentryDsn }}
-  SENTRY_DSN: {{ .Values.config.sentryDsn }}
+{{- if .Values.config.sentry.enabled }}
+  SENTRY_DSN: {{ required "config.sentry.dsn not defined" .Values.config.sentry.dsn | quote }}
+  SENTRY_ENV: {{ required "config.sentry.environment not defined" .Values.config.sentry.environment | quote }}
 {{- end }}

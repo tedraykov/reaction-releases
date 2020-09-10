@@ -17,10 +17,8 @@ spec:
       - --trace-warnings
       - /opt/reaction-one-off-tools/2x-migrations/main.js
     envFrom:
-      - configMapRef:
-          name: reaction-core-worker
       - secretRef:
-          name: mongodb
+          name: mongodb-temp
     env:
       - name: REACTION_LOG_LEVEL
         value: DEBUG

@@ -1,0 +1,40 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: ory-hydra
+  namespace: staging
+spec:
+  releaseName: ory-hydra
+  chart:
+    git: git://github.com/ory/k8s
+    path: helm/charts/hydra
+    ref: refs/tags/v0.3.5
+  helmVersion: v3
+  skipCRDs: true
+  values:
+    hydra:
+      autoMigrate: true
+      config:
+        serve:
+          public:
+            cors:
+              allowed_origins:
+                - https://admin-staging.ems-test.io
+                - https://staging.ems-test.io
+              enabled: true
+        urls:
+          consent: https://staging.ems-test.io/private/consent
+          error: https://staging.ems-test.io/signin
+          login: https://staging.ems-test.io/signin
+          logout: https://staging.ems-test.io/logout
+          self:
+            issuer: https://auth-staging.ems-test.io
+      existingSecret: ory-hydra
+    maester:
+      enabled: false
+    ingress:
+      public:
+        enabled: true
+        hosts:
+          - host: auth-staging.ems-test.io
+            paths: ['/']

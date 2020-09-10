@@ -8,12 +8,18 @@ spec:
   chart:
     git: git@github.com:sportsdirect/sdi-releases.git
     path: charts/reaction-core
-    ref: refactor/external-config
+    ref: reaction-core/v3
+  helmVersion: v3
   values:
     config:
       brontoAccessToken: AgBtCrmLVhS1zltaTUtdADr8QG6MWeSiVDv7hCChyezv0tgRcPgzKJKLwmZAmnYTjpKMtHpEA0HRalcooHwiTjDjgZoUpTqGCY1sOk7GCYnd7WTtLMUSc/sBIIcwJdN/5vB9LeZYfFwtBT09Gn2WAriCvV2EGKDHJLCJvPVa9/hNGkLS5rISSnQs3uUeOAoIJ2cQdsPj1tpUcRbh6mCTFP8qfI3CZVoUa1yM2cV7+MrHFSPR0lXwIqW7yiT8ux8qqqIgJOYjprkB0BFiKywvdoZLWVjc5IlfyzLCY5CQtol7Kf4b9KD7dhqSHWTt86tVDypMu4XV8QSlknSQYHQRaGKGAKhUvEpeU7xH1w4WnrPOHSNxlsPZ5lpcr9V3bsx/e7+5owFOPaqmfpZF/BKHWi0Fi58aAHC8C3ZCbz73JXENPLERtVpUqErAqQ4ccilJsMN2gVF3pGULFny13xY08Z4P+Rie3kFsP3WukQwD06seqGjDju3rMn9kzerF6rSVFxpaK6qBb+9ygq4JU/p7NPg/mzFlrJR8dws7eU7f5BSVl/qWdwe+NcZhTCHtJbS+nLp0IXQwkxX9givZ7HW/d8mcSzWK7oFiDJCyDHzatlL2H7Jo9ew8xFCjJXggcy7mu+P1XBKLm/6QtyieuVyf6s/jG/Q5753wF8iQLqJ5pu0hsVvPju192y+KuJDJzCHE1qAyEIw1foUfqD7IHx48qe6TtkmiT7lcxG1zrYqmZcXHAEiXQh8=
+      brontoFromName: "Eastern Mountain Sports"
+      brontoMessageName: EMS_RC_TRIGGERED_EMAILS
+      brontoNewsletterListId: 0bca03eb00000000000000000000000dd510
+      brontoReplyToEmail: "admin@ems-test.io"
       cartExpirySeconds: 1296000
       cartReferenceIdPrefix: 66
+      cloudinaryCloudName: eastern-dev
       etcdUrl: http://etcd-application.internal.staging.k8s.ems-test.io:2379
       jaegerEndpoint: http://jaeger-collector.staging.k8s.ems-test.io/api/traces
       kafkaBootstrapServers: 'b-3.staging.zby85f.c5.kafka.us-east-1.amazonaws.com:9092,b-2.staging.zby85f.c5.kafka.us-east-1.amazonaws.com:9092,b-1.staging.zby85f.c5.kafka.us-east-1.amazonaws.com:9092'
@@ -22,6 +28,8 @@ spec:
       orderExportRadialUrl: https://tst05-epapi-na.gsipartners.com/v1.0/OOMF/stores
       pricingConsumerEnabled: true
       productPublisherAutoPublish: false
+      radialApiKey: AgB17Qlbgt3YHAEejAwns6bfNIKPNhI981dYI6yiwyQ0RwLe4am4FyYBqzPtRgHHwzae0uipEGduE21sJKJRNkY5jAmYvbXQLKm7sYk+Nmu8FTQ1RHBMmzAMkOE0xaPyhWemI3Xhl37uFwSjzOqDXqxlOEFT1WiK3ADN6is+T6nusc8D7e++zhDMSY7+1eHxy4gkL/usYSaiKZfR8KrUD3xsUYLhV8LASStiGX4BvknaNA8ewMQjRRDFN7FY3Kptkwry8SvutEWz6K8PX/1cjgJFLcIAalK6tXn44Y4ZlgXvJDVzIVbqJlewDdw8ENDKwR/pWmT7bfJfv5Af+VsEByfx1NbkoDFOqoeeR2/z/B092n0/XcH7uwb+DGJySZiOOlDqVcPOFbe/cYS91isW03VCUfms5YwElb9jZqDObXQh9ZJSyzhVo/tPZ06hZT3vqHg840nM4hnYJomPNPxeAlkFvDJsk70xyztzjPjFwK9/KUFMyoZbpxHLKR+9Rc8duSa39OQWfLTV5C0unhejMrpduyyR9/FHCKTEbsXjA9M3PSv+WvfATFwpoW8364uNVU5z5DVIG/3NWTu421PW8IO7v44C8bgtmkMXVhG1DA/2r/DFUWjW2VlnTZ4P1K3kFWimyFBMy2gWNtl5Jzf8AQH6EgKRO3uJPsmPnUN0NMBBexbYkRflNqxC5maoOzViQziBPP03j6/bQ3lES9djPEOr+UBaMsWbR1wQKNO91ZuMjA==
+      radialApiUrl: https://tst02-epapi-na.gsipartners.com/v1.0/stores
       radialMode: sandbox
       radialPassword: AgB34BtXm7epHLzX2L1wC7mwbIoFwVqZOpY9xyZ8KGiMfUoVSBWlfbsimwn6KRrIn6wmQ5Btfx8lFrZKLQGXdh9muXvCcMPznLb4ljfQKqax4szr9KF2JvVSPg02ZukXl6ncLUkA6hMwPc74ugjzrsNHkBta4CW+Q2QCGR3Tnqr6nXsHnORlAGQhgz76PKm68v0aOdr0rzJ5tz/u+YKp43xQ007TTs9WkuEK6fHpMqxQu6cdKROvVMXuLsGEo3XXenoreTwotJcCu0JkBD3UK3QbhOJpVXqsiyVtv3K9emHBgmJAfe6hXpvRnXLiq4CBasD7CI/2FrAQMS/iKkMgsWVQ+OWrq+u2p2nzNsYzgsLP0iMPVEsLTMeCY3nFBF2iggr5H9O6OBuZg3VSPCYS7YYQNl/HTT+OuMUvbRsyd7sN5jD4FgxfzT8ue3Cn+Ogwq/U9L1sXh9jJxgoaYuqftAi6ZrYlAMqN1Tw3QawuDfKSV8rxCMQk8iwp7PGz4SE1lT7As0ZIGVI4N8HdOMCbNiHiK8/abXjnSaUZxIv9WCfaDlr+8LhhAKzAIe76YI1UzMmhzYR86jJooPIENPvs1x6ipDRN+C5DNX7JL359tw7OdwWwTI5U2OAmtnLTBu32STINFks5EOBj+Uvv68dqEBiVc2ma7g9Wvg9ZPRBTsgRSstTJEKM5dyuJ4TSuw2jv1pWioBTqkVk=
       radialPaymentApiKey: AgA1W8WfOwlqbeK98y+J9R0OkjfpCdtellcYN7sj0zDMvCOf+971zR+pBFJz9UnMrjQYzVO7cKVpOiMkAeLzLQXcmZjeAItB5KG4Rlnlr+x2she7cINHTj00lX4c0ei7gSHmOr4+1nYDwWUcqex6VljMny7Xdmc3DTmxSCE1FD10si43a/av7VXRwpolXj60Aea74sj1zU3fnh+gFcbgFp0H/IJnf+wirzgtuk1oWZKu4SZYJEOnlJgcQxwbMwLEDOcQPiKvQE09oRJ//KB5Xp1mV7+PYJi/BSpFh7EaG47N467ZpOxFlZxBn1fhsSyZsaVzOJ5SVx6CXthfP5gyKX3TtlZcaekeRQgI0VTHlYChEky1aoPEpxpu97vc28lN7pkoeiGHyuRGWGGLYcZoadWO7Dcx3HOwp6d7kkmdKikliaDpg/7lv4fqRdw5xSwHFLuroQbfTmrIW7TN31s2XlmNMCBNg/rpcJDp644Mo6aqnW2nablVr0xJ0MjSjWhkk1oPKBXGNobXdEA/R8ssTwgkKuqHADS86fKblassj866tGgA3RVNGoExlcV2gllwpZ90/wRwCkD9FFI9vtF9qNSbDNYfAMuLne/olB1TKSQEc086EOaxUv7z42sj78JEOSOSpyZckeZQuBdRKnw0miXRj64spsjq5H+5pBLbeoqT3Se/n0TAfaxzOHpdK6Pq3nzT743MoCQOfiVFEEAgeoAcucBHKE5DrYrwC81ZTf2Lcg==
@@ -29,13 +37,12 @@ spec:
       radialTaxesApiKey: AgB17Qlbgt3YHAEejAwns6bfNIKPNhI981dYI6yiwyQ0RwLe4am4FyYBqzPtRgHHwzae0uipEGduE21sJKJRNkY5jAmYvbXQLKm7sYk+Nmu8FTQ1RHBMmzAMkOE0xaPyhWemI3Xhl37uFwSjzOqDXqxlOEFT1WiK3ADN6is+T6nusc8D7e++zhDMSY7+1eHxy4gkL/usYSaiKZfR8KrUD3xsUYLhV8LASStiGX4BvknaNA8ewMQjRRDFN7FY3Kptkwry8SvutEWz6K8PX/1cjgJFLcIAalK6tXn44Y4ZlgXvJDVzIVbqJlewDdw8ENDKwR/pWmT7bfJfv5Af+VsEByfx1NbkoDFOqoeeR2/z/B092n0/XcH7uwb+DGJySZiOOlDqVcPOFbe/cYS91isW03VCUfms5YwElb9jZqDObXQh9ZJSyzhVo/tPZ06hZT3vqHg840nM4hnYJomPNPxeAlkFvDJsk70xyztzjPjFwK9/KUFMyoZbpxHLKR+9Rc8duSa39OQWfLTV5C0unhejMrpduyyR9/FHCKTEbsXjA9M3PSv+WvfATFwpoW8364uNVU5z5DVIG/3NWTu421PW8IO7v44C8bgtmkMXVhG1DA/2r/DFUWjW2VlnTZ4P1K3kFWimyFBMy2gWNtl5Jzf8AQH6EgKRO3uJPsmPnUN0NMBBexbYkRflNqxC5maoOzViQziBPP03j6/bQ3lES9djPEOr+UBaMsWbR1wQKNO91ZuMjA==
       radialTaxesApiUrl: https://tst02-epapi-na.gsipartners.com/v1.0/stores
       radialUsername: AgCZfAJytwWvP23rCU/0PIipFN/E8o6AX5pnNOvu4x63Drf1lush6s/12XbrnDTdyvda8gh5SXrGtukZxhx0kZWwy6oJnRtRtooyAc/+ah0sjkXpbwIi6yKk9c3Gi1qp2me9J5uUVcHXbt0L4Wmrez4efZCjE2AwziqqC5YOgUJJzQM+qZAAsHuTv+gagpxthEqO1OX9CkDvrkfH4itYzurELXIV/jiMZHq/PhcMa7SnZh44q4uwVFymMFtGOsX2oDKrxiB7zH6lGzgoAN8srxTuegOjBNqWzcRxxdrN6SbVB15MDfCOaGXqHJgni1TR5T2uyBL1Yk3TmyuC63ZtCP3jMlP8Rbgq0Fj911fK+nyruc5edLNavSLlbpCK0rsJeGRC3tP6oGjib1Pfmi59ITyFnMlSP/8x4NeCLAQ3VyTDqFYAJWhRTdQZSCxnk2GywwSELlQKo0MF87cFxg8MOOmU1Lw7WJ+8SoICxec55FwtN2skuwBUDo4yT+M9HiMR4KqUNIeN3RQftQBTy5vXssuh7r/y1EdFhgstmLabxLCL+a1sRdorfjuFSfq9C5ACtcVefpm2hynLxW1x6kDhKat3MiFI9oJjHQ12S3VR8VlIw9OcRa7xQNM+wxGwJJ3sww1dnBraZi9uKTL6tQT5tqcS1TPFu0oPAKQHqsdItArgYlm4Ot9oB+EEw/fPmJ+P9RRFcEYLxw==
-      reactionAuth: AgBEephf5LweUSSnws3dWM8M2wd8mByyaau+2KwpOhvJfeGlVjlo4xHEzm9KMNS9NSLYY72ztOPCn9ct43IenEZHLyCV+7m4D0M5dmQT+km5jX84nHbRDh+SiRe3jIAZk2ncs2kBLJEB73VHlJYs53Tgwm4J1uaDjoGOEOvs88w+ErTKMInsNJtO1fxAtYyKg3iZeqoYw0dLNnbTWbT+4g2ar9Oqvgamr+9IQMUNfvTsfYoCvA6J2DV/fp+CFiTdPxj590x0n1dW02jXIibn4d6yHmL3frUqUxJ0f1mvW40N4mOrOLr2wXZR4vLWANnLtvZsdaBQjSuSe+qIHbZ+8qtRu7sPljyE/2oacVWJmquiqqmycjK5jzzoTF2uER+ZeNAlx8SL+Sp1BxLgFNSSzThLX2yXpcstrgWRAh2zTC3OFBSAX16pZ3scE23xiCcOZQuV3zwjoNrksFgeI9d09StZ/Es+aTY6YSjxgPOT1e81e5GOo8x08MnDZYOXweiwQKN3le6CqXIqnkX+l36+pqFASE9h4viDF7/y3Zq+TjlDedkZpu+UfeuMyJbcno26ig7nGnd2KWDk2+O48o6fwXSBbiFFIyvbgGIPtVkXLLvsPGk2Md/SU76ikCzgipi44lPLxq2ByuFRqlbfXidrcM2/nk7xZ6FINmi4LGbFmh9yzgLuu413CzukjHEH0uvwG62cU23uXapWEQ==
-      reactionEmail: AgB0jP8pfewJ1eeI57ylZRXCzsY/rh8I6B7mgYzOb2N4VWGUXpZ90ZdVg/YjAeMFb0MtMKUlQbWUaBvsiA9YgBmmGzQdMUh6GQClvGxnlnjO68KpryqkQrCaCJh7237T2ShW15ijkXncEyTMM6+puEQGdRVOvsC2xLXiIP0Q5dthxYIe3zwlnyPdWGu5BDBmbr2U009eZ0pu+khpMW+ad+IdB+MmT+5rOrIjw1gKGDJO1pUPjFnjtOlcVzsCaS1E7c2Kcz7g7pZEWPwYQXvVphmPwYB43isFrYDKGlfnzaSExyWi+GJ3dDKW1i3riuUVSHgzhcQ5kgPPX0Fm7+qLtHUOnaWpecd4+MfuN38ZSGaPM6d45GGlEDwU+DSnBzSwe3djlYBK0twN2Dbba8tU48mpU2XCQZmxuOK+isfkGH9/NF26WFjt/cgnsROMWmbVSObZqh+8HXoxVJMkMTNvPqPK99UYl8W+cJwOqNVzTr7VXebOeNUtW5HpkS3pkaZ5WKpx0aC3ywX7hLFPaUDYm4DkXeh4ZE9xRsr3Fo97jaa4QYPQJvqykFfRh+J7wuDEbk899y+jiH57PsD99SW62ld4UV0sTBJ1Os+lNtOdeP0CqYtj82wjbGDLNE9wMWuCM+QAtsy6EhvKv8I+rIU8Us2wvyDMTqoGdrcvSb49bvLGz1e8VbzKj0x+y+ZN90fZz4B16vKQqvYJkzBr8+ChGGo=
+      reactionAdminPublicAccountRegistrationUrl: https://staging.ems-test.io/signup
+      reactionIdentityPublicPasswordResetUrl: https://staging.ems-test.io/reset-password/TOKEN
+      reactionIdentityPublicVerifyEmailUrl: https://staging.ems-test.io/account/verify/TOKEN
       rootUrl: https://api-staging.ems-test.io
       siteCode: EMS
       startingNewCustomerNumber: "7770000700001"
     image:
-      repository: docker.io/sportsdirect/reaction
-      tag: 65ac48a647c280e06e6d0455c64ad049da1e666d
-    imagePullSecrets:
-      - name: reaction-docker-hub
+      repository: 816897914983.dkr.ecr.us-east-1.amazonaws.com/reaction-core
+      tag: 0d07f78

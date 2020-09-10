@@ -26,6 +26,8 @@ spec:
         apiKey: blt7841d2a593726d96
         environment: staging
       elasticsearchUrl: https://vpc-staging-storefront-mduien76trlzpmbscx5il5tszy.us-east-1.es.amazonaws.com:443
+      hydraAdminUrl: http://ory-hydra-admin:4445
+      identityServiceUrl: http://reaction-storefront-identity:4100
       healthcheck:
         applePay: 620ef403-4e09-46f8-a7e1-9bcbaf3e85b9
         cardAmericanExpress: e4e4df83-6692-48b8-be94-cd0bc51a4dfe
@@ -40,10 +42,12 @@ spec:
         clientId: ems-staging-storefront
         clientSecret: AgBen8WI+/2BSctCy797JZc44jGFzXEi5m4Qxb9vxSfZSeXJjzpTK1QVBPU6TuEGCTqHdOse+ddDy41myQ3Jo0fA/lC5SVLi8oFHJ0r3eAU6bmcu1ZFKgCJr2Q2c1KFJgFAuYMt2qXQ+1mdoeJ8vamLlxAes+CqOIRTjj2DY0MJF3fe6Rzikjury/d7p9HJ8qrNefU8k78Lp/S/2jtYyM+grpP5KpoI3BAQB4U+iOzAQQ1loyiRnaNBZmJDMFSI0Rad9wNmM/L4rSSCe3UqS1fQpa1EIkL5e5ZMD6xoTq3melqwpDiOqBjEYaIhojRGnewujcm3w6z0PrJCJZRHefN4gUiB/EGDfuDEphwdq97N++doVblRu7/88PKKZbrxGnhnbysXwfvFghnZwxqt6pgr1uevMoxWg9z0RT7DHdnnL+uFrtSKohCZsaLXDHc5apuj/FCJSJrTEQZ65TpNx0NIC++tJq6+ar0n60RM7ofQP+JOwWsKM5PCZ956WvUBSZU27C1xeo9DkWqVrFB7SHgv+nZ9RAMdiENgZHN79OATlPuCJoQHN08VnkKeqHTZcW2G+NMUV52D2jIAXDV5P/EhC5gH9mgp4PrpBs+x9R21POidJHmda9P+znjNfU2L8bKqyMNqnGx1CGPO3VscMCJvQbGd6AgZs98OKSOzd1Q+WPbEzS9J7dbAtY2NFEt8l3ExHpl2wT/WWk8fsHXhJb9k=
         redirectUrl: https://staging.ems-test.io/callback
+        tokenUrl: http://ory-hydra-public:4444/oauth2/token
       radial:
         clientId: EMSUS
         mode: sandbox
         rdfUrl: https://rdf.radial.com/rdf/service/scripts?clientIdentifier=EMSUS
+      reactionVersionThree: "true"
       segmentAnalytics:
         enabled: true
         writeKey: oTm3YQxgfc6udco67OFJDumcfUX2fCU2

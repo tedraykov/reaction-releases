@@ -76,8 +76,10 @@ config:
   hydraPublicUrl: http://ory-hydra-public:4444
   mockTlsTermination: true
   nodeEnv: production
-  #ouath2RedirectUrl: XXX
   port: 4100
-  #sentryDsn: XXX
+  sentry:
+    #dsn: XXX
+    #environment: XXX
+    enabled: false
 
 mongodbSecret: mongodb
