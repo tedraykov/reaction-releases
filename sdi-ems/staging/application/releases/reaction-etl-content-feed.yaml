@@ -16,7 +16,7 @@ spec:
     imagePullSecret: reaction-docker-hub
     image:
       tag: 818f5d7
-    schedule: "0 4 * * *"
+    schedule: "0 8 * * *"
     config:
       batchSize: 1000
       cloudName: eastern-dev
