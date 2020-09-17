@@ -49,7 +49,7 @@ spec:
       seoMetadataConsumerEnabled: false
       startingNewCustomerNumber: "7770000700001"
       surchargeConsumerEnabled: false
-      taxesConsumerEnabled: true
+      taxesConsumerEnabled: false
     image:
       repository: 816897914983.dkr.ecr.us-east-1.amazonaws.com/reaction-core
       tag: eabfb77
