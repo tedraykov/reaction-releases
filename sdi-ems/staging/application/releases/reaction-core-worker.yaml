@@ -48,8 +48,8 @@ spec:
       siteCode: EMS
       seoMetadataConsumerEnabled: false
       startingNewCustomerNumber: "7770000700001"
-      surchargeConsumerEnabled: false
-      taxesConsumerEnabled: false
+      surchargeConsumerEnabled: true
+      taxesConsumerEnabled: true
     image:
       repository: 816897914983.dkr.ecr.us-east-1.amazonaws.com/reaction-core
-      tag: d18d047
+      tag: 8dac35a
