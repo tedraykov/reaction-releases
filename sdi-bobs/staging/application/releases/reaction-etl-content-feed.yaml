@@ -8,8 +8,8 @@ spec:
   chart:
     git: git@github.com:sportsdirect/sdi-releases.git
     path: charts/reaction-outbound-content-feed
-    ref: refactor/external-config
-  #helmVersion: v3
+    ref: reaction-ocf/external-refs
+  helmVersion: v3
   values:
     annotations:
       iam.amazonaws.com/role: sdi-bobs-staging-reaction-job-outbound-content-feed
@@ -24,7 +24,6 @@ spec:
       cloudFolder: 0
       jaegerEndpoint: http://jaeger-collector.staging.k8s.bobs-test.io:14268/api/traces
       kmsKeyArn: arn:aws:kms:us-east-1:225761155017:key/e4294918-f196-4269-8294-8cfc8377a002
-      mongoDbName: bobs-staging
       pricebookIdPerm: bobs-usd-perm-prices
       pricebookIdRetail: bobs-usd-retail-prices
       pricebookIdSale: bobs-usd-sale-prices
