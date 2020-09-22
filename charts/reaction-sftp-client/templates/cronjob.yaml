@@ -12,7 +12,7 @@ spec:
   schedule: "{{ .Values.schedule }}"
   jobTemplate:
     spec:
-      backoffLimit: 0
+      backoffLimit: {{ .Values.backoffLimit }}
       template:
         metadata:
 {{- if .Values.annotations }}

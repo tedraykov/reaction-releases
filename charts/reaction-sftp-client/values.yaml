@@ -1,5 +1,6 @@
 ---
 annotations: {}
+backoffLimit: 1
 config:
 # sftpClientDirectories: "BOBS/canceled BOBS/returned BOBS/shipped"
 # sftpClientSource: "s3://bucket/location"
