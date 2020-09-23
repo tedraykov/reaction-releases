@@ -1,0 +1,44 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: reaction-core-etl-consumer-loyalty
+  namespace: integration
+spec:
+  chart:
+    git: git@github.com:sportsdirect/sdi-releases.git
+    path: charts/reaction-core
+    ref: reaction-core/v3
+  helmVersion: v3
+  releaseName: reaction-core-etl-consumer-loyalty
+  values:
+    config:
+      brontoAccessToken: AgBf3YDmmtZutZ6twn+bX3aaX+lNsbTaZloSfgEMG/SPqGhpa4/Cy7dozYYiByVKpl+a4KSAgCARJkbzDLss7SbVRS8uNQ+i1dgGr3dxMBDurHwxmq0GVcPOIlBHH5+THn/licnqkobnTx5yqiDBVYSFY/e2La9jsMxQ+g1szqqLU+Gh54bfVzTd17UyJXzZUpQi041oBhU4+OW5o1YvOsSdVQ9/eCISXOGtwkdtcPvh1D6C1c2bgpZ7/djqmpjov7wnYfywk1tvfbizh2u0H2Fx/pJwIbSVb8bs8HCRrh68aiSbYy+2+nae8FRh1VcgNMBiSbTqWDV6CTGlPCHfE11+rhAkKm1XzYPFWAv7wc/UQ0f7Mv8OVJylqylQ2jj5DgHHzJQHnRRwHsVmlg5W9MACO9Zy1kSvqMklUuo6h7E5LjMv6FJb08FYGtM3jZNGFlBt9Dz0b+yk1EmieDyzjl/W7tHWlK3qQQPBRafI80XDsAo3xAj26DJxPD7GjZ3+JVEcYUdEakH60jzCVld5cjLPxdTXsFivs4vjmKjYvBULP/CrhIttk+5dDt5K5eOV7CjQOAfHKB7x2nVbA5oxQy7aJ0QmkHbRvqY3eSgMStq/20D43VwZb5TtL8QEishYU/JzAxPqOkU+je1qQm2iw1ijw1NUNv5pePyt8x2s6rFO9EXbhaJv648F/COuhuDp7RdgvPQ6BMV3XKZveyMlx8TIL+Ufgw/KmlfIu+ujRuzlmImgjug=
+      brontoFromName: "Bobs Stores"
+      brontoMessageName: BOBS_RC_TRIGGERED_EMAILS
+      brontoNewsletterListId: 0bca03eb00000000000000000000000dd510
+      brontoReplyToEmail: "admin@bobs-test.io"
+      cartExpirySeconds: 1296000
+      cartReferenceIdPrefix: 66
+      cloudinaryCloudName: bobstores-dev
+      etcdUrl: http://etcd-application.internal.integration.k8s.bobs-test.io:2379
+      jaegerEndpoint: http://jaeger-collector.tracing.svc.cluster.local:14268/api/traces
+      loyaltyConsumerEnabled: true
+      orderExportRadialApiKey: AgAyMC1m/A2Hg644eUH/dA+1Ne4XsI9BSeiIMb2dclW+Jos/QXT11o+tj8/5au6mrFRUau3P1G60gVh02boQEcU2KfEm3xUlG44gk+qaZKIgVACwfK056KzZmbVCI2DUf1fWm0YybUSb3b2YhniNwa9CiVh0mde+fyVGRfMj8EOkxB1e7LnK+CzBPxCrEodt6/ujezT4XWq4MpAGyZ6fXu4AQ/+3KwgSkxm8A05EiAhLL4P4z6CesD2tGI5jEOCr4/dbe2oEpHQN7BwA1yts60hxc7Kg7rHPcgYn1AOIi0fgD+DOF0fQ7xqrIi8A/Dl7tASSnK/fRQdx6PaE3SKDaQ7Q4cGoZW7hol9CNbmc+OxBBCjgf/Ocb16SWtyiOp58XKHDL+qCW4VAsCzr0bVIbWBxRsyKduapGZd+rjHwRRgKwoPiUg3Oes9QI305qSbBpJnMx7vYRH4BEednBM7lx7+8ryQuU/7gi4ViAh/YF63gR2fbSqchDBKP5DsM/+BKZlfQ5eu94SVf78ErW6tpXjrBt5qmEAlVfdXo7ATyY9P+1Am4eOpg3nPSTcYbQ9CRyjr+4RFBcfS1c5jlR7i+78auLVopE+6EAo3NN1TiYD8Wz0oDoEEz0L8ljFYmWJwWrI1K5WgjTgETsb0DHhU5eCZc0TigsRofIxglYvRrixj4fqy1eMcUN5yGMjnTWsXzZzlycoCY6lmHe4kTDe3BHPB2lckYtV3t7qBaGiVYmtiLHg==
+      orderExportRadialUrl: https://tst05-epapi-na.gsipartners.com/v1.0/OOMF/stores
+      radialApiKey: AgAyMC1m/A2Hg644eUH/dA+1Ne4XsI9BSeiIMb2dclW+Jos/QXT11o+tj8/5au6mrFRUau3P1G60gVh02boQEcU2KfEm3xUlG44gk+qaZKIgVACwfK056KzZmbVCI2DUf1fWm0YybUSb3b2YhniNwa9CiVh0mde+fyVGRfMj8EOkxB1e7LnK+CzBPxCrEodt6/ujezT4XWq4MpAGyZ6fXu4AQ/+3KwgSkxm8A05EiAhLL4P4z6CesD2tGI5jEOCr4/dbe2oEpHQN7BwA1yts60hxc7Kg7rHPcgYn1AOIi0fgD+DOF0fQ7xqrIi8A/Dl7tASSnK/fRQdx6PaE3SKDaQ7Q4cGoZW7hol9CNbmc+OxBBCjgf/Ocb16SWtyiOp58XKHDL+qCW4VAsCzr0bVIbWBxRsyKduapGZd+rjHwRRgKwoPiUg3Oes9QI305qSbBpJnMx7vYRH4BEednBM7lx7+8ryQuU/7gi4ViAh/YF63gR2fbSqchDBKP5DsM/+BKZlfQ5eu94SVf78ErW6tpXjrBt5qmEAlVfdXo7ATyY9P+1Am4eOpg3nPSTcYbQ9CRyjr+4RFBcfS1c5jlR7i+78auLVopE+6EAo3NN1TiYD8Wz0oDoEEz0L8ljFYmWJwWrI1K5WgjTgETsb0DHhU5eCZc0TigsRofIxglYvRrixj4fqy1eMcUN5yGMjnTWsXzZzlycoCY6lmHe4kTDe3BHPB2lckYtV3t7qBaGiVYmtiLHg==
+      radialApiUrl: https://tst02-epapi-na.gsipartners.com/v1.0/stores
+      radialMode: sandbox
+      radialPassword: AgCQb5pRKj2tvDggrwLaTst2aSJH/53owhYuKL5kxGMelKmDFzk7fRcNevLzusAAoHEYh3VpUwRqJgDPXaJpdUT4N/D8jnuv13aXDwMBlIBnygXfIW0zHAkhhhDv7k1ulEnk73MlYGn5D76mZSC8xIuG2Z+HKdrPefcTBDYRzfwE5KGUP7vDNssqLJjyXKs3iq3/9FXO2k8uSm8Icuzem/EBWfGPbzDnH+5gEG9x+qv4OL8O3IycNzzqkYXptBaKHyTxZrAXEZjtVfpRotD3gkfld0sMFPJlYgtsUXl0iwTwdxAJuUrnln6+gPy7E/aNIQ9/RZyaE8AwAxVZ2c3tDLsaPwBapZDhj0CC1qS9bCO76z5MexBqAqHKXAqGjtlNEWRpS8w46kR+aI3vdT1xmIh35SNXx2KP6pxTumiVyzbxqO4l6vRnWu9PexCeaKyw27XHiLE67Ys84cqWfP82a+usqRrbbYWeOB+qtaJlp848J48PI9FZ8yTEQNSP2Fz344Kj3FH2BHjouOxtrPUNyIitIUMcKrB+0Y9KmyfI20C2LiND32Rnfwz5y/pTRDU2fGOqtlldziuHmTqzAw9mJyppIeEebNsQ6ArbuoVVsTkdk6xNqeP6qBVP0UMl4eFb9BjGQs5uPH8+SlYuQIQjbMnsG400n5dRv//US1W7DJ173QiRgNyq6vEHOYATK1O/Ee0//y5HCg8=
+      radialPaymentApiKey: AgAyMC1m/A2Hg644eUH/dA+1Ne4XsI9BSeiIMb2dclW+Jos/QXT11o+tj8/5au6mrFRUau3P1G60gVh02boQEcU2KfEm3xUlG44gk+qaZKIgVACwfK056KzZmbVCI2DUf1fWm0YybUSb3b2YhniNwa9CiVh0mde+fyVGRfMj8EOkxB1e7LnK+CzBPxCrEodt6/ujezT4XWq4MpAGyZ6fXu4AQ/+3KwgSkxm8A05EiAhLL4P4z6CesD2tGI5jEOCr4/dbe2oEpHQN7BwA1yts60hxc7Kg7rHPcgYn1AOIi0fgD+DOF0fQ7xqrIi8A/Dl7tASSnK/fRQdx6PaE3SKDaQ7Q4cGoZW7hol9CNbmc+OxBBCjgf/Ocb16SWtyiOp58XKHDL+qCW4VAsCzr0bVIbWBxRsyKduapGZd+rjHwRRgKwoPiUg3Oes9QI305qSbBpJnMx7vYRH4BEednBM7lx7+8ryQuU/7gi4ViAh/YF63gR2fbSqchDBKP5DsM/+BKZlfQ5eu94SVf78ErW6tpXjrBt5qmEAlVfdXo7ATyY9P+1Am4eOpg3nPSTcYbQ9CRyjr+4RFBcfS1c5jlR7i+78auLVopE+6EAo3NN1TiYD8Wz0oDoEEz0L8ljFYmWJwWrI1K5WgjTgETsb0DHhU5eCZc0TigsRofIxglYvRrixj4fqy1eMcUN5yGMjnTWsXzZzlycoCY6lmHe4kTDe3BHPB2lckYtV3t7qBaGiVYmtiLHg==
+      radialStoreId: BOBSUS
+      radialTaxesApiKey: AgAyMC1m/A2Hg644eUH/dA+1Ne4XsI9BSeiIMb2dclW+Jos/QXT11o+tj8/5au6mrFRUau3P1G60gVh02boQEcU2KfEm3xUlG44gk+qaZKIgVACwfK056KzZmbVCI2DUf1fWm0YybUSb3b2YhniNwa9CiVh0mde+fyVGRfMj8EOkxB1e7LnK+CzBPxCrEodt6/ujezT4XWq4MpAGyZ6fXu4AQ/+3KwgSkxm8A05EiAhLL4P4z6CesD2tGI5jEOCr4/dbe2oEpHQN7BwA1yts60hxc7Kg7rHPcgYn1AOIi0fgD+DOF0fQ7xqrIi8A/Dl7tASSnK/fRQdx6PaE3SKDaQ7Q4cGoZW7hol9CNbmc+OxBBCjgf/Ocb16SWtyiOp58XKHDL+qCW4VAsCzr0bVIbWBxRsyKduapGZd+rjHwRRgKwoPiUg3Oes9QI305qSbBpJnMx7vYRH4BEednBM7lx7+8ryQuU/7gi4ViAh/YF63gR2fbSqchDBKP5DsM/+BKZlfQ5eu94SVf78ErW6tpXjrBt5qmEAlVfdXo7ATyY9P+1Am4eOpg3nPSTcYbQ9CRyjr+4RFBcfS1c5jlR7i+78auLVopE+6EAo3NN1TiYD8Wz0oDoEEz0L8ljFYmWJwWrI1K5WgjTgETsb0DHhU5eCZc0TigsRofIxglYvRrixj4fqy1eMcUN5yGMjnTWsXzZzlycoCY6lmHe4kTDe3BHPB2lckYtV3t7qBaGiVYmtiLHg==
+      radialTaxesApiUrl: https://tst02-epapi-na.gsipartners.com/v1.0/stores
+      radialUsername: AgBdGrVMc+AU+SYwobCCjswNVsCrw32uynuXYFM4cdQPhuvbe1jeaz3x+W6YjigLIgqKAIwpTFvQ1dAfj2hXHOHacZKeO4wG6E2tBMWVe6sUYX/MmZwEz2vrO6/KNHR/VQeIRi3WKOZhkHE11sd+zmfluS1YaxG6TDUU+WjEkZs5yg/60onmQnv8t70+TJ5Ml3HHXT3MWaH90+TdRXPAhS8FR2P8CsF5TYsk6os2Zl8Juc2+tmRItEfpPLrJz4c4+6QK4kzZGPLxu2oWxoHesFtpOyxT97CDxpcA0LE9my3EwKY/ZZts0sy0a0oteqPi2Dq7oyXtQ9STyPK53GkygGKCWF7guM7SG5QL7V8R1c06E+3P+F1PUjSyZ4SyfwkoEhBXmB2rvM8MI+3QQd4Gq+L0NR2movE1jv3+LyDkiLpI2hDTec1k8AtaxvBsH4cYJODGtU1w70FAR5NzmdYc3bEyfczAZiHdivP7OeLNWwq3cjMcYdvXx7JUq3i6+bijB7OF2ivru+hYJ4xu3YlXepjdEIwGm1Wzg5SXLYvohwbc11uDWzHg9W4dvkBITPlgCREITudU1jOPDGnuGphoUQ4NYL+T5DPUYMzldv+zmicQEpx620KQGEGaaot7boPrqndPUFOC9eeeGc54XbW5ypRH2Vn/0VHZatPDn2YAZau8kdFj+PspfYBq5QCqv+pOa2na/tWxmD0=
+      reactionAdminPublicAccountRegistrationUrl: https://integration.bobs-test.io/signup
+      reactionIdentityPublicPasswordResetUrl: https://integration.bobs-test.io/reset-password/TOKEN
+      reactionIdentityPublicVerifyEmailUrl: https://integration.bobs-test.io/account/verify/TOKEN
+      rootUrl: https://api-integration.bobs-test.io
+      startingNewCustomerNumber: "7770000700001"
+    image:
+      repository: 816897914983.dkr.ecr.us-east-1.amazonaws.com/reaction-core
+      tag: 0d07f78

@@ -1,0 +1,26 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: reaction-etl-loyalty
+  namespace: serverless
+spec:
+  releaseName: reaction-etl-loyalty
+  chart:
+    git: git@github.com:sportsdirect/sdi-releases.git
+    path: charts/serverless-deploy
+    ref: develop
+  helmVersion: v3
+  values:
+    annotations:
+      iam.amazonaws.com/role: sdi-bobs-integration-serverless-deploy
+    environment:
+      AWS_REGION: "us-east-1"
+      JAEGER_ENDPOINT: http://jaeger-collector.tracing.svc.cluster.local:14268/api/traces
+      KAFKA_PARTITIONS: 3
+      REACTION_LOG_LEVEL: DEBUG
+      SITE_CODE: BOBS
+    secretRefs:
+      - mongodb
+    package:
+      name: reaction-etl-loyalty
+      version: 509648d

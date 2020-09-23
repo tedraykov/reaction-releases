@@ -1,0 +1,26 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: reaction-admin
+  namespace: integration
+spec:
+  releaseName: reaction-admin
+  chart:
+    git: git@github.com:sportsdirect/sdi-releases.git
+    path: charts/reaction-admin
+    ref: feature/reaction-admin
+  helmVersion: v3
+  values:
+    config:
+      oauth2IdpPublicChangePasswordUrl: https://integration.bobs-test.io/account?email=EMAIL&from=FROM
+      oauth2PublicUrl: https://auth-integration.bobs-test.io
+      publicGraphqlApiUrlHttp: https://api-integration.bobs-test.io/graphql
+      publicFilesBaseUrl: https://api-integration.bobs-test.io
+      publicI18nBaseUrl: https://api-integration.bobs-test.io
+      publicStorefrontHomeUrl: https://integration.bobs-test.io
+      rootUrl: https://admin-integration.bobs-test.io
+    ingress:
+      enabled: true
+      hosts:
+        - host: admin-integration.bobs-test.io
+          paths: ['/']

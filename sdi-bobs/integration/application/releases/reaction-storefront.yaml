@@ -1,0 +1,82 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: reaction-storefront
+  namespace: integration
+spec:
+  releaseName: reaction-storefront
+  rollback:
+    enable: true
+    disableHooks: true
+    timeout: 300
+    wait: true
+  chart:
+    git: git@github.com:sportsdirect/sdi-releases.git
+    path: charts/reaction-storefront
+    ref: develop
+  helmVersion: v3
+  values:
+    config:
+      applePayMerchantId: merchant.staging.bobs
+      applePayMerchantCertificateBundle: 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
+      applePayMerchantCertificatePassphrase: AgA3ZA/lI3q0rjaTBtIX2FhnQgF+X0ggbMenABwoMonCgOEABSqPMkdVnP3OFQm8KxM1MvsojU/OJs2B0vHU7Qfg3zJYO1feGc1YQ8Cmtb7DWaqZ9G1zi7Eb9OZ3bA0tK8/bu6dDEW6nyJ03x4JVPfeKyukI97kxzgzdVLwk2NyARxqAdk04JsTeqtswIbP3DV/Iql6XTfQSMu+T/DPnvUFzis98HwdEwg+ewUcuZUHvECKPHIsp5/5XQHz3+jD49NDiAZ+oO2W9nQQM5nU9M+rJcuKl2QU0DUYHyBS+cemhwmfVAMq9YfIZVxbxjriklVuC6oghKE/GdYXL6igtJZCjau0zqAh7b5hdRnbRCGBqCEPu3r0ds4enw7JWeGOvAGnDyLdy8oao8kf8NcggGrth/qIxEQ1dBV1kyV0Vybf0ncjg8GWU2nGCBG9VGY/tMCj/Q/5+o6NTLGHKYYZCzY/3uLWZCZEu5nRoJutR9Tc4qo9gqQsknRN6Xb5LcV+CF99W1AB0m8g+ul3XJBSkyoWjD2uFGRL4F/l87SynZq8j8Z7d/WY0iLRrDuIfs2+70n3yrIoGMdoMEmMVvY5uVNMyCiuFKJ7a41PJAhm0/XEaEbOP9VapnMi4FKsTkJBE/MaSSAYBQo1nN03eY6Pps9KaM8hQ/GeTpi+Cls9YeY4nUkvgHTcgp0HhBbEyIjTDnlqGe1wMy0aC9dSQxl5R56Vt
+      baseUrl: https://integration.bobs-test.io
+      cloudinary:
+        name: bobstores-dev
+        domain: res.cloudinary.com
+      contentSecurityPolicy:
+        policyReportUri: https://sentry.io/api/1397837/security/
+        reportOnlyPolicyReportUri: https://sentry.io/api/1397837/security/
+      contentstack:
+        accessToken: cs7197fa31078b9f44382a5a77
+        apiKey: blt1f2a37a50d4512f7
+        environment: staging
+      elasticsearchUrl: https://vpc-integration-storefront-kcaqqiyc2vuqfbetu5uz4mudna.us-east-1.es.amazonaws.com:443
+      hydraAdminUrl: http://ory-hydra-admin:4445
+      identityServiceUrl: http://reaction-storefront-identity:4100
+      mapboxToken: pk.eyJ1IjoianBoaWxvIiwiYSI6ImNqeHFlZHRkaDAwM3YzaXMwenNvZmcyYXYifQ.pEVH_imRqxqTjdpIcuiRBg
+      oauth2:
+        authUrl: https://auth-integration.bobs-test.io/oauth2/auth
+        clientId: bobs-integration-storefront
+        clientSecret: AgBoSpkt+VnLaFCetHKDNA/RCynR8qS9u4M2b5MhT49u+VtN3YmsbFo1jOk8+d31hhlrEWqDyBrZZWwbWTDkFAy6XOjMU4iawlkykg8kFgnK+zhXYKXdYTh5/MKVlbUZg5vYNjiMiVu/BoQguSJylLyMqqxxSTVF+gk5tfak4koh+qK/UUco/wnGQ0k2wFOweuA2F+gYTRYJd6FCsn8SiglH5xvIWyNWwlLoJpRdHWWmmle73EEayBleTtM+1SUc1+SpwMrzfW1gdwVDsxcOiOHedhAsjwTbZAvGZZ+nvViC3sgci/dZVDaneFoPqziBya6UrSQmGJ2sBzb0uuGLf+v3mAeMYY+k8JViGPCBI55j4F9l9rttwBZqM9RBp5dPzC2lCjYLV2lisnTDgiWYFYQ/Hq4DuL2mPlzQiwIz5KuDNPLpB4zqCltRRZPiU2hg9p8u96g9Xwa2deXvfTxRy/9CehNWLfG0bpiwfhMLdkW/VMasVYUA+ZnmFKLjeEgAVDbzYrr0rnytuT9TbLwIK1Y1/ZrbabG/5ckoQYTN6Si9BaHMXxUsjYGP9+lH+G+5qUMbDmParLkJsR8WtSdR4Wmhv9vZN5B2XAyBhu4K+LUzwRypY61wqudrjxFnkqCnFKuqiWZ2391kKVus9vsuL8C5tSeuvaSifIi2IFvjxEphG5s8oHYzWxByZY6S4liVJoQ89EKs5DkwVyotkMmD8QY=
+        redirectUrl: https://integration.bobs-test.io/callback
+        tokenUrl: http://ory-hydra-public:4444/oauth2/token
+      radial:
+        clientId: BOBSUS
+        mode: sandbox
+        rdfUrl: https://rdf.radial.com/rdf/service/scripts?clientIdentifier=BOBSUS
+      reactionVersionThree: "true"
+      segmentAnalytics:
+        enabled: true
+        writeKey: osQ8ZrOPWr89d7I6ecepCU1NcCP9uE0C
+        serverWriteKey: MEBPfPlBriDxlltmtX3SbVsZXhYeR3pQ
+      sentry:
+        enabled: true
+        dsn: https://222c72f6ba49483f88913050f9bd11ab@sentry.io/1397837
+        environment: staging
+        key: 222c72f6ba49483f88913050f9bd11ab
+        project: bobs
+        sourcemapToken: 13a829e4fb0e11e994f94201c0a8d02b
+      sessionSecret: AgBfrOBtL2+W791TifVtLGLZ2DXFTkXHlGLhN7StJcagXEvU2Mu2C3vCsdptJX4SxR/kptj4IcNIls4IQPWloWsuMs7iETdZWTkU3DrhQD1bsQ+idO6gCIfPgTC4vWvCNA3vNUXrRDwnDpXTGBZxES+DCYZAN5dlFyXIBGulp9UxOt7Au4zcWHeqk3QewTNY+goQi1Ghxju56H+99s18jztdYaP4oq6POxY+yv9CCb/9jXc1zwtRb0UsubFnnbmSodmWuvbESgCDKUUc5WwH2tcURPyAKfRa2ZZnlQ7DPdpDN7xzpN98rUy1oha0ezoLX+W512aZLp9zZSH5jsK6Urr/+Qh2tH3Sr9EFSyeFleLwYf3rCoTbIO6ianUgYjzwFPRcyKgGJcc+j8LNlrWZCsWnIpgxaPkMzIVywGnH+WVdTt6twwvKK94vU8Q/l7mFpFWNafaufnS+fAKCG6/LC6Ia/jHO0KJT1dcfh2XnFG8xhcfpIqtxW++Be2gFuzpnuybu5xoio8qHrYnCDYu+qTnLj6STJpsosZLlawxEQx7Wo9UBqphwnY/B5yMODwGNU1xjyzRX9C35pTSOgs4ck+4k29WbYf7Vdz/CMpUE19NPGA6GmR1cqtGEP23sfPCO3VOoH/o7ikZgqhOvKtGZbfgQEg0g/cXQqLrlRqrBpdv5N1mDwy56gpUnhA/my5TNWhmZI1Vc8UNGh3AZKUKwDdI=
+      productCountReportEnabled: true
+      tagAttributesReportEnabled: true
+    horizontalPodAutoscaler:
+      enabled: true
+      averageUtilization: 70
+      min: 3
+      max: 10
+    image:
+      repository: 816897914983.dkr.ecr.us-east-1.amazonaws.com/reaction-storefront-bobs
+      tag: dce177ad
+    ingress:
+      hosts:
+        - host: integration.bobs-test.io
+          paths: ['/']
+    maxUnavailable: 1
+    resources:
+      requests:
+        memory: 100Mi
+        cpu: 100m
+      limits:
+        memory: 2Gi
+        cpu: "2"
