@@ -8,16 +8,15 @@ spec:
   chart:
     git: git@github.com:sportsdirect/sdi-releases.git
     path: charts/reaction-core
-    ref: develop
+    ref: reaction-core/v3
+  helmVersion: v3
   values:
     config:
       brontoAccessToken: AgCw9C+DFiAZRCQa2Fg4gz0wq3nYZZJeZvzYex+FsAPwaa0FwwLVmAWsEBNgcMgVTOKsNsCYTXi6igmZ/XZcqQeNZQnqCXGtaH7Y5Sq0Vs8Ib8hvWcIA8iu+Nh0fFweDhRpVoqfgUxcKYbB5nl18Rscrl3fNtGgKoG9xJgwSs2eye09R3IKVRHL7mhl+QPX3Q3M3nefv1zfmGeJYCXkJBFHzE+sBAKEWn82OKR8d4/ebRZHCBHg6TIyh5KGVDOO6s0lW7KDVRWzpnPFUdo8TR/paQayCS+efOl+IjrwKxnANdNqfOcMa9+JrHtkkgQQQpXzzB8A71cIr8EkATZmsa+Oiy3jrWMYiJNpOmIjf0Kddw61d8SsP4WqQr0Cuivbm83WtOppVA6FzH8T+tCV2gqbK2RtxRA4fRIaXyWWMfw71ZapwkyOBZGqDb09bO4s6CbcZSppogUarsUENO4QR5kj+6spRhlda9SlVtKujWAXo0BnIhnV7mhfdSHMYPeQnLnBUs+519j0WMDPp3hjGiM2dK0e2yFvzhA4nuWm2Iv3TPoxNj3LUomc2NLdKbhpkfszm1KxifKXz6o6JbhUjoSB5DGbFhnbOpjybQSks4qI4wpZP9aT2yawJPN2XRXs0sFP21emElG64iGVJs6RhmSljbUjNOD5H6AByAGsRaGpBW+2OIKPYUN/d5q5QuI1zTJH6oW4syyqpqLPlgdgI0CGFTqDLsg9LxdGEFiBTin5u13VxfyI=
-      cartReferenceIdPrefix: 66
       cartExpirySeconds: 1296000
+      cartReferenceIdPrefix: 66
       etcdUrl: http://etcd.ems-production.k8s.frasers.io:2379
       jaegerEndpoint: http://jaeger-collector.ems-production.k8s.frasers.io/api/traces
-      kafkaBootstrapServers: b-1.production.p9ku7n.c4.kafka.us-east-1.amazonaws.com:9092,b-2.production.p9ku7n.c4.kafka.us-east-1.amazonaws.com:9092,b-3.production.p9ku7n.c4.kafka.us-east-1.amazonaws.com:9092
-      kafkaCluster: b-1.production.p9ku7n.c4.kafka.us-east-1.amazonaws.com:9092,b-2.production.p9ku7n.c4.kafka.us-east-1.amazonaws.com:9092,b-3.production.p9ku7n.c4.kafka.us-east-1.amazonaws.com:9092
       logLevel: debug
       kafkaPartitionsEtlShippableInventoryStatus: 3
       kafkaTopicEtlShippableInventoryStream: "etl.shippable-inventory.inventory-data.json-gen2"
@@ -34,14 +33,15 @@ spec:
       radialTaxesApiKey: AgBErqu9Ra1G4j4T7FEI244eIDBdhQL88XKZG66xdZikd1+fUGU9CR67X0eahe9m2gPHyiRZDvdd5siG/WtOCxObnY5R6+PKR4Ez8TQ6fZ6a7g7eksAZcnmW8VwuE7axhx97S5sYga3hjGPyqodPR4muo9GPrZSs/V92h58Sun0r+M2R2SJDzfaRnuLAKd4xBQq1xUIgVb8DYIveXgtMKwzGX+uzjV+m8F4H7RVVBenKIBbK32zGfyDbU6nPW2MpwNf9HYcSXYhtCf8eHrl1OUCP9ZVm1cRVuKjF+Jsc2hJaiNwv3zdE0aV6yC2Inm15vpFddoJyFqg8gLjz0EPCZoEZUGsMJcZW6Fx8p7LQhgkueJqoIURJAl4JX4P07uqk6sICo60nUSnDCnZxX228y7lHXtOLVTlIMAVZTCw+wEXUStXRZS5C+1u4XA9PEdbHJR8CoszAJ5PsBpovu3vuJKCuvOKrYt87F+ocnQ6EblRLmYk2kxdg/IGoWllS/Na8lfWYolGNlZw6aAmVi9GfVtNqNZO7D4Ql0+LWQxR/orJB9Hy5gt3TbjWJCoYZucK4gg0CoZW6Rpbz6Wm701QZ/2WroTqg+NHDQIFZGl8AjZf6ncDDHnnuH0mVrsScRSC6x8VeAft3qndfuMbbTSRbnfo5Ecpax3EoDO2N5sp+3L3OqOgncJB2XH2VJ8Yso4feLJA+/ovZZvOvKHdV6jCaKOBpXeWhdVhO7ujbO5AMb7UZBA==
       radialTaxesApiUrl: https://api-na.gsipartners.com/v1.0/stores
       radialUsername: AgDFDYyFt2i7hHIpfhKwOPac3+djSDjLZ91JLhycpeGeZsT3KX162kXzjkyhimDddX5mJU6CgjLUacEcpruG1JFU/2bhtWty4sSHawMp0bCCw8yYe5sVZgKY3OEchTOkeLU4Kxmu2/A2NzCZJxZ7Xm2ij5hsxsFsj7QBtJtwKbO6/gzBP3K9iTIazTIBD6XNmqfiAS6T6TPgZjh4IackTL0xmg4d4+dwjeRuIY3GwQpYwzlV0bqEE5XWph9nqtQQdWMB7HxZjFAJVeAPlo6YRZQkG4aFitvR1RekTtz1ArUE8OwzsnB3f7g0fRD9COOxkQHL2L2uusf+5VhYEUbwqQ+vFU/Sxt2ACzFzDWWRvkJR3cp3IvpfLkIczUfQRzEmf3+VZZl09Ko1hPSGK23XbgyFbBSLH+hFvVIm4GOPKGa4Usj3lt+U3SUWjrDwWrtR7EtyWDO7u2oxjfuLQCG/BmAhfVglTRHJONiZf9+MpqMRn/uoLPZQw2CC8yMsjDoCRGKUPaxBIp/UBUIOgH5cEZkJMxG/qqBg71ycIk5RMcbmdwrVsiG5Mselnm638JTusLdrmB+K4a0WCbcNk7t4hN30N2Q+gjAS//d3AX5WQWi0/w4U5enQgvNhRQWLFd53h2CvnSn7oseO9FLjTpw7D+cExJc9K00hPQlO6oYEsIIGd/MCZbKGUtZjnql4XeH3xfASLRbjv47LB3xu
+      reactionAdminPublicAccountRegistrationUrl: https://www.ems.com/signup
       reactionAuth: AgCqGo9BiFVfuIj/I0g4Z3fwpAyGY58r8ix+ZobdGeYG/a7mYiIPXVej5jDgoL7GFTY/tqOcIWyhFc2DBbY2SgXyfpmuu0/+Bp2UbB+eEfw7AT0xfX4bfu4nnP+IYuRpR1xjS20K/kUwDbHPPo58d1s7rZALKG1/r0Ca7CP7YAoGK6WZTy9LiXFQJUIKHROtZX5oriTlbmHdo+ZB4Ydswtt3bIFJFseGEQeiSjncDWktgMl+gJbcZx+wXk9FC0nMlK61lvpijkynG7tAeRIioyksKoaK3CRI4cgO6ByMI0ERhZGwbi84BccdAo2k7hYaj2xH6zzANZVUiZMbq9fFA/9AnyhrTdqWdFkR4AA7oUBRXpdEXnX4Am49vM3LWXGMtSDvnUGO0JO1T10vVGHJjYTpgz/U5djJDvYbvZZ8kAYQzzI1gtKywa2mCsNrpQTdjpT4hd+AM/LDl5F8AVXDxU2AeuaQzaajEMAvgz37oy9OGwp6FfeVyg1ECotBmFlItXEKIE8Da57UVviPxeAowbzQmZnWqQ4kVYLwrPIV9GSl9NrBh71gyg3sC+qIFzmhC3ScFhS8DKn0Mb5lkc/5+oIb7PaJgJhz4xnr3QtVkof99KSQdUvqgrnpppwAhNfdQxzd3kyrnIZ7KE/kEEvIJrfxc5XPsiLuYTM3X60Kc63Xp/9xfO8u7A0bfUH0wlqXLm7lz3qCYqSH5g==
       reactionEmail: AgA+Bv1UTGxRF15ldwhOPJRU/67NmVXKoeWoe4PntqCP5jndHi8rtn+qw8ubjEN5T/YuI+/XPDbgqLDS/gPXaxk5Rn5KMSzzVXelz0/SVoC7KxdWEGENGwhsT+uN3lPBjqFNxumkHFwFHDTmzUKiNiuXOXqb598JIbBJcKH0gXWsfOf87f/RwnXbV3pT1r0Ke06BqZRbIMF1mW4DFDceGXrGf7zv0Ga/VZLrvzytVwoKsgVccAoFKjtrSVJiomfpBERNC3rwHt6G47v+YSD/aLqtYwoXFh2EHugLzjvs0oSIGICex6mbmQAbPlqQABaHRbiABkWp4L3gXw0El20cyNoGesKXYYGrpP8b9w5RwIgWqQA6Mb699Il7JQ6cfue/r8KcTLKzKLhzccRdaVpLvORlKbuAY1kLNPVFJelZOksDrrgzEbmrADp3iq4+rRUx6LDmBzA3Xry+IX/UPEiE2aaxfKmAwrtjC58r8/AXN7MlwbCDyvybMDn4RDp7s/NM8wBxu5BtKX+Jb+5E7KN4WN0r3Vrs/HJLiQ+XNsZK2vLpUYWb5nSskxLjEfgJ15XWjNv3zk0yOEk1qJcnSwueME8en4L4OjNd3gq7osbQPyVjsLbObTV/nWhsPv6quVJU6JbKi6tzItldXY9j0RKmh9NOSzc/KOHuHwWh7NC22LogCO/mfnoDCJhxQ0RPBp943EQFt3qqH79WivfoRE7isk0=
+      reactionIdentityPublicPasswordResetUrl: https://www.ems.com/reset-password/TOKEN
+      reactionIdentityPublicVerifyEmailUrl: https://www.ems.com/account/verify/TOKEN
       rootUrl: https://api.ems.com
       siteCode: EMS
       shippableInventoryConsumerEnabled: true
       startingNewCustomerNumber: "7770000700001"
     image:
-      repository: docker.io/sportsdirect/reaction
-      tag: b622da17fed03e917259b432d78db4a8522e06ae
-    imagePullSecrets:
-      - name: reaction-docker-hub
+      repository: 816897914983.dkr.ecr.us-east-1.amazonaws.com/reaction-core
+      tag: "b57ad4c"

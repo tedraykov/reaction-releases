@@ -26,7 +26,8 @@ spec:
         apiKey: blt7841d2a593726d96
         environment: production
       elasticsearchUrl: https://vpc-production-storefront-bqztylrrrcalisngun4njcgjna.us-east-1.es.amazonaws.com:443
-      mapboxToken: pk.eyJ1IjoianBoaWxvIiwiYSI6ImNqeHFlaG1kaDAwNTUzaXA1NmVmbmJpMDEifQ.VCyMGmTZGRtZo_vUrXEutA
+      hydraAdminUrl: http://ory-hydra-admin:4445
+      identityServiceUrl: http://reaction-storefront-identity:4100
       healthcheck:
         applePay: 0377a72f-1237-4742-8c38-6ee626e147c8
         cardAmericanExpress: cc090b27-a644-49ab-a940-4a5f37786104
@@ -35,16 +36,19 @@ spec:
         cardVisa: 26413c6c-e1a4-46ca-8f26-2870ccc7e4f6
         orderCompleted: 0ee96746-65ab-4c5c-b8ff-d5a091bb1516
         payPal: 6bba35cb-e9dc-41b9-8361-c115b694bcf7
+      mapboxToken: pk.eyJ1IjoianBoaWxvIiwiYSI6ImNqeHFlaG1kaDAwNTUzaXA1NmVmbmJpMDEifQ.VCyMGmTZGRtZo_vUrXEutA
       oauth2:
         authUrl: https://auth.ems.com/oauth2/auth
         clientId: ems-production-storefront2
         clientSecret: AgDKuxGPtjzbLYVBlAxbpZJf1XXeTgVEcbr+AvXKFA8RbzsKtcVcCBt0P5q0ROS0+vVFdwCF1eA9jk1MjAzsOYvPX2DKfmFZnsU1BhypQ97Fx9RtkVcNh3y75gWhzkMGIpQ7QrSjPw1IngmMCdUhgQ6WSzb4aW1FStZ2feIWXstkyk4DsuFr/XpnZA08zDXrPig0Q5xCJcE+zyGONnGm2r8tOMthyEK8M0BlDISXBht1t3OqNJCchOT+1DYXvaNfycH6FntINy/eeNwiIPZcXAT79i27i6LRT0/ch20f/R3LaODzpqJVNCHd39oKBJMesCInkAiuXO0vl3/lPlIMYW1TaClOYSeukGnptDdsZOFe2Khj5dOeXp8qd/82dfJxZIdPRm9paWV5zJOdqLJe4Ougr74o2lg6zMilaF4ul7tf44sSSd48p+VjrLqbkp4Es/ajRZsK4c+4IEvjSWymPaFqzLEbVM8Vwz4+f59Mb6bR8zwFXSBX2uVk15IIoTQlg6PUUVjCMj7X9VVClZwpKMJQC4gK3HQRM8EVw0mARgkQtmk+/JeLvqTUA0A4Jb/xrRm00eO2RT9FsD2kErdu+Udz0t2PO7eowaK3Ij0msXWTlfEo0dpkyel1NJPv2xmVR0+P/PAcSO9W1viEfL61rlRA9Cr8kyNdTTs8mhil0n2XSOhSnxcgD/oQBfV5fw437r5uV8W93K1brchc28w=
         idpHostUrl: https://api.ems.com/
         redirectUrl: https://www.ems.com/callback
+        tokenUrl: http://ory-hydra-public:4444/oauth2/token
       radial:
         clientId: EMSUS
         mode: production
         rdfUrl: https://rdf.radial.com/rdf/service/scripts?clientIdentifier=EMSUS
+      reactionVersionThree: "true"
       segmentAnalytics:
         enabled: true
         writeKey: lP6S7JFlVKryAHeiW7phvWEkwWTVfbUZ
@@ -64,7 +68,7 @@ spec:
       max: 10
     image:
       repository: 816897914983.dkr.ecr.us-east-1.amazonaws.com/reaction-storefront-ems
-      tag: a4747504
+      tag: e95415ff
     ingress:
       hosts:
         - host: www.ems.com

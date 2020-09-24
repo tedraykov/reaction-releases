@@ -1,0 +1,40 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: ory-hydra
+  namespace: production
+spec:
+  releaseName: ory-hydra
+  chart:
+    git: git://github.com/ory/k8s
+    path: helm/charts/hydra
+    ref: refs/tags/v0.3.5
+  helmVersion: v3
+  skipCRDs: true
+  values:
+    hydra:
+      autoMigrate: true
+      config:
+        serve:
+          public:
+            cors:
+              allowed_origins:
+                - https://admin.ems.com
+                - https://www.ems.com
+              enabled: true
+        urls:
+          consent: https://www.ems.com/private/consent
+          error: https://www.ems.com/signin
+          login: https://www.ems.com/signin
+          logout: https://www.ems.com/logout
+          self:
+            issuer: https://auth.ems.com
+      existingSecret: ory-hydra
+    maester:
+      enabled: false
+    ingress:
+      public:
+        enabled: true
+        hosts:
+          - host: auth.ems.com
+            paths: ['/']

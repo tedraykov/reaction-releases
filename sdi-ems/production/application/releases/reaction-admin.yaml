@@ -1,0 +1,26 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: reaction-admin
+  namespace: production
+spec:
+  releaseName: reaction-admin
+  chart:
+    git: git@github.com:sportsdirect/sdi-releases.git
+    path: charts/reaction-admin
+    ref: feature/reaction-admin
+  helmVersion: v3
+  values:
+    config:
+      oauth2IdpPublicChangePasswordUrl: https://www.ems.com/account?email=EMAIL&from=FROM
+      oauth2PublicUrl: https://auth.ems.com
+      publicGraphqlApiUrlHttp: https://api.ems.com/graphql
+      publicFilesBaseUrl: https://api.ems.com
+      publicI18nBaseUrl: https://api.ems.com
+      publicStorefrontHomeUrl: https://www.ems.com
+      rootUrl: https://admin.ems.com
+    ingress:
+      enabled: true
+      hosts:
+        - host: admin.ems.com
+          paths: ['/']
