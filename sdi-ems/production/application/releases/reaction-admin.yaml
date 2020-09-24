@@ -11,6 +11,8 @@ spec:
     ref: feature/reaction-admin
   helmVersion: v3
   values:
+    autoscaling:
+      enabled: true
     config:
       oauth2IdpPublicChangePasswordUrl: https://www.ems.com/account?email=EMAIL&from=FROM
       oauth2PublicUrl: https://auth.ems.com
