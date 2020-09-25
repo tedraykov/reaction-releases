@@ -22,7 +22,7 @@ spec:
       publicStorefrontHomeUrl: https://www.ems.com
       rootUrl: https://admin.ems.com
     image:
-      tag: "7ca520fa4"
+      tag: "c13baddab"
     ingress:
       enabled: true
       hosts:
