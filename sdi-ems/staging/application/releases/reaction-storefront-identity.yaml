@@ -17,4 +17,4 @@ spec:
         dsn: https://7971c23cac60466598081c3db5521ab3@o234104.ingest.sentry.io/1802036
         environment: staging
     image:
-      tag: f46d5c4
+      tag: 48251f1
