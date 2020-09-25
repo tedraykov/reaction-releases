@@ -19,6 +19,8 @@ spec:
       publicI18nBaseUrl: https://api-integration.bobs-test.io
       publicStorefrontHomeUrl: https://integration.bobs-test.io
       rootUrl: https://admin-integration.bobs-test.io
+    image:
+      tag: "c13baddab"
     ingress:
       enabled: true
       hosts:

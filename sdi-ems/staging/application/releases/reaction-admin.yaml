@@ -19,6 +19,8 @@ spec:
       publicI18nBaseUrl: https://api-staging.ems-test.io
       publicStorefrontHomeUrl: https://staging.ems-test.io
       rootUrl: https://admin-staging.ems-test.io
+    image:
+      tag: "c13baddab"
     ingress:
       enabled: true
       hosts:

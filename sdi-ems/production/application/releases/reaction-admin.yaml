@@ -21,6 +21,8 @@ spec:
       publicI18nBaseUrl: https://api.ems.com
       publicStorefrontHomeUrl: https://www.ems.com
       rootUrl: https://admin.ems.com
+    image:
+      tag: "7ca520fa4"
     ingress:
       enabled: true
       hosts:
