@@ -22,7 +22,6 @@ spec:
       cloudinaryCloudName: eastern
       etcdUrl: http://etcd.ems-production.k8s.frasers.io:2379
       jaegerEndpoint: http://jaeger-collector.ems-production.k8s.frasers.io/api/traces
-      logLevel: debug
       kafkaPartitionsEtlShippableInventoryStatus: 3
       kafkaTopicEtlShippableInventoryStream: "etl.shippable-inventory.inventory-data.json-gen2"
       kafkaTopicEtlShippableInventoryStatus: "etl.shippable-inventory.inventory-status.json-gen2"
