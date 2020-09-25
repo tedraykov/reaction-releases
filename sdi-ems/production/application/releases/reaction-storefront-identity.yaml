@@ -19,4 +19,4 @@ spec:
         dsn: https://777f1838601340d2a01742c0139bd6aa@o234104.ingest.sentry.io/1802036
         environment: production
     image:
-      tag: b523b14
+      tag: 48251f1
