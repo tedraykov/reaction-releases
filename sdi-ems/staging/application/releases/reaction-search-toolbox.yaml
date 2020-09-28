@@ -20,7 +20,7 @@ spec:
       kafkaBootstrapServers: 'b-1.staging.zby85f.c5.kafka.us-east-1.amazonaws.com:9092,b-2.staging.zby85f.c5.kafka.us-east-1.amazonaws.com:9092,b-3.staging.zby85f.c5.kafka.us-east-1.amazonaws.com:9092'
       rsKafkaConnectUrl: http://reaction-kafka-connect:8082
       rsZookeeper: "z-3.staging.zby85f.c5.kafka.us-east-1.amazonaws.com:2181,z-1.staging.zby85f.c5.kafka.us-east-1.amazonaws.com:2181,z-2.staging.zby85f.c5.kafka.us-east-1.amazonaws.com:2181"
-      rsIndexVersion: '11'
+      rsIndexVersion: '12'
       rsTopic: 'reaction.cdc.search.catalog.json-gen5'
     resources:
       requests:
