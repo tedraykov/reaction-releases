@@ -10,18 +10,15 @@ spec:
     path: charts/reaction-search-toolbox
     ref: reaction-search-toolbox/external-config
   values:
-    imagePullSecret: reaction-docker-hub
+    imagePullSecrets:
+      - name: reaction-docker-hub
     image:
       repository: reactioncommerce/reaction-search-toolbox
       tag: "31befc43fcae33ae6e1a15c015e718b8aed3d20a"
     config:
       rsDb: ems-staging
-      rsElasticUrl: https://vpc-staging-storefront-mduien76trlzpmbscx5il5tszy.us-east-1.es.amazonaws.com:443
-      kafkaBootstrapServers: 'b-1.staging.zby85f.c5.kafka.us-east-1.amazonaws.com:9092,b-2.staging.zby85f.c5.kafka.us-east-1.amazonaws.com:9092,b-3.staging.zby85f.c5.kafka.us-east-1.amazonaws.com:9092'
-      rsKafkaConnectUrl: http://reaction-kafka-connect:8082
-      rsZookeeper: "z-3.staging.zby85f.c5.kafka.us-east-1.amazonaws.com:2181,z-1.staging.zby85f.c5.kafka.us-east-1.amazonaws.com:2181,z-2.staging.zby85f.c5.kafka.us-east-1.amazonaws.com:2181"
-      rsIndexVersion: '12'
-      rsTopic: 'reaction.cdc.search.catalog.json-gen5'
+      rsIndexVersion: "12"
+      rsTopic: "reaction.cdc.search.catalog.json-gen5"
     resources:
       requests:
         memory: 1Gi
@@ -29,4 +26,3 @@ spec:
       limits:
         memory: 2Gi
         cpu: "2"
-    #ttlSecondsAfterFinished: 86400000
