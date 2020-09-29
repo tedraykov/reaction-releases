@@ -56,7 +56,7 @@ spec:
         environment: staging
         key: 222c72f6ba49483f88913050f9bd11ab
         project: bobs
-        sourcemapToken: 13a829e4fb0e11e994f94201c0a8d02b
+        sourcemapToken: 8218b9a6348611e9bffe4201c0a8d02a
       sessionSecret: AgBfrOBtL2+W791TifVtLGLZ2DXFTkXHlGLhN7StJcagXEvU2Mu2C3vCsdptJX4SxR/kptj4IcNIls4IQPWloWsuMs7iETdZWTkU3DrhQD1bsQ+idO6gCIfPgTC4vWvCNA3vNUXrRDwnDpXTGBZxES+DCYZAN5dlFyXIBGulp9UxOt7Au4zcWHeqk3QewTNY+goQi1Ghxju56H+99s18jztdYaP4oq6POxY+yv9CCb/9jXc1zwtRb0UsubFnnbmSodmWuvbESgCDKUUc5WwH2tcURPyAKfRa2ZZnlQ7DPdpDN7xzpN98rUy1oha0ezoLX+W512aZLp9zZSH5jsK6Urr/+Qh2tH3Sr9EFSyeFleLwYf3rCoTbIO6ianUgYjzwFPRcyKgGJcc+j8LNlrWZCsWnIpgxaPkMzIVywGnH+WVdTt6twwvKK94vU8Q/l7mFpFWNafaufnS+fAKCG6/LC6Ia/jHO0KJT1dcfh2XnFG8xhcfpIqtxW++Be2gFuzpnuybu5xoio8qHrYnCDYu+qTnLj6STJpsosZLlawxEQx7Wo9UBqphwnY/B5yMODwGNU1xjyzRX9C35pTSOgs4ck+4k29WbYf7Vdz/CMpUE19NPGA6GmR1cqtGEP23sfPCO3VOoH/o7ikZgqhOvKtGZbfgQEg0g/cXQqLrlRqrBpdv5N1mDwy56gpUnhA/my5TNWhmZI1Vc8UNGh3AZKUKwDdI=
       productCountReportEnabled: true
       tagAttributesReportEnabled: true
