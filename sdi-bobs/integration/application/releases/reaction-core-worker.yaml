@@ -18,7 +18,7 @@ spec:
       brontoNewsletterListId: 0bca03eb00000000000000000000000dd510
       brontoReplyToEmail: "admin@bobs-test.io"
       cartExpirySeconds: 1296000
-      cartReferenceIdPrefix: 66
+      cartReferenceIdPrefix: 44
       cloudinaryCloudName: bobstores-dev
       etcdUrl: http://etcd-application.internal.integration.k8s.bobs-test.io:2379
       graphqlIntrospectionEnabled: false

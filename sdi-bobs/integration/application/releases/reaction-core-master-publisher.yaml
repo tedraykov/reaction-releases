@@ -18,7 +18,7 @@ spec:
       brontoNewsletterListId: 0bca03eb00000000000000000000000dd510
       brontoReplyToEmail: "admin@bobs-test.io"
       cartExpirySeconds: 1296000
-      cartReferenceIdPrefix: 66
+      cartReferenceIdPrefix: 44
       cloudinaryCloudName: bobstores-dev
       constantPublisherMode: true
       constantPublisherPauseSeconds: 300
