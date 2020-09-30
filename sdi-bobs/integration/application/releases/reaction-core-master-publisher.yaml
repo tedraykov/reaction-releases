@@ -23,7 +23,7 @@ spec:
       constantPublisherMode: true
       constantPublisherPauseSeconds: 300
       etcdUrl: http://etcd-application.internal.integration.k8s.bobs-test.io:2379
-      healthcheckEnabled: false
+      healthchecksEnabled: false
       jaegerEndpoint: http://jaeger-collector.tracing.svc.cluster.local:14268/api/traces
       logLevel: INFO
       orderExportRadialApiKey: AgAyMC1m/A2Hg644eUH/dA+1Ne4XsI9BSeiIMb2dclW+Jos/QXT11o+tj8/5au6mrFRUau3P1G60gVh02boQEcU2KfEm3xUlG44gk+qaZKIgVACwfK056KzZmbVCI2DUf1fWm0YybUSb3b2YhniNwa9CiVh0mde+fyVGRfMj8EOkxB1e7LnK+CzBPxCrEodt6/ujezT4XWq4MpAGyZ6fXu4AQ/+3KwgSkxm8A05EiAhLL4P4z6CesD2tGI5jEOCr4/dbe2oEpHQN7BwA1yts60hxc7Kg7rHPcgYn1AOIi0fgD+DOF0fQ7xqrIi8A/Dl7tASSnK/fRQdx6PaE3SKDaQ7Q4cGoZW7hol9CNbmc+OxBBCjgf/Ocb16SWtyiOp58XKHDL+qCW4VAsCzr0bVIbWBxRsyKduapGZd+rjHwRRgKwoPiUg3Oes9QI305qSbBpJnMx7vYRH4BEednBM7lx7+8ryQuU/7gi4ViAh/YF63gR2fbSqchDBKP5DsM/+BKZlfQ5eu94SVf78ErW6tpXjrBt5qmEAlVfdXo7ATyY9P+1Am4eOpg3nPSTcYbQ9CRyjr+4RFBcfS1c5jlR7i+78auLVopE+6EAo3NN1TiYD8Wz0oDoEEz0L8ljFYmWJwWrI1K5WgjTgETsb0DHhU5eCZc0TigsRofIxglYvRrixj4fqy1eMcUN5yGMjnTWsXzZzlycoCY6lmHe4kTDe3BHPB2lckYtV3t7qBaGiVYmtiLHg==
