@@ -42,6 +42,7 @@ spec:
       reactionIdentityPublicVerifyEmailUrl: https://integration.bobs-test.io/account/verify/TOKEN
       rootUrl: https://api-integration.bobs-test.io
       shippableInventoryConsumerEnabled: true
+      siteCode: BOBS
       startingNewCustomerNumber: "7770000700001"
     image:
       repository: 816897914983.dkr.ecr.us-east-1.amazonaws.com/reaction-core

@@ -46,6 +46,7 @@ spec:
       reactionIdentityPublicVerifyEmailUrl: https://integration.bobs-test.io/account/verify/TOKEN
       rootUrl: https://api-integration.bobs-test.io
       seoMetadataConsumerEnabled: false
+      siteCode: BOBS
       startingNewCustomerNumber: "7770000700001"
       surchargeConsumerEnabled: true
       taxesConsumerEnabled: true
