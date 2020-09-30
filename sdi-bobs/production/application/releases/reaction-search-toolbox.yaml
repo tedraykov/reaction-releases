@@ -8,16 +8,16 @@ spec:
   chart:
     git: git@github.com:sportsdirect/sdi-releases.git
     path: charts/reaction-search-toolbox
-    ref: refactor/external-config
+    ref: reaction-search-toolbox/external-config
   values:
-    imagePullSecrets:
-      - name: reaction-docker-hub
     image:
       repository: reactioncommerce/reaction-search-toolbox
       tag: "31befc43fcae33ae6e1a15c015e718b8aed3d20a"
+    imagePullSecrets:
+      - name: reaction-docker-hub
     config:
       rsDb: bobs-production
-      rsIndexVersion: "10"
+      rsIndexVersion: "12"
       rsTopic: "reaction.cdc.search.catalog4.json-gen1"
     resources:
       requests:
