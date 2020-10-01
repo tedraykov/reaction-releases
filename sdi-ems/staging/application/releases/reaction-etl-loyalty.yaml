@@ -22,4 +22,4 @@ spec:
       - mongodb
     package:
       name: reaction-etl-loyalty
-      version: 18bfdb9
+      version: 873aac9
