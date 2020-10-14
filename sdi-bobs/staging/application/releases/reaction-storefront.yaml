@@ -14,6 +14,7 @@ spec:
     git: git@github.com:sportsdirect/sdi-releases.git
     path: charts/reaction-storefront
     ref: develop
+  helmVersion: v3
   values:
     config:
       applePayMerchantId: merchant.staging.bobstores
@@ -30,7 +31,7 @@ spec:
         accessToken: cs7197fa31078b9f44382a5a77
         apiKey: blt1f2a37a50d4512f7
         environment: staging
-      elasticsearchUrl: https://vpc-staging-storefront-jeko6lvexsm3iengavybl2caxe.us-east-1.es.amazonaws.com:443
+      hydraAdminUrl: http://ory-hydra-admin:4445
       healthcheck:
         applePay: 89dbdd88-a788-43d6-9f96-f3594f86cab0
         cardAmericanExpress: 02e6b311-a346-42f8-ab70-b0d38d7c5afe
@@ -39,16 +40,19 @@ spec:
         cardVisa: 2d6a0d11-0b61-4ec8-920c-af76ddef6425
         orderCompleted: 2324b57e-3f0d-49ae-80bf-4349b550a6d2
         payPal: 17b6937d-bdb2-41c2-80cf-93afabb2cb57
+      identityServiceUrl: http://reaction-storefront-identity:4100
       mapboxToken: pk.eyJ1IjoianBoaWxvIiwiYSI6ImNqeHFlZHRkaDAwM3YzaXMwenNvZmcyYXYifQ.pEVH_imRqxqTjdpIcuiRBg
       oauth2:
         authUrl: https://auth-staging.bobs-test.io/oauth2/auth
         clientId: bobs-staging-storefront
         clientSecret: AgBVnvdiR+6EALGR9bkdk6r1u+5IUg0Cvd6XrhDBIsCFFcuIpTlYEtm6iv/09iBQv5p15DCp78ggE8QR+xCyeu6j6u1Etf/5gExhjUfGnvkDjeMZAwXZoL04q3vReeY0FN8lJLaykEj1QhweugsHqy7JS+CV2M9QqWdAbrTrDfo7gv27hnw6vDBQ48yH9xVgPERZgywC5WUkbMR5nrJ9qT8zGviY2GD2umamHx/ltiBmGsIa3dTqhbrQ32bKbuAGflzUdPbtqKKtYk4IxFvrZ/yQPzMULIG+5Wji2fKIm9QIYTux8b4hzO4aUoN0YmKj9dAiz9HebwiLzbJRP1jls+br7zIX3FY7kmqeJ5kIalA3oFEmuISGtx6LGdrp3PrD/Xiv9AnqussiTst9pD7vc+fmhLzyrSRMQJW4pTKBlRe2Tjmem/SvyuaZUBzLmlDgyqtvHBSfdEKTVWbihuOKaKFPkRX+NLtfMohicCdKf5r9Wy3YG8uxMeoV7QPpkagXVmldyXJmVGP1jXm4zmon6wQ/Q5X4pLCNJeV3BiDUuD3TjconQlh/SD3/LLLWJGtkX/lmg3piBETeniS69qq/5pA9kU5GgUNCcA/OtKNJsNUC6/GGhLxNWqRd1hNzYcAgpADxZl14g9GZGsGorRN2fL5DfgePJqCcQSYV+wyDakxcXU1+Yodj5fm6WdGbAAQ/jh/jc7P6a7pwVuGLYjwoSXVbzuqtXg==
         redirectUrl: https://staging.bobs-test.io/callback
+        tokenUrl: http://ory-hydra-public:4444/oauth2/token
       radial:
         clientId: BOBSUS
         mode: sandbox
         rdfUrl: https://rdf.radial.com/rdf/service/scripts?clientIdentifier=BOBSUS
+      reactionVersionThree: "true"
       segmentAnalytics:
         enabled: true
         writeKey: osQ8ZrOPWr89d7I6ecepCU1NcCP9uE0C
