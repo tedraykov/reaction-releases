@@ -1,0 +1,21 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: reaction-etl-store-inventory
+  namespace: serverless
+spec:
+  releaseName: reaction-etl-store-inventory
+  chart:
+    git: git@github.com:sportsdirect/sdi-releases.git
+    path: charts/serverless-deploy
+    ref: develop
+  values:
+    annotations:
+      iam.amazonaws.com/role: arn:aws:iam::551763058466:role/sdi-ems-staging-serverless-deploy
+    environment:
+      JAEGER_ENDPOINT: http://jaeger-collector.staging.k8s.ems-test.io/api/traces
+      REACTION_LOG_LEVEL: INFO
+      SITE_CODE: EMS
+    package:
+      name: reaction-etl-store-inventory
+      version: 311348e
