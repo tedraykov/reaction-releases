@@ -81,6 +81,9 @@ topics:
   etl.shippable-inventory.inventory-status.json-gen2: {}
   etl.shippable-inventory.inventory-errors.json-gen2: {}
 
+  # source: https://github.com/frasersgroup/reaction-etl-store-inventory/blob/develop/env.example
+  etl.store-inventory.store-inventory-data.json-gen1: {}
+
   # source: https://github.com/sportsdirect/reaction-etl-upc-export/blob/master/scripts/create-kafka-topics.sh#L14
   etl.upc-export.status.json-gen1: {}
   etl.upc-export.errors.json-gen1: {}
