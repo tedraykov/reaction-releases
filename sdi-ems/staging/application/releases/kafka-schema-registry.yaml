@@ -13,4 +13,4 @@ spec:
     fullnameOverride: kafka-schema-registry
     imageTag: 5.1.2
     kafka:
-      bootstrapServers: "PLAINTEXT://b-3.staging.zby85f.c5.kafka.us-east-1.amazonaws.com:9092,PLAINTEXT://b-2.staging.zby85f.c5.kafka.us-east-1.amazonaws.com:9092,PLAINTEXT://b-1.staging.zby85f.c5.kafka.us-east-1.amazonaws.com:9092"
+      bootstrapServers: "PLAINTEXT://b-1.staging.x225n6.c8.kafka.us-east-1.amazonaws.com:9092,PLAINTEXT://b-2.staging.x225n6.c8.kafka.us-east-1.amazonaws.com:9092,PLAINTEXT://b-3.staging.x225n6.c8.kafka.us-east-1.amazonaws.com:9092"
