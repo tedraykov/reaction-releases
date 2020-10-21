@@ -10,7 +10,6 @@ spec:
     path: charts/reaction-kafka-connect
     ref: refactor/external-config
   values:
-    maxUnavailable: 1
     horizontalPodAutoscaler:
       enabled: true
       averageUtilization: 70

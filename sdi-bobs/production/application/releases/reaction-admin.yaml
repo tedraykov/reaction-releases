@@ -1,0 +1,28 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: reaction-admin
+  namespace: production
+spec:
+  releaseName: reaction-admin
+  chart:
+    git: git@github.com:sportsdirect/sdi-releases.git
+    path: charts/reaction-admin
+    ref: feature/reaction-admin
+  helmVersion: v3
+  values:
+    config:
+      oauth2IdpPublicChangePasswordUrl: https://www.bobstores.com/account?email=EMAIL&from=FROM
+      oauth2PublicUrl: https://auth.bobstores.com
+      publicGraphqlApiUrlHttp: https://api.bobstores.com/graphql
+      publicFilesBaseUrl: https://api.bobstores.com
+      publicI18nBaseUrl: https://api.bobstores.com
+      publicStorefrontHomeUrl: https://www.bobstores.com
+      rootUrl: https://admin.bobstores.com
+    image:
+      tag: "c13baddab"
+    ingress:
+      enabled: true
+      hosts:
+        - host: admin.bobstores.com
+          paths: ['/']
