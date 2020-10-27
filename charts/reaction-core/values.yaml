@@ -84,6 +84,7 @@ config:
   radialItemExportConsumerEnabled: false
   importOrderStatusConsumerEnabled: false
   seoMetadataConsumerEnabled: false
+  storeInventoryConsumerEnabled: false
   surchargeConsumerEnabled: false
   sentry:
     enabled: false

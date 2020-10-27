@@ -47,6 +47,7 @@ data:
   KAFKA_TOPIC_PRODUCT_IMPORT_PRODUCTS_PARTITIONS: {{ required "config.kafkaTopicProductImportProductsPartitions not defined." .Values.config.kafkaTopicProductImportProductsPartitions | quote }}
   INVENTORY_PLUGIN_BATCH_CONSUME_SIZE: {{ required "config.inventoryPluginBatchConsumeSize is not defined." .Values.config.inventoryPluginBatchConsumeSize | quote }}
   SHIPPABLE_INVENTORY_CONSUMER_ENABLED: {{ required "config.shippableInventoryConsumerEnabled is not defined." .Values.config.shippableInventoryConsumerEnabled | quote }}
+  STORE_INVENTORY_CONSUMER_ENABLED: {{ required "config.storeInventoryConsumerEnabled is not defined." .Values.config.storeInventoryConsumerEnabled | quote }}
 {{- if .Values.config.sentry.enabled }}
   SENTRY_DSN: {{ required "config.sentry.dsn not defined" .Values.config.sentry.dsn | quote }}
   SENTRY_ENV: {{ required "config.sentry.environment not defined" .Values.config.sentry.environment | quote }}
