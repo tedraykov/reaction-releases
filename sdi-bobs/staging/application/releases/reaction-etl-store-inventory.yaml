@@ -19,4 +19,4 @@ spec:
       SITE_CODE: BOBS
     package:
       name: reaction-etl-store-inventory
-      version: f820b96
+      version: "feef64d"
