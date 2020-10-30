@@ -12,11 +12,11 @@ spec:
   helmVersion: v3
   values:
     annotations:
-      iam.amazonaws.com/role: arn:aws:iam::551763058466:role/sdi-ems-staging-serverless-deploy
+      iam.amazonaws.com/role: sdi-bobs-staging-serverless-deploy
     environment:
-      JAEGER_ENDPOINT: http://jaeger-collector.staging.k8s.ems-test.io/api/traces
+      JAEGER_ENDPOINT: http://jaeger-collector.monitoring.svc.cluster.local:14268/api/traces
       REACTION_LOG_LEVEL: INFO
-      SITE_CODE: EMS
+      SITE_CODE: BOBS
     package:
       name: reaction-etl-store-inventory
       version: f820b96

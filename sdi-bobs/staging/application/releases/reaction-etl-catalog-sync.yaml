@@ -9,6 +9,7 @@ spec:
     git: git@github.com:sportsdirect/sdi-releases.git
     path: charts/serverless-deploy
     ref: develop
+  helmVersion: v3
   values:
     annotations:
       iam.amazonaws.com/role: sdi-bobs-staging-serverless-deploy
