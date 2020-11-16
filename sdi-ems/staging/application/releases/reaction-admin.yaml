@@ -20,7 +20,7 @@ spec:
       publicStorefrontHomeUrl: https://staging.ems-test.io
       rootUrl: https://admin-staging.ems-test.io
     image:
-      tag: "c13baddab"
+      tag: "d0b414ce1"
     ingress:
       enabled: true
       hosts:
