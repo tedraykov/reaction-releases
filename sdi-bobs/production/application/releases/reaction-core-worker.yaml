@@ -46,4 +46,4 @@ spec:
       taxesConsumerEnabled: true
     image:
       repository: 816897914983.dkr.ecr.us-east-1.amazonaws.com/reaction-core
-      tag: 0539ef3
+      tag: "7f283c7"

@@ -20,7 +20,7 @@ spec:
       publicStorefrontHomeUrl: https://www.bobstores.com
       rootUrl: https://admin.bobstores.com
     image:
-      tag: "c13baddab"
+      tag: "a8066a07a"
     ingress:
       enabled: true
       hosts:
