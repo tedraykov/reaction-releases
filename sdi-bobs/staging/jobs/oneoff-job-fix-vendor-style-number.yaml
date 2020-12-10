@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: oneoffjob-fix-vendor-style-number
+  namespace: staging
+  labels:
+    app: oneoffjob-fix-vendor-style-number
+spec:
+  restartPolicy: Never
+  containers:
+    - name: runner
+      image: 816897914983.dkr.ecr.us-east-1.amazonaws.com/reaction-one-off-tools:f8f29e2
+      imagePullPolicy: Always
+      command:
+        - node
+        - --max-old-space-size=8192
+        - --trace-warnings
+        - /opt/reaction-one-off-tools/fix-vendor-style-number/main.js
+      envFrom:
+        - secretRef:
+            name: mongodb-temp
+      env:
+        - name: REACTION_LOG_LEVEL
+          value: DEBUG
+        - name: SHOP_ID
+          value: "44"
+      resources:
+        requests:
+          cpu: 1
+          memory: "2Gi"
