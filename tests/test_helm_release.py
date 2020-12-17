@@ -7,6 +7,7 @@ META_PATTERN = re.compile(r"(?P<project>.+)/(?P<environment>.+)/(?P<cluster>.+)/
 
 PATTERN_SHA1_LONG = re.compile(r'^[0-9a-f]{40}$')
 PATTERN_SHA1_SHORT = re.compile(r'^[0-9a-f]{8}$')
+PATTERN_SHA1_SHORT9 = re.compile(r'^[0-9a-f]{9}$')
 
 def yaml_files():
     found = []
@@ -38,6 +39,8 @@ def valid_namespaces():
 @pytest.fixture
 def valid_image_tag():
     return {
+        'reaction-admin': PATTERN_SHA1_SHORT9,
+        'reaction-core': PATTERN_SHA1_SHORT,
         'reaction-storefront': PATTERN_SHA1_SHORT,
     }
 
