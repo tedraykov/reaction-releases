@@ -8,9 +8,8 @@ spec:
   chart:
     git: git@github.com:sportsdirect/sdi-releases.git
     path: charts/cp-schema-registry
-    ref: develop
+    ref: feature/cp-schema-registry-v6.0.1
   values:
     fullnameOverride: kafka-schema-registry
-    imageTag: 5.1.2
     kafka:
       bootstrapServers: "PLAINTEXT://b-3.staging.zby85f.c5.kafka.us-east-1.amazonaws.com:9092,PLAINTEXT://b-2.staging.zby85f.c5.kafka.us-east-1.amazonaws.com:9092,PLAINTEXT://b-1.staging.zby85f.c5.kafka.us-east-1.amazonaws.com:9092"
