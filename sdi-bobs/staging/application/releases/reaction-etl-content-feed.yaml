@@ -8,7 +8,7 @@ spec:
   chart:
     git: git@github.com:sportsdirect/sdi-releases.git
     path: charts/reaction-outbound-content-feed
-    ref: reaction-ocf/external-refs
+    ref: develop
   helmVersion: v3
   values:
     annotations:
@@ -28,8 +28,6 @@ spec:
       pricebookIdRetail: bobs-usd-retail-prices
       pricebookIdSale: bobs-usd-sale-prices
       pricebookIdMember: bobs-member-pricing
-      s3ExternalExportBucketName: sdi-bobs-staging-feeds-outbound-content
-      s3InternalExportBucketName: sdi-bobs-staging-feeds-ocf
       siteCode: BOBS
       storefrontBaseUrl: https://staging.bobs-test.io
       vendorFilePrefix: "DW"

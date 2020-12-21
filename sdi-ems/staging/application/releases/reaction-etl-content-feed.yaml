@@ -8,7 +8,7 @@ spec:
   chart:
     git: git@github.com:sportsdirect/sdi-releases.git
     path: charts/reaction-outbound-content-feed
-    ref: reaction-ocf/external-refs
+    ref: develop
   helmVersion: v3
   values:
     annotations:
@@ -28,8 +28,6 @@ spec:
       pricebookIdRetail: ems-usd-retail-prices
       pricebookIdSale: ems-usd-sale-prices
       pricebookIdMember: ems-member-pricing
-      s3ExternalExportBucketName: sdi-ems-staging-feeds-outbound-content
-      s3InternalExportBucketName: sdi-ems-staging-feeds-ocf
       siteCode: EMS
       storefrontBaseUrl: https://staging.ems-test.io
       vendorFilePrefix: "RC"

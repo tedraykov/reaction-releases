@@ -8,8 +8,8 @@ spec:
   chart:
     git: git@github.com:sportsdirect/sdi-releases.git
     path: charts/reaction-outbound-content-feed
-    ref: refactor/external-config
-  #helmVersion: v3
+    ref: develop
+  helmVersion: v3
   values:
     annotations:
       iam.amazonaws.com/role: sdi-bobs-production-reaction-job-outbound-content-feed
@@ -24,13 +24,10 @@ spec:
       cloudFolder: 0
       jaegerEndpoint: http://jaeger-collector.production.k8s.bobs-test.io:14268/api/traces
       kmsKeyArn: arn:aws:kms:us-east-1:490759768946:key/c65dc6e6-0e2b-4c6f-a5ca-3704fc11fcb6
-      mongoDbName: bobs-production
       pricebookIdPerm: bobs-usd-perm-prices
       pricebookIdRetail: bobs-usd-retail-prices
       pricebookIdSale: bobs-usd-sale-prices
       pricebookIdMember: bobs-member-pricing
-      s3ExternalExportBucketName: sdi-bobs-production-feeds-outbound-content
-      s3InternalExportBucketName: sdi-bobs-production-feeds-ocf
       siteCode: BOBS
       storefrontBaseUrl: https://www.bobstores.com
       vendorFilePrefix: "DW"

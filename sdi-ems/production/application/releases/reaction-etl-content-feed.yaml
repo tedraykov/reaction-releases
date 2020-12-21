@@ -9,6 +9,7 @@ spec:
     git: git@github.com:sportsdirect/sdi-releases.git
     path: charts/reaction-outbound-content-feed
     ref: develop
+  helmVersion: v3
   values:
     annotations:
       iam.amazonaws.com/role: arn:aws:iam::875618166390:role/sdi-ems-production-reaction-job-outbound-content-feed
@@ -22,15 +23,11 @@ spec:
       cloudName: eastern
       cloudFolder: 0
       jaegerEndpoint: http://jaeger-collector.ems-production.k8s.frasers.io/api/traces
-      kafkaBootstrapServers: "b-1.production.p9ku7n.c4.kafka.us-east-1.amazonaws.com:9092,b-2.production.p9ku7n.c4.kafka.us-east-1.amazonaws.com:9092,b-3.production.p9ku7n.c4.kafka.us-east-1.amazonaws.com:9092"
       kmsKeyArn: arn:aws:kms:us-east-1:875618166390:key/7f8554d7-d6db-4db5-9acf-272283ff0306
-      mongoUrl: AgAZ+Am5KVJ0fAffjnDrw98NqGCcKSqxtePqhZ9hFU6djDk/anp5OOccRcuxjctt6Ku2ZTeuDIUn8I+UAvjSbCcUPfAyzvcU9cK0KBOTuiP+sOsCtjuhVAIB3pabWi8FJA8JUH8sOod0gtb8OEc2hXnK4n0PrbWkHvjfphQbhjo5wiV+u0k2+3FZGPJCCgRMJauNu12CgZjpygIjQ7065heJKF8/Lf65akNpHR4NUAYMhDrodg6qbg3+AiWrIa/fbmqulvzbQEIRdN3U6k5MOJEsh4abJLItzLmMq8ij0/ZY8qy7IeiL/K4YV/MoqqA5Mio+nQ4LIac7zlluFG93bvVSQQAeGyXALVZhWiJjCDISWAQqBgNliJ8d+b54FICyWK7Rp9PuLCahLz2R4rwTop9IvUJ5QgkE9Tn7Bqq5zvq5nLb2r4voG7v/QUJ1l60rsrmIx/VUXnBPPm+r34gemDS+iipEStZUfMeXm2sdLtayaT0DVMJWI1eE5bKBOtRnhut3eP9roNyuRRnpUcFZ8Yi9uL1hxIjgH+dSTSZGIgwA2fQBVhShd0XXY4U72gNb2/xrlL0D5s61sGYWqN27Zt85TCAW9YoylePLwfWmKqDrutevMjH6mEkBrxZGcegYCx7DTzntkXLlAkzvCRIJ9HTiG7qZ7+UjAsQQlY3B4YThsC33YJ42IeAvYY5Ds5MizeQetb5+5sJxGeILQjo4qkcOnKqrBpHT1SnYiPig2ndKdvOgubdHEC2uo2EKpkN3zw/Njzf0O+lS1C7ZzxGHz+pFn+yIu+OC56BCzlgPswhjGugVHnO3rbcoj0yGcCszPTwOyePwyk5fsgIv0jdfFtpUZpzv7VRHp6WYQkDISNPQK/3xn8haDVj5v5l7DPEpZyvk577ZxXNMSN33241tCvCUefBEgRCdhZhj/yN0UFzE5DTb/5Z7zYpoQuVZ806CDUadZ6A41t5uqziNoqbPTSRv79R1FFpEbb/TE8LjfEJaCxaMMlkiVR/LfoKCC3D12fFrkLJHL+NOTHfpy3+Z939oRuAAWjwtBW++fg==
       pricebookIdPerm: ems-usd-perm-prices
       pricebookIdRetail: ems-usd-retail-prices
       pricebookIdSale: ems-usd-sale-prices
       pricebookIdMember: ems-member-pricing
-      s3ExternalExportBucketName: sdi-ems-production-feeds-outbound-content
-      s3InternalExportBucketName: sdi-ems-production-feeds-ocf
       siteCode: EMS
       storefrontBaseUrl: https://www.ems.com
       vendorFilePrefix: "RC"

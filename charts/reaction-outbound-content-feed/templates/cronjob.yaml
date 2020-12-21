@@ -25,16 +25,28 @@ spec:
             app.kubernetes.io/instance: {{ .Release.Name }}
         spec:
           restartPolicy: Never
-          #ttlSecondsAfterFinished: 86400
           containers:
           - name: {{ .Chart.Name }}
             image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
             imagePullPolicy: {{ .Values.image.pullPolicy }}
+            env:
+              - name: EXTERNAL_EXPORT_BUCKET_NAME
+                valueFrom:
+                  configMapKeyRef:
+                    name: {{ .Values.bucketsConfigMap }}
+                    key: BUCKET_FEEDS_OUTBOUND_CONTENT
+              - name: INTERNAL_EXPORT_BUCKET_NAME
+                valueFrom:
+                  configMapKeyRef:
+                    name: {{ .Values.bucketsConfigMap }}
+                    key: BUCKET_FEEDS_OCF
             envFrom:
               - configMapRef:
                   name: {{ $fullName }}
+              - configMapRef:
+                  name: {{ .Values.kafkaConfigMap }}
               - secretRef:
-                  name: {{ $fullName }}
+                  name: {{ .Values.mongodbSecret }}
             # resource requests/limits
             resources:
               requests:
