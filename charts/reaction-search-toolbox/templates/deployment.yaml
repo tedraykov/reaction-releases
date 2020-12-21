@@ -20,6 +20,7 @@ spec:
       annotations:
         checksum/config: {{ values .Values.config | sortAlpha | toString | sha256sum }}
 {{- if .Values.annotations }}
+      annotations:
         {{- with .Values.annotations }}
         {{- toYaml . | nindent 8 }}
         {{- end }}
@@ -36,64 +37,34 @@ spec:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
-{{- if .Values.config.profilingEnabled }}
           command:
+{{- if .Values.config.profilingEnabled }}
             - node
             - --prof
             - main.js
-{{- end }}
-          envFrom:
-            - configMapRef:
-                name: {{ $fullName }}
-            - secretRef:
-                name: {{ $fullName }}
-          ports:
-            - name: http
-              containerPort: 3000
-              protocol: TCP
-{{- if .Values.config.metricsEnabled }}
-            - name: admin
-              containerPort: 3001
-              protocol: TCP
-{{- end }}
-{{- if .Values.config.healthchecksEnabled }}
-          livenessProbe:
-            httpGet:
-              path: /health
-              port: http
-          readinessProbe:
-            httpGet:
-              path: /health
-              port: http
-{{- end }}
-  template:
-    metadata:
-{{- if .Values.annotations }}
-      annotations:
-        {{- with .Values.annotations }}
-        {{- toYaml . | nindent 8 }}
-        {{- end }}
-{{- end }}
-      labels:
-        app.kubernetes.io/name: {{ $fullName }}
-        app.kubernetes.io/instance: {{ .Release.Name }}
-    spec:
-      containers:
-        - name: {{ .Chart.Name }}
-          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
-          imagePullPolicy: {{ .Values.image.pullPolicy }}
-          command:
+{{- else }}
             - tail
             - -f
             - /dev/null
+{{- end }}
+          env:
+            - name: RS_ELASTIC_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ .Values.elasticsearchConfigMap }}
+                  key: ELASTICSEARCH_URL
+            - name: RS_MONGO_URL
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Values.mongoDbSecret }}
+                  key: MONGO_URL
+            - name: RS_ZOOKEEPER
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ .Values.kafkaConfigMap }}
+                  key: ZOOKEEPER_CONNECT
           envFrom:
             - configMapRef:
+                name: {{ .Values.kafkaConfigMap }}
+            - configMapRef:
                 name: {{ $fullName }}
-            - secretRef:
-                name: {{ $fullName }}
-          resources:
-            {{- toYaml .Values.resources | nindent 12 }}
-{{- if .Values.imagePullSecret }}
-      imagePullSecrets:
-        - name: "{{ .Values.imagePullSecret }}"
-{{- end }}

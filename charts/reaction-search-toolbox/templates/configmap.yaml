@@ -11,12 +11,9 @@ metadata:
     helm.sh/chart: {{ include "reaction-search-toolbox.chart" . }}
 data:
   RS_DB: {{ required "config.rsDb not defined." .Values.config.rsDb | quote }}
-  RS_ELASTIC_URL: {{ required "config.rsElasticUrl not defined." .Values.config.rsElasticUrl | quote }}
   RS_INDEX_VERSION: {{ required "config.rsIndexVersion not defined." .Values.config.rsIndexVersion | quote }}
-  KAFKA_BOOTSTRAP_SERVERS: {{ required "config.kafkaBootstrapServers not defined." .Values.config.kafkaBootstrapServers | quote }}
   RS_KC_URL: {{ required "config.rsKafkaConnectUrl not defined." .Values.config.rsKafkaConnectUrl | quote }}
   RS_MIN_INSYNC_REPLICAS: {{ required "config.rsMinInSyncReplicas not defined." .Values.config.rsMinInSyncReplicas | quote }}
   RS_REPLICATION_FACTOR: {{ required "config.rsReplicationFactor not defined." .Values.config.rsReplicationFactor | quote }}
   RS_SYNONYMS_PATH: {{ required "config.rsSynonymsPath not defined." .Values.config.rsSynonymsPath | quote }}
   RS_TOPIC: {{ required "config.rsTopic not defined." .Values.config.rsTopic | quote }}
-  RS_ZOOKEEPER: {{ required "config.rsZookeeper not defined." .Values.config.rsZookeeper | quote }}

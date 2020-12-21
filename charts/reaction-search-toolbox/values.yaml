@@ -2,16 +2,17 @@
 replicas: 1
 
 config:
-  rsElasticUrl: http://elasticsearch-client:9200
+#  rsDb: XXX
   rsIndexVersion: 4
+  rsKafkaConnectUrl: http://reaction-kafka-connect:8082
   rsMinInSyncReplicas: 2
   rsReplicationFactor: 2
   rsSynonymsPath: synonyms/synonyms-bobs-2019-01-16.solr.txt
   rsTopic: reaction.cdc.search.catalog.json-gen1
-#  rsDb: value
-#  rsKafkaServer: value
-#  rsKafkaConnectUrl: value
-#  rsZookeeper: value
+
+elasticsearchConfigMap: reaction-storefront-provisioned
+kafkaConfigMap: kafka
+mongoDbSecret: mongodb
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
