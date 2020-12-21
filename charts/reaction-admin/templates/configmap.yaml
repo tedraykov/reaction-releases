@@ -1,0 +1,32 @@
+{{- $fullName := include "reaction-admin.fullname" . -}}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ $fullName }}
+  labels:
+    app.kubernetes.io/name: {{ include "reaction-admin.name" . }}
+    app.kubernetes.io/component: core
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+    helm.sh/chart: {{ include "reaction-admin.chart" . }}
+data:
+{{- if .Values.config.mockTlsTermination }}
+  MOCK_TLS_TERMINATION: {{ .Values.config.mockTlsTermination | quote }}
+{{- end }}
+  NODE_ENV: {{ .Values.config.nodeEnv | quote }}
+{{- if .Values.config.nodeOptions }}
+  NODE_OPTIONS: {{ .Values.config.nodeOptions | quote }}
+{{- end }}
+  PORT: {{ .Values.config.port | quote }}
+  OAUTH2_ADMIN_URL: {{ required "config.oauth2AdminUrl not defined." .Values.config.oauth2AdminUrl | quote }}
+  OAUTH2_CLIENT_ID: {{ required "config.ouath2ClientId not defined." .Values.config.oauth2ClientId | quote }}
+  OAUTH2_IDP_PUBLIC_CHANGE_PASSWORD_URL: {{ required "config.oauth2IdpPublicChangePasswordUrl not defined." .Values.config.oauth2IdpPublicChangePasswordUrl | quote }}
+  OAUTH2_PUBLIC_URL: {{ required "config.oauth2PublicUrl not defined." .Values.config.oauth2PublicUrl | quote }}
+  PUBLIC_GRAPHQL_API_URL_HTTP: {{ required "config.publicGraphqlApiUrlHttp not defined." .Values.config.publicGraphqlApiUrlHttp | quote }}
+{{- if .Values.config.publicGraphqlApiUrlWs }}
+  PUBLIC_GRAPHQL_API_URL_WS: {{ .Values.config.publicGraphqlApiUrlWs | quote }}
+{{- end }}
+  PUBLIC_FILES_BASE_URL: {{ required "config.publicFilesBaseUrl not defined." .Values.config.publicFilesBaseUrl | quote }}
+  PUBLIC_I18N_BASE_URL: {{ required "config.publicI18nBaseUrl not defined." .Values.config.publicI18nBaseUrl | quote }}
+  PUBLIC_STOREFRONT_HOME_URL: {{ required "config.publicStorefrontHomeUrl not defined." .Values.config.publicStorefrontHomeUrl | quote }}
+  ROOT_URL: {{ required "config.rootUrl not defined." .Values.config.rootUrl }}

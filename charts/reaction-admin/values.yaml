@@ -1,0 +1,92 @@
+# Default values for reaction-admin.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 1
+
+image:
+  repository: 816897914983.dkr.ecr.us-east-1.amazonaws.com/reaction-admin
+  pullPolicy: IfNotPresent
+  tag: 7ca520fa4
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+serviceAccount:
+  # Specifies whether a service account should be created
+  create: true
+  # Annotations to add to the service account
+  annotations: {}
+  # The name of the service account to use.
+  # If not set and create is true, a name is generated using the fullname template
+  name: ""
+
+podAnnotations: {}
+
+podSecurityContext: {}
+  # fsGroup: 2000
+
+securityContext: {}
+  # capabilities:
+  #   drop:
+  #   - ALL
+  # readOnlyRootFilesystem: true
+  # runAsNonRoot: true
+  # runAsUser: 1000
+
+service:
+  type: ClusterIP
+  port: 80
+
+ingress:
+  enabled: false
+  annotations: {}
+    # kubernetes.io/ingress.class: nginx
+    # kubernetes.io/tls-acme: "true"
+  hosts:
+    - host: chart-example.local
+      paths: []
+  tls: []
+  #  - secretName: chart-example-tls
+  #    hosts:
+  #      - chart-example.local
+
+resources:
+  limits:
+    cpu: 1000m
+    memory: 2048Mi
+  requests:
+    cpu: 100m
+    memory: 256Mi
+
+autoscaling:
+  enabled: false
+  minReplicas: 3
+  maxReplicas: 10
+  targetCPUUtilizationPercentage: 80
+  # targetMemoryUtilizationPercentage: 80
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
+
+mongodbSecret: mongodb
+
+config:
+  mockTlsTermination: true
+  nodeEnv: production
+  nodeOptions: --max-old-space-size=8192
+  oauth2AdminUrl: http://ory-hydra-admin:4445
+  oauth2ClientId: reaction-admin
+  #oauth2IdpPublicChangePasswordUrl: https://id.example.com/account/change-password?email=EMAIL&from=FROM
+  #oauth2PublicUrl: https://auth.example.com
+  port: 80
+  #publicGraphqlApiUrlHttp: http://api.example.com/graphql
+  #publicGraphqlApiUrlWs: ws://api.example.com/graphql
+  #publicFilesBaseUrl: https://api.example.com
+  #publicI18nBaseUrl: https://api.example.com
+  #publicStorefrontHomeUrl: https://www.example.com
+  #rootUrl: https://admin.example.com
