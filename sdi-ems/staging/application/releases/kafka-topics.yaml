@@ -4,6 +4,7 @@ metadata:
   name: kafka-topics
   namespace: kafka
 spec:
+  helmVersion: v3
   releaseName: kafka-topics
   chart:
     git: git@github.com:sportsdirect/sdi-releases.git
