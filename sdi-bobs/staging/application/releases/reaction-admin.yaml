@@ -20,7 +20,7 @@ spec:
       publicStorefrontHomeUrl: https://staging.bobs-test.io
       rootUrl: https://admin-staging.bobs-test.io
     image:
-      tag: "45421edaa"
+      tag: "412360e95"
     ingress:
       enabled: true
       hosts:
