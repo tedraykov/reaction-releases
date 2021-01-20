@@ -16,7 +16,7 @@ spec:
     config:
       rsDb: ems-staging
       rsIndexVersion: "12"
-      rsTopic: "reaction.cdc.search.catalog.json-gen5"
+      rsTopic: "reaction.cdc.search.catalog.json-gen1"
     resources:
       requests:
         memory: 1Gi
