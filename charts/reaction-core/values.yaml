@@ -121,6 +121,9 @@ resources:
 
 #maxUnavailable: 1
 
+kafkaConfigMap: kafka
+mongodbSecret: mongodb
+
 nodeSelector: {}
 
 tolerations: []

@@ -60,6 +60,10 @@ spec:
                 name: {{ $fullName }}
             - secretRef:
                 name: {{ $fullName }}
+            - configMapRef:
+                name: {{ .Values.kafkaConfigMap }}
+            - secretRef:
+                name: {{ .Values.mongodbSecret }}
           ports:
             - name: http
               containerPort: 3000
