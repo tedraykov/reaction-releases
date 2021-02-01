@@ -39,6 +39,8 @@ spec:
       reactionIdentityPublicPasswordResetUrl: https://staging.ems-test.io/reset-password/TOKEN
       reactionIdentityPublicVerifyEmailUrl: https://staging.ems-test.io/account/verify/TOKEN
       rootUrl: https://api-staging.ems-test.io
+      segmentAnalytics:
+        writeKey: D2kMsDSZAWGPcc0rAFygcsQNbW5YQDnk
       siteCode: EMS
       startingNewCustomerNumber: "7770000700001"
     image:

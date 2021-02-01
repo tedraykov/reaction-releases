@@ -41,6 +41,8 @@ spec:
       reactionIdentityPublicPasswordResetUrl: https://staging.ems-test.io/reset-password/TOKEN
       reactionIdentityPublicVerifyEmailUrl: https://staging.ems-test.io/account/verify/TOKEN
       rootUrl: https://api-staging.ems-test.io
+      segmentAnalytics:
+        writeKey: D2kMsDSZAWGPcc0rAFygcsQNbW5YQDnk
       sentry:
         enabled: true
         dsn: https://1dfbd3f09cd94f3f982aac440b40ffae@sentry.io/1802036

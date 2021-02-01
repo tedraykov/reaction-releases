@@ -47,6 +47,8 @@ spec:
       reactionIdentityPublicPasswordResetUrl: https://staging.bobs-test.io/reset-password/TOKEN
       reactionIdentityPublicVerifyEmailUrl: https://staging.bobs-test.io/account/verify/TOKEN
       rootUrl: https://api-staging.bobs-test.io
+      segmentAnalytics:
+        writeKey: D2kMsDSZAWGPcc0rAFygcsQNbW5YQDnk
       siteCode: BOBS
       shippableInventoryConsumerEnabled: true
     image:

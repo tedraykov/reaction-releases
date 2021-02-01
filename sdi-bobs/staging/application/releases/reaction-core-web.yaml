@@ -44,6 +44,8 @@ spec:
       reactionIdentityPublicPasswordResetUrl: https://staging.bobs-test.io/reset-password/TOKEN
       reactionIdentityPublicVerifyEmailUrl: https://staging.bobs-test.io/account/verify/TOKEN
       rootUrl: https://api-staging.bobs-test.io
+      segmentAnalytics:
+        writeKey: D2kMsDSZAWGPcc0rAFygcsQNbW5YQDnk
       sentry:
         enabled: true
         dsn: https://5f769f2e85c64ac5b33a73e829e80f1f@sentry.io/1397837
