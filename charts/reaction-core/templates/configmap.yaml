@@ -32,7 +32,6 @@ data:
   GRAPHQL_INTROSPECTION_ENABLED: {{ required "config.graphqlIntrospectionEnabled not defined." .Values.config.graphqlIntrospectionEnabled | quote }}
   GRAPHQL_PLAYGROUND_ENABLED: {{ required "config.graphqlPlaygroundEnabled not defined." .Values.config.graphqlPlaygroundEnabled | quote }}
   HYDRA_OAUTH2_INTROSPECT_URL: {{ required "config.hydraOauth2IntrospectUrl not defined." .Values.config.hydraOauth2IntrospectUrl | quote }}
-  KAFKA_BOOTSTRAP_SERVERS: {{ required "config.kafkaBootstrapServers not defined." .Values.config.kafkaBootstrapServers | quote }}
   KAFKA_CLUSTER: {{ required "config.kafkaCluster not defined." .Values.config.kafkaCluster | quote }}
   SCHEMA_REGISTRY_URL: {{ required "config.kafkaSchemaRegistryUrl not defined." .Values.config.kafkaSchemaRegistryUrl | quote }}
   KAFKA_PARTITIONS_LOYALTY: {{ required "config.kafkaPartitionsLoyalty not defined." .Values.config.kafkaPartitionsLoyalty | quote }}
