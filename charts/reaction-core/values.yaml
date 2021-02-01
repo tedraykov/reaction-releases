@@ -33,6 +33,10 @@ ingress:
 
 config:
   allowResetCodesMutation: false
+  #brontoMessageName: "DEFINED_IN_BRONTO"
+  #brontoFromName: "John Smith"
+  #brontoNewsletterListId: 1abc23de00000000000000000000000fg456
+  #brontoReplyToEmail: "email@address.com"
   cartReferenceIdPrefix: 44
   constantPublisherMode: false
   constantPublisherPauseSeconds: 300
@@ -42,11 +46,13 @@ config:
   graphqlIntrospectionEnabled: false
   graphqlPlaygroundEnabled: false
   healthchecksEnabled: true
-  hydraAdminUrl: http://hydra:4445
-  hydraOauth2IntrospectUrl: http://hydra:4445/oauth2/introspect
+  hydraOauth2IntrospectUrl: http://ory-hydra-admin:4445/oauth2/introspect
   kafkaPartitionsLoyalty: 3
   initialImport: false
   inventoryPluginBatchConsumeSize: 1000
+  jaegerEndpoint: http://jaeger-collector.tracing.svc.cluster.local:14268/api/traces
+  jaegerSamplerParam: 0
+  jaegerSamplerType: const
   shippableInventoryConsumerEnabled: false
   kadiraEnabled: false
   kafkaPartitionsEtlShippableInventoryStatus: 1
@@ -67,13 +73,15 @@ config:
   kafkaTopicSurcharges: etl.surcharges.surcharges.json-gen1
   kafkaSchemaRegistryUrl: http://kafka-schema-registry:8081
   logFormat: json
-  logLevel: info
+  logLevel: INFO
   loyaltyConsumerEnabled: false
   loyaltyPluginBatchConsumeSize: 1000
   metricsEnabled: true
   metricsHost: 0.0.0.0
   metricsPath: /metrics
   metricsPort: 3001
+  mockTlsTermination: true
+  nodeEnv: production
   orderExportRadialUrl: https://api-na.gsipartners.com/v1.0/OOMF/stores
   pricingConsumerEnabled: false
   pricingGraphqlUrl: http://reaction-pricing-engine/graphql
@@ -81,11 +89,19 @@ config:
   productImportDefaultInvisible: true
   productPublisherAutoPublish: false
   profilingEnabled: false
+  #radialApiKey: XXX
+  #radialApiUrl: XXX
   radialItemExportConsumerEnabled: false
+  #reactionAdminPublicAccountRegistrationUrl: XXX
+  #reactionIdentityPublicPasswordResetUrl: XXX
+  #reactionIdentityPublicVerifyEmailUrl: XXX
   importOrderStatusConsumerEnabled: false
   seoMetadataConsumerEnabled: false
   storeInventoryConsumerEnabled: false
   surchargeConsumerEnabled: false
+  segmentAnalytics:
+    enabled: false
+    #writeKey: XXX
   sentry:
     enabled: false
     # dsn: XXX

@@ -12,7 +12,7 @@ spec:
   chart:
     git: git@github.com:sportsdirect/sdi-releases.git
     path: charts/reaction-core
-    ref: reaction-core/v3
+    ref: develop
   helmVersion: v3
   releaseName: reaction-core-web
   values:
@@ -45,6 +45,7 @@ spec:
       reactionIdentityPublicVerifyEmailUrl: https://staging.bobs-test.io/account/verify/TOKEN
       rootUrl: https://api-staging.bobs-test.io
       segmentAnalytics:
+        enabled: true
         writeKey: D2kMsDSZAWGPcc0rAFygcsQNbW5YQDnk
       sentry:
         enabled: true
