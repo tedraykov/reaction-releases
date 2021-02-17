@@ -44,6 +44,7 @@ spec:
       segmentAnalytics:
         enabled: true
         writeKey: D2kMsDSZAWGPcc0rAFygcsQNbW5YQDnk
+        userIdFieldName: ems_id
       sentry:
         enabled: true
         dsn: https://1dfbd3f09cd94f3f982aac440b40ffae@sentry.io/1802036
@@ -57,7 +58,7 @@ spec:
       max: 10
     image:
       repository: 816897914983.dkr.ecr.us-east-1.amazonaws.com/reaction-core
-      tag: "b9f5dc8"
+      tag: "4a1f7af"
     ingress:
       enabled: true
       hosts:

@@ -52,6 +52,7 @@ data:
   MOCK_TLS_TERMINATION: {{ .Values.config.mockTlsTermination | quote }}
 {{- if .Values.config.segmentAnalytics.enabled }}
   SEGMENT_ANALYTICS_WRITE_KEY: {{ required "config.segmentAnalytics.writeKey not defined." .Values.config.segmentAnalytics.writeKey | quote }}
+  SEGMENT_USER_ID_FIELD_NAME: {{ required "config.segmentAnalytics.userIdFieldName not defined." .Values.config.segmentAnalytics.userIdFieldName | quote }}
 {{- end }}
   SHIPPABLE_INVENTORY_CONSUMER_ENABLED: {{ required "config.shippableInventoryConsumerEnabled is not defined." .Values.config.shippableInventoryConsumerEnabled | quote }}
   STORE_INVENTORY_CONSUMER_ENABLED: {{ required "config.storeInventoryConsumerEnabled is not defined." .Values.config.storeInventoryConsumerEnabled | quote }}

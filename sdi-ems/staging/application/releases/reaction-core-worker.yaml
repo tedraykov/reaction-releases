@@ -47,6 +47,7 @@ spec:
       segmentAnalytics:
         enabled: true
         writeKey: D2kMsDSZAWGPcc0rAFygcsQNbW5YQDnk
+        userIdFieldName: ems_id
       siteCode: EMS
       seoMetadataConsumerEnabled: false
       startingNewCustomerNumber: "7770000700001"
@@ -55,4 +56,4 @@ spec:
       taxesConsumerEnabled: true
     image:
       repository: 816897914983.dkr.ecr.us-east-1.amazonaws.com/reaction-core
-      tag: "b9f5dc8"
+      tag: "4a1f7af"

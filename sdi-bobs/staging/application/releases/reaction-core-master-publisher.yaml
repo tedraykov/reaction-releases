@@ -49,7 +49,8 @@ spec:
       segmentAnalytics:
         enabled: true
         writeKey: D2kMsDSZAWGPcc0rAFygcsQNbW5YQDnk
+        userIdFieldName: bobs_stores_id
       siteCode: BOBS
     image:
       repository: 816897914983.dkr.ecr.us-east-1.amazonaws.com/reaction-core
-      tag: "b9f5dc8"
+      tag: "4a1f7af"
