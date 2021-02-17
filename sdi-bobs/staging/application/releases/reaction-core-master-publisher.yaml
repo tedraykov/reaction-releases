@@ -53,4 +53,4 @@ spec:
       siteCode: BOBS
     image:
       repository: 816897914983.dkr.ecr.us-east-1.amazonaws.com/reaction-core
-      tag: "4a1f7af"
+      tag: "c571216"
