@@ -1,4 +1,4 @@
-# SDI GitOps™ Releases
+# Reaction GitOps™ Releases
 
 ## Overview
 
