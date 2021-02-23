@@ -44,7 +44,7 @@ spec:
       rootUrl: https://api-staging.ems-test.io
       segmentAnalytics:
         enabled: true
-        writeKey: D2kMsDSZAWGPcc0rAFygcsQNbW5YQDnk
+        writeKey: GANoaFWupTY3UNw399U7LDgD5SwJ2Irk
         userIdFieldName: ems_id
       siteCode: EMS
       startingNewCustomerNumber: "7770000700001"
