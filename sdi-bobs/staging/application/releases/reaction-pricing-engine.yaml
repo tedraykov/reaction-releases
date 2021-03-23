@@ -11,7 +11,7 @@ spec:
     ref: refactor/external-config
   values:
     image:
-      repository: docker.io/sportsdirect/reaction-pricing-engine
+      repository: 816897914983.dkr.ecr.us-east-1.amazonaws.com/reaction-pricing-engine
       tag: 5467ad84a72ae6008e4bc85036e0249919a5a717
     imagePullSecrets:
       - name: reaction-docker-hub
@@ -23,7 +23,7 @@ spec:
         - host: pe.staging.k8s.bobs-test.io
           paths: ['/']
     jmx:
-      image: reactioncommerce/jmx-prometheus-exporter
+      image: 816897914983.dkr.ecr.us-east-1.amazonaws.com/jmx-prometheus-exporter
       imageTag: configurable-via-env
     config:
       jvmOpts: "-d64 -Xms2560m -Xmx2560m"
