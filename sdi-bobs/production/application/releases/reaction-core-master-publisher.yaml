@@ -44,6 +44,9 @@ spec:
           cpu: 2
           memory: 8Gi
       rootUrl: https://api.bobstores.com
+      segmentAnalytics:
+        userIdFieldName: bobs_stores_id
+        writeKey: wTr4cIGHhkHoZjORdRMyBuUh6DUhxiDG
       siteCode: BOBS
     image:
       repository: 816897914983.dkr.ecr.us-east-1.amazonaws.com/reaction-core

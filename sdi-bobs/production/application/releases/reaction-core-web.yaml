@@ -37,6 +37,9 @@ spec:
       reactionIdentityPublicPasswordResetUrl: https://www.bobstores.com/reset-password/TOKEN
       reactionIdentityPublicVerifyEmailUrl: https://www.bobstores.com/account/verify/TOKEN
       rootUrl: https://api.bobstores.com
+      segmentAnalytics:
+        userIdFieldName: bobs_stores_id
+        writeKey: wTr4cIGHhkHoZjORdRMyBuUh6DUhxiDG
       sentry:
         enabled: true
         dsn: https://ca6fd67451804158ab6727442f1999e0@sentry.io/1397837

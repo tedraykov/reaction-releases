@@ -43,6 +43,9 @@ spec:
       reactionIdentityPublicPasswordResetUrl: https://www.ems.com/reset-password/TOKEN
       reactionIdentityPublicVerifyEmailUrl: https://www.ems.com/account/verify/TOKEN
       rootUrl: https://api.ems.com
+      segmentAnalytics:
+        userIdFieldName: ems_id
+        writeKey: RJhp4IDR5Ga8OpqoZKJqLX8jen2ivu60
       siteCode: EMS
       startingNewCustomerNumber: "7770000700001"
     image:
