@@ -45,6 +45,7 @@ spec:
           memory: 8Gi
       rootUrl: https://api.bobstores.com
       segmentAnalytics:
+        enabled: true
         userIdFieldName: bobs_stores_id
         writeKey: wTr4cIGHhkHoZjORdRMyBuUh6DUhxiDG
       siteCode: BOBS

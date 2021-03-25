@@ -41,6 +41,7 @@ spec:
       reactionIdentityPublicVerifyEmailUrl: https://www.ems.com/account/verify/TOKEN
       rootUrl: https://api.ems.com
       segmentAnalytics:
+        enabled: true
         userIdFieldName: ems_id
         writeKey: RJhp4IDR5Ga8OpqoZKJqLX8jen2ivu60
       siteCode: EMS

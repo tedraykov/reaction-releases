@@ -41,6 +41,7 @@ spec:
       reactionIdentityPublicVerifyEmailUrl: https://www.bobstores.com/account/verify/TOKEN
       rootUrl: https://api.bobstores.com
       segmentAnalytics:
+        enabled: true
         userIdFieldName: bobs_stores_id
         writeKey: wTr4cIGHhkHoZjORdRMyBuUh6DUhxiDG
       seoMetadataConsumerEnabled: true
