@@ -6,7 +6,7 @@ metadata:
 spec:
   releaseName: reaction-pricing-engine
   chart:
-    git: git@github.com:sportsdirect/sdi-releases.git
+    git: git@github.com:frasersgroup/reaction-releases.git
     path: charts/reaction-pricing-engine
     ref: refactor/external-config
   values:

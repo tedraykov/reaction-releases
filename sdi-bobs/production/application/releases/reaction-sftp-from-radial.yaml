@@ -6,7 +6,7 @@ metadata:
 spec:
   releaseName: reaction-sftp-from-radial
   chart:
-    git: git@github.com:sportsdirect/sdi-releases.git
+    git: git@github.com:frasersgroup/reaction-releases.git
     path: charts/reaction-sftp-from-radial
     ref: develop
   values:

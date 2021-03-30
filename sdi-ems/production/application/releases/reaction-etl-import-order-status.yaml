@@ -6,7 +6,7 @@ metadata:
 spec:
   releaseName: reaction-etl-import-order-status
   chart:
-    git: git@github.com:sportsdirect/sdi-releases.git
+    git: git@github.com:frasersgroup/reaction-releases.git
     path: charts/serverless-deploy
     ref: develop
   values:

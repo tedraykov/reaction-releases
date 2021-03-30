@@ -6,9 +6,9 @@ metadata:
 spec:
   releaseName: reaction-core-etl-consumer-pricing
   chart:
-    git: git@github.com:sportsdirect/sdi-releases.git
+    git: git@github.com:frasersgroup/reaction-releases.git
     path: charts/reaction-core
-    ref: reaction-core/v3
+    ref: develop
   helmVersion: v3
   values:
     config:
