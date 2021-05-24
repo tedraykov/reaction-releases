@@ -24,7 +24,7 @@ spec:
     spec:
       restartPolicy: Never
       containers:
-        - name: {{ .Chart.Name }}-notify-sentry-client
+        - name: client
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           env:
@@ -37,7 +37,7 @@ spec:
           command:
             - yarn
             - sentry:deploy
-        - name: {{ .Chart.Name }}-notify-sentry-server
+        - name: server
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           env:
