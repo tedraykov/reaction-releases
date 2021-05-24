@@ -34,6 +34,8 @@ spec:
               value: {{ required "config.sentry.org not defined" .Values.config.sentry.org | quote }}
             - name: SENTRY_PROJECT
               value: {{ required "config.sentry.clientProject not defined" .Values.config.sentry.clientProject | quote }}
+            - name: SENTRY_ENV
+              value: {{ required "config.sentry.environment not defined" .Values.config.sentry.environment | quote }}
           command:
             - yarn
             - sentry:deploy
@@ -47,6 +49,8 @@ spec:
               value: {{ required "config.sentry.org not defined" .Values.config.sentry.org | quote }}
             - name: SENTRY_PROJECT
               value: {{ required "config.sentry.serverProject not defined" .Values.config.sentry.clientProject | quote }}
+            - name: SENTRY_ENV
+              value: {{ required "config.sentry.environment not defined" .Values.config.sentry.environment | quote }}
           command:
             - yarn
             - sentry:deploy
