@@ -85,11 +85,11 @@ data:
 {{- if .Values.config.sentry.enabled }}
   SENTRY_AUTH_TOKEN: {{ required "config.sentry.authToken not defined" .Values.config.sentry.authToken | quote }}
   SENTRY_SOURCEMAP_TOKEN: {{ required "config.sentry.sourcemapToken not defined" .Values.config.sentry.sourcemapToken | quote }}
-  SENTRY_DSN: {{ required "config.sentry.dsn not defined" .Values.config.sentry.dsn | quote }}
+  SENTRY_DSN: {{ required "config.sentry.clientDsn not defined" .Values.config.sentry.clientDsn | quote }}
+  SENTRY_DSN_SERVER: {{ required "config.sentry.serverDsn not defined" .Values.config.sentry.serverDsn | quote }}
   SENTRY_ENV: {{ required "config.sentry.environment not defined" .Values.config.sentry.environment | quote }}
   SENTRY_KEY: {{ required "config.sentry.key not defined" .Values.config.sentry.key | quote }}
   SENTRY_ORG: {{ required "config.sentry.org not defined" .Values.config.sentry.org | quote }}
-  SENTRY_PROJECT: {{ required "config.sentry.project not defined" .Values.config.sentry.project | quote }}
 {{- end }}
   SESSION_MAX_AGE_MS: {{ required "config.sessionMaxAge not defined." .Values.config.sessionMaxAge | quote }}
 {{- if .Values.config.productCountReportEnabled }}

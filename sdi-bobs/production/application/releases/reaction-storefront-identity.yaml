@@ -14,7 +14,7 @@ spec:
     config:
       sentry:
         enabled: true
-        dsn: https://d7924c3a3b1b402d9ee8651f13a368e2@o234104.ingest.sentry.io/1397837
+        dsn: https://97d3326efc544cedb5e7feeb55ac0806@o234104.ingest.sentry.io/5777469
         environment: production
     image:
       tag: 48251f1

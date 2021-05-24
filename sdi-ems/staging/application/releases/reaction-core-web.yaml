@@ -47,7 +47,7 @@ spec:
         userIdFieldName: ems_id
       sentry:
         enabled: true
-        dsn: https://1dfbd3f09cd94f3f982aac440b40ffae@sentry.io/1802036
+        dsn: https://562752837c194fff901153fc2945cc92@o234104.ingest.sentry.io/5777460
         environment: staging
       siteCode: EMS
       startingNewCustomerNumber: "7770000700001"

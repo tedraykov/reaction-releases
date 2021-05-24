@@ -55,10 +55,12 @@ spec:
         serverWriteKey: 4Ycnbe9zJqF5LzjUPfxRvbz0RqTpXu2M
       sentry:
         enabled: true
-        dsn: https://a3e4a12345714bfd960dc5c83f6b7899@sentry.io/1802036
+        clientDsn: https://a3e4a12345714bfd960dc5c83f6b7899@o234104.ingest.sentry.io/1802036
+        serverDsn: https://65c68f214214441aa69dd1e73ff7efb9@o234104.ingest.sentry.io/5777413
         environment: production
         key: cfd896342463403298b3256945c1fc8e34a4a7e60a62413295b84a779925c73d
-        project: ems
+        clientProject: ems-client
+        serverProject: ems-server
         sourcemapToken: 13a829e4fb0e11e994f94201c0a8d02b
       sessionSecret: AgBvu1G5s5Ibj0Bfi8z7UnDDPrRgipa4XIPLIEZr3ddAuhiCRVglER+2BsbPKtmxPLqDvQrjDdOmaNzz/In0DCpaNVT76yVQ1R3oR4AdGAD3P9TxSQSyXLAo3osTDT/FL16pFi/FLnInxzcA730MAuozBIo5gN5ibNbIMS76AZ5g91rcZ7zBdfSgJbw+TImfGdHqAioe/+Rrlhb6MRBQiPgmrLDp3/DKGigWJG20DvKA6HZvULIY8ts8XiVRNEN4JnIdJRoe8EFnLubGt0hxn6uehNjRc7ORT4njOGtaNNzRT+pxkp5g3nTXd+/nuXZu+EHzs/JUtSlPMy5ZVJK1fPHnKl40RYWp0Lb5m1Ef10VmD4HXy1YT36+4NBow9deH0Qey3yZHO+h0YOLupQsSPrtxIbIplApn22DVNytCsfD439L97UnWJ7iq6WNfMETjoZXjp8O6AhFYc61el5I3z94sJseB3k4eJo+qxOXtI7ojpWjBBa+ShyATLsTMvTtXSAl6sarBE/pitWGRpNAYVkbCPnUvUYiQFGs6lsJfewEtOM6cUKoUDbuRPdl2CvADWdaUO2jahTqhq/1x59SEfYocS10gevUWBnHLXa2joS+4K+Qh3hwSrxxNuo38KlITFUqHSCQ++FlE3WCRk4xImWD9xaGQJc7nQmqkKOBalXihKmO++3RUhWXGgyRzXPJ1sCN1xO1OtLr8M9fne8+PHxlF
     horizontalPodAutoscaler:

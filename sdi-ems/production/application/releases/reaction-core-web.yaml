@@ -49,7 +49,7 @@ spec:
         writeKey: RJhp4IDR5Ga8OpqoZKJqLX8jen2ivu60
       sentry:
         enabled: true
-        dsn: https://fa826e3bbc024bf8bf66570867968425@o234104.ingest.sentry.io/1802036
+        dsn: https://0dd2ee264699435987e119c27ab0e99f@o234104.ingest.sentry.io/5777460
         environment: production
       siteCode: EMS
       startingNewCustomerNumber: "7770000700001"

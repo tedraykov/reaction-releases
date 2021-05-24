@@ -24,22 +24,29 @@ spec:
     spec:
       restartPolicy: Never
       containers:
-        - name: {{ .Chart.Name }}-notify-sentry
+        - name: {{ .Chart.Name }}-notify-sentry-client
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           env:
             - name: SENTRY_AUTH_TOKEN
               value: {{ required "config.sentry.authToken not defined" .Values.config.sentry.authToken | quote }}
-            - name: SENTRY_SOURCEMAP_TOKEN
-              value: {{ required "config.sentry.sourcemapToken not defined" .Values.config.sentry.sourcemapToken | quote }}
-            - name: SENTRY_DSN
-              value: {{ required "config.sentry.dsn not defined" .Values.config.sentry.dsn | quote }}
-            - name: SENTRY_ENV
-              value: {{ required "config.sentry.environment not defined" .Values.config.sentry.environment | quote }}
             - name: SENTRY_ORG
               value: {{ required "config.sentry.org not defined" .Values.config.sentry.org | quote }}
             - name: SENTRY_PROJECT
-              value: {{ required "config.sentry.project not defined" .Values.config.sentry.project | quote }}
+              value: {{ required "config.sentry.clientProject not defined" .Values.config.sentry.clientProject | quote }}
+          command:
+            - yarn
+            - sentry:deploy
+        - name: {{ .Chart.Name }}-notify-sentry-server
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+            - name: SENTRY_AUTH_TOKEN
+              value: {{ required "config.sentry.authToken not defined" .Values.config.sentry.authToken | quote }}
+            - name: SENTRY_ORG
+              value: {{ required "config.sentry.org not defined" .Values.config.sentry.org | quote }}
+            - name: SENTRY_PROJECT
+              value: {{ required "config.sentry.serverProject not defined" .Values.config.sentry.clientProject | quote }}
           command:
             - yarn
             - sentry:deploy
