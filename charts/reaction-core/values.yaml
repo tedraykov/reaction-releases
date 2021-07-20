@@ -72,6 +72,7 @@ config:
   kafkaTopicProductImportProductsPartitions: 3
   kafkaTopicSurcharges: etl.surcharges.surcharges.json-gen1
   kafkaSchemaRegistryUrl: http://kafka-schema-registry:8081
+  listrakEnabled: false
   logFormat: json
   logLevel: INFO
   loyaltyConsumerEnabled: false
