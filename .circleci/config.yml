@@ -11,7 +11,7 @@ jobs:
     steps:
       - checkout: {}
       - run: make deps
-      - run: make tests ARGS="--junitxml=reports/junit.xml"
+      - run: make test ARGS="--junitxml=reports/junit.xml"
       - store_test_results:
           path: reports
 

@@ -18,6 +18,6 @@ test-spec:
 test-yaml:
 	pytest $(TESTS_DIR)/test_yaml_files.py $(PYTEST_ARGS) $(ARGS)
 
-.PHONY: tests
-tests:
+.PHONY: test
+test:
 	pytest $(TESTS_DIR) $(PYTEST_ARGS) $(ARGS)
