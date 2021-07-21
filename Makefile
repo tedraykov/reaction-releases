@@ -7,6 +7,8 @@ PYTEST_ARGS	+= -rx --tb=short --quiet
 
 -include local.mk
 
+.DEFAULT_GOAL := test
+
 deps:
 	pip3 install --upgrade -r requirements.txt
 
