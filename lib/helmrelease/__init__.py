@@ -12,31 +12,28 @@ class HelmReleaseItem(object):
     def __set__(self, instance, value):
         dpath.util.set(instance.data, self.key, value)
 
-class HelmRelease():
+class HelmRelease(object):
     api_version = HelmReleaseItem('/apiVersion')
-    chart_git = HelmReleaseItem('/spec/chart/git')
-    chart_name = HelmReleaseItem('/spec/chart/name')
-    chart_path = HelmReleaseItem('/spec/chart/path')
-    chart_ref = HelmReleaseItem('/spec/chart/ref')
-    chart_repository = HelmReleaseItem('/spec/chart/repository')
-    chart_version = HelmReleaseItem('/spec/chart/version')
     image_repository = HelmReleaseItem('/spec/values/image/repository')
     image_tag = HelmReleaseItem('/spec/values/image/tag')
     kind = HelmReleaseItem('/kind')
     name = HelmReleaseItem('/metadata/name')
     namespace = HelmReleaseItem('/metadata/namespace')
     release_name = HelmReleaseItem('/spec/releaseName')
+    values = HelmReleaseItem('/spec/values')
 
     path = None
     separator = '/'
-    yaml = ruamel.yaml.YAML()
 
-    def __init__(self, path):
+    def __init__(self, path, data):
+        self.data = data
         self.path = path
-        self.yaml.indent(mapping=2, sequence=4, offset=2)
-        self.yaml.preserve_quotes = True
-        with open(path, 'r') as stream:
-            self.data = self.yaml.load(stream)
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, type, value, tb):
+        return None
 
     def delete(self, key, separator=separator):
         try:
@@ -60,5 +57,39 @@ class HelmRelease():
         with open(self.path, 'w') as fp:
             self.yaml.dump(self.data, fp)
 
+class HelmReleaseV2(HelmRelease):
+    chart_path = HelmReleaseItem('/spec/chart/spec/chart')
+    chart_source_ref_kind = HelmReleaseItem('/spec/chart/spec/sourceRef/kind')
+    chart_source_ref_name = HelmReleaseItem('/spec/chart/spec/sourceRef/name')
+    version = 'v2'
+
+class HelmReleaseV1(HelmRelease):
+    chart_git = HelmReleaseItem('/spec/chart/git')
+    chart_name = HelmReleaseItem('/spec/chart/name')
+    chart_path = HelmReleaseItem('/spec/chart/path')
+    chart_ref = HelmReleaseItem('/spec/chart/ref')
+    chart_repository = HelmReleaseItem('/spec/chart/repository')
+    chart_version = HelmReleaseItem('/spec/chart/version')
+    version = 'v1'
+
+    path = None
+    separator = '/'
+
 def load(path):
-    return HelmRelease(path)
+    yaml = ruamel.yaml.YAML()
+    yaml.indent(mapping=2, sequence=4, offset=2)
+    yaml.preserve_quotes = True
+    data = None
+
+    with open(path, 'r') as stream:
+        data = yaml.load(stream)
+
+    api_version = data['apiVersion']
+    if api_version == 'helm.fluxcd.io/v1':
+        hr = HelmReleaseV1(path, data)
+    elif api_version == 'helm.toolkit.fluxcd.io/v2beta1':
+        hr = HelmReleaseV2(path, data)
+    else:
+        raise RuntimeError("Unsupported apiVersion: {}".format(api_version))
+
+    return hr
