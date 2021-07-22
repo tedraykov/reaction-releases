@@ -25,6 +25,14 @@ spec:
       graphqlIntrospectionEnabled: true
       graphqlPlaygroundEnabled: true
       jaegerEndpoint: http://jaeger-collector.ems-production.k8s.frasers.io/api/traces
+      listrakEnabled: true
+      listrakClientId: AgAGi6KdtbOj0nm0pPbZubWUHOm1E5ewYsQFzqyLVr6xqk8ODwQewM+SrSMk2Wbjz1yqZCG5ulahVIek6CC5ghA2qU3/Z89nN1G9BymDgTv8FpQH+eYe+dM45EyRyOiXQ2zVCXNRtWxwWDYRosZ6Nh3/ZoA4WQGmI9WGFvmlvkicj8T6aln8RTDn+wb6abROa5Z01LC5cX0qHvQt/fi63t/B2jpfIAxlY+j4Lyl6iCuR0Jn/WzZrsHZd0/gSFABGPq5jHW9f6fqBZEGV1IGbqikGMFR6++gfDhe3bH/Ln2NaWjkk9gYA3czqnoOLEDySgXmMDpt7EhBMCAkvc21bhXSLTRnn1beuMqPAlOA4TcbDCSwPT/tqPF/wxqu955Af7hL+uu/wom1Tjg2GhBjUUUl3DT4059iiZFJiWCn2orbBRaPInHmeF21p/ZoVe96G/CcJna7tj24DGZerR7jQOoIjlqxqxCTvlbiuxUMqlGO77O9ERPD7NqITISVnLWsqHaEldWSSICML6ZiKLW6vgC/fXmhJ3LdBFrmyzRPrAxBuO2lkEnYMV+rDMTzdBkHg3l1K/9dHe39FI99yFXIY1X6JlXn/aGTy6hOtKLS7RkJLiWHYrLI5FjqoxbmhQcSU75K2MMz5O2TpUabSzGYvtWHIWtcZjoo6Z1ba7aqk8pmewVBPzAlnd/RDUDA4MWC5oNhNNaYnVvh1K3yILjtavXwcFo82yw==
+      listrakClientSecret: AgASlyvayv36sPnf+dlKrDrKi/TChOq8gwhbqvg6TLV+nk1wiTlLXtSIGJo4F1jBmfPiXPHvbcJI7ipvUTntaftlqcC0QJTMMvWThSgNMO/WBuZ7k0FjYS3GRqhZPuvFnQvX7SjUw8HivUOLLdq+dUdiKrumpM1okjsfloFa2hme1E6JpUGTi5k+Son2wxnQJEbkqsptMzCzBLcMbM/oYnwpz0oycfE7uFeCUQktjiwphCT7mg7PP5n9iQxhtyzwzj1EuLspSr2iyeFf6Nl4nG2+wpK2tnuvH0sm5DLUwkW63w7Zp53f9rI4RcI3wKxxaIrhc2oK4XbsS762ZbQan58K6AWLNcLdt6BYDRkZ3BQUPhzMSPYuA0JZ4U2zppwJsdjJixJip5R1JwS+CIeAmt5u3aB18XP/gh4+iRdTf8xx6DNYNNGHYezxGt5YwyJePI6pbzMFbVNSxxe5c1xHHaVgqBXmaAKaYLpPatOIwiVaDGb8kSC3sMMhGROmfDoYIFG+24G/D1OGSO1Vl1cpGmRO8CgIBoFkKo6dnEb8z7Qsmk1gFMPUVJGoo6jtliU2oK6UyNGptlt3e22l32/M9M9txR8BeOWLOIrta8r0wZaXz9q+rph0pOEXMJ/Gb5450LEoCN/0S3xFdqdYLqyTD2dE90uiN3Fsw/JwtCs607KsTgseK9hAMN1og44z5De7kaKUlaW6h7cWkK/7L6ZDXqbr0zaUDgKUO0JMnta1VXWXi0fMwmfTH24rySlL
+      listrakTemplateMessageId: "11313858"
+      listrakTransactionListId: "345286"
+      listrakMasterListId: "345307"
+      listrakTransactionFields: "{\"subject\":6451,\"html\":6452}"
+      listrakContactFields: "{\"firstName\":6689,\"lastName\":6690}"
       orderExportRadialApiKey: AgBErqu9Ra1G4j4T7FEI244eIDBdhQL88XKZG66xdZikd1+fUGU9CR67X0eahe9m2gPHyiRZDvdd5siG/WtOCxObnY5R6+PKR4Ez8TQ6fZ6a7g7eksAZcnmW8VwuE7axhx97S5sYga3hjGPyqodPR4muo9GPrZSs/V92h58Sun0r+M2R2SJDzfaRnuLAKd4xBQq1xUIgVb8DYIveXgtMKwzGX+uzjV+m8F4H7RVVBenKIBbK32zGfyDbU6nPW2MpwNf9HYcSXYhtCf8eHrl1OUCP9ZVm1cRVuKjF+Jsc2hJaiNwv3zdE0aV6yC2Inm15vpFddoJyFqg8gLjz0EPCZoEZUGsMJcZW6Fx8p7LQhgkueJqoIURJAl4JX4P07uqk6sICo60nUSnDCnZxX228y7lHXtOLVTlIMAVZTCw+wEXUStXRZS5C+1u4XA9PEdbHJR8CoszAJ5PsBpovu3vuJKCuvOKrYt87F+ocnQ6EblRLmYk2kxdg/IGoWllS/Na8lfWYolGNlZw6aAmVi9GfVtNqNZO7D4Ql0+LWQxR/orJB9Hy5gt3TbjWJCoYZucK4gg0CoZW6Rpbz6Wm701QZ/2WroTqg+NHDQIFZGl8AjZf6ncDDHnnuH0mVrsScRSC6x8VeAft3qndfuMbbTSRbnfo5Ecpax3EoDO2N5sp+3L3OqOgncJB2XH2VJ8Yso4feLJA+/ovZZvOvKHdV6jCaKOBpXeWhdVhO7ujbO5AMb7UZBA==
       orderExportRadialUrl: https://api-na.gsipartners.com/v1.0/OOMF/stores
       productPublisherAutoPublish: false
@@ -60,7 +68,7 @@ spec:
       max: 10
     image:
       repository: 816897914983.dkr.ecr.us-east-1.amazonaws.com/reaction-core
-      tag: "0209079"
+      tag: "1b211db"
     ingress:
       enabled: true
       hosts:
