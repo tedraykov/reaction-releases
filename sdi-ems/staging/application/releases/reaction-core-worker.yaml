@@ -56,6 +56,10 @@ spec:
         enabled: true
         writeKey: GANoaFWupTY3UNw399U7LDgD5SwJ2Irk
         userIdFieldName: ems_id
+      sentry:
+        enabled: true
+        dsn: https://562752837c194fff901153fc2945cc92@o234104.ingest.sentry.io/5777460
+        environment: staging
       siteCode: EMS
       seoMetadataConsumerEnabled: false
       startingNewCustomerNumber: "7770000700001"
