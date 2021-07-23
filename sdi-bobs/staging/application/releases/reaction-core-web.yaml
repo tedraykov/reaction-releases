@@ -35,7 +35,7 @@ spec:
       listrakTransactionListId: "345281"
       listrakMasterListId: "345307"
       listrakTransactionFields: "{\"subject\":6687,\"html\":6688}"
-      listrakContactFields: "{\"firstName\":6453,\"lastName\":6454}"
+      listrakContactFields: "{\"firstName\":6691,\"lastName\":6692}"
       orderExportRadialApiKey: AgAPPvbNuYvMNSWwHK8a8BomD05tP8LhmvIcCbVZIyqSmmqjmrtEFZdxhoqYRNvhGIfqjYaLL43U3h9xDjFJBqQU3VS5auKxuL30l0nQbkGAPMLd3zt9l1ZnLv8kjtuBpFGCXgtDKN1MWPDRvkiRtF2SdLHjfoH7uLIevok61dKX5UfJ6pB4rf47QvyIlsb0Z9e+plxgQSXlY5QDUztw+QIoDmVQsxLcnWAttXHup8E6LYmEbRZYEkiqj6jmuxmL8jt7O5QVPAW0zGG0SnMQWaoEyHyDK/idvLRstmkql2NOCJabtsAKL3PQZkjwQlZdWK5bVk4OjZw0rGgqd8Dr7ofPr+JudbxhOCzDclyvVtapZkFzAJqYrcOCnDQBFesa4PfZUzHhixmUb4koAUM3wwBAjYam4gDNUp6VOBba30Uo6eHU5eo4SWljYYho9Z8/nt1tITVgCKhiPGMiQD1bYJTuOIsr1fPtsd/iuUgXBIqJjRZ4ALCN4NGQ7kSvCjx65Jit5pKI2/Ia61+hE0ZRX6zoJpR+E7/N4sbm/4SSjXxLBlnyGIXK5ovYXmq0FO7sYsh3hqKtnlPUN6OdVhr1vKef50wVcqAoDWkm0Uz+tp8ShkvKVvKbpsZBolPZlH0PBDJ6Raw0gM2Y/JYJvugCQQYq3aLsgJLk/POLB+U9JvgD19wEiM2HvFOgtVi0YPqZOB8NMcKvNurocdW14jv339nkhBB2ySstMzjytRiZLSkbZA==
       orderExportRadialUrl: https://tst05-epapi-na.gsipartners.com/v1.0/OOMF/stores
       productPublisherAutoPublish: false
