@@ -33,9 +33,9 @@ spec:
       listrakClientSecret: AgCYXvts5NSvkyQptO+YRvMAZQuTncIIrhEZ9K/3wSrrEqabzBgHelh/ZFAOfJCnLlCdaTyuc7B7qiuDfCsgXtuIYWoOsd/LeNnqDOeRW7mbsJu0XdSH9iNJBsmxxCX4f1epLth4sawFC4kRX4LljD7U1JiUwr3h9aFW85PLBvTOqkp6UR9DOEfMTQRgO9ssRtOpc0CVBuMmRsq9gXpzjH1Ef5RsUS30WA9eLgmnMXBNygKYhlCQAll+Rq52NdSv1SccMy+4/KE/oCHzZ2bPXE/2fQ419z6hIvagXxckpBCeUZM8v+0GKyKwja1lQqc5bk9m6n/YjMqAMWW10IFk/sK5arERVIEVZs2Zg/Q9jYzWjBul9KT48jK6OYIEDogYaERbVAIZQxURNGxWWktyWw/ohmhzBICqWvHonhahYcdAN/AUryPa3LsRyCT85m3DlozYD+xBAcOwNTcYO9GzPu/q/L4lvsveHtudMSP5LEeAnxCTI2xDP5TJU40q1slSTa7iQx+6PvPyyd8ActITdPzT1U+9DKHUQQFaKJklS0qgNR635h5WqQQ3/XesGAwaQhNqBb/3db9Xv4cWY0HXHprGMT3q0HPrPPTMxanwrToASPOtaVJd/FHM4zUlUcIFqyIqCV0fmKJWSqX7dZ6fCNBKHiYThjUvLGPQ4oT5SJZfiFlAbKr7qPI2LlSNrE2p2mAcuogR9Sa5QHZE+4QEgzOi1VsLeXslYJzlISZxbGYwNzg0DO5eqWjrrt/0
       listrakTemplateMessageId: "11313858"
       listrakTransactionListId: "345286"
-      listrakMasterListId: "345307"
       listrakTransactionFields: "{\"subject\":6451,\"html\":6452}"
-      listrakContactFields: "{\"firstName\":6689,\"lastName\":6690}"
+      listrakMasterListId: "345214"
+      listrakContactFields: "{\"firstName\":5855,\"lastName\":5856,\"source\":5363}"
       orderExportRadialApiKey: AgAXhBer8P5DLefh4D/Y7DHNdBPmZ58nVFlFvo34BmGH4pTosO9xP2qVg3UP+xjexvqcoW3IjVdtmTjQhhhkWUoSV+MuCRuW0MzubN0B7YRQfijGihFElfIDYeOK3IroS3XDc8UOl8IxxmEAaFuIBFnHaDpuvRWbvbk7uO5Nzk5wvFf+hgIMFyWojfHZ0Qe2REozcd2YPPnSj4VF/i6C2lN1hpvpn265DriCgiCzAnMnylz42JLoLxsGbwyL/NBOgoGGVtOOFHvvMylO3qHBvn9Cu87H1DdHp2pCjBXbJX/93WH5yLOAXLg7QX/0AvqGp4IIXUCR9aY3+5679vTS8HR6ZKThNyqEVwJCbVueI057Ka7yw+UYYGiktFdWv2Pd/qWwFBQraoRr7z6dtb8E0s+iUttcizyYfcG+RdBQ7bw9vJ9xMv8cCoLul23CGRBn/BRLp2MmCuRJLYFbIyL4bXZgBVrbOP7g5uqTcyPUabsQQ7/XAV1Q4wvTIbSOG1tzGqSRKgnM0Lpp1zz+++sbiJibLV8whPOjPvcwktdgKOaeoVbItoWsVlLesmK6VlJuoJnkqy9f5OflWOg+kd1DJVFG3y7tUpuZ2DFAm0UnWGChEQE2DxQckeA2eunAG8gKkd6ZW1mvM4ZY0iDJFMxAPdv7KXRng7hTYK2TMtaiTnMRm+G7birYb1C/SQwIJFrEIGMHlbhcyZ0/AE+Dh8oRxS3vrevmT5dTiB1rqd0DoBVW4Q==
       orderExportRadialUrl: https://tst05-epapi-na.gsipartners.com/v1.0/OOMF/stores
       productPublisherAutoPublish: false
