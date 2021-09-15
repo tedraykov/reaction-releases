@@ -59,6 +59,7 @@ spec:
         environment: staging
       siteCode: EMS
       startingNewCustomerNumber: "7770000700001"
+      storeUrl: https://staging.ems-test.io
     horizontalPodAutoscaler:
       enabled: true
       averageUtilization: 70
@@ -66,7 +67,7 @@ spec:
       max: 10
     image:
       repository: 816897914983.dkr.ecr.us-east-1.amazonaws.com/reaction-core
-      tag: "4516d27"
+      tag: "66de46f"
     ingress:
       enabled: true
       hosts:

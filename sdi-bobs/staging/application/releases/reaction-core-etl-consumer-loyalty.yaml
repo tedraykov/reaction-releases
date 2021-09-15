@@ -61,6 +61,7 @@ spec:
         dsn: https://429763a4403f427f943bc3bc0db32d3b@o234104.ingest.sentry.io/5777463
         environment: staging
       siteCode: BOBS
+      storeUrl: https://staging.bobs-test.io
     image:
       repository: 816897914983.dkr.ecr.us-east-1.amazonaws.com/reaction-core
-      tag: "4516d27"
+      tag: "66de46f"

@@ -59,7 +59,8 @@ spec:
         dsn: https://562752837c194fff901153fc2945cc92@o234104.ingest.sentry.io/5777460
         environment: staging
       siteCode: EMS
+      storeUrl: https://staging.ems-test.io
       startingNewCustomerNumber: "7770000700001"
     image:
       repository: 816897914983.dkr.ecr.us-east-1.amazonaws.com/reaction-core
-      tag: "4516d27"
+      tag: "66de46f"

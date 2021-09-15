@@ -65,6 +65,7 @@ spec:
         environment: staging
       siteCode: BOBS
       shippableInventoryConsumerEnabled: true
+      storeUrl: https://staging.bobs-test.io
     image:
       repository: 816897914983.dkr.ecr.us-east-1.amazonaws.com/reaction-core
-      tag: "4516d27"
+      tag: "66de46f"
