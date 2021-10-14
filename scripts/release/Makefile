@@ -60,6 +60,10 @@ CERTIFICATE := public.pem
 encrypt-string:
 	tr -d \\n $(cat /dev/stdin)|kubeseal --cert $(CERTIFICATE) --raw --from-file /dev/stdin --scope cluster-wide;echo
 
+.PHONY: encrypt-file
+encrypt-file:
+	cat /dev/stdin|kubeseal --cert $(CERTIFICATE) --raw --from-file /dev/stdin --scope cluster-wide;echo
+
 #:README.md
 #:---------
 #:
