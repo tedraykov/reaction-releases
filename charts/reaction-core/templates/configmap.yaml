@@ -23,7 +23,7 @@ data:
   CLOUDINARY_CLOUD_NAME: {{ required "config.cloudinaryCloudName not defined." .Values.config.cloudinaryCloudName | quote }}
   ETCD_URL: {{ required "config.etcdUrl not defined." .Values.config.etcdUrl | quote }}
   JAEGER_ENDPOINT: {{ required "config.jaegerEndpoint not defined." .Values.config.jaegerEndpoint | quote }}
-  JAEGER_SAMPLER_PARAM: {{ .Values.config.jaegerSamplerType | quote }}
+  JAEGER_SAMPLER_PARAM: {{ .Values.config.jaegerSamplerParam | quote }}
   JAEGER_SAMPLER_TYPE: {{ .Values.config.jaegerSamplerType | quote }}
   DEFAULT_SHIPPING_METHOD_ID: {{ required "config.defaultShippingMethodId not defined." .Values.config.defaultShippingMethodId | quote }}
   DEFAULT_SHIPPING_METHOD_RATE: {{ required "config.defaultShippingMethodRate not defined." .Values.config.defaultShippingMethodRate | quote }}
