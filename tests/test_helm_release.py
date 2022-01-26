@@ -1,4 +1,4 @@
-import helmrelease
+import helm_release
 import os
 import pytest
 import re
@@ -62,7 +62,7 @@ class HelmReleaseMetadata(object):
 class TestHelmReleaseSpec(object):
     @pytest.fixture(autouse=True)
     def loader(self, path):
-        self.yaml = helmrelease.load(path)
+        self.yaml = helm_release.load(path)
         self.meta = HelmReleaseMetadata(path)
         self.path = path
 

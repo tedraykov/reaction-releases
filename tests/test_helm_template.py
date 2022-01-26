@@ -1,5 +1,5 @@
 import git
-import helmrelease
+import helm_release
 import os
 import pytest
 import subprocess
