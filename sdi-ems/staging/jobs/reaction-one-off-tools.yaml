@@ -7,7 +7,7 @@ spec:
   restartPolicy: Never
   containers:
   - name: runner
-    image: 816897914983.dkr.ecr.us-east-1.amazonaws.com/reaction-one-off-tools:76b3b20
+    image: 816897914983.dkr.ecr.us-east-1.amazonaws.com/reaction-one-off-tools:7bada23
     envFrom:
       - configMapRef:
           name: kafka

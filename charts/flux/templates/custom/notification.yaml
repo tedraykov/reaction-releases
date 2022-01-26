@@ -1,0 +1,20 @@
+{{- range $k,$v := .Values.notificationAlert }}
+---
+apiVersion: notification.toolkit.fluxcd.io/v1beta1
+kind: Alert
+metadata:
+  name: {{$k}}
+  namespace: {{$v.namespace | default "flux-system"}}
+spec:
+  {{- toYaml $v.spec | nindent 2 }}
+{{ end }}
+{{- range $k,$v := .Values.notificationProvider }}
+---
+apiVersion: notification.toolkit.fluxcd.io/v1beta1
+kind: Provider
+metadata:
+  name: {{$k}}
+  namespace: {{$v.namespace | default "flux-system"}}
+spec:
+  {{- toYaml $v.spec | nindent 2 }}
+{{ end }}

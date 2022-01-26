@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  labels: {app.kubernetes.io/instance: flux-system, app.kubernetes.io/part-of: flux,
+    app.kubernetes.io/version: '{{ .Chart.AppVersion }}', helm.sh/chart: flux}
+  name: helm-controller
+  namespace: flux-system

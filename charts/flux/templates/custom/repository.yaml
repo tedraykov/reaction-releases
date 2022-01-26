@@ -1,0 +1,10 @@
+{{- range $k,$v := .Values.gitRepository }}
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta1
+kind: GitRepository
+metadata:
+  name: {{$k}}
+  namespace: {{$v.namespace | default "flux-system"}}
+spec:
+  {{- toYaml $v.spec | nindent 2 }}
+{{ end }}

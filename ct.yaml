@@ -1,0 +1,5 @@
+chart-yaml-schema: .ct/chart_schema.yaml
+check-version-increment: false
+lint-conf: .ct/lintconf.yaml
+target-branch: develop
+debug: true

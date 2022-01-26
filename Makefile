@@ -1,25 +1,32 @@
-MAKEFLAGS   += --silent --stop
-ROOT_DIR 	:= $(dir $(realpath $(firstword $(MAKEFILE_LIST))))
-TESTS_DIR	:= $(ROOT_DIR)/tests
+MAKEFLAGS     += --silent --stop
+PYTEST_ARGS   += -rx --tb=short --quiet
+PACKAGES_PATH := packages
 
-PYTESS_ARGS += tests
-PYTEST_ARGS	+= -rx --tb=short --quiet
-
+include scripts/helm.mk
 -include local.mk
 
-.DEFAULT_GOAL := test
+.DEFAULT_GOAL := all
+.FORCE:
 
+.PHONY: all
+all: lint test
+
+.uuidgen: .FORCE
+	uuidgen > $@
+
+.PHONY: deps
 deps:
-	pip3 install --upgrade -r requirements.txt
+	pip3 install --upgrade -r requirements.txt $(ARGS)
+	asdf reshim $(ARGS)
 
-.PHONY: test-spec
-test-spec:
-	pytest $(TESTS_DIR)/test_helm_release.py $(PYTEST_ARGS) $(ARGS)
-
-.PHONY: test-yaml
-test-yaml:
-	pytest $(TESTS_DIR)/test_yaml_files.py $(PYTEST_ARGS) $(ARGS)
+.PHONY: lint
+lint:
+	ct lint $(ARGS)
 
 .PHONY: test
 test:
-	pytest $(TESTS_DIR) $(PYTEST_ARGS) $(ARGS)
+	pytest $(PYTEST_ARGS) tests $(ARGS)
+
+.PHONY: update-flux-chart
+update-flux-chart:
+	cd charts/flux && flux-chart-update --detect $(ARGS)

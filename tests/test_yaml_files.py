@@ -18,6 +18,6 @@ class TestYamlSyntax(object):
     def test_parser(self, path):
         try:
             with open(path, 'r') as stream:
-                data =  yaml.safe_load(stream)
+                data =  yaml.safe_load_all(stream)
         except Exception as e:
             pytest.fail(str(e), pytrace=False)

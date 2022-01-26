@@ -1,0 +1,10 @@
+# Default values for flux2.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+gitRepository: {}
+imagePolicy: {}
+imageRepository: {}
+imageUpdateAutomation: {}
+kustomization: {}
+notificationAlert: {}
+notificationProvider: {}

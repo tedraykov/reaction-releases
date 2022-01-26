@@ -1,0 +1,30 @@
+{{- range $k,$v := .Values.imagePolicy }}
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImagePolicy
+metadata:
+  name: {{$k}}
+  namespace: {{$v.namespace | default "flux-system"}}
+spec:
+  {{- toYaml $v.spec | nindent 2 }}
+{{ end }}
+{{- range $k,$v := .Values.imageRepository }}
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImageRepository
+metadata:
+  name: {{$k}}
+  namespace: {{$v.namespace | default "flux-system"}}
+spec:
+  {{- toYaml $v.spec | nindent 2 }}
+{{ end }}
+{{- range $k,$v := .Values.imageUpdateAutomation }}
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImageUpdateAutomation
+metadata:
+  name: {{$k}}
+  namespace: {{$v.namespace | default "flux-system"}}
+spec:
+  {{- toYaml $v.spec | nindent 2 }}
+{{ end }}

@@ -10,7 +10,7 @@ from pprint import pprint
 
 api_versions = 'monitoring.coreos.com/v1'
 charts_dir = 'charts'
-releases_dir = 'sdi-*'
+releases_dir = 'sdi-*/*/application'
 target_branch = 'origin/develop'
 target_repository_url = git.Repo().remotes.origin.url
 target_repository_name = os.path.splitext(os.path.basename(target_repository_url))[0]

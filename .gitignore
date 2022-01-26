@@ -5,3 +5,4 @@ cache
 reports/
 tmp
 values-all*.yaml
+packages/
