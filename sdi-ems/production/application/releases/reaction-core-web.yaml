@@ -62,6 +62,7 @@ spec:
         environment: production
       siteCode: EMS
       startingNewCustomerNumber: "7770000700001"
+      storeUrl: https://www.ems.com
     horizontalPodAutoscaler:
       enabled: true
       averageUtilization: 70

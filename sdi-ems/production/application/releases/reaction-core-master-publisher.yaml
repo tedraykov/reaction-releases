@@ -57,6 +57,7 @@ spec:
         writeKey: RJhp4IDR5Ga8OpqoZKJqLX8jen2ivu60
       siteCode: EMS
       startingNewCustomerNumber: "7770000700001"
+      storeUrl: https://www.ems.com
     image:
       repository: 816897914983.dkr.ecr.us-east-1.amazonaws.com/reaction-core
       tag: "1b211db"

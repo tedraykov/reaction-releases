@@ -54,6 +54,7 @@ spec:
         dsn: https://b8b7c06cbd37493e8fcae2c448871599@o234104.ingest.sentry.io/5777463
         environment: production
       siteCode: BOBS
+      storeUrl: https://www.bobstores.com
     horizontalPodAutoscaler:
       enabled: true
       averageUtilization: 70

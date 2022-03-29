@@ -51,6 +51,7 @@ spec:
         userIdFieldName: bobs_stores_id
         writeKey: wTr4cIGHhkHoZjORdRMyBuUh6DUhxiDG
       siteCode: BOBS
+      storeUrl: https://www.bobstores.com
     image:
       repository: 816897914983.dkr.ecr.us-east-1.amazonaws.com/reaction-core
       tag: "1b211db"
