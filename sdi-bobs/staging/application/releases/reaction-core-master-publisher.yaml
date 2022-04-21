@@ -66,4 +66,4 @@ spec:
       storeUrl: https://staging.bobs-test.io
     image:
       repository: 816897914983.dkr.ecr.us-east-1.amazonaws.com/reaction-core
-      tag: "9789b0b"
+      tag: "1791ae4"
