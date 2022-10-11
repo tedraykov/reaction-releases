@@ -7,7 +7,9 @@ META_PATTERN = re.compile(r"(?P<project>.+)/(?P<environment>.+)/(?P<cluster>.+)/
 
 PATTERN_SHA1_LONG = re.compile(r'^[0-9a-f]{40}$')
 PATTERN_SHA1_SHORT = re.compile(r'^[0-9a-f]{8}$')
+PATTERN_SHA1_SHORT7 = re.compile(r'^[0-9a-f]{7}$')
 PATTERN_SHA1_SHORT9 = re.compile(r'^[0-9a-f]{9}$')
+PATTERN_SEMVER = re.compile(r'([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9A-Za-z-]+(?:\.[0-9A-Za-z-]+)*))?(?:\+[0-9A-Za-z-]+)?$')
 
 def yaml_files():
     found = []
@@ -39,9 +41,15 @@ def valid_namespaces():
 @pytest.fixture
 def valid_image_tag():
     return {
-        'reaction-admin': PATTERN_SHA1_SHORT9,
-        'reaction-core': PATTERN_SHA1_SHORT,
-        'reaction-storefront': PATTERN_SHA1_SHORT,
+        'reaction-admin': [PATTERN_SHA1_SHORT9],
+        'reaction-core-etl-consumer-inventory': [PATTERN_SHA1_SHORT7, PATTERN_SEMVER],
+        'reaction-core-etl-consumer-loyalty': [PATTERN_SHA1_SHORT7, PATTERN_SEMVER],
+        'reaction-core-etl-consumer-pricing': [PATTERN_SHA1_SHORT7, PATTERN_SEMVER],
+        'reaction-core-master-publisher': [PATTERN_SHA1_SHORT7, PATTERN_SEMVER],
+        'reaction-core-web': [PATTERN_SHA1_SHORT7, PATTERN_SEMVER],
+        'reaction-core-worker': [PATTERN_SHA1_SHORT7, PATTERN_SEMVER],
+        'reaction-storefront': [PATTERN_SHA1_SHORT, PATTERN_SEMVER],
+        'reaction-storefront-identity': [PATTERN_SHA1_SHORT7],
     }
 
 class HelmReleaseMetadata(object):
@@ -86,13 +94,19 @@ class TestHelmReleaseSpec(object):
         assert self.yaml.kind == 'HelmRelease'
 
     def test_image_tag(self, path, valid_image_tag):
-        pattern = valid_image_tag.get(self.yaml.name)
+        patterns = valid_image_tag.get(self.yaml.name)
         try:
             image_tag = self.yaml.image_tag
         except KeyError:
             pytest.skip("Image.tag not defined.")
 
-        if pattern is None:
+        if patterns is None:
             pytest.skip("Pattern for image.tag not defined.")
 
-        assert pattern.match(image_tag) is not None, "Wrong image.tag specified."
+        result = False
+        for pattern in patterns:
+            if pattern.match(image_tag):
+                result = True
+                break
+
+        assert result, "Wrong image.tag {} specified.".format(image_tag)
