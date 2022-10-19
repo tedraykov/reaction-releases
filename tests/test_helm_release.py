@@ -48,7 +48,7 @@ def valid_image_tag():
         'reaction-core-master-publisher': [PATTERN_SHA1_SHORT7, PATTERN_SEMVER],
         'reaction-core-web': [PATTERN_SHA1_SHORT7, PATTERN_SEMVER],
         'reaction-core-worker': [PATTERN_SHA1_SHORT7, PATTERN_SEMVER],
-        'reaction-storefront': [PATTERN_SHA1_SHORT7, PATTERN_SEMVER],
+        'reaction-storefront': [PATTERN_SHA1_SHORT, PATTERN_SHA1_SHORT7, PATTERN_SEMVER],
         'reaction-storefront-identity': [PATTERN_SHA1_SHORT7],
     }
 
