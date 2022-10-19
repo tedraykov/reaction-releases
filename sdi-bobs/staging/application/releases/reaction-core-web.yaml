@@ -27,6 +27,8 @@ spec:
       cartReferenceIdPrefix: 44
       cloudinaryCloudName: bobstores-dev
       etcdUrl: http://etcd-application.internal.staging.k8s.bobs-test.io:2379
+      graphqlIntrospectionEnabled: true
+      graphqlPlaygroundEnabled: true
       jaegerEndpoint: http://jaeger-collector.staging.k8s.bobs-test.io:14268/api/traces
       listrakEnabled: true
       listrakClientId: AgB5ShXeT7op1+j9bYLG6QteZRWTpCS6UJFfzLobmIDX3SJIwvWDldRaQB9F7UuwZffD09MWm4RDNmj5ReR1viXDI5KUJpyVqP+nhV2rJ7I2pK6yFQ99VYH/2+jOX04YEfz7u9yJ+mc3DUvuJT+RtlA95YKcSBoXymKmoFQO56KkWEoDW2cNAgpMi+c9igBSGhCqeJgk47NQV3OJexJdKwTDWOAkXhtdk983pBTB8kDid46kPbybD5N0xkmU7ovljcsqnkRtlVAnafcVcPUs49kz3rEV5FBVWxTavBNhpmw0y+zWofvMtopj/cfTs51h8TXmYto+X8WzrIzWVEDI42FSSC0YceutRmxByuXugmmWwx+ho4FLMS7mKFFvhJS2oQ6g4Bt/BgufxCG5vNlBmxCh+PKBPhYUy3FCf3JeewBkLRSLxcxa53gZTcfM03RfWRkkv0GuJR+AWz8UNw0tuMd8zrnyh2nz1hWh8gEL2jPXMwi/8/6Aw4HwPcHAie2ED8AbkteAkCyq8zcsKG+ntuFzo4HQNrhZg09oaC6/xUXUfqQlh637wqUMZrDvII5IkQuNaVTOLTVlWZsVDnzA1ianzESWuGlEPDgZEPL74NqrO9jk2+z7aDBBKmV+ZU91JIC+CtyVS1hkmRN3KTOfLk/AgfjcT0W61Q5chWtU9btVviVFzKEwQm4dB1XY0U+xZE9YAUcP/Z/dTu4Wly/6gAtn2aXpig==
