@@ -21,6 +21,6 @@ deployment="$1"
 new_tag="${2:0:8}"
 stores=("bobs" "ems")
 for store in ${stores[*]} ; do
-  find "sdi-${store}/${deployment}/application/releases" -type f -name "reaction-storefront*.yaml" -print0 |
+  find "sdi-${store}/${deployment}/application/releases" -type f -name "reaction-storefront.yaml" -print0 |
     xargs -0 perl -pi -e "s,^\s+tag:.*,      tag: ${new_tag},"
 done
