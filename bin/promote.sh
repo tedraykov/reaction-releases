@@ -19,7 +19,21 @@ get_tag() {
 
 main() {
   cd "$(dirname "${BASH_SOURCE[0]}")/.."
-  find "./sdi-bobs/staging/application/releases" -type f -name "*.yaml" | {
+
+  local target_dir
+
+  PS3='Which fascia would you like to promote? '
+  select dir in sdi-*/ Quit
+  do
+      if [[ $dir == Quit ]]
+      then
+          exit 0
+      fi
+      target_dir="$dir"
+      break
+  done
+
+  find "./${target_dir}/staging/application/releases" -type f -name "*.yaml" | {
     while IFS= read -r from_path; do
       from_tag=$(get_tag "${from_path}")
       if [[ -z "${from_tag}" ]]; then
