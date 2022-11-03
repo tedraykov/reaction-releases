@@ -60,4 +60,4 @@ spec:
       storeUrl: https://www.ems.com
     image:
       repository: 816897914983.dkr.ecr.us-east-1.amazonaws.com/reaction-core
-      tag: "1b211db"
+      tag: '4.0.8'
