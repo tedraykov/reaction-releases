@@ -13,7 +13,7 @@ spec:
     annotations:
       iam.amazonaws.com/role: arn:aws:iam::490759768946:role/sdi-bobs-production-reaction-job-sftp-from-radial
     image:
-      tag: 'd38cb82'
+      tag: '229a87c4'
     fullnameOverride: reaction-sftp-from-radial
     schedule: "*/5 * * * *"
     config:
