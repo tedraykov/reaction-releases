@@ -13,7 +13,7 @@ spec:
     annotations:
       iam.amazonaws.com/role: arn:aws:iam::551763058466:role/sdi-ems-staging-reaction-job-sftp-from-radial
     image:
-      tag: d38cb82
+      tag: '85546f1d'
     schedule: "*/5 * * * *"
     config:
       sftpClientDirectories: "canceled returned shipped"

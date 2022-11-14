@@ -13,7 +13,7 @@ spec:
     annotations:
       iam.amazonaws.com/role: arn:aws:iam::225761155017:role/sdi-bobs-staging-reaction-job-sftp-from-radial
     image:
-      tag: d38cb82
+      tag: '85546f1d'
     schedule: "*/5 * * * *"
     config:
       sftpClientDirectories: "BOBS/canceled BOBS/returned BOBS/shipped"
