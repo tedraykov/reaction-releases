@@ -101,3 +101,5 @@ data:
 {{- if .Values.config.reactionVersionThree }}
   REACTION_VERSION_THREE: {{ .Values.config.reactionVersionThree | quote }}
 {{- end }}
+  HYGRAPH_READONLY_API: {{ .Values.config.hygraph.api | quote }}
+  HYGRAPH_ENVIRONMENT: {{ .Values.config.hygraph.environment | quote }}

@@ -77,6 +77,10 @@ config:
     #  orderCompleted: XXX
     #  payPal: XXX
   hydraAdminUrl: http://hydra:4445
+  hygraph:
+    # readonly_api: "https://us-east-1.cdn.hygraph.com/content/clbs6zpks1bkj01t7caff08fc/master"
+    # readonly_token: XXX
+    # environment: staging
   #identityServiceUrl: http://reaction-storefront-identity:4100
   internalGraphqlUrl: http://reaction-core-web/graphql-beta
   oauth2:

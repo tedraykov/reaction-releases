@@ -32,6 +32,10 @@ spec:
         apiKey: blt1f2a37a50d4512f7
         environment: staging
       hydraAdminUrl: http://ory-hydra-admin:4445
+      hygraph:
+        readonly_api: "https://us-east-1.cdn.hygraph.com/content/clbs6zpks1bkj01t7caff08fc/master"
+        readonly_token: "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImdjbXMtbWFpbi1wcm9kdWN0aW9uIn0.eyJ2ZXJzaW9uIjozLCJpYXQiOjE2NzE3MjA3MTQsImF1ZCI6WyJodHRwczovL2FwaS11cy1lYXN0LTEuaHlncmFwaC5jb20vdjIvY2xiczZ6cGtzMWJrajAxdDdjYWZmMDhmYy9tYXN0ZXIiLCJtYW5hZ2VtZW50LW5leHQuZ3JhcGhjbXMuY29tIl0sImlzcyI6Imh0dHBzOi8vbWFuYWdlbWVudC5ncmFwaGNtcy5jb20vIiwic3ViIjoiNmFkMmE3YjItZWVhZC00OGVjLTk2OTktODk3Y2U0YjkxYzI5IiwianRpIjoiY2xiejdjbXk4MGswaTAxdWthcHlsZDFhcyJ9.L8uZ3j3P0zWYtJX-Ako56efh4yWI257zr1K_jTilL2g0RzY0iGuhr4gWihcMz8wbMxspZ8HK050lP3LX7KSzgnWAEmbehX0S_2pRuMWld_l_JDMpmL8EPBEQROGAcAemz3MRNwLmZzOZ62FrXznnOqYWzCf7UP0uVTqwHfKRamBH_Fji16gT_6J07MrGnmv0GWjqi7FHPW9FnA9Y5700fUi66mGa-v3vHM06j1SNJo3MDVESIl9-L8-VJnNpl811ZIsFTs-ZDF-zWQMkVAQx1H5BZ2VdEYUO-DKQ3d1IC2PtQmVd61GXD6o6LQ6MgXqZSVeUJIfNTvxUQ2vpLGxTj5mVuyhgiLp__t_KPVlcxVUwdrB7GAnVXWndAI217cNRd2ycdj4bP4lC5EjQ_kgrDI75w2dqzZ6bAkTLIapZdAticKFn7GfT46qrJ7qc5ohhe_MHsI_-JsWtwXvfwdrHOr6XJNsmq01Rs4KTLlkMSiL1mEbgmnWwp4hZtj_am3gUCk9-FgTj5ESq9bM2kojlt06bINLONjwyr4y-KWWqls21oiKw77MxltwU6QJ576EaB5V6Km5wxcjKbo-p91eRnCxuL86N3yxf-tpkNdqmrSAvkCCLDWtIX8MlWNGH80zQKSDy0bjWSBoghrD27UqpXzBSsO_5v2_f5cPyNYbjBog"
+        environment: staging
       healthcheck:
         applePay: 89dbdd88-a788-43d6-9f96-f3594f86cab0
         cardAmericanExpress: 02e6b311-a346-42f8-ab70-b0d38d7c5afe
