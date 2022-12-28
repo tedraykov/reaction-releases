@@ -1,0 +1,29 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: reaction-etl-rom-item-master-export
+  namespace: serverless
+spec:
+  releaseName: reaction-etl-rom-item-master-export
+  chart:
+    git: git@github.com:roberts50/reaction-releases.git
+    path: charts/serverless-deploy
+    ref: develop
+  helmVersion: v3
+  values:
+    annotations:
+      iam.amazonaws.com/role: arn:aws:iam::551763058466:role/sdi-ems-staging-serverless-deploy
+    environment:
+      KAFKA_TOPIC_RADIAL_ITEM_EXPORT_STATUS: etl.rom-item-master-export.status.json-gen1
+      S3_BUCKET_NAME: roberts50-ems-staging-rom-item-master
+      CATALOG_ID: EMS
+      CLIENT_ID: EMS
+      KAFKA_PARTITIONS: 3
+      JAEGER_ENDPOINT: http://jaeger-collector.staging.k8s.ems-test.io/api/traces
+      SKIP_INVOCATION: false
+      REACTION_LOG_LEVEL: INFO
+    secretRefs:
+      - mongodb
+    package:
+      name: reaction-etl-rom-item-master-export
+      version: b0a9b24
