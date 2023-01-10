@@ -101,5 +101,5 @@ data:
 {{- if .Values.config.reactionVersionThree }}
   REACTION_VERSION_THREE: {{ .Values.config.reactionVersionThree | quote }}
 {{- end }}
-  HYGRAPH_READONLY_API: {{ .Values.config.hygraph.api | quote }}
-  HYGRAPH_ENVIRONMENT: {{ .Values.config.hygraph.environment | quote }}
+  HYGRAPH_READONLY_API: {{ required "config.hygraph.readonly_api not defined." .Values.config.hygraph.readonly_api | quote }}
+  HYGRAPH_ENVIRONMENT: {{ required "config.hygraph.environment not defined." .Values.config.hygraph.environment | quote }}

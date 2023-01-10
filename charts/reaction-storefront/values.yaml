@@ -77,7 +77,7 @@ config:
     #  orderCompleted: XXX
     #  payPal: XXX
   hydraAdminUrl: http://hydra:4445
-  hygraph:
+  hygraph: {}
     # readonly_api: "https://us-east-1.cdn.hygraph.com/content/clbs6zpks1bkj01t7caff08fc/master"
     # readonly_token: XXX
     # environment: staging
