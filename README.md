@@ -80,3 +80,54 @@ Make a PR to this repo as follows.
 - Verify with `git diff` that nothing weird is changed by mistake
 - commit, push, pull request, request review as normal
   - Commit message convention: `gitops: production <component-name>`
+
+## REACTION-STOREFRONT environment variables
+
+Details on how to deploy new environment variables and how to update existing ones for the storefront.
+
+#### Adding a new encrypted value variables to the configuration
+
+- Add the key to the sealed secret template for the storefront
+    - /charts/reaction-storefront/templates/sealedsecret.yaml
+    - place the new key under `spec.encryptedData`
+
+
+#### Adding a new plain text variable to the configuration
+
+- Add the key to the sealed secret template for the storefront
+    - `/charts/reaction-storefront/templates/configmap.yaml`
+    - place the new key under `data`
+
+#### Adding the values
+
+For new encrypted or plain text variables, once they have been added to the proper place in sealed secrets or config map, add them to the values file.
+
+- `/charts/reaction-storefront/values.yaml`
+- place the new keys as a document under `config`
+
+### Configuring actual values for a given environment
+
+There are currently two environments you can configure, which are staging and production.  Once you have your variables setup as described above you can add the opertaional values with the steps below.
+
+#### Encrypting values for an environment
+
+Make sure you have `kubectl` and `kubeseal` installed on your machine. The versions below will work with the commands listed. For each store and each environment there are different keys used to encrypt the values. Make sure you are within the proper directory for your store/environment before attempting to encrypt the string.
+
+```
+$ kubectl version --short
+Client Version: v1.25.0
+$ kubeseal --version
+kubeseal version: v0.19.3
+```
+
+1. `$ cd /< sdi-store-name >/< environment >/application/releases`
+2. `$ source .envrc`
+3. `$ echo "sensitiveValue" | make encrypt-string`
+4. Copy the value that is output
+5. Paste the output into the proper key in `/< sdi-store-name >/< environment >/application/releases/reaction-storefront.yaml` under `spec.values.config`
+
+#### Plain text values
+
+Paste the value into the proper key in `/< sdi-store-name >/< environment >/application/releases/reaction-storefront.yaml` under `spec.values.config`
+
+
