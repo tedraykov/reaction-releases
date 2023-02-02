@@ -63,4 +63,4 @@ spec:
       storeUrl: https://staging.ems-test.io
     image:
       repository: 816897914983.dkr.ecr.us-east-1.amazonaws.com/reaction-core
-      tag: 7c099fe
+      tag: 21eb6c5
