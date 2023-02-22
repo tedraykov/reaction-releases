@@ -25,7 +25,7 @@ spec:
       cartExpirySeconds: 1296000
       cartReferenceIdPrefix: 44
       cloudinaryCloudName: bobstores-dev
-      constantPublisherMode: true
+      constantPublisherMode: false
       constantPublisherPauseSeconds: 300
       etcdUrl: http://etcd-application.internal.staging.k8s.bobs-test.io:2379
       healthchecksEnabled: false
