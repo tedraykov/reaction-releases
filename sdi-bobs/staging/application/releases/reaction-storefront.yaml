@@ -46,8 +46,6 @@ spec:
         payPal: 17b6937d-bdb2-41c2-80cf-93afabb2cb57
       identityServiceUrl: http://reaction-storefront-identity:4100
       mapboxToken: pk.eyJ1IjoianBoaWxvIiwiYSI6ImNqeHFlZHRkaDAwM3YzaXMwenNvZmcyYXYifQ.pEVH_imRqxqTjdpIcuiRBg
-      merchstackApi: https://roberts50-headless.merchstack-stage.xyz
-      merchstackEnvironment: staging
       oauth2:
         authUrl: https://auth-staging.bobs-test.io/oauth2/auth
         clientId: bobs-staging-storefront
@@ -59,7 +57,6 @@ spec:
         mode: sandbox
         rdfUrl: https://rdf.radial.com/rdf/service/scripts?clientIdentifier=BOBSUS
       reactionVersionThree: "true"
-      searchExperience: merchstack
       segmentAnalytics:
         enabled: true
         writeKey: osQ8ZrOPWr89d7I6ecepCU1NcCP9uE0C
