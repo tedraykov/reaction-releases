@@ -103,3 +103,9 @@ data:
 {{- end }}
   HYGRAPH_READONLY_API: {{ required "config.hygraph.readonly_api not defined." .Values.config.hygraph.readonly_api | quote }}
   HYGRAPH_ENVIRONMENT: {{ required "config.hygraph.environment not defined." .Values.config.hygraph.environment | quote }}
+  SEARCH_EXPERIENCE: {{ .Values.config.searchExperience | quote }}
+
+{{- if .Values.config.searchExperience }}
+  MERCHSTACK_API: {{ required "config.merchstackApi not defined." .Values.config.merchstackApi | quote }}
+  MERCHSTACK_ENVIRONMENT: {{ required "config.merchstackEnvironment not defined." .Values.config.merchstackApi | quote }}
+{{- end }}

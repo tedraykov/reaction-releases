@@ -83,6 +83,8 @@ config:
     # environment: staging
   #identityServiceUrl: http://reaction-storefront-identity:4100
   internalGraphqlUrl: http://reaction-core-web/graphql-beta
+  #merchstackApi: XXX
+  #merchstackEnvironment: XXX
   oauth2:
     adminPort: 4445
     #  url: https://www.example.com/ouath2/auth
@@ -97,6 +99,7 @@ config:
     #  clientId: XXX
     #  mode: sandbox
     #  rdfUrl: https://tst-rdf.radial.com/rdf/service/scripts?clientIdentifier=XXX
+  #searchExperience: XXX
   sessionMaxAge: !!str 2592000000
   #sessionSecret: <encrypted-string>
   segmentAnalytics:
