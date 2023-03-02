@@ -106,5 +106,5 @@ data:
   SEARCH_EXPERIENCE: {{ .Values.config.searchExperience | quote }}
 {{- if .Values.config.searchExperience }}
   MERCHSTACK_API: {{ required "config.merchstackApi not defined." .Values.config.merchstackApi | quote }}
-  MERCHSTACK_ENVIRONMENT: {{ required "config.merchstackEnvironment not defined." .Values.config.merchstackApi | quote }}
+  MERCHSTACK_ENVIRONMENT: {{ required "config.merchstackEnvironment not defined." .Values.config.merchstackEnvironment | quote }}
 {{- end }}
