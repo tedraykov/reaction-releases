@@ -47,6 +47,8 @@ spec:
         orderCompleted: 07c43c20-c57c-4348-af74-2bb608f9424f
         payPal: 2e762d6d-4e1c-4eb5-854b-42dfc24a9389
       mapboxToken: pk.eyJ1IjoianBoaWxvIiwiYSI6ImNqeHFlZHRkaDAwM3YzaXMwenNvZmcyYXYifQ.pEVH_imRqxqTjdpIcuiRBg
+      merchstackApi: https://roberts50-headless.merchstack-stage.xyz
+      merchstackEnvironment: staging
       oauth2:
         authUrl: https://auth-staging.ems-test.io/oauth2/auth
         clientId: ems-staging-storefront
@@ -58,6 +60,7 @@ spec:
         mode: sandbox
         rdfUrl: https://rdf.radial.com/rdf/service/scripts?clientIdentifier=EMSUS
       reactionVersionThree: "true"
+      searchExperience: merchstack   
       segmentAnalytics:
         enabled: true
         writeKey: oTm3YQxgfc6udco67OFJDumcfUX2fCU2
@@ -81,7 +84,7 @@ spec:
       max: 10
     image:
       repository: 816897914983.dkr.ecr.us-east-1.amazonaws.com/reaction-storefront-ems
-      tag: 81f2814
+      tag: da84e8c
     ingress:
       hosts:
         - host: staging.ems-test.io

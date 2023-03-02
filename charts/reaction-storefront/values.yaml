@@ -56,6 +56,7 @@ config:
 #  applePayMerchantId: XXX
 #  baseUrl: https://www.example.com/
 #  elasticsearchUrl: http://elasticsearch:9200
+  cloudinary: {}
   contentSecurityPolicy: {}
     # policy: default-src *
     # reportOnlyPolicy: default-src *; script-src 'self' 'unsafe-inline' https://storage.googleapis.com https://sslwidget.criteo.com https://cdn.segment.com https://www.google-analytics.com https://p.bm23.com https://static.criteo.net https://connect.facebook.net https://www.googletagmanager.com https://www.snapengage.com https://cdn.merklesearch.com https://cdn.avmws.com https://snip.bronto.com https://widget.us.criteo.com; style-src 'unsafe-inline'; img-src *; font-src *
@@ -83,6 +84,8 @@ config:
     # environment: staging
   #identityServiceUrl: http://reaction-storefront-identity:4100
   internalGraphqlUrl: http://reaction-core-web/graphql-beta
+  #merchstackApi: XXX
+  #merchstackEnvironment: XXX
   oauth2:
     adminPort: 4445
     #  url: https://www.example.com/ouath2/auth
@@ -97,6 +100,7 @@ config:
     #  clientId: XXX
     #  mode: sandbox
     #  rdfUrl: https://tst-rdf.radial.com/rdf/service/scripts?clientIdentifier=XXX
+  #searchExperience: XXX
   sessionMaxAge: !!str 2592000000
   #sessionSecret: <encrypted-string>
   segmentAnalytics:

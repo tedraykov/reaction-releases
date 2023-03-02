@@ -3,3 +3,6 @@ appVersion: "1.0"
 description: A Helm chart for Reaction Storefront
 name: reaction-storefront
 version: 0.1.5
+maintainers:
+  - name: Merchstack
+    email: dev@merchstack.com
