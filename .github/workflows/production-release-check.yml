@@ -1,0 +1,22 @@
+name: Production Release Check
+
+on:
+  pull_request:
+    paths:
+      - 'sdi-ems/production/**/*'
+      - 'sdi-bobs/production/**/*'
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Comment PR
+        uses: thollander/actions-comment-pull-request@v2
+        with:
+          comment_tag: execution
+          message: |
+            ## ⚠️ Warning! About to release in Production
+            This PR makes changes to production release files. Proceed with caution.
