@@ -88,6 +88,10 @@ data:
   RADIAL_TAXES_API_URL: {{ required "config.radialTaxesApiUrl not defined." .Values.config.radialTaxesApiUrl | quote }}
   KAFKA_TOPIC_RADIAL_ITEM_EXPORT_STATUS: {{ required "config.kafkaTopicRadialItemExportStatus not defined." .Values.config.kafkaTopicRadialItemExportStatus | quote }}
   RADIAL_ITEM_EXPORT_CONSUMER_ENABLED: {{ required "config.radialItemExportConsumerEnabled not defined." .Values.config.radialItemExportConsumerEnabled | quote }}
+  # TODO: Make Radial ROM configs required with first production release
+  RADIAL_ROM_STORE_ID: {{ .Values.config.radialRomStoreId | quote }}
+  ROM_ORDER_PREFIX: {{ .Values.config.radialRomOrderPrefix }}
+  ROM_CUSTOMER_ID_PREFIX: {{ .Values.config.radialRomCustomerIdPrefix }}
   IMPORT_ORDER_STATUS_CONSUMER_ENABLED: {{ required "config.importOrderStatusConsumerEnabled not defined." .Values.config.importOrderStatusConsumerEnabled | quote }}
   PRODUCT_IMPORT_DEFAULT_INVISIBLE: {{ required "config.productImportDefaultInvisible not defined." .Values.config.productImportDefaultInvisible | quote }}
   ALLOW_RESET_CODES_MUTATION: {{ required "config.allowResetCodesMutation not defined." .Values.config.allowResetCodesMutation | quote }}

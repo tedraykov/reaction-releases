@@ -93,6 +93,10 @@ config:
   #radialApiKey: XXX
   #radialApiUrl: XXX
   radialItemExportConsumerEnabled: false
+  #radialRomStoreId: XXX
+  #radialRomOrderCreateApiKey: XXX
+  #radialRomOrderPrefix: XXX
+  #radialRomCustomerIdPrefix: XXX
   #reactionAdminPublicAccountRegistrationUrl: XXX
   #reactionIdentityPublicPasswordResetUrl: XXX
   #reactionIdentityPublicVerifyEmailUrl: XXX
