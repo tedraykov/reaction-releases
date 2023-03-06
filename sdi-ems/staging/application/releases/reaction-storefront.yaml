@@ -60,7 +60,7 @@ spec:
         mode: sandbox
         rdfUrl: https://rdf.radial.com/rdf/service/scripts?clientIdentifier=EMSUS
       reactionVersionThree: "true"
-      searchExperience: merchstack
+      searchExperience: reaction
       segmentAnalytics:
         enabled: true
         writeKey: oTm3YQxgfc6udco67OFJDumcfUX2fCU2
