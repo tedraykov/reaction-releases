@@ -55,9 +55,9 @@ spec:
         redirectUrl: https://staging.bobs-test.io/callback
         tokenUrl: http://ory-hydra-public:4444/oauth2/token
       radial:
-        clientId: BOBSUS
+        clientId: BOB2US
         mode: sandbox
-        rdfUrl: https://rdf.radial.com/rdf/service/scripts?clientIdentifier=BOBSUS
+        rdfUrl: https://tst-rdf.radial.com/rdf/service/scripts?clientIdentifier=BOB2US
       reactionVersionThree: "true"
       searchExperience: reaction
       segmentAnalytics:

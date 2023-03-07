@@ -56,9 +56,9 @@ spec:
         redirectUrl: https://staging.ems-test.io/callback
         tokenUrl: http://ory-hydra-public:4444/oauth2/token
       radial:
-        clientId: EMSUS
+        clientId: EMS2US
         mode: sandbox
-        rdfUrl: https://rdf.radial.com/rdf/service/scripts?clientIdentifier=EMSUS
+        rdfUrl: https://tst-rdf.radial.com/rdf/service/scripts?clientIdentifier=EMS2US
       reactionVersionThree: "true"
       searchExperience: reaction
       segmentAnalytics:
