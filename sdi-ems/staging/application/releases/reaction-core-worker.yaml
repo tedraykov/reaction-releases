@@ -40,6 +40,7 @@ spec:
       productPublisherAutoPublish: false
       radialApiKey: AgCwj4da1ACjPwvkdh77/S1y3yaJK7XXqedEX7RY6clqX4oyZ6IW2ePOJy3p5cBCl+TWvgV+jloWTFwRkPYI5yEoy1+h8aSxeoHoSvttOqTo6QpAwpcscDHNYtbLd4B9CrpefJ4m1VoF5voPOQNNmmYRJtYKpHG7Itjwx+2EELsxJKKfwCshBJ9jkb+jl5PMwhtEplN+JDqhJFCRIFMKuo6nHWb24uf0A0SKtGFyHjMT3H5ZA9ZwQHmNp5rHs1bdDn+TAoLwN1HNiPsHryW1xQalrekhRuOPG2mpvlfwT5IeEMoz/M9UC2btEsNqL/DSjjeeTk2JkMbH9C4Ix8N1L6hIoA401ORC1Tx02b10TN0sSI/Olb4kIyLS4gB+c//g9JzKfi7dHGxs9FbvlFYmp8d5XZ/Wdc9SL9sVGGAHil2h13MiIWkITnXvPQJubzH8hQq+4pHayfFTocdcxaMC+EUAtosIm5e5V9BijZiBA8qqVufMu0u6qu1eeFQIEKu/82W8/DiS+lRU1n5Nu48CLYI0AeJOqGgzQihjsjwetpsKmidkVgdv/wgbZpYtKUfLtIJuPEpU3K7okrB3K4rPuqsAaHk5Ku/MCngpfLIOOdYjzw59m1Yepah6fUYpGp9rLJfpcqFSxD9BN6kez+KRaVt0QjpSBO2EucnQpfvXOT4Y/xVhmTJSOp3BmnZDm1TVHNiKgcbVGNPumyKSZESPT58IWVMLIdpPOg+93a8g1MUiHnjsGbT5CZLg83HiEv+ARmc=
       radialApiUrl: https://uat01-epapi-na.gsipartners.com/v1.0/stores
+      radialCatalogId: "283"
       radialItemExportConsumerEnabled: true
       radialMode: sandbox
       radialPassword: AgB34BtXm7epHLzX2L1wC7mwbIoFwVqZOpY9xyZ8KGiMfUoVSBWlfbsimwn6KRrIn6wmQ5Btfx8lFrZKLQGXdh9muXvCcMPznLb4ljfQKqax4szr9KF2JvVSPg02ZukXl6ncLUkA6hMwPc74ugjzrsNHkBta4CW+Q2QCGR3Tnqr6nXsHnORlAGQhgz76PKm68v0aOdr0rzJ5tz/u+YKp43xQ007TTs9WkuEK6fHpMqxQu6cdKROvVMXuLsGEo3XXenoreTwotJcCu0JkBD3UK3QbhOJpVXqsiyVtv3K9emHBgmJAfe6hXpvRnXLiq4CBasD7CI/2FrAQMS/iKkMgsWVQ+OWrq+u2p2nzNsYzgsLP0iMPVEsLTMeCY3nFBF2iggr5H9O6OBuZg3VSPCYS7YYQNl/HTT+OuMUvbRsyd7sN5jD4FgxfzT8ue3Cn+Ogwq/U9L1sXh9jJxgoaYuqftAi6ZrYlAMqN1Tw3QawuDfKSV8rxCMQk8iwp7PGz4SE1lT7As0ZIGVI4N8HdOMCbNiHiK8/abXjnSaUZxIv9WCfaDlr+8LhhAKzAIe76YI1UzMmhzYR86jJooPIENPvs1x6ipDRN+C5DNX7JL359tw7OdwWwTI5U2OAmtnLTBu32STINFks5EOBj+Uvv68dqEBiVc2ma7g9Wvg9ZPRBTsgRSstTJEKM5dyuJ4TSuw2jv1pWioBTqkVk=
@@ -73,4 +74,4 @@ spec:
       taxesConsumerEnabled: true
     image:
       repository: 816897914983.dkr.ecr.us-east-1.amazonaws.com/reaction-core
-      tag: 14f6da0
+      tag: a2131e2

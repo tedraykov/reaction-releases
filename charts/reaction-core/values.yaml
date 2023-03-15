@@ -92,6 +92,7 @@ config:
   profilingEnabled: false
   #radialApiKey: XXX
   #radialApiUrl: XXX
+  #radialCatalogId: XXX
   radialItemExportConsumerEnabled: false
   #radialRomStoreId: XXX
   #radialRomOrderCreateApiKey: XXX
