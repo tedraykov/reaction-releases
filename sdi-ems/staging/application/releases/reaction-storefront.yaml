@@ -60,7 +60,7 @@ spec:
         mode: sandbox
         rdfUrl: https://tst-rdf.radial.com/rdf/service/scripts?clientIdentifier=EMS2US
       reactionVersionThree: "true"
-      searchExperience: reaction
+      searchExperience: merchstack
       segmentAnalytics:
         enabled: true
         writeKey: oTm3YQxgfc6udco67OFJDumcfUX2fCU2
