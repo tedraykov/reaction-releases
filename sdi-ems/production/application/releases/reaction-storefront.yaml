@@ -42,6 +42,8 @@ spec:
         orderCompleted: 0ee96746-65ab-4c5c-b8ff-d5a091bb1516
         payPal: 6bba35cb-e9dc-41b9-8361-c115b694bcf7
       mapboxToken: pk.eyJ1IjoianBoaWxvIiwiYSI6ImNqeHFlaG1kaDAwNTUzaXA1NmVmbmJpMDEifQ.VCyMGmTZGRtZo_vUrXEutA
+      merchstackApi: https://roberts50-headless.merchstack-stage.xyz
+      merchstackEnvironment: staging
       oauth2:
         authUrl: https://auth.ems.com/oauth2/auth
         clientId: ems-production-storefront2
@@ -54,6 +56,7 @@ spec:
         mode: production
         rdfUrl: https://rdf.radial.com/rdf/service/scripts?clientIdentifier=EMSUS
       reactionVersionThree: "true"
+      searchExperience: reaction
       segmentAnalytics:
         enabled: true
         writeKey: lP6S7JFlVKryAHeiW7phvWEkwWTVfbUZ
