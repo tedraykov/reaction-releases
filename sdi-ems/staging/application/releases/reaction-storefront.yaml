@@ -49,6 +49,7 @@ spec:
       mapboxToken: pk.eyJ1IjoianBoaWxvIiwiYSI6ImNqeHFlZHRkaDAwM3YzaXMwenNvZmcyYXYifQ.pEVH_imRqxqTjdpIcuiRBg
       merchstackApi: https://roberts50-headless.merchstack-stage.xyz
       merchstackEnvironment: staging
+      merchstackStoreId: 61d573f2-09fc-4082-83bc-2c07d2aa8678
       oauth2:
         authUrl: https://auth-staging.ems-test.io/oauth2/auth
         clientId: ems-staging-storefront
