@@ -5,11 +5,8 @@ import re
 
 META_PATTERN = re.compile(r"(?P<project>.+)/(?P<environment>.+)/(?P<cluster>.+)/releases/(?P<name>.+)\.yaml$")
 
-PATTERN_SHA1_LONG = re.compile(r'^[0-9a-f]{40}$')
-PATTERN_SHA1_SHORT = re.compile(r'^[0-9a-f]{8}$')
 PATTERN_SHA1_SHORT7 = re.compile(r'^[0-9a-f]{7}$')
 PATTERN_SHA1_SHORT9 = re.compile(r'^[0-9a-f]{9}$')
-PATTERN_SEMVER = re.compile(r'([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9A-Za-z-]+(?:\.[0-9A-Za-z-]+)*))?(?:\+[0-9A-Za-z-]+)?$')
 
 def yaml_files():
     found = []
@@ -42,13 +39,13 @@ def valid_namespaces():
 def valid_image_tag():
     return {
         'reaction-admin': [PATTERN_SHA1_SHORT9],
-        'reaction-core-etl-consumer-inventory': [PATTERN_SHA1_SHORT7, PATTERN_SEMVER],
-        'reaction-core-etl-consumer-loyalty': [PATTERN_SHA1_SHORT7, PATTERN_SEMVER],
-        'reaction-core-etl-consumer-pricing': [PATTERN_SHA1_SHORT7, PATTERN_SEMVER],
-        'reaction-core-master-publisher': [PATTERN_SHA1_SHORT7, PATTERN_SEMVER],
-        'reaction-core-web': [PATTERN_SHA1_SHORT7, PATTERN_SEMVER],
-        'reaction-core-worker': [PATTERN_SHA1_SHORT7, PATTERN_SEMVER],
-        'reaction-storefront': [PATTERN_SHA1_SHORT, PATTERN_SHA1_SHORT7, PATTERN_SEMVER],
+        'reaction-core-etl-consumer-inventory': [PATTERN_SHA1_SHORT7],
+        'reaction-core-etl-consumer-loyalty': [PATTERN_SHA1_SHORT7],
+        'reaction-core-etl-consumer-pricing': [PATTERN_SHA1_SHORT7],
+        'reaction-core-master-publisher': [PATTERN_SHA1_SHORT7],
+        'reaction-core-web': [PATTERN_SHA1_SHORT7],
+        'reaction-core-worker': [PATTERN_SHA1_SHORT7],
+        'reaction-storefront': [PATTERN_SHA1_SHORT7],
         'reaction-storefront-identity': [PATTERN_SHA1_SHORT7],
     }
 
