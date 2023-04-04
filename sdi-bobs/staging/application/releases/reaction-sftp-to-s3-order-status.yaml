@@ -1,0 +1,18 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: reaction-sftp-to-s3-order-status
+  namespace: serverless
+spec:
+  releaseName: reaction-sftp-to-s3-order-status
+  chart:
+    git: git@github.com:roberts50/reaction-releases.git
+    path: charts/serverless-deploy
+    ref: develop
+  helmVersion: v3
+  values:
+    annotations:
+      iam.amazonaws.com/role: sdi-bobs-staging-serverless-deploy
+    package:
+      name: sftp-s3-transfer
+      version: f94daf8
