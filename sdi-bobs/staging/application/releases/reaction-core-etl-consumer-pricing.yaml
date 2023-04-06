@@ -70,4 +70,4 @@ spec:
       storeUrl: https://staging.bobs-test.io
     image:
       repository: 816897914983.dkr.ecr.us-east-1.amazonaws.com/reaction-core
-      tag: fac6780
+      tag: e00940b
