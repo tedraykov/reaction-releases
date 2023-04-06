@@ -1,0 +1,34 @@
+# Default values for serverless-deploy.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+image:
+  repository: 816897914983.dkr.ecr.us-east-1.amazonaws.com/serverless-deploy-v2
+  pullPolicy: Always
+  tag: latest
+
+nameOverride: ""
+fullnameOverride: ""
+
+annotations: {}
+
+configMapRefs:
+  - buckets
+  - kafka
+  - serverless-deploy
+
+environment: {}
+
+jobBackoffLimit: 0
+
+package:
+  baseUrl: "https://sdi-management-serverless-packages.s3.amazonaws.com"
+  name: "change-me"
+  version: "change-me"
+
+secrets: {}
+
+secretRefs: []
+
+serverless:
+  debug: false

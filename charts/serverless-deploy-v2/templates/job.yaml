@@ -1,0 +1,56 @@
+{{- $fullName       := include "serverless-deploy.fullname" . -}}
+{{- $packageBaseUrl := required "package.baseUrl not defined" .Values.package.baseUrl -}}
+{{- $packageName    := required "package.name not defined" .Values.package.name -}}
+{{- $packageVersion := required "package.version not defined" .Values.package.version -}}
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: {{ $packageName }}-{{ $packageVersion }}
+  labels:
+{{ include "serverless-deploy.labels" . | indent 4 }}
+spec:
+  backoffLimit: {{ .Values.jobBackoffLimit }}
+  template:
+    metadata:
+{{- if .Values.annotations }}
+      annotations:
+{{- toYaml .Values.annotations | nindent 8 }}
+{{- end }}
+      labels:
+{{ include "serverless-deploy.labels" . | indent 8 }}
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: deploy
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          args:
+            - deploy
+          envFrom:
+{{- range $name := .Values.configMapRefs }}
+            - configMapRef:
+                name: {{ $name }}
+{{- end }}
+{{- range $name := .Values.secretRefs }}
+            - secretRef:
+                name: {{ $name }}
+{{- end }}
+{{- if .Values.secrets }}
+            - secretRef:
+                name: {{ $packageName }}
+{{- end }}
+          env:
+            - name: PACKAGE_URL
+              value: "{{ $packageBaseUrl }}/{{ $packageName }}/{{ $packageName }}-{{ $packageVersion }}.zip"
+            - name: PACKAGE_VERSION
+              value: {{ $packageVersion | quote }}
+            - name: JAEGER_SERVICE_NAME
+              value: {{ $packageName }}
+{{- if .Values.serverless.debug }}
+            - name: SLS_DEBUG
+              value: {{ .Values.serverless.debug | quote }}
+{{- end }}
+{{- range $key, $value := .Values.environment }}
+            - name: {{ $key }}
+              value: {{ $value | quote }}
+{{- end }}
