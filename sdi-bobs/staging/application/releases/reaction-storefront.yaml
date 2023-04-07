@@ -46,8 +46,9 @@ spec:
         payPal: 17b6937d-bdb2-41c2-80cf-93afabb2cb57
       identityServiceUrl: http://reaction-storefront-identity:4100
       mapboxToken: pk.eyJ1IjoianBoaWxvIiwiYSI6ImNqeHFlZHRkaDAwM3YzaXMwenNvZmcyYXYifQ.pEVH_imRqxqTjdpIcuiRBg
-      merchstackApi: https://roberts50-headless.merchstack-stage.xyz
-      merchstackEnvironment: staging
+      merchstackApi: https://mountainsports.merchstack.io
+      merchstackEnvironment: production
+      merchstackStoreId: c1593167-dbbc-49bc-9740-bc303149733c
       oauth2:
         authUrl: https://auth-staging.bobs-test.io/oauth2/auth
         clientId: bobs-staging-storefront

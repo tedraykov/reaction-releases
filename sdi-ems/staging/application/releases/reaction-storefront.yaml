@@ -47,9 +47,9 @@ spec:
         orderCompleted: 07c43c20-c57c-4348-af74-2bb608f9424f
         payPal: 2e762d6d-4e1c-4eb5-854b-42dfc24a9389
       mapboxToken: pk.eyJ1IjoianBoaWxvIiwiYSI6ImNqeHFlZHRkaDAwM3YzaXMwenNvZmcyYXYifQ.pEVH_imRqxqTjdpIcuiRBg
-      merchstackApi: https://roberts50-headless.merchstack-stage.xyz
-      merchstackEnvironment: staging
-      merchstackStoreId: 61d573f2-09fc-4082-83bc-2c07d2aa8678
+      merchstackApi: https://mountainsports.merchstack.io
+      merchstackEnvironment: production
+      merchstackStoreId: 452afd8d-b9b4-40c8-a304-a413e18969ff
       oauth2:
         authUrl: https://auth-staging.ems-test.io/oauth2/auth
         clientId: ems-staging-storefront
