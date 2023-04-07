@@ -60,7 +60,7 @@ spec:
         mode: sandbox
         rdfUrl: https://tst-rdf.radial.com/rdf/service/scripts?clientIdentifier=BOB2US
       reactionVersionThree: "true"
-      searchExperience: reaction
+      searchExperience: merchstack
       segmentAnalytics:
         enabled: true
         writeKey: osQ8ZrOPWr89d7I6ecepCU1NcCP9uE0C
