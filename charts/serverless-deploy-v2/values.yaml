@@ -5,7 +5,7 @@
 image:
   repository: 816897914983.dkr.ecr.us-east-1.amazonaws.com/serverless-deploy-v2
   pullPolicy: Always
-  tag: latest
+  tag: c763733
 
 nameOverride: ""
 fullnameOverride: ""
