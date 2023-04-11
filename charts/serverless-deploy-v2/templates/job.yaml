@@ -42,6 +42,8 @@ spec:
           env:
             - name: PACKAGE_URL
               value: "{{ $packageBaseUrl }}/{{ $packageName }}/{{ $packageName }}-{{ $packageVersion }}.zip"
+            - name: PACKAGE_NAME
+              value: {{ $packageName }}
             - name: PACKAGE_VERSION
               value: {{ $packageVersion | quote }}
             - name: JAEGER_SERVICE_NAME
