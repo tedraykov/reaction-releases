@@ -1,0 +1,26 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: reaction-sftp-to-s3-order-status
+  namespace: serverless
+spec:
+  releaseName: reaction-sftp-to-s3-order-status
+  chart:
+    git: git@github.com:roberts50/reaction-releases.git
+    path: charts/serverless-deploy-v2
+    ref: develop
+  helmVersion: v3
+  values:
+    annotations:
+      iam.amazonaws.com/role: arn:aws:iam::551763058466:role/sdi-ems-staging-serverless-deploy
+    environment:
+      SFTP_HOST: tst02-xchange.gsipartners.com
+      SOURCE_DIRECTORIES: Inbox
+      SOURCE_FILE_PATTERNS: "*_orderstatus_*.xml"
+      TARGET: sdi-ems-staging-feeds-rom-order-status-import
+    secrets:
+      SFTP_USERNAME: AgC6jAO189oy4RIoi10QEyXq0niwwja9LziVSlY9Newvi2MzMCePB719JvXRLWT21KG0nHLK8PaDTc5q1aruMs1eGhekCMyW+MNi3E4vF84pM2f6hk7r+O62DE4FOidG1wjEOF2gwy4LzOPTluo+Ho4WZZV67FRTyMjh0w42xpgCMFBuqUp1GVC4UaJa1iTGLRSoaiYZs3z42Y/Tk2Tl1/FbyQroG4UYkbN4cxJ2E416GYWYUkSvoiAu9gRVN8je7FDOnF8kiJQ8MAPZShPYCJe2/OapeTutrFdGPS8JzpjE7ZFQ2R6d3xqTjkuoIuOpbUW1rSMXpyoTiKgXHQ5Qmakcm/vr+DK5MaXWCtU9rewqc3aELTT95gbdDiRvW2ry9aTN3oxIcRxTd1icIEp+04bI5DD441yvn5wO+wRQ+qVUvKk0x6/pYYp6+rlFjy5L8Zoj8JB/k8ZsWdj9GRoNLCfJ/+wQZsjtSlv38JYEN6McRoPZhU/9X4ESg5FSfIk5x8uPMF9yxr8LGHs5ROHQ7yN8vu85qDZjjbJ3nRTXnMz5wp8DNHnOhxUV24LJ/acizS1DxlKgast95T8pv0EEQ8D5hnmsjhk1lNrvDH4emftZiOquw9Qd3ZID1HnaKhU+nJHDkOxV+UVqkQJLvb24qeW6jAWpUgaVe/pT7RZJOpSK/5Hnm9DRMbVATmlL8TWXlOqlg96Vyg==
+      SFTP_PASSWORD: AgAImipQ2qskwvyMXg3L8i4eHz08Up3ueZEWxxnX3XeVqskqBO19xXiGS/eTmsmg2WuinJlARSlI8dNuuCUhMd/U3XTag/xH++pCOBxXiKwJKnf3JR2AhvOV2rqwQVy8iJzFoCnNmCxHl+1WVbKh0vEaHH8t+u75mLsxQT45SgpG/dmGIysH+DYJoALyW2wNGdEO2XWUYic5MS8fJ8dGJYSHizeElrJ3GVOJDW40uVDLP67AiyhCYqeVnBz8Qgkpz22QwYslSYig3oDXeOydUUKsebmV/+2FMLtG+hav3HeiiXRaGabFimE78HLsGT6r6B/nHUzA5kmxfZGKdRurzjejOwrefowM6QiRfDKH9HTpAqp/guiYz4/Rwd/sDNXqH9wcwbAwqrd46WH40M+5HPlLHe/xdyNaPKcrxe9i/9j1DKNraptcNezMacNFMPyqvM9Fpm6/CKLdigGMKaPIQn1YFUdfsrQkg0BQ8S3e/LQeP51TJ3PFYp+bx1Y8KYIJ6mbVelSBFCp6Beu1nMtYsmOczMtfaFLPqWYWrCt2QAdikA2TRi+zjI8MgfMM6rV6IuzLaBG05w3M9wpM4FMI/xGBP7dT/Vr9vn2vTkGb7Z9CAolRq7lot/DUWYFlN/1YeO0lagzMjDCrGoRBHGsORdUC1+oNWx4EJGVovPj5Bzr5gH9MqltZYTwd9T4RLxM2FAVPTzub
+    package:
+      name: sftp-to-s3
+      version: 9ab8711
