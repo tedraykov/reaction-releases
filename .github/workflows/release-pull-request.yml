@@ -1,0 +1,48 @@
+name: Release Pull Request
+on:
+  workflow_dispatch:
+    inputs:
+      app:
+        description: 'Which deployment to create a release for'
+        required: true
+        default: 'storefront'
+        type: choice
+        options:
+          - storefront
+          - reaction-core
+      environment:
+        description: 'Environment to run tests against'
+        type: choice
+        required: true
+        default: 'staging'
+        options:
+          - staging
+          - production
+      tag:
+        description: 'The docker image tag or the S3 bucket tag of the release'
+        required: true
+        type: string
+
+jobs:
+  release-pull-request:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Update release tags
+        run: |
+          APP=${{ github.event.inputs.app }}
+          echo APP=${APP^} >> $GITHUB_ENV
+          ENV=${{ github.event.inputs.environment }}
+          echo ENV=${ENV^} >> $GITHUB_ENV
+          if [ ${{ github.event.inputs.app }} = "storefront" ]; then
+            ./bin/update-storefront.sh ${{ github.event.inputs.environment }} ${{ github.event.inputs.tag }}
+          elif [ ${{ github.event.inputs.app }} = "reaction-core" ]; then
+            ./bin/update-reaction-core.sh ${{ github.event.inputs.environment }} ${{ github.event.inputs.tag }}
+          fi
+      - uses: peter-evans/create-pull-request@v5
+        with:
+          title: '[${{ env.ENV }}] Release ${{ env.APP }} ${{ github.event.inputs.tag }}'
+          commit-message: 'gitops(${{ github.event.inputs.environment}}): Update ${{ github.event.inputs.app }} to ${{ github.event.inputs.tag }}'
+          branch: 'gitops/${{ github.event.inputs.environment }}/${{ github.event.inputs.app }}-${{ github.event.inputs.tag }}'
+          delete-branch: true
+          token: ${{ secrets.ROBERTS50_GITHUB_PAT }}
