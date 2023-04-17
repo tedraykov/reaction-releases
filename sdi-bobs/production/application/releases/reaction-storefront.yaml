@@ -41,9 +41,6 @@ spec:
         payPal: a29cb5cd-9236-4f48-a3ce-ef5a094c331c
       identityServiceUrl: http://reaction-storefront-identity:4100
       mapboxToken: pk.eyJ1IjoianBoaWxvIiwiYSI6ImNqeHFlaG1kaDAwNTUzaXA1NmVmbmJpMDEifQ.VCyMGmTZGRtZo_vUrXEutA
-      merchstackApi: https://mountainsports.merchstack.io
-      merchstackEnvironment: production
-      merchstackStoreId: c1593167-dbbc-49bc-9740-bc303149733c
       oauth2:
         authUrl: https://auth.bobstores.com/oauth2/auth
         clientId: storefront-bobs-production
@@ -55,7 +52,6 @@ spec:
         mode: production
         rdfUrl: https://rdf.radial.com/rdf/service/scripts?clientIdentifier=BOBSUS
       reactionVersionThree: "true"
-      searchExperience: merchstack
       segmentAnalytics:
         enabled: true
         writeKey: eUneJGrllfMElXRQnrIzBI8L96p81cfu
@@ -76,7 +72,7 @@ spec:
       max: 10
     image:
       repository: 816897914983.dkr.ecr.us-east-1.amazonaws.com/reaction-storefront-bobs
-      tag: bc894de
+      tag: 9f4e62c
     ingress:
       hosts:
         - host: www.bobstores.com
