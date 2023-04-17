@@ -45,4 +45,3 @@ jobs:
           commit-message: 'gitops(${{ github.event.inputs.environment}}): Update ${{ github.event.inputs.app }} to ${{ github.event.inputs.tag }}'
           branch: 'gitops/${{ github.event.inputs.environment }}/${{ github.event.inputs.app }}-${{ github.event.inputs.tag }}'
           delete-branch: true
-          token: ${{ secrets.ROBERTS50_GITHUB_PAT }}
