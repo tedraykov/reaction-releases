@@ -16,6 +16,7 @@ spec:
     environment:
       KAFKA_PARTITIONS: 3
       REACTION_LOG_LEVEL: debug
+      BUCKET_FEEDS_ORDER_STATUS_IMPORT: sdi-ems-staging-rom-order-status-import
     package:
       name: reaction-etl-rom-order-status-import
       version: 12848c6
