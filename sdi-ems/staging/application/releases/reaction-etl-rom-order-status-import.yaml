@@ -18,4 +18,4 @@ spec:
       REACTION_LOG_LEVEL: debug
     package:
       name: reaction-etl-rom-order-status-import
-      version: bf7c5ce
+      version: 12848c6
