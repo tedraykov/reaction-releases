@@ -14,12 +14,8 @@ spec:
     annotations:
       iam.amazonaws.com/role: arn:aws:iam::551763058466:role/sdi-ems-staging-serverless-deploy
     environment:
-      S3_BUCKET_NAME: roberts50-ems-staging-rom-order-status
-      JAEGER_ENDPOINT: http://jaeger-collector.staging.k8s.ems-test.io/api/traces
-      SKIP_INVOCATION: true
-      REACTION_LOG_LEVEL: INFO
-    secretRefs:
-      - mongodb
+      KAFKA_PARTITIONS: 3
+      REACTION_LOG_LEVEL: debug
     package:
       name: reaction-etl-rom-order-status-import
-      version: 658a253
+      version: bf7c5ce
