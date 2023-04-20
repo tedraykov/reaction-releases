@@ -20,7 +20,7 @@ spec:
       cartExpirySeconds: 1296000
       cartReferenceIdPrefix: 66
       cloudinaryCloudName: eastern
-      constantPublisherMode: true
+      constantPublisherMode: false
       constantPublisherPauseSeconds: 300
       etcdUrl: http://etcd.ems-production.k8s.frasers.io:2379
       healthchecksEnabled: false
@@ -60,4 +60,4 @@ spec:
       storeUrl: https://www.ems.com
     image:
       repository: 816897914983.dkr.ecr.us-east-1.amazonaws.com/reaction-core
-      tag: 'fae1791'
+      tag: da5fea9
