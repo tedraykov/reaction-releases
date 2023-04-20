@@ -20,7 +20,7 @@ spec:
       cartExpirySeconds: 1296000
       cartReferenceIdPrefix: 66
       cloudinaryCloudName: eastern
-      constantPublisherMode: false
+      constantPublisherMode: true
       constantPublisherPauseSeconds: 300
       etcdUrl: http://etcd.ems-production.k8s.frasers.io:2379
       healthchecksEnabled: false
