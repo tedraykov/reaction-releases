@@ -12,11 +12,11 @@ spec:
   helmVersion: v3
   values:
     annotations:
-      iam.amazonaws.com/role: arn:aws:iam::551763058466:role/sdi-ems-staging-serverless-deploy
+      iam.amazonaws.com/role: arn:aws:iam::225761155017:role/sdi-bobs-staging-serverless-deploy
     environment:
       REACTION_LOG_LEVEL: debug
-      RADIAL_CATALOG_ID: "283"
-      RADIAL_ORDER_PREFIX: "00562"
+      RADIAL_CATALOG_ID: "282"
+      RADIAL_ORDER_PREFIX: "00560"
     package:
       name: reaction-etl-rom-order-status-import
       version: 0984c15
