@@ -14,6 +14,7 @@ spec:
     annotations:
       iam.amazonaws.com/role: arn:aws:iam::225761155017:role/sdi-bobs-staging-serverless-deploy
     environment:
+      KAFKA_PARTITIONS: 3
       REACTION_LOG_LEVEL: debug
       RADIAL_CATALOG_ID: "282"
       RADIAL_ORDER_PREFIX: "00560"
