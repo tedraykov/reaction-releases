@@ -2,7 +2,7 @@ name: Release Pull Request
 on:
   workflow_dispatch:
     inputs:
-      app:
+      deployment:
         description: 'Which deployment to create a release for'
         required: true
         default: 'storefront'
@@ -10,8 +10,10 @@ on:
         options:
           - storefront
           - reaction-core
+          - reaction-etl-rom-order-status-import
+          - reaction-sftp-to-s3-order-status
       environment:
-        description: 'Environment to run tests against'
+        description: 'Target environment'
         type: choice
         required: true
         default: 'staging'
@@ -19,7 +21,7 @@ on:
           - staging
           - production
       tag:
-        description: 'The docker image tag or the S3 bucket tag of the release'
+        description: 'The release tag for the deployment'
         required: true
         type: string
 
@@ -34,11 +36,7 @@ jobs:
           echo APP=${APP^} >> $GITHUB_ENV
           ENV=${{ github.event.inputs.environment }}
           echo ENV=${ENV^} >> $GITHUB_ENV
-          if [ ${{ github.event.inputs.app }} = "storefront" ]; then
-            ./bin/update-storefront.sh ${{ github.event.inputs.environment }} ${{ github.event.inputs.tag }}
-          elif [ ${{ github.event.inputs.app }} = "reaction-core" ]; then
-            ./bin/update-reaction-core.sh ${{ github.event.inputs.environment }} ${{ github.event.inputs.tag }}
-          fi
+          ./bin/update-release.sh ${{github.event.inputs.deployment}} ${{ github.event.inputs.environment }} ${{ github.event.inputs.tag }}
       - uses: peter-evans/create-pull-request@v5
         with:
           title: '[${{ env.ENV }}] Release ${{ env.APP }} ${{ github.event.inputs.tag }}'
