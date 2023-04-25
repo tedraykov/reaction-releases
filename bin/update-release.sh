@@ -25,7 +25,7 @@ stores=("bobs" "ems")
 for store in ${stores[*]} ; do
   if [[ $deployment = "reaction-core" ]]
   then
-  find "sdi-${store}/${stage}/application/releases" -type f -name "reaction-storefront.yaml" -print0 |
+  find "sdi-${store}/${stage}/application/releases" -type f -name "reaction-core*.yaml" -print0 |
     xargs -0 perl -pi -e "s,^\s+tag:.*,      tag: ${new_tag},"
   elif [[ $deployment = "storefront" ]]
   then
