@@ -57,8 +57,8 @@ spec:
         tokenUrl: http://ory-hydra-public:4444/oauth2/token
       radial:
         clientId: BOB2US
-        mode: sandbox
-        rdfUrl: https://tst-rdf.radial.com/rdf/service/scripts?clientIdentifier=BOB2US
+        mode: production
+        rdfUrl: https://rdf.radial.com/rdf/service/scripts?clientIdentifier=BOB2US
       reactionVersionThree: "true"
       searchExperience: merchstack
       segmentAnalytics:

@@ -82,16 +82,13 @@ data:
   METRICS_PORT: {{ required "config.metricsPort is not defined." .Values.config.metricsPort  | quote }}
   CONSTANT_PUBLISHER_MODE: {{ .Values.config.constantPublisherMode | quote }}
   CONSTANT_PUBLISHER_PAUSE_SECONDS: {{ .Values.config.constantPublisherPauseSeconds | quote }}
-  RADIAL_API_URL: {{ required "config.radialApiUrl not defined." .Values.config.radialApiUrl | quote }}
   RADIAL_CATALOG_ID: {{ .Values.config.radialCatalogId | quote }}
   RADIAL_STORE_ID: {{ required "config.radialStoreId not defined." .Values.config.radialStoreId | quote }}
   RADIAL_MODE: {{ required "config.radialMode not defined." .Values.config.radialMode | quote }}
-  RADIAL_TAXES_API_URL: {{ required "config.radialTaxesApiUrl not defined." .Values.config.radialTaxesApiUrl | quote }}
-  KAFKA_TOPIC_RADIAL_ITEM_EXPORT_STATUS: {{ required "config.kafkaTopicRadialItemExportStatus not defined." .Values.config.kafkaTopicRadialItemExportStatus | quote }}
   RADIAL_ITEM_EXPORT_CONSUMER_ENABLED: {{ required "config.radialItemExportConsumerEnabled not defined." .Values.config.radialItemExportConsumerEnabled | quote }}
-  RADIAL_ROM_STORE_ID: {{ .Values.config.radialRomStoreId | quote }}
-  ROM_ORDER_PREFIX: {{ .Values.config.radialRomOrderPrefix | quote }}
-  ROM_CUSTOMER_ID_PREFIX: {{ .Values.config.radialRomCustomerIdPrefix | quote }}
+  RADIAL_ORDER_PREFIX: {{ .Values.config.radialOrderPrefix | quote }}
+  RADIAL_CUSTOMER_ID_PREFIX: {{ .Values.config.radialCustomerIdPrefix | quote }}
+  KAFKA_TOPIC_RADIAL_ITEM_EXPORT_STATUS: {{ required "config.kafkaTopicRadialItemExportStatus not defined." .Values.config.kafkaTopicRadialItemExportStatus | quote }}
   IMPORT_ORDER_STATUS_CONSUMER_ENABLED: {{ required "config.importOrderStatusConsumerEnabled not defined." .Values.config.importOrderStatusConsumerEnabled | quote }}
   PRODUCT_IMPORT_DEFAULT_INVISIBLE: {{ required "config.productImportDefaultInvisible not defined." .Values.config.productImportDefaultInvisible | quote }}
   ALLOW_RESET_CODES_MUTATION: {{ required "config.allowResetCodesMutation not defined." .Values.config.allowResetCodesMutation | quote }}
