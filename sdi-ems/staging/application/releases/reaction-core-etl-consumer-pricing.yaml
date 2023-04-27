@@ -46,6 +46,7 @@ spec:
       reactionAdminPublicAccountRegistrationUrl: https://staging.ems-test.io/signup
       reactionIdentityPublicPasswordResetUrl: https://staging.ems-test.io/reset-password/TOKEN
       reactionIdentityPublicVerifyEmailUrl: https://staging.ems-test.io/account/verify/TOKEN
+      publishProductOnPriceOrInventoryBulkUpdate: false
       rootUrl: https://api-staging.ems-test.io
       segmentAnalytics:
         enabled: true
