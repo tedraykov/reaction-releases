@@ -32,15 +32,13 @@ jobs:
       - uses: actions/checkout@v3
       - name: Update release tags
         run: |
-          APP=${{ github.event.inputs.app }}
-          echo APP=${APP^} >> $GITHUB_ENV
           ENV=${{ github.event.inputs.environment }}
           echo ENV=${ENV^} >> $GITHUB_ENV
           ./bin/update-release.sh ${{github.event.inputs.deployment}} ${{ github.event.inputs.environment }} ${{ github.event.inputs.tag }}
       - uses: peter-evans/create-pull-request@v5
         with:
-          title: '[${{ env.ENV }}] Release ${{ env.APP }} ${{ github.event.inputs.tag }}'
-          commit-message: 'gitops(${{ github.event.inputs.environment}}): Update ${{ github.event.inputs.app }} to ${{ github.event.inputs.tag }}'
-          branch: 'gitops/${{ github.event.inputs.environment }}/${{ github.event.inputs.app }}-${{ github.event.inputs.tag }}'
+          title: '[${{ env.ENV }}] Release ${{ github.event.inputs.deployment }} ${{ github.event.inputs.tag }}'
+          commit-message: 'gitops(${{ github.event.inputs.environment}}): Update ${{ github.event.inputs.deployment }} to ${{ github.event.inputs.tag }}'
+          branch: 'gitops/${{ github.event.inputs.environment }}/${{ github.event.inputs.deployment }}-${{ github.event.inputs.tag }}'
           delete-branch: true
           token: ${{ secrets.ROBERTS50_GITHUB_PAT }}
