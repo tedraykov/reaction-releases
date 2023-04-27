@@ -35,6 +35,7 @@ spec:
       listrakContactFields: "{\"firstName\":5855,\"lastName\":5856,\"source\":5363}"
       pricingConsumerEnabled: true
       productPublisherAutoPublish: false
+      publishProductOnPriceOrInventoryBulkUpdate: false
       radialApiKey: AgAlQ9KZlm2Ya8gzxxWf1d78mPT9FnjXrpZXiry6gO7rJQdtP4xCZ1OJI4nBZgjmmS1GoFHTqcmKeuvGs9eupIKQUzXOyBUCYbT1b3DF4lBPDI/X9iHYYqbNcRRoB5t8IVN3a+8cnGzPy4jC62YiEV9rZTlA5rM/03mJZsxrRET/S0So40MF/yNX2VT1TK5WVDZfYEdtG9+bD4U7xaEdiDROtSBpY+Rnzq/pp7D+LcdWPW7G4XuUwRRIpnLGf3YXM5EqnvqztI6X58cllgfOvdbN0rE+b9z4wurIpjDdmm9D3hCGz6tkNbPVQmU2pw7OpIM6U3MCBhUNdI+CokSZr4xllI9zEAH7i+asipg62AqP7S0zU369u5yNV2MyThRbwcQujue3Z635mzgV6nQnfzeIgtrcJ41NwdGG9mO/aB8ObuTg2Xfxg84SePQ/xnv9PBU1r1nriQ1TThAzNd57sT6CW5288sPp7nUdgXBl+UNBVLH/EVUgiI+BMb1ZeM3kMyMF5Zx65NjvfADnr/P9j8+ZvY7xti40cIPTQtylXXLsfiU617zREUH6WCtNYAaBMtBWM2GFQsR5MO9z57df03y6B3u8yqpN5U5VE0skbVrhs4mvOCGfn/m7E1XW3++VykNPmAyEOdY5dFD3ah4jQqt52/B2NuMxyaDCxpZosiYOrwEiWuylfdU4KMCU5qcqDXYk1u0EtD3bRnwLGf28XHshVU8wNhkBQhrW5jhK7S/Y8Q==
       radialCatalogId: "283"
       radialCustomerIdPrefix: "00515"
@@ -46,7 +47,6 @@ spec:
       reactionAdminPublicAccountRegistrationUrl: https://staging.ems-test.io/signup
       reactionIdentityPublicPasswordResetUrl: https://staging.ems-test.io/reset-password/TOKEN
       reactionIdentityPublicVerifyEmailUrl: https://staging.ems-test.io/account/verify/TOKEN
-      publishProductOnPriceOrInventoryBulkUpdate: false
       rootUrl: https://api-staging.ems-test.io
       segmentAnalytics:
         enabled: true

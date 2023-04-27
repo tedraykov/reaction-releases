@@ -75,6 +75,7 @@ data:
   PRICING_GRAPHQL_URL: {{ required "config.pricingGraphqlUrl is not defined." .Values.config.pricingGraphqlUrl | quote }}
   PRODUCT_CONSUMER_ENABLED: {{ required "config.productConsumerEnabled is not defined." .Values.config.productConsumerEnabled | quote }}
   PRODUCT_PUBLISHER_AUTO_PUBLISH: {{ required "config.productPublisherAutoPublish is not defined." .Values.config.productPublisherAutoPublish | quote }}
+  PUBLISH_PRODUCT_ON_PRICE_OR_INVENTORY_BULK_UPDATE: {{ .Values.config.publishProductOnPriceOrInventoryBulkUpdate | quote }}
   TAXES_CONSUMER_ENABLED: {{ required "config.taxesConsumerEnabled is not defined." .Values.config.taxesConsumerEnabled  | quote }}
   METRICS_ENABLED: {{ required "config.metricsEnabled is not defined." .Values.config.metricsEnabled  | quote }}
   METRICS_HOST: {{ required "config.metricsHost is not defined." .Values.config.metricsHost  | quote }}
