@@ -14,11 +14,12 @@ spec:
     annotations:
       iam.amazonaws.com/role: arn:aws:iam::551763058466:role/sdi-ems-staging-serverless-deploy
     environment:
+      BRAND_NAME: "EMS Brand"
+      BRAND_DESCRIPTION: EMS
       CATALOG_ID: "283"
       CLIENT_ID: EMSNA
       DEPT_NUMBER: "516"
-      BRAND_NAME: "EMS Brand"
-      BRAND_DESCRIPTION: EMS
+      KAFKA_TOPIC_RADIAL_ITEM_EXPORT_STATUS: etl.radial-item-export.status.json-gen1
       KAFKA_PARTITIONS: 3
       REACTION_LOG_LEVEL: DEBUG
       SHOP_ID: "66"
@@ -26,4 +27,4 @@ spec:
       - mongodb
     package:
       name: reaction-etl-rom-item-master-export
-      version: a70cd34
+      version: 8382e0b
