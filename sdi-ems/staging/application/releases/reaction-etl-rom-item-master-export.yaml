@@ -22,6 +22,8 @@ spec:
       KAFKA_PARTITIONS: 3
       REACTION_LOG_LEVEL: DEBUG
       SHOP_ID: "66"
+    secretRefs:
+      - mongodb
     package:
       name: reaction-etl-rom-item-master-export
       version: a70cd34
