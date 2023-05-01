@@ -1,0 +1,27 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: reaction-etl-rom-item-master-export
+  namespace: serverless
+spec:
+  releaseName: reaction-etl-rom-item-master-export
+  chart:
+    git: git@github.com:roberts50/reaction-releases.git
+    path: charts/serverless-deploy-v2
+    ref: develop
+  helmVersion: v3
+  values:
+    annotations:
+      iam.amazonaws.com/role: arn:aws:iam::551763058466:role/sdi-ems-staging-serverless-deploy
+    environment:
+      CATALOG_ID: "283"
+      CLIENT_ID: EMSNA
+      DEPT_NUMBER: "516"
+      BRAND_NAME: "EMS Brand"
+      BRAND_DESCRIPTION: EMS
+      KAFKA_PARTITIONS: 3
+      REACTION_LOG_LEVEL: DEBUG
+      SHOP_ID: "66"
+    package:
+      name: reaction-etl-rom-item-master-export
+      version: 70e7168
