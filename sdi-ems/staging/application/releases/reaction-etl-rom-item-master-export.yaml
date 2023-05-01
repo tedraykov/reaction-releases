@@ -24,4 +24,4 @@ spec:
       SHOP_ID: "66"
     package:
       name: reaction-etl-rom-item-master-export
-      version: 70e7168
+      version: a70cd34
