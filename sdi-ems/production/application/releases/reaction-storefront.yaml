@@ -53,9 +53,9 @@ spec:
         redirectUrl: https://www.ems.com/callback
         tokenUrl: http://ory-hydra-public:4444/oauth2/token
       radial:
-        clientId: EMSUS
+        clientId: EMS2US
         mode: production
-        rdfUrl: https://rdf.radial.com/rdf/service/scripts?clientIdentifier=EMSUS
+        rdfUrl: https://rdf.radial.com/rdf/service/scripts?clientIdentifier=EMS2US
       reactionVersionThree: "true"
       searchExperience: merchstack
       segmentAnalytics:

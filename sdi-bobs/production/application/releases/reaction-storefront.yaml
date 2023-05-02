@@ -51,9 +51,9 @@ spec:
         redirectUrl: https://www.bobstores.com/callback
         tokenUrl: http://ory-hydra-public:4444/oauth2/token
       radial:
-        clientId: BOBSUS
+        clientId: BOB2SUS
         mode: production
-        rdfUrl: https://rdf.radial.com/rdf/service/scripts?clientIdentifier=BOBSUS
+        rdfUrl: https://rdf.radial.com/rdf/service/scripts?clientIdentifier=BOB2US
       reactionVersionThree: "true"
       searchExperience: merchstack
       segmentAnalytics:
