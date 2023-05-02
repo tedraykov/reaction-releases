@@ -1,0 +1,30 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: reaction-etl-rom-item-master-export
+  namespace: serverless
+spec:
+  releaseName: reaction-etl-rom-item-master-export
+  chart:
+    git: git@github.com:roberts50/reaction-releases.git
+    path: charts/serverless-deploy-v2
+    ref: develop
+  helmVersion: v3
+  values:
+    annotations:
+      iam.amazonaws.com/role: arn:aws:iam::490759768946:role/sdi-bobs-production-serverless-deploy
+    environment:
+      BRAND_NAME: "Bobs Brand"
+      BRAND_DESCRIPTION: BOBS
+      CATALOG_ID: "282"
+      CLIENT_ID: BOBNA
+      DEPT_NUMBER: "515"
+      KAFKA_TOPIC_RADIAL_ITEM_EXPORT_STATUS: etl.radial-item-export.status.json-gen1
+      KAFKA_PARTITIONS: 3
+      REACTION_LOG_LEVEL: DEBUG
+      SHOP_ID: "44"
+    secretRefs:
+      - mongodb
+    package:
+      name: reaction-etl-rom-item-master-export
+      version: 8382e0b
