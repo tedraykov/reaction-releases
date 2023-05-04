@@ -21,6 +21,7 @@ spec:
       BRAND_DESCRIPTION: BOBS
       KAFKA_PARTITIONS: 3
       REACTION_LOG_LEVEL: DEBUG
+      SKIP_INVOCATION: true
       SHOP_ID: "44"
     package:
       name: reaction-etl-rom-item-master-export

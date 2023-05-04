@@ -22,6 +22,7 @@ spec:
       KAFKA_TOPIC_RADIAL_ITEM_EXPORT_STATUS: etl.radial-item-export.status.json-gen1
       KAFKA_PARTITIONS: 3
       REACTION_LOG_LEVEL: DEBUG
+      SKIP_INVOCATION: true
       SHOP_ID: "66"
     secretRefs:
       - mongodb
