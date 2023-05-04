@@ -1,0 +1,28 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: reaction-etl-upc-export
+  namespace: serverless
+spec:
+  suspend: true
+  releaseName: reaction-etl-upc-export
+  chart:
+    git: git@github.com:sportsdirect/sdi-releases.git
+    path: charts/serverless-deploy
+    ref: develop
+  helmVersion: v3
+  values:
+    annotations:
+      iam.amazonaws.com/role: arn:aws:iam::551763058466:role/sdi-ems-staging-serverless-deploy
+    environment:
+      JAEGER_ENDPOINT: http://jaeger-collector.staging.k8s.ems-test.io/api/traces
+      REACTION_LOG_LEVEL: INFO
+      SITE_CODE: EMS
+      SKIP_INVOCATION: false
+      STORE_UPC_CODE: 729
+      UPC_ATTRIBUTE_NAMES: "epicorUPC,vendorUPC,UPC"
+    secretRefs:
+      - mongodb
+    package:
+      name: reaction-etl-upc-export
+      version: 59a4085
