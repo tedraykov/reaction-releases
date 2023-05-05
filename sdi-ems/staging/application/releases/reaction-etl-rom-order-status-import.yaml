@@ -15,9 +15,9 @@ spec:
       iam.amazonaws.com/role: arn:aws:iam::551763058466:role/sdi-ems-staging-serverless-deploy
     environment:
       KAFKA_PARTITIONS: 3
-      REACTION_LOG_LEVEL: debug
       RADIAL_CATALOG_ID: "283"
       RADIAL_ORDER_PREFIX: "00562"
+      REACTION_LOG_LEVEL: DEBUG
     package:
       name: reaction-etl-rom-order-status-import
-      version: 0984c15
+      version: 5510bef

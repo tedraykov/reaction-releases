@@ -22,4 +22,4 @@ spec:
       SFTP_PASSWORD: AgA9v7pz9Uktm7ioC5UI5bLsb9ivuYipk4uKaPCt0fRUxdHxlYR27ubdtTtW55ADOfouoR5CBafCc5+KFmcmdO9WXqB5miA9yYBjqqunLqtt4t/BXYfkKXqCLu8rpbM6YwnvzttFWSnTkpgYRk+sDyHXbdzWluhRJSo0aeOk4QKEAb3ni7atfBUSxmk9s9yrc3ADQfWdxS0hpVdv0q8XEiPTjjk/WwrjKhPyhnB/YAfJ0e/5trC1MuzrzW+r05hzu7XGHLbe8DHK6d+nkuhJFsqCV+Aw5sDYNFttG5E1bvvCUfiWZxUTwCcTpruphN0OmLxZXybB5iUrJ1tW7xHQAFIIL16PnUTEyVtfsnkHkHtkWInDSnwOdIQTMbuQszoimKeFqxIL0sReII/R5u1N8Ew+MXM/Dmpt76ldRTq6Tvb6Dm68UWo/WHAvWe1bChBNWNBz1BPbVo4QN453hOyzcsCzEQ7QP1czdMQ2xlPBQo+5kU9gRtsOlwen572kn3mfdoMt0mAvzjpgMhxXjFFvMldIPH7LOeZcVBYQYC2wIGElKZM0g5mHhuaXOyNkj/xwzuCpfaosJM/7ZnhydPt5/8ZI+HbZXVrUkCZWnB6TZylOJF+Z/L5L2oTNBmjFWaKICXpZpmQY0Jyt3eTQcRLVSz7kvrww6AghqcdPdAf2ENV1/gfzOFLUkimQpbONicw/tclOcT607eSZbg==
     package:
       name: reaction-s3-to-sftp-item-master
-      version: 30ea4a1
+      version: 8382e0b
