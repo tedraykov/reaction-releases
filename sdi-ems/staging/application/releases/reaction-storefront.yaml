@@ -58,7 +58,7 @@ spec:
         tokenUrl: http://ory-hydra-public:4444/oauth2/token
       radial:
         clientId: EMS2US
-        mode: production
+        mode: sandbox
         rdfUrl: https://rdf.radial.com/rdf/service/scripts?clientIdentifier=EMS2US
       reactionVersionThree: "true"
       searchExperience: merchstack
