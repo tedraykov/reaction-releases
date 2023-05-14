@@ -39,6 +39,7 @@ spec:
       radialApiKey: AgBUQHvU7rCHKBHXNDZWKulFRX8YaUH9fJUrt6EZgTuhUVaeLr08KGfWb3bHEx0wqMw83P1hCpK7p9iGadhozqn4PjIli79bxKMC8oIM04IQXMRnt5au16McG4k6u26NPv4CatyTxKTnMWEhyzxLBo9iwka0uINC06hkzp/MgMSZ+O1pOqbpK4HgJhAw1qkMkcHxTlh683KejsRuLokVRGdrj0CcCXeMLgTNDNAF0x2XuRixzpW8oEoULzps11OsYC1YAjrfcSynpjbD0GTMNA+j7a3aWy7EPiWESpZ9K4QNDhV1x6DWZ6TKQSmpHJ42y3dvRtKvbOifT9yYHHsW5bYK8+qJRBbACl4Pz/m98zNu8tAisln+Y/6QEIcq/+fav8St9m4tKEwJKZ5MyH3V7+rYzoORPi+uwl9NXtdlqT8o2/MdVtG9ugOgbT6DSm/eFONhu2gxByjl5nFmAnrhsiuV8TxaSrb/aNHPw6iuyXsEdw1DduV5y2tZDhiKLYfkbe86DF5UcZltX+2MWysLbKzNdzdZA724YMMZNlqd9epiLpa0vONAdjcZGYCIS3bZvtu5Ty4Ig2Mo4HIOsLwuJ/e1kbYGVQINKcZi3/E63nEp0oGC3Hk66p+rg3Z1wD66Jk4U2twPlDA4JTwO3V5XXWIBzBROSh7tq9+zSzFdlzplUwWKBn5//k0Nzd6Ffcftib0IUbCD6N35kFiabiSf2968bi4tCxxsN3y5Th4Cdy3N7GXz/xnkv9axffpFqnz4tlM=
       radialCatalogId: "283"
       radialCustomerIdPrefix: "00515"
+      radialItemExportConsumerEnabled: true
       radialMode: sandbox
       radialOrderPrefix: "00562"
       radialPassword: AgB34BtXm7epHLzX2L1wC7mwbIoFwVqZOpY9xyZ8KGiMfUoVSBWlfbsimwn6KRrIn6wmQ5Btfx8lFrZKLQGXdh9muXvCcMPznLb4ljfQKqax4szr9KF2JvVSPg02ZukXl6ncLUkA6hMwPc74ugjzrsNHkBta4CW+Q2QCGR3Tnqr6nXsHnORlAGQhgz76PKm68v0aOdr0rzJ5tz/u+YKp43xQ007TTs9WkuEK6fHpMqxQu6cdKROvVMXuLsGEo3XXenoreTwotJcCu0JkBD3UK3QbhOJpVXqsiyVtv3K9emHBgmJAfe6hXpvRnXLiq4CBasD7CI/2FrAQMS/iKkMgsWVQ+OWrq+u2p2nzNsYzgsLP0iMPVEsLTMeCY3nFBF2iggr5H9O6OBuZg3VSPCYS7YYQNl/HTT+OuMUvbRsyd7sN5jD4FgxfzT8ue3Cn+Ogwq/U9L1sXh9jJxgoaYuqftAi6ZrYlAMqN1Tw3QawuDfKSV8rxCMQk8iwp7PGz4SE1lT7As0ZIGVI4N8HdOMCbNiHiK8/abXjnSaUZxIv9WCfaDlr+8LhhAKzAIe76YI1UzMmhzYR86jJooPIENPvs1x6ipDRN+C5DNX7JL359tw7OdwWwTI5U2OAmtnLTBu32STINFks5EOBj+Uvv68dqEBiVc2ma7g9Wvg9ZPRBTsgRSstTJEKM5dyuJ4TSuw2jv1pWioBTqkVk=
@@ -65,4 +66,4 @@ spec:
       taxesConsumerEnabled: true
     image:
       repository: 816897914983.dkr.ecr.us-east-1.amazonaws.com/reaction-core
-      tag: 491250d
+      tag: be5f5e6
