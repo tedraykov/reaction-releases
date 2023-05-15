@@ -27,4 +27,4 @@ spec:
       - mongodb
     package:
       name: reaction-etl-rom-item-master-export
-      version: 8382e0b
+      version: b9a8f15

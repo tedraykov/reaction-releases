@@ -20,4 +20,4 @@ spec:
       RADIAL_ORDER_PREFIX: "00560"
     package:
       name: reaction-etl-rom-order-status-import
-      version: 0984c15
+      version: 5510bef
