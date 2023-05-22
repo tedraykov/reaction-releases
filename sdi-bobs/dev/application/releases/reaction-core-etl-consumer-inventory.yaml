@@ -1,0 +1,68 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: reaction-core-etl-consumer-inventory
+  namespace: dev
+spec:
+  rollback:
+    enable: true
+    disableHooks: true
+    timeout: 300
+    wait: true
+  chart:
+    git: git@github.com:frasersgroup/reaction-releases.git
+    path: charts/reaction-core
+    ref: develop
+  helmVersion: v3
+  releaseName: reaction-core-etl-consumer-inventory
+  values:
+    config:
+      brontoAccessToken: AgBqmGjpuzVahjcxkw4bI53CP/A9+h3FTDTN9lwG5T1pSLCupht+7gKaiAz91qvo+sXSqyuHmTAk4WdGZnqyJqYkdKG06Er6Cw8X8YxGxCqhYlruTr0E+ZyHYpdj1h3NqYob1WTCJvIvolfOeKErahjTYrGlaBKu1UjUIn7PMlj7eBOfWAWXvFwspcGO7yuK7Q/LXV3sj4P2yFOZKOZoNxOW3+CxBxGoA9EiOgD5+QVQfAMLgt7ZPTeDUudasSWzFuZCJ61vVrWs3lsPHNoxHYUYcRLW8fcV5Rmp4FsKt2z53O2qPVR7MqXsmiMkIlP5zFd0G70Zx+cXXDc7R9VY4P+fgbZomzpzjYrJsif6PETAEwT8cVKcBQGVtGXxs3S5ypeTyijqrj028wYwBfoH9ossPMTXajBEwsVI2ubZ7ElhgDAUHxPzo0PND3DHw8G26C5ath8QfaIHGJ/G3CuaC3wk3sQfYjHlBptvze8iTrtw4w+OBHH52dQ/xYrPukicgDy/Y5DDk+AGiwI/LSJgZ+AWB3/JjWpn1GhusR7uDQ9re4L+KEweB8c+wij2QxQ3MDri815Rml32267Qmbw2UmJqHQXa+gQeO7+iYnthm/k98rqSMVt1ORN9kcas9PABF98B2Ebtk/EssEcWCNxCkajXC4RYzs9DDOdBn9KbJjciygbmG63+WCmfu9O8hW8FoAUa+ryqAERcr2x/7cBjxUjLnVXF8VArZpUFDFBcK8JGhe92qYM=
+      brontoFromName: "Bobs Stores"
+      brontoMessageName: BOBS_RC_TRIGGERED_EMAILS
+      brontoNewsletterListId: 0bca03eb00000000000000000000000dd510
+      brontoReplyToEmail: "admin@bobs-test.io"
+      cartExpirySeconds: 1296000
+      cartReferenceIdPrefix: 44
+      cloudinaryCloudName: bobstores-dev
+      etcdUrl: http://etcd-application.internal.staging.k8s.bobs-test.io:2379
+      initialImport: true
+      jaegerEndpoint: http://jaeger-collector.staging.k8s.bobs-test.io:14268/api/traces
+      kafkaPartitionsEtlShippableInventoryStatus: 3
+      kafkaTopicEtlShippableInventoryStream: 'etl.shippable-inventory.inventory-data.json-gen2'
+      kafkaTopicEtlShippableInventoryStatus: 'etl.shippable-inventory.inventory-status.json-gen2'
+      listrakEnabled: true
+      listrakClientId: AgB5ShXeT7op1+j9bYLG6QteZRWTpCS6UJFfzLobmIDX3SJIwvWDldRaQB9F7UuwZffD09MWm4RDNmj5ReR1viXDI5KUJpyVqP+nhV2rJ7I2pK6yFQ99VYH/2+jOX04YEfz7u9yJ+mc3DUvuJT+RtlA95YKcSBoXymKmoFQO56KkWEoDW2cNAgpMi+c9igBSGhCqeJgk47NQV3OJexJdKwTDWOAkXhtdk983pBTB8kDid46kPbybD5N0xkmU7ovljcsqnkRtlVAnafcVcPUs49kz3rEV5FBVWxTavBNhpmw0y+zWofvMtopj/cfTs51h8TXmYto+X8WzrIzWVEDI42FSSC0YceutRmxByuXugmmWwx+ho4FLMS7mKFFvhJS2oQ6g4Bt/BgufxCG5vNlBmxCh+PKBPhYUy3FCf3JeewBkLRSLxcxa53gZTcfM03RfWRkkv0GuJR+AWz8UNw0tuMd8zrnyh2nz1hWh8gEL2jPXMwi/8/6Aw4HwPcHAie2ED8AbkteAkCyq8zcsKG+ntuFzo4HQNrhZg09oaC6/xUXUfqQlh637wqUMZrDvII5IkQuNaVTOLTVlWZsVDnzA1ianzESWuGlEPDgZEPL74NqrO9jk2+z7aDBBKmV+ZU91JIC+CtyVS1hkmRN3KTOfLk/AgfjcT0W61Q5chWtU9btVviVFzKEwQm4dB1XY0U+xZE9YAUcP/Z/dTu4Wly/6gAtn2aXpig==
+      listrakClientSecret: AgB7bS/E3yl494YXKrlhjDCXpfhmRxpr/Nm5XntU3fVQIad9d6obHiZ/4fsefK/PGjiWgr/bTOCVt2SqXvlQYa/JDjtyVMWs80SZ2m6uweYi2jWc1eLTV+hJ+vR56ppyiAivRTCgcExagCK67T+hc9xwjVCY7SUhoJi3tDtI4xL9ko2hCIvkMHMUO9kJKF1MsIMReH9y1UFDvbh+Dg5vlRWEbyOt1LD4DQT/QSKhJWafeQe8z5x1fatXdRtvbbAeCbn9J+x/XZq616jf5eznTGb+jgx6bHrTOijgxoN8UxV/wUiqCpFNNEJQigppwNJUrwMhzlfuVoVGHWIgTvfXS779SFWhm/8Ep6prUsehYgoaMDEGywISQZ7x8lFOBC7BhFwKlQHkTruWbom/30APoflyYVcjk+dQomljEGKnD1HO8sSqw0vafugRWvndvAkPB5JG+/Q9BMbNyXrleyZZ78VEVHXlRAnyEQt496ctrUQiB+uZZSvs4demEY6nk8Evb7BhBMvpsKjOva2gia0qSI8lVRXPUVB6rCCMPcr894G8OELnBY5pBr1cEdg0Dm1HtW1ZplxUS///41zx9JjwVPg1f9asuK9SV25AMSausvn8pYHm3Rb++Yjh/pcc2MhnGfOqnrRTxRDObKSw+eErH2pD8WamcfEJdQCUILOUQ2iZy95NNTue0751jmF9pgyObJIIeb5Ew7K4KfSabsWLJsk6PdZbjw2TkG7S88NkdvgCC6vSj6U9EipOimyp
+      listrakTemplateMessageId: "11313859"
+      listrakTransactionListId: "345281"
+      listrakTransactionFields: "{\"subject\":6687,\"html\":6688}"
+      listrakMasterListId: "345198"
+      listrakContactFields: "{\"firstName\":5791,\"lastName\":5792,\"source\":5369}"
+      productPublisherAutoPublish: false
+      radialApiKey: AgBdqDWwxu3AcUJn+fVMt4RzFJJcrJJfcU519uwhaVJ+BqWtsEPMTqiLY+EVC1f3Dt3uI8k7JUW7t3XSsy4yEDedyUPOuT6g3llFyVpy1EjEpQ5/NqO2KCSDaHw9x7fv6/+C/5geMLEQPcEb+zMqdHsY5wL+5uivt1KiyVCWHFdrAHKr6cEpCZFwqHRY0YpbHTwyRLCDcQ81ahodwYf43tG0OnUkt1XbjS/98ZHEOElVVGY+VQX7VN41XoKMW5QQG/+oFHh70bqx74wlAPmP3zGiu3iVfgNyurw2ErYbsPYiJf/QzPpZ1HC2w1bmEHaNTASV9rBLn++OsFepicrmwbbN/RafmtBWCUoK7Q+gqT9mUH0fc7+x49ftDfMKlmFQRytcRqkX1YrcTG5YgM2soGRnXoGHMhzsWRSQWUwAgpPcO1l0Ny/vpo4cRWxg+7MDwAhVPPVLx1yuh2TWHVK3wZDvToiz3+0sAmD5QtZsPcR171Oa1AmC/YxG1zK59Xkjv8Y996N2bPIsixgSCJmt9BpgmFgdhoUMDC+M7LY0hekqqUaocPQ+S0B5Kttws9Wkb11S3burqOPKX+4w+tlLipXE3KzJfyN844U472VIYRjoIASGAFzgFaulA8TMsMQCPTuAYUYcFcnDDC4MSSOnGhaI9rvDPrOcSspF3Omslr5M6D/FT7G385FlluoKSw+XybgGRLcSzzeg9ugS3XrumbMaLXfQIW55wx2ZkT1HmPGWyw==
+      radialCatalogId: "282"
+      radialCustomerIdPrefix: "00513"
+      radialMode: production
+      radialOrderPrefix: "00560"
+      radialPassword: AgCYpPq4r6bm1knWRTg7wzR99V2IBF/GRznAtHNqhunO5klo7Yng3knJcyUfbvTf73GA+EyQyePaVAJcoBK/6DUi6RdwThtXxwtAc1bL2rw/CDbT3BDyQi2XnVm/ak8oc/9QeobfIL8wNzqlnmFLC6XfgtecnLkxluTwUre5AjqkL6RrfpMdcw5W4aE2aK5yHUKQIPb9hXqs8p+iSNMEmkC0TLq6YXoGCrzAa8ISe5dJ3NfwaS6q5a9OPG1sJfGEWzG3LtZW3qcjex/W3yv8PrcRBWSWsii1oWL6LPkPLFMGnOFWpy2d/bdD3MN1MdH6J2GuQe985ASqX5/oH/Ou0VpTZUUsXXRlL56O9maup1T4HlaZpjrhF+RkWumfx1JvjMTyqvSlFVcGiy6iLTrqDIcfJPowhL1ZgJDvHhHRIrpd2TxZPF8m29rI6kB57lmmhRCJW5ZbLJZno2GclorT8MnVvS/JHomqrl1kHXw8zT7T6qHsCW27SqWflrk66f3Ra1Le2lRSY0s1iByt5irxTfcPAnG7uyR76E6VGnAkRHzIDUgGpBfcy/WQtJeaZgD+wVC1DgQPGt6H8ReoUy0wliqLMh8yw89DAk4XPVvNTaQKcB6THEyDaMMue3/CDBq6BH+eif39xBnKtOUGf8MQUuiaN1tnKfekplezMSRYnrom3wt8Ev8hPLLTQHNkTKC7Iu46/at8xwal
+      radialStoreId: BOB2US
+      radialUsername: AgBlKkeEYckAZ0LJwc7RRbMRG8OrYmTUwlGhNSow5yYMv+6vQ3p/guIadlmum1gskedNl5hCw27LLRN+dTXwC0I9JLcMa86HWgtHzNL2pB/z8i7fu9ds/PjvWJq5QFPntw2USb/Vmuon8uI1aeilzfiYxNeIjnaVc1UIc+VDS1V9+mOpwY7CxEXyd8qO265Y5CodGZvRZ7EVsx55x3MKqbs4V8DWOxmeiWeJl7kCy4V+fcHK/rAVUMqkRlT8OcW8xs2ekYZVqvl8Hds09UfAsopOGqddeR0chtXeHcmipvIabIeAGFokTW825l7ml6M4DtfYfrfD2TU5Ynu5OIz483SpEBmkq6B15f2NGb6/o8O/mIzPPCENvu9g5z2R8qYhY4NsXuUso/MCXZsJPnGL7iehxsiEIXeJ87RyLWfKlvAIaCC975AaNu65z+E8vKvgqT2+pI5ZqiJsE6j8fpncjVynKJzv++xrefmjcjanNfSbH1OOVMYP2q9aqQxySQ6gM15AkT/QPwteMszkWiaJDk/E3kTAdZ0RVU6k/QaLFWTJ+JybzL9JU3YtXnrtivQaFF092NsI/27YlMccklyUoRFIAiBJHHdsl8PBfwJEBSyzSSol2pBpR2gj6/wIS2pKjuv1On2XpjrE8M9zzjzs66OmT0Q5LtQ4UEfv4dUwWhJsMCH7PGC7KI/fEgXfoux3gRUlGiixewM=
+      reactionAdminPublicAccountRegistrationUrl: https://staging.bobs-test.io/signup
+      reactionIdentityPublicPasswordResetUrl: https://staging.bobs-test.io/reset-password/TOKEN
+      reactionIdentityPublicVerifyEmailUrl: https://staging.bobs-test.io/account/verify/TOKEN
+      rootUrl: https://api-staging.bobs-test.io
+      segmentAnalytics:
+        enabled: true
+        writeKey: D2kMsDSZAWGPcc0rAFygcsQNbW5YQDnk
+        userIdFieldName: bobs_stores_id
+      sentry:
+        enabled: true
+        dsn: https://429763a4403f427f943bc3bc0db32d3b@o234104.ingest.sentry.io/5777463
+        environment: staging
+      siteCode: BOBS
+      shippableInventoryConsumerEnabled: true
+      storeUrl: https://staging.bobs-test.io
+    image:
+      repository: 816897914983.dkr.ecr.us-east-1.amazonaws.com/reaction-core
+      tag: af85a1e

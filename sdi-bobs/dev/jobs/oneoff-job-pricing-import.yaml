@@ -1,0 +1,40 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: oneoff-job-pricing-import
+  namespace: dev
+  annotations:
+    iam.amazonaws.com/role: arn:aws:iam::225761155017:role/sdi-bobs-staging-reaction-job-pricing-import
+spec:
+  restartPolicy: Never
+  imagePullSecrets:
+    - name: reaction-docker-hub
+  containers:
+  - name: runner
+    image: sportsdirect/reaction-etl-pricing-import:3dbc7ba0738f05194b3562ac45180c45b4a153bb
+    # Make sure to add both a `bucket` argument and a `filename` argument to `run.js` before running
+    command:
+      - node
+      - --max-old-space-size=4096
+      - bin/run.js
+      - sdi-bobs-staging-feeds-pricing
+      - null
+    envFrom:
+      - secretRef:
+          name: oneoffjobs
+    # This provides: MONGO_HOST, MONGO_DB, GRAFANA_AUTH_TOKEN, CLOUDFLARE_CLIENT_ID, CLOUDFLARE_CLIENT_SECRET
+    env:
+      - name: PRICING_GRAPHQL_URL
+        value: "https://pe-staging.bobs-test.io/graphql"
+      - name: GRAFANA_API
+        value: "https://grafana-staging.bobs-test.io/api"
+      - name: REACTION_LOG_LEVEL
+        value: INFO
+    imagePullPolicy: Always
+    resources:
+      limits:
+        cpu: 1
+        memory: "4096M"
+      requests:
+        cpu: 1
+        memory: "4096M"

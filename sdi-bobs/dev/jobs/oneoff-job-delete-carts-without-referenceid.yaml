@@ -1,0 +1,33 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: oneoffjob-delete-carts-without-referenceid
+  namespace: dev
+  labels:
+    app: oneoffjob-delete-carts-without-referenceid
+  annotations:
+spec:
+  restartPolicy: Never
+  containers:
+    - name: runner
+      image: 816897914983.dkr.ecr.us-east-1.amazonaws.com/reaction-one-off-tools:24f47b9
+      imagePullPolicy: Always
+      command:
+        - node
+        - --max-old-space-size=8192
+        - /opt/reaction-one-off-tools/remove-carts-without-referenceid/main.js
+      envFrom:
+        - configMapRef:
+            name: reaction-core-worker
+      env:
+        - name: MONGO_URL
+          valueFrom:
+            secretKeyRef:
+              name: reaction-core-worker
+              key: MONGO_URL
+        - name: REACTION_LOG_LEVEL
+          value: DEBUG
+      resources:
+        requests:
+          cpu: 2
+          memory: "8Gi"

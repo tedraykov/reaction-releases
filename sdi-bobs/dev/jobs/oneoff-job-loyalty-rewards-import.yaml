@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: oneoff-job-loyalty-rewards-import
+  namespace: dev
+  annotations:
+    iam.amazonaws.com/role: arn:aws:iam::225761155017:role/sdi-bobs-staging-reaction-job-loyalty-rewards-import
+spec:
+  restartPolicy: Never
+  imagePullSecrets:
+    - name: reaction-docker-hub
+  containers:
+  - name: runner
+    image: sportsdirect/reaction-etl-loyalty:latest
+    command: [ "make", "initial-rewards-import" ]
+    # This provides: MONGO_HOST, MONGO_DB, GRAFANA_AUTH_TOKEN, CLOUDFLARE_CLIENT_ID, CLOUDFLARE_CLIENT_SECRET
+    envFrom:
+      - secretRef:
+          name: oneoffjobs
+    env:
+      - name: BUCKET_NAME
+        value: sdi-bobs-staging-loyalty-rewards-import
+      - name: START_AT
+        value: "0"
+    imagePullPolicy: Always
+    resources:
+      requests:
+        cpu: 2
+        memory: "1028M"

@@ -1,0 +1,15 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: kafka-schema-registry
+  namespace: dev
+spec:
+  releaseName: kafka-schema-registry
+  chart:
+    git: git@github.com:sportsdirect/sdi-releases.git
+    path: charts/cp-schema-registry
+    ref: feature/cp-schema-registry-v6.0.1
+  values:
+    fullnameOverride: kafka-schema-registry
+    kafka:
+      bootstrapServers: "PLAINTEXT://b-1.staging.x225n6.c8.kafka.us-east-1.amazonaws.com:9092,PLAINTEXT://b-2.staging.x225n6.c8.kafka.us-east-1.amazonaws.com:9092,PLAINTEXT://b-3.staging.x225n6.c8.kafka.us-east-1.amazonaws.com:9092"

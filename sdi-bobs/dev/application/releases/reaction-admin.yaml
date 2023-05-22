@@ -1,0 +1,28 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: reaction-admin
+  namespace: dev
+spec:
+  releaseName: reaction-admin
+  chart:
+    git: git@github.com:frasersgroup/reaction-releases.git
+    path: charts/reaction-admin
+    ref: develop
+  helmVersion: v3
+  values:
+    config:
+      oauth2IdpPublicChangePasswordUrl: https://staging.bobs-test.io/account?email=EMAIL&from=FROM
+      oauth2PublicUrl: https://auth-staging.bobs-test.io
+      publicGraphqlApiUrlHttp: https://api-staging.bobs-test.io/graphql
+      publicFilesBaseUrl: https://api-staging.bobs-test.io
+      publicI18nBaseUrl: https://api-staging.bobs-test.io
+      publicStorefrontHomeUrl: https://staging.bobs-test.io
+      rootUrl: https://admin-staging.bobs-test.io
+    image:
+      tag: "7cb138139"
+    ingress:
+      enabled: true
+      hosts:
+        - host: admin-staging.bobs-test.io
+          paths: ['/']

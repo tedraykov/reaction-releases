@@ -1,0 +1,20 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: reaction-storefront-identity
+  namespace: dev
+spec:
+  releaseName: reaction-storefront-identity
+  chart:
+    git: git@github.com:sportsdirect/sdi-releases.git
+    path: charts/reaction-storefront-identity
+    ref: develop
+  helmVersion: v3
+  values:
+    config:
+      sentry:
+        enabled: true
+        dsn: https://88327defc89a4b7c9af9e8a53cb4ab96@o234104.ingest.sentry.io/5777469
+        environment: staging
+    image:
+      tag: 48251f1

@@ -1,0 +1,26 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: reaction-sftp-to-s3-order-status
+  namespace: serverless
+spec:
+  releaseName: reaction-sftp-to-s3-order-status
+  chart:
+    git: git@github.com:roberts50/reaction-releases.git
+    path: charts/serverless-deploy-v2
+    ref: develop
+  helmVersion: v3
+  values:
+    annotations:
+      iam.amazonaws.com/role: arn:aws:iam::225761155017:role/sdi-bobs-staging-serverless-deploy
+    environment:
+      SFTP_HOST: tst02-xchange.gsipartners.com
+      TARGET: sdi-bobs-staging-feeds-rom-order-status-import
+      RADIAL_STORE_ID: BOB2US
+      REACTION_LOG_LEVEL: debug
+    secrets:
+      SFTP_USERNAME: AgBDNERwFaItZiBimahwS/ItThywW63prMUFOwdDVc443ouJyZuJMFS2OqR4EtC3vYxlZeLffW4ud25yFcgN4qR2AQBFmXzaU+adoSC+Kkg97jphXac1dair/sT98PtA/FSKhVVrjSMi2OJPRrEyqZPinBIMg48NTqESCSbP78fiUbHd+f/AZSedT1RtmZxvbi32UrRF80B5vumivmj16stbPsdHaxM1TOd/+R3wcnjx2DGROkdlbL7rO9fDKdeWwXrjlFrmumE4Hg7daRj+hzx74K3SZvkvdg/no/8mfLDCJX+4YrV6JmTaWIBmcPgNHUq0ItUeh32fMfcvTRHfHkNEAk7kWePg9XttzucEtrxU9k2kV1RjKfzR2T2kJRUi9Hr33g+LKi9SmtPh1oibe1UIbp600Lzs2Og5hxfd7lc2y3ioSfNInZYPrgr/PPgxD9DUUWDVwSWs579hnCmokZY/bmQ3keCID0mai46LDpfFF3dl1sTE4pSKIVjJmhhYn84xqPjA545dzXPTSsvfkSYY4Zmy8x68gWizjJFph4eSbs+uEsWG+K2WnTfM6Tovb9e+TYtpZy6lRWyC4YgEvqilwpvxEKPDaVs3Z20BNNdqyMaHQMtMvJl6cv9DXl01v3cHdFLh5Pt7vTlidMD0Xp5vTz/q+ljzD8PWcrDGXE9QP4lxcTvptlWFKT/1v8LkA4jte2BmQA==
+      SFTP_PASSWORD: AgA9v7pz9Uktm7ioC5UI5bLsb9ivuYipk4uKaPCt0fRUxdHxlYR27ubdtTtW55ADOfouoR5CBafCc5+KFmcmdO9WXqB5miA9yYBjqqunLqtt4t/BXYfkKXqCLu8rpbM6YwnvzttFWSnTkpgYRk+sDyHXbdzWluhRJSo0aeOk4QKEAb3ni7atfBUSxmk9s9yrc3ADQfWdxS0hpVdv0q8XEiPTjjk/WwrjKhPyhnB/YAfJ0e/5trC1MuzrzW+r05hzu7XGHLbe8DHK6d+nkuhJFsqCV+Aw5sDYNFttG5E1bvvCUfiWZxUTwCcTpruphN0OmLxZXybB5iUrJ1tW7xHQAFIIL16PnUTEyVtfsnkHkHtkWInDSnwOdIQTMbuQszoimKeFqxIL0sReII/R5u1N8Ew+MXM/Dmpt76ldRTq6Tvb6Dm68UWo/WHAvWe1bChBNWNBz1BPbVo4QN453hOyzcsCzEQ7QP1czdMQ2xlPBQo+5kU9gRtsOlwen572kn3mfdoMt0mAvzjpgMhxXjFFvMldIPH7LOeZcVBYQYC2wIGElKZM0g5mHhuaXOyNkj/xwzuCpfaosJM/7ZnhydPt5/8ZI+HbZXVrUkCZWnB6TZylOJF+Z/L5L2oTNBmjFWaKICXpZpmQY0Jyt3eTQcRLVSz7kvrww6AghqcdPdAf2ENV1/gfzOFLUkimQpbONicw/tclOcT607eSZbg==
+    package:
+      name: reaction-sftp-to-s3-order-status
+      version: bcf5648

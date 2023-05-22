@@ -1,0 +1,27 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: reaction-etl-import-seo-metadata
+  namespace: serverless
+spec:
+  releaseName: reaction-etl-import-seo-metadata
+  chart:
+    git: git@github.com:sportsdirect/sdi-releases.git
+    path: charts/serverless-deploy
+    ref: develop
+  helmVersion: v3
+  values:
+    annotations:
+      iam.amazonaws.com/role: sdi-bobs-staging-serverless-deploy
+    environment:
+      JAEGER_ENDPOINT: http://jaeger-collector.monitoring.svc.cluster.local:14268/api/traces
+      KAFKA_PARTITIONS: 3
+      KAFKA_TOPIC_IMPORT_SEO_METADATA: etl.import-seo-metadata.seo-metadata.json-gen1
+      REACTION_LOG_FORMAT: json
+      REACTION_LOG_LEVEL: INFO
+      SITE_CODE: BOBS
+      SKIP_INVOCATION: false
+      XLSX_SHEET_NAME: Bobs_SEO
+    package:
+      name: reaction-etl-import-seo-metadata
+      version: 0da0f94

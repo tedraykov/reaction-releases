@@ -1,0 +1,23 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: reaction-etl-rom-order-status-import
+  namespace: serverless
+spec:
+  releaseName: reaction-etl-rom-order-status-import
+  chart:
+    git: git@github.com:roberts50/reaction-releases.git
+    path: charts/serverless-deploy-v2
+    ref: develop
+  helmVersion: v3
+  values:
+    annotations:
+      iam.amazonaws.com/role: arn:aws:iam::225761155017:role/sdi-bobs-staging-serverless-deploy
+    environment:
+      KAFKA_PARTITIONS: 3
+      REACTION_LOG_LEVEL: debug
+      RADIAL_CATALOG_ID: "282"
+      RADIAL_ORDER_PREFIX: "00560"
+    package:
+      name: reaction-etl-rom-order-status-import
+      version: 0984c15

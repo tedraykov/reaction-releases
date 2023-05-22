@@ -1,0 +1,26 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: reaction-etl-image-import
+  namespace: serverless
+spec:
+  releaseName: reaction-etl-image-import
+  chart:
+    git: git@github.com:sportsdirect/sdi-releases.git
+    path: charts/serverless-deploy
+    ref: develop
+  helmVersion: v3
+  values:
+    annotations:
+      iam.amazonaws.com/role: sdi-bobs-staging-serverless-deploy
+    environment:
+      CLOUDINARY_CLOUD_NAME: bobstores-dev
+      JAEGER_ENDPOINT: http://jaeger-collector.monitoring.svc.cluster.local:14268/api/traces
+      REACTION_LOG_LEVEL: INFO
+      SKIP_INVOCATION: false
+    secrets:
+      CLOUDINARY_API_KEY: AgCA6twX4fCzXjJ+QXdjdyLZjsjkVlQTZ64O6AIH5waxG2UsuGliDlE1RgenPGSUFYjaZ2P0R70Dwr42Q62t/MFyb1l1886u92PlQUw9+56Pzacsu3sVUekI7sy0MbRZjBpc8Itn4JBBByaTYGdUPbbKPWypKQztkIThMIaXQSQIt5XpMUTuiYuo0OzQBBnCJd/WEC3QoTSdAW2NYjv4ETRzzFql/8HccXfHwCzROXHDaBvsCqxb1owcIJvCgw4cD63ozDaIdDBSTx15AGvdMUJiI/x4wn9BVzfx9XVb4+8/ZM9SaIcz3AecOpE2DDSspLMmdUi3x4SdrOenueA5V69wVekgs83MS+2Q7h8G8s1x8IHLLmPK5opvEg2RKEOH/+6jg28t440BpqCoIHZCV2Gx3RpmtIyPPl+E26Ol5o8F7xbeJ/dF5cCCMqbou8Fm0SNp/evrFJXPRTuoYRdCrSvGkECT21o+ajS3LfrtdNSZWTBjku0KEtYRtOBJ2jqvk4GdhmIdiF9SeIxvBcrODcT7wFv7xm1hekSfqELyv6aJqZmkllpomLt2GhwC2br0ZV1aYfn47JgndbEBYZDQFcXlm/PfB0D9m4UqQ4tDkgQcSxxP39zoW/mdBX3awuUIcIU8KA9/B4ZxMBR1xTGWlhA+yeNlpBdPCGL3dTcjYfF9uJaaJf0jtYFuvsphM2u7hv4tWZo+lyA5v23Zcsx/I/U=
+      CLOUDINARY_API_SECRET: AgAYQHASJXcIL8Ut3uZh/xkYg1AEwFsnFN4jweltbV/JgDfmgLE7VqOsNe/YRUfUWUL/ruOj/0WNg8uYsuS5uXaG+PzfbWfnJP/8Qd25TlvIcSwNeQZVn0QTdKbu9REWGv1UYd8Tu1IbLIS0F8PTficZ27QiL1GGzzGx6P/WyUMbO+niDYFv9auvnwlJ6tgySgg2SMlGersr8vAH9jKrHOHOko5iim3UcttGPUzZEzxOGRjMqXulATs+Qc1sfpnsmQcLySSj3HWHhme9Zc42gECdwE0CCSqrwrc0gIkkYD3DWa0ffeUwZZICW2V7dS+yWqbNFou/P9gLShekA8QqubjZfnlSA7JtUNYj6TJfDISC7uENTU4Qh9AYvUkoPvwqoZKi28oki5NrYar+tX+wUfZQe0r+eFyrIqDmCs6onx9OuT9Wf25zLG1d2xtiD6MxvcPaZ0VvHrHu/zItLdNJ2ClT2BsSZAo8FDJgW1nRt4dFVB59XJQm8RmHAIFRa4BSa3QUR0HGhb+mNKcT3ohLzCuTDdzQ7gvqBq65jtz9KBmtXIOBKTuq8wNR5P4R14u6zMbo9UzmEbhNoW7+/Eg7GECYyJxtMkQNVxpC2YRoBiqVWOYUlO6d/120WAUD7XG0yP6EdkF6VPCBvde6fjk+2xtgu4ADP1Y7nbgUm9GGFK2WNm9/7kHmoN6xoTZjI8ymE5RAGDyzRkNIpbSvObrGDBp9V4Ybi1c02xMvp5Y=
+    package:
+      name: reaction-etl-image-import
+      version: 46a6927

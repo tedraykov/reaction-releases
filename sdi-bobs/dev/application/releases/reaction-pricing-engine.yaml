@@ -1,0 +1,42 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: reaction-pricing-engine
+  namespace: dev
+spec:
+  releaseName: reaction-pricing-engine
+  chart:
+    git: git@github.com:sportsdirect/sdi-releases.git
+    path: charts/reaction-pricing-engine
+    ref: refactor/external-config
+  values:
+    image:
+      repository: 816897914983.dkr.ecr.us-east-1.amazonaws.com/reaction-pricing-engine
+      tag: 5467ad84a72ae6008e4bc85036e0249919a5a717
+    imagePullSecrets:
+      - name: reaction-docker-hub
+    ingress:
+      enabled: true
+      hosts:
+        - host: pe-staging.bobs-test.io
+          paths: ['/']
+        - host: pe.staging.k8s.bobs-test.io
+          paths: ['/']
+    jmx:
+      image: 816897914983.dkr.ecr.us-east-1.amazonaws.com/jmx-prometheus-exporter
+      imageTag: configurable-via-env
+    config:
+      jvmOpts: "-d64 -Xms2560m -Xmx2560m"
+      autoOffsetReset: "earliest"
+      bufferedRecordsPerPartition: "0"
+      cacheMaxBytesBuffering: "0"
+      debugGraphqlErrors: "1"
+    horizontalPodAutoscaler:
+      enabled: false
+    resources:
+      requests:
+        memory: 4Gi
+        cpu: 1000m
+      limits:
+        memory: 4Gi
+        cpu: 1000m
