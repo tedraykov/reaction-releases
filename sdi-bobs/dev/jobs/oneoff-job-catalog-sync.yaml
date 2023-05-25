@@ -6,7 +6,7 @@ metadata:
   labels:
     app: oneoff-job-catalog-sync
   annotations:
-    iam.amazonaws.com/role: arn:aws:iam::225761155017:role/sdi-bobs-staging-reaction-job-catalog-sync
+    iam.amazonaws.com/role: arn:aws:iam::539061729745:role/sdi-bobs-dev-reaction-job-catalog-sync
 spec:
   restartPolicy: Never
   imagePullSecrets:

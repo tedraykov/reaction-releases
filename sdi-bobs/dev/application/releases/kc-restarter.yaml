@@ -1,14 +1,18 @@
-apiVersion: helm.fluxcd.io/v1
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
   name: kc-restarter
   namespace: dev
 spec:
-  releaseName: kc-restarter
+  interval: 5m
   chart:
-    git: git@github.com:sportsdirect/sdi-releases.git
-    path: charts/kc-restarter
-    ref: develop
+    spec:
+      chart: "./charts/kc-restarter"
+      sourceRef:
+        kind: GitRepository
+        name: bobs-helm-charts
+        namespace: flux
+      interval: 1m
   values:
     imagePullSecret: reaction-docker-hub
     image:

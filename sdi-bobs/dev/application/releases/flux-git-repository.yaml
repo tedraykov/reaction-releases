@@ -9,4 +9,4 @@ spec:
   ref:
     branch: gitops/bobs-dev-env
   secretRef:
-    name: flux-sync
+    name: flux2-sync

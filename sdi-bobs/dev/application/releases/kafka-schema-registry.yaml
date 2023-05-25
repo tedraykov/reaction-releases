@@ -1,14 +1,18 @@
-apiVersion: helm.fluxcd.io/v1
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
   name: kafka-schema-registry
   namespace: dev
 spec:
-  releaseName: kafka-schema-registry
+  interval: 5m
   chart:
-    git: git@github.com:sportsdirect/sdi-releases.git
-    path: charts/cp-schema-registry
-    ref: feature/cp-schema-registry-v6.0.1
+    spec:
+      chart: "./charts/cp-schema-registry"
+      sourceRef:
+        kind: GitRepository
+        name: bobs-helm-charts
+        namespace: flux
+      interval: 1m
   values:
     fullnameOverride: kafka-schema-registry
     kafka:

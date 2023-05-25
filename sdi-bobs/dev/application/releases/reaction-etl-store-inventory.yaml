@@ -1,18 +1,21 @@
-apiVersion: helm.fluxcd.io/v1
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
   name: reaction-etl-store-inventory
   namespace: serverless
 spec:
-  releaseName: reaction-etl-store-inventory
+  interval: 5m
   chart:
-    git: git@github.com:sportsdirect/sdi-releases.git
-    path: charts/serverless-deploy
-    ref: develop
-  helmVersion: v3
+    spec:
+      chart: "./charts/serverless-deploy"
+      sourceRef:
+        kind: GitRepository
+        name: bobs-helm-charts
+        namespace: flux
+      interval: 1m
   values:
     annotations:
-      iam.amazonaws.com/role: sdi-bobs-staging-serverless-deploy
+      iam.amazonaws.com/role: sdi-bobs-dev-serverless-deploy
     environment:
       JAEGER_ENDPOINT: http://jaeger-collector.monitoring.svc.cluster.local:14268/api/traces
       REACTION_LOG_LEVEL: INFO
