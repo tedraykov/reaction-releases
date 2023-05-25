@@ -7,6 +7,6 @@ spec:
   interval: 10m
   url: ssh://git@github.com/frasersgroup/reaction-releases.git
   ref:
-    branch: develop
+    branch: gitops/bobs-dev-env
   secretRef:
     name: flux-sync
