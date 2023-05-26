@@ -16,7 +16,6 @@ spec:
   values:
     config:
       allowResetCodesMutation: true
-      brontoAccessToken: AgBqmGjpuzVahjcxkw4bI53CP/A9+h3FTDTN9lwG5T1pSLCupht+7gKaiAz91qvo+sXSqyuHmTAk4WdGZnqyJqYkdKG06Er6Cw8X8YxGxCqhYlruTr0E+ZyHYpdj1h3NqYob1WTCJvIvolfOeKErahjTYrGlaBKu1UjUIn7PMlj7eBOfWAWXvFwspcGO7yuK7Q/LXV3sj4P2yFOZKOZoNxOW3+CxBxGoA9EiOgD5+QVQfAMLgt7ZPTeDUudasSWzFuZCJ61vVrWs3lsPHNoxHYUYcRLW8fcV5Rmp4FsKt2z53O2qPVR7MqXsmiMkIlP5zFd0G70Zx+cXXDc7R9VY4P+fgbZomzpzjYrJsif6PETAEwT8cVKcBQGVtGXxs3S5ypeTyijqrj028wYwBfoH9ossPMTXajBEwsVI2ubZ7ElhgDAUHxPzo0PND3DHw8G26C5ath8QfaIHGJ/G3CuaC3wk3sQfYjHlBptvze8iTrtw4w+OBHH52dQ/xYrPukicgDy/Y5DDk+AGiwI/LSJgZ+AWB3/JjWpn1GhusR7uDQ9re4L+KEweB8c+wij2QxQ3MDri815Rml32267Qmbw2UmJqHQXa+gQeO7+iYnthm/k98rqSMVt1ORN9kcas9PABF98B2Ebtk/EssEcWCNxCkajXC4RYzs9DDOdBn9KbJjciygbmG63+WCmfu9O8hW8FoAUa+ryqAERcr2x/7cBjxUjLnVXF8VArZpUFDFBcK8JGhe92qYM=
       brontoFromName: "Bobs Stores"
       brontoMessageName: BOBS_RC_TRIGGERED_EMAILS
       brontoNewsletterListId: 0bca03eb00000000000000000000000dd510
