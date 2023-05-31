@@ -4,7 +4,7 @@ metadata:
   name: reaction-sftp-from-radial
   namespace: dev
 spec:
-  interval: 5m
+  interval: 3m
   chart:
     spec:
       chart: "./charts/reaction-sftp-client"
@@ -12,7 +12,9 @@ spec:
         kind: GitRepository
         name: bobs-helm-charts
         namespace: flux
-      interval: 1m
+  install:
+    remediation:
+      retries: -1
   values:
     annotations:
       iam.amazonaws.com/role: arn:aws:iam::539061729745:role/sdi-bobs-dev-reaction-job-sftp-from-radial

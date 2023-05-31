@@ -4,7 +4,7 @@ metadata:
   name: reaction-core-etl-consumer-loyalty
   namespace: dev
 spec:
-  interval: 5m
+  interval: 3m
   chart:
     spec:
       chart: "./charts/reaction-core"
@@ -12,7 +12,9 @@ spec:
         kind: GitRepository
         name: bobs-helm-charts
         namespace: flux
-      interval: 1m
+  install:
+    remediation:
+      retries: -1
   values:
     config:
       brontoAccessToken: AgAUQAIpR+9KCiNgrRHmZaPxo3SwzyACAFYIsjZPxjSy6+17T6Pw200AvI88n2IwHhC4NPaZnDa4nABnC53M4UT2uUwUvpKppIyfMuokgj9tH/BqYkx0x0z3/dZh9vuEVxpHZCdY5AMpbClRU8HDEaQqNYFPlqr16GZjA1Z+3VI/ArikhD3T1bw+VlEYmsYXF3scAEXSA/3ju4lnSkC2GELqRuRPmO3Z4SK+Qw60QX/AJuwy5mWbQ8G0T1k8kVwYdPwDjXO4dxYqXp2IMVVbdrAnccsZOeV+a4twBHeCFdTk2BfDLqis0rG7fi+JRyh5rapRfdR9Hkd1CUXbyoxbxeKUPscMzlzrPmNNbXTj3Mj9ZL1nSJUNaormyOSE6nCYjFCZkECWULiM1+U16bRov0JrxK5lG945enuzTWH1rVQWY9/wvgOWgsU+EdFYXCktY2g1TGYyvVNUt68i3aSof7O0d/BT9FDlb/pswnc+SuuqwNS1LyuY/ZR0Z+XoYInc/bLtBKBKpJyyTUiWeEB7Oif7XI3g3bJfs1lYMYDBUYprfxCrQvka5/ZXPpv6pj7PeRzjA8BM+Ntq3Z40Ka+pDWyAWIrl7KRaXqsq8IRI2r5m08TJJPYaIbtB5LbtrH7BDcApdTUxx0YrCnxF1TtEBtfkrSTiT/Ma2u+Kq/1OaJz0HhkWiM2SkmHcKLd6BzYZouY2S+HIrZIRxaXrqxy/7VgOL26NiYKEdj/Y+v5A

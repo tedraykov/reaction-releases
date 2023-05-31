@@ -4,7 +4,7 @@ metadata:
   name: kafka-topics
   namespace: kafka
 spec:
-  interval: 5m
+  interval: 3m
   chart:
     spec:
       chart: "./charts/kafka-topics"
@@ -12,7 +12,9 @@ spec:
         kind: GitRepository
         name: bobs-helm-charts
         namespace: flux
-      interval: 1m
+  install:
+    remediation:
+      retries: -1
   values:
     config:
-      cluster: staging.k8s.bobs-test.io
+      cluster: dev.k8s.bobs-test.io

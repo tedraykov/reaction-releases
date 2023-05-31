@@ -4,7 +4,8 @@ metadata:
   name: bobs-helm-charts
   namespace: flux
 spec:
-  interval: 3m
+  interval: 5m
+  timeout: 3m
   url: ssh://git@github.com/roberts50/reaction-releases.git
   ref:
     branch: gitops/bobs-dev-env

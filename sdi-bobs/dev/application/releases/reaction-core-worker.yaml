@@ -4,7 +4,7 @@ metadata:
   name: reaction-core-worker
   namespace: dev
 spec:
-  interval: 5m
+  interval: 3m
   chart:
     spec:
       chart: "./charts/reaction-core"
@@ -12,7 +12,9 @@ spec:
         kind: GitRepository
         name: bobs-helm-charts
         namespace: flux
-      interval: 1m
+  install:
+    remediation:
+      retries: -1
   values:
     config:
       brontoFromName: "Bobs Stores"

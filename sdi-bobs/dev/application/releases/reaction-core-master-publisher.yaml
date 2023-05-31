@@ -4,7 +4,7 @@ metadata:
   name: reaction-core-master-publisher
   namespace: dev
 spec:
-  interval: 5m
+  interval: 3m
   chart:
     spec:
       chart: "./charts/reaction-core"
@@ -12,7 +12,9 @@ spec:
         kind: GitRepository
         name: bobs-helm-charts
         namespace: flux
-      interval: 1m
+  install:
+    remediation:
+      retries: -1
   values:
     config:
       brontoAccessToken: AgAPhDNvXSUSE9ILM4Z94+zmP+T5uJYcaSZ528ZIABhEYGhQEs9bf/tF2daZmfG5gO7S2TkOffRzY24RSwf8GGZO4udbF9ukvjUrQopaGiUDK3DUOdodhcmBOA+BtXc3PwhseKZBBphX7r+Tc3z1nrbvWwePDOvQPQCtDNxzpMSX796kAVPwMNaR90ulMHVNBCa2SV3iqw0jLyVHLALhK9hu53Ob6QIf+I+WrO0UCKwxccUbKwi8+CEbdkb+F35i82WzGRDmo5+YK9YES5VllGRY9rlDjcB9aZBV+Cq42A4dCBLoAtWKxFN4A5ALdOTz4sMW3m6c1SpmTVQGZ9qD4becBzxQ+gGL58u/IOil/cn9MuVXqsW3v6Rq4kIimnj9TsqTVRiCzQ8iUfGB4M6LLK/b4v93sU7hVqRqWkTFikKgbq9RZ+3SuU3IErZ1CwYQAms05OdXeKuepG4Oflmi21jT4RYH4Pin7YrVQATE6BFrRyoAqjkk/yyr0lwno6kammSQRzdsJMR4mVhJyn0D7Z0zckZRFTVbmTgCLaZZuURPe633VIfVp9QM6BmfIsEhb2Mwg27sQ41bYnu6b0lEWMq5JNaeLaocC6zw/iJEyl/7HVIzN341OXblCbjNPGN0SYoTW7pjciRV1B1wio7vpNftTaLD7rL91a/H1CChKxvxwjtTBP0KKMbMuYTR6TKow1LOyZnUmaYoxJm1DgScGx1YGNjHLrZmQoJhUanb
