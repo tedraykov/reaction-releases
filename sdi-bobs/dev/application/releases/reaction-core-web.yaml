@@ -71,6 +71,6 @@ spec:
     ingress:
       enabled: true
       hosts:
-        - host: api-staging.bobs-test.io
+        - host: api-dev.bobs-test.io
           paths: ['/']
     maxUnavailable: 1

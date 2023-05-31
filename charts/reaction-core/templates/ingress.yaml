@@ -30,11 +30,14 @@ spec:
     - host: {{ .host | quote }}
       http:
         paths:
+        - pathType: Prefix
         {{- range .paths }}
-          - path: {{ . | default '/' }}
-            backend:
-              serviceName: {{ $fullName }}
-              servicePort: http
+          path: {{ . | default '/' }}
+          backend:
+            service:
+              name: {{ $fullName }}
+              port:
+                number: 443
         {{- end }}
   {{- end }}
 {{- end }}

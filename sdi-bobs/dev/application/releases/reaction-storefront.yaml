@@ -84,7 +84,7 @@ spec:
       tag: 3f42fa8
     ingress:
       hosts:
-        - host: staging.bobs-test.io
+        - host: dev.bobs-test.io
           paths: ['/']
     maxUnavailable: 1
     resources:
