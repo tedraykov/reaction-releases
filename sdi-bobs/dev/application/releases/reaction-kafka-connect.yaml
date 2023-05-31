@@ -25,6 +25,7 @@ spec:
     imagePullSecrets:
       - name: reaction-docker-hub
     config:
+      connectBootstrapServers: b-1.bobsdevelopment.heax6x.c12.kafka.us-east-1.amazonaws.com:9092,b-2.bobsdevelopment.heax6x.c12.kafka.us-east-1.amazonaws.com:9092,b-3.bobsdevelopment.heax6x.c12.kafka.us-east-1.amazonaws.com:9092 
       connectRestAdvertisedHostName: kafka-connect-staging.bobs-test.io
     resources:
       requests:

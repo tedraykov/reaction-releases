@@ -1,5 +1,5 @@
 {{- $fullName := include "kc-restarter.fullname" . -}}
-apiVersion: batch/v1beta1
+apiVersion: batch/v1
 kind: CronJob
 metadata:
   name: {{ $fullName }}
