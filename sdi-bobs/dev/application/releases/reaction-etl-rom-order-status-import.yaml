@@ -11,10 +11,7 @@ spec:
       sourceRef:
         kind: GitRepository
         name: bobs-helm-charts
-        namespace: flux
-  install:
-    remediation:
-      retries: -1
+        namespace: flux-1
   values:
     annotations:
       iam.amazonaws.com/role: arn:aws:iam::539061729745:role/sdi-bobs-dev-serverless-deploy

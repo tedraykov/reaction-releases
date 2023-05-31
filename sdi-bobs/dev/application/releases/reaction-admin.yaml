@@ -12,9 +12,6 @@ spec:
         kind: GitRepository
         name: bobs-helm-charts
         namespace: flux
-  install:
-    remediation:
-      retries: -1
   values:
     config:
       oauth2IdpPublicChangePasswordUrl: https://staging.bobs-test.io/account?email=EMAIL&from=FROM

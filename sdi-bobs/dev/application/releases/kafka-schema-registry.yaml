@@ -11,10 +11,7 @@ spec:
       sourceRef:
         kind: GitRepository
         name: bobs-helm-charts
-        namespace: flux
-  install:
-    remediation:
-      retries: -1      
+        namespace: flux     
   values:
     fullnameOverride: kafka-schema-registry
     kafka:

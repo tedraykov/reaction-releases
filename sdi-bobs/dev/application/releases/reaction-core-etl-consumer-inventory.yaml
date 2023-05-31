@@ -12,9 +12,6 @@ spec:
         kind: GitRepository
         name: bobs-helm-charts
         namespace: flux
-  install:
-    remediation:
-      retries: -1
   values:
     config:
       brontoAccessToken: AgAGKugpP0dXUZKDyq777v+BiBEZiNY3GsC3WJiE9dFbkJ6N23QUP7IPcZKB1uRCMXtnEpCoATADYzGONvUyc3lqL3WF5OQTRXkyZ9S8cdJzWN5i2d53DVU2Ken0Czo4rKKZ5NtWnLtJ4/abUm7KCUfJapqfRCbJxupaUAZ4UxF5bdUu4Tr8KNxPxZe5DkB9iKISVpIQ6cNrfbx+dbp9E7Oi36MBVet1ceRTj9ThYk5aCCrftB4EwAWzPgfxBrb44R8B1XLmr4oOxp4vxs4345AkeCdHZ9CNnDibHIEs65zv0kAJOUfsxzpitId/U/QeNUrXf4hGPaQuCuRUtOF5HI3/M7u0ktx9FKV0nqq9xKGBMUUqbr7W0S7SRwRLRBSbJF3+lvcdgLTw7sOr+9l+ZvpWfUn7/Uz5c/cn5t8dgR1USnistyFG7vXvYLJN4TmubkOeDR4D+/tA/7A3k+nNsaDz/k6w8/Effa6j62gOO8hKfyAtA17XNyUwIoNR5pPDUS6CnDkzxIwFKDAksYKQ9DjUM7VWFvpaxHRztan8wkJF+JcP65Oabymbp3vdX+RjGBrccWXaCecUuV1TVhEbXZV7CiUTqOYr5dRZqRPDhA6F82YcOCCkZNPlN8XNmoHfgZ0XBhcOs2XpyNd4xgC2XkPcoDMMiTQCKvxApDxJ3ifYOGdAsgRfj7GQkzR1V71eGPg0zeX4bEF5MgTB73fAZRKoZjAKAW9NM8qe/keah8cDUE9LUrE=
