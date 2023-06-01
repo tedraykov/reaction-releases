@@ -14,13 +14,13 @@ spec:
         namespace: flux
   values:
     config:
-      oauth2IdpPublicChangePasswordUrl: https://staging.bobs-test.io/account?email=EMAIL&from=FROM
-      oauth2PublicUrl: https://auth-staging.bobs-test.io
-      publicGraphqlApiUrlHttp: https://api-staging.bobs-test.io/graphql
-      publicFilesBaseUrl: https://api-staging.bobs-test.io
-      publicI18nBaseUrl: https://api-staging.bobs-test.io
-      publicStorefrontHomeUrl: https://staging.bobs-test.io
-      rootUrl: https://admin-staging.bobs-test.io
+      oauth2IdpPublicChangePasswordUrl: https://dev.bobs-test.io/account?email=EMAIL&from=FROM
+      oauth2PublicUrl: https://auth-dev.bobs-test.io
+      publicGraphqlApiUrlHttp: https://api-dev.bobs-test.io/graphql
+      publicFilesBaseUrl: https://api-dev.bobs-test.io
+      publicI18nBaseUrl: https://api-dev.bobs-test.io
+      publicStorefrontHomeUrl: https://dev.bobs-test.io
+      rootUrl: https://admin-dev.bobs-test.io
     image:
       tag: "7cb138139"
     ingress:

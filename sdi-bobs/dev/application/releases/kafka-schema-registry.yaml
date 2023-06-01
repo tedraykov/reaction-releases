@@ -11,7 +11,7 @@ spec:
       sourceRef:
         kind: GitRepository
         name: flux2-sync
-        namespace: flux     
+        namespace: flux
   values:
     fullnameOverride: kafka-schema-registry
     kafka:

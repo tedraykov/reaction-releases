@@ -22,9 +22,9 @@ spec:
       cartExpirySeconds: 1296000
       cartReferenceIdPrefix: 44
       cloudinaryCloudName: bobstores-dev
-      etcdUrl: http://etcd-application.internal.staging.k8s.bobs-test.io:2379
+      etcdUrl: http://etcd-application.internal.dev.k8s.bobs-test.io:2379
       initialImport: true
-      jaegerEndpoint: http://jaeger-collector.staging.k8s.bobs-test.io:14268/api/traces
+      jaegerEndpoint: http://jaeger-collector.dev.k8s.bobs-test.io:14268/api/traces
       kafkaPartitionsEtlShippableInventoryStatus: 3
       kafkaTopicEtlShippableInventoryStream: 'etl.shippable-inventory.inventory-data.json-gen2'
       kafkaTopicEtlShippableInventoryStatus: 'etl.shippable-inventory.inventory-status.json-gen2'
@@ -45,10 +45,10 @@ spec:
       radialPassword: AgCDfPM4LWaYUJL42tGSb2gtjQ55Bs4D5PxaFkJu/HTgTWh3iA230IkfWEsPD5O5t/zh7fA1eM1Hh7W3M/ybAAZ/rlXExc/MNNCrkOu9mZoxPnel1L7PRm3moSne2jw/33053gNtpnqISSQb9lrNAJcSvQshQwO7tUZqmZC5sz1Q5efcq3jr/iGTxnulyUnteYcEcwzHC+LitSG6nBu7Sm/wBt/eRT2a65enNHoniiD+YXlRIwvGFBL3q4fspWT3xXdEnIWizrLlTGpUU3Fhl3i/v8w8vGLZb9aehGmwmOGPY1cndRitT4nryYGZ5DA3muqbvGzICobScVh1odV+jxfugTCfgMD2hnp7mNyZXY0OOpeW1zzgX2lQztt2Kyrmxpg5l0cXqBlmWBJNCnshQBG52mwlsVVZUbGCsIl/UUc0165yNI5ashql76n+wCQia/3J1jLrAta2OTTFf3FjYV4K4PhvIuopOQORP7AU/jB5TcL0KKHUDRiy7MH35cIiPxv8zLxiezMR+whOYfZLHL3nS+LtzOL+xCDU5pllaj9TFWsEw74vhDdgBwXoBkv2WqZTwtuSnEXdNrxES6DBakW9QoVVaQSXN+dRaMtsQRdVGmNCtGw5VaqPzi/dkwzYuvTj2rGAQ8E6IHr3a9gpX7JpK+bBiKFh+K/GWAwaoqg9eOek87mP4tkScyG57OrPZU4UzNVHzIk=
       radialStoreId: BOB2US
       radialUsername: AgBF9UJIf58fXQCHHShJK9jSQLBV8TK28JQR4pOR/oyqxQAGh14D7Q/d2XRvVGfMNy51paW1KEhnmiAaqW5fxd86Mn4l/DETFA7k0647az0V+WQslLECz5W3SYdubvhIYGFAR764Yt1EhQmgoMqc5BgWDDG8wDhJAYq1RC1XlCzu0z3fpWOWzXHqWtNKu06d4oCEdbmhHQNh6Xi0H8vyR+pTvfBusI326qYATk9SLVXj3txbMqYe1jibGJXOTXzMaK/ERqEh6DufZVjWNpainn1XPoOcITEz8FAP5LsyenGup+QJlmEmG5UNG62+i0JHMqm7wnCe2B2XbwHg4l/TIxHUmRlZTutqofMgtvHkUy2RZRaIEXtuzPiktqNo2nopLavwRakOs18vT2bg8IOtY8gJx6/zSqtomlw4uRTv1aB4daJZ8jgYjXNuyXGE+8DcPOhXGUl1pjv3YoHv1iZvQfxYtiTitoNfoafJFaxcCVbNIlmv8Ce5hqlxCQNm77P9YrRLnRi8t+hqUShTzENE3SmRDOguCxd3lgwwmLcfDfH1CehQFlEt5wj88zEyhT87CgK4FtIITU01cmHdtwKhgf6CQe44wk7shi66JpxjywDlOlLAtbPayCJE1e/QJrJmRIuKp8ksaKhIMnlWKQawlfZ4RMU8eSToJJImWXoptvOqDOCWzBmOYeYX2xSHzKsLfngmNr4BFhA=
-      reactionAdminPublicAccountRegistrationUrl: https://staging.bobs-test.io/signup
-      reactionIdentityPublicPasswordResetUrl: https://staging.bobs-test.io/reset-password/TOKEN
-      reactionIdentityPublicVerifyEmailUrl: https://staging.bobs-test.io/account/verify/TOKEN
-      rootUrl: https://api-staging.bobs-test.io
+      reactionAdminPublicAccountRegistrationUrl: https://dev.bobs-test.io/signup
+      reactionIdentityPublicPasswordResetUrl: https://dev.bobs-test.io/reset-password/TOKEN
+      reactionIdentityPublicVerifyEmailUrl: https://dev.bobs-test.io/account/verify/TOKEN
+      rootUrl: https://api-dev.bobs-test.io
       segmentAnalytics:
         enabled: true
         writeKey: D2kMsDSZAWGPcc0rAFygcsQNbW5YQDnk
@@ -56,10 +56,10 @@ spec:
       sentry:
         enabled: true
         dsn: https://429763a4403f427f943bc3bc0db32d3b@o234104.ingest.sentry.io/5777463
-        environment: staging
+        environment: dev
       siteCode: BOBS
       shippableInventoryConsumerEnabled: true
-      storeUrl: https://staging.bobs-test.io
+      storeUrl: https://dev.bobs-test.io
     image:
       repository: 816897914983.dkr.ecr.us-east-1.amazonaws.com/reaction-core
       tag: af85a1e

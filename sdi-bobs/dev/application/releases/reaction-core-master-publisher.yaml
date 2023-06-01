@@ -24,9 +24,9 @@ spec:
       cloudinaryCloudName: bobstores-dev
       constantPublisherMode: true
       constantPublisherPauseSeconds: 300
-      etcdUrl: http://etcd-application.internal.staging.k8s.bobs-test.io:2379
+      etcdUrl: http://etcd-application.internal.dev.k8s.bobs-test.io:2379
       healthchecksEnabled: false
-      jaegerEndpoint: http://jaeger-collector.staging.k8s.bobs-test.io:14268/api/traces
+      jaegerEndpoint: http://jaeger-collector.dev.k8s.bobs-test.io:14268/api/traces
       listrakEnabled: true
       slistrakClientId: AgAzJGzXL/ebdlwqK1GsJlN+8g4ivNx8gJScYv9Oh86vLZHmg9kciF6AmJEwmZZamfwg/kSWvmduO9GulgXX9JtM5YKkL5jXta570RvHiQ7oYFLITs0AKYNsDwDRj527cv4Lw0j6hfa7ybPoZQafyHHr9BxmwUrVmoO1B+ai/ROo2jipu0MoD8BI0DL5y3Gs93n2jCpkzAMDQ54c2hGwOCRBtgQekrHq96qICteshIHbK7oATArrDR6eyUOmBu87mxN9uwLfOYvIxEnkI/kcLQS47NH6H3Hpe2KMzgkLaz8NNa5pC02vtBgVYDQT/X93ruqKfCb6wAVKe/iFY2smX4ZafK16AcCIculs4YK6dWaQWkriPWUm6UO848wWpuZAKXlSSg5HWkAA71fWlbA4whkRIvTBVX5exoidqUmDQ4ZtF3jobxy2NNwwioYstQvBlNaacqzeiPI9fl10RRmv09k0bDq6RzxeveNz5/wyf+chA9kEqsxPvCULedyvthzHL30novr+G6Iv/yYTc3NSmQrGt/nd1sQPzzmoKBwRTnxesweyXatVmq/OBfZgbGWqEh3qjvFicwU7hK3dTlmelb9lmVFWiYFn5bgGdZYA21vAJrxlBLJ0kP2kuk1R02h0xvhGt/k7U2JAKVy+a/deOD5JblfJ5YUkuZtGdptb7BAUKqbIZUzZe9wtt1sxcx71v3gIwwH3ULNaBp4Q4wRKhJxSwl1BjA==
       listrakClientSecret: AgBN6Fa18GYJTqkLRyzCp1BsNJ99285E1ZVpd4NPq/m+BKe5i3zmK2U21Bxh9Fr8EsqCf78u9T3b2kf3AaCMN8JisFU1rEej1KwhtaWWE+OWuQzsSqZIjWd6AW+76t27gxNIL5YM9lZEolyZTcVxqCSlsPmn9Qt/M81aillVN1FCVEfyOS0AxG9QTNH+z4JZQwUb2/B6PXpfxE6Bf7+CWAxSkobOPTB76xLw/hfqKvjZFORgVUkZ7rNUntW3Q1G4Z3iftFUJ6gMdJjNRkNkYEo/cJS0Wo8njtujQ3R2bNgjIpaPfqHlEIOO1rCscbvsyUzlrRQrH7A5oOAjskNEjm9+lriVn+oD5+tHuXVPb+UCGFR/XzXqXM/t0g/FMmS8eAZjHBBjoAjmSDnEQR+8/4XSHV8wkvLroBS3FRGX+xw2kumTifJqwclbqXg6uxTwRkWI6FDy4414IxFHmw21NMOqTqvO52guG89eYb7QZl0aS2n2tXebNnGoaZ/zc1FZdqQe9DwSXDoY6bJWZLukwo2ycDPisjchw0FuYx6rKBvA3NWTgewx6MPoEYJOPlV7/OVI+7YrLTx+E/7SD1I+t4dgj5/90DJevpPcyRmX8q6Y9WCxT2+hj70olPcdLZSshL9pRylzWx1dpcCw1o5zv8DVaVXjM4+xBgcSr+4I2FWsOyADS0lk/CLIe57iYLNZG3bNAB0fb+248J1d6wPp/sxQaLM33W7R4lgExeceaWAYXRmvydpA+6QNFtynh
@@ -44,10 +44,10 @@ spec:
       radialPassword: AgDXJl+K8qXEhpHeRHbHYVmqInQ9da9QmAq4SlN+IElK8AuqwT931m0lyplYLm5U6Gn1RPphzfP4t5H3PTHAKRn3Jwc3u7c5Nayp5EBK24UeEniFMSew2NiiOs8IY1l4897IrPlraghXHlcFOZOXcdF5jQGXvq7wkTdSCGYXcvhZ0ydFH3TPuomPyRzME4oEhPT8rMg8QjNv19Fw9vgYzpqEoZqoqVdDJzohUET19piLkQnQ6bWEM+Z1KTZ/RtKEI+UE6VsKZTi5+QlP7DdURthxjNqAlvS6y8mAMqP67I1Knj0pdzOZkxVBFEn4Uz04rVnO3Nsj0AduFp7UHiZMXdMgLFzh/G/v6ICPIYIcIqbUxRse7bnOYyE4iQbYP0O6tuwuvGIErQUrodLZg+JQfXrYDi4kffobSBM5W15iCb7cYk1RraSXmZmnf3zdd1pJaaWlaEMudcXnwFM52H6Vuy5XnU5iaayOTZpQ8+KBCMZ+nlG+XNwyotgmTPIu28JYSAqBe2K4V51076WUqjDI5ecUIp8Yie2WTtJ8CA+871+Zp8HjVaFR4O1QuXGLjn0TJAPw6BTE0c8NM/LIIHPYIwcPNWBK/X6Wqym5Ei+qHOKsR2xX8s4jUjBWT+RGimjaWhybLLax9R0lomP0rOTdM5Jd/fjT+50nCffpyGHRslnnsmsKC4wN23t+DPd4h5qb4m0GCq97e38=
       radialStoreId: BOB2US
       radialUsername: AgBFRMYm814HlSchuZnw0pQJHPvpbCg5zA7fASG0RSOE1Y+RRf6b+OU1bfTFyBNTNBJZy8npREqGITkizh0BkFgfKRRmToGddY4LbVkja8KdHR7KyLhQuBo8fnpGOajrxh+3p5K8jMf8/heWQYNEwze3fn1sY40HXKrLtdOLPXajS+unvlW6WcVDrnU4vFh8mmvplIS6Sop1NF56oj/vjY4Kyix/eDl1XK3ah1G/Z+7E4MM2FfuBYbk6Scohaa6cmnPZDLz8S/G4cFxt2HP89oLji4gKSVS+mlcZxhe+bP+miNbM+pgGWkQvul38T31ayKYTNx/5oInbCgWzZSHEUYr79180W9NAv5ZuruHZgjvRF+X7rRzT5pyyLBoJwZ7PQBEwnPWLCdHAfAPzCMUIAS4I0GH++Mx1Aj4xPe7bXvbtHbxEmmvBlD/OGE7Q1Q4ZcvpI7AwdhPobEUuiSHJ5ZgYJ8FvXSfdFC7iaJH8pCubNY2c6ZXq+9e5CBY1TJEAHUOplEE1YHCVwrMNl/Z0Qtu3q7RHm3c8wfhOkKmW47SquKok2S5pfuTNIiW60bfCACHbks125nsOpfDtLdJun39seB/FpWD/SmE1VXQSuLLfejYTZ6CDwZmRiENGTgg2jB+rT/vL0OB3xzk2HSV2GsxhObVKTK3i36QGAFQZD6rjIm51ar04DVGthB52N+lccbF1K1rsOmJs=
-      reactionAdminPublicAccountRegistrationUrl: https://staging.bobs-test.io/signup
-      reactionIdentityPublicPasswordResetUrl: https://staging.bobs-test.io/reset-password/TOKEN
-      reactionIdentityPublicVerifyEmailUrl: https://staging.bobs-test.io/account/verify/TOKEN
-      rootUrl: https://api-staging.bobs-test.io
+      reactionAdminPublicAccountRegistrationUrl: https://dev.bobs-test.io/signup
+      reactionIdentityPublicPasswordResetUrl: https://dev.bobs-test.io/reset-password/TOKEN
+      reactionIdentityPublicVerifyEmailUrl: https://dev.bobs-test.io/account/verify/TOKEN
+      rootUrl: https://api-dev.bobs-test.io
       segmentAnalytics:
         enabled: true
         writeKey: D2kMsDSZAWGPcc0rAFygcsQNbW5YQDnk
@@ -55,9 +55,9 @@ spec:
       sentry:
         enabled: true
         dsn: https://429763a4403f427f943bc3bc0db32d3b@o234104.ingest.sentry.io/5777463
-        environment: staging
+        environment: dev
       siteCode: BOBS
-      storeUrl: https://staging.bobs-test.io
+      storeUrl: https://dev.bobs-test.io
     image:
       repository: 816897914983.dkr.ecr.us-east-1.amazonaws.com/reaction-core
       tag: af85a1e
