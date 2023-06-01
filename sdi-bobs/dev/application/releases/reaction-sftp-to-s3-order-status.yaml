@@ -10,7 +10,7 @@ spec:
       chart: "./charts/serverless-deploy-v2"
       sourceRef:
         kind: GitRepository
-        name: bobs-helm-charts
+        name: flux2-sync
         namespace: flux
   values:
     annotations:

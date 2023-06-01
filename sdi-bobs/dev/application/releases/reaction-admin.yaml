@@ -10,7 +10,7 @@ spec:
       chart: "./charts/reaction-admin"
       sourceRef:
         kind: GitRepository
-        name: bobs-helm-charts
+        name: flux2-sync
         namespace: flux
   values:
     config:
@@ -26,5 +26,5 @@ spec:
     ingress:
       enabled: true
       hosts:
-        - host: admin-staging.bobs-test.io
+        - host: admin-dev.bobs-test.io
           paths: ['/']

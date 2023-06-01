@@ -10,7 +10,7 @@ spec:
       chart: "./charts/kafka-topics"
       sourceRef:
         kind: GitRepository
-        name: bobs-helm-charts
+        name: flux2-sync
         namespace: flux
   values:
     config:

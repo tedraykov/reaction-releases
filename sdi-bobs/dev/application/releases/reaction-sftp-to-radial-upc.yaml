@@ -10,7 +10,7 @@ spec:
       chart: "./charts/reaction-sftp-client"
       sourceRef:
         kind: GitRepository
-        name: bobs-helm-charts
+        name: flux2-sync
         namespace: flux
   values:
     annotations:
