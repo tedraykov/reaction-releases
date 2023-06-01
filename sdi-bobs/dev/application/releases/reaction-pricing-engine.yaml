@@ -21,9 +21,9 @@ spec:
     ingress:
       enabled: true
       hosts:
-        - host: pe-staging.bobs-test.io
+        - host: pe-dev.bobs-test.io
           paths: ['/']
-        - host: pe.staging.k8s.bobs-test.io
+        - host: pe.dev.k8s.bobs-test.io
           paths: ['/']
     jmx:
       image: 816897914983.dkr.ecr.us-east-1.amazonaws.com/jmx-prometheus-exporter
