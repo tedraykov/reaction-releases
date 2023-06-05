@@ -82,6 +82,8 @@ spec:
       repository: 816897914983.dkr.ecr.us-east-1.amazonaws.com/reaction-storefront-bobs
       tag: 3f42fa8
     ingress:
+      annotations:
+        kubernetes.io/ingress.class: nginx
       hosts:
         - host: dev.bobs-test.io
           paths: ['/']

@@ -69,6 +69,8 @@ spec:
       tag: af85a1e
     ingress:
       enabled: true
+      annotations:
+        kubernetes.io/ingress.class: nginx
       hosts:
         - host: api-dev.bobs-test.io
           paths: ['/']
