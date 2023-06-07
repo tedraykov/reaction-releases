@@ -20,6 +20,8 @@ spec:
       - name: reaction-docker-hub
     ingress:
       enabled: true
+      annotations:
+        kubernetes.io/ingress.class: nginx
       hosts:
         - host: pe-dev.bobs-test.io
           paths: ['/']
@@ -29,6 +31,8 @@ spec:
       image: 816897914983.dkr.ecr.us-east-1.amazonaws.com/jmx-prometheus-exporter
       imageTag: configurable-via-env
     config:
+      zookeeperConnect: z-3.bobsdevelopment.heax6x.c12.kafka.us-east-1.amazonaws.com:2181,z-1.bobsdevelopment.heax6x.c12.kafka.us-east-1.amazonaws.com:2181,z-2.bobsdevelopment.heax6x.c12.kafka.us-east-1.amazonaws.com:2181
+      bootstrapServers: "PLAINTEXT://b-1.bobsdevelopment.heax6x.c12.kafka.us-east-1.amazonaws.com:9092,PLAINTEXT://b-2.bobsdevelopment.heax6x.c12.kafka.us-east-1.amazonaws.com:9092,PLAINTEXT://b-3.bobsdevelopment.heax6x.c12.kafka.us-east-1.amazonaws.com:9092"
       jvmOpts: "-d64 -Xms2560m -Xmx2560m"
       autoOffsetReset: "earliest"
       bufferedRecordsPerPartition: "0"
