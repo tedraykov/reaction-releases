@@ -1,0 +1,30 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: reaction-admin
+  namespace: dev
+spec:
+  interval: 3m
+  chart:
+    spec:
+      chart: "./charts/reaction-admin"
+      sourceRef:
+        kind: GitRepository
+        name: flux2-sync
+        namespace: flux
+  values:
+    config:
+      oauth2IdpPublicChangePasswordUrl: https://dev.ems-test.io/account?email=EMAIL&from=FROM
+      oauth2PublicUrl: https://auth-dev.ems-test.io
+      publicGraphqlApiUrlHttp: https://api-dev.ems-test.io/graphql
+      publicFilesBaseUrl: https://api-dev.ems-test.io
+      publicI18nBaseUrl: https://api-dev.ems-test.io
+      publicStorefrontHomeUrl: https://dev.ems-test.io
+      rootUrl: https://admin-dev.ems-test.io
+    image:
+      tag: "7cb138139"
+    ingress:
+      enabled: true
+      hosts:
+        - host: admin-dev.ems-test.io
+          paths: ['/']

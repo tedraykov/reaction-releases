@@ -1,0 +1,40 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: reaction-import-tax-codes
+  namespace: dev
+  annotations:
+    iam.amazonaws.com/role: arn:aws:iam::515351286748:role/sdi-ems-dev-reaction-job-tax-import
+spec:
+  restartPolicy: Never
+  containers:
+  - name: runner
+    image: 816897914983.dkr.ecr.us-east-1.amazonaws.com/reaction-etl-import-tax-codes:63f3341
+    imagePullPolicy: Always
+    envFrom:
+      - configMapRef:
+          name: kafka
+      - configMapRef:
+          name: reaction-core-worker
+    env:
+      - name: JAEGER_ENDPOINT
+        value: 'http://jaeger-collector.dev.k8s.ems-test.io:14268/api/traces'
+      - name: KAFKA_PARTITIONS
+        value: "3"
+      - name: KAFKA_TOPIC_IMPORT_TAX_CODES_TAXCODES
+        value: etl.import-tax-codes.tax-codes.json-gen1
+      - name: KAFKA_TOPIC_IMPORT_TAX_CODES_TAXCODES_PARTITIONS
+        value: "3"
+      - name: KAFKA_TOPIC_IMPORT_TAX_CODES_ERRORS
+        value: etl.import-tax-codes.errors.json-gen1
+      - name: KAFKA_TOPIC_IMPORT_TAX_CODES_ERRORS_PARTITIONS
+        value: "3"
+      - name: REACTION_LOG_LEVEL
+        value: INFO
+      - name: LOCAL_TEST
+        value: "true"
+      - name: SITE_CODE
+        value: "EMS"
+    resources:
+      requests:
+        memory: "1Gi"

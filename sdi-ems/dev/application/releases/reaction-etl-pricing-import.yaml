@@ -1,0 +1,34 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: reaction-etl-pricing-import
+  namespace: serverless
+spec:
+  interval: 3m
+  chart:
+    spec:
+      chart: "./charts/serverless-deploy"
+      sourceRef:
+        kind: GitRepository
+        name: flux2-sync
+        namespace: flux
+  values:
+    annotations:
+      iam.amazonaws.com/role: arn:aws:iam::515351286748:role/sdi-ems-dev-serverless-deploy
+    environment:
+      CLOUDFLARE_CLIENT_ID:
+      CLOUDFLARE_CLIENT_SECRET:
+      GRAFANA_API:
+      GRAFANA_AUTH_TOKEN:
+      JAEGER_ENDPOINT: http://jaeger-collector.dev.k8s.ems-test.io/api/traces
+      PRICING_GRAPHQL_URL: http://pe.dev.k8s.ems-test.io/graphql
+      REACTION_LOGGER_NAME: reaction-etl-pricing-import
+      REACTION_LOG_LEVEL: INFO
+      REQUEST_CONCURRENCY: 1
+      REQUEST_BATCH_SIZE: 1000
+      SKIP_INVOCATION: false
+    secretRefs:
+      - mongodb
+    package:
+      name: reaction-etl-pricing-import
+      version: de902bb

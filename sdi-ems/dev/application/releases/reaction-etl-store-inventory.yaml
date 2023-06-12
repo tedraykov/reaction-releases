@@ -1,0 +1,24 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: reaction-etl-store-inventory
+  namespace: serverless
+spec:
+  interval: 3m
+  chart:
+    spec:
+      chart: "./charts/serverless-deploy"
+      sourceRef:
+        kind: GitRepository
+        name: flux2-sync
+        namespace: flux
+  values:
+    annotations:
+      iam.amazonaws.com/role: arn:aws:iam::515351286748:role/sdi-ems-dev-serverless-deploy
+    environment:
+      JAEGER_ENDPOINT: http://jaeger-collector.dev.k8s.ems-test.io/api/traces
+      REACTION_LOG_LEVEL: INFO
+      SITE_CODE: EMS
+    package:
+      name: reaction-etl-store-inventory
+      version: "916f238"

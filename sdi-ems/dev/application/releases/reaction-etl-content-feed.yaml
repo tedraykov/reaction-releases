@@ -1,0 +1,42 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: reaction-etl-content-feed
+  namespace: dev
+spec:
+  interval: 3m
+  chart:
+    spec:
+      chart: "./charts/reaction-outbound-content-feed"
+      sourceRef:
+        kind: GitRepository
+        name: flux2-sync
+        namespace: flux
+  values:
+    annotations:
+      iam.amazonaws.com/role: arn:aws:iam::515351286748:role/sdi-ems-dev-reaction-job-outbound-content-feed
+    fullnameOverride: reaction-etl-content-feed
+    imagePullSecret: reaction-docker-hub
+    image:
+      tag: 818f5d7
+    schedule: "0 8 * * *"
+    config:
+      batchSize: 1000
+      cloudName: eastern-dev
+      cloudFolder: 0
+      jaegerEndpoint: http://jaeger-collector.dev.k8s.ems-test.io/api/traces
+      kmsKeyArn: arn:aws:kms:us-east-1:225761155017:key/e4294918-f196-4269-8294-8cfc8377a002
+      pricebookIdPerm: ems-usd-perm-prices
+      pricebookIdRetail: ems-usd-retail-prices
+      pricebookIdSale: ems-usd-sale-prices
+      pricebookIdMember: ems-member-pricing
+      siteCode: EMS
+      storefrontBaseUrl: https://dev.ems-test.io
+      vendorFilePrefix: "RC"
+    resources:
+      requests:
+        memory: 3Gi
+        cpu: "1"
+      limits:
+        memory: 4Gi
+        cpu: "2"

@@ -1,0 +1,28 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: reaction-etl-image-import
+  namespace: serverless
+spec:
+  interval: 3m
+  chart:
+    spec:
+      chart: "./charts/serverless-deploy"
+      sourceRef:
+        kind: GitRepository
+        name: flux2-sync
+        namespace: flux
+  values:
+    annotations:
+      iam.amazonaws.com/role: arn:aws:iam::515351286748:role/sdi-ems-dev-serverless-deploy
+    environment:
+      CLOUDINARY_CLOUD_NAME: eastern-dev
+      JAEGER_ENDPOINT: http://jaeger-collector.dev.k8s.ems-test.io/api/traces
+      REACTION_LOG_LEVEL: INFO
+      SKIP_INVOCATION: false
+    secrets:
+      CLOUDINARY_API_KEY: AgCPPxToiZaUtysOpFL926i3A64ysPPKVLpI+ayDNdhQVlto5vKCtxBQH6Z1R+MQLFbzns8cuofztXM9eItgaAe46CxeQ+rVldyxwyMD4quDqoUkQHi8zgPnpUaRrjllgqcImSK16MIIBNaqtHssvQgX6ywuIbYKaLDfZXfbC3DrABypMc0uoVmbUiPGGzNG0SiPwgegkT1JSgyqbmuoiJAa19VyeglwoKtqXNkFYiqLMKWiTbHyet/qCpUJEE336gV5DXrRE78I0rZ1ibOifQqeDobqTBXrUfgpArTi4qvclwMoA3zLGE7kw+TOem2UX1dMI29o2PbE3hT+Nik/nrYQSzVk3cDuXKd0zCqiTMj4t82O1Mh769BkmR7Bgo7N1I8jgeHoORPDG+mCHlSeB3Lj00VLNUcTP0WSTBgPfteplClZxUoH3Nl+iPaXRZkUKaI3zOb/ZHyLdMWFjHTpcItYcpCZ42y5PEspp9/pO8W1HgJtc8Puu3i+qGP/0D1rn6d1UiJvbBuWQAYoRoegibI0Akosy8T5rquaLMNxrDuingbOLekVeDS9kz4tgtJyKa+5Q74PCcJoIgwaz5SYgbpGvFPNZrEuaUL6ouDugrE03+VMsBAp9Oq8D1+Atle3DMSDPkBRwW24K0PgbRvRnEh5nusd9baqSKx/mXkVjMyqUowmnnI5//AB7HeJ0QD5RDxCTG8LNggR43kEoEOoeLg=
+      CLOUDINARY_API_SECRET: AgCrCqHpWeZH//7yrWk5I5qPGt6YSDQ+w4neqK/cRpLJLC+sLWOMgw+0gfQzq9JchGvIuZqF5qPWladgl8Jq7Ezmg4/hixmMZ+c33VTjFXzaQwGb0E94uEbAMJkC7MXkfaB4jO0ErmSgkj8L7s9jL+OoTUQBFpUJFpuPN6wM0O+KAFqRz8o7kC2PnCwvHsy+KhJdKj18glcUd8MiI0titCq0WXNeuJ5Ie2bafFFbLW/2qgvErmsyLeNEFVk3S3E38EDIqR0PJURrP2uMCV1ZG2pzf2s138t8Qa2uk2BbAlhxbAqCL5K5Nr7mN2bq4w4kf1ILBFgx/WRUYO30S8VFwJQUgRR+sg8vr3nhVxLIzdSnsCzYPk2DZ+2G2nSMJCaJxI0oTsZd+0E+7a6qFDjFXwhMu7sZyEtsH/FDTP2bQAu7mULlvve80QMrqTjPJpb+Kb+j/JmJlnJtr+hWVF+ZQvK2iPbcQRm3r81BPwImBq8E+KaNRMAr9wzo2uQDeGP3dymeHKkIRSb8Rp88tDo1oAf1u6rrbbytJnA914XRQxAYekegcM+6Yyh2WF8dRjE9jOc9biDV1nMOcIWA8Qsf6hK84P1or6wAyzip4kJ/VHDN2tjNat3WqHVlD33Eq6w3GA90xVCB6fzvCUmSpMQOLjHCH7BS+ELj+JoYzrAJjBVpUPL60n74K27ECcwpjlLL41AH6sSSuME48xw/PJd+lS+1TbK1jFmOqehHHaw=
+    package:
+      name: reaction-etl-image-import
+      version: 46a6927

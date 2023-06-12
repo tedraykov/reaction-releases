@@ -1,0 +1,71 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: reaction-core-worker
+  namespace: dev
+spec:
+  interval: 3m
+  chart:
+    spec:
+      chart: "./charts/reaction-core"
+      sourceRef:
+        kind: GitRepository
+        name: flux2-sync
+        namespace: flux
+  values:
+    config:
+      brontoAccessToken: AgCrGU/FvorTHgaCo4Y/GXvYLPD2N2SsEy4jxQM0guKiNhPE99nMl/7tvFY0d8UlcZZ/7Ygz4aUNy//ByLMVN1c1gtGbPRLUH7DIrJqT3sbNkl5OKPH29SJZr6P0LU/5En6qNnP1iN1l7ZAco5knqMinM9y1ihpmvF3JXcyxnf+p7QHQ6H17NeQqfgmJhcHPZiG9GNIbuRupIauCjWohfKcyXhvtcUGZyZItSEnTptXqg6vaIxMurFTJ7/u9ClCKjNJwWw74zfBbGqQQ8iuuBpVUEtqLSOI6qJA+7hKShiACpjAx3O99PYQfxvVxoLeQC3POS1ZDNPGeXT1BNF0+7L197jpJNCWsR10lDfqW5FQn9PG4zR0UPgBUpFEKLIEd/fwvBjIA53IO1hSQqYn7aROv52oUVtfAiM5pOOf6IF+LKLI1UCFlbByg3pW1hVV7O9pg+JjHjKOC/dWLvWWJjQSrX5zvlk4f4f4ShbN6C9+3yUJ/yn3eRmIXwGX458DgsqlNvgtx20WpUi23uyJvdgRsDeCkpE1GXOk0/8I6TsaHiIbkQwagfbDKkHHexPH6Ba9HfRU+4LKVO1XfWCLTe2g1PEl4LyrgboKJ9zE/g/bAstMa6Xb5Gv+J9QwYRkHqQ5Q9GJ56zw7bbq5w9HBSp+RhJHjVLlMPUCfKcVeA6vDS3zlHpoN4ggNNLgxa9qESjphPxrVVdtNkUaYt2LDK9s8Ml5j5G5C2oQLZ9c94JjVOwhsinDs=
+      brontoFromName: "Eastern Mountain Sports"
+      brontoMessageName: EMS_RC_TRIGGERED_EMAILS
+      brontoNewsletterListId: 0bca03eb00000000000000000000000dd510
+      brontoReplyToEmail: "admin@ems-test.io"
+      cartExpirySeconds: 1296000
+      cartReferenceIdPrefix: 66
+      cloudinaryCloudName: eastern-dev
+      etcdUrl: http://etcd-application.internal.dev.k8s.ems-test.io:2379
+      importOrderStatusConsumerEnabled: true
+      jaegerEndpoint: http://jaeger-collector.dev.k8s.ems-test.io/api/traces
+      kafkaBootstrapServers: 'b-3.emsdevelopment.8y7jbs.c6.kafka.us-east-1.amazonaws.com:9092,b-2.emsdevelopment.8y7jbs.c6.kafka.us-east-1.amazonaws.com:9092,b-1.emsdevelopment.8y7jbs.c6.kafka.us-east-1.amazonaws.com:9092'
+      kafkaCluster: 'b-3.emsdevelopment.8y7jbs.c6.kafka.us-east-1.amazonaws.com:9092,b-2.emsdevelopment.8y7jbs.c6.kafka.us-east-1.amazonaws.com:9092,b-1.emsdevelopment.8y7jbs.c6.kafka.us-east-1.amazonaws.com:9092'
+      listrakEnabled: true
+      listrakClientId: AgB9xZnxNBRCahb7XPEdjVG6HUvQxRUDhkHBfKo5oxfsblGaU70Ek1pEBJ0QOi7lrEbbGjoqkG4NiSTniMJw4XaI9BVPfQs7G+nQAu+92YE0qSukDq5kzfy6NjnaxQ/W1hVokbQoKV2VN/yiKcY2VEeyywalc1HiehWmeWMlsULvGNmxIR/9ZNxLpigGfcxXihn3HXRaBaAj5eKS8GIJIqM7r4cV7YE2HDLHaTy86PrgMNVKpE0gKqmlwWB7I9UO4HdBEa3oMsR/MeQZWGj9UdTgD+dkEbmWVeS1e1eM4vBrIUdNYpzr/qGIi9Z9Y2YB+hKA2lTjvx3jDwZBhwVzuvK+/035JSU0JOw5TzrzXEII6ULwXqpVOq9ugqW0YO+BquqMtaZ9XPFmaBWIbf0jhkoRv+rfURJsIudiaylb0FqCf+R+tRv9dLhDV2zfSrd0Jvp6ATvufAXTyhPGiTUdO9IDbXclsV5AltEj80F2vQnvrJYNFPkaBKYKXYhD6o4q9TXukwSpsrq1QMhIBFJsQXJKtuKCgLUDtrzQyXAkjCvg99gUsxklJrWV16dc89Uv6v3pU8KMqRlZ+JxjZwAK+AtBpHrVy5bXYlcJlDiNh4TCGaaI1SCqUhtMrqXRPkGw5/SMkXbmWOlZPswhzKud/fwtdO3q+KYvawDbq14VAzYV3Hp2ML5C42quEuVooUcp+XveNKYceCM+LGIINDsWsh/nvs+ksg==
+      listrakClientSecret: AgAIBezJWb6e4z9yywtsB4Po7rVUbdcvBk/SEDXcfMCcDMHRG5XXKp44hzutcAnQVFYJMSGZmcnO7oHeacrsgOUjYep+aaAqF6E67BEnI3P4BNx6wfb2SHOrnXQum5WYTQQ4N0lRGUf0khoiAg9pVXOuBWYHYoDaP/GItvNywAG1SGCZUnEskVLtzC63OyUDG4Neg6520mtwUb3HEOCesuG1CPpeQXbqR/l5lSQPHG9tMVE83amoCSP8nrzMjsQxEC3C4FpVwWPEq5+IBnP/xycQADH7ffmC15CF8QQlnapwKhWn8SHVUzsv91QHTHNFPo7nzaMaT3eUoFP5AavhuiKJSRRccCnKCWEFVd2QBQ1HXw+13IKCzo3VhXjoRFDu4ziOIiYMEFB7AV1SjwEg5g4CVrCtjXkhWoFm7NTCWD10bTSoOGGJLRWJetE+Z6yDr9fog3AYVR79/yI9WwWxc7k2Qce9i0kWySMu+0CJ32ojUDp3nmP3MwgAZxcStyF9mPGklMDHrV8K+X2kiImuj5yfk0uE4AhzYYgvfvs/FGqROoaLi4Kxy9necHAkwbORjE0uj6k1GyXEW/NTc9BS2v5oKrNuX/SINdmzhXpfQQ3NgiwkLcTOTQNTPMepbWiSp+/E4swrywJV2eWp6O504LPBpaH0csIVfxxpq7nPMr3ar9m4i+QJ9fBrfJ9oLCG10fd8JXbY+vjpsjMVPb0z5u714Le706UdUmTNU+2SES5H6Q3caJ8P0J4+0VIb
+      listrakTemplateMessageId: "11313858"
+      listrakTransactionListId: "345286"
+      listrakTransactionFields: "{\"subject\":6451,\"html\":6452}"
+      listrakMasterListId: "345214"
+      listrakContactFields: "{\"firstName\":5855,\"lastName\":5856,\"source\":5363}"
+      productConsumerEnabled: true
+      productImportDefaultInvisible: true
+      productPublisherAutoPublish: false
+      radialApiKey: AgAIBezJWb6e4z9yywtsB4Po7rVUbdcvBk/SEDXcfMCcDMHRG5XXKp44hzutcAnQVFYJMSGZmcnO7oHeacrsgOUjYep+aaAqF6E67BEnI3P4BNx6wfb2SHOrnXQum5WYTQQ4N0lRGUf0khoiAg9pVXOuBWYHYoDaP/GItvNywAG1SGCZUnEskVLtzC63OyUDG4Neg6520mtwUb3HEOCesuG1CPpeQXbqR/l5lSQPHG9tMVE83amoCSP8nrzMjsQxEC3C4FpVwWPEq5+IBnP/xycQADH7ffmC15CF8QQlnapwKhWn8SHVUzsv91QHTHNFPo7nzaMaT3eUoFP5AavhuiKJSRRccCnKCWEFVd2QBQ1HXw+13IKCzo3VhXjoRFDu4ziOIiYMEFB7AV1SjwEg5g4CVrCtjXkhWoFm7NTCWD10bTSoOGGJLRWJetE+Z6yDr9fog3AYVR79/yI9WwWxc7k2Qce9i0kWySMu+0CJ32ojUDp3nmP3MwgAZxcStyF9mPGklMDHrV8K+X2kiImuj5yfk0uE4AhzYYgvfvs/FGqROoaLi4Kxy9necHAkwbORjE0uj6k1GyXEW/NTc9BS2v5oKrNuX/SINdmzhXpfQQ3NgiwkLcTOTQNTPMepbWiSp+/E4swrywJV2eWp6O504LPBpaH0csIVfxxpq7nPMr3ar9m4i+QJ9fBrfJ9oLCG10fd8JXbY+vjpsjMVPb0z5u714Le706UdUmTNU+2SES5H6Q3caJ8P0J4+0VIb
+      radialCatalogId: "283"
+      radialCustomerIdPrefix: "00515"
+      radialItemExportConsumerEnabled: true
+      radialMode: sandbox
+      radialOrderPrefix: "00562"
+      radialPassword: AgAzr0pbu9K6ERUGSkHFgv8JCXSMAdPhvvG+EnfNXnby2bXxHXDJJoJscqoUBLBWjmGioCn5fmEFhnNFmhXhTgXy3QRrKVshiuPe7JaOVbxzOV+o+k63KxqCnkjCD1BbYnz0HPkimc4QDfFX5NphPT5rbvb7EKDyecv+Yzf1uS/2ET1XOC35ffL+X67xXyTsY+BZ+1Mu+xbZAZuu57km4Cll/lim7YqCcaH92I4BepMpPL37qRD1+PrmrBLST9+1W584snHrslEbe4ixWOvmm9NgeiHN7p1dEM4HZxtgaYcCTSlzHp5JzSmsiF1fdXHb+lB2HgEKFb0N9GJxOseamxsSL7Ff6SxvTKcjKk/ezX7AEzLy5k5IbzEUtZhQeIiTzxIZXxwpXdJMuva/oR4ih3dd+7ufj3VdWwIwXWCslBhrBKVePfTcmIF45lElgoXX34ZZ77sVGZl6zbjoQxcVcL42e2DENC801yIX158gQwPH6ap4UrvfcOiHBPd1Htwja6WclkE3ldOu7U1/fo9NrfYPhQoNmpyHSiLliPugCt/M7H0ZJBS8Ml8ljgZXU1lfih8F5HKyG7Zb9tczQjm/v6zic8aZLqjazqlRLDprYOxJcSu1i7LuiXEp8gS2U/aPspVlRyiSAr+Ni69sGf2wMZL2P5rZn3yAl9SB7B3UQLbXNWPDVMfqyaHbf2CGA+CHGb13R89ejsg=
+      radialStoreId: EMS2US
+      radialUsername: AgAzr0pbu9K6ERUGSkHFgv8JCXSMAdPhvvG+EnfNXnby2bXxHXDJJoJscqoUBLBWjmGioCn5fmEFhnNFmhXhTgXy3QRrKVshiuPe7JaOVbxzOV+o+k63KxqCnkjCD1BbYnz0HPkimc4QDfFX5NphPT5rbvb7EKDyecv+Yzf1uS/2ET1XOC35ffL+X67xXyTsY+BZ+1Mu+xbZAZuu57km4Cll/lim7YqCcaH92I4BepMpPL37qRD1+PrmrBLST9+1W584snHrslEbe4ixWOvmm9NgeiHN7p1dEM4HZxtgaYcCTSlzHp5JzSmsiF1fdXHb+lB2HgEKFb0N9GJxOseamxsSL7Ff6SxvTKcjKk/ezX7AEzLy5k5IbzEUtZhQeIiTzxIZXxwpXdJMuva/oR4ih3dd+7ufj3VdWwIwXWCslBhrBKVePfTcmIF45lElgoXX34ZZ77sVGZl6zbjoQxcVcL42e2DENC801yIX158gQwPH6ap4UrvfcOiHBPd1Htwja6WclkE3ldOu7U1/fo9NrfYPhQoNmpyHSiLliPugCt/M7H0ZJBS8Ml8ljgZXU1lfih8F5HKyG7Zb9tczQjm/v6zic8aZLqjazqlRLDprYOxJcSu1i7LuiXEp8gS2U/aPspVlRyiSAr+Ni69sGf2wMZL2P5rZn3yAl9SB7B3UQLbXNWPDVMfqyaHbf2CGA+CHGb13R89ejsg=
+      reactionAdminPublicAccountRegistrationUrl: https://dev.ems-test.io/signup
+      reactionIdentityPublicPasswordResetUrl: https://dev.ems-test.io/reset-password/TOKEN
+      reactionIdentityPublicVerifyEmailUrl: https://dev.ems-test.io/account/verify/TOKEN
+      rootUrl: https://api-dev.ems-test.io
+      segmentAnalytics:
+        enabled: true
+        writeKey: GANoaFWupTY3UNw399U7LDgD5SwJ2Irk
+        userIdFieldName: ems_id
+      sentry:
+        enabled: true
+        dsn: https://562752837c194fff901153fc2945cc92@o234104.ingest.sentry.io/5777460
+        environment: dev
+      siteCode: EMS
+      seoMetadataConsumerEnabled: false
+      startingNewCustomerNumber: "7770000700001"
+      storeInventoryConsumerEnabled: true
+      storeUrl: https://dev.ems-test.io
+      surchargeConsumerEnabled: true
+      taxesConsumerEnabled: true
+    image:
+      repository: 816897914983.dkr.ecr.us-east-1.amazonaws.com/reaction-core
+      tag: be5f5e6

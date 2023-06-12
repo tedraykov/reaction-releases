@@ -1,0 +1,18 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: kafka-schema-registry
+  namespace: dev
+spec:
+  interval: 3m
+  chart:
+    spec:
+      chart: "./charts/cp-schema-registry"
+      sourceRef:
+        kind: GitRepository
+        name: flux2-sync
+        namespace: flux
+  values:
+    fullnameOverride: kafka-schema-registry
+    kafka:
+      bootstrapServers: "PLAINTEXT://b-3.emsdevelopment.8y7jbs.c6.kafka.us-east-1.amazonaws.com:9092,PLAINTEXT://b-2.emsdevelopment.8y7jbs.c6.kafka.us-east-1.amazonaws.com:9092,PLAINTEXT://b-1.emsdevelopment.8y7jbs.c6.kafka.us-east-1.amazonaws.com:9092"
