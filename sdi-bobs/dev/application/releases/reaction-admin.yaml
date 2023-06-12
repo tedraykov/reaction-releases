@@ -22,7 +22,7 @@ spec:
       publicStorefrontHomeUrl: https://dev.bobs-test.io
       rootUrl: https://admin-dev.bobs-test.io
     image:
-      tag: "7cb138139"
+      tag: "c1ccf3c"
     ingress:
       enabled: true
       annotations:
