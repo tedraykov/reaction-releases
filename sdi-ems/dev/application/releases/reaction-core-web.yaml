@@ -67,9 +67,12 @@ spec:
       max: 10
     image:
       repository: 816897914983.dkr.ecr.us-east-1.amazonaws.com/reaction-core
-      tag: be5f5e6
+      tag: 9fac583
     ingress:
       enabled: true
+      annotations:
+        ingress.kubernetes.io/ssl-redirect: 'false'
+        kubernetes.io/ingress.class: nginx
       hosts:
         - host: api-dev.ems-test.io
           paths: ['/']

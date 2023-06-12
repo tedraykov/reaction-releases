@@ -84,6 +84,10 @@ spec:
       repository: 816897914983.dkr.ecr.us-east-1.amazonaws.com/reaction-storefront-ems
       tag: 3f42fa8
     ingress:
+      enabled: true
+      annotations:
+        ingress.kubernetes.io/ssl-redirect: 'false'
+        kubernetes.io/ingress.class: nginx
       hosts:
         - host: dev.ems-test.io
           paths: ['/']
