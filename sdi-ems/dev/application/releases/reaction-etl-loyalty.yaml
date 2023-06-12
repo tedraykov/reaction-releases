@@ -12,7 +12,6 @@ spec:
         kind: GitRepository
         name: flux2-sync
         namespace: flux
-  helmVersion: v3
   values:
     annotations:
       iam.amazonaws.com/role: arn:aws:iam::515351286748:role/sdi-ems-dev-serverless-deploy
