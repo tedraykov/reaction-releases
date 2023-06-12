@@ -26,6 +26,7 @@ spec:
     ingress:
       enabled: true
       annotations:
+        ingress.kubernetes.io/ssl-redirect: 'false'
         kubernetes.io/ingress.class: nginx
       hosts:
         - host: admin-dev.bobs-test.io
