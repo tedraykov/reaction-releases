@@ -25,7 +25,7 @@ spec:
       cloudName: bobstores-dev
       cloudFolder: 0
       jaegerEndpoint: http://jaeger-collector.dev.k8s.bobs-test.io:14268/api/traces
-      kmsKeyArn: arn:aws:kms:us-east-1:225761155017:key/e4294918-f196-4269-8294-8cfc8377a002
+      kmsKeyArn: arn:aws:kms:us-east-1:539061729745:key/73aff81e-d15a-4f06-8e31-9d0a7b292fda
       pricebookIdPerm: bobs-usd-perm-prices
       pricebookIdRetail: bobs-usd-retail-prices
       pricebookIdSale: bobs-usd-sale-prices

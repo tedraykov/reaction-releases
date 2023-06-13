@@ -21,6 +21,6 @@ spec:
     schedule: "15 2 * * *"
     config:
       sftpClientPassword: AgA1kRN1bqPVMusY1aVoqOtR1h5LOuHu4ioXrrhdHgapdUFCmQK811M0iyyZSq3gvqA44jMJD7fOq44OH/sVdePff7L/cCfnWN6k+GLaS+fixK6hAC3ch8gkFuzXUiBipwU1A3tYndprvtKzXFpf1OZX6SqyhcVYDZe8iRE3wNuyiQw7701el1ffOmOJRBFvyZjjqbHxYC+aJa7UtBn1gFhpOQudNs4JT+CgbTjZLXSMwRHUrp1IW8a7cpFyUoiCwJnmPOtF4WMuEIV34HnPSj6VZNRs9ZQLTwXQGvDPLgGIJ11QEQb8V4T02o+OC3WqOzRyz+AlbhAb7G+LPveO3XHK2Qu8EL7khMLIRj4B4Oflz7/GGltZ6UiFExjCHbQiyC1ZO9q1+pbVxWdCUSza3R5WZVNJ6HhsV7kAV1xktEfoW1j4QPitjUH2CNQbIG16rdGAqLPbYpNb+CcPBsSPLeRIsIlryBSqaZiJjEvnEmM0Fojgyrgn14gQAcYfaxIxiE7xEIbUCA5/B0kptyYLBF/xWOmRUmQ5CfwZdSqfwmKYfw4mFCCvZfeE7MtGhkHG9l4j+pm3o0aSwEZGUdW0P4WzMf9tSZgzrCEDnoF9BXmktUt5uD4U3bq5lO4a/oGy3Y7rfSl1/4uqERa2dgkBFDq7prE403DZtsnlS2cKZwqvTHapRI+I1TJGU7Z3DoTAO74kTAuX/mko1txj
-      sftpClientSource: s3://sdi-bobs-staging-feeds-upc
+      sftpClientSource: s3://sdi-bobs-dev-feeds-upc
       sftpClientTarget: sftp://ftp.gsipartners.com/inbound/upc
       sftpClientUsername: bobsftp01
