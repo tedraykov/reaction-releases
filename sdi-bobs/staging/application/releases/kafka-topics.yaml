@@ -1,14 +1,17 @@
-apiVersion: helm.fluxcd.io/v1
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
   name: kafka-topics
   namespace: kafka
 spec:
-  releaseName: kafka-topics
+  interval: 3m
   chart:
-    git: git@github.com:sportsdirect/sdi-releases.git
-    path: charts/kafka-topics
-    ref: develop
+    spec:
+      chart: "./charts/kafka-topics"
+      sourceRef:
+        kind: GitRepository
+        name: flux2-sync
+        namespace: flux
   values:
     config:
       cluster: staging.k8s.bobs-test.io

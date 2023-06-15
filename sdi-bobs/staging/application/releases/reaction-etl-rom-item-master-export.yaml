@@ -1,18 +1,20 @@
-apiVersion: helm.fluxcd.io/v1
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
   name: reaction-etl-rom-item-master-export
   namespace: serverless
 spec:
-  releaseName: reaction-etl-rom-item-master-export
+  interval: 3m
   chart:
-    git: git@github.com:roberts50/reaction-releases.git
-    path: charts/serverless-deploy-v2
-    ref: develop
-  helmVersion: v3
+    spec:
+      chart: "./charts/serverless-deploy-v2"
+      sourceRef:
+        kind: GitRepository
+        name: flux2-sync
+        namespace: flux
   values:
-    annotations:
-      iam.amazonaws.com/role: arn:aws:iam::225761155017:role/sdi-bobs-staging-serverless-deploy
+    spec:
+      serviceAccountName: serverless-sa
     environment:
       CATALOG_ID: "282"
       CLIENT_ID: BOBNA
@@ -21,8 +23,7 @@ spec:
       BRAND_DESCRIPTION: BOBS
       KAFKA_PARTITIONS: 3
       REACTION_LOG_LEVEL: DEBUG
-      SKIP_INVOCATION: true
       SHOP_ID: "44"
     package:
       name: reaction-etl-rom-item-master-export
-      version: b9a8f15
+      version: 70e7168

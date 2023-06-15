@@ -1,15 +1,18 @@
-apiVersion: helm.fluxcd.io/v1
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
   name: kafka-schema-registry
   namespace: staging
 spec:
-  releaseName: kafka-schema-registry
+  interval: 3m
   chart:
-    git: git@github.com:sportsdirect/sdi-releases.git
-    path: charts/cp-schema-registry
-    ref: feature/cp-schema-registry-v6.0.1
+    spec:
+      chart: "./charts/cp-schema-registry"
+      sourceRef:
+        kind: GitRepository
+        name: flux2-sync
+        namespace: flux
   values:
     fullnameOverride: kafka-schema-registry
     kafka:
-      bootstrapServers: "PLAINTEXT://b-1.staging.x225n6.c8.kafka.us-east-1.amazonaws.com:9092,PLAINTEXT://b-2.staging.x225n6.c8.kafka.us-east-1.amazonaws.com:9092,PLAINTEXT://b-3.staging.x225n6.c8.kafka.us-east-1.amazonaws.com:9092"
+      bootstrapServers: "PLAINTEXT://b-1.bobsstaging.od4vqz.c4.kafka.us-east-1.amazonaws.com:9094,PLAINTEXT://b-2.bobsstaging.od4vqz.c4.kafka.us-east-1.amazonaws.com:9094,PLAINTEXT://b-3.bobsstaging.od4vqz.c4.kafka.us-east-1.amazonaws.com:9094"
