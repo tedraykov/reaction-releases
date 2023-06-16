@@ -19,6 +19,7 @@ spec:
       labels:
 {{ include "serverless-deploy.labels" . | indent 8 }}
     spec:
+      serviceAccountName:  {{ .Values.serviceAccountName }}
       restartPolicy: Never
       containers:
         - name: deploy
