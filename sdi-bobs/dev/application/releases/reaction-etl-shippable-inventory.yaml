@@ -17,8 +17,8 @@ spec:
       iam.amazonaws.com/role: sdi-bobs-dev-serverless-deploy
     spec: 
       template:
-         spec:
-           serviceAccountName: serverless-sa
+        spec:
+          serviceAccountName: serverless-sa
     environment:
       JAEGER_ENDPOINT: http://jaeger-collector.monitoring.svc.cluster.local:14268/api/traces
       KAFKA_PARTITIONS: 3
@@ -30,4 +30,4 @@ spec:
       - mongodb
     package:
       name: reaction-etl-shippable-inventory
-      version: 604f5ce 
+      version: 604f5ce

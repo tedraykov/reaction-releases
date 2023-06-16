@@ -15,8 +15,8 @@ spec:
   values:
     spec: 
       template:
-         spec:
-           serviceAccountName: serverless-sa
+        spec:
+          serviceAccountName: serverless-sa
     environment:
       JAEGER_ENDPOINT: http://jaeger-collector.monitoring.svc.cluster.local:14268/api/traces
       KAFKA_PARTITIONS: 3
