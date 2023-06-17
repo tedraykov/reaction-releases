@@ -13,8 +13,7 @@ spec:
         name: flux2-sync
         namespace: flux
   values:
-    spec:
-      serviceAccountName: serverless-sa
+    serviceAccountName: serverless-sa
     environment:
       KAFKA_PARTITIONS: 3
       REACTION_LOG_LEVEL: debug

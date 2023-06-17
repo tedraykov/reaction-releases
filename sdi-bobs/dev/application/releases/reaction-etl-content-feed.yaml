@@ -13,8 +13,7 @@ spec:
         name: flux2-sync
         namespace: flux
   values:
-    annotations:
-      iam.amazonaws.com/role: sdi-bobs-dev-reaction-job-outbound-content-feed
+    serviceAccountName: serverless-sa
     fullnameOverride: reaction-etl-content-feed
     imagePullSecret: reaction-docker-hub
     image:

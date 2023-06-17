@@ -13,8 +13,7 @@ spec:
         name: flux2-sync
         namespace: flux
   values:
-    annotations:
-      iam.amazonaws.com/role: arn:aws:iam::539061729745:role/sdi-bobs-dev-serverless-deploy
+    serviceAccountName: serverless-sa
     environment:
       SFTP_HOST: tst02-xchange.gsipartners.com
       TARGET: sdi-bobs-staging-feeds-rom-order-status-import

@@ -13,8 +13,7 @@ spec:
         name: flux2-sync
         namespace: flux
   values:
-    annotations:
-      iam.amazonaws.com/role: arn:aws:iam::539061729745:role/sdi-bobs-dev-reaction-job-sftp-to-radial-item-master
+    serviceAccountName: serverless-sa
     fullnameOverride: reaction-sftp-to-radial-item-master
     image:
       tag: 9105c00

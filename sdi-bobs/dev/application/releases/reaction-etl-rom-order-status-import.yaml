@@ -13,8 +13,7 @@ spec:
         name: flux2-sync
         namespace: flux-1
   values:
-    annotations:
-      iam.amazonaws.com/role: arn:aws:iam::539061729745:role/sdi-bobs-dev-serverless-deploy
+    serviceAccountName: serverless-sa
     environment:
       KAFKA_PARTITIONS: 3
       REACTION_LOG_LEVEL: debug

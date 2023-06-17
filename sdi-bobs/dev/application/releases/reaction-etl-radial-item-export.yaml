@@ -13,8 +13,7 @@ spec:
         name: flux2-sync
         namespace: flux
   values:
-    annotations:
-      iam.amazonaws.com/role: sdi-bobs-dev-serverless-deploy
+    serviceAccountName: serverless-sa
     environment:
       KAFKA_TOPIC_RADIAL_ITEM_EXPORT_STATUS: etl.radial-item-export.status.json-gen1
       KAFKA_PARTITIONS: 3
