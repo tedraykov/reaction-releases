@@ -13,8 +13,7 @@ spec:
         name: flux2-sync
         namespace: flux
   values:
-    annotations:
-      iam.amazonaws.com/role: arn:aws:iam::515351286748:role/sdi-ems-dev-serverless-deploy
+    serviceAccountName: serverless-sa
     environment:
       JAEGER_ENDPOINT: http://jaeger-collector.dev.k8s.ems-test.io/api/traces
       REACTION_LOG_LEVEL: INFO
