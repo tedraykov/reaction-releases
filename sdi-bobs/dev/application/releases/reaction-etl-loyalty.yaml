@@ -4,24 +4,24 @@ metadata:
   name: reaction-etl-loyalty
   namespace: serverless
 spec:
-  interval: 3m
   chart:
     spec:
-      chart: "./charts/serverless-deploy"
+      chart: "./charts/serverless-deploy-v2"
       sourceRef:
         kind: GitRepository
         name: flux2-sync
         namespace: flux
+  interval: 3m
   values:
-    serviceAccountName: serverless-sa
     environment:
       AWS_REGION: "us-east-1"
       JAEGER_ENDPOINT: http://jaeger-collector.monitoring.svc.cluster.local:14268/api/traces
       KAFKA_PARTITIONS: 3
       REACTION_LOG_LEVEL: DEBUG
       SITE_CODE: BOBS
-    secretRefs:
-      - mongodb
     package:
       name: reaction-etl-loyalty
-      version: 5eea634
+      version: d65d1a9
+    secretRefs:
+      - mongodb
+    serviceAccountName: serverless-sa

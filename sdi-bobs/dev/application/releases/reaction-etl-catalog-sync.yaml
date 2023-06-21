@@ -4,7 +4,6 @@ metadata:
   name: reaction-etl-catalog-sync
   namespace: serverless
 spec:
-  interval: 3m
   chart:
     spec:
       chart: "./charts/serverless-deploy-v2"
@@ -12,8 +11,8 @@ spec:
         kind: GitRepository
         name: flux2-sync
         namespace: flux
+  interval: 3m
   values:
-    serviceAccountName: serverless-sa
     environment:
       JAEGER_ENDPOINT: http://jaeger-collector.monitoring.svc.cluster.local:14268/api/traces
       KAFKA_PARTITIONS: 3
@@ -24,3 +23,4 @@ spec:
     package:
       name: reaction-etl-catalog-sync
       version: 83a0ada
+    serviceAccountName: serverless-sa
