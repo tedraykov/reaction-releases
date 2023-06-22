@@ -1,19 +1,19 @@
-apiVersion: helm.fluxcd.io/v1
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
   name: reaction-etl-import-order-status
   namespace: serverless
 spec:
-  suspend: true
-  releaseName: reaction-etl-import-order-status
+  interval: 3m
   chart:
-    git: git@github.com:sportsdirect/sdi-releases.git
-    path: charts/serverless-deploy
-    ref: develop
-  helmVersion: v3
+    spec:
+      chart: "./charts/serverless-deploy"
+      sourceRef:
+        kind: GitRepository
+        name: flux2-sync
+        namespace: flux
   values:
-    annotations:
-      iam.amazonaws.com/role: arn:aws:iam::551763058466:role/sdi-ems-staging-serverless-deploy
+    serviceAccountName: serverless-sa
     environment:
       JAEGER_ENDPOINT: http://jaeger-collector.staging.k8s.ems-test.io/api/traces
       KAFKA_PARTITIONS: 3

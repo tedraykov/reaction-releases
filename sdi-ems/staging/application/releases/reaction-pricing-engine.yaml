@@ -1,14 +1,17 @@
-apiVersion: helm.fluxcd.io/v1
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
   name: reaction-pricing-engine
   namespace: staging
 spec:
-  releaseName: reaction-pricing-engine
+  interval: 3m
   chart:
-    git: git@github.com:sportsdirect/sdi-releases.git
-    path: charts/reaction-pricing-engine
-    ref: develop
+    spec:
+      chart: "./charts/reaction-pricing-engine"
+      sourceRef:
+        kind: GitRepository
+        name: flux2-sync
+        namespace: flux
   values:
     image:
       repository: 816897914983.dkr.ecr.us-east-1.amazonaws.com/reaction-pricing-engine
@@ -17,6 +20,9 @@ spec:
       - name: reaction-docker-hub
     ingress:
       enabled: true
+      annotations:
+        ingress.kubernetes.io/ssl-redirect: 'false'
+        kubernetes.io/ingress.class: nginx
       hosts:
         - host: pe-staging.ems-test.io
           paths: ['/']
@@ -27,8 +33,8 @@ spec:
       imageTag: configurable-via-env
     config:
       jvmOpts: "-d64 -Xms2560m -Xmx2560m"
-      bootstrapServers: "b-1.staging.zby85f.c5.kafka.us-east-1.amazonaws.com:9092,b-2.staging.zby85f.c5.kafka.us-east-1.amazonaws.com:9092,b-3.staging.zby85f.c5.kafka.us-east-1.amazonaws.com:9092"
-      zookeeperConnect: "z-3.staging.zby85f.c5.kafka.us-east-1.amazonaws.com:2181,z-1.staging.zby85f.c5.kafka.us-east-1.amazonaws.com:2181,z-2.staging.zby85f.c5.kafka.us-east-1.amazonaws.com:2181"
+      bootstrapServers: "b-3.emsstaging.ud5t5i.c8.kafka.us-east-1.amazonaws.com:9092,b-2.emsstaging.ud5t5i.c8.kafka.us-east-1.amazonaws.com:9092,b-1.emsstaging.ud5t5i.c8.kafka.us-east-1.amazonaws.com:9092"
+      zookeeperConnect: "z-2.emsstaging.ud5t5i.c8.kafka.us-east-1.amazonaws.com:2181,z-1.emsstaging.ud5t5i.c8.kafka.us-east-1.amazonaws.com:2181,z-3.emsstaging.ud5t5i.c8.kafka.us-east-1.amazonaws.com:2181"
       autoOffsetReset: "earliest"
       bufferedRecordsPerPartition: "0"
       cacheMaxBytesBuffering: "0"

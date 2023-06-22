@@ -1,15 +1,17 @@
-apiVersion: helm.fluxcd.io/v1
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
   name: reaction-admin
   namespace: staging
 spec:
-  releaseName: reaction-admin
+  interval: 3m
   chart:
-    git: git@github.com:frasersgroup/reaction-releases.git
-    path: charts/reaction-admin
-    ref: develop
-  helmVersion: v3
+    spec:
+      chart: "./charts/reaction-admin"
+      sourceRef:
+        kind: GitRepository
+        name: flux2-sync
+        namespace: flux
   values:
     config:
       oauth2IdpPublicChangePasswordUrl: https://staging.ems-test.io/account?email=EMAIL&from=FROM
@@ -23,6 +25,9 @@ spec:
       tag: "7cb138139"
     ingress:
       enabled: true
+      annotations:
+        ingress.kubernetes.io/ssl-redirect: 'false'
+        kubernetes.io/ingress.class: nginx
       hosts:
         - host: admin-staging.ems-test.io
           paths: ['/']

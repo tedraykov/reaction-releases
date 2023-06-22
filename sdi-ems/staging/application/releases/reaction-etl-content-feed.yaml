@@ -1,18 +1,19 @@
-apiVersion: helm.fluxcd.io/v1
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
   name: reaction-etl-content-feed
   namespace: staging
 spec:
-  releaseName: reaction-etl-content-feed
+  interval: 3m
   chart:
-    git: git@github.com:sportsdirect/sdi-releases.git
-    path: charts/reaction-outbound-content-feed
-    ref: develop
-  helmVersion: v3
+    spec:
+      chart: "./charts/reaction-outbound-content-feed"
+      sourceRef:
+        kind: GitRepository
+        name: flux2-sync
+        namespace: flux
   values:
-    annotations:
-      iam.amazonaws.com/role: arn:aws:iam::551763058466:role/sdi-ems-staging-reaction-job-outbound-content-feed
+    serviceAccountName: serverless-sa
     fullnameOverride: reaction-etl-content-feed
     imagePullSecret: reaction-docker-hub
     image:
@@ -20,7 +21,7 @@ spec:
     schedule: "0 8 * * *"
     config:
       batchSize: 1000
-      cloudName: eastern-dev
+      cloudName: eastern-staging
       cloudFolder: 0
       jaegerEndpoint: http://jaeger-collector.staging.k8s.ems-test.io/api/traces
       kmsKeyArn: arn:aws:kms:us-east-1:225761155017:key/e4294918-f196-4269-8294-8cfc8377a002

@@ -1,23 +1,25 @@
-apiVersion: helm.fluxcd.io/v1
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
   name: reaction-sftp-to-radial-ocf
   namespace: staging
 spec:
-  releaseName: reaction-sftp-to-radial-ocf
+  interval: 3m
   chart:
-    git: git@github.com:sportsdirect/sdi-releases.git
-    path: charts/reaction-sftp-client
-    ref: develop
+    spec:
+      chart: "./charts/reaction-sftp-client"
+      sourceRef:
+        kind: GitRepository
+        name: flux2-sync
+        namespace: flux
   values:
-    annotations:
-      iam.amazonaws.com/role: arn:aws:iam::551763058466:role/sdi-ems-staging-reaction-job-sftp-to-radial-ocf
+    serviceAccountName: serverless-sa
     fullnameOverride: reaction-sftp-to-radial-ocf
     image:
       tag: 9105c00
     schedule: "0 9 * * *"
     config:
       sftpClientPassword: AgCTvN6Obs2Ey64nZPfjHAbmka8+A4oY5EOnOkFW0aDNrSoPh0ri8wTLNFKp8DqJd3pKwFxsAQyhRDUJ+Bsy9XwAqc4af2hkDLLdnvxC95glyGlGCmiPG/u29/WTxYAzPW5/+r29gEfpTGlC99rfOmRCw31Zn0FDY5kuFEOlUXNfASF9L0M2SUM+N2qExmAZ6ySHYg7OPUbQqJ1QIeJk7szDw6xYW2o5JPf9tYkrYaknguoaIl0tJ+Ph2hJ9nQA7lVT+ZW25a8iLcVmBpqjsWqffEHIhjykoI75PPUJzezK9Of8i7Pp4v2gHZBCwtiG2MDj2BlZCk4D+XRDhMxmDwfEHm2LjCyksuqtCH7s67M5AP6j1ly8DGFLkGyULmc/xpfn/FWF7fl7S2lk30MIxwbWiqcW2Zsvkhj9zA3FAahV7L+YPnr2wiQSotI1sNNjW4Y3tyOiJodWLaLCtixLe7WWA2JB7UqaWV2tpBhNlQsd9zrZn4CZVBnqZP1ToNFdfhNrszzk+ismb+tSGoVOZDUs39A/rVswm6ges7VF6ep+KiOCoxTMZZ4/m8T43+ijO6IFgXKSUsXni5pEKNizEQRLf3CSXuBNgkSzEAZfOXuxu7+GqtHVKrrWHMvA3VFfzPaAwzEUdLg5sO2mOdd3VWkbbHeo4nO8mtMYDpBlkB/AZZxVXAk5Y2lkvbr31tM5sMfO5RdZLyuWdHNTU
-      sftpClientSource: s3://sdi-ems-staging-feeds-outbound-content
+      sftpClientSource: s3://sdi-ems-stage-feeds-outbound-content
       sftpClientTarget: sftp://ftp.gsipartners.com/testing
       sftpClientUsername: emsmpftp

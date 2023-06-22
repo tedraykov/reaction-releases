@@ -1,25 +1,26 @@
-apiVersion: helm.fluxcd.io/v1
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
   name: reaction-s3-to-sftp-item-master
   namespace: serverless
 spec:
-  releaseName: reaction-s3-to-sftp-item-master
+  interval: 3m
   chart:
-    git: git@github.com:roberts50/reaction-releases.git
-    path: charts/serverless-deploy-v2
-    ref: develop
-  helmVersion: v3
+    spec:
+      chart: "./charts/serverless-deploy-v2"
+      sourceRef:
+        kind: GitRepository
+        name: flux2-sync
+        namespace: flux
   values:
-    annotations:
-      iam.amazonaws.com/role: arn:aws:iam::551763058466:role/sdi-ems-staging-serverless-deploy
+    serviceAccountName: serverless-sa
     environment:
       SFTP_HOST: tst02-xchange.gsipartners.com
       RADIAL_STORE_ID: EMS2US
       REACTION_LOG_LEVEL: DEBUG
     secrets:
-      SFTP_USERNAME: AgC6jAO189oy4RIoi10QEyXq0niwwja9LziVSlY9Newvi2MzMCePB719JvXRLWT21KG0nHLK8PaDTc5q1aruMs1eGhekCMyW+MNi3E4vF84pM2f6hk7r+O62DE4FOidG1wjEOF2gwy4LzOPTluo+Ho4WZZV67FRTyMjh0w42xpgCMFBuqUp1GVC4UaJa1iTGLRSoaiYZs3z42Y/Tk2Tl1/FbyQroG4UYkbN4cxJ2E416GYWYUkSvoiAu9gRVN8je7FDOnF8kiJQ8MAPZShPYCJe2/OapeTutrFdGPS8JzpjE7ZFQ2R6d3xqTjkuoIuOpbUW1rSMXpyoTiKgXHQ5Qmakcm/vr+DK5MaXWCtU9rewqc3aELTT95gbdDiRvW2ry9aTN3oxIcRxTd1icIEp+04bI5DD441yvn5wO+wRQ+qVUvKk0x6/pYYp6+rlFjy5L8Zoj8JB/k8ZsWdj9GRoNLCfJ/+wQZsjtSlv38JYEN6McRoPZhU/9X4ESg5FSfIk5x8uPMF9yxr8LGHs5ROHQ7yN8vu85qDZjjbJ3nRTXnMz5wp8DNHnOhxUV24LJ/acizS1DxlKgast95T8pv0EEQ8D5hnmsjhk1lNrvDH4emftZiOquw9Qd3ZID1HnaKhU+nJHDkOxV+UVqkQJLvb24qeW6jAWpUgaVe/pT7RZJOpSK/5Hnm9DRMbVATmlL8TWXlOqlg96Vyg==
-      SFTP_PASSWORD: AgA2px/IpWPux/EF2kcn/9T7LBeVYedDKN4/ERdJb5dFZX/32y9NSUxKXi6iVLFpskU0chXJZ8RvnZevwRFsOjuxDLR8ndoJkjGt/rJfLkp0JzuF0z+NJCTEqPE+ucbgjSjyh9zu/F3+FWz4iuCV/vRHd5lqg2Q2FRmO9rx66Bw/8BrwomKfZQCQ0G9RUT+AGSctH4dVVu4DCOyNT9f6Z+HC5UpjpMMMRTpzEMBOn1AeIC/okgxk7NVKRXxyDwPx4+4ks6yEFDFM20PUQLn1EtwpYnLriWL8fb7ZrDjjekL0eZGvhEzarySxGtru+6TS/JLDq6p5dUlDPcXxnUOARuGI1+h2uMZZKcypmUVVe4GCywZ/AD8QmpGPIJKACskc8tTf3bG1Ngmqz26ghzWAqulxgK/OZyzBjBWaIN3IThVxYkiczrm84svVOAWeTVslQacs7tALE2/BcemS4Sre7meFsO8sSyJIl9GwiSZSi6RXdEEdVjXnJY0gFFWlHotF92UppnH4Z1YaZrJDdscIRClUME9FNyeHdhM/WSnY7OC9JDRJ6YG9RWtDoZ9DU9VXkU3TBVKSt788fqVJhM8XbV6aw1QfcOIDB+60S2wRsvdIH6JEPSjFgDVJrRkYh5KzaKAPiH+pArbVgCe69B4q8pZ+IjWD1hMKRKy9ud+sOZMpN1B7SVD3xN368Xd6RB8SrsRRIXA55cDBhA==
+      SFTP_USERNAME: AgBocJ9pxR7sN1zOLXebaZB+cIoMGGBxRC0/dHmk80HAlwzFaEIMU7cILphBPtfdt1tQgif/AL3v48+a5AoQAxqvV8gUm9TV+kApe/vo6Hyo0JNQbJMg1HNjlNOYqF2LIk7rny6MMyNlp8JSqQxM7MKs5jTO7WExcAqUormFftFrfzfTWhs7PhWAo4UAK6B5nb9mmumldB2wJJNP+PnKdA2vQ4LLItkUKUv4KGh1BCemcuV4MbPUFy5p/Zsrt7Hltd7s2uMY5vTUz4PkDvsmsO+fOus7Kw964cvMB/TyM3lXKCOyyNFpdNRy5ARxDPuF9WsCUbg4vXvG6Io2j9nWOJCNXKiOVxNrqFv4kMkyzHT9xEQ13zJSDYEpz2GrupYae5b24gRp+FQGylToN4GDMkG92bDu3WLusEY8XBjq9BvsAyHFIUelqVNH8w5fk2WArerBQK8e4hzj7prr1Jj3+zDbcH4H82m/2wnb4JXyEOUKS0xXbCwNizxm5hBfvDfeDwIPC4lxr6gra876YPJB+bPFf3UaipkjI2gtPOpBJAz0grAHXm87N9mDznnKvYJFqmJn8OG1Rc7LbSbl9sKHu09uAH+ltTkDfKUXDu9n3SSLUDnoOgo+BrwROybYRB+y5WeRV45gAOM+f0fswS3nTwoiw3s3fo4hw/NxP6EvUcLQPKrbNx/3m/OgB8gPFO/bqC6vFI+Lag==
+      SFTP_PASSWORD: AgCDpDHnJTgtMk/NLTucuZNdhQdRx4wGacqVfmqx8jdEigdroHUTvoAoT2njiPjqm2boFEoZ/pTRFiMmmiGNQNxATdDA5VQDSSDzwtG3OHGty9h5WqQ6wfrI7dKN+z8FbTMVqMW6PTNzxLdaNGhfcJv6f6437+5lC3mbGdmQZPlpJNMFeaVF/th9JVmwbtpjKhVk19h89TJ1TKUkyRP4l7W1xfH17J+LyN9KP/k7wkF4p94ZcIdQKwyGnyY7X3nQhnZ2Jv5ThDvwGjFQ5uNJ/NeMQr2IWC2bNc834UJCz5XUIbwPfj1SROzDMmRbDUfICcpfgDIjZQKLrDi3z7rZXIrS/HBY4ZgkRfOCjjNPzIRRph3Tdff0mLBYABcBis4qrrMWy/OzxWNViamxBdtqD12aU0jQL20Sk/ABJQwvWS0uv+wpWQGoCJ6SwPTjzfkcQy5Mdu7yZkluYjq8hoWp8uCY+SdCM0ZfuIHTjXyUxqHuazqXCynR9UyhCpZGpDvHEfUrJxbFK+8PbB+oFDY0k86WEBBZwXfGZZj0DOGppe7jTisuJt1LzRn/KEVijGt6jlv1Hg6cAUcqI2nlCWStDjC8bZg/5y5aTf2CKIdJndcyIoaayWLk8gnXpuDyL2AZPgyJuyXk0eLPfS3JKO648iLgB1qPoxc/ip+rmX6o4LZxVTXgbTRHvvZ2PemZLjuwapYYK26Z
     package:
       name: reaction-s3-to-sftp-item-master
       version: 8382e0b

@@ -1,26 +1,27 @@
-apiVersion: helm.fluxcd.io/v1
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
   name: reaction-etl-image-import
   namespace: serverless
 spec:
-  releaseName: reaction-etl-image-import
+  interval: 3m
   chart:
-    git: git@github.com:sportsdirect/sdi-releases.git
-    path: charts/serverless-deploy
-    ref: develop
-  helmVersion: v3
+    spec:
+      chart: "./charts/serverless-deploy"
+      sourceRef:
+        kind: GitRepository
+        name: flux2-sync
+        namespace: flux
   values:
-    annotations:
-      iam.amazonaws.com/role: arn:aws:iam::551763058466:role/sdi-ems-staging-serverless-deploy
+    serviceAccountName: serverless-sa
     environment:
-      CLOUDINARY_CLOUD_NAME: eastern-dev
+      CLOUDINARY_CLOUD_NAME: eastern-staging
       JAEGER_ENDPOINT: http://jaeger-collector.staging.k8s.ems-test.io/api/traces
       REACTION_LOG_LEVEL: INFO
       SKIP_INVOCATION: false
     secrets:
-      CLOUDINARY_API_KEY: AgCPPxToiZaUtysOpFL926i3A64ysPPKVLpI+ayDNdhQVlto5vKCtxBQH6Z1R+MQLFbzns8cuofztXM9eItgaAe46CxeQ+rVldyxwyMD4quDqoUkQHi8zgPnpUaRrjllgqcImSK16MIIBNaqtHssvQgX6ywuIbYKaLDfZXfbC3DrABypMc0uoVmbUiPGGzNG0SiPwgegkT1JSgyqbmuoiJAa19VyeglwoKtqXNkFYiqLMKWiTbHyet/qCpUJEE336gV5DXrRE78I0rZ1ibOifQqeDobqTBXrUfgpArTi4qvclwMoA3zLGE7kw+TOem2UX1dMI29o2PbE3hT+Nik/nrYQSzVk3cDuXKd0zCqiTMj4t82O1Mh769BkmR7Bgo7N1I8jgeHoORPDG+mCHlSeB3Lj00VLNUcTP0WSTBgPfteplClZxUoH3Nl+iPaXRZkUKaI3zOb/ZHyLdMWFjHTpcItYcpCZ42y5PEspp9/pO8W1HgJtc8Puu3i+qGP/0D1rn6d1UiJvbBuWQAYoRoegibI0Akosy8T5rquaLMNxrDuingbOLekVeDS9kz4tgtJyKa+5Q74PCcJoIgwaz5SYgbpGvFPNZrEuaUL6ouDugrE03+VMsBAp9Oq8D1+Atle3DMSDPkBRwW24K0PgbRvRnEh5nusd9baqSKx/mXkVjMyqUowmnnI5//AB7HeJ0QD5RDxCTG8LNggR43kEoEOoeLg=
-      CLOUDINARY_API_SECRET: AgCrCqHpWeZH//7yrWk5I5qPGt6YSDQ+w4neqK/cRpLJLC+sLWOMgw+0gfQzq9JchGvIuZqF5qPWladgl8Jq7Ezmg4/hixmMZ+c33VTjFXzaQwGb0E94uEbAMJkC7MXkfaB4jO0ErmSgkj8L7s9jL+OoTUQBFpUJFpuPN6wM0O+KAFqRz8o7kC2PnCwvHsy+KhJdKj18glcUd8MiI0titCq0WXNeuJ5Ie2bafFFbLW/2qgvErmsyLeNEFVk3S3E38EDIqR0PJURrP2uMCV1ZG2pzf2s138t8Qa2uk2BbAlhxbAqCL5K5Nr7mN2bq4w4kf1ILBFgx/WRUYO30S8VFwJQUgRR+sg8vr3nhVxLIzdSnsCzYPk2DZ+2G2nSMJCaJxI0oTsZd+0E+7a6qFDjFXwhMu7sZyEtsH/FDTP2bQAu7mULlvve80QMrqTjPJpb+Kb+j/JmJlnJtr+hWVF+ZQvK2iPbcQRm3r81BPwImBq8E+KaNRMAr9wzo2uQDeGP3dymeHKkIRSb8Rp88tDo1oAf1u6rrbbytJnA914XRQxAYekegcM+6Yyh2WF8dRjE9jOc9biDV1nMOcIWA8Qsf6hK84P1or6wAyzip4kJ/VHDN2tjNat3WqHVlD33Eq6w3GA90xVCB6fzvCUmSpMQOLjHCH7BS+ELj+JoYzrAJjBVpUPL60n74K27ECcwpjlLL41AH6sSSuME48xw/PJd+lS+1TbK1jFmOqehHHaw=
+      CLOUDINARY_API_KEY: AgC8EqN0NAh1WbVxhkNKn1WcGYUdSRRqwg5g5cJJcM7hZJelWCWu5RtWw+LlGsg40oBD25PEaDu/JpQCgTdKlBIGV4Klgqu56/ZZsqbOTWbJoqj8+QwUtS1mFSJRm+X5on9TcjxAY4jJt8qfNzPKnxSKph2IfJuYKaiyeK9QTeVUasiv9peVH41U0FjOtazuPr2jkXmHD7yKOc2vzEPsybW9M/iFK+0ZqPgUwlLGx2ati5H8XNS2y5OVUHjWgCDO3DfGVeU0DuC6GEFfXd3s8/cYeOdn5bGi0WlgOFScczNJptM5Wxk4LcSxFd3gUPWbVzitf1X8mpaeFcTFyKZ8pG+PDTlnE74Y/1kItyWCSIV/wfe9FlmxC6axpJRPRdXDYIpbl7VJshdEG9W3PK7al+KBteNXqAtU282xYXgMq8NilkI0Lmhp7ejE6+GhVA00uaAgPwHnPPmPV7yFshUkIvbBwmK+cItI7AuOuYjtCpHK6qIIDcG/MeQFazgyXUTbomxIbs1SW7e++wE8IlRAXQ3upCW4TJXQD8Fa8MZpPEdwmtnLZh5j/crSXFtae6fYFG77E+zyDRphWu5og+eCgwSL3uaC3LJrXKmpeh9VVEvfAH+USKcRn6KMK/6ThG5j1FlZp7ZWw1DFZItshD0dYFCa+InDGO/Yc1+lTYCP2nW+L0ihuBpl17hpHEj7FH1msZ4EcpAlautbZYN/rBE2Ivk=
+      CLOUDINARY_API_SECRET: AgCTa8GGbKQzEwq7MucCORnZg4a75IJn17j05kV3Dz1Zn9iHj2ogIsiwi47DIJwh50T8fnjVCJiI/17Hc+PDVjEyPZzKP2WVqSC8rbmVrsN9JVrhXxcDwE9JmBK3WOr7jbwrUMoWwpCXdpg4wBUXDDUKv8ieVX8IgGL/u/ZGjIHIgiejVvbw4k4DkgIXhSvsdcRsWV2wk5hZL83nDbl7+IS29xFi1XXFqziMon00zC9DQW8xHIOGmxKZBnNQd0GpGQhFmv2/YwMoAFRddpLuePecp4w3t/gNNzl3w+HYR2qM8eThypSXg+d/nQ3JdzD+Gk0BRktj6Q2UCgCHZbbsVTbNJEP5AEcgKIehDAh4kyYiRtSpa5L3rhpLe5veoBohOb/1mtwrLfh06VdVW3rAHLAw0LlZAJqguokdCfifrvNgIF2BRiHjNI1t2p/kqyRSmAj42n4vuLG1v+Tv9kCCcL5j076ffBMekIWDpEVcqarUltrY3ckQQV+m8OEpJS4up/irtYO89cgzDX3tkc0C7ZNc/qJMPh5MJL46ZgXgCyqQ71MoM2zTxCzSTZZFstZl7bRACIU1Y8iWDxunPgXj6WUy+qCeu3wUlSCabSXjeWZ7JQGfOH7Zk/RvA1NjbSoGQJ0ifnVqMdyP9jMyqX2SMHwFEvTKNnFH00GLuWUNIO2i7xOSvVhssxIOzcKMJ/QKa6iX00qAP4kmoblFh3Wr73Zi7lkfdX4mvd+YSro=
     package:
       name: reaction-etl-image-import
       version: 46a6927
