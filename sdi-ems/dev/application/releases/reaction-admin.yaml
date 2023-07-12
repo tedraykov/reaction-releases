@@ -22,7 +22,7 @@ spec:
       publicStorefrontHomeUrl: https://dev.ems-test.io
       rootUrl: https://admin-dev.ems-test.io
     image:
-      tag: "c1ccf3c"
+      tag: "229e4d2"
     ingress:
       enabled: true
       annotations:
