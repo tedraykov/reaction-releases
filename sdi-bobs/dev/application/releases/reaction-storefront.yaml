@@ -28,6 +28,7 @@ spec:
         accessToken: cs7197fa31078b9f44382a5a77
         apiKey: blt1f2a37a50d4512f7
         environment: dev
+      graphqlUrl: https://api-dev.bobs-test.io/graphql
       hydraAdminUrl: http://ory-hydra-admin:4445
       hygraph:
         readonly_api: "https://us-east-1.cdn.hygraph.com/content/clbs6zpks1bkj01t7caff08fc/master"
@@ -80,7 +81,7 @@ spec:
       max: 10
     image:
       repository: 816897914983.dkr.ecr.us-east-1.amazonaws.com/reaction-storefront-bobs
-      tag: ac6f9b9
+      tag: 7d629ac
     ingress:
       annotations:
         ingress.kubernetes.io/ssl-redirect: 'false'

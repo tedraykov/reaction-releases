@@ -84,6 +84,7 @@ config:
     # environment: staging
   #identityServiceUrl: http://reaction-storefront-identity:4100
   internalGraphqlUrl: http://reaction-core-web/graphql-beta
+  graphqlUrl: http://reaction-core-web/graphql-beta
   #merchstackApi: XXX
   #merchstackEnvironment: XXX
   oauth2:

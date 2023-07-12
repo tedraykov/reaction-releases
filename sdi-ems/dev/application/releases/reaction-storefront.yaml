@@ -28,6 +28,7 @@ spec:
         accessToken: csb02ca017686e318f87dff41b
         apiKey: blt7841d2a593726d96
         environment: dev
+      graphqlUrl: https://api-dev.ems-test.io/graphql
       elasticsearchUrl: https://vpc-dev-storefront-mduien76trlzpmbscx5il5tszy.us-east-1.es.amazonaws.com:443
       hydraAdminUrl: http://ory-hydra-admin:4445
       hygraph:
@@ -82,7 +83,7 @@ spec:
       max: 10
     image:
       repository: 816897914983.dkr.ecr.us-east-1.amazonaws.com/reaction-storefront-ems
-      tag: ac6f9b9
+      tag: 7d629ac
     ingress:
       enabled: true
       annotations:
