@@ -1,0 +1,28 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: kinetic
+  namespace: dev
+spec:
+  interval: 3m
+  chart:
+    spec:
+      chart: "./charts/kinetic"
+      sourceRef:
+        kind: GitRepository
+        name: flux2-sync
+        namespace: flux
+  values:
+    config:
+      apiUrl: https://api-dev.bobs-test.io
+    image:
+      tag: "871645f"
+    ingress:
+      enabled: true
+      annotations:
+        ingress.kubernetes.io/ssl-redirect: 'false'
+        nginx.ingress.kubernetes.io/proxy-buffer-size: 256k
+        kubernetes.io/ingress.class: nginx
+      hosts:
+        - host: kinetic-dev.bobs-test.io
+          paths: ['/']
