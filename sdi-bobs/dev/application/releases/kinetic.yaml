@@ -14,7 +14,7 @@ spec:
         namespace: flux
   values:
     config:
-      apiUrl: https://api-dev.bobs-test.io
+      apiUrl: https://api-dev.bobs-test.io/graphql
     image:
       tag: "ea2b256"
     ingress:

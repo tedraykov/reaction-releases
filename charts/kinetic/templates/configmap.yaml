@@ -10,5 +10,6 @@ metadata:
     app.kubernetes.io/managed-by: {{ .Release.Service }}
     helm.sh/chart: {{ include "kinetic.chart" . }}
 data:
-  VITE_API_URL: {{ required "config.apiUrl not defined" .Values.config.apiUrl | quote }}
+  API_URL: {{ required "config.apiUrl not defined" .Values.config.apiUrl | quote }}
   PORT: {{ .Values.config.port | quote }}
+
