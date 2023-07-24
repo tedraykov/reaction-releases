@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    app: reaction-api-migration
+  name: reaction-api-migration
+  namespace: dev
+spec:
+  containers:
+  - env:
+      - name: REACTION_LOG_LEVEL
+        value: DEBUG
+    envFrom:
+      - secretRef:
+          name: mongodb
+    image: 816897914983.dkr.ecr.us-east-1.amazonaws.com/reaction-api-migrations:9fac583
+    imagePullPolicy: Always
+    name: runner
+    resources:
+      requests:
+        cpu: 1
+        memory: "2Gi"
+  restartPolicy: Never
