@@ -20,4 +20,4 @@ spec:
       SITE_CODE: EMS
     package:
       name: reaction-etl-store-inventory
-      version: "916f238"
+      version: "d65d1a9"
