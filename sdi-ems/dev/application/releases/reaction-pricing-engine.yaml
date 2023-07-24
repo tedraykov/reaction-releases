@@ -33,8 +33,8 @@ spec:
       imageTag: configurable-via-env
     config:
       jvmOpts: "-d64 -Xms2560m -Xmx2560m"
-      bootstrapServers: "b-3.emsdevelopment.8y7jbs.c6.kafka.us-east-1.amazonaws.com:9092,b-2.emsdevelopment.8y7jbs.c6.kafka.us-east-1.amazonaws.com:9092,b-1.emsdevelopment.8y7jbs.c6.kafka.us-east-1.amazonaws.com:9092"
-      zookeeperConnect: "z-2.emsdevelopment.8y7jbs.c6.kafka.us-east-1.amazonaws.com:2181,z-1.emsdevelopment.8y7jbs.c6.kafka.us-east-1.amazonaws.com:2181,z-3.emsdevelopment.8y7jbs.c6.kafka.us-east-1.amazonaws.com:2181"
+      bootstrapServers: "b-1-ems-dev-kafka.dev.k8s.ems-test.io:9092,b-2-ems-dev-kafka.dev.k8s.ems-test.io:9092,b-3-ems-dev-kafka.dev.k8s.ems-test.io:9092"
+      zookeeperConnect: "z-1-ems-dev-kafka.dev.k8s.ems-test.io:2181,z-2-ems-dev-kafka.dev.k8s.ems-test.io:2181,z-3-ems-dev-kafka.dev.k8s.ems-test.io:2181"
       autoOffsetReset: "earliest"
       bufferedRecordsPerPartition: "0"
       cacheMaxBytesBuffering: "0"
