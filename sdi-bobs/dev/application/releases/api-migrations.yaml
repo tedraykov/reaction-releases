@@ -10,8 +10,8 @@ spec:
       chart: "./charts/api-migrations"
       sourceRef:
         kind: GitRepository
-        name: api-migrations
-        namespace: dev
+        name: flux2-sync
+        namespace: flux
   values:
     image:
       tag: "9fac583"
