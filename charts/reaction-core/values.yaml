@@ -130,6 +130,7 @@ resources:
 
 kafkaConfigMap: kafka
 mongodbSecret: mongodb
+redisSecret: redis
 
 nodeSelector: {}
 

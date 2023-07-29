@@ -64,6 +64,8 @@ spec:
                 name: {{ .Values.kafkaConfigMap }}
             - secretRef:
                 name: {{ .Values.mongodbSecret }}
+            - secretRef:
+                name: {{ .Values.redisSecret }}
           ports:
             - name: http
               containerPort: 3000
