@@ -1,0 +1,26 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  labels:
+    {{- include "api-migrations.labels" . | nindent 4 }}
+  name: {{ include "api-migrations.name" . }}
+spec:
+  template:
+    metadata:
+      labels:
+        {{- include "api-migrations.labels" . | nindent 8 }}
+    spec:
+      containers:
+      - image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        name: {{ .Chart.Name }}
+        env:
+        {{- if .Values.env }}
+          {{- toYaml .Values.env | nindent 6 }}
+        {{- end }}
+        envFrom:
+        - secretRef:
+            name: {{ .Values.secretName }}
+        resources:
+        {{- toYaml .Values.resources | nindent 8 }}
+      restartPolicy: Never
