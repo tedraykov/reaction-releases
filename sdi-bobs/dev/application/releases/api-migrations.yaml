@@ -14,7 +14,7 @@ spec:
         namespace: flux
   values:
     image:
-      tag: "9fac583"
+      tag: "ed8b5b5"
     env:
       - name: REACTION_LOG_LEVEL
         value: DEBUG
