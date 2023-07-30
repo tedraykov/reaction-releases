@@ -16,7 +16,7 @@ spec:
         name: {{ .Chart.Name }}
         env:
         {{- if .Values.env }}
-          {{- toYaml .Values.env | nindent 6 }}
+          {{- toYaml .Values.env | nindent 8 }}
         {{- end }}
         envFrom:
         - secretRef:
