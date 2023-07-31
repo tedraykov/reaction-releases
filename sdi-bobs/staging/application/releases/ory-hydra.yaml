@@ -1,0 +1,41 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: ory-hydra
+  namespace: staging
+spec:
+  interval: 3m
+  chart:
+    spec:
+      chart: "./charts/ory-hydra"
+      sourceRef:
+        kind: GitRepository
+        name: flux2-sync
+        namespace: flux
+  values:
+    hydra:
+      autoMigrate: true
+      config:
+        serve:
+          public:
+            cors:
+              allowed_origins:
+                - https://admin-staging.bobs-test.io
+                - https://staging.bobs-test.io
+              enabled: true
+        urls:
+          consent: https://staging.bobs-test.io/private/consent
+          error: https://staging.bobs-test.io/signin
+          login: https://staging.bobs-test.io/signin
+          logout: https://staging.bobs-test.io/logout
+          self:
+            issuer: https://auth-staging.bobs-test.io
+      existingSecret: ory-hydra
+    maester:
+      enabled: false
+    ingress:
+      public:
+        enabled: true
+        hosts:
+          - host: auth-staging.bobs-test.io
+            paths: ['/']

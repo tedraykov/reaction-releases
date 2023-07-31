@@ -7,7 +7,7 @@ spec:
   interval: 3m
   chart:
     spec:
-      chart: "./charts/serverless-deploy"
+      chart: "./charts/serverless-deploy-v2"
       sourceRef:
         kind: GitRepository
         name: flux2-sync
@@ -18,7 +18,6 @@ spec:
       CLOUDFLARE_CLIENT_ID: c7c627b2d6c2dd2467758a0e96e98a8f.access.bobs-test.io
       GRAFANA_API: https://grafana-staging.bobs-test.io/api
       JAEGER_ENDPOINT: http://jaeger-collector.monitoring.svc.cluster.local:14268/api/traces
-      #PRICING_GRAPHQL_URL: http://pe.staging.k8s.bobs-test.io/graphql
       PRICING_GRAPHQL_URL: https://pe-staging.bobs-test.io/graphql
       REACTION_LOGGER_NAME: reaction-etl-pricing-import
       REACTION_LOG_LEVEL: INFO

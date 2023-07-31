@@ -24,4 +24,4 @@ spec:
       SFTP_PASSWORD: AgAjeiiVLTdIbTGhQaHShAOuw++w1uIoPE78M7f1nAaa2HhicJPmpufupeB2g36ITfHlqKHyTxjO6+GB6p3VHku6AF/ObyX8yvPn6Bn/F5sdtSmdiVdXuipcphEiHJFAUkzIgSLOovKn5l1OormiYE0rEXhUNEIfoj3sqO1l3LZfUmScI1A5YEVCTpNwbtIXqZ/0j2DYoPdIdTlQlxxko5CbGyZDwwqO9kod9mcFET6EmwEu2tHN5uj0ajFlUqMnJHZkltDp9iRFj4xnofRb2ZxsXOTFy2u/+bHecYSaHxMHJ9fBGRCUsl8Kaw3D60n/PakwpoHYY8OgFNMg6QZGP6UHQoj03YWs3n/wcHCXPtv1s06IaieSuKUOkXGaL1jjtR6ZpBrunb2jmVqmDlXrAX6/fQn/J5LbyIZqSUiNEVNW9iTSBllNZF/4dOQpgWjfXxf4M9sYopTyn1N1+jTBHY3JFT9eWCB6X4mofPovYG5o1glYVZC/hh3CzEszyR7veFMRzfKTCrcSkA1SguI+bBml0eum13SFJbFfFeINvSdJaMy1g4plhxJOfnllxVV03ftYAOIfRAHTCJvspc7AV4vnhRNXJsSa6PZBU3N/0ARQjJ/40Sf8hjT/s6KG4GN87LAwfEpxG5MCsaVrh3eoz54/Nmt2O8YaqGszJzAU2vpHrHoUEcUkTJlnWmSixDZ8RKb/yKwpfA==
     package:
       name: reaction-sftp-to-s3-order-status
-      version: bcf5648
+      version: 5510bef

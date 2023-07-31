@@ -32,8 +32,8 @@ spec:
       image: 816897914983.dkr.ecr.us-east-1.amazonaws.com/jmx-prometheus-exporter
       imageTag: configurable-via-env
     config:
-      zookeeperConnect: z-1.bobsstaging.od4vqz.c4.kafka.us-east-1.amazonaws.com:2181,z-2.bobsstaging.od4vqz.c4.kafka.us-east-1.amazonaws.com:2181,z-3.bobsstaging.od4vqz.c4.kafka.us-east-1.amazonaws.com:2181
-      bootstrapServers: "PLAINTEXT://b-1.bobsstaging.od4vqz.c4.kafka.us-east-1.amazonaws.com:9094,PLAINTEXT://b-2.bobsstaging.od4vqz.c4.kafka.us-east-1.amazonaws.com:9094,PLAINTEXT://b-3.bobsstaging.od4vqz.c4.kafka.us-east-1.amazonaws.com:9094"
+      zookeeperConnect: z-1-bobs-staging-kafka.staging.k8s.bobs-test.io:2181,z-2-bobs-staging-kafka.staging.k8s.bobs-test.io:2181,z-3-bobs-staging-kafka.staging.k8s.bobs-test.io:2181
+       bootstrapServers: "PLAINTEXT://b-1-bobs-staging-kafka.staging.k8s.bobs-test.io:9092,PLAINTEXT://b-2-bobs-staging-kafka.staging.k8s.bobs-test.io:9092,PLAINTEXT://b-3-bobs-staging-kafka.staging.k8s.bobs-test.io:9092"
       jvmOpts: "-d64 -Xms2560m -Xmx2560m"
       autoOffsetReset: "earliest"
       bufferedRecordsPerPartition: "0"
