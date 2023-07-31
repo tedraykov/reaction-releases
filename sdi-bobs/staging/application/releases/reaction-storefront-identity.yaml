@@ -9,8 +9,8 @@ spec:
      spec: 
        chart: "./charts/reaction-storefront-identity"
        kind: GitRepository
-        name: flux2-sync
-        namespace: flux
+       name: flux2-sync
+       namespace: flux
   helmVersion: v3
   values:
     config:
