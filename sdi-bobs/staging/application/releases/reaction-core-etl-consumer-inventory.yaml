@@ -8,7 +8,6 @@ spec:
   chart:
     spec:
       chart: "./charts/reaction-core"
-      version: '0.1.4'
       sourceRef:
         kind: GitRepository
         name: flux2-sync
