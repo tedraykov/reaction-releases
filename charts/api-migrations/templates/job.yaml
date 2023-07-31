@@ -19,6 +19,8 @@ spec:
           {{- toYaml .Values.env | nindent 8 }}
         {{- end }}
         envFrom:
+        - configMapRef:
+            name: {{ include "api-migrations.name" . }}
         - secretRef:
             name: {{ .Values.secretName }}
         resources:
