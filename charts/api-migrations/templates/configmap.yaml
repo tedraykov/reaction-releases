@@ -6,8 +6,8 @@ metadata:
   labels:
     {{- include "api-migrations.labels" . | nindent 4 }}
 data:
-  REACTION_SHOULD_ENCODE_IDS=true
-  CART_REFERENCE_ID_PREFIX=123
-  SITE_CODE=EMS
-  RADIAL_API_KEY=testkey
-  RADIAL_STORE_ID=EMSUS
+  REACTION_SHOULD_ENCODE_IDS: "true"
+  CART_REFERENCE_ID_PREFIX: "123" 
+  SITE_CODE: "EMS"
+  RADIAL_API_KEY: "testkey" 
+  RADIAL_STORE_ID: "EMSUS"
