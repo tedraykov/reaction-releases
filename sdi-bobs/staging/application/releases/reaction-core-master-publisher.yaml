@@ -8,6 +8,7 @@ spec:
   chart:
     spec:
       chart: "./charts/reaction-core"
+      version: '0.1.4'
       sourceRef:
         kind: GitRepository
         name: flux2-sync
@@ -60,4 +61,4 @@ spec:
       storeUrl: https://staging.bobs-test.io
     image:
       repository: 816897914983.dkr.ecr.us-east-1.amazonaws.com/reaction-core
-      tag: eafb3b8
+      tag: de2827b
