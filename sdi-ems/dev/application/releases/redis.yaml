@@ -1,0 +1,17 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: redis
+  namespace: dev
+spec:
+  interval: 3m
+  chart:
+    spec:
+      chart: "./charts/redis"
+      sourceRef:
+        kind: GitRepository
+        name: flux2-sync
+        namespace: flux
+  values:
+    config:
+      redisUrl: AgDV3iqXZzEOIcf6K3fn48GNCN3lLtZAY9/p9Otq3SbhuLJ1gqTvADsJraRd7Qq8vtQHBINWIAnovxBBCl27ghOcvxtFXjbUJOoKMfKywqvCx//2iFysyqaz6M7OmkdNSbFUqGrVHrfx/s2ADU5fLTOOCyc6n+81XGbhVsJ8xsGl212eGtZAPUKvf2E+0gqUGOKZ2Te1byE+AzxnD61jWf3TL3zkwTRQQdd61oF7BKeSrM+x5gUNLiRhE6dlU19bcwHjJ7LmvoCpLx9/D5TVBZSX7Q8v5pVzoqUfWh6s0DKZvbqrR7X/TPquVsrTKUjQqyA2Mme3mJboeB4n4+gt9ZLNohRzpGdnF+m6f6CgpG1BA3Tekvc2agW8aGuxE6HhTARCrNORYqvssEszCH2l0wr3msp/DuyV5LX77p+foUJXMqUvP5M61Q7PfLmpkxmxS4yMlkTtXq2MLRf0hO2/NVJzDd9j3ZYFZDk5B7p2LZ/D6fL7cuP2aGEBoR0PotE4i+pvGn9/MvKwKNpqsOr0Ossvx5wI0j1HF7HHgaPGVY0vVbRgGhSIus3a8u2Fj6ZGg4N+MORGBV6umSqH1RucBRP5oL+U7WgH9CuMwlAdEWodE+ATfoqAG7OuL11A1zsolom9pTwgD9VmWL+f7xBmKaVU84u4SS+df0Y56hCp9QkCySRJ1QhocnKCngfVTNH8vTm7k4EQibjRyKwuK/MIOeerEAfXjZCG+rwWIIo4ZgxS77IlNzus76uKByYSyAewmUddn8w=

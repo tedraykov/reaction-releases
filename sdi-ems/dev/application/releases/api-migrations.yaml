@@ -1,0 +1,21 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: api-migrations  
+  namespace: dev
+spec:
+  interval: 3m
+  chart:
+    spec:
+      chart: "./charts/api-migrations"
+      sourceRef:
+        kind: GitRepository
+        name: flux2-sync
+        namespace: flux
+  values:
+    image:
+      tag: "ed8b5b5"
+    env:
+      - name: REACTION_LOG_LEVEL
+        value: DEBUG
+    secretName: mongodb
