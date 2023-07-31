@@ -33,7 +33,8 @@ spec:
             backend:
               service:
                 name: {{ $fullName }}-admin
-                port: http
+                port:
+                  number: 4445
         {{- end }}
   {{- end }}
 {{- end }}
