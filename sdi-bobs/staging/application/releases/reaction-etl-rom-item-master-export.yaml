@@ -18,11 +18,14 @@ spec:
       CATALOG_ID: "282"
       CLIENT_ID: BOBNA
       DEPT_NUMBER: "515"
+      KAFKA_TOPIC_RADIAL_ITEM_EXPORT_STATUS: etl.radial-item-export.status.json-gen1
       BRAND_NAME: "Bobs Brand"
       BRAND_DESCRIPTION: BOBS
       KAFKA_PARTITIONS: 3
       REACTION_LOG_LEVEL: DEBUG
       SHOP_ID: "44"
+    secretRefs:
+      - mongodb
     package:
       name: reaction-etl-rom-item-master-export
       version: b9a8f15
