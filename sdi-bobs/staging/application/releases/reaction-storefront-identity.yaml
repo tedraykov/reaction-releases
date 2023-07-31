@@ -4,14 +4,14 @@ metadata:
   name: reaction-storefront-identity
   namespace: staging
 spec:
-  releaseName: reaction-storefront-identity
+  interval: 3m
   chart:
-     spec: 
-       chart: "./charts/reaction-storefront-identity"
-       kind: GitRepository
-       name: flux2-sync
-       namespace: flux
-  helmVersion: v3
+    spec: 
+      chart: "./charts/reaction-storefront-identity"
+      sourceRef:
+        kind: GitRepository
+        name: flux2-sync
+        namespace: flux
   values:
     config:
       sentry:
