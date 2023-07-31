@@ -1,13 +1,13 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: ory-hydra
+  name: hydra
   namespace: staging
 spec:
   interval: 3m
   chart:
     spec:
-      chart: "./charts/ory-hydra"
+      chart: "./charts/hydra"
       sourceRef:
         kind: GitRepository
         name: flux2-sync
