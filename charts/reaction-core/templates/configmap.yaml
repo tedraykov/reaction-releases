@@ -100,4 +100,5 @@ data:
   REACTION_ADMIN_PUBLIC_ACCOUNT_REGISTRATION_URL: {{ required "config.reactionAdminPublicAccountRegistrationUrl not defined." .Values.config.reactionAdminPublicAccountRegistrationUrl | quote }}
   REACTION_IDENTITY_PUBLIC_PASSWORD_RESET_URL: {{ required "config.reactionIdentityPublicPasswordResetUrl not defined." .Values.config.reactionIdentityPublicPasswordResetUrl | quote }}
   REACTION_IDENTITY_PUBLIC_VERIFY_EMAIL_URL: {{ required "config.reactionIdentityPublicVerifyEmailUrl not defined." .Values.config.reactionIdentityPublicVerifyEmailUrl | quote }}
+  REACTION_SHOULD_ENCODE_IDS: {{ .Values.config.reactionShouldEncodeIds | quote }}
   STORE_URL: {{ required "config.storeUrl not defined." .Values.config.storeUrl | quote }}

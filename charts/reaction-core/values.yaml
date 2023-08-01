@@ -102,6 +102,7 @@ config:
   #reactionAdminPublicAccountRegistrationUrl: XXX
   #reactionIdentityPublicPasswordResetUrl: XXX
   #reactionIdentityPublicVerifyEmailUrl: XXX
+  reactionShouldEncodeIds: true
   importOrderStatusConsumerEnabled: false
   seoMetadataConsumerEnabled: false
   storeInventoryConsumerEnabled: false
