@@ -23,6 +23,7 @@ spec:
       cartReferenceIdPrefix: 66
       cloudinaryCloudName: eastern-dev
       etcdUrl: http://etcd-application.internal.dev.k8s.ems-test.io:2379
+      graphqlPlaygroundEnabled: true
       importOrderStatusConsumerEnabled: true
       jaegerEndpoint: http://jaeger-collector.dev.k8s.ems-test.io/api/traces
       kafkaBootstrapServers: 'b-3.emsdevelopment.8y7jbs.c6.kafka.us-east-1.amazonaws.com:9092,b-2.emsdevelopment.8y7jbs.c6.kafka.us-east-1.amazonaws.com:9092,b-1.emsdevelopment.8y7jbs.c6.kafka.us-east-1.amazonaws.com:9092'

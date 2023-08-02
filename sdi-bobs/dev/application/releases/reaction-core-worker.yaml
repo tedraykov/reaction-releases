@@ -23,6 +23,7 @@ spec:
       cartReferenceIdPrefix: 44
       cloudinaryCloudName: bobstores-dev
       etcdUrl: http://etcd-application.internal.dev.k8s.bobs-test.io:2379
+      graphqlPlaygroundEnabled: true
       initialImport: true
       importOrderStatusConsumerEnabled: true
       jaegerEndpoint: http://jaeger-collector.dev.k8s.bobs-test.io:14268/api/traces

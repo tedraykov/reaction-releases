@@ -25,6 +25,7 @@ spec:
       constantPublisherMode: true
       constantPublisherPauseSeconds: 300
       etcdUrl: http://etcd-application.internal.dev.k8s.bobs-test.io:2379
+      graphqlPlaygroundEnabled: true
       healthchecksEnabled: false
       jaegerEndpoint: http://jaeger-collector.dev.k8s.bobs-test.io:14268/api/traces
       listrakEnabled: true
