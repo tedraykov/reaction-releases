@@ -14,11 +14,6 @@ spec:
         namespace: flux
   values:
     config:
-      brontoFromName: "Bobs Stores"
-      brontoAccessToken: AgA6v4naXo9e2+0TT5jYrTXhHOFucj/RvT4foxSSUb4ZfrF6dFFk7AyQneWXZ7XNENddjn+T9mzoDyAVzVaP4wPq3Qra9M2jsHd5o5GLOLjqz6Z/O2budtT64hXa180r2GfSg6ccyI/Z21Hr7wjvsPBCWnFKJ+bBPLMAHkARksB5fcPXtd9Ba1eWjq4xH86CCjz1lxO7K+d8uOwha4Z1CxRqPL/pTgD4sykx83daq5NWMvZuhQRkx1JGcyS3fhppS9m2hA4qMXh2TPYfikjFD1J3mO72NMzAQGi4uL/RlzzlWz5wwNLbTaRwLqdZtPbS9+989KpNtY4wH3xF6EQlMggYh9dvoMIYe7AOMq87Q2kYeVL57hfSCMPCHMs8ozVL8y8tmw8yy1UA1VZdBGHrQuPv+pC2faOxI5pbizLyHNquNOKwSH86ve0HYNxeXyMChSdXYXXngNvw5Qnjpl31YYcIgVS29GtfZbqt1OOZfy5tz5yqYs1tUt4oukeWYEBOqx1dCiS4Ct2PehdKt9wGFbuaxzEe/paecglhyJygflVtqN+oNp8xPACyJGVoiqgp+qqJQ/TtuuwzVuRWYIZuaX0iJ+8k9adXRYDPjVHkKQNYBLt/BKW4v7D0ArfZzATnnGy/VY35TtBP8JwMTci6GCZtaZgBlHajQ6bM99tuGGAVj823A+ILo2d0cIFR5YiD54icU7hojHpdPSeUSV1YaRpdHhIpupMMByyqhN/8DcCbMIAFqYM=
-      brontoMessageName: BOBS_RC_TRIGGERED_EMAILS
-      brontoNewsletterListId: 0bca03eb00000000000000000000000dd510
-      brontoReplyToEmail: "admin@bobs-test.io"
       cartExpirySeconds: 1296000
       cartReferenceIdPrefix: 44
       cloudinaryCloudName: bobstores-dev

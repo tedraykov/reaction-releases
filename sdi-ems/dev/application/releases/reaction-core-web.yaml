@@ -15,11 +15,6 @@ spec:
   values:
     config:
       allowResetCodesMutation: true
-      brontoAccessToken: AgCrGU/FvorTHgaCo4Y/GXvYLPD2N2SsEy4jxQM0guKiNhPE99nMl/7tvFY0d8UlcZZ/7Ygz4aUNy//ByLMVN1c1gtGbPRLUH7DIrJqT3sbNkl5OKPH29SJZr6P0LU/5En6qNnP1iN1l7ZAco5knqMinM9y1ihpmvF3JXcyxnf+p7QHQ6H17NeQqfgmJhcHPZiG9GNIbuRupIauCjWohfKcyXhvtcUGZyZItSEnTptXqg6vaIxMurFTJ7/u9ClCKjNJwWw74zfBbGqQQ8iuuBpVUEtqLSOI6qJA+7hKShiACpjAx3O99PYQfxvVxoLeQC3POS1ZDNPGeXT1BNF0+7L197jpJNCWsR10lDfqW5FQn9PG4zR0UPgBUpFEKLIEd/fwvBjIA53IO1hSQqYn7aROv52oUVtfAiM5pOOf6IF+LKLI1UCFlbByg3pW1hVV7O9pg+JjHjKOC/dWLvWWJjQSrX5zvlk4f4f4ShbN6C9+3yUJ/yn3eRmIXwGX458DgsqlNvgtx20WpUi23uyJvdgRsDeCkpE1GXOk0/8I6TsaHiIbkQwagfbDKkHHexPH6Ba9HfRU+4LKVO1XfWCLTe2g1PEl4LyrgboKJ9zE/g/bAstMa6Xb5Gv+J9QwYRkHqQ5Q9GJ56zw7bbq5w9HBSp+RhJHjVLlMPUCfKcVeA6vDS3zlHpoN4ggNNLgxa9qESjphPxrVVdtNkUaYt2LDK9s8Ml5j5G5C2oQLZ9c94JjVOwhsinDs=
-      brontoFromName: "Eastern Mountain Sports"
-      brontoMessageName: EMS_RC_TRIGGERED_EMAILS
-      brontoNewsletterListId: 0bca03eb00000000000000000000000dd510
-      brontoReplyToEmail: "admin@ems-test.io"
       cartExpirySeconds: 1296000
       cartReferenceIdPrefix: 66
       cloudinaryCloudName: eastern-dev

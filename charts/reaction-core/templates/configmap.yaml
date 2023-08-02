@@ -10,10 +10,6 @@ metadata:
     app.kubernetes.io/managed-by: {{ .Release.Service }}
     helm.sh/chart: {{ include "reaction-core.chart" . }}
 data:
-  BRONTO_MESSAGE_NAME: {{ required "config.brontoMessageName not defined." .Values.config.brontoMessageName | quote }}
-  BRONTO_REPLY_TO_EMAIL: {{ required "config.brontoReplyToEmail not defined." .Values.config.brontoReplyToEmail | quote }}
-  BRONTO_FROM_NAME: {{ required "config.brontoFromName not defined." .Values.config.brontoFromName | quote }}
-  BRONTO_NEWSLETTER_LIST_ID: {{ required "config.brontoNewsletterListId not defined." .Values.config.brontoNewsletterListId | quote }}
   SITE_CODE: {{ required "config.siteCode not defined." .Values.config.siteCode | quote }}
   INITIAL_IMPORT: {{ required "config.initialImport not defined." .Values.config.initialImport | quote }}
   STARTING_NEW_CUSTOMER_NUMBER: {{ required "config.startingNewCustomerNumber not defined." .Values.config.startingNewCustomerNumber | quote }}
