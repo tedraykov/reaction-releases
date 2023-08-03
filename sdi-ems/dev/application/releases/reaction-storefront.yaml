@@ -49,6 +49,7 @@ spec:
       merchstackEnvironment: production
       merchstackStoreId: 452afd8d-b9b4-40c8-a304-a413e18969ff
       oauth2:
+        enabled: false
         authUrl: https://auth-dev.ems-test.io/oauth2/auth
         clientId: ems-dev-storefront
         clientSecret: AgCtjEhhUkxLSLhlrLe+dNuKn5QBDYvLQ1YefaESGiJtuKqoSY2V4tGkWqujX7WTNSW62wbZjiFB70u9zLn3kqAuXuwMahN84nVu1xQ2IfQis0Dy4j+/KLqSINctmXbPwY8fuwPQ8JHU7OiSbtdg9czr7EL8CsGsjUzgz0R3cSTU+u5blu8WGqqkSpQJBeDMgxRNTl4YVGQjUlCGLGfGfC+Pz5eTGM33cqSkqv5ACItoXVy9TfF0wM5uetYRBVv9r5sGfapVz44m9aOv8zEDzc944jnBjgxR2+i/5Ir2GkqURh6xf3E9nRTo6aLGs+j3n6jvBn4bdhlocfSdydjvDESFi1WCUuaMIG2+CRc9KwA0/C46rjVWOOqcDzAHPekshptKkB92m3mc1iclBerNeZTNvPnfelaTSMfV9baYbJaZ2oRjEZFmxQ4txmM44Klm+x4ZiSxtKHjM2GMYcl5IaMMVTZDv86B3RUhUDPAjKCmXfnSSroqq0noZj2hTJA7rudDArcdbRBuV5RfrTx3uKZ4h8ScubCsyf69NGmXqgx50I+6Se/irFtikpBg6/3CmY3VH/26zZj54CjlOhdlm2+AzoUC9xV8Uy8a7Zh1vClNZh16RqGpyADsSOHSMM38wQHsorAN16HAVALqeI1Inb457TYXIVDMFhiEpNd+6TST+K+YV2g3oxbQ0HZymSQXfg824/bpCxoAZVQbn2kVpLCt/c3M4iw==

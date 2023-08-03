@@ -63,6 +63,16 @@ data:
 {{- if .Values.config.identityServiceUrl }}
   IDENTITY_SERVICE_URL: {{ .Values.config.identityServiceUrl | quote }}
 {{- end }}
+{{- if .Values.config.oauth2.enabled }}
+  OAUTH2_ADMIN_PORT: {{ required "config.ouath2.adminPort not defined." .Values.config.oauth2.adminPort | quote }}
+  OAUTH2_AUTH_URL: {{ required "config.oauth2.authUrl not defined." .Values.config.oauth2.authUrl | quote }}
+  OAUTH2_CLIENT_ID: {{ required "config.oauth2.clientId not defined." .Values.config.oauth2.clientId | quote }}
+  OAUTH2_HOST: {{ required "config.oauth2.host not defined." .Values.config.oauth2.host | quote }}
+  OAUTH2_IDP_HOST_URL: {{ required "config.oauth2.idpHostUrl not defined." .Values.config.oauth2.idpHostUrl | quote }}
+  OAUTH2_MOCK_TLS_TERMINATION: {{ .Values.config.oauth2.mockTlsTermination | quote }}
+  OAUTH2_REDIRECT_URL: {{ required "config.oauth2.redirectUrl not defined." .Values.config.oauth2.redirectUrl | quote }}
+  OAUTH2_TOKEN_URL: {{ required "config.oauth2.tokenUrl not defined." .Values.config.oauth2.tokenUrl | quote }}
+{{- end }}
   INTERNAL_GRAPHQL_URL: {{ required "config.internalGraphqlUrl not defined." .Values.config.internalGraphqlUrl | quote }}
   GRAPHQL_URL: {{ required "config.graphqlUrl not defined." .Values.config.graphqlUrl | quote }}
   MAPBOX_TOKEN: {{ required "config.mapboxToken is not defined." .Values.config.mapboxToken | quote }}

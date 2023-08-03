@@ -48,6 +48,7 @@ spec:
       merchstackEnvironment: production
       merchstackStoreId: c1593167-dbbc-49bc-9740-bc303149733c
       oauth2:
+        enabled: false
         authUrl: https://auth-dev.bobs-test.io/oauth2/auth
         clientId: bobs-dev-storefront
         clientSecret: AgDOO+KsDkWgYCewkAJj/j9hF3PtB2UVRxQVSwbJXznYJJvCjyhudjkDYs1JtldWj3AUQg/4YPS/Iwzcr2VIfCw/WYgNI0EdYjQ6o4PvvCiTdNExQ4B2GfC3rNGuvQky/j4+7O9KSNx4VOSEbyWyMT7Wix2UyGWSnegtAQ20ve56SzA43TRwFr2Fs9z5ghRvp+j+hlOkbazR5YkxgQKIP/Ei1V9u7bcuO4T4aQagyF4f0tqYBZsCi7uHslU0H0ckzr41tcugiJq3TCZn1y9zMjaJ0+z30CupRUG+BJvl8+21mnOrjjQU+Ak+2SAQE+d5WoflrUufGv8vKBuxPd+O/rsIBhTHBXBXVwE/A446t5jkzqacA4tgKiaaz2X1kJ5L0w0p5AUySJeMimrvrK8fJ460o+4W8nqhb/cNAfTG1Oa2MK+ZCKou2Hv2Mc35TAhlSGwDMdgoVIFjmb+RDa1np+xA9CBqE914BhSMhBn4WbuMtBEVgACvAr5lD91s5v21uv0p0PToL/VjMEjysBtk4E4C6p21zcH0QyXBHTQ1r8DD+evRPWSDMfIcaKwRcEbrFjfV75kQ9d7g2sVSAHq4c16+b+rFVv3bkqXFTwvDwqxDAaaHzHTK00YaWcVum2p/sQmas6hhpfuW/KF9LKUSoRiRgy2fqDF9f4yRyQXrrZmHa8SfVo4PAdIPFGd66zESq2SaXx1p9bnVy7reyOl/KhZ3eZipwg==
