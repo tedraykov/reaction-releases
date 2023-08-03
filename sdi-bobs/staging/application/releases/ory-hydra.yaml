@@ -4,7 +4,6 @@ metadata:
   name: hydra
   namespace: staging
 spec:
-  skipCRDs: true
   interval: 3m
   chart:
     spec:
