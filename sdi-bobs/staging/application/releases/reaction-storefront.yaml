@@ -47,6 +47,7 @@ spec:
       merchstackEnvironment: production
       merchstackStoreId: c1593167-dbbc-49bc-9740-bc303149733c
       oauth2:
+        enabled: true
         authUrl: https://auth-staging.bobs-test.io/oauth2/auth
         clientId: bobs-staging-storefront
         clientSecret: AgCZZAiVU9MBXtYLmWTesjSW4pZqhlxiOx1zmuCU+1RkqjHKHnFxLfC8s7vZNIyatxGvfkrS45+dxnmv/u5QbPqTEWGauL7OfCET3gJW9JaSLUrdKJ2Tk8ltdcDb2GFXVpVFo+51Gp5orIqu8k4RRyApTHyonzz3fjt5LWX5Drwj/aH8vVDsA/OrUyYT40dxhFCKIFU0tpMmQO8Mybn2ryS8GrR8AYfLKPRpSVPxzSsaHhCrOpNVDV93ueHAJLtR4KuaiRZhadgdfe+7UQe6kabjQbowEIamlG+3MjBn3ueN68bQOo1MmsPDZ+fXFpw3MH+n5adcAFmJzj11nJp6yKtfBSpP/nOl5l/eEs6bHI1RCGD/NGygXlB3J00W/DLrvlOxbY5Xi4kcjjDEH6mjCdU8iOQcL47xc65xxRq4fAJ58Am6LxIf/uBvGDFMjLEyMVu8anKGGeK13QHA1BmHmf/wWp65S8Eo7D3DOwTM43lNwKJHW1YrQkNO28FC+koMKwL40vBvWerq4WstXWhWb67z/vbXkDZigookJlbVVpIDCjyJWi7AtPYvEz+2ZTaWDTH3J/w292M5OJBn2fiaE7mvVt9WgydGwE1vzYx/Yp2asCbpUAg/NzWWZyUxKHBXMDchUlEFcx0j0QQ5JujH7HVowrCVpQZ0G/x+gYQmgmj30s4X0LFPX7jCE26VMRg/YZzKLUxebWJmqwUbzQtRTpbrE8ju6Q==
