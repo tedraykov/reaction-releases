@@ -144,7 +144,8 @@ deployment:
 
 # Configure node affinity
 affinity: {}
-
+#to get sealed Secrets
+sealedSecrets: {}
 # Configures controller setup
 maester:
   enabled: true
