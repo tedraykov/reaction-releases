@@ -13,7 +13,7 @@ spec:
         name: flux2-sync
         namespace: flux
   values:
-    replicaCount: 3
+    replicaCount: 1
     config:
       cartExpirySeconds: 1296000
       cartReferenceIdPrefix: 66

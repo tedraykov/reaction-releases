@@ -58,7 +58,7 @@ spec:
       enabled: true
       averageUtilization: 70
       max: 10
-      min: 3
+      min: 1
     image:
       repository: 816897914983.dkr.ecr.us-east-1.amazonaws.com/reaction-core
       tag: 6dd443e

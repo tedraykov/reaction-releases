@@ -78,7 +78,7 @@ spec:
     horizontalPodAutoscaler:
       enabled: true
       averageUtilization: 70
-      min: 3
+      min: 1
       max: 10
     image:
       repository: 816897914983.dkr.ecr.us-east-1.amazonaws.com/reaction-storefront-bobs
