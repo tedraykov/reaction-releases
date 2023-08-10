@@ -1,0 +1,22 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: reaction-storefront-identity
+  namespace: staging
+spec:
+  interval: 3m
+  chart:
+    spec: 
+      chart: "./charts/reaction-storefront-identity"
+      sourceRef:
+        kind: GitRepository
+        name: flux2-sync
+        namespace: flux
+  values:
+    config:
+      sentry:
+        enabled: false
+        dsn: https://88327defc89a4b7c9af9e8a53cb4ab96@o234104.ingest.sentry.io/5777469
+        environment: staging
+    image:
+      tag: 48251f1

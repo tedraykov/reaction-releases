@@ -7,7 +7,7 @@ spec:
   interval: 3m
   chart:
     spec:
-      chart: "./charts/serverless-deploy"
+      chart: "./charts/serverless-deploy-v2"
       sourceRef:
         kind: GitRepository
         name: flux2-sync
@@ -25,4 +25,4 @@ spec:
       - mongodb
     package:
       name: reaction-etl-shippable-inventory
-      version: 13dd8b4
+      version: 604f5ce

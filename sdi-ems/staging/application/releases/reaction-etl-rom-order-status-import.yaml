@@ -4,7 +4,6 @@ metadata:
   name: reaction-etl-rom-order-status-import
   namespace: serverless
 spec:
-  interval: 3m
   chart:
     spec:
       chart: "./charts/serverless-deploy-v2"
@@ -12,8 +11,8 @@ spec:
         kind: GitRepository
         name: flux2-sync
         namespace: flux
+  interval: 3m
   values:
-    serviceAccountName: serverless-sa
     environment:
       KAFKA_PARTITIONS: 3
       RADIAL_CATALOG_ID: "283"
@@ -22,3 +21,4 @@ spec:
     package:
       name: reaction-etl-rom-order-status-import
       version: 5510bef
+    serviceAccountName: serverless-sa

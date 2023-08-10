@@ -4,16 +4,15 @@ metadata:
   name: reaction-etl-surcharges
   namespace: serverless
 spec:
-  interval: 3m
   chart:
     spec:
-      chart: "./charts/serverless-deploy"
+      chart: "./charts/serverless-deploy-v2"
       sourceRef:
         kind: GitRepository
         name: flux2-sync
         namespace: flux
+  interval: 3m
   values:
-    serviceAccountName: serverless-sa
     environment:
       JAEGER_ENDPOINT: http://jaeger-collector.staging.k8s.ems-test.io/api/traces
       REACTION_LOG_LEVEL: INFO
@@ -21,4 +20,5 @@ spec:
       SKIP_INVOCATION: false
     package:
       name: reaction-etl-surcharges
-      version: 62ae5a2
+      version: "7e67665"
+    serviceAccountName: serverless-sa

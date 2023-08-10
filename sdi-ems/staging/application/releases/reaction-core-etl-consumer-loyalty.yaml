@@ -24,8 +24,8 @@ spec:
       cloudinaryCloudName: eastern-staging
       etcdUrl: http://etcd-application.internal.staging.k8s.ems-test.io:2379
       jaegerEndpoint: http://jaeger-collector.staging.k8s.ems-test.io/api/traces
-      kafkaBootstrapServers: 'b-3.emsstagingelopment.8y7jbs.c6.kafka.us-east-1.amazonaws.com:9092,b-2.emsstagingelopment.8y7jbs.c6.kafka.us-east-1.amazonaws.com:9092,b-1.emsstagingelopment.8y7jbs.c6.kafka.us-east-1.amazonaws.com:9092'
-      kafkaCluster: 'b-3.emsstagingelopment.8y7jbs.c6.kafka.us-east-1.amazonaws.com:9092,b-2.emsstagingelopment.8y7jbs.c6.kafka.us-east-1.amazonaws.com:9092,b-1.emsstagingelopment.8y7jbs.c6.kafka.us-east-1.amazonaws.com:9092'
+      kafkaBootstrapServers: "b-1-ems-staging-kafka.staging.k8s.ems-test.io:9092,b-2-ems-staging-kafka.staging.k8s.ems-test.io:9092,b-3-ems-staging-kafka.staging.k8s.ems-test.io:9092"
+      kafkaCluster: "b-1-ems-staging-kafka.staging.k8s.ems-test.io:9092,b-2-ems-staging-kafka.staging.k8s.ems-test.io:9092,b-3-ems-staging-kafka.staging.k8s.ems-test.io:9092"
       listrakEnabled: true
       listrakClientId: AgAh2h2nu+CKaodQOyil9W+EQKrolIl3giTmGFW5VfZBvX7HkcaemARgV7fUPJZi9634DKcljAtvMIWWiyRuJf5XEEdZ6q04ug8n5a0d2LQINT/rFkQXPaihl59KXFYWZmvmIRYb0qkn7U26R/GYx1NZy0Sc0WvBLJ05J/Ej7/2pKv27Tt1p0ewTb9xziFlPAXgOi4KH4qn2zBp5VxB3NwAigrwXSZdV8GD+wIde/KsUWgfk9imXVfPuPO4NmM5tXG531nTk8LPPFoC6P8lcBWgFdxrz4LfM10TXh0WPX3VXMV6VfMfAvanSlXQxHXYw1D27m3Cp95YIiGYz1f5WHFo5idKht/FaYBz4vGkM2A9GuJyMqU4C73nHVYV4GxGDBgq7HGOweQP+30MsqHCQxlODjOhrwLU7VlHDWJ/PBOLv9ZAKKGJ59vZAFkOkD1hHLSuAQx6eWAT8ungF68kIKN6jvxnu98/YDxvfSueeOtg+T9s28M0BpSUo5FLMo7/3w8bZkQ1345ConF1fDa6xkimBeDNUet3DiH78we9GeV2v8/XNWh90y6PjwvevO/1mstkwlxUY+KNMqf6YQBHxbwLxNlQSWhDyOFa7OgkmnGGC1Q2NVYTylVvcSS0XXDYeo3WwIvWVl6vlINxhB6bZMfxqsBvhqco+WRHj8I0ge9SA7N6Z8xLR7oTZe8Jp5baoof1z1JUSuYiJ3umT7UB9ofljoAkw6Q==
       listrakClientSecret: AgBJ1kf7FuumjXr8FaW5CW0FRBD49WHin3OFlCoHTZ3OTTV9r1mKtfdlSiP7Hx5rLu3CqZs0Rj46KYel5d5Qj6YFj2n6YT+1YR4sGor7PFCNPcvB09Sn6JOzWgiiVHqGKXIMzXnNScmHjOPMY7jgpqfjb7lmX1XfAFt2Uk0tSXrfft1KY7pkOKTfpJITrsAMW6aLDz4xeUA5Y/+j3DyGK7hYhnFSQk8n/r3Ut1GE1V1K6rCFMSBKsIydnF5pPR5eWzOM1vhMStNJ990Y/EB/HJ9Rx76ExYwfAxK4o4lMeDFhB6expbvgtcZGWCy8t3qa5a8akyKwh0832YQPjYXVQtOoM21u9CGB1uKAMhfDuS9dEbZolu8ZhLsDq4nqtuxl+JpYenSZ3hulfDPYeOwacf+1xnpB9Jf+QdUJ5oooR+Q3fT7DspIT8UeIIcZ2uLmO6bnkRZ21I3p4BtJES3mAkCgXUUVXsrJU96+qECWENVWxsSOuRjSLU1k7DLefWKQfXVD7OwSg5T/BmYLn5WC9w92HxyEb8MEnGGE+dG1yLRmW4aH7XN6WL/QF/d+mEXDIewiW5nb1UHG8w377D6+AJboqGUqZqs6XQnCKpDSc7RTZlccrOd2e5CWT3Je8EDQgwNfcGiqRdA4g61kxgP5S22g5JC8oBo1zkMdVVh7C45p7Eq/5drGAV6EfPczR2xbVIKxDgeN7WcqU3hTDNhjS9uFHvF++jAJvWGl/WqGNCdmedioFDWP5ThRNniJH
@@ -60,4 +60,4 @@ spec:
       startingNewCustomerNumber: "7770000700001"
     image:
       repository: 816897914983.dkr.ecr.us-east-1.amazonaws.com/reaction-core
-      tag: eafb3b8
+      tag: de2827b

@@ -7,7 +7,7 @@ spec:
   interval: 3m
   chart:
     spec:
-      chart: "./charts/serverless-deploy"
+      chart: "./charts/serverless-deploy-v2"
       sourceRef:
         kind: GitRepository
         name: flux2-sync
@@ -16,9 +16,7 @@ spec:
     serviceAccountName: serverless-sa
     environment:
       CLOUDFLARE_CLIENT_ID:
-      CLOUDFLARE_CLIENT_SECRET:
       GRAFANA_API:
-      GRAFANA_AUTH_TOKEN:
       JAEGER_ENDPOINT: http://jaeger-collector.staging.k8s.ems-test.io/api/traces
       PRICING_GRAPHQL_URL: http://pe.staging.k8s.ems-test.io/graphql
       REACTION_LOGGER_NAME: reaction-etl-pricing-import
@@ -26,8 +24,11 @@ spec:
       REQUEST_CONCURRENCY: 1
       REQUEST_BATCH_SIZE: 1000
       SKIP_INVOCATION: false
+    secrets:
+      CLOUDFLARE_CLIENT_SECRET:
+      GRAFANA_AUTH_TOKEN:
     secretRefs:
       - mongodb
     package:
       name: reaction-etl-pricing-import
-      version: de902bb
+      version: 604f5ce

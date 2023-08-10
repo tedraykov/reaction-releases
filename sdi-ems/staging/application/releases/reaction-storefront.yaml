@@ -48,6 +48,7 @@ spec:
       merchstackEnvironment: production
       merchstackStoreId: 452afd8d-b9b4-40c8-a304-a413e18969ff
       oauth2:
+        enabled: true
         authUrl: https://auth-staging.ems-test.io/oauth2/auth
         clientId: ems-staging-storefront
         clientSecret: AgCZVNDVuPz3eHfq89cRHLNGnUK1bJPwPL4RIHJ429dzi1+2rr1AjpIchya0qEujo+OGRC9w/xC2BZMnZI2vSz+1Q0kzY+/E2Y58HiX+2bBtaT/oiuVQjvjO1ouQNUWy8uQZ+wp7z8CK8uEHSvCSjDkUP19xlQNG/rlerL0I0XVMW+XZ1dVBwigDhd+e3hI9ON4Qb8UE5aQxgR7i/eLZMhJVrKrBLqFWpf8I8yCmu/OfeO2RsaK3IQyo1euI77Od9pmk+f6QajfaNfBAItCNCdCVqZIlF7zjDRdF/Mwvd8jWJSPhIK1Dcq/79zigvMC8X7dgNmGqy+jN9lCsfUXp8p3gTG8E70I5a3aVuulYdUXJMqzo48Gg6DZzzNOqsseaS/a14/0QbAin9aaLUjEFwf3HG7Cn/qE2p+JM7ftXjdGvPQqQptywrHXcJ8sgVwdIvMdegdTwuGY/QiQIefM3HEFX52esNTISx8vY0+EFwOeHUeTkMi0QUFFTFo9XvLl/vTtI/I8qPp77xR43auPqTkv39pG/CzeVPJxk/wDMwQFJtBpPCPSEb0ZAZyQ4EA4b+o7UvrlhLRc9isc8PNK6fn8LfUoKTli3fBCX7cTU2toJmCmHdAyU8AYWiG9wXYfAPGEhCwG8HhorQpmdGQWPmGGun2+ZWSnR9WhbDi4UAbb8cjQgyj0XJJcfieJWYl6OROALCg5jYQmCpN8b5ZlPA6ESFCMpjA==
@@ -64,7 +65,7 @@ spec:
         writeKey: oTm3YQxgfc6udco67OFJDumcfUX2fCU2
         serverWriteKey: XmeVGVB320SC3CEuuZOIVeHZDQxNQHq3
       sentry:
-        enabled: true
+        enabled: false
         clientDsn: https://e5a55219e65d473a9c04625b0e2cbcca@o234104.ingest.sentry.io/1802036
         serverDsn: https://aac45bd48e774b27940e66a33c6ebf76@o234104.ingest.sentry.io/5777413
         environment: staging
@@ -82,9 +83,8 @@ spec:
       max: 10
     image:
       repository: 816897914983.dkr.ecr.us-east-1.amazonaws.com/reaction-storefront-ems
-      tag: "78949e7"
+      tag: 803376f
     ingress:
-      enabled: true
       annotations:
         ingress.kubernetes.io/ssl-redirect: 'false'
         kubernetes.io/ingress.class: nginx
@@ -94,8 +94,8 @@ spec:
     maxUnavailable: 1
     resources:
       requests:
-        memory: 100Mi
-        cpu: 100m
+        memory: 500Mi
+        cpu: 500m
       limits:
         memory: 2Gi
         cpu: "2"

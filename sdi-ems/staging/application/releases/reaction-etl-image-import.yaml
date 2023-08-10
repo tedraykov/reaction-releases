@@ -4,24 +4,24 @@ metadata:
   name: reaction-etl-image-import
   namespace: serverless
 spec:
-  interval: 3m
   chart:
     spec:
-      chart: "./charts/serverless-deploy"
+      chart: "./charts/serverless-deploy-v2"
       sourceRef:
         kind: GitRepository
         name: flux2-sync
         namespace: flux
+  interval: 3m
   values:
-    serviceAccountName: serverless-sa
     environment:
       CLOUDINARY_CLOUD_NAME: eastern-staging
       JAEGER_ENDPOINT: http://jaeger-collector.staging.k8s.ems-test.io/api/traces
       REACTION_LOG_LEVEL: INFO
       SKIP_INVOCATION: false
+    package:
+      name: reaction-etl-image-import
+      version: c70b0e1
     secrets:
       CLOUDINARY_API_KEY: AgC8EqN0NAh1WbVxhkNKn1WcGYUdSRRqwg5g5cJJcM7hZJelWCWu5RtWw+LlGsg40oBD25PEaDu/JpQCgTdKlBIGV4Klgqu56/ZZsqbOTWbJoqj8+QwUtS1mFSJRm+X5on9TcjxAY4jJt8qfNzPKnxSKph2IfJuYKaiyeK9QTeVUasiv9peVH41U0FjOtazuPr2jkXmHD7yKOc2vzEPsybW9M/iFK+0ZqPgUwlLGx2ati5H8XNS2y5OVUHjWgCDO3DfGVeU0DuC6GEFfXd3s8/cYeOdn5bGi0WlgOFScczNJptM5Wxk4LcSxFd3gUPWbVzitf1X8mpaeFcTFyKZ8pG+PDTlnE74Y/1kItyWCSIV/wfe9FlmxC6axpJRPRdXDYIpbl7VJshdEG9W3PK7al+KBteNXqAtU282xYXgMq8NilkI0Lmhp7ejE6+GhVA00uaAgPwHnPPmPV7yFshUkIvbBwmK+cItI7AuOuYjtCpHK6qIIDcG/MeQFazgyXUTbomxIbs1SW7e++wE8IlRAXQ3upCW4TJXQD8Fa8MZpPEdwmtnLZh5j/crSXFtae6fYFG77E+zyDRphWu5og+eCgwSL3uaC3LJrXKmpeh9VVEvfAH+USKcRn6KMK/6ThG5j1FlZp7ZWw1DFZItshD0dYFCa+InDGO/Yc1+lTYCP2nW+L0ihuBpl17hpHEj7FH1msZ4EcpAlautbZYN/rBE2Ivk=
       CLOUDINARY_API_SECRET: AgCTa8GGbKQzEwq7MucCORnZg4a75IJn17j05kV3Dz1Zn9iHj2ogIsiwi47DIJwh50T8fnjVCJiI/17Hc+PDVjEyPZzKP2WVqSC8rbmVrsN9JVrhXxcDwE9JmBK3WOr7jbwrUMoWwpCXdpg4wBUXDDUKv8ieVX8IgGL/u/ZGjIHIgiejVvbw4k4DkgIXhSvsdcRsWV2wk5hZL83nDbl7+IS29xFi1XXFqziMon00zC9DQW8xHIOGmxKZBnNQd0GpGQhFmv2/YwMoAFRddpLuePecp4w3t/gNNzl3w+HYR2qM8eThypSXg+d/nQ3JdzD+Gk0BRktj6Q2UCgCHZbbsVTbNJEP5AEcgKIehDAh4kyYiRtSpa5L3rhpLe5veoBohOb/1mtwrLfh06VdVW3rAHLAw0LlZAJqguokdCfifrvNgIF2BRiHjNI1t2p/kqyRSmAj42n4vuLG1v+Tv9kCCcL5j076ffBMekIWDpEVcqarUltrY3ckQQV+m8OEpJS4up/irtYO89cgzDX3tkc0C7ZNc/qJMPh5MJL46ZgXgCyqQ71MoM2zTxCzSTZZFstZl7bRACIU1Y8iWDxunPgXj6WUy+qCeu3wUlSCabSXjeWZ7JQGfOH7Zk/RvA1NjbSoGQJ0ifnVqMdyP9jMyqX2SMHwFEvTKNnFH00GLuWUNIO2i7xOSvVhssxIOzcKMJ/QKa6iX00qAP4kmoblFh3Wr73Zi7lkfdX4mvd+YSro=
-    package:
-      name: reaction-etl-image-import
-      version: 46a6927
+    serviceAccountName: serverless-sa
