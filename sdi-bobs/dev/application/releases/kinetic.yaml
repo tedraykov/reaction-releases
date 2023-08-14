@@ -16,12 +16,11 @@ spec:
     config:
       apiUrl: https://api-dev.bobs-test.io/graphql
     image:
-      tag: "ea2b256"
+      tag: "6336690"
     ingress:
       enabled: true
       annotations:
         ingress.kubernetes.io/ssl-redirect: 'false'
-        nginx.ingress.kubernetes.io/proxy-buffer-size: 256k
       ingressClassName: nginx
       hosts:
         - host: kinetic-dev.bobs-test.io
