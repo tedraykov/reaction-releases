@@ -14,7 +14,7 @@ spec:
         namespace: flux
   values:
     config:
-      boardTitle: "EMS Dev"
+      boardTitle: "Dev"
       boardLogoPath: "https://www.ems.com/assets/76735912.svg"
       queues: setPromotionState,checkExistingCarts,sendEmail
     image:

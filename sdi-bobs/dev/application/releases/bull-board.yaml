@@ -14,7 +14,7 @@ spec:
         namespace: flux
   values:
     config:
-      boardTitle: "Bobstores Dev"
+      boardTitle: "Dev"
       boardLogoPath: "https://www.bobstores.com/assets/fd25138a.svg"
       queues: setPromotionState,checkExistingCarts,sendEmail
     image:
