@@ -1,0 +1,18 @@
+{{- $fullName := include "bull-board.fullname" . -}}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ $fullName }}
+  labels:
+    app.kubernetes.io/name: {{ include "bull-board.name" . }}
+    app.kubernetes.io/component: bull-board
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+    helm.sh/chart: {{ include "bull-board.chart" . }}
+data:
+  BOARD_TITLE: {{ required "config.boardTitle not defined" .Values.config.boardTitle | quote }}
+  BOARD_LOGO_PATH: {{ .Values.config.boardLogoPath | quote }}
+  BOARD_LOGO_WIDTH: {{ .Values.config.boardLogoWidth | quote }}
+  BOARD_LOGO_HEIGHT: {{ .Values.config.boardLogoHeight | quote }}
+  PORT: {{ .Values.config.port | quote }}
+  QUEUES: {{ required "config.queues not defined" .Values.config.queues | quote }}
