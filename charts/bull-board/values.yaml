@@ -28,10 +28,12 @@ ingress:
   #      - chart-example.local
 
 config:
-  port: 80
+  port: 3002
   boardTitle: "Bull Board"
   boardLogoPath: "https://www.bobstores.com/assets/fd25138a.svg"
   queues: setPromotionState,checkExistingCarts,sendEmail
+  boardLogoHeight: "75px"
+  boardLogoWidth: "75px"
 
 redisSecret: redis
 
