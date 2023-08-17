@@ -16,8 +16,9 @@ on:
         description: 'Target environment'
         type: choice
         required: true
-        default: 'staging'
+        default: 'dev'
         options:
+          - dev
           - staging
           - production
       tag:
