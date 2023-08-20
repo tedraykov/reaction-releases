@@ -21,25 +21,43 @@ on:
           - dev
           - staging
           - production
-      tag:
-        description: 'The release tag for the deployment'
+      sha:
+        description: 'The release SHA for the deployment'
         required: true
         type: string
+      repo-url:
+        description: 'URL to application repository'
+        required: false
+        type: string
+      version:
+        description: 'Github release tag'
 
 jobs:
   release-pull-request:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - name: Prepare Environmental Variables for Release PR
+        run: |
+          ./.github/scripts/release-pr-setup.sh \
+            ${{github.event.inputs.deployment}} \
+            ${{ github.event.inputs.environment }} \
+            ${{ github.event.inputs.sha }} \
+            ${{ github.event.inputs.repo-url }} \
+            ${{ github.event.inputs.github-tag }}
+        env:
+          GH_TOKEN: ${{ secrets.ROBERTS50_GITHUB_PAT }}
       - name: Update release tags
         run: |
-          ENV=${{ github.event.inputs.environment }}
-          echo ENV=${ENV^} >> $GITHUB_ENV
-          ./bin/update-release.sh ${{github.event.inputs.deployment}} ${{ github.event.inputs.environment }} ${{ github.event.inputs.tag }}
+          ./bin/update-release.sh \
+            ${{ github.event.inputs.deployment }} \
+            ${{ github.event.inputs.environment }} \
+            ${{ github.event.inputs.sha }}
       - uses: peter-evans/create-pull-request@v5
         with:
-          title: '[${{ env.ENV }}] Release ${{ github.event.inputs.deployment }} ${{ github.event.inputs.tag }}'
-          commit-message: 'gitops(${{ github.event.inputs.environment}}): Update ${{ github.event.inputs.deployment }} to ${{ github.event.inputs.tag }}'
-          branch: 'gitops/${{ github.event.inputs.environment }}/${{ github.event.inputs.deployment }}-${{ github.event.inputs.tag }}'
+          title: '${{ env.PR_TITLE }}'
+          commit-message: '${{ env.PR_COMMIT_MESSAGE }}'
+          branch: '${{ env.PR_BRANCH }}'
+          body: '${{ env.PR_BODY }}'
           delete-branch: true
           token: ${{ secrets.ROBERTS50_GITHUB_PAT }}
