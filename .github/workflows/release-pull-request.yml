@@ -29,7 +29,7 @@ on:
         description: 'URL to application repository'
         required: false
         type: string
-      version:
+      github-tag:
         description: 'Github release tag'
 
 jobs:
