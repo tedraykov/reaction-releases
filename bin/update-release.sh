@@ -19,25 +19,37 @@ IFS=$'\n\t'
 
 cd "$(dirname "${BASH_SOURCE[0]}")/.."
 deployment="$1"
-stage="$2"
+environment="$2"
 new_tag="${3:0:7}"
 stores=("bobs" "ems")
 for store in ${stores[*]} ; do
   if [[ $deployment = "reaction-core" ]]
   then
-  find "sdi-${store}/${stage}/application/releases" -type f -name "reaction-core*.yaml" -print0 |
+  find "sdi-${store}/${environment}/application/releases" -type f -name "reaction-core*.yaml" -print0 |
     xargs -0 perl -pi -e "s,^\s+tag:.*,      tag: ${new_tag},"
   elif [[ $deployment = "storefront" ]]
   then
-  find "sdi-${store}/${stage}/application/releases" -type f -name "reaction-storefront.yaml" -print0 |
+  find "sdi-${store}/${environment}/application/releases" -type f -name "reaction-storefront.yaml" -print0 |
     xargs -0 perl -pi -e "s,^\s+tag:.*,      tag: ${new_tag},"
   elif [[ $deployment = "reaction-sftp-to-s3-order-status" ]]
   then
-  find "sdi-${store}/${stage}/application/releases" -type f -name "reaction-sftp-to-s3-order-status.yaml" -print0 |
+  find "sdi-${store}/${environment}/application/releases" -type f -name "reaction-sftp-to-s3-order-status.yaml" -print0 |
     xargs -0 perl -pi -e "s,^\s+version:.*,      version: ${new_tag},"
   elif [[ $deployment = "reaction-etl-rom-order-status-import" ]]
   then
-  find "sdi-${store}/${stage}/application/releases" -type f -name "reaction-etl-rom-order-status-import.yaml" -print0 |
+  find "sdi-${store}/${environment}/application/releases" -type f -name "reaction-etl-rom-order-status-import.yaml" -print0 |
     xargs -0 perl -pi -e "s,^\s+version:.*,      version: ${new_tag},"
+  elif [[ $deployment = "api-migrations" ]]
+  then
+  find "sdi-${store}/${environment}/application/releases" -type f -name "api-migrations.yaml" -print0 |
+    xargs -0 perl -pi -e "s,^\s+tag:.*,      tag: \"${new_tag}\","
+  elif [[ $deployment = "kinetic" ]]
+  then
+  find "sdi-${store}/${environment}/application/releases" -type f -name "kinetic.yaml" -print0 |
+    xargs -0 perl -pi -e "s,^\s+tag:.*,      tag: \"${new_tag}\","
+  elif [[ $deployment = "reaction-admin" ]]
+  then
+  find "sdi-${store}/${environment}/application/releases" -type f -name "reaction-admin.yaml" -print0 |
+    xargs -0 perl -pi -e "s,^\s+tag:.*,      tag: \"${new_tag}\","
   fi
 done
