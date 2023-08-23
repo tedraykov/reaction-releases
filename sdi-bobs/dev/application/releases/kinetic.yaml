@@ -16,7 +16,7 @@ spec:
     config:
       apiUrl: https://api-dev.bobs-test.io/graphql
     image:
-      tag: "6336690"
+      tag: "e57546a"
     ingress:
       enabled: true
       annotations:
