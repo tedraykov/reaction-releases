@@ -12,6 +12,9 @@ on:
           - reaction-core
           - reaction-etl-rom-order-status-import
           - reaction-sftp-to-s3-order-status
+          - kinetic
+          - reaction-admin
+          - api-migrations
       environment:
         description: 'Target environment'
         type: choice

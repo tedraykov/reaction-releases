@@ -31,11 +31,11 @@ for store in ${stores[*]} ; do
   then
   find "sdi-${store}/${environment}/application/releases" -type f -name "reaction-storefront.yaml" -print0 |
     xargs -0 perl -pi -e "s,^\s+tag:.*,      tag: ${new_tag},"
-  elif [[ $deployment = "reaction-sftp-to-s3-order-status" ]]
+  elif [[ $deployment = "etl-sftp-to-s3-order-status" ]]
   then
   find "sdi-${store}/${environment}/application/releases" -type f -name "reaction-sftp-to-s3-order-status.yaml" -print0 |
     xargs -0 perl -pi -e "s,^\s+version:.*,      version: ${new_tag},"
-  elif [[ $deployment = "reaction-etl-rom-order-status-import" ]]
+  elif [[ $deployment = "etl-rom-order-status-import" ]]
   then
   find "sdi-${store}/${environment}/application/releases" -type f -name "reaction-etl-rom-order-status-import.yaml" -print0 |
     xargs -0 perl -pi -e "s,^\s+version:.*,      version: ${new_tag},"
