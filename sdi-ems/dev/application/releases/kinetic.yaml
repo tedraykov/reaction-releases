@@ -16,7 +16,7 @@ spec:
     config:
       apiUrl: https://api-dev.ems-test.io/graphql
     image:
-      tag: "e3b52e8"
+      tag: "b956da8"
     ingress:
       enabled: true
       annotations:
