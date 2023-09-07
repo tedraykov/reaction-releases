@@ -93,6 +93,7 @@ data:
   SURCHARGE_CONSUMER_ENABLED: {{ required "config.surchargeConsumerEnabled not defined." .Values.config.surchargeConsumerEnabled | quote }}
   CART_EXPIRY_SECONDS: {{ .Values.config.cartExpirySeconds | quote }}
   NODE_ENV: {{ .Values.config.nodeEnv | quote }}
+  PASSWORD_RESET_PATH_FRAGMENT: {{ .Values.config.passwordResetPathFragment | quote }}
   REACTION_ADMIN_PUBLIC_ACCOUNT_REGISTRATION_URL: {{ required "config.reactionAdminPublicAccountRegistrationUrl not defined." .Values.config.reactionAdminPublicAccountRegistrationUrl | quote }}
   REACTION_IDENTITY_PUBLIC_PASSWORD_RESET_URL: {{ required "config.reactionIdentityPublicPasswordResetUrl not defined." .Values.config.reactionIdentityPublicPasswordResetUrl | quote }}
   REACTION_IDENTITY_PUBLIC_VERIFY_EMAIL_URL: {{ required "config.reactionIdentityPublicVerifyEmailUrl not defined." .Values.config.reactionIdentityPublicVerifyEmailUrl | quote }}

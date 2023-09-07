@@ -84,6 +84,7 @@ config:
   mockTlsTermination: true
   nodeEnv: production
   orderExportRadialUrl: https://api-na.gsipartners.com/v1.0/OOMF/stores
+  passwordResetPathFragment: reset-password/
   pricingConsumerEnabled: false
   pricingGraphqlUrl: http://reaction-pricing-engine/graphql
   productConsumerEnabled: false
