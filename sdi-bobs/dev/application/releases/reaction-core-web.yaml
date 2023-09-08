@@ -61,7 +61,7 @@ spec:
       min: 1
     image:
       repository: 816897914983.dkr.ecr.us-east-1.amazonaws.com/reaction-core
-      tag: 5c9dc48
+      tag: 2a4a86a
     ingress:
       enabled: true
       annotations:
