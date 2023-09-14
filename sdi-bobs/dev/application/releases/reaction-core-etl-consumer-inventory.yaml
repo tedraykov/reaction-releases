@@ -58,4 +58,4 @@ spec:
       storeUrl: https://dev.bobs-test.io
     image:
       repository: 816897914983.dkr.ecr.us-east-1.amazonaws.com/reaction-core
-      tag: 9be548d
+      tag: b1f8cdc
