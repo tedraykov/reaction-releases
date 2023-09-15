@@ -21,7 +21,7 @@ spec:
       SITE_CODE: BOBS
     package:
       name: reaction-etl-loyalty
-      version: "7e67665"
+      version: "1e780a2"
     secretRefs:
       - mongodb
     serviceAccountName: serverless-sa

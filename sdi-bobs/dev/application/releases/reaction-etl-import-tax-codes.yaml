@@ -23,5 +23,5 @@ spec:
       SKIP_INVOCATION: false
     package:
       name: reaction-etl-import-tax-codes
-      version: "7e67665"
+      version: "1e780a2"
     serviceAccountName: serverless-sa
