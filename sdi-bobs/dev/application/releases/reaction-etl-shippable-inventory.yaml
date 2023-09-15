@@ -25,4 +25,4 @@ spec:
       - mongodb
     package:
       name: reaction-etl-shippable-inventory
-      version: "1e780a2"
+      version: "8253e55"

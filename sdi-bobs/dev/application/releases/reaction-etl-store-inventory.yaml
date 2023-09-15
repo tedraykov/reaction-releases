@@ -19,5 +19,5 @@ spec:
       SITE_CODE: BOBS
     package:
       name: reaction-etl-store-inventory
-      version: "1e780a2"
+      version: "8253e55"
     serviceAccountName: serverless-sa
