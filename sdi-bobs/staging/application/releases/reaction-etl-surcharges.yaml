@@ -20,5 +20,5 @@ spec:
       SKIP_INVOCATION: false
     package:
       name: reaction-etl-surcharges
-      version: "7e67665"
+      version: "8253e55"
     serviceAccountName: serverless-sa

@@ -22,5 +22,5 @@ spec:
       SKIP_INVOCATION: false
     package:
       name: reaction-etl-catalog-sync
-      version: 83a0ada
+      version: "8253e55"
     serviceAccountName: serverless-sa
