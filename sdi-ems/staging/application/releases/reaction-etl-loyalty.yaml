@@ -21,7 +21,7 @@ spec:
       SITE_CODE: EMS
     package:
       name: reaction-etl-loyalty
-      version: "7e67665"
+      version: "8253e55"
     secretRefs:
       - mongodb
     serviceAccountName: serverless-sa
