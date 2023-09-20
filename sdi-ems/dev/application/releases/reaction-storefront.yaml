@@ -84,7 +84,7 @@ spec:
       max: 10
     image:
       repository: 816897914983.dkr.ecr.us-east-1.amazonaws.com/reaction-storefront-ems
-      tag: c1e06a6
+      tag: 03b1bbf
     ingress:
       enabled: true
       annotations:
