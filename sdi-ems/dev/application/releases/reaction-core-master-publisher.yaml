@@ -59,4 +59,4 @@ spec:
       storeUrl: https://dev.ems-test.io
     image:
       repository: 816897914983.dkr.ecr.us-east-1.amazonaws.com/reaction-core
-      tag: d945c02
+      tag: 7f2be61
