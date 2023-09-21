@@ -26,4 +26,4 @@ spec:
       - mongodb
     package:
       name: reaction-etl-pricing-import
-      version: "8253e55"
+      version: "f359ccb"
