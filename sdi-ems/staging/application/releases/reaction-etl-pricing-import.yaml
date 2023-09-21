@@ -15,8 +15,6 @@ spec:
   values:
     serviceAccountName: serverless-sa
     environment:
-      CLOUDFLARE_CLIENT_ID:
-      GRAFANA_API:
       JAEGER_ENDPOINT: http://jaeger-collector.staging.k8s.ems-test.io/api/traces
       PRICING_GRAPHQL_URL: http://pe.staging.k8s.ems-test.io/graphql
       REACTION_LOGGER_NAME: reaction-etl-pricing-import
@@ -24,9 +22,6 @@ spec:
       REQUEST_CONCURRENCY: 1
       REQUEST_BATCH_SIZE: 1000
       SKIP_INVOCATION: false
-    secrets:
-      CLOUDFLARE_CLIENT_SECRET:
-      GRAFANA_AUTH_TOKEN:
     secretRefs:
       - mongodb
     package:
