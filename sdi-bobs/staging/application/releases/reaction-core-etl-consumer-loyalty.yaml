@@ -22,6 +22,7 @@ spec:
       cartReferenceIdPrefix: 44
       cloudinaryCloudName: bobstores-staging
       etcdUrl: http://etcd-application.internal.staging.k8s.bobs-test.io:2379
+      graphqlPlaygroundEnabled: true
       initialImport: true
       jaegerEndpoint: http://jaeger-collector.staging.k8s.bobs-test.io:14268/api/traces
       listrakEnabled: true
@@ -58,4 +59,4 @@ spec:
       storeUrl: https://staging.bobs-test.io
     image:
       repository: 816897914983.dkr.ecr.us-east-1.amazonaws.com/reaction-core
-      tag: 97c8f50
+      tag: 7f2be61
