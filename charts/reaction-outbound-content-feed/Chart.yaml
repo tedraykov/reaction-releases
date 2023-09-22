@@ -1,7 +1,7 @@
 apiVersion: v1
 description: outbound-content-feed
 name: outbound-content-feed
-version: 1.0.0
+version: 1.0.1
 keywords:
 - outbound-content-feed
 home: https://github.com/reactioncommerce/reaction-etl-content-feed

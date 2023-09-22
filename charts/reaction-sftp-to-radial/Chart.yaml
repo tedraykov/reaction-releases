@@ -1,7 +1,7 @@
 apiVersion: v1
 description: sftp-to-radial
 name: sftp-to-radial
-version: 1.0.0
+version: 1.0.1
 keywords:
 - sftp-to-radial
 home: https://github.com/reactioncommerce/reaction-cron-jobs
