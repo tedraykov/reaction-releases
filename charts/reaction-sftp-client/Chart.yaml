@@ -1,7 +1,7 @@
 apiVersion: v1
 description: SFTP Client for Radial data uploads
 name: reaction-sftp-client
-version: 1.0.0
+version: 1.0.1
 keywords:
 - sftp
 - radial
