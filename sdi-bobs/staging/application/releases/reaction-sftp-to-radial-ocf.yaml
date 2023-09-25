@@ -19,7 +19,7 @@ spec:
       tag: 9105c00
     schedule: "0 9 * * *"
     config:
-      sftpClientPassword: AgCR5/vKtG7/96jRpTN1n4t7RIe0Q+LseTIjECqfqVgaiv4nssM561z/HYkFff0HKRp7bBSv/eMjywUmCqjPHFkQGQdyvrxt2sZblv6CdM/ZZ4oshk0uF8bieeJIUbsuXNFEi3GdsYXmVW10e74fFnMAyHs0AbU4KG4gNNM8qiTJnNtO5kthR41+VDCaY/b+6aked+nT6wx5Pt9+L3+Uxpv2xzWU18YtDo7mttgy8I8Dx8DtUoj09XZDIKIFTeGu48qOkNzb8VXlbrTZFGf6qJ3JVS8QVZ7dC4qAGVt0H9YwkzyS5avqNrDJi++Kc47BdtEv751p+5J6dBJViianZMnY+Zcs8mxCfrcQ3Q4kVa8c1RYIT3F/gBU70A/LJ41iYGT/2qLIxGvEMxiAvC/Rfl8AkVpDT5UUSiuFZqYnC+U7/y/3AzAyvOryTYAF590tLZ1nhiaCG5JeWEeKbfd31fOPnDNdaAEuT3mb7jtfmCsicmpvu/at0jrp2EfMhet890BlNQUWRT3nrk0B/zt4dxbXSkzWfIcRiCTdoFsgWLYvJ+3+VXYCMwbRBPMMpz12D/A/pNi7gSBV8t8vBMaYQJz3l28/u/CCq60AVWtJaMBJKdFbEwZ478dlIEIkbwuY8ffCm5aaps7RpbK+2ug6axwcXZgbN61u5K37IsORI6oC9PBIv6rGbZE3pgiyxGaBsRncumL5LLjogDvI
+      sftpClientPassword: AgAU/QD0/ku25AvtJaLwmOY93p0hUj7GOwVuGot+nZWUIr0fQzEp6F/y3G6Al3/mq0tNzwOxZOhRk7Xl+yD1H+r42gqICh+d7JxG6oQA8MMOcvaLxp93HcBsprEhsftRG7bc5MLHLo6DKiHuEySQQf1UzBB6PPskdrERzEtsbep7VXDbml3+IDWPXkSasOub4cZ/oni5BqrHyQlc+sewddt30fg58J9xe1eYjAps9K98D1loVJWL3V2sQ91w8/pS8PmTPK9klO4yJuWTEwzbzVZrEMWA3Rh/nc/SHEBZ7UZUDnWXLBwj3A51PZ77CHfAnpu7B0/pJH2dGZdMhqix8DRWjYsHfvlqkX/N+xVGmvlcfgyjtoN0jWxUjbfSQAPsYjV8ImC+nZdNmhgB+K6RLqEwmTJ3kGmjHf2qANq+hLnpJupK0gHsLU+dNA1SPuhaD8HVMkDG2MAx6J12Pxe+mXhlK0nEggEOAxOTOPdDBq2jR9rrHxn2h7seC2/v13GjJncFb1OMI8aS3bpda1fL0qWf61w/WAGKDZLjAiAHaDGWMwEC/CgnMAS+GxZm/4BJYYKxfMB43YoSJ4jfWKHJktTX7wXj3bUw4Te+wBPFXpU9srJIltDI8Wyx1VNflTHkqVe42rj+eLo+fj36ZnJFoKvBAPxfHERSREgo7vU0qjgYd9a+j6vyvdZCEczy1G00lbWFII2Eb/h8dSXx
       sftpClientSource: s3://sdi-bobs-staging-feeds-outbound-content
       sftpClientTarget: sftp://ftp.gsipartners.com/testing
       sftpClientUsername: bobsmp
