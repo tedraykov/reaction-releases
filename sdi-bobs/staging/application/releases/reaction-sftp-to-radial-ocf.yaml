@@ -13,7 +13,8 @@ spec:
         name: flux2-sync
         namespace: flux
   values:
-    serviceAccountName: serverless-sa
+    annotations:
+      iam.amazonaws.com/role: arn:aws:iam::225761155017:role/sdi-bobs-staging-reaction-job-sftp-to-radial-ocf
     fullnameOverride: reaction-sftp-to-radial-ocf
     image:
       tag: 9105c00

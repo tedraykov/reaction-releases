@@ -25,6 +25,7 @@ spec:
             app.kubernetes.io/managed-by: {{ .Release.Service }}
             helm.sh/chart: {{ $fullName }}
         spec:
+          serviceAccountName: {{ $fullName }}
           restartPolicy: Never
           containers:
           - name: {{ .Chart.Name }}
