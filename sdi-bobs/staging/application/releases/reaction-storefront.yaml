@@ -56,7 +56,7 @@ spec:
         tokenUrl: http://ory-hydra-public:4444/oauth2/token
       radial:
         clientId: BOB2US
-        mode: production
+        mode: sandbox
         rdfUrl: https://rdf.radial.com/rdf/service/scripts?clientIdentifier=BOB2US
       reactionVersionThree: "true"
       searchExperience: merchstack
@@ -65,7 +65,7 @@ spec:
         writeKey: osQ8ZrOPWr89d7I6ecepCU1NcCP9uE0C
         serverWriteKey: MEBPfPlBriDxlltmtX3SbVsZXhYeR3pQ
       sentry:
-        enabled: false
+        enabled: true
         clientDsn: https://222c72f6ba49483f88913050f9bd11ab@o234104.ingest.sentry.io/1397837
         serverDsn: https://a9313184cbc544c182a2d7eb4da65e6c@o234104.ingest.sentry.io/5777416
         environment: staging
