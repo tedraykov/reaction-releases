@@ -21,7 +21,7 @@ spec:
       brontoReplyToEmail: "admin@bobs-test.io"
       cartExpirySeconds: 1296000
       cartReferenceIdPrefix: 44
-      cloudinaryCloudName: bobstores-staging
+      cloudinaryCloudName: bobstores-dev
       constantPublisherMode: true
       constantPublisherPauseSeconds: 300
       etcdUrl: http://etcd-application.internal.staging.k8s.bobs-test.io:2379
@@ -40,7 +40,7 @@ spec:
       radialApiKey: AgBIdVgiIjH5KWcltzHGvQLkAYsG1ao0iRfrBg0xEQCkr+ATkrmJ7xAgIz8r8mc/lbP0O5ElU/TXziThzIv/i8KV8Pt90vL5vK/Mf8KHpnXCJIcZfYn269hruq+uIULdLCB4dydMVT5chi9lRy0jri+fp7E4MlSDFIHqMbCTjha1rYz4iqNXmKHTRKzU4N2+zwdHqbsQe11bpqgZvqC+/A6vs+1WTe7wqakbxsqNZbMR/mJqSb63CKF1gLObSIisJf6aXHsuzqn7gzyH8atNl4obLj/VgSCRRYpWa5FGY12WdaOoHMQk3AuNFBeDH93a+Edceal9iOk30f69NCcRzEP2dsVo6cHB0WLp4sqDPcU/4nnggY5LAIiRvx/sDPYNgbcHE+rGBiOveqisOKZkhXEacPulpFMYR2O4JG3lzB1vP5d8rcX5EtfkIB8xZyZj5mOhjkcBLGtTiYOkiZ2DXX7uYTHuueezfyCKkFKrjPnpHfllVfrYaOjWeWsg0XYI4gZo3oEkmLncZB7ELcKHAPS4low4dj9p4MzPxoafbFCFW6+zwsRftqwq0RlH+7cbzdwyNs6nS8UDytVISBNbMvI3zj61fRB27VIZzIO3lW/4hSCanjXOczQSV4y/t4NVsDgU10FYkJtL2iDgFje0jgm0wBB6QEOoApygfpCQ9fhs6pwvCMPxaWLLKU9S6J1zCP1jTUPnSouxj6/8JJsByA3CA2DTOIIN3v/pySk5p7Y3B9eJVKVFp6RrL2UkVE+pCY0=
       radialCatalogId: "282"
       radialCustomerIdPrefix: "00513"
-      radialMode: production
+      radialMode: sandbox
       radialOrderPrefix: "00560"
       radialPassword: AgBjXiKkowSLdeay7wbNyEnzYXxoDRTQfvs4pKQRo76bbClv8WRAuET6NWWPK4MwEoj0Pby4UqZ7uxjwYxWr8peMehFO0JYg4S/Ofp5g/5Pch5c6Jrx5BkBFZImoFfJfqRvb6ZzY7q+eNMCnORfr5GUtjTj6q9FZvNfRzHj3rUjfDsaL6VdKmvZpKRrHvWdoNBX0+QQXyaf4G/vjMVMi280xs/4bNeXiXT6r4vnfGKrSGFGqvyxne7IpFYcxw5U2aaddTjtBgEpP/TGEzY+gnUnutdeNRGgyexVgmDn/+GpCD3q23khDSeiG5VDYfbFIvzlG8phVEIrlL5G0zQszWXQvP5QQ7fBT28VTGExmEvgQUUMJrAnsFpqaEbYZmFrL3f7lTDynJp7BX2yIJVfRjzeHh8+PO0yprqVv3YvJ5WEFYv2FjX6E3B7RGR2Wuj+o0KSSAGlEqk2HYmeOmSVQkPQCdia7mKbljFj+nrAUjmWfXgaKjioeIzJTqc0ErMdY6ZuBc8mFqtncwWMburx1xR0grV7BPZZKUN3MqGcY/9YLqsIi4THKwcW/63sQ6ArArX/khhUUZf0kNz5pC5YNf1/4zy6ebqLv4unEy4yKcxlRWPA4DUNbfg4p/XVOA9KE2DCh0X7Cssw67NvXt3+wOEtj34zvVn1yXC85N+dZTAhkWw7f0YHA/BfI0ZKT7LPgBgW0+yiA5O0=
       radialStoreId: BOB2US
