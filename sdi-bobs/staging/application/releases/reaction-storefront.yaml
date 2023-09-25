@@ -19,7 +19,7 @@ spec:
       applePayMerchantCertificatePassphrase: AgA1PHEpmLQFRj1lHYqO08n2UNpVhNSxtDvlfgdtVVsS9fjJD19DMAHwPV/wR/vEobdRTWRgKv0B7dQ+4pd9L4kI/B5eG6Uqj8ixgnRcDqCTsKe4rhO80GNXSQWp29q+fmYo0GmGh02PhRWzF3KDlXwkYw/UXnvAD0DeUHlufnNnwRpXbfAKRgcQ2VWLggwNd2TLCHqI565VUeImJUg0sjIjws5a4ETfgctEXTaMFYJJRWQoqAuELUwlJHYFXXMbKyfvJLmwGYe6UzBrGIZDZVg9nARnXbaiRvZ4KVU+Pmt/9swKhSguNFAKuLhOnZT0RbN+75H0ugWUDLY6tBEVwbCG0Lk8XTO6CEYpRgkuvH3baX6ol2hpFp6zD6Ag0FrdKXMXvMTBqIjrxl/Bkth0GDOpILGYAuznofP1bGuKCItgwaNYw2DGzd8IQftviMIimUjuI6xvWG86DfleeAJvL2Hp2o5QN3Tr3KmTmSg2rx2kWNt2M4lM+enW+e/KYAkvEKDXPOhP4dAMoWAPCy51V2m9skoyKebSJvCy9Pd8KSWvMhKipYwKh3vB0w92aZCV+tcEuF2+5u3MfJeq4CRE9f0xKyxFVfGLjNlTLYbeg+Y+zUzzLu//6AWlSigdHVxMmXQMv3XTI34yto9bKhZs1KmRcvNK93lML9VhpAxiuYoB+QQ8HfYKVVX7QqYx7QSOqFuTVSRnE3+5VdIGHIWF5YvF
       baseUrl: https://staging.bobs-test.io
       cloudinary:
-        name: bobstores-staging
+        name: bobstores-dev
         domain: res.cloudinary.com
       contentSecurityPolicy:
         policyReportUri: https://sentry.io/api/1397837/security/
