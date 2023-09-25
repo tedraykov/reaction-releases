@@ -1,0 +1,27 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: kinetic
+  namespace: staging
+spec:
+  interval: 3m
+  chart:
+    spec:
+      chart: "./charts/kinetic"
+      sourceRef:
+        kind: GitRepository
+        name: flux2-sync
+        namespace: flux
+  values:
+    config:
+      apiUrl: https://api-staging.bobs-test.io/graphql
+    image:
+      tag: "b2e9ec1"
+    ingress:
+      enabled: true
+      annotations:
+        ingress.kubernetes.io/ssl-redirect: 'false'
+      ingressClassName: nginx
+      hosts:
+        - host: kinetic-staging.bobs-test.io
+          paths: ['/']
