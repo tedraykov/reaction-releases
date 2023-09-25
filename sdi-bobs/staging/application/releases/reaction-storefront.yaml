@@ -28,6 +28,7 @@ spec:
         accessToken: cs7197fa31078b9f44382a5a77
         apiKey: blt1f2a37a50d4512f7
         environment: staging
+      graphqlUrl: https://api-staging.bobs-test.io/graphql
       hydraAdminUrl: http://ory-hydra-admin:4445
       hygraph:
         readonly_api: "https://us-east-1.cdn.hygraph.com/content/clbs6zpks1bkj01t7caff08fc/master"
