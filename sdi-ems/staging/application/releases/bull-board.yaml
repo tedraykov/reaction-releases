@@ -1,0 +1,29 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: bull-board
+  namespace: staging
+spec:
+  interval: 3m
+  chart:
+    spec:
+      chart: "./charts/bull-board"
+      sourceRef:
+        kind: GitRepository
+        name: flux2-sync
+        namespace: flux
+  values:
+    config:
+      boardTitle: "Staging"
+      boardLogoPath: "https://www.ems.com/assets/76735912.svg"
+      queues: setPromotionState,checkExistingCarts,sendEmail
+    image:
+      tag: 1.0.0
+    ingress:
+      enabled: true
+      annotations:
+        ingress.kubernetes.io/ssl-redirect: 'false'
+      ingressClassName: nginx
+      hosts:
+        - host: bull-staging.ems-test.io
+          paths: ['/']

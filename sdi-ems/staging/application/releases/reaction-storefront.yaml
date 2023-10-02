@@ -19,7 +19,7 @@ spec:
       applePayMerchantCertificatePassphrase: AgBx460Dv3uUnnEpEXglHHjjLy36BCdfGDJcTKXeS2gW6Nbz/UvZCBBzHUgaDG0mBsM7pWXleRtrI3wGqPdN6X1+YJsinOnSV2FcUkxLL1OYwMQSe31WP7vR/Pn1TbdcBr73MD9GCqQmtWICaZSqNyD00zbBcFSQmuGBPzDsO0W54WgHh1n34FWIImWlIM4T3fJfu6O5rHN+V3cMYmANwKUZU0LhMDkR7fTpvHM1g/PWodKsd1YiOs1lLQ7Zttm09zzmrNLXX8JQyOnjTyp2xTZsiumqS4u6E9sTpEyVrK0fe3hoet8EtTIhw/gbteJi410oZo+1JIVP1RMjwC8iOSMgg5UD+qLmcEOg8F65oLq83IRoZHaFSmZju85WjZsQk1+ul8lngVsOHPuQ5cn7vdBnRQwcIg3w6K+3WvrHNyZ3R8lfOFlwU2ONj3HnnUph5AZuCi8/M6C7DqV4Oa6S6zlWswxvTN8NnS7hS7bvGKRwBTL4KL8gEObx/FidCisMDCzoFBeOt6H4IphgCOiGjYlfNAAEkivRFvUzhMZZjlrpP1KqpkQdtjMMa/jyNELpmzVrXAvwwFcjUSaXfjkDj+8RAhY4swe5GDryL2gUrJx2YVcuxiCO/LRoh20ppM5JfTaIrYU1ZCGiyix0ojVgbf0l1M5gLnfUKcLkR3mkjpWVX31Jz3cmK6vtbzaRULdX4uZzbxk3+pBY30EA4ufDoIXu
       baseUrl: https://staging.ems-test.io
       cloudinary:
-        name: eastern-staging
+        name: eastern-dev
         domain: res.cloudinary.com
       contentSecurityPolicy:
         policyReportUri: https://sentry.io/api/1802036/security/
@@ -29,6 +29,7 @@ spec:
         apiKey: blt7841d2a593726d96
         environment: staging
       elasticsearchUrl: https://vpc-staging-storefront-mduien76trlzpmbscx5il5tszy.us-east-1.es.amazonaws.com:443
+      graphqlUrl: https://api-staging.ems-test.io/graphql
       hydraAdminUrl: http://ory-hydra-admin:4445
       hygraph:
         readonly_api: "https://us-east-1.cdn.hygraph.com/content/clbs6zpks1bkj01t7caff08fc/master"
@@ -83,7 +84,7 @@ spec:
       max: 10
     image:
       repository: 816897914983.dkr.ecr.us-east-1.amazonaws.com/reaction-storefront-ems
-      tag: 803376f
+      tag: 10c5f01
     ingress:
       annotations:
         ingress.kubernetes.io/ssl-redirect: 'false'

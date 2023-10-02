@@ -21,7 +21,7 @@ spec:
       brontoReplyToEmail: "admin@ems-test.io"
       cartExpirySeconds: 1296000
       cartReferenceIdPrefix: 66
-      cloudinaryCloudName: eastern-staging
+      cloudinaryCloudName: eastern-dev
       constantPublisherMode: true
       constantPublisherPauseSeconds: 300
       etcdUrl: http://etcd-application.internal.staging.k8s.ems-test.io:2379
