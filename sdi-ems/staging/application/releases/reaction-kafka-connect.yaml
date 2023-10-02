@@ -24,7 +24,7 @@ spec:
     imagePullSecrets:
       - name: reaction-docker-hub
     config:
-      connectBootstrapServers: "b-1-ems-staging-kafka.staging.k8s.ems-test.io:9092,b-2-ems-staging-kafka.staging.k8s.ems-test.io:9092,b-3-ems-staging-kafka.staging.k8s.ems-test.io:9092"
+      connectBootstrapServers: "b-1-ems-staging-kafka.staging.k8s.ems.io:9092,b-2-ems-staging-kafka.staging.k8s.ems.io:9092,b-3-ems-staging-kafka.staging.k8s.ems.io:9092"
       connectRestAdvertisedHostName: kafka-connect-staging.ems-test.io
     resources:
       requests:

@@ -26,8 +26,8 @@ spec:
       etcdUrl: http://etcd-application.internal.staging.k8s.ems-test.io:2379
       shippableInventoryConsumerEnabled: true
       jaegerEndpoint: http://jaeger-collector.staging.k8s.ems-test.io/api/traces
-      kafkaBootstrapServers: "b-1-ems-staging-kafka.staging.k8s.ems-test.io:9092,b-2-ems-staging-kafka.staging.k8s.ems-test.io:9092,b-3-ems-staging-kafka.staging.k8s.ems-test.io:9092"
-      kafkaCluster: "b-1-ems-staging-kafka.staging.k8s.ems-test.io:9092,b-2-ems-staging-kafka.staging.k8s.ems-test.io:9092,b-3-ems-staging-kafka.staging.k8s.ems-test.io:9092"
+      kafkaBootstrapServers: "b-1-ems-staging-kafka.staging.k8s.ems.io:9092,b-2-ems-staging-kafka.staging.k8s.ems.io:9092,b-3-ems-staging-kafka.staging.k8s.ems.io:9092"
+      kafkaCluster: "b-1-ems-staging-kafka.staging.k8s.ems.io:9092,b-2-ems-staging-kafka.staging.k8s.ems.io:9092,b-3-ems-staging-kafka.staging.k8s.ems.io:9092"
       kafkaPartitionsEtlShippableInventoryStatus: 3
       kafkaTopicEtlShippableInventoryStream: 'etl.shippable-inventory.inventory-data.json-gen2'
       kafkaTopicEtlShippableInventoryStatus: 'etl.shippable-inventory.inventory-status.json-gen2'

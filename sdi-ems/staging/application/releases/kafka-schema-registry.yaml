@@ -15,4 +15,4 @@ spec:
   values:
     fullnameOverride: kafka-schema-registry
     kafka:
-      bootstrapServers: "PLAINTEXT://b-1-ems-staging-kafka.staging.k8s.ems-test.io:9092,PLAINTEXT://b-2-ems-staging-kafka.staging.k8s.ems-test.io:9092,PLAINTEXT://b-3-ems-staging-kafka.staging.k8s.ems-test.io:9092"
+      bootstrapServers: "PLAINTEXT://b-1-ems-staging-kafka.staging.k8s.ems.io:9092,PLAINTEXT://b-2-ems-staging-kafka.staging.k8s.ems.io:9092,PLAINTEXT://b-3-ems-staging-kafka.staging.k8s.ems.io:9092"
