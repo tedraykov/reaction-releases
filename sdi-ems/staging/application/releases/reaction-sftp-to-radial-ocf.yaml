@@ -18,7 +18,7 @@ spec:
     fullnameOverride: reaction-sftp-to-radial-ocf
     image:
       tag: 9105c00
-    schedule: "* * * * *"
+    schedule: "0 9 * * *"
     config:
       sftpClientPassword: AgBHdpCQLb+rvDRDvNb37FaXaz7s6gb7/OxNIvf59m15xZCxj22I6eAEN628Aj1wk49otxy/CBJ3cseccLNfqjBNPz7JJzKPing8uuwHP2zPaY96/7E6sB0w9OFRKyvigGE64RlFin/Uu6KLbqa2WtJ5l8CGTHAYtKZZdp/5ZgRu4SJk91pmxK+wt7DSod5d3vuWgFGgFTcbVFlANC0XC+GRbgtx7Ora59caph8SfDG7uiWvEbJya9LBhFHtaEfQkm6HsAxt8YoO/zmJWbX6+tLM+ZkX5cqa8tdcWxIugX9AYiDkhb42BnFITA68VEh4UUMcJMMiT7rL0oH+giEsfKLLkNIWSnVKtdd2RdggDgbZHkrLDQfyURCGAeWPfg30XYWbZx+5Dqud1FUf1OLbS/Plnw99O8nLK8TtwpUtAm94Y3oXztJXeQuBYO03W2DLenEUO8smRGJa/aD7jUcXMewJKcPyUbEo72DTDPQlztE4u87ybGGZHTYey+6gZikMTiAgBgpyI+yOzSucUt4Kc7u4xSQnC8cObtqsvLdjgqhcrJ7ZpVqNM3ylokejCkG5xrHXkCmSzl1mNJYecPW+LgsSIfjC42VsUtWU3gAtt9vO4RWEGWd4FuleVeK2dbbINu9F/mYLHNn/UPZ64PFg7HCimVq8vRwX1AHfMmK912MJrNQwN6gY4NxoI1fSI/4516uz72QXsivyM1XN
       sftpClientSource: s3://sdi-ems-staging-feeds-outbound-content

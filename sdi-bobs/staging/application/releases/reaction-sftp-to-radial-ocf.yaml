@@ -14,7 +14,7 @@ spec:
         namespace: flux
   values:
     annotations:
-      iam.amazonaws.com/role: arn:aws:iam::225761155017:role/sdi-bobs-staging-reaction-job-sftp-to-radial-ocf
+      eks.amazonaws.com/role-arn: arn:aws:iam::225761155017:role/sdi-bobs-staging-reaction-job-sftp-to-radial-ocf
     fullnameOverride: reaction-sftp-to-radial-ocf
     image:
       tag: 9105c00
