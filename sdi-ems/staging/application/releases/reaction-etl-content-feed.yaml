@@ -22,7 +22,7 @@ spec:
     schedule: "0 8 * * *"
     config:
       batchSize: 1000
-      cloudName: eastern-staging
+      cloudName: eastern-dev
       cloudFolder: 0
       jaegerEndpoint: http://jaeger-collector.staging.k8s.ems-test.io/api/traces
       kmsKeyArn: arn:aws:kms:us-east-1:225761155017:key/e4294918-f196-4269-8294-8cfc8377a002

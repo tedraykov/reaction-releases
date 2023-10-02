@@ -14,7 +14,7 @@ spec:
   interval: 3m
   values:
     environment:
-      CLOUDINARY_CLOUD_NAME: bobstores-staging
+      CLOUDINARY_CLOUD_NAME: bobstores-dev
       JAEGER_ENDPOINT: http://jaeger-collector.monitoring.svc.cluster.local:14268/api/traces
       REACTION_LOG_LEVEL: INFO
       SKIP_INVOCATION: false

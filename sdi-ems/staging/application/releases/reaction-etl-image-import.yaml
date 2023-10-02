@@ -14,7 +14,7 @@ spec:
   interval: 3m
   values:
     environment:
-      CLOUDINARY_CLOUD_NAME: eastern-staging
+      CLOUDINARY_CLOUD_NAME: eastern-dev
       JAEGER_ENDPOINT: http://jaeger-collector.staging.k8s.ems-test.io/api/traces
       REACTION_LOG_LEVEL: INFO
       SKIP_INVOCATION: false
