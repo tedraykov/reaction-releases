@@ -21,6 +21,7 @@ spec:
       brontoReplyToEmail: "admin@ems-test.io"
       cartExpirySeconds: 1296000
       cartReferenceIdPrefix: 66
+      graphqlPlaygroundEnabled: true
       cloudinaryCloudName: eastern-dev
       etcdUrl: http://etcd-application.internal.staging.k8s.ems-test.io:2379
       shippableInventoryConsumerEnabled: true
