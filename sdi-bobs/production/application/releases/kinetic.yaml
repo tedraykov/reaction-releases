@@ -1,0 +1,27 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: kinetic
+  namespace: production
+spec:
+  interval: 3m
+  chart:
+    spec:
+      chart: "./charts/kinetic"
+      sourceRef:
+        kind: GitRepository
+        name: flux2-sync
+        namespace: flux
+  values:
+    config:
+      apiUrl: https://api.bobstores.com/graphql
+    image:
+      tag: "b2e9ec1"
+    ingress:
+      enabled: true
+      annotations:
+        ingress.kubernetes.io/ssl-redirect: 'true'
+      ingressClassName: nginx
+      hosts:
+        - host: kinetic.bobstores.com
+          paths: ['/']

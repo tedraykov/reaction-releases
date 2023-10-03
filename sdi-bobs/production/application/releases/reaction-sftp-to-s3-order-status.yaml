@@ -1,18 +1,19 @@
-apiVersion: helm.fluxcd.io/v1
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
   name: reaction-sftp-to-s3-order-status
   namespace: serverless
 spec:
-  releaseName: reaction-sftp-to-s3-order-status
+  interval: 3m
   chart:
-    git: git@github.com:roberts50/reaction-releases.git
-    path: charts/serverless-deploy-v2
-    ref: develop
-  helmVersion: v3
+    spec:
+      chart: "./charts/serverless-deploy-v2"
+      sourceRef:
+        kind: GitRepository
+        name: flux2-sync
+        namespace: flux
   values:
-    annotations:
-      iam.amazonaws.com/role: arn:aws:iam::490759768946:role/sdi-bobs-production-serverless-deploy
+    serviceAccountName: serverless-sa
     environment:
       SFTP_HOST: na-xchange.gsipartners.com
       TARGET: sdi-bobs-production-feeds-rom-order-status-import
@@ -23,4 +24,4 @@ spec:
       SFTP_USERNAME: AgDELrZXoHLfIk1Bvny1hlSJOEI8jDq2hpGanJwuqYbsJMHLSGZyWM+zt0fwnWYxjjipmUUt9Vg+NNRQOTtS8ZO/czmte9Tzr0aZSlNxJL4LUJ5ViILi2rhuya8W7h/dqkXAvpucNRz/pTfnVTAleSGizGr0hkE1doj6vBWlhhjXa34A5e/gLzlZdosnnpfh6hFRHC9wp+uKrZEks6t5dEwxwjZ9Y5AmYM8AKUERE9k2oiQlsfH+dVKvRyY1ANzDs1TwbJIWGoQ/snH3+Q10omcrJSurxCDG3yRR4d7WZAWWgEiO82fgUpz7Yv5ltf1nwbUrpnY27t6J2cELI5EEXEEGJnTXWdEuKh+V+HkG5oev3IF2tf4Ds6S0vXszyV8GEWT5wj/+bNqLCwsrTs51r1HQ3BRiojo7C6vLvUDrMv+cJAKqtZrbqqHCEWvwSdX/EVUNwEK2UAVtUHjnFe529Bgtrya6e/d+oa2hb+4xN25ihFOJSJoxdCVVYuqujzE4Q3L6oBPd2kV9WyyK72lVIX+nLw6Gljotu/bSTphODQmQRbIRFQeekvQOn/dmbDGZ6fob6yUxmsNeqpSs/3h6UU8q5h01zWUWDyihWGHquMq2vz4IOFdErEAohK8bUnWi0Y2uI4E66XaG9FBezwrcX2YxFhJRSRUU0ISueKsuv3nnQofgOs/Vw+Py9kfksyG1dFUQG8yFBw==
     package:
       name: reaction-sftp-to-s3-order-status
-      version: bcf5648
+      version: 5510bef

@@ -1,18 +1,18 @@
-apiVersion: helm.fluxcd.io/v1
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
   name: reaction-etl-loyalty
   namespace: serverless
 spec:
-  releaseName: reaction-etl-loyalty
   chart:
-    git: git@github.com:sportsdirect/sdi-releases.git
-    path: charts/serverless-deploy
-    ref: develop
-  #helmVersion: v3
+    spec:
+      chart: "./charts/serverless-deploy-v2"
+      sourceRef:
+        kind: GitRepository
+        name: flux2-sync
+        namespace: flux
+  interval: 3m
   values:
-    annotations:
-      iam.amazonaws.com/role: sdi-bobs-production-serverless-deploy
     environment:
       AWS_REGION: "us-east-1"
       JAEGER_ENDPOINT: http://jaeger-collector.monitoring.svc.cluster.local:14268/api/traces
@@ -23,4 +23,5 @@ spec:
       - mongodb
     package:
       name: reaction-etl-loyalty
-      version: 5eea634
+      version: "8253e55"
+    serviceAccountName: serverless-sa
