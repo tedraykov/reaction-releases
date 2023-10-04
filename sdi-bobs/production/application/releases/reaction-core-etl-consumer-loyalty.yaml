@@ -55,4 +55,4 @@ spec:
       storeUrl: https://www.bobstores.com
     image:
       repository: 816897914983.dkr.ecr.us-east-1.amazonaws.com/reaction-core
-      tag: 7a227f9
+      tag: 1dc1037
