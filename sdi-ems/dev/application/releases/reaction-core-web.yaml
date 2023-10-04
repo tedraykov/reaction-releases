@@ -62,7 +62,7 @@ spec:
       max: 10
     image:
       repository: 816897914983.dkr.ecr.us-east-1.amazonaws.com/reaction-core
-      tag: 1dc1037
+      tag: 5af7870
     ingress:
       enabled: true
       annotations:
