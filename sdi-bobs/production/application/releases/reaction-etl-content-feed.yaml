@@ -1,0 +1,42 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: reaction-etl-content-feed
+  namespace: production
+spec:
+  interval: 3m
+  chart:
+    spec:
+      chart: "./charts/reaction-outbound-content-feed"
+      sourceRef:
+        kind: GitRepository
+        name: flux2-sync
+        namespace: flux
+  values:
+    annotations:
+      iam.amazonaws.com/role: sdi-bobs-production-reaction-job-outbound-content-feed
+    fullnameOverride: reaction-etl-content-feed
+    imagePullSecret: reaction-docker-hub
+    image:
+      tag: 818f5d7
+    schedule: "0 8 * * *"
+    config:
+      batchSize: 1000
+      cloudName: bobstores
+      cloudFolder: 0
+      jaegerEndpoint: http://jaeger-collector.production.k8s.bobs-test.io:14268/api/traces
+      kmsKeyArn: arn:aws:kms:us-east-1:490759768946:key/c65dc6e6-0e2b-4c6f-a5ca-3704fc11fcb6
+      pricebookIdPerm: bobs-usd-perm-prices
+      pricebookIdRetail: bobs-usd-retail-prices
+      pricebookIdSale: bobs-usd-sale-prices
+      pricebookIdMember: bobs-member-pricing
+      siteCode: BOBS
+      storefrontBaseUrl: https://www.bobstores.com
+      vendorFilePrefix: "DW"
+    resources:
+      requests:
+        memory: 3Gi
+        cpu: "1"
+      limits:
+        memory: 4Gi
+        cpu: "2"

@@ -1,0 +1,26 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: reaction-s3-to-sftp-item-master
+  namespace: serverless
+spec:
+  interval: 3m
+  chart:
+    spec:
+      chart: "./charts/serverless-deploy-v2"
+      sourceRef:
+        kind: GitRepository
+        name: flux2-sync
+        namespace: flux
+  values:
+    environment:
+      SFTP_HOST: na-xchange.gsipartners.com
+      RADIAL_STORE_ID: BOB2US
+      REACTION_LOG_LEVEL: DEBUG
+    secrets:
+      SFTP_PASSWORD: AgC7RkGVjgRj9NK0F8e25dwIIEM0x1+YF8gEq1EGstm8v4hOaSMcU89OiYQXZda7RLTW3R/i5MkOYjwA6GD8C6cY7N/wzR1Vz4ZVzEPiqv6CIcHYBoPUHQmu3iekymYqtpTaqM54oI6Ke6rka7/EyoJa09NrNfJ4z5M5+0AHkyYOKwhgmAsyBj0zr5iApqCeB9ndL2hS11WvUiNUvHBVUO6jMzBPpZdmhM4nv14H1tyDNpkOKjIBcU3ko4yTVrlLngAGWDXIkct42KafFswvSUxj7OIYiNaNg/WbVooTcr5MAI53xdj121ipcoazGVOixl6E2bJTLXepSpfwV58lMqJLhK8C3cLBExsARgCGzHs6c6U6s0wQj13+zAIv0zNl2i0lkDJt2M98FcF7qkvuDBycBzltYqovCMsnMKgNcWEdMcq5VDCQYvyhvMjEot0T4XvKthrtEwFWsI7V2/C8QA5oxJPSC5n4FQNUn2Wh+0lUP6ZaYvLpy/aDdk+hxgZNl+KRqhvZrujFQ4uEfBecGbgt8g452jPg3vdukxnbPkP6Q3zS7SOXwRR008aEIWjx1au+0jqMusA4MnHJqxL1G/9JUNJ0GRqgjIs7kPNsoWcrJAGbNYt3LYtn7Kr/aSIm6nNAR0t27Tde3kQoGnUnqGo+PN1IAiYPq/Tnm+uG9evVYIMllYG63O6RIFrrF/Z5BhRnQKmcp18etQ==
+      SFTP_USERNAME: AgDELrZXoHLfIk1Bvny1hlSJOEI8jDq2hpGanJwuqYbsJMHLSGZyWM+zt0fwnWYxjjipmUUt9Vg+NNRQOTtS8ZO/czmte9Tzr0aZSlNxJL4LUJ5ViILi2rhuya8W7h/dqkXAvpucNRz/pTfnVTAleSGizGr0hkE1doj6vBWlhhjXa34A5e/gLzlZdosnnpfh6hFRHC9wp+uKrZEks6t5dEwxwjZ9Y5AmYM8AKUERE9k2oiQlsfH+dVKvRyY1ANzDs1TwbJIWGoQ/snH3+Q10omcrJSurxCDG3yRR4d7WZAWWgEiO82fgUpz7Yv5ltf1nwbUrpnY27t6J2cELI5EEXEEGJnTXWdEuKh+V+HkG5oev3IF2tf4Ds6S0vXszyV8GEWT5wj/+bNqLCwsrTs51r1HQ3BRiojo7C6vLvUDrMv+cJAKqtZrbqqHCEWvwSdX/EVUNwEK2UAVtUHjnFe529Bgtrya6e/d+oa2hb+4xN25ihFOJSJoxdCVVYuqujzE4Q3L6oBPd2kV9WyyK72lVIX+nLw6Gljotu/bSTphODQmQRbIRFQeekvQOn/dmbDGZ6fob6yUxmsNeqpSs/3h6UU8q5h01zWUWDyihWGHquMq2vz4IOFdErEAohK8bUnWi0Y2uI4E66XaG9FBezwrcX2YxFhJRSRUU0ISueKsuv3nnQofgOs/Vw+Py9kfksyG1dFUQG8yFBw==
+    package:
+      name: reaction-s3-to-sftp-item-master
+      version: 8382e0b
+    serviceAccountName: serverless-sa

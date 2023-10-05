@@ -1,0 +1,26 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: reaction-etl-catalog-sync
+  namespace: serverless
+spec:
+  chart:
+    spec:
+      chart: "./charts/serverless-deploy-v2"
+      sourceRef:
+        kind: GitRepository
+        name: flux2-sync
+        namespace: flux
+  interval: 3m
+  values:
+    environment:
+      JAEGER_ENDPOINT: http://jaeger-collector.monitoring.svc.cluster.local:14268/api/traces
+      KAFKA_PARTITIONS: 3
+      KAFKA_TOPIC_CATALOG_SYNC_PRODUCTS: etl.catalog-sync.products.json-gen1
+      REACTION_LOG_LEVEL: INFO
+      SITE_CODE: BOBS
+      SKIP_INVOCATION: false
+    package:
+      name: reaction-etl-catalog-sync
+      version: "8253e55"
+    serviceAccountName: serverless-sa
