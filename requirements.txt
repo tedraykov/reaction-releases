@@ -1,8 +1,0 @@
-GitPython
-dpath
-git+https://${GITHUB_PAT}@github.com/frasersgroup/helm-toolkit.git@master
-pytest
-pytest-pythonpath
-pytest-spec
-ruamel.yaml
-yamale

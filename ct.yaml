@@ -1,5 +1,6 @@
-chart-yaml-schema: .ct/chart_schema.yaml
-check-version-increment: false
-lint-conf: .ct/lintconf.yaml
-target-branch: develop
+remote: origin
+target-branch: trunk
+chart-dirs:
+  - charts
+helm-extra-args: --timeout 600s
 debug: true
